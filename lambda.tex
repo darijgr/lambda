@@ -8,7 +8,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.00.0.2570}
-%TCIDATA{LastRevised=Tuesday, August 25, 2009 11:42:04}
+%TCIDATA{LastRevised=Monday, August 31, 2009 20:02:06}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 \voffset=-2.5cm
@@ -152,7 +152,7 @@ $i\in\mathbb{N}$ such that $\lambda^{0}\left(  x\right)  =1$ and $\lambda
 \begin{equation}
 \lambda^{k}\left(  x+y\right)  =\sum_{i=0}^{k}\lambda^{i}\left(  x\right)
 \lambda^{k-i}\left(  y\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }%
-k\in\mathbb{N},\text{ }x\in K\text{ and }y\in K.\label{lambda1}%
+k\in\mathbb{N},\text{ }x\in K\text{ and }y\in K. \label{lambda1}%
 \end{equation}
 Then, we call $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)
 $ a $\lambda$\textit{-ring}. We will also call $K$ itself a $\lambda$-ring if
@@ -217,17 +217,17 @@ every $x\in K$. Consider the ring $K\left[  \left[  t\right]  \right]  $ of
 formal series in the indeterminate $t$ over the ring $K.$ Define a map
 $\lambda_{t}:K\rightarrow K\left[  \left[  t\right]  \right]  $ by
 $\lambda_{t}\left(  x\right)  =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
-x\right)  t^{i}$. Note that the power series $\lambda_{t}\left(  x\right)
-=\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  x\right)  t^{i}$ has the
-coefficient $\lambda^{0}\left(  x\right)  =1$ before $t^{0};$ thus, it is
-invertible in $K\left[  \left[  t\right]  \right]  $.
+x\right)  t^{i}$ for every $x\in K$. Note that the power series $\lambda
+_{t}\left(  x\right)  =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
+x\right)  t^{i}$ has the coefficient $\lambda^{0}\left(  x\right)  =1$ before
+$t^{0};$ thus, it is invertible in $K\left[  \left[  t\right]  \right]  $.
 
-\textbf{a)} Then, $\lambda_{t}\left(  x\right)  \cdot\lambda_{t}\left(
+\textbf{(a)} Then, $\lambda_{t}\left(  x\right)  \cdot\lambda_{t}\left(
 y\right)  =\lambda_{t}\left(  x+y\right)  $ for every $x\in K$ and every $y\in
 K$ if and only if $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
 }\right)  $ is a $\lambda$-ring.
 
-\textbf{b)} Let $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
+\textbf{(b)} Let $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
 }\right)  $ be a $\lambda$-ring. Then, $\lambda_{t}\left(  0\right)  =1$,
 $\lambda_{t}\left(  -x\right)  =\left(  \lambda_{t}\left(  x\right)  \right)
 ^{-1}$ (in particular, this means that $\lambda_{t}\left(  x\right)  $ is
@@ -236,7 +236,7 @@ y\right)  =\lambda_{t}\left(  x+y\right)  $ for every $x\in K$ and every $y\in
 K$.
 \end{quote}
 
-\textit{Proof of Theorem 2.1:} \textbf{a)} Every $x\in K$ and every $y\in K$
+\textit{Proof of Theorem 2.1:} \textbf{(a)} Every $x\in K$ and every $y\in K$
 satisfy%
 \[
 \lambda_{t}\left(  x\right)  \cdot\lambda_{t}\left(  y\right)  =\sum
@@ -261,9 +261,9 @@ Hence, $\lambda_{t}\left(  x\right)  \cdot\lambda_{t}\left(  y\right)
 \cdot\lambda_{t}\left(  y\right)  =\lambda_{t}\left(  x+y\right)  $ for every
 $x\in K$ and every $y\in K$ if and only if $\left(  K,\left(  \lambda
 ^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring. This proves
-Theorem 2.1 \textbf{a)}.
+Theorem 2.1 \textbf{(a)}.
 
-\textbf{b)} Part \textbf{a)} tells us that $\lambda_{t}\left(  x\right)
+\textbf{(b)} Part \textbf{(a)} tells us that $\lambda_{t}\left(  x\right)
 \cdot\lambda_{t}\left(  y\right)  =\lambda_{t}\left(  x+y\right)  $ for every
 $x\in K$ and every $y\in K$. Applied to $x=y=0,$ this takes the form
 $\lambda_{t}\left(  0\right)  \cdot\lambda_{t}\left(  0\right)  =\lambda
@@ -274,22 +274,22 @@ y\right)  =\lambda_{t}\left(  x+y\right)  $, applied to $y=-x$, yields
 $\lambda_{t}\left(  x\right)  \cdot\lambda_{t}\left(  -x\right)
 =\underbrace{\lambda_{t}\left(  0\right)  }_{=1}$, hence $\lambda_{t}\left(
 -x\right)  =\left(  \lambda_{t}\left(  x\right)  \right)  ^{-1}$, and Theorem
-2.1 \textbf{b)} is proven.
+2.1 \textbf{(b)} is proven.
 
 \begin{quote}
 \textbf{Theorem 2.2.} Let $\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring with a positive structure
 $\left(  \varepsilon,\mathbf{E}\right)  .$
 
-\textbf{a)} Then, $\mathbf{L}=\left\{  u\in\mathbf{E}\ \mid\ \varepsilon
+\textbf{(a)} Then, $\mathbf{L}=\left\{  u\in\mathbf{E}\ \mid\ \varepsilon
 \left(  u\right)  =1\right\}  $ is a subgroup of the (multiplicative) unit
 group $K^{\times}$ of $K$. [I don't believe this.]
 
-\textbf{b)} We have $\mathbf{L}=\left\{  u\in\mathbf{E}\ \mid\ \lambda
+\textbf{(b)} We have $\mathbf{L}=\left\{  u\in\mathbf{E}\ \mid\ \lambda
 _{t}\left(  u\right)  =1+ut\right\}  $.
 \end{quote}
 
-\textit{Proof of Theorem 2.2.} \textbf{b)} Every $u\in\mathbf{L}$ satisfies%
+\textit{Proof of Theorem 2.2.} \textbf{(b)} Every $u\in\mathbf{L}$ satisfies%
 \[
 \lambda_{t}\left(  u\right)  =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
 u\right)  t^{i}=\underbrace{\lambda^{0}\left(  u\right)  }_{=1}+\underbrace
@@ -309,10 +309,10 @@ u\right)  }\left(  u\right)  $ is a unit in the ring $K$ (since $u\in
 \mathbf{E}$), so that $\lambda^{\varepsilon\left(  u\right)  }\left(
 u\right)  \neq0$ and thus $\varepsilon\left(  u\right)  \leq1$). Together with
 $\varepsilon\left(  u\right)  >0$, this yields $\varepsilon\left(  u\right)
-=1$ and thus $u\in\mathbf{L}$. This proves \textbf{b)}.
+=1$ and thus $u\in\mathbf{L}$. This proves \textbf{(b)}.
 
-\textbf{a)} First we need to show that every $u\in\mathbf{L}$ is invertible in
-$K$. In fact, let $u\in\mathbf{L}$. Then, $\lambda^{\varepsilon\left(
+\textbf{(a)} First we need to show that every $u\in\mathbf{L}$ is invertible
+in $K$. In fact, let $u\in\mathbf{L}$. Then, $\lambda^{\varepsilon\left(
 u\right)  }\left(  u\right)  $ is a unit in the ring $K$ (since $u\in
 \mathbf{E}$). But $\varepsilon\left(  u\right)  =1$ and thus $\lambda
 ^{\varepsilon\left(  u\right)  }\left(  u\right)  =\lambda^{1}\left(
@@ -563,23 +563,24 @@ $...,$ $U_{m}$). [How does this implication work? Just write it down and see.]
 For part \textbf{(b)}, we argue the same way as in \textbf{(a)}, but applying
 Theorem 4.1 \textbf{(b)} along with Theorem 4.1 \textbf{(a)}.
 
+Note that in the following, we are going to use Theorems 4.1 and 4.2 for
+$K=\mathbb{Z}$ only.
+
 Theorem 4.2 allows us to make the following definition:
 
 \begin{quote}
-\textbf{Definition.} Let $K$ be a ring.
-
-Let $k\in\mathbb{N}$. Our goal now is to define a polynomial $P_{k}\in
-K\left[  \alpha_{1},\alpha_{2},...,\alpha_{k},\beta_{1},\beta_{2}%
-,...,\beta_{k}\right]  $ such that%
+\textbf{Definition.} Let $k\in\mathbb{N}$. Our goal now is to define a
+polynomial $P_{k}\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
+_{k},\beta_{1},\beta_{2},...,\beta_{k}\right]  $ such that%
 \begin{equation}
 \sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
 1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}\prod_{\left(  i,j\right)
 \in S}U_{i}V_{j}=P_{k}\left(  X_{1},X_{2},...,X_{k},Y_{1},Y_{2},...,Y_{k}%
 \right)  \label{Pk1}%
 \end{equation}
-in the polynomial ring $K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2}%
-,...,V_{n}\right]  $ for every $n\in\mathbb{N}$ and $m\in\mathbb{N}$, where
-$X_{i}=\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
+in the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m},V_{1}%
+,V_{2},...,V_{n}\right]  $ for every $n\in\mathbb{N}$ and $m\in\mathbb{N}$,
+where $X_{i}=\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
 ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{i}$ is the $i$-th
 elementary symmetric polynomial in the variables $U_{1},$ $U_{2},$ $...,$
 $U_{m}$ for every $i\in\mathbb{N}$, and $Y_{j}=\sum
@@ -593,24 +594,24 @@ The polynomial%
 \[
 \sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
 1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}\prod_{\left(  i,j\right)
-\in S}U_{i}V_{j}\in K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}%
-\right]
+\in S}U_{i}V_{j}\in\mathbb{Z}\left[  U_{1},U_{2},...,U_{m},V_{1}%
+,V_{2},...,V_{n}\right]
 \]
 is UV-symmetric. Thus, Theorem 4.2 \textbf{(a)} yields that there exists one
-and only one polynomial $Q\in K\left[  \alpha_{1},\alpha_{2},...,\alpha
-_{m},\beta_{1},\beta_{2},...,\beta_{n}\right]  $ such that%
+and only one polynomial $Q\in\mathbb{Z}\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{m},\beta_{1},\beta_{2},...,\beta_{n}\right]  $ such that%
 \[
 \sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
 1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}\prod_{\left(  i,j\right)
 \in S}U_{i}V_{j}=Q\left(  X_{1},X_{2},...,X_{m},Y_{1},Y_{2},...,Y_{m}\right)
-.
 \]
-Since the polynomial $\sum\limits_{\substack{S\subseteq\left\{
-1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  ;\\\left\vert
-S\right\vert =k}}\prod_{\left(  i,j\right)  \in S}U_{i}V_{j}$ has total degree
-$\leq k$ in the variables $U_{1},$ $U_{2},$ $...,$ $U_{m}$ and of total degree
-$\leq k$ in the variables $V_{1},$ $V_{2},$ $...,$ $V_{n}$, Theorem 4.2
-\textbf{(b)} yields that%
+in $\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{m},\beta_{1},\beta
+_{2},...,\beta_{n}\right]  $. Since the polynomial $\sum
+\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}\prod_{\left(  i,j\right)
+\in S}U_{i}V_{j}$ has total degree $\leq k$ in the variables $U_{1},$ $U_{2},$
+$...,$ $U_{m}$ and of total degree $\leq k$ in the variables $V_{1},$ $V_{2},$
+$...,$ $V_{n}$, Theorem 4.2 \textbf{(b)} yields that%
 \[
 \sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
 1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}\prod_{\left(  i,j\right)
@@ -618,12 +619,12 @@ $\leq k$ in the variables $V_{1},$ $V_{2},$ $...,$ $V_{n}$, Theorem 4.2
 ,...,Y_{k}\right)  ,
 \]
 where $Q_{k,k}$ is the image of the polynomial $Q$ under the canonical
-homomorphism $K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m},\beta_{1}%
-,\beta_{2},...,\beta_{n}\right]  \rightarrow K\left[  \alpha_{1},\alpha
-_{2},...,\alpha_{k},\beta_{1},\beta_{2},...,\beta_{k}\right]  $. However, this
-polynomial $Q_{k,k}$ is not independent of $n$ and $m$ yet (as the polynomial
-$P_{k}$ that we intend to construct should be), so we call it $Q_{k,k,\left[
-n,m\right]  }$ rather than just $Q_{k,k}$.
+homomorphism $\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{m},\beta
+_{1},\beta_{2},...,\beta_{n}\right]  \rightarrow\mathbb{Z}\left[  \alpha
+_{1},\alpha_{2},...,\alpha_{k},\beta_{1},\beta_{2},...,\beta_{k}\right]  $.
+However, this polynomial $Q_{k,k}$ is not independent of $n$ and $m$ yet (as
+the polynomial $P_{k}$ that we intend to construct should be), so we call it
+$Q_{k,k,\left[  n,m\right]  }$ rather than just $Q_{k,k}$.
 
 Now we forget that we fixed $n\in\mathbb{N}$ and $m\in\mathbb{N}$. We have
 learnt that%
@@ -633,14 +634,14 @@ learnt that%
 \in S}U_{i}V_{j}=Q_{k,k,\left[  n,m\right]  }\left(  X_{1},X_{2}%
 ,...,X_{k},Y_{1},Y_{2},...,Y_{k}\right)
 \]
-in the polynomial ring $K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2}%
-,...,V_{n}\right]  $ for every $n\in\mathbb{N}$ and $m\in\mathbb{N}$. Now,
-define a polynomial $P_{k}\in K\left[  \alpha_{1},\alpha_{2},...,\alpha
-_{k},\beta_{1},\beta_{2},...,\beta_{k}\right]  $ by $P_{k}=Q_{k,k,\left[
-k,k\right]  }.$
+in the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m},V_{1}%
+,V_{2},...,V_{n}\right]  $ for every $n\in\mathbb{N}$ and $m\in\mathbb{N}$.
+Now, define a polynomial $P_{k}\in\mathbb{Z}\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{k},\beta_{1},\beta_{2},...,\beta_{k}\right]  $ by
+$P_{k}=Q_{k,k,\left[  k,k\right]  }.$
 
 \textbf{Theorem 4.3.} \textbf{(a)} The polynomial $P_{k}$ just defined
-satisfies the equation (\ref{Pk1}) in the polynomial ring $K\left[
+satisfies the equation (\ref{Pk1}) in the polynomial ring $\mathbb{Z}\left[
 U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]  $ for every $n\in
 \mathbb{N}$ and $m\in\mathbb{N}$. (Hence, the goal mentioned above in the
 definition is actually achieved.)
@@ -652,10 +653,10 @@ definition is actually achieved.)
 P_{k}\left(  X_{1},X_{2},...,X_{k},Y_{1},Y_{2},...,Y_{k}\right)  T^{k}
 \label{Pk2}%
 \end{equation}
-in the ring $\left(  K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}%
-\right]  \right)  \left[  \left[  T\right]  \right]  $. (Note that the right
-hand side of this equation is a power series with coefficient $1$ before
-$T^{0}$, since $P_{0}=1$.)
+in the ring $\left(  \mathbb{Z}\left[  U_{1},U_{2},...,U_{m},V_{1}%
+,V_{2},...,V_{n}\right]  \right)  \left[  \left[  T\right]  \right]  $. (Note
+that the right hand side of this equation is a power series with coefficient
+$1$ before $T^{0}$, since $P_{0}=1$.)
 \end{quote}
 
 \textit{Proof of Theorem 4.3:} \textbf{(a)} \textit{1st Step:} Fix
@@ -669,11 +670,11 @@ we claim that $Q_{k,k,\left[  n,m\right]  }=P_{k}$.
 \in S}U_{i}V_{j}=Q_{k,k,\left[  n,m\right]  }\left(  X_{1},X_{2}%
 ,...,X_{k},Y_{1},Y_{2},...,Y_{k}\right)
 \]
-in the polynomial ring $K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2}%
-,...,V_{n}\right]  $. Applying the canonical ring epimorphism $K\left[
-U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]  \rightarrow K\left[
-U_{1},U_{2},...,U_{k},V_{1},V_{2},...,V_{k}\right]  $ (which maps every
-$U_{i}$ to $\left\{
+in the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m},V_{1}%
+,V_{2},...,V_{n}\right]  $. Applying the canonical ring epimorphism
+$\mathbb{Z}\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]
+\rightarrow\mathbb{Z}\left[  U_{1},U_{2},...,U_{k},V_{1},V_{2},...,V_{k}%
+\right]  $ (which maps every $U_{i}$ to $\left\{
 \begin{array}
 [c]{c}%
 U_{i},\text{ if }i\leq k;\\
@@ -694,9 +695,9 @@ the corresponding $Y_{j}$ of the image ring!), we obtain%
 \in S}U_{i}V_{j}=Q_{k,k,\left[  n,m\right]  }\left(  X_{1},X_{2}%
 ,...,X_{k},Y_{1},Y_{2},...,Y_{k}\right)
 \]
-in the polynomial ring $K\left[  U_{1},U_{2},...,U_{k},V_{1},V_{2}%
-,...,V_{k}\right]  $. On the other hand, the definition of $Q_{k,k,\left[
-k,k\right]  }$ yields%
+in the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{k},V_{1}%
+,V_{2},...,V_{k}\right]  $. On the other hand, the definition of
+$Q_{k,k,\left[  k,k\right]  }$ yields%
 \[
 \sum_{\substack{S\subseteq\left\{  1,2,...,k\right\}  \times\left\{
 1,2,...,k\right\}  ;\\\left\vert S\right\vert =k}}\prod_{\left(  i,j\right)
@@ -710,14 +711,14 @@ Q_{k,k,\left[  n,m\right]  }\left(  X_{1},X_{2},...,X_{k},Y_{1},Y_{2}%
 ,...,X_{k},Y_{1},Y_{2},...,Y_{k}\right)  .
 \]
 Since the elements $X_{1},$ $X_{2},$ $...,$ $X_{k},$ $Y_{1},$ $Y_{2},$ $...,$
-$Y_{k}$ of $K\left[  U_{1},U_{2},...,U_{k},V_{1},V_{2},...,V_{k}\right]  $ are
-algebraically independent (by Theorem 4.2 \textbf{(a)}), this yields
-$Q_{k,k,\left[  n,m\right]  }=Q_{k,k,\left[  k,k\right]  }.$ In other words,
-$Q_{k,k,\left[  n,m\right]  }=P_{k},$ and the 1st Step is proven.
+$Y_{k}$ of $\mathbb{Z}\left[  U_{1},U_{2},...,U_{k},V_{1},V_{2},...,V_{k}%
+\right]  $ are algebraically independent (by Theorem 4.2 \textbf{(a)}), this
+yields $Q_{k,k,\left[  n,m\right]  }=Q_{k,k,\left[  k,k\right]  }.$ In other
+words, $Q_{k,k,\left[  n,m\right]  }=P_{k},$ and the 1st Step is proven.
 
 \textit{2nd Step:} For every $n\in\mathbb{N}$ and $m\in\mathbb{N}$, the
-equation (\ref{Pk1}) is satisfied in the polynomial ring $K\left[  U_{1}%
-,U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]  $.
+equation (\ref{Pk1}) is satisfied in the polynomial ring $\mathbb{Z}\left[
+U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]  $.
 
 \textit{Proof.} Let $n^{\prime}\in\mathbb{N}$ be such that $n^{\prime}\geq n$
 and $n^{\prime}\geq k$. Let $m^{\prime}\in\mathbb{N}$ be such that $m^{\prime
@@ -732,11 +733,12 @@ The definition of $Q_{k,k,\left[  n^{\prime},m^{\prime}\right]  }$ yields
 i,j\right)  \in S}U_{i}V_{j}=Q_{k,k,\left[  n^{\prime},m^{\prime}\right]
 }\left(  X_{1},X_{2},...,X_{k},Y_{1},Y_{2},...,Y_{k}\right)
 \]
-in the polynomial ring $K\left[  U_{1},U_{2},...,U_{m^{\prime}},V_{1}%
-,V_{2},...,V_{n^{\prime}}\right]  $. Applying the canonical ring epimorphism
-$K\left[  U_{1},U_{2},...,U_{m^{\prime}},V_{1},V_{2},...,V_{n^{\prime}%
-}\right]  \rightarrow K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2}%
-,...,V_{n}\right]  $ (which maps every $U_{i}$ to $\left\{
+in the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m^{\prime}}%
+,V_{1},V_{2},...,V_{n^{\prime}}\right]  $. Applying the canonical ring
+epimorphism $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m^{\prime}},V_{1}%
+,V_{2},...,V_{n^{\prime}}\right]  \rightarrow\mathbb{Z}\left[  U_{1}%
+,U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]  $ (which maps every $U_{i}$ to
+$\left\{
 \begin{array}
 [c]{c}%
 U_{i},\text{ if }i\leq m;\\
@@ -757,10 +759,11 @@ the corresponding $Y_{j}$ of the image ring!), we obtain%
 \in S}U_{i}V_{j}=\underbrace{Q_{k,k,\left[  n^{\prime},m^{\prime}\right]  }%
 }_{=P_{k}}\left(  X_{1},X_{2},...,X_{k},Y_{1},Y_{2},...,Y_{k}\right)
 \]
-in the polynomial ring $K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2}%
-,...,V_{n}\right]  $. Hence, the equation (\ref{Pk1}) is satisfied in the
-polynomial ring $K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]
-.$ This completes the 2nd Step and proves Theorem 4.3 \textbf{(a)}.
+in the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m},V_{1}%
+,V_{2},...,V_{n}\right]  $. Hence, the equation (\ref{Pk1}) is satisfied in
+the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m},V_{1}%
+,V_{2},...,V_{n}\right]  .$ This completes the 2nd Step and proves Theorem 4.3
+\textbf{(a)}.
 
 \textbf{(b)} Immediately follows from part \textbf{(a)}.
 
@@ -768,22 +771,20 @@ Just as our above definition of the polynomials $P_{k}$ and Theorem 4.3 based
 upon Theorem 4.2, we can make another definition basing upon Theorem 4.1:
 
 \begin{quote}
-\textbf{Definition.} Let $K$ be a ring.
-
-For every set $H$ and every $j\in\mathbb{N}$, we denote by $\mathcal{P}%
-_{j}\left(  H\right)  $ the set of all $j$-element subsets of $H.$ (This is
-also often denoted as $\dbinom{H}{j}$.)
+\textbf{Definition.} For every set $H$ and every $j\in\mathbb{N}$, let us
+denote by $\mathcal{P}_{j}\left(  H\right)  $ the set of all $j$-element
+subsets of $H.$ (This is also often denoted as $\dbinom{H}{j}$.)
 
 Let $j\in\mathbb{N}$. Let $k\in\mathbb{N}$. Our goal now is to define a
-polynomial $P_{k,j}\in K\left[  \alpha_{1},\alpha_{2},...,\alpha_{kj}\right]
-$ such that%
+polynomial $P_{k,j}\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
+_{kj}\right]  $ such that%
 \begin{equation}
 \sum_{\substack{S\subseteq\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}
 \right)  ;\\\left\vert S\right\vert =k}}\prod_{I\in S}\prod_{i\in I}%
 U_{i}=P_{k,j}\left(  X_{1},X_{2},...,X_{kj}\right)  \label{Pkj1}%
 \end{equation}
-in the polynomial ring $K\left[  U_{1},U_{2},...,U_{m}\right]  $ for every
-$m\in\mathbb{N}$, where $X_{i}=\sum\limits_{\substack{S\subseteq\left\{
+in the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ for
+every $m\in\mathbb{N}$, where $X_{i}=\sum\limits_{\substack{S\subseteq\left\{
 1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{i}$
 is the $i$-th elementary symmetric polynomial in the variables $U_{1},$
 $U_{2},$ $...,$ $U_{m}$ for every $i\in\mathbb{N}$.
@@ -791,12 +792,12 @@ $U_{2},$ $...,$ $U_{m}$ for every $i\in\mathbb{N}$.
 In order to do this, we first fix some $m\in\mathbb{N}$. The polynomial%
 \[
 \sum_{\substack{S\subseteq\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}
-\right)  ;\\\left\vert S\right\vert =k}}\prod_{I\in S}\prod_{i\in I}U_{i}\in
-K\left[  U_{1},U_{2},...,U_{m}\right]
+\right)  ;\\\left\vert S\right\vert =k}}\prod_{I\in S}\prod_{i\in I}U_{i}%
+\in\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]
 \]
 is symmetric. Thus, Theorem 4.1 \textbf{(a)} yields that there exists one and
-only one polynomial $Q\in K\left[  \alpha_{1},\alpha_{2},...,\alpha
-_{m}\right]  $ such that%
+only one polynomial $Q\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2}%
+,...,\alpha_{m}\right]  $ such that%
 \[
 \sum_{\substack{S\subseteq\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}
 \right)  ;\\\left\vert S\right\vert =k}}\prod_{I\in S}\prod_{i\in I}%
@@ -813,10 +814,10 @@ yields that%
 U_{i}=Q_{k,j}\left(  X_{1},X_{2},...,X_{kj}\right)  ,
 \]
 where $Q_{k,j}$ is the image of the polynomial $Q$ under the canonical
-homomorphism $K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]
-\rightarrow K\left[  \alpha_{1},\alpha_{2},...,\alpha_{kj}\right]  $. However,
-this polynomial $Q_{k,j}$ is not independent of $m$ yet (as the polynomial
-$P_{k,j}$ that we intend to construct should be), so we call it
+homomorphism $\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]
+\rightarrow\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{kj}\right]  $.
+However, this polynomial $Q_{k,j}$ is not independent of $m$ yet (as the
+polynomial $P_{k,j}$ that we intend to construct should be), so we call it
 $Q_{k,j,\left[  m\right]  }$ rather than just $Q_{k,j}$.
 
 Now we forget that we fixed $m\in\mathbb{N}$. We have learnt that%
@@ -825,13 +826,13 @@ Now we forget that we fixed $m\in\mathbb{N}$. We have learnt that%
 \right)  ;\\\left\vert S\right\vert =k}}\prod_{I\in S}\prod_{i\in I}%
 U_{i}=Q_{k,j,\left[  m\right]  }\left(  X_{1},X_{2},...,X_{kj}\right)  ,
 \]
-in the polynomial ring $K\left[  U_{1},U_{2},...,U_{m}\right]  $ for every
-$m\in\mathbb{N}$. Now, define a polynomial $P_{k,j}\in K\left[  \alpha
-_{1},\alpha_{2},...,\alpha_{kj}\right]  $ by $P_{k,j}=Q_{k,j,\left[
+in the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ for
+every $m\in\mathbb{N}$. Now, define a polynomial $P_{k,j}\in\mathbb{Z}\left[
+\alpha_{1},\alpha_{2},...,\alpha_{kj}\right]  $ by $P_{k,j}=Q_{k,j,\left[
 kj\right]  }.$
 
 \textbf{Theorem 4.4.} \textbf{(a)} The polynomial $P_{k,j}$ just defined
-satisfies the equation (\ref{Pkj1}) in the polynomial ring $K\left[
+satisfies the equation (\ref{Pkj1}) in the polynomial ring $\mathbb{Z}\left[
 U_{1},U_{2},...,U_{m}\right]  $ for every $m\in\mathbb{N}$. (Hence, the goal
 mentioned above in the definition is actually achieved.)
 
@@ -841,9 +842,10 @@ mentioned above in the definition is actually achieved.)
 }\left(  1+\prod_{i\in I}U_{i}\cdot T\right)  =\sum_{k\in\mathbb{N}}%
 P_{k,j}\left(  X_{1},X_{2},...,X_{kj}\right)  T^{k} \label{Pkj2}%
 \end{equation}
-in the ring $\left(  K\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[
-\left[  T\right]  \right]  $. (Note that the right hand side of this equation
-is a power series with coefficient $1$ before $T^{0}$, since $P_{0,j}=1$.)
+in the ring $\left(  \mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)
+\left[  \left[  T\right]  \right]  $. (Note that the right hand side of this
+equation is a power series with coefficient $1$ before $T^{0}$, since
+$P_{0,j}=1$.)
 \end{quote}
 
 \textit{Proof of Theorem 4.4:} \textbf{(a)} \textit{1st Step:} Fix
@@ -856,10 +858,10 @@ m\right]  }=P_{k,j}$.
 \right)  ;\\\left\vert S\right\vert =k}}\prod_{I\in S}\prod_{i\in I}%
 U_{i}=Q_{k,j,\left[  m\right]  }\left(  X_{1},X_{2},...,X_{kj}\right)
 \]
-in the polynomial ring $K\left[  U_{1},U_{2},...,U_{m}\right]  $. Applying the
-canonical ring epimorphism $K\left[  U_{1},U_{2},...,U_{m}\right]  \rightarrow
-K\left[  U_{1},U_{2},...,U_{kj}\right]  $ (which maps every $U_{i}$ to
-$\left\{
+in the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $.
+Applying the canonical ring epimorphism $\mathbb{Z}\left[  U_{1}%
+,U_{2},...,U_{m}\right]  \rightarrow\mathbb{Z}\left[  U_{1},U_{2}%
+,...,U_{kj}\right]  $ (which maps every $U_{i}$ to $\left\{
 \begin{array}
 [c]{c}%
 U_{i},\text{ if }i\leq kj;\\
@@ -872,8 +874,8 @@ $X_{i}$ to the corresponding $X_{i}$ of the image ring!), we obtain%
 \right)  ;\\\left\vert S\right\vert =k}}\prod_{I\in S}\prod_{i\in I}%
 U_{i}=Q_{k,j,\left[  m\right]  }\left(  X_{1},X_{2},...,X_{kj}\right)
 \]
-in the polynomial ring $K\left[  U_{1},U_{2},...,U_{kj}\right]  $. On the
-other hand, the definition of $Q_{k,j,\left[  kj\right]  }$ yields%
+in the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{kj}\right]  $. On
+the other hand, the definition of $Q_{k,j,\left[  kj\right]  }$ yields%
 \[
 \sum_{\substack{S\subseteq\mathcal{P}_{j}\left(  \left\{  1,2,...,kj\right\}
 \right)  ;\\\left\vert S\right\vert =k}}\prod_{I\in S}\prod_{i\in I}%
@@ -884,14 +886,15 @@ in the same ring. These two equations yield%
 Q_{k,j,\left[  m\right]  }\left(  X_{1},X_{2},...,X_{kj}\right)
 =Q_{k,j,\left[  kj\right]  }\left(  X_{1},X_{2},...,X_{kj}\right)  .
 \]
-Since the elements $X_{1},$ $X_{2},$ $...,$ $X_{kj}$ of $K\left[  U_{1}%
-,U_{2},...,U_{kj}\right]  $ are algebraically independent (by Theorem 4.1
+Since the elements $X_{1},$ $X_{2},$ $...,$ $X_{kj}$ of $\mathbb{Z}\left[
+U_{1},U_{2},...,U_{kj}\right]  $ are algebraically independent (by Theorem 4.1
 \textbf{(a)}), this yields $Q_{k,j,\left[  m\right]  }=Q_{k,j,\left[
 kj\right]  }.$ In other words, $Q_{k,j,\left[  m\right]  }=P_{k,j},$ and the
 1st Step is proven.
 
 \textit{2nd Step:} For every $m\in\mathbb{N}$, the equation (\ref{Pkj1}) is
-satisfied in the polynomial ring $K\left[  U_{1},U_{2},...,U_{m}\right]  $.
+satisfied in the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}%
+\right]  $.
 
 \textit{Proof.} Let $m^{\prime}\in\mathbb{N}$ be such that $m^{\prime}\geq m$
 and $m^{\prime}\geq kj$. Then, the 1st Step (applied to $m^{\prime}$ instead
@@ -904,10 +907,10 @@ The definition of $Q_{k,j,\left[  m^{\prime}\right]  }$ yields
 I}U_{i}=Q_{k,j,\left[  m^{\prime}\right]  }\left(  X_{1},X_{2},...,X_{kj}%
 \right)
 \]
-in the polynomial ring $K\left[  U_{1},U_{2},...,U_{m^{\prime}}\right]  $.
-Applying the canonical ring epimorphism $K\left[  U_{1},U_{2},...,U_{m^{\prime
-}}\right]  \rightarrow K\left[  U_{1},U_{2},...,U_{m}\right]  $ (which maps
-every $U_{i}$ to $\left\{
+in the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m^{\prime}%
+}\right]  $. Applying the canonical ring epimorphism $\mathbb{Z}\left[
+U_{1},U_{2},...,U_{m^{\prime}}\right]  \rightarrow\mathbb{Z}\left[
+U_{1},U_{2},...,U_{m}\right]  $ (which maps every $U_{i}$ to $\left\{
 \begin{array}
 [c]{c}%
 U_{i},\text{ if }i\leq m;\\
@@ -921,10 +924,10 @@ $X_{i}$ to the corresponding $X_{i}$ of the image ring!), we obtain%
 U_{i}=\underbrace{Q_{k,j,\left[  m^{\prime}\right]  }}_{=P_{k,j}}\left(
 X_{1},X_{2},...,X_{kj}\right)
 \]
-in the polynomial ring $K\left[  U_{1},U_{2},...,U_{m}\right]  .$ This means
-that the equation (\ref{Pkj1}) is satisfied in the polynomial ring $K\left[
-U_{1},U_{2},...,U_{m}\right]  .$ This completes the 2nd Step and proves
-Theorem 4.4 \textbf{(a)}.
+in the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  .$
+This means that the equation (\ref{Pkj1}) is satisfied in the polynomial ring
+$\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  .$ This completes the 2nd
+Step and proves Theorem 4.4 \textbf{(a)}.
 
 \textbf{(b)} Immediately follows from part \textbf{(a)}.
 
@@ -1140,10 +1143,10 @@ u\widehat{+}v=\Pi\left(  \widetilde{K}_{u,v},\left[  u_{1},u_{2}%
 \]
 
 
-\textbf{(c)} Consider the ring $K\left[  U_{1},U_{2},...,U_{m},V_{1}%
-,V_{2},...,V_{n}\right]  $ (the polynomial ring in $m+n$ indeterminates
+\textbf{(c)} Consider the ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}%
+,V_{1},V_{2},...,V_{n}\right]  $ (the polynomial ring in $m+n$ indeterminates
 $U_{1},$ $U_{2},$ $...,$ $U_{m},$ $V_{1},$ $V_{2},$ $...,$ $V_{n}$ over the
-ring $K$). For every $i\in\mathbb{N}$, let $X_{i}=\sum
+ring $\mathbb{Z}$). For every $i\in\mathbb{N}$, let $X_{i}=\sum
 \limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}  ;\\\left\vert
 S\right\vert =i}}\prod\limits_{k\in S}U_{i}$ be the $i$-th elementary
 symmetric polynomial in the variables $U_{1},$ $U_{2},$ $...,$ $U_{m}$. For
@@ -1152,13 +1155,19 @@ every $j\in\mathbb{N}$, let $Y_{j}=\sum\limits_{\substack{S\subseteq\left\{
 be the $j$-th elementary symmetric polynomial in the variables $V_{1},$
 $V_{2},$ $...,$ $V_{n}$.
 
-There exists a ring homomorphism $K\left[  U_{1},U_{2},...,U_{m}\right]
-\rightarrow\widetilde{K}_{u}$ which maps $U_{i}$ to $u_{i}$ for every $i$.
-This homomorphism maps $X_{i}$ to $a_{i}$ for every $i\in\mathbb{N}$ (because
-$a_{i}$ is the $i$-th elementary symmetric polynomial applied to $u_{1},$
-$u_{2},$ $...,$ $u_{m}$, since $\sum\limits_{i\in\mathbb{N}}a_{i}T^{i}%
-=u=\prod\limits_{i=1}^{m}\left(  1+u_{i}T\right)  $). Hence, applying this
-homomorphism to (\ref{Pkj2}), we obtain%
+There exists a ring homomorphism%
+\[
+\mathbb{Z}\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]
+\rightarrow\widetilde{K}_{u,v}%
+\]
+which maps $U_{i}$ to $u_{i}$ for every $i$ and $V_{j}$ to $v_{j}$ for every
+$j$. This homomorphism maps $X_{i}$ to $a_{i}$ for every $i\in\mathbb{N}$
+(because $a_{i}$ is the $i$-th elementary symmetric polynomial applied to
+$u_{1},$ $u_{2},$ $...,$ $u_{m}$, since $\sum\limits_{i\in\mathbb{N}}%
+a_{i}T^{i}=u=\prod\limits_{i=1}^{m}\left(  1+u_{i}T\right)  $) and $Y_{j}$ to
+$b_{j}$ for every $j\in\mathbb{N}$ (for a similar reason). Hence, applying
+this homomorphism to (\ref{Pk2}), we obtain%
+
 \[
 \prod_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
 1,2,...,n\right\}  }\left(  1+u_{i}v_{j}T\right)  =\sum_{k\in\mathbb{N}}%
@@ -1180,24 +1189,19 @@ and thus $u\widehat{\cdot}v=\Pi\left(  \widetilde{K}_{u,v},\left[  u_{i}%
 v_{j}\mid\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
 1,2,...,n\right\}  \right]  \right)  $, proving Theorem 5.3 \textbf{(c)}.
 
-\textbf{(d)} Consider the polynomial ring $K\left[  U_{1},U_{2},...,U_{m}%
-\right]  $. For every $i\in\mathbb{N}$, let $X_{i}=\sum
-\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}  ;\\\left\vert
+\textbf{(d)} Consider the polynomial ring $\mathbb{Z}\left[  U_{1}%
+,U_{2},...,U_{m}\right]  $. For every $i\in\mathbb{N}$, let $X_{i}%
+=\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}  ;\\\left\vert
 S\right\vert =i}}\prod\limits_{k\in S}U_{i}$ be the $i$-th elementary
 symmetric polynomial in the variables $U_{1},$ $U_{2},$ $...,$ $U_{m}$.
 
-There exists a ring homomorphism%
-\[
-K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]  \rightarrow
-\widetilde{K}_{u,v}%
-\]
-which maps $U_{i}$ to $u_{i}$ for every $i$ and $V_{j}$ to $v_{j}$ for every
-$j$. This homomorphism maps $X_{i}$ to $a_{i}$ for every $i\in\mathbb{N}$
+There exists a ring homomorphism $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}%
+\right]  \rightarrow\widetilde{K}_{u}$ which maps $U_{i}$ to $u_{i}$ for every
+$i$. This homomorphism maps $X_{i}$ to $a_{i}$ for every $i\in\mathbb{N}$
 (because $a_{i}$ is the $i$-th elementary symmetric polynomial applied to
 $u_{1},$ $u_{2},$ $...,$ $u_{m}$, since $\sum\limits_{i\in\mathbb{N}}%
-a_{i}T^{i}=u=\prod\limits_{i=1}^{m}\left(  1+u_{i}T\right)  $) and $Y_{j}$ to
-$b_{j}$ for every $j\in\mathbb{N}$ (for a similar reason). Hence, applying
-this homomorphism to (\ref{Pk2}), we obtain%
+a_{i}T^{i}=u=\prod\limits_{i=1}^{m}\left(  1+u_{i}T\right)  $). Hence,
+applying this homomorphism to (\ref{Pkj2}), we obtain%
 \[
 \prod_{I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)
 }\left(  1+\prod_{i\in I}u_{i}\cdot T\right)  =\sum_{k\in\mathbb{N}}%
@@ -1554,21 +1558,23 @@ _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring.
 Then, $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a
 special $\lambda$-ring if and only if%
 \begin{align}
-& \lambda^{k}\left(  xy\right)  =P_{k}\left(  \lambda^{1}\left(  x\right)
+&  \lambda^{k}\left(  xy\right)  =P_{k}\left(  \lambda^{1}\left(  x\right)
 ,\lambda^{2}\left(  x\right)  ,...,\lambda^{k}\left(  x\right)  ,\lambda
 ^{1}\left(  y\right)  ,\lambda^{2}\left(  y\right)  ,...,\lambda^{k}\left(
-y\right)  \right)  \nonumber\\
-& \ \ \ \ \ \ \ \ \ \ \text{for every }k\in\mathbb{N}\text{, }x\in K\text{ and
-}y\in K\label{Lkxy}%
+y\right)  \right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \text{for every }k\in\mathbb{N}\text{, }x\in K\text{
+and }y\in K \label{Lkxy}%
 \end{align}
 and%
 \begin{align}
-& \lambda^{k}\left(  \lambda^{j}\left(  x\right)  \right)  =P_{k,j}\left(
+&  \lambda^{k}\left(  \lambda^{j}\left(  x\right)  \right)  =P_{k,j}\left(
 \lambda^{1}\left(  x\right)  ,\lambda^{2}\left(  x\right)  ,...,\lambda
-^{kj}\left(  x\right)  \right)  \nonumber\\
-& \ \ \ \ \ \ \ \ \ \ \text{for every }k\in\mathbb{N}\text{, }j\in
-\mathbb{N}\text{ and }x\in K.\label{LkLjx}%
+^{kj}\left(  x\right)  \right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \text{for every }k\in\mathbb{N}\text{, }j\in
+\mathbb{N}\text{ and }x\in K. \label{LkLjx}%
 \end{align}
+
+
 
 \end{quote}
 
@@ -1595,7 +1601,139 @@ K\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $
 is a special $\lambda$-ring.
 \end{quote}
 
-\textit{Proof of Theorem 6.2.} f
+\textit{Proof of Theorem 6.2.} According to Theorem 6.1, we only have to prove
+that%
+\begin{align}
+&  \widehat{\lambda}^{k}\left(  u\widehat{\cdot}v\right)  =P_{k}\left(
+\widehat{\lambda}^{1}\left(  u\right)  ,\widehat{\lambda}^{2}\left(  u\right)
+,...,\widehat{\lambda}^{k}\left(  u\right)  ,\widehat{\lambda}^{1}\left(
+v\right)  ,\widehat{\lambda}^{2}\left(  v\right)  ,...,\widehat{\lambda}%
+^{k}\left(  v\right)  \right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \text{for every }k\in\mathbb{N}\text{, }u\in
+\Lambda\left(  K\right)  \text{ and }v\in\Lambda\left(  K\right)
+\label{6.2.P.Lkxy}%
+\end{align}
+and%
+\begin{align}
+&  \widehat{\lambda}^{k}\left(  \widehat{\lambda}^{j}\left(  u\right)
+\right)  =P_{k,j}\left(  \widehat{\lambda}^{1}\left(  u\right)  ,\widehat
+{\lambda}^{2}\left(  u\right)  ,...,\widehat{\lambda}^{kj}\left(  u\right)
+\right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \text{for every }k\in\mathbb{N}\text{, }j\in
+\mathbb{N}\text{ and }u\in\Lambda\left(  K\right)  . \label{6.2.P.LkLjx}%
+\end{align}
+Note that when $S\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
+_{kj}\right]  $ is a polynomial, and we are writing $S\left(  \widehat
+{\lambda}^{1}\left(  u\right)  ,\widehat{\lambda}^{2}\left(  u\right)
+,...,\widehat{\lambda}^{kj}\left(  u\right)  \right)  $, we mean the
+polynomial $S$ applied to $\widehat{\lambda}^{1}\left(  u\right)  ,$
+$\widehat{\lambda}^{2}\left(  u\right)  ,$ $...,$ $\widehat{\lambda}%
+^{kj}\left(  u\right)  $ \textit{as elements of the ring }$\Lambda\left(
+K\right)  $ (and not as elements of the ring $K\left[  \left[  T\right]
+\right]  $). For instance, if $S=\alpha_{1}+\alpha_{2}+...+\alpha_{kj},$ then
+$S\left(  \widehat{\lambda}^{1}\left(  u\right)  ,\widehat{\lambda}^{2}\left(
+u\right)  ,...,\widehat{\lambda}^{kj}\left(  u\right)  \right)  $ means
+$\widehat{\lambda}^{1}\left(  u\right)  \widehat{+}\widehat{\lambda}%
+^{2}\left(  u\right)  \widehat{+}...\widehat{+}\widehat{\lambda}^{kj}\left(
+u\right)  $ (and not $\widehat{\lambda}^{1}\left(  u\right)  +\widehat
+{\lambda}^{2}\left(  u\right)  +...+\widehat{\lambda}^{kj}\left(  u\right)  $,
+where $+$ denotes the addition in the ring $K\left[  \left[  T\right]
+\right]  $). This explains how the right hand sides of the equations
+(\ref{6.2.P.Lkxy}) and (\ref{6.2.P.LkLjx}) should be understood.
+
+Let us prove (\ref{6.2.P.Lkxy}) here. Since the subset $1+K\left[  T\right]
+^{+}$ is dense in $1+K\left[  \left[  T\right]  \right]  ^{+}=\Lambda\left(
+K\right)  $ (by Theorem 5.5 \textbf{(a)}), and since $\widehat{\cdot}$ and
+$\widehat{\lambda}^{i}$ are continuous (by Theorem 5.5 \textbf{(d)}), it will
+be enough to verify (\ref{6.2.P.Lkxy}) for $u\in1+K\left[  T\right]  ^{+}$ and
+$v\in1+K\left[  T\right]  ^{+}$. Then, there exist some $\left(  \widetilde
+{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)  \in
+K^{\operatorname*{int}}$ such that $u=\Pi\left(  \widetilde{K},\left[
+u_{1},u_{2},...,u_{m}\right]  \right)  ,$ and some $\left(  \widetilde{K}%
+_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  \in K^{\operatorname*{int}%
+}$ such that $v=\Pi\left(  \widetilde{K},\left[  v_{1},v_{2},...,v_{n}\right]
+\right)  .$ By Theorem 5.3 \textbf{(a)}, there exists a finite-free extension
+ring $\widetilde{K}_{u,v}$ of $K$ which contains both $\widetilde{K}_{u}$ and
+$\widetilde{K}_{v}$ as subrings. We replace $K$ by $\widetilde{K}_{u,v}$ now
+(silently using the obvious fact that the injection $K\rightarrow\widetilde
+{K}_{u,v}$ canonically yields an injection $\Lambda\left(  K\right)
+\rightarrow\Lambda\left(  \widetilde{K}_{u,v}\right)  $). Hence, we can now
+assume that $u_{1},$ $u_{2},$ $...,$ $u_{m},$ $v_{1},$ $v_{2},$ $...,$ $v_{n}$
+all lie in $K$. Theorem 5.3 \textbf{(c)} yields $u\widehat{\cdot}v=\Pi\left(
+\widetilde{K}_{u,v},\left[  u_{i}v_{j}\mid\left(  i,j\right)  \in\left\{
+1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right]  \right)  $.
+
+There exists a ring homomorphism%
+\[
+\mathbb{Z}\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]
+\rightarrow\Lambda\left(  K\right)
+\]
+which maps $U_{i}$ to $1+u_{i}T$ for every $i$ and $V_{j}$ to $1+v_{j}T$ for
+every $j$. This homomorphism maps $X_{i}=\sum\limits_{\substack{S\subseteq
+\left\{  1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in
+S}U_{i}$ to%
+\begin{align*}
+\widehat{\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
+;\\\left\vert S\right\vert =i}}}\widehat{\prod\limits_{k\in S}}\underbrace
+{\left(  1+u_{i}T\right)  }_{=\Pi\left(  K,\left[  u_{i}\right]  \right)  } &
+=\widehat{\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
+;\\\left\vert S\right\vert =i}}}\underbrace{\widehat{\prod\limits_{k\in S}}%
+\Pi\left(  K,\left[  u_{i}\right]  \right)  }_{\substack{=\Pi\left(  K,\left[
+\prod\limits_{i\in S}u_{i}\right]  \right)  \\\text{according to Corollary 5.4
+\textbf{(b)}}}}=\widehat{\sum\limits_{\substack{S\subseteq\left\{
+1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}}\Pi\left(  K,\left[
+\prod\limits_{i\in S}u_{i}\right]  \right)  \\
+&  =\Pi\left(  K,\left[  \prod\limits_{i\in S}u_{i}\mid S\subseteq\left\{
+1,2,...,m\right\}  ;\ \left\vert S\right\vert =i\right]  \right)  \\
+&  =\Pi\left(  K,\left[  \prod\limits_{i\in S}u_{i}\mid S\in\mathcal{P}%
+_{i}\left(  \left\{  1,2,...,m\right\}  \right)  \right]  \right)  \\
+&  =\widehat{\lambda}^{i}\left(  u\right)  \ \ \ \ \ \ \ \ \ \ \left(
+\text{after Theorem 5.3 \textbf{(d)}}\right)
+\end{align*}
+and $Y_{j}$ to $b_{j}$ for every $j\in\mathbb{N}$ (according to a similar
+argument). Hence, applying this homomorphism to (\ref{Pk1}), we obtain%
+\[
+\widehat{\sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}}\widehat{\prod_{\left(
+i,j\right)  \in S}}\left(  1+u_{i}T\right)  \widehat{\cdot}\left(
+1+v_{j}T\right)  =P_{k}\left(  \widehat{\lambda}^{1}\left(  u\right)
+,\widehat{\lambda}^{2}\left(  u\right)  ,...,\widehat{\lambda}^{k}\left(
+u\right)  ,\widehat{\lambda}^{1}\left(  v\right)  ,\widehat{\lambda}%
+^{2}\left(  v\right)  ,...,\widehat{\lambda}^{k}\left(  v\right)  \right)  .
+\]
+But%
+\begin{align*}
+&  \widehat{\sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}
+\times\left\{  1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}}%
+\widehat{\prod_{\left(  i,j\right)  \in S}}\underbrace{\left(  1+u_{i}%
+T\right)  \widehat{\cdot}\left(  1+v_{j}T\right)  }_{\substack{=\Pi\left(
+K,\left[  u_{i}\right]  \right)  \widehat{\cdot}\Pi\left(  K,\left[
+v_{j}\right]  \right)  \\=\Pi\left(  K,\left[  u_{i}v_{j}\right]  \right)
+\text{ after}\\\text{Theorem 5.3 \textbf{(c)}}}}=\widehat{\sum
+_{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}}\underbrace{\widehat
+{\prod_{\left(  i,j\right)  \in S}}\Pi\left(  K,\left[  u_{i}v_{j}\right]
+\right)  }_{\substack{=\Pi\left(  K,\left[  \prod\limits_{\left(  i,j\right)
+\in S}u_{i}v_{j}\right]  \right)  \\\text{after Corollary 5.4 \textbf{(b)}}%
+}}\\
+&  =\widehat{\sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}
+\times\left\{  1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}}\Pi\left(
+K,\left[  \prod\limits_{\left(  i,j\right)  \in S}u_{i}v_{j}\right]  \right)
+\\
+&  =\Pi\left(  K,\left[  \prod_{\left(  i,j\right)  \in S}u_{i}v_{j}\mid
+S\subseteq\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}
+;\ \left\vert S\right\vert =k\right]  \right)  \ \ \ \ \ \ \ \ \ \ \left(
+\text{after Corollary 5.4 \textbf{(a)}}\right)  \\
+&  =\Pi\left(  K,\left[  \prod_{\left(  i,j\right)  \in S}u_{i}v_{j}\mid
+S\in\mathcal{P}_{k}\left(  \left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  \right)  \right]  \right)  \\
+&  =\widehat{\lambda}^{k}\left(  u\widehat{\cdot}v\right)
+\end{align*}
+after Theorem 5.3 \textbf{(d)} (applied to $u\widehat{\cdot}v$ instead of $u$,
+since $u\widehat{\cdot}v=\Pi\left(  \widetilde{K}_{u,v},\left[  u_{i}v_{j}%
+\mid\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  \right]  \right)  $). Thus, (\ref{6.2.P.Lkxy}) is proven.
+Similarly we can show (\ref{6.2.P.LkLjx}) (the details are left to the reader).
 
 \begin{center}
 \fbox{\textbf{References}}
