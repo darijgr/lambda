@@ -9,7 +9,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, October 10, 2011 12:26:24}
+%TCIDATA{LastRevised=Wednesday, October 12, 2011 20:22:31}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
@@ -42,7 +42,7 @@
 
 Darij Grinberg
 
-\textit{Version 0.0.11, last revised 9 Oct 2011}
+\textit{Version 0.0.11, last revised 12 Oct 2011}
 \end{center}
 
 This is a \textbf{BETA VERSION} and has never been proofread. \textbf{Please
@@ -1025,13 +1025,15 @@ satisfies $P\left(  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right)
 =Q\left(  X_{1},X_{2},...,X_{m},Y_{1},Y_{2},...,Y_{n}\right)  $. It only
 remains to prove that this is the only such polynomial. This amounts to
 showing that $X_{1},$ $X_{2},$ $...,$ $X_{m},$ $Y_{1},$ $Y_{2},$ $...,$
-$Y_{n}$ are algebraically independent over $K$. But this is clear since
-$X_{1},$ $X_{2},$ $...,$ $X_{m}$ are algebraically independent over $K$ (by
-Theorem 4.1) and the variables $Y_{1},$ $Y_{2},$ $...,$ $Y_{n}$ are
-algebraically independent over $K\left[  X_{1},X_{2},...,X_{m}\right]  $ (by
-Theorem 4.1, applied to $K\left[  X_{1},X_{2},...,X_{m}\right]  $ instead of
-$K$ and to $V_{1},$ $V_{2},$ $...,$ $V_{n}$ instead of $U_{1},$ $U_{2},$
-$...,$ $U_{m}$). [How does this implication work? Just write it down and see.]
+$Y_{n}$ are algebraically independent over $K$. But this is clear (from
+Exercise 4.3, applied to $S=K\left[  U_{1},U_{2},...,U_{m},V_{1}%
+,V_{2},...,V_{n}\right]  $, $T=K\left[  U_{1},U_{2},...,U_{m}\right]  $,
+$p_{i}=X_{i}$ and $q_{j}=Y_{j}$), since $X_{1},$ $X_{2},$ $...,$ $X_{m}$ are
+algebraically independent over $K$ (by Theorem 4.1 \textbf{(a)}) and the
+variables $Y_{1},$ $Y_{2},$ $...,$ $Y_{n}$ are algebraically independent over
+$K\left[  U_{1},U_{2},...,U_{m}\right]  $ (by Theorem 4.1 \textbf{(a)},
+applied to $K\left[  U_{1},U_{2},...,U_{m}\right]  $ instead of $K$ and to
+$V_{1},$ $V_{2},$ $...,$ $V_{n}$ instead of $U_{1},$ $U_{2},$ $...,$ $U_{m}$).
 
 For part \textbf{(b)}, we argue the same way as in \textbf{(a)}, but applying
 Theorem 4.1 \textbf{(b)} along with Theorem 4.1 \textbf{(a)}.
@@ -1577,6 +1579,15 @@ $\alpha_{q}$ be an element of $A$ for every $q\in Q$. Then, prove that%
 
 (These are four variants of one and the same identity, which is very easy but
 basic and used in much of the theory of symmetric polynomials.)
+
+\textit{Exercise 4.3.} Let $K$ be a ring. Let $S$ be a $K$-algebra. Let $T$ be
+a $K$-subalgebra of $S$. Let $p_{1}$, $p_{2}$, $...$, $p_{m}$ be $m$ elements
+of $T$, and let $q_{1}$, $q_{2}$, $...$, $q_{n}$ be $n$ elements of $S$.
+Assume that the elements $p_{1}$, $p_{2}$, $...$, $p_{m}$ are algebraically
+independent over $K$, and that the elements $q_{1}$, $q_{2}$, $...$, $q_{n}$
+are algebraically independent over $T$. Prove that the $m+n$ elements $p_{1}$,
+$p_{2}$, $...$, $p_{m}$, $q_{1}$, $q_{2}$, $...$, $q_{n}$ are algebraically
+independent over $K$.
 \end{quotation}
 
 \begin{center}
@@ -3092,7 +3103,7 @@ aS^{\alpha}\right)  =\lambda_{S^{\alpha}T}\left(  a\right)
 \\
 &  =\operatorname*{ev}\nolimits_{\left(  S^{\alpha}\right)  ^{i}T}\left(
 \widehat{\lambda}^{i}\left(  \lambda_{T}\left(  a\right)  \right)  \right)
-\ \ \ \ \ \ \ \ \ \ \left(  \text{due to the commutative diagramm
+\ \ \ \ \ \ \ \ \ \ \left(  \text{due to the commutative diagram
 (\ref{7.3.commdiag})}\right) \\
 &  =\operatorname*{ev}\nolimits_{\left(  S^{\alpha}\right)  ^{i}T}\left(
 \lambda_{T}\left(  \lambda^{i}\left(  a\right)  \right)  \right) \\
@@ -4954,8 +4965,6 @@ In other words, we define a map $\operatorname*{Coeff}\nolimits_{i}:R\left[
 \text{ (with }a_{j}\in R\text{ for every }j\in\mathbb{N}\text{)}\right)  .
 \]
 
-
-
 \end{quote}
 
 Two remarks about this definition:
@@ -5452,7 +5461,7 @@ _{\substack{=\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)
 \underbrace{\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)
 ,j,\left[  m\right]  }\left(  X_{1},X_{2},...,X_{j}\right)  }%
 _{\substack{=\operatorname*{Td}\nolimits_{\varphi,j}\left(  X_{1}%
-,X_{2},...,X_{j}\right)  \\\text{(by th 2nd step)}}}T^{j}\\
+,X_{2},...,X_{j}\right)  \\\text{(by the 2nd step)}}}T^{j}\\
 &  =\sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
 X_{1},X_{2},...,X_{j}\right)  T^{j}%
 \end{align*}
@@ -7253,11 +7262,11 @@ X_{1},X_{2},...,X_{j}\right)  =\operatorname*{Todd}\nolimits_{\left(
 \nolimits_{\varphi,j}\left(  X_{1},X_{2},...,X_{j}\right)  \right)   &
 =\rho\left[  U_{1},U_{2},...,U_{m}\right]  \left(  \operatorname*{Coeff}%
 \nolimits_{j}\left(  \prod\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)
-\right)  \right)  \nonumber\\
+\right)  \right) \nonumber\\
 &  =\operatorname*{Coeff}\nolimits_{j}\left(  \rho\left[  U_{1},U_{2}%
 ,...,U_{m}\right]  \left[  \left[  T\right]  \right]  \left(  \prod
-\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)  \right)  \right)
-.\label{10.21.pf.3}%
+\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)  \right)  \right)  .
+\label{10.21.pf.3}%
 \end{align}
 
 
@@ -8290,57 +8299,12 @@ _{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)  =\mathfrak{Todd}_{\varphi
 x\right)  \right)  \right)  $.
 \end{quote}
 
-\textit{Proof of Proposition 10.29.} Let $x\in K$. Then, $\lambda_{T}\left(
-x\right)  =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  x\right)  T^{i}$, so
-that%
-\[
-\iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(  x\right)
-\right)  =\iota\left[  \left[  T\right]  \right]  \left(  \sum\limits_{i\in
-\mathbb{N}}\lambda^{i}\left(  x\right)  T^{i}\right)  =\sum\limits_{i\in
-\mathbb{N}}\underbrace{\iota\left(  \lambda^{i}\left(  x\right)  \right)
-}_{\substack{=\lambda^{i}\left(  x\right)  \otimes1\\\text{(by the definition
-of }\iota\text{)}}}T^{i}=\sum\limits_{i\in\mathbb{N}}\left(  \lambda
-^{i}\left(  x\right)  \otimes1\right)  T^{i}.
-\]
-Hence, every $k\in\mathbb{N}$ satisfies $\operatorname*{Coeff}\nolimits_{k}%
-\left(  \iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(
-x\right)  \right)  \right)  =\operatorname*{Coeff}\nolimits_{k}\left(
-\sum\limits_{i\in\mathbb{N}}\left(  \lambda^{i}\left(  x\right)
-\otimes1\right)  T^{i}\right)  =\lambda^{k}\left(  x\right)  \otimes1$ (by the
-definition of $\operatorname*{Coeff}\nolimits_{k}$). Thus,
-\begin{align}
-&  \left(  \operatorname*{Coeff}\nolimits_{1}\left(  \iota\left[  \left[
-T\right]  \right]  \left(  \lambda_{T}\left(  x\right)  \right)  \right)
-,\operatorname*{Coeff}\nolimits_{2}\left(  \iota\left[  \left[  T\right]
-\right]  \left(  \lambda_{T}\left(  x\right)  \right)  \right)
-,...,\operatorname*{Coeff}\nolimits_{j}\left(  \iota\left[  \left[  T\right]
-\right]  \left(  \lambda_{T}\left(  x\right)  \right)  \right)  \right)
-\nonumber\\
-&  =\left(  \lambda^{1}\left(  x\right)  \otimes1,\lambda^{2}\left(  x\right)
-\otimes1,...,\lambda^{j}\left(  x\right)  \otimes1\right)  \label{10.29.pf.1}%
-\end{align}
-for every $j\in\mathbb{N}$. Now, (\ref{ToddFrak}) (applied to $p=\iota\left[
-\left[  T\right]  \right]  \left(  \lambda_{T}\left(  x\right)  \right)  $)
-yields%
-\begin{align*}
-&  \mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]  \right]
-\left(  \lambda_{T}\left(  x\right)  \right)  \right) \\
-&  =\sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
-\operatorname*{Coeff}\nolimits_{1}\left(  \iota\left[  \left[  T\right]
-\right]  \left(  \lambda_{T}\left(  x\right)  \right)  \right)
-,\operatorname*{Coeff}\nolimits_{2}\left(  \iota\left[  \left[  T\right]
-\right]  \left(  \lambda_{T}\left(  x\right)  \right)  \right)
-,...,\operatorname*{Coeff}\nolimits_{j}\left(  \iota\left[  \left[  T\right]
-\right]  \left(  \lambda_{T}\left(  x\right)  \right)  \right)  \right)
-T^{j}\\
-&  =\sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
-\lambda^{1}\left(  x\right)  \otimes1,\lambda^{2}\left(  x\right)
-\otimes1,...,\lambda^{j}\left(  x\right)  \otimes1\right)  T^{j}%
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{10.29.pf.1})}\right) \\
-&  =\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(
-x\right)  .
-\end{align*}
-This proves Proposition 10.29.
+The proof of this is very similar to that of Proposition 10.11, and is part of
+Exercise 10.2.
+
+Let us formulate the analoga of our above-proven results about
+$\operatorname*{td}\nolimits_{\varphi,T}$. The proofs of all these analoga
+will be done in Exercise 10.2.
 
 Here is the analogue of Proposition 10.3:
 
@@ -8355,60 +8319,6 @@ $\lambda_{\left(  1\otimes u\right)  T}\left(  x\right)  $ means
 $\operatorname*{ev}\nolimits_{\left(  1\otimes u\right)  T}\left(  \lambda
 _{T}\left(  x\right)  \right)  $.
 \end{quote}
-
-\textit{Proof of Proposition 10.30.} Let $\iota:K\rightarrow K\otimes
-_{\mathbf{Z}}\mathbf{Z}^{\prime}$ be canonical map (mapping every $\xi\in K$
-to $\xi\otimes1\in K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$). Proposition
-10.29 (applied to $\varphi=1+ut$) yields%
-\begin{align*}
-\operatorname*{td}\nolimits_{1+ut,T,\mathbf{Z}^{\prime}}\left(  x\right)   &
-=\mathfrak{Todd}_{1+ut}\left(  \iota\left[  \left[  T\right]  \right]  \left(
-\lambda_{T}\left(  x\right)  \right)  \right)  =\underbrace{\operatorname*{ev}%
-\nolimits_{uT}}_{\substack{=\operatorname*{ev}\nolimits_{\left(  1\otimes
-u\right)  T}\\\text{(since }uT=\left(  1\otimes u\right)  T\\\text{in }\left(
-K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[  \left[  T\right]
-\right]  }}\left(  \iota\left[  \left[  T\right]  \right]  \left(  \lambda
-_{T}\left(  x\right)  \right)  \right) \\
-&  \ \ \ \ \ \ \ \ \ \ \left(
-\begin{array}
-[c]{c}%
-\text{by Proposition 10.12, applied to }\mathbf{Z}^{\prime}\text{, }%
-K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\text{ and }\iota\left[  \left[
-T\right]  \right]  \left(  \lambda_{T}\left(  x\right)  \right) \\
-\text{instead of }\mathbf{Z}\text{, }K\text{ and }p
-\end{array}
-\right) \\
-&  =\operatorname*{ev}\nolimits_{\left(  1\otimes u\right)  T}\left(
-\iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(  x\right)
-\right)  \right)  =\left(  \operatorname*{ev}\nolimits_{\left(  1\otimes
-u\right)  T}\circ\iota\left[  \left[  T\right]  \right]  \right)  \left(
-\lambda_{T}\left(  x\right)  \right)  .
-\end{align*}
-But the diagram%
-\[
-\xymatrixcolsep{5pc}\xymatrix{
-K \left[\left[T\right]\right] \ar[r]^{\iota \left[\left[T\right]\right]} \ar[dr]_{\operatorname*{ev}_{\left(1\otimes u\right)T}} & \left(K \otimes_{\mathbf Z} \mathbf Z^{\prime}\right) \left[\left[T\right]\right] \ar[d]^{\operatorname*{ev}_{\left(1\otimes u\right)T}} \\
-&  \left(K \otimes_{\mathbf Z} \mathbf Z^{\prime}\right) \left[\left[T\right]\right]
-}
-\]
-commutes (since the definition of the map $\operatorname*{ev}\nolimits_{\mu
-T}:K\left[  \left[  T\right]  \right]  \rightarrow L\left[  \left[  T\right]
-\right]  $ for any ring $K$, any $K$-algebra $L$ and any element $\mu$ of $L$
-was canonical with respect to $K$). Thus, $\operatorname*{ev}%
-\nolimits_{\left(  1\otimes u\right)  T}\circ\iota\left[  \left[  T\right]
-\right]  =\operatorname*{ev}\nolimits_{\left(  1\otimes u\right)  T}$. Now,%
-\[
-\operatorname*{td}\nolimits_{1+ut,T,\mathbf{Z}^{\prime}}\left(  x\right)
-=\underbrace{\left(  \operatorname*{ev}\nolimits_{\left(  1\otimes u\right)
-T}\circ\iota\left[  \left[  T\right]  \right]  \right)  }_{=\operatorname*{ev}%
-\nolimits_{\left(  1\otimes u\right)  T}}\left(  \lambda_{T}\left(  x\right)
-\right)  =\operatorname*{ev}\nolimits_{\left(  1\otimes u\right)  T}\left(
-\lambda_{T}\left(  x\right)  \right)  .
-\]
-This proves Proposition 10.30.
-
-Alternatively, we could have proven Proposition 10.30 by repeating the proof
-of Proposition 10.3 with some minor changes.
 
 Similarly, here is the analogue of Proposition 10.5:
 
@@ -8430,54 +8340,6 @@ $t^{1}$. Then, $\operatorname*{Coeff}\nolimits_{1}\left(  \operatorname*{td}%
 =\varphi_{1}\left(  x\otimes1\right)  $ for every $x\in K$.
 \end{quote}
 
-We could derive Proposition 10.31 from Proposition 10.13 (just as we derived
-Proposition 10.30 from Proposition 10.12) using Proposition 10.29, but let us
-instead prove it directly:
-
-\textit{Proof of Proposition 10.31.} Let $x\in K$.
-
-\textbf{(a)} We have%
-\begin{align*}
-\operatorname*{Coeff}\nolimits_{0}\left(  \operatorname*{td}\nolimits_{\varphi
-,T,\mathbf{Z}^{\prime}}\left(  x\right)  \right)   &  =\operatorname*{Coeff}%
-\nolimits_{0}\left(  \sum_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi
-,j}\left(  \lambda^{1}\left(  x\right)  \otimes1,\lambda^{2}\left(  x\right)
-\otimes1,...,\lambda^{j}\left(  x\right)  \otimes1\right)  T^{j}\right)
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{ToddDefZ'})}\right) \\
-&  =\operatorname*{Td}\nolimits_{\varphi,0}\left(  \lambda^{1}\left(
-x\right)  \otimes1,\lambda^{2}\left(  x\right)  \otimes1,...,\lambda
-^{j}\left(  x\right)  \otimes1\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
-the definition of }\operatorname*{Coeff}\nolimits_{0}\right) \\
-&  =\operatorname*{Td}\nolimits_{\varphi,0}=1\ \ \ \ \ \ \ \ \ \ \left(
-\text{by Proposition 10.6 \textbf{(a)}, applied to }\mathbf{Z}^{\prime}\text{
-instead of }\mathbf{Z}\right)  .
-\end{align*}
-
-
-\textbf{(b)} We have%
-\begin{align*}
-\operatorname*{Coeff}\nolimits_{1}\left(  \operatorname*{td}\nolimits_{\varphi
-,T}\left(  x\right)  \right)   &  =\operatorname*{Coeff}\nolimits_{1}\left(
-\sum_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
-\lambda^{1}\left(  x\right)  \otimes1,\lambda^{2}\left(  x\right)
-\otimes1,...,\lambda^{j}\left(  x\right)  \otimes1\right)  T^{j}\right)
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{ToddDef})}\right) \\
-&  =\operatorname*{Td}\nolimits_{\varphi,1}\left(  \lambda^{1}\left(
-x\right)  \otimes1,\lambda^{2}\left(  x\right)  \otimes1,...,\lambda
-^{j}\left(  x\right)  \otimes1\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
-the definition of }\operatorname*{Coeff}\nolimits_{1}\right) \\
-&  =\operatorname*{Td}\nolimits_{\varphi,1}\left(  \underbrace{\lambda
-^{1}\left(  x\right)  \otimes1}_{=x\otimes1}\right)  =\operatorname*{Td}%
-\nolimits_{\varphi,1}\left(  x\otimes1\right)  =\varphi_{1}\left(
-x\otimes1\right) \\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since Proposition 10.6 \textbf{(b)}
-(applied to }\mathbf{Z}^{\prime}\text{ instead of }\mathbf{Z}\text{) yields
-}\operatorname*{Td}\nolimits_{\varphi,1}=\varphi_{1}\alpha_{1}\right)  .
-\end{align*}
-
-
-Proposition 10.31 is now proven.
-
 The analogue of Proposition 10.7:
 
 \begin{quote}
@@ -8492,31 +8354,6 @@ $x\in K$, we have $\operatorname*{td}\nolimits_{\varphi\psi,T,\mathbf{Z}%
 ,T,\mathbf{Z}^{\prime}}\left(  x\right)  \operatorname*{td}\nolimits_{\psi
 ,T,\mathbf{Z}^{\prime}}\left(  x\right)  $.
 \end{quote}
-
-\textit{Proof of Proposition 10.32.} To obtain a proof of Proposition 10.16,
-read the proof of Proposition 10.7, doing the following replacements:
-
-\begin{itemize}
-\item Replace every $\lambda^{k}\left(  x\right)  $ by $\lambda^{k}\left(
-x\right)  \otimes1$ for $k$ any nonnegative integer (that is, replace
-$\lambda^{1}\left(  x\right)  $ by $\lambda^{1}\left(  x\right)  \otimes1$,
-replace $\lambda^{2}\left(  x\right)  $ by $\lambda^{2}\left(  x\right)
-\otimes1$, etc.).
-
-\item Replace every $\operatorname*{td}\nolimits_{\varphi,T}$ by
-$\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}$.
-
-\item Replace every $\operatorname*{td}\nolimits_{\psi,T}$ by
-$\operatorname*{td}\nolimits_{\psi,T,\mathbf{Z}^{\prime}}$.
-
-\item Replace every $\operatorname*{td}\nolimits_{\varphi\psi,T}$ by
-$\operatorname*{td}\nolimits_{\varphi\psi,T,\mathbf{Z}^{\prime}}$.
-
-\item Replace all references to Proposition 10.7 by references to Proposition 10.32.
-
-\item Replace all references to (\ref{ToddDef}) by references to
-(\ref{ToddDefZ'}).
-\end{itemize}
 
 Next, the analogue of Proposition 10.9:
 
@@ -8538,30 +8375,6 @@ we have%
 
 \end{quote}
 
-\textit{Proof of Proposition 10.33.} This can be proven by induction over $m$.
-The induction base (the case $m=0$) requires showing that $\operatorname*{td}%
-\nolimits_{1,T,\mathbf{Z}^{\prime}}\left(  x\right)  =1$, but this follows
-from Proposition 10.14\footnote{In fact, Proposition 10.30 (applied to $u=0$)
-yields $\operatorname*{td}\nolimits_{1+0t,T,\mathbf{Z}^{\prime}}\left(
-x\right)  =\lambda_{\left(  1\otimes0\right)  T}\left(  x\right)  $. Now
-$\lambda_{\left(  1\otimes0\right)  T}\left(  x\right)  =\operatorname*{ev}%
-\nolimits_{\left(  1\otimes0\right)  T}\left(  \lambda_{T}\left(  x\right)
-\right)  $. Since $\operatorname*{ev}\nolimits_{\left(  1\otimes0\right)
-T}=\operatorname*{ev}\nolimits_{0T}$ is the map $K\left[  \left[  T\right]
-\right]  \rightarrow\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)
-\left[  \left[  T\right]  \right]  $ which sends every power series to its
-constant term tensored with $1$ (viewed as a constant power series over
-$K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$), we have $\operatorname*{ev}%
-\nolimits_{\left(  1\otimes0\right)  T}\left(  \lambda_{T}\left(  x\right)
-\right)  =\underbrace{\left(  \text{constant term of the power series }%
-\lambda_{T}\left(  x\right)  \right)  }_{=1}\otimes1=1\otimes1=1$. Thus,
-$\operatorname*{td}\nolimits_{1,T,\mathbf{Z}^{\prime}}\left(  x\right)
-=\operatorname*{td}\nolimits_{1+0t,T,\mathbf{Z}^{\prime}}\left(  x\right)
-=\lambda_{\left(  1\otimes0\right)  T}\left(  x\right)  =\operatorname*{ev}%
-\nolimits_{\left(  1\otimes0\right)  T}\left(  \lambda_{T}\left(  x\right)
-\right)  =1$.}. The induction step is a straightforward application of
-Proposition 10.32. Thus Proposition 10.33 is proven.
-
 Next, the analogue of Theorem 10.10:
 
 \begin{quote}
@@ -8575,66 +8388,6 @@ and $y\in K$. Then, $\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}%
 ,T,\mathbf{Z}^{\prime}}\left(  y\right)  =\operatorname*{td}\nolimits_{\varphi
 ,T,\mathbf{Z}^{\prime}}\left(  x+y\right)  $.
 \end{quote}
-
-\textit{Proof of Theorem 10.34.} Theorem 2.1 \textbf{(a)} yields $\lambda
-_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)  =\lambda_{T}\left(
-x+y\right)  $ (since $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
-}\right)  $ is a $\lambda$-ring).
-
-Let $\iota:K\rightarrow K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$ be canonical
-map (mapping every $\xi\in K$ to $\xi\otimes1\in K\otimes_{\mathbf{Z}%
-}\mathbf{Z}^{\prime}$). Then, Proposition 10.29 yields $\operatorname*{td}%
-_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)  =\mathfrak{Todd}_{\varphi
-}\left(  \iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(
-x\right)  \right)  \right)  $. Proposition 10.29 (applied to $y$ instead of
-$x$) yields $\operatorname*{td}_{\varphi,T,\mathbf{Z}^{\prime}}\left(
-y\right)  =\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]
-\right]  \left(  \lambda_{T}\left(  y\right)  \right)  \right)  $. Hence,%
-\begin{align*}
-&  \underbrace{\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}%
-}\left(  x\right)  }_{=\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[
-T\right]  \right]  \left(  \lambda_{T}\left(  x\right)  \right)  \right)
-}\cdot\underbrace{\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}%
-}\left(  y\right)  }_{=\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[
-T\right]  \right]  \left(  \lambda_{T}\left(  y\right)  \right)  \right)  }\\
-&  =\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]  \right]
-\left(  \lambda_{T}\left(  x\right)  \right)  \right)  \cdot\mathfrak{Todd}%
-_{\varphi}\left(  \iota\left[  \left[  T\right]  \right]  \left(  \lambda
-_{T}\left(  y\right)  \right)  \right)  =\mathfrak{Todd}_{\varphi}\left(
-\underbrace{\iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(
-x\right)  \right)  \cdot\iota\left[  \left[  T\right]  \right]  \left(
-\lambda_{T}\left(  y\right)  \right)  }_{\substack{=\iota\left[  \left[
-T\right]  \right]  \left(  \lambda_{T}\left(  x\right)  \cdot\lambda
-_{T}\left(  y\right)  \right)  \\\text{(since }\iota\left[  \left[  T\right]
-\right]  \text{ is a ring homomorphism)}}}\right) \\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 10.16, applied to }%
-p=\iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(  x\right)
-\right)  \text{ and }q=\iota\left[  \left[  T\right]  \right]  \left(
-\lambda_{T}\left(  y\right)  \right)  \right) \\
-&  =\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]  \right]
-\left(  \lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)
-\right)  \right)
-\end{align*}
-Proposition 10.29 (applied to $x+y$ instead of $x$) yields%
-\[
-\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x+y\right)
-=\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]  \right]
-\left(  \underbrace{\lambda_{T}\left(  x+y\right)  }_{\substack{=\lambda
-_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)  }}\right)  \right)
-=\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]  \right]
-\left(  \lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)
-\right)  \right)  .
-\]
-Thus,%
-\[
-\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)
-\cdot\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(
-y\right)  =\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]
-\right]  \left(  \lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(
-y\right)  \right)  \right)  =\operatorname*{td}\nolimits_{\varphi
-,T,\mathbf{Z}^{\prime}}\left(  x+y\right)  .
-\]
-Theorem 10.34 is thus proven.
 
 The analogue of Corollary 10.23 is what one would expect it to be:
 
@@ -8651,73 +8404,6 @@ and $\operatorname*{td}_{\varphi,T,\mathbf{Z}^{\prime}}:K\rightarrow
 homomorphism of additive groups.
 \end{quote}
 
-\textit{Proof of Corollary 10.35.} Every $x\in K$ satisfies
-$\operatorname*{td}_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)
-\in\Lambda\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $ (since
-Proposition 10.31 \textbf{(a)} says that $\operatorname*{Coeff}\nolimits_{0}%
-\left(  \operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(
-x\right)  \right)  =1$, so that the power series $\operatorname*{td}%
-\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)  $ has the constant
-term $1$, and thus $\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime
-}}\left(  x\right)  \in1+\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime
-}\right)  \left[  \left[  T\right]  \right]  ^{+}=\Lambda\left(
-K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $). In other words,
-$\operatorname*{td}_{\varphi,T,\mathbf{Z}^{\prime}}\left(  K\right)
-\subseteq\Lambda\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $.
-
-Now we are going to prove that $\operatorname*{td}_{\varphi,T,\mathbf{Z}%
-^{\prime}}:K\rightarrow\Lambda\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime
-}\right)  $ is a homomorphism of additive groups.
-
-Theorem 10.34 (applied to $x=0$ and $y=0$) yields $\operatorname*{td}%
-\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  0\right)  \cdot
-\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  0\right)
-=\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(
-0+0\right)  =\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}%
-}\left(  0\right)  $ Since $\operatorname*{td}\nolimits_{\varphi
-,T,\mathbf{Z}^{\prime}}\left(  0\right)  $ is an invertible element of
-$\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[  \left[
-T\right]  \right]  $ (because $\operatorname*{td}\nolimits_{\varphi
-,T,\mathbf{Z}^{\prime}}\left(  0\right)  $ is a power series with constant
-term $1$\ \ \ \ \footnote{since $\operatorname*{td}\nolimits_{\varphi
-,T,\mathbf{Z}^{\prime}}\left(  0\right)  \in\operatorname*{td}%
-\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  K\right)  \subseteq
-\Lambda\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  =1+\left(
-K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[  \left[  T\right]
-\right]  ^{+}$}, and every such power series is an invertible element of
-$\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[  \left[
-T\right]  \right]  $), we can cancel $\operatorname*{td}\nolimits_{\varphi
-,T,\mathbf{Z}^{\prime}}\left(  0\right)  $ from this equation, and obtain
-$\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  0\right)
-=1$. Since $0$ is the neutral element of the additive group $K$, while $1$ is
-the neutral element of the additive group $\Lambda\left(  K\otimes
-_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $, this yields that the map
-$\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}$ respects the
-neutral elements of the additive groups $K$ and $\Lambda\left(  K\otimes
-_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $.
-
-Any $x\in K$ and $y\in K$ satisfy%
-\begin{align*}
-\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x+y\right)
-&  =\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(
-x\right)  \cdot\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}%
-}\left(  y\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 10.34}\right)
-\\
-&  =\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(
-x\right)  \widehat{+}\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}%
-^{\prime}}\left(  y\right)
-\end{align*}
-(since multiplication of power series in $1+\left(  K\otimes_{\mathbf{Z}%
-}\mathbf{Z}^{\prime}\right)  \left[  \left[  T\right]  \right]  ^{+}$ is
-addition in the ring $\Lambda\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime
-}\right)  $). Combined with the fact that the map $\operatorname*{td}%
-\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}$ respects the neutral elements of
-the additive groups $K$ and $\Lambda\left(  K\otimes_{\mathbf{Z}}%
-\mathbf{Z}^{\prime}\right)  $, this yields: The map $\operatorname*{td}%
-_{\varphi,T,\mathbf{Z}^{\prime}}:K\rightarrow\Lambda\left(  K\otimes
-_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $ is a homomorphism of additive
-groups. Corollary 10.35 is proven.
-
 We can also generalize Proposition 10.24:
 
 \begin{quote}
@@ -8731,37 +8417,6 @@ series with constant term equal to $1$. Then, $\operatorname*{td}%
 \left(  u\otimes1\right)  T\right)  $, where $u\otimes1$ denotes the element
 $u\otimes1$ of $K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$.
 \end{quote}
-
-\textit{Proof of Proposition 10.36.} Let $\iota:K\rightarrow K\otimes
-_{\mathbf{Z}}\mathbf{Z}^{\prime}$ be canonical map (mapping every $\xi\in K$
-to $\xi\otimes1\in K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$). Then,
-$\iota\left[  \left[  T\right]  \right]  \left(  1+uT\right)  =1+\left(
-u\otimes1\right)  T$.
-
-Proposition 10.29 (applied to $x=u$) yields $\operatorname*{td}_{\varphi
-,T,\mathbf{Z}^{\prime}}\left(  u\right)  =\mathfrak{Todd}_{\varphi}\left(
-\iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(  u\right)
-\right)  \right)  $. But Theorem 8.3 \textbf{(a)} (applied to $x=u$) yields
-that $\lambda_{T}\left(  u\right)  =1+uT$ (since the element $u$ is
-$1$-dimensional). Thus,%
-\begin{align*}
-\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  u\right)
-&  =\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]  \right]
-\left(  \underbrace{\lambda_{T}\left(  u\right)  }_{=1+uT}\right)  \right)
-=\mathfrak{Todd}_{\varphi}\left(  \underbrace{\iota\left[  \left[  T\right]
-\right]  \left(  1+uT\right)  }_{=1+\left(  u\otimes1\right)  T}\right)
-=\mathfrak{Todd}_{\varphi}\left(  1+\left(  u\otimes1\right)  T\right) \\
-&  =\varphi\left(  \left(  u\otimes1\right)  T\right)
-\ \ \ \ \ \ \ \ \ \ \left(
-\begin{array}
-[c]{c}%
-\text{by Proposition 10.26, applied to}\\
-\mathbf{Z}^{\prime}\text{, }K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\text{ and
-}u\otimes1\text{ instead of }\mathbf{Z}\text{, }K\text{ and }u
-\end{array}
-\right)  .
-\end{align*}
-This proves Proposition 10.36.
 
 Finally, the analogue to Theorem 10.27:
 
@@ -8782,10 +8437,6 @@ u_{i}\otimes1\right)  T\right)  .
 
 \end{quote}
 
-\textit{Proof of Theorem 10.37.} Theorem 10.37 can be proven with the help of
-Proposition 10.36 in the same way as we proved Theorem 10.27 with the help of
-Proposition 10.24. We leave the details to the reader.
-
 \begin{quotation}
 \textit{Exercise 10.1.} Let $K$ be a ring. Let $m\in\mathbb{N}$. For every
 $i\in\left\{  1,2,...,m\right\}  $, let $\Phi_{i}\in K\left[  \left[
@@ -8804,6 +8455,10 @@ _{i}\right)  =1$ and $\operatorname*{Coeff}\nolimits_{1}\left(  \prod
 
 [This is a very easy exercise. It stands here because I used it to prove
 Proposition 10.6 in an earlier version of this text.]
+
+\textit{Exercise 10.2.} Prove Proposition 10.29, Proposition 10.30,
+Proposition 10.31, Proposition 10.32, Proposition 10.33, Theorem 10.34,
+Corollary 10.35, Proposition 10.36 and Theorem 10.37.
 \end{quotation}
 
 \bigskip
@@ -9546,6 +9201,141 @@ Q;\\\left\vert S\right\vert =k}}\prod\limits_{q\in S}\alpha_{q}t^{k}%
 \end{align*}
 This solves Exercise 4.2 \textbf{(d)}.
 
+\textit{Exercise 4.3: Detailed solution:} Let $P\in K\left[  \alpha_{1}%
+,\alpha_{2},...,\alpha_{m},\beta_{1},\beta_{2},...,\beta_{n}\right]  $ be a
+polynomial satisfying $P\left(  p_{1},p_{2},...,p_{m},q_{1},q_{2}%
+,...,q_{n}\right)  =0$ (where $K\left[  \alpha_{1},\alpha_{2},...,\alpha
+_{m},\beta_{1},\beta_{2},...,\beta_{n}\right]  $ denotes the polynomial ring
+in the $m+n$ indeterminates $\alpha_{1}$, $\alpha_{2}$, $...$, $\alpha_{m}$,
+$\beta_{1}$, $\beta_{2}$, $...$, $\beta_{n}$ over $K$). We want to prove that
+$P=0$ (as a polynomial).
+
+Let $\iota$ be the canonical $K$-algebra isomorphism $K\left[  \alpha
+_{1},\alpha_{2},...,\alpha_{m},\beta_{1},\beta_{2},...,\beta_{n}\right]
+\rightarrow\left(  K\left[  \beta_{1},\beta_{2},...,\beta_{n}\right]  \right)
+\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $. Then,%
+\[
+\left(  \left(  \iota\left(  P\right)  \right)  \left(  p_{1},p_{2}%
+,...,p_{m}\right)  \right)  \left(  q_{1},q_{2},...,q_{n}\right)  =P\left(
+p_{1},p_{2},...,p_{m},q_{1},q_{2},...,q_{n}\right)  =0.
+\]
+Since $q_{1}$, $q_{2}$, $...$, $q_{n}$ are algebraically independent over $T$
+(and since $\left(  \iota\left(  P\right)  \right)  \left(  p_{1}%
+,p_{2},...,p_{m}\right)  $ is a polynomial over $T$ (because $p_{1}$, $p_{2}$,
+$...$, $p_{m}$ lie in $T$)), this yields that $\left(  \iota\left(  P\right)
+\right)  \left(  p_{1},p_{2},...,p_{m}\right)  =0$.
+
+But in the polynomial ring $K\left[  \beta_{1},\beta_{2},...,\beta_{n}\right]
+$, we have%
+\begin{align*}
+0 &  =\left(  \iota\left(  P\right)  \right)  \left(  p_{1},p_{2}%
+,...,p_{m}\right)  =\left(  \left(  \iota\left(  P\right)  \right)  \left(
+p_{1},p_{2},...,p_{m}\right)  \right)  \left(  \beta_{1},\beta_{2}%
+,...,\beta_{n}\right)  \\
+&  =P\left(  p_{1},p_{2},...,p_{m},\beta_{1},\beta_{2},...,\beta_{n}\right)
+\end{align*}
+(since $\iota$ is the canonical $K$-algebra isomorphism
+\[
+K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m},\beta_{1},\beta_{2}%
+,...,\beta_{n}\right]  \rightarrow\left(  K\left[  \beta_{1},\beta
+_{2},...,\beta_{n}\right]  \right)  \left[  \alpha_{1},\alpha_{2}%
+,...,\alpha_{m}\right]
+\]
+).
+
+Since $P$ is a polynomial in $K\left[  \alpha_{1},\alpha_{2},...,\alpha
+_{m},\beta_{1},\beta_{2},...,\beta_{n}\right]  $, we can write it in the form%
+\begin{equation}
+P=\sum\limits_{\left(  \left(  i_{1},i_{2},...,i_{m}\right)  ,\left(
+j_{1},j_{2},...,j_{n}\right)  \right)  \in\mathbb{N}^{m}\times\mathbb{N}^{n}%
+}\lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1},j_{2}%
+,...,j_{n}\right)  }\cdot\alpha_{1}^{i_{1}}\alpha_{2}^{i_{2}}...\alpha
+_{m}^{i_{m}}\cdot\beta_{1}^{j_{1}}\beta_{2}^{j_{2}}...\beta_{n}^{j_{n}},
+\label{4.3.sol.1}%
+\end{equation}
+where $\lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1}%
+,j_{2},...,j_{n}\right)  }$ is the coefficient of the polynomial $P$ before
+the monomial $\alpha_{1}^{i_{1}}\alpha_{2}^{i_{2}}...\alpha_{m}^{i_{m}}%
+\cdot\beta_{1}^{j_{1}}\beta_{2}^{j_{2}}...\beta_{n}^{j_{n}}$ for every
+$\left(  \left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1},j_{2}%
+,...,j_{n}\right)  \right)  \in\mathbb{N}^{m}\times\mathbb{N}^{n}$. So let us
+write it in this way. Then,%
+\begin{align}
+0  &  =P\left(  p_{1},p_{2},...,p_{m},\beta_{1},\beta_{2},...,\beta_{n}\right)
+\nonumber\\
+&  =\sum\limits_{\left(  \left(  i_{1},i_{2},...,i_{m}\right)  ,\left(
+j_{1},j_{2},...,j_{n}\right)  \right)  \in\mathbb{N}^{m}\times\mathbb{N}^{n}%
+}\lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1},j_{2}%
+,...,j_{n}\right)  }\cdot p_{1}^{i_{1}}p_{2}^{i_{2}}...p_{m}^{i_{m}}\cdot
+\beta_{1}^{j_{1}}\beta_{2}^{j_{2}}...\beta_{n}^{j_{n}}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{because of (\ref{4.3.sol.1})}\right)
+\nonumber\\
+&  =\sum\limits_{\left(  j_{1},j_{2},...,j_{n}\right)  \in\mathbb{N}^{n}}%
+\sum\limits_{\left(  i_{1},i_{2},...,i_{m}\right)  \in\mathbb{N}^{m}}%
+\lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1},j_{2}%
+,...,j_{n}\right)  }\cdot p_{1}^{i_{1}}p_{2}^{i_{2}}...p_{m}^{i_{m}}\cdot
+\beta_{1}^{j_{1}}\beta_{2}^{j_{2}}...\beta_{n}^{j_{n}}. \label{4.3.sol.2}%
+\end{align}
+
+
+For every $\left(  j_{1},j_{2},...,j_{n}\right)  \in\mathbb{N}^{n}$, define a
+polynomial $P_{\left(  j_{1},j_{2},...,j_{n}\right)  }\in K\left[  \alpha
+_{1},\alpha_{2},...,\alpha_{m}\right]  $ by $P_{\left(  j_{1},j_{2}%
+,...,j_{n}\right)  }=\sum\limits_{\left(  i_{1},i_{2},...,i_{m}\right)
+\in\mathbb{N}^{m}}\lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(
+j_{1},j_{2},...,j_{n}\right)  }\cdot\alpha_{1}^{i_{1}}\alpha_{2}^{i_{2}%
+}...\alpha_{m}^{i_{m}}$. Then,
+\[
+P_{\left(  j_{1},j_{2},...,j_{n}\right)  }\left(  p_{1},p_{2},...,p_{m}%
+\right)  =\sum\limits_{\left(  i_{1},i_{2},...,i_{m}\right)  \in\mathbb{N}%
+^{m}}\lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1}%
+,j_{2},...,j_{n}\right)  }\cdot p_{1}^{i_{1}}p_{2}^{i_{2}}...p_{m}^{i_{m}}
+\]
+for every $\left(  j_{1},j_{2},...,j_{n}\right)  \in\mathbb{N}^{n}$. Thus,%
+\begin{align*}
+&  \sum\limits_{\left(  j_{1},j_{2},...,j_{n}\right)  \in\mathbb{N}^{n}%
+}P_{\left(  j_{1},j_{2},...,j_{n}\right)  }\left(  p_{1},p_{2},...,p_{m}%
+\right)  \cdot\beta_{1}^{j_{1}}\beta_{2}^{j_{2}}...\beta_{n}^{j_{n}}\\
+&  =\sum\limits_{\left(  j_{1},j_{2},...,j_{n}\right)  \in\mathbb{N}^{n}}%
+\sum\limits_{\left(  i_{1},i_{2},...,i_{m}\right)  \in\mathbb{N}^{m}}%
+\lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1},j_{2}%
+,...,j_{n}\right)  }\cdot p_{1}^{i_{1}}p_{2}^{i_{2}}...p_{m}^{i_{m}}\cdot
+\beta_{1}^{j_{1}}\beta_{2}^{j_{2}}...\beta_{n}^{j_{n}}=0
+\end{align*}
+(by (\ref{4.3.sol.2})). Since the elements $\beta_{1}^{j_{1}}\beta_{2}^{j_{2}%
+}...\beta_{n}^{j_{n}}$ (with $\left(  j_{1},j_{2},...,j_{n}\right)
+\in\mathbb{N}^{n}$) of the $K$-module $K\left[  \beta_{1},\beta_{2}%
+,...,\beta_{n}\right]  $ are linearly independent (because these elements are
+the monomials), this yields that $P_{\left(  j_{1},j_{2},...,j_{n}\right)
+}\left(  p_{1},p_{2},...,p_{m}\right)  =0$ for every $\left(  j_{1}%
+,j_{2},...,j_{n}\right)  \in\mathbb{N}^{n}$. Hence, $P_{\left(  j_{1}%
+,j_{2},...,j_{n}\right)  }=0$ for every $\left(  j_{1},j_{2},...,j_{n}\right)
+\in\mathbb{N}^{n}$ (since $p_{1}$, $p_{2}$, $...$, $p_{m}$ are algebraically
+independent over $K$). Now,%
+\begin{align*}
+P  &  =\sum\limits_{\left(  \left(  i_{1},i_{2},...,i_{m}\right)  ,\left(
+j_{1},j_{2},...,j_{n}\right)  \right)  \in\mathbb{N}^{m}\times\mathbb{N}^{n}%
+}\lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1},j_{2}%
+,...,j_{n}\right)  }\cdot\alpha_{1}^{i_{1}}\alpha_{2}^{i_{2}}...\alpha
+_{m}^{i_{m}}\cdot\beta_{1}^{j_{1}}\beta_{2}^{j_{2}}...\beta_{n}^{j_{n}}\\
+&  =\sum\limits_{\left(  j_{1},j_{2},...,j_{n}\right)  \in\mathbb{N}^{n}%
+}\underbrace{\sum\limits_{\left(  i_{1},i_{2},...,i_{m}\right)  \in
+\mathbb{N}^{m}}\lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(
+j_{1},j_{2},...,j_{n}\right)  }\cdot\alpha_{1}^{i_{1}}\alpha_{2}^{i_{2}%
+}...\alpha_{m}^{i_{m}}}_{=P_{\left(  j_{1},j_{2},...,j_{n}\right)  }=0}%
+\cdot\beta_{1}^{j_{1}}\beta_{2}^{j_{2}}...\beta_{n}^{j_{n}}\\
+&  =\sum\limits_{\left(  j_{1},j_{2},...,j_{n}\right)  \in\mathbb{N}^{n}%
+}0\cdot\beta_{1}^{j_{1}}\beta_{2}^{j_{2}}...\beta_{n}^{j_{n}}=0.
+\end{align*}
+
+
+We have thus proven that every polynomial $P\in K\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{m},\beta_{1},\beta_{2},...,\beta_{n}\right]  $ satisfying
+$P\left(  p_{1},p_{2},...,p_{m},q_{1},q_{2},...,q_{n}\right)  =0$ must satisfy
+$P=0$. In other words, the $m+n$ elements $p_{1}$, $p_{2}$, $...$, $p_{m}$,
+$q_{1}$, $q_{2}$, $...$, $q_{n}$ are algebraically independent over $K$.
+Exercise 4.3 is solved.
+
 \textit{Exercise 5.1: Hints to solution:} This can be proven by induction over
 $n$: The ring $K\left[  T\right]  \diagup\left(  P\right)  $ is a finite-free
 extension of $K$ containing a root of the polynomial $P$ (namely, the
@@ -9566,6 +9356,278 @@ just completed the induction step.
 Notice the similarity between this solution and the proof of the existence of
 splitting fields in Galois theory.
 
+\textit{Detailed solution:} We first show a lemma:
+
+\begin{quote}
+\textbf{Lemma 5.1.S.1.} Let $K$ be a ring, and $P\in K\left[  T\right]  $ be a
+monic polynomial. Then, there exists a finite-free extension ring $K^{\prime}$
+of the ring $K$ and an element $p\in K^{\prime}$ such that $P\left(  p\right)
+=0$ in $K^{\prime}$.
+\end{quote}
+
+\textit{Proof of Lemma 5.1.S.1.} Let $n=\deg P$. Let $K^{\prime}$ be the
+quotient ring $K\left[  T\right]  \diagup\left(  P\right)  $. For every $Q\in
+K\left[  T\right]  $, let us denote by $\overline{Q}$ the projection of $Q$
+onto $K\left[  T\right]  \diagup\left(  P\right)  $ (that is, the residue
+class of $Q$ modulo $\left(  P\right)  $).
+
+Since the polynomial $P$ is monic of degree $n$, we can easily see that
+$\left(  \overline{T^{0}},\overline{T^{1}},...,\overline{X^{n-1}}\right)  $ is
+a basis of the $K$-module $K^{\prime}$. This is because the sequence $\left(
+\overline{T^{0}},\overline{T^{1}},...,\overline{T^{n-1}}\right)  $ is linearly
+independent\footnote{\textit{Proof.} In fact, assume that we have a sequence
+$\left(  \alpha_{0},\alpha_{1},...,\alpha_{n-1}\right)  \in K^{n}$ such that
+$\alpha_{0}\overline{X^{0}}+\alpha_{1}\overline{X^{1}}+...+\alpha
+_{n-1}\overline{X^{n-1}}=0$.
+\par
+Then, $0=\alpha_{0}\overline{X^{0}}+\alpha_{1}\overline{X^{1}}+...+\alpha
+_{n-1}\overline{X^{n-1}}=\overline{\alpha_{0}X^{0}+\alpha_{1}X^{1}%
++...+\alpha_{n-1}X^{n-1}}$, so that $0\equiv\alpha_{0}X^{0}+\alpha_{1}%
+X^{1}+...+\alpha_{n-1}X^{n-1}\operatorname{mod}\left(  P\right)  $. In other
+words, $\alpha_{0}X^{0}+\alpha_{1}X^{1}+...+\alpha_{n-1}X^{n-1}\in\left(
+P\right)  $. In other words, $P\mid\alpha_{0}X^{0}+\alpha_{1}X^{1}%
++...+\alpha_{n-1}X^{n-1}$. But $P$ is a monic polynomial of degree $n$, and
+thus every polynomial divisible by $P$ has either degree $\geq n$ or is the
+zero polynomial. Hence, the polynomial $\alpha_{0}X^{0}+\alpha_{1}%
+X^{1}+...+\alpha_{n-1}X^{n-1}$ must have either degree $\geq n$ or be the zero
+polynomial (since $P\mid\alpha_{0}X^{0}+\alpha_{1}X^{1}+...+\alpha
+_{n-1}X^{n-1}$). Since this polynomial does not have degree $\geq n$, it must
+thus be the zero polynomial. This means that all its coefficients are zero.
+That is, $\alpha_{i}=0$ for every $i\in\left\{  0,1,...,n-1\right\}  $.
+\par
+We have thus proven that whenever a sequence $\left(  \alpha_{0},\alpha
+_{1},...,\alpha_{n-1}\right)  \in K^{n}$ satisfies $\alpha_{0}\overline{X^{0}%
+}+\alpha_{1}\overline{X^{1}}+...+\alpha_{n-1}\overline{X^{n-1}}=0$, it must
+satisfy $\alpha_{i}=0$ for every $i\in\left\{  0,1,...,n-1\right\}  $. In oter
+words, the sequence $\left(  \overline{X^{0}},\overline{X^{1}},...,\overline
+{X^{n-1}}\right)  $ is linearly independent.} and generates the $K$-module
+$K^{\prime}$\ \ \ \ \footnote{\textit{Proof.} Let $K_{1}^{\prime}$ be the
+$K$-submodule of $K^{\prime}$ generated by $\left(  \overline{T^{0}}%
+,\overline{T^{1}},...,\overline{T^{n-1}}\right)  $. Then, we will prove that
+$K_{1}^{\prime}=K^{\prime}$.
+\par
+From the definition of $K_{1}^{\prime}$, it follows that $\overline{T^{j}}\in
+K_{1}^{\prime}$ for every $j\in\left\{  0,1,...,n-1\right\}  $.
+\par
+Write the polynomial $P$ in the form $P=\sum\limits_{i=0}^{n}\beta_{i}T^{i}$
+for some $\left(  \beta_{0},\beta_{1},...,\beta_{n}\right)  \in K^{n+1}$ (this
+is possible since $\deg P=n$). Since $P$ is monic of degree $n$, we must then
+have $\beta_{n}=1$.
+\par
+Let us prove that every $j\in\mathbb{N}$ satisfies $\overline{T^{j}}\in
+K_{1}^{\prime}$.
+\par
+In fact, we will prove this by strong induction over $j$:
+\par
+\textit{Induction step:} Let $j\in\mathbb{N}$ be arbitrary. Assume that
+$\overline{T^{\ell}}\in K_{1}^{\prime}$ is already proven for every $\ell
+\in\mathbb{N}$ satisfying $\ell<j$. We must now prove that $\overline{T^{j}%
+}\in K_{1}^{\prime}$.
+\par
+If $j\in\left\{  0,1,...,n-1\right\}  $, then we are immediately done with
+proving $\overline{T^{j}}\in K_{1}^{\prime}$ (since we already know that
+$\overline{T^{j}}\in K_{1}^{\prime}$ for every $j\in\left\{
+0,1,...,n-1\right\}  $). Thus, we assume that $j\in\left\{
+0,1,...,n-1\right\}  $ is not the case. Hence, $j\geq n$, so that $j-n\geq0$.
+Now, $P=\sum\limits_{i=0}^{n}\beta_{i}T^{i}$, so that%
+\[
+P\cdot T^{j-n}=\sum\limits_{i=0}^{n}\beta_{i}T^{i+j-n}=\sum\limits_{i=0}%
+^{n-1}\beta_{i}T^{i+j-n}+\underbrace{\beta_{n}}_{=1}\underbrace{T^{n+j-n}%
+}_{=T^{j}}=\sum\limits_{i=0}^{n-1}\beta_{i}T^{i+j-n}+T^{j}.
+\]
+Hence, $T^{j}=P\cdot T^{j-n}-\sum\limits_{i=0}^{n-1}\beta_{i}T^{i+j-n}%
+\equiv-\sum\limits_{i=0}^{n-1}\beta_{i}T^{i+j-n}\operatorname{mod}\left(
+P\right)  $, so that%
+\[
+\overline{T^{j}}=\overline{-\sum\limits_{i=0}^{n-1}\beta_{i}T^{i+j-n}}%
+=-\sum\limits_{i=0}^{n-1}\beta_{i}\overline{T^{i+j-n}}.
+\]
+Every $i\in\left\{  0,1,...,n-1\right\}  $ satisfies $\overline{T^{i+j-n}}\in
+K_{1}^{\prime}$ (since $\overline{T^{\ell}}\in K_{1}^{\prime}$ is already
+proven for every $\ell\in\mathbb{N}$ satisfying $\ell<j$, and since every
+$i\in\left\{  0,1,...,n-1\right\}  $ satisfies $\underbrace{i}_{<n}+j-n<j$).
+Thus,%
+\[
+\overline{T^{j}}=-\sum\limits_{i=0}^{n-1}\beta_{i}\underbrace{\overline
+{T^{i+j-n}}}_{\in K_{1}^{\prime}}\in K_{1}^{\prime}\ \ \ \ \ \ \ \ \ \ \left(
+\text{since }K_{1}^{\prime}\text{ is a }K\text{-module}\right)  .
+\]
+This proves that $\overline{T^{j}}\in K_{1}^{\prime}$. The induction step is
+thus complete.
+\par
+We have thus proven by strong induction that every $j\in\mathbb{N}$ satisfies
+$\overline{T^{j}}\in K_{1}^{\prime}$.
+\par
+The $K$-module $K\left[  T\right]  $ is generated by the elements $T^{j}$ with
+$j\in\mathbb{N}$. Hence, the $K$-module $K^{\prime}=K\left[  T\right]
+\diagup\left(  P\right)  $ (being a quotient module of $K\left[  T\right]  $)
+is generated by the elements $\overline{T^{j}}$ with $j\in\mathbb{N}$. Since
+all of these generators lie in $K_{1}^{\prime}$ (because every $j\in
+\mathbb{N}$ satisfies $\overline{T^{j}}\in K_{1}^{\prime}$), we can conclude
+that $K^{\prime}\subseteq K_{1}^{\prime}$. Combined with $K_{1}^{\prime
+}\subseteq K^{\prime}$ (this is trivial), this yields $K^{\prime}%
+=K_{1}^{\prime}$. Since $K_{1}^{\prime}$ is the $K$-submodule of $K^{\prime}$
+generated by $\left(  \overline{T^{0}},\overline{T^{1}},...,\overline{T^{n-1}%
+}\right)  $, this yields that the $K$-module $K^{\prime}$ is generated by
+$\left(  \overline{T^{0}},\overline{T^{1}},...,\overline{T^{n-1}}\right)  $.}.
+Thus, the $K$-module $K^{\prime}$ is finite-free. Also, since $\left(
+\overline{T^{0}},\overline{T^{1}},...,\overline{X^{n-1}}\right)  $ is a basis
+of the $K$-module $K^{\prime}$, its subsequence $\left(  \overline{T^{0}%
+}\right)  =\left(  \overline{1}\right)  $ is linearly independent. Hence, the
+canonical map $K\rightarrow K^{\prime}$ is injective (because it maps the
+basis $\left(  1\right)  $ of the $K$-module $K$ to the linearly independent
+sequence $\left(  \overline{1}\right)  $ of the $K$-module $K^{\prime}$).
+Hence, we can view $K^{\prime}$ as an extension ring of $K$.
+
+Let $p=\overline{X}$. Then, $P\left(  p\right)  =P\left(  \overline{X}\right)
+=\overline{P\left(  X\right)  }=\overline{P}=0$ (since $P\equiv
+0\operatorname{mod}\left(  P\right)  $). This proves Lemma 5.1.S.1.
+
+Now, let us solve Exercise 5.1:
+
+We will prove the assertion of Exercise 5.1 by induction over $n$.
+
+\textit{Induction base:} For $n=0$, the assertion of Exercise 5.1 is trivially
+true (take $K_{P}=K$). This completes the induction base.
+
+\textit{Induction step:} Let $N\in\mathbb{N}$ be arbitrary. Assume that the
+assertion of Exercise 5.1 is true for $n=N-1$. Let us now prove the assertion
+of Exercise 5.1 for $n=N$.
+
+First we recall that we assumed that the assertion of Exercise 5.1 is true for
+$n=N-1$. Hence,%
+
+\begin{equation}
+\left(
+\begin{array}
+[c]{c}%
+\text{If }K^{\prime}\text{ is a ring, and if }Q\in K^{\prime}\left[  T\right]
+\text{ is a monic polynomial such that}\\
+\deg Q=N-1\text{, then there exists a finite-free extension ring }%
+K_{Q}^{\prime}\text{ of}\\
+\text{the ring }K\text{ and }N-1\text{ elements }p_{1}\text{, }p_{2}\text{,
+}...\text{, }p_{N-1}\text{ of this extension}\\
+\text{ring }K_{Q}^{\prime}\text{ such that }Q=\prod\limits_{i=1}^{N-1}\left(
+T-p_{i}\right)  \text{ in }K_{Q}^{\prime}\left[  T\right]
+\end{array}
+\right)  \label{5.1.sol.1}%
+\end{equation}
+(this follows from Exercise 5.1, applied to $K^{\prime}$, $Q$ and $N-1$
+instead of $K$, $Q$ and $n$\ \ \ \ \footnote{In fact, we are allowed to apply
+Exercise 5.1 to $K^{\prime}$, $Q$ and $N-1$ instead of $K$, $Q$ and $n$,
+because we assumed that the assertion of Exercise 5.1 is true for $n=N-1$.}).
+
+Let $K$ be a ring, and let $P\in K\left[  T\right]  $ be a monic polynomial
+such that $\deg P=N$. According to Lemma 5.1.S.1, there exists a finite-free
+extension ring $K^{\prime}$ of the ring $K$ and an element $p\in K^{\prime}$
+such that $P\left(  p\right)  =0$ in $K^{\prime}$. Consider these $K^{\prime}$
+and $p$.
+
+We recall a known fact from basic algebra: If $\mathbf{Z}$ is a ring and
+$\mathfrak{P}\in\mathbf{Z}\left[  T\right]  $ is a polynomial, and if
+$\mathfrak{p}$ is an element of $\mathbf{Z}$ such that $\mathfrak{P}\left(
+\mathfrak{p}\right)  =0$, then there exists a polynomial $\mathfrak{Q}%
+\in\mathbf{Z}\left[  T\right]  $ of degree $\leq\deg\mathfrak{P}-1$ such that
+$\mathfrak{P}=\mathfrak{Q}\cdot\left(  T-\mathfrak{p}\right)  $.
+
+Applying this fact to $\mathbf{Z}=K^{\prime}$, $\mathfrak{P}=P$ and
+$\mathfrak{p}=p$, we obtain: There exists a polynomial $Q\in K^{\prime}\left[
+T\right]  $ of degree $\leq\deg P-1$ such that $P=Q\cdot\left(  T-p\right)  $
+(since $P\left(  p\right)  =0$)\ \ \ \ \footnote{Note that $K^{\prime}\left[
+T\right]  $ denotes the polynomial ring in one indeterminate $T$ over
+$K^{\prime}$. This $T$ here is \textit{not} the $T$ that was used to construct
+$K^{\prime}$ in the proof of Lemma 5.1.S.1. In order to avoid confusing these
+two $T$'s, you are advised to forget the proof of Lemma 5.1.S.1 (you won't
+need it any more).}. Consider this $Q$.
+
+It is easy to see that $Q$ is a monic polynomial of degree $N-1$%
+.\ \ \ \ \footnote{\textit{Proof.} Since $Q$ has degree $\leq\deg P-1$, we
+have $\deg Q\leq\underbrace{\deg P}_{=N}-1=N-1$. We can thus write the
+polynomial $Q$ in the form $Q=\sum\limits_{i=0}^{N-1}q_{i}T^{i}$ for some
+$\left(  q_{0},q_{1},...,q_{N-1}\right)  \in K^{N}$. Writing it this way, we
+have%
+\begin{align*}
+Q\cdot\left(  T-p\right)   &  =\sum\limits_{i=0}^{N-1}q_{i}T^{i}\cdot\left(
+T-p\right)  =\sum\limits_{i=0}^{N-1}q_{i}\underbrace{T^{i}T}_{=T^{i+1}}%
+-\sum\limits_{i=0}^{N-1}q_{i}\underbrace{T^{i}p}_{=pT^{i}}=\sum\limits_{i=0}%
+^{N-1}q_{i}T^{i+1}-\sum\limits_{i=0}^{N-1}q_{i}pT^{i}\\
+&  =\sum\limits_{i=1}^{N}q_{i-1}T^{i}-\sum\limits_{i=0}^{N-1}q_{i}%
+pT^{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }i\text{ for
+}i+1\text{ in the first sum}\right)  .
+\end{align*}
+Thus,%
+\[
+P=Q\cdot\left(  T-p\right)  =\sum\limits_{i=1}^{N}q_{i-1}T^{i}-\sum
+\limits_{i=0}^{N-1}q_{i}pT^{i}.
+\]
+Hence,%
+\begin{align*}
+&  \left(  \text{the coefficient of the polynomial }P\text{ before }%
+T^{N}\right) \\
+&  =\left(  \text{the coefficient of the polynomial }\sum\limits_{i=1}%
+^{N}q_{i-1}T^{i}-\sum\limits_{i=0}^{N-1}q_{i}pT^{i}\text{ before }T^{N}\right)
+\\
+&  =\underbrace{\left(  \text{the coefficient of the polynomial }%
+\sum\limits_{i=1}^{N}q_{i-1}T^{i}\text{ before }T^{N}\right)  }_{=q_{N-1}}\\
+&  \ \ \ \ \ \ \ \ \ \ -\underbrace{\left(  \text{the coefficient of the
+polynomial }\sum\limits_{i=0}^{N-1}q_{i}pT^{i}\text{ before }T^{N}\right)
+}_{=0}\\
+&  =q_{N-1}-0=q_{N-1}.
+\end{align*}
+Since $\left(  \text{the coefficient of the polynomial }P\text{ before }%
+T^{N}\right)  =1$ (because $P$ is a monic polynomial with $\deg P=N$), this
+rewrites as $1=q_{N-1}$. Since $\deg q\leq N-1$, this yields that $q$ is a
+monic polynomial of degree $N-1$.} That is, $Q$ is monic and $\deg Q=N-1$.
+According to (\ref{5.1.sol.1}), there therefore exists a finite-free extension
+ring $K_{Q}^{\prime}$ of the ring $K$ and $N-1$ elements $p_{1}$, $p_{2}$,
+$...$, $p_{N-1}$ of this extension ring $K_{Q}^{\prime}$ such that
+$Q=\prod\limits_{i=1}^{N-1}\left(  T-p_{i}\right)  $ in $K_{Q}^{\prime}\left[
+T\right]  $. Consider this $K_{Q}^{\prime}$ and these $p_{1}$, $p_{2}$, $...$,
+$p_{N-1}$.
+
+Since $K_{Q}^{\prime}$ is a finite-free $K^{\prime}$-module, and since
+$K^{\prime}$ is a finite-free $K$-module, it is clear that $K_{Q}^{\prime}$ is
+a finite-free $K$-module\footnote{Here we are using the following general fact
+from algebra: If $K$ is a ring, if $A$ is a $K$-algebra which is a finite-free
+$K$-module, and if $B$ is a finite-free $A$-module, then $B$ is a finite-free
+$K$-module.
+\par
+\textit{Proof of this fact.} Since $A$ is a finite-free $K$-module, we have
+$A\cong K^{n}$ as $K$-modules for some $n\in\mathbb{N}$. Consider this $n$.
+Since $B$ is a finite-free $A$-module, we have $B\cong A^{m}$ as $A$-modules
+for some $m\in\mathbb{N}$. Consider this $m$. Since $B\cong A^{m}$ as
+$A$-modules, we also have%
+\begin{align*}
+B  &  \cong A^{m}\cong\left(  K^{n}\right)  ^{m}\ \ \ \ \ \ \ \ \ \ \left(
+\text{since }A\cong K^{n}\right) \\
+&  \cong K^{nm}%
+\end{align*}
+as $K$-modules. Thus, $B$ is a finite-free $K$-module, qed.}. Also, since
+$K_{Q}^{\prime}$ is an extension ring of $K^{\prime}$, and since $K^{\prime}$
+is an extension ring of $K$, it is clear that $K_{Q}^{\prime}$ is an extension
+ring of $K$. Thus, $K_{Q}^{\prime}$ is a finite-free extension ring of $K$.
+
+Define $K_{P}=K_{Q}^{\prime}$ and $p_{N}=p$. Then, $p_{1}$, $p_{2}$, $...$,
+$p_{N-1}$, $p_{N}$ are $N$ elements of the ring $K_{Q}^{\prime}=K_{P}$. In
+$K_{p}\left[  T\right]  =K_{Q}^{\prime}\left[  T\right]  $, we have%
+\[
+P=\underbrace{Q}_{=\prod\limits_{i=1}^{N-1}\left(  T-p_{i}\right)  }%
+\cdot\left(  T-\underbrace{p}_{=p_{N}}\right)  =\prod\limits_{i=1}%
+^{N-1}\left(  T-p_{i}\right)  \cdot\left(  T-p_{N}\right)  =\prod
+\limits_{i=1}^{N}\left(  T-p_{i}\right)  .
+\]
+The ring $K_{P}$ is a finite-free extension ring of $K$ (since $K_{P}%
+=K_{Q}^{\prime}$, and since we know that $K_{Q}^{\prime}$ is a finite-free
+extension ring of $K$).
+
+So we have proven that if $K$ is a ring, and if $P\in K\left[  T\right]  $ is
+a monic polynomial such that $\deg P=N$, then there exists a finite-free
+extension ring $K_{P}$ of the ring $K$ and $N$ elements $p_{1},$ $p_{2},$
+$...,$ $p_{N}$ of this extension ring $K_{P}$ such that $P=\prod
+\limits_{i=1}^{N}\left(  T-p_{i}\right)  $ in $K_{P}\left[  T\right]  $. In
+other words, we have proven the assertion of Exercise 5.1 for $n=N$. Thus, the
+induction step is complete, and Exercise 5.1 is solved.
+
 \textit{Exercise 6.1: Hints to solution:} We have%
 \[
 \left(  1+K\left[  T\right]  ^{+}\right)  ^{-1}K\left[  T\right]  \cap
@@ -9574,8 +9636,8 @@ splitting fields in Galois theory.
 \]
 where $U\widehat{-}U$ denotes the set $\left\{  u\widehat{-}u^{\prime}\mid
 u\in U,\ u^{\prime}\in U\right\}  $ for every subset $U$ of $\Lambda\left(
-K\right)  $ (where $\widehat{-}$ means subtraction with respect to the addtion
-$\widehat{+}$ in $\Lambda\left(  K\right)  $). The subset $1+K\left[
+K\right)  $ (where $\widehat{-}$ means subtraction with respect to the
+addition $\widehat{+}$ in $\Lambda\left(  K\right)  $). The subset $1+K\left[
 T\right]  ^{+}$ of $\Lambda\left(  K\right)  $ is closed under the addition
 $\widehat{+}$, the multiplication $\widehat{\cdot}$ and the maps
 $\widehat{\lambda}^{i}$ (according to Theorem 5.3, since $1+K\left[  T\right]
@@ -10788,6 +10850,371 @@ We have thus proven (\ref{10.1.sol.1}) by induction. Applying
 \left(  \prod\limits_{i=1}^{m}\Phi_{i}\right)  =\sum\limits_{i=1}%
 ^{m}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{i}\right)  $. This
 concludes the solution of Exercise 10.1 \textbf{(b)}.
+
+\textit{Exercise 10.2: Solution:} \textit{Proof of Proposition 10.29.} Let
+$x\in K$. Then, $\lambda_{T}\left(  x\right)  =\sum\limits_{i\in\mathbb{N}%
+}\lambda^{i}\left(  x\right)  T^{i}$, so that%
+\[
+\iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(  x\right)
+\right)  =\iota\left[  \left[  T\right]  \right]  \left(  \sum\limits_{i\in
+\mathbb{N}}\lambda^{i}\left(  x\right)  T^{i}\right)  =\sum\limits_{i\in
+\mathbb{N}}\underbrace{\iota\left(  \lambda^{i}\left(  x\right)  \right)
+}_{\substack{=\lambda^{i}\left(  x\right)  \otimes1\\\text{(by the definition
+of }\iota\text{)}}}T^{i}=\sum\limits_{i\in\mathbb{N}}\left(  \lambda
+^{i}\left(  x\right)  \otimes1\right)  T^{i}.
+\]
+Hence, every $k\in\mathbb{N}$ satisfies $\operatorname*{Coeff}\nolimits_{k}%
+\left(  \iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(
+x\right)  \right)  \right)  =\operatorname*{Coeff}\nolimits_{k}\left(
+\sum\limits_{i\in\mathbb{N}}\left(  \lambda^{i}\left(  x\right)
+\otimes1\right)  T^{i}\right)  =\lambda^{k}\left(  x\right)  \otimes1$ (by the
+definition of $\operatorname*{Coeff}\nolimits_{k}$). Thus,
+\begin{align}
+&  \left(  \operatorname*{Coeff}\nolimits_{1}\left(  \iota\left[  \left[
+T\right]  \right]  \left(  \lambda_{T}\left(  x\right)  \right)  \right)
+,\operatorname*{Coeff}\nolimits_{2}\left(  \iota\left[  \left[  T\right]
+\right]  \left(  \lambda_{T}\left(  x\right)  \right)  \right)
+,...,\operatorname*{Coeff}\nolimits_{j}\left(  \iota\left[  \left[  T\right]
+\right]  \left(  \lambda_{T}\left(  x\right)  \right)  \right)  \right)
+\nonumber\\
+&  =\left(  \lambda^{1}\left(  x\right)  \otimes1,\lambda^{2}\left(  x\right)
+\otimes1,...,\lambda^{j}\left(  x\right)  \otimes1\right)  \label{10.29.pf.1}%
+\end{align}
+for every $j\in\mathbb{N}$. Now, (\ref{ToddFrak}) (applied to $p=\iota\left[
+\left[  T\right]  \right]  \left(  \lambda_{T}\left(  x\right)  \right)  $)
+yields%
+\begin{align*}
+&  \mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]  \right]
+\left(  \lambda_{T}\left(  x\right)  \right)  \right) \\
+&  =\sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
+\operatorname*{Coeff}\nolimits_{1}\left(  \iota\left[  \left[  T\right]
+\right]  \left(  \lambda_{T}\left(  x\right)  \right)  \right)
+,\operatorname*{Coeff}\nolimits_{2}\left(  \iota\left[  \left[  T\right]
+\right]  \left(  \lambda_{T}\left(  x\right)  \right)  \right)
+,...,\operatorname*{Coeff}\nolimits_{j}\left(  \iota\left[  \left[  T\right]
+\right]  \left(  \lambda_{T}\left(  x\right)  \right)  \right)  \right)
+T^{j}\\
+&  =\sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
+\lambda^{1}\left(  x\right)  \otimes1,\lambda^{2}\left(  x\right)
+\otimes1,...,\lambda^{j}\left(  x\right)  \otimes1\right)  T^{j}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{10.29.pf.1})}\right) \\
+&  =\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(
+x\right)  .
+\end{align*}
+This proves Proposition 10.29.
+
+\textit{Proof of Proposition 10.30.} Let $\iota:K\rightarrow K\otimes
+_{\mathbf{Z}}\mathbf{Z}^{\prime}$ be canonical map (mapping every $\xi\in K$
+to $\xi\otimes1\in K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$). Proposition
+10.29 (applied to $\varphi=1+ut$) yields%
+\begin{align*}
+\operatorname*{td}\nolimits_{1+ut,T,\mathbf{Z}^{\prime}}\left(  x\right)   &
+=\mathfrak{Todd}_{1+ut}\left(  \iota\left[  \left[  T\right]  \right]  \left(
+\lambda_{T}\left(  x\right)  \right)  \right)  =\underbrace{\operatorname*{ev}%
+\nolimits_{uT}}_{\substack{=\operatorname*{ev}\nolimits_{\left(  1\otimes
+u\right)  T}\\\text{(since }uT=\left(  1\otimes u\right)  T\\\text{in }\left(
+K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[  \left[  T\right]
+\right]  }}\left(  \iota\left[  \left[  T\right]  \right]  \left(  \lambda
+_{T}\left(  x\right)  \right)  \right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Proposition 10.12, applied to }\mathbf{Z}^{\prime}\text{, }%
+K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\text{ and }\iota\left[  \left[
+T\right]  \right]  \left(  \lambda_{T}\left(  x\right)  \right) \\
+\text{instead of }\mathbf{Z}\text{, }K\text{ and }p
+\end{array}
+\right) \\
+&  =\operatorname*{ev}\nolimits_{\left(  1\otimes u\right)  T}\left(
+\iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(  x\right)
+\right)  \right)  =\left(  \operatorname*{ev}\nolimits_{\left(  1\otimes
+u\right)  T}\circ\iota\left[  \left[  T\right]  \right]  \right)  \left(
+\lambda_{T}\left(  x\right)  \right)  .
+\end{align*}
+But the diagram%
+\[
+\xymatrixcolsep{5pc}\xymatrix{
+K \left[\left[T\right]\right] \ar[r]^{\iota \left[\left[T\right]\right]} \ar[dr]_{\operatorname*{ev}_{\left(1\otimes u\right)T}} & \left(K \otimes_{\mathbf Z} \mathbf Z^{\prime}\right) \left[\left[T\right]\right] \ar[d]^{\operatorname*{ev}_{\left(1\otimes u\right)T}} \\
+&  \left(K \otimes_{\mathbf Z} \mathbf Z^{\prime}\right) \left[\left[T\right]\right]
+}
+\]
+commutes (since the definition of the map $\operatorname*{ev}\nolimits_{\mu
+T}:K\left[  \left[  T\right]  \right]  \rightarrow L\left[  \left[  T\right]
+\right]  $ for any ring $K$, any $K$-algebra $L$ and any element $\mu$ of $L$
+was canonical with respect to $K$). Thus, $\operatorname*{ev}%
+\nolimits_{\left(  1\otimes u\right)  T}\circ\iota\left[  \left[  T\right]
+\right]  =\operatorname*{ev}\nolimits_{\left(  1\otimes u\right)  T}$. Now,%
+\[
+\operatorname*{td}\nolimits_{1+ut,T,\mathbf{Z}^{\prime}}\left(  x\right)
+=\underbrace{\left(  \operatorname*{ev}\nolimits_{\left(  1\otimes u\right)
+T}\circ\iota\left[  \left[  T\right]  \right]  \right)  }_{=\operatorname*{ev}%
+\nolimits_{\left(  1\otimes u\right)  T}}\left(  \lambda_{T}\left(  x\right)
+\right)  =\operatorname*{ev}\nolimits_{\left(  1\otimes u\right)  T}\left(
+\lambda_{T}\left(  x\right)  \right)  .
+\]
+This proves Proposition 10.30.
+
+Alternatively, we could have proven Proposition 10.30 by repeating the proof
+of Proposition 10.3 with some minor changes.
+
+We could derive Proposition 10.31 from Proposition 10.13 (just as we derived
+Proposition 10.30 from Proposition 10.12) using Proposition 10.29, but let us
+instead prove it directly:
+
+\textit{Proof of Proposition 10.31.} Let $x\in K$.
+
+\textbf{(a)} We have%
+\begin{align*}
+\operatorname*{Coeff}\nolimits_{0}\left(  \operatorname*{td}\nolimits_{\varphi
+,T,\mathbf{Z}^{\prime}}\left(  x\right)  \right)   &  =\operatorname*{Coeff}%
+\nolimits_{0}\left(  \sum_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi
+,j}\left(  \lambda^{1}\left(  x\right)  \otimes1,\lambda^{2}\left(  x\right)
+\otimes1,...,\lambda^{j}\left(  x\right)  \otimes1\right)  T^{j}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{ToddDefZ'})}\right) \\
+&  =\operatorname*{Td}\nolimits_{\varphi,0}\left(  \lambda^{1}\left(
+x\right)  \otimes1,\lambda^{2}\left(  x\right)  \otimes1,...,\lambda
+^{j}\left(  x\right)  \otimes1\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+the definition of }\operatorname*{Coeff}\nolimits_{0}\right) \\
+&  =\operatorname*{Td}\nolimits_{\varphi,0}=1\ \ \ \ \ \ \ \ \ \ \left(
+\text{by Proposition 10.6 \textbf{(a)}, applied to }\mathbf{Z}^{\prime}\text{
+instead of }\mathbf{Z}\right)  .
+\end{align*}
+
+
+\textbf{(b)} We have%
+\begin{align*}
+\operatorname*{Coeff}\nolimits_{1}\left(  \operatorname*{td}\nolimits_{\varphi
+,T}\left(  x\right)  \right)   &  =\operatorname*{Coeff}\nolimits_{1}\left(
+\sum_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
+\lambda^{1}\left(  x\right)  \otimes1,\lambda^{2}\left(  x\right)
+\otimes1,...,\lambda^{j}\left(  x\right)  \otimes1\right)  T^{j}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{ToddDef})}\right) \\
+&  =\operatorname*{Td}\nolimits_{\varphi,1}\left(  \lambda^{1}\left(
+x\right)  \otimes1,\lambda^{2}\left(  x\right)  \otimes1,...,\lambda
+^{j}\left(  x\right)  \otimes1\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+the definition of }\operatorname*{Coeff}\nolimits_{1}\right) \\
+&  =\operatorname*{Td}\nolimits_{\varphi,1}\left(  \underbrace{\lambda
+^{1}\left(  x\right)  \otimes1}_{=x\otimes1}\right)  =\operatorname*{Td}%
+\nolimits_{\varphi,1}\left(  x\otimes1\right)  =\varphi_{1}\left(
+x\otimes1\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since Proposition 10.6 \textbf{(b)}
+(applied to }\mathbf{Z}^{\prime}\text{ instead of }\mathbf{Z}\text{) yields
+}\operatorname*{Td}\nolimits_{\varphi,1}=\varphi_{1}\alpha_{1}\right)  .
+\end{align*}
+
+
+Proposition 10.31 is now proven.
+
+\textit{Proof of Proposition 10.32.} To obtain a proof of Proposition 10.32,
+read the proof of Proposition 10.7, doing the following replacements:
+
+\begin{itemize}
+\item Replace every $\lambda^{k}\left(  x\right)  $ by $\lambda^{k}\left(
+x\right)  \otimes1$ for $k$ any nonnegative integer (that is, replace
+$\lambda^{1}\left(  x\right)  $ by $\lambda^{1}\left(  x\right)  \otimes1$,
+replace $\lambda^{2}\left(  x\right)  $ by $\lambda^{2}\left(  x\right)
+\otimes1$, etc.).
+
+\item Replace every $\operatorname*{td}\nolimits_{\varphi,T}$ by
+$\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}$.
+
+\item Replace every $\operatorname*{td}\nolimits_{\psi,T}$ by
+$\operatorname*{td}\nolimits_{\psi,T,\mathbf{Z}^{\prime}}$.
+
+\item Replace every $\operatorname*{td}\nolimits_{\varphi\psi,T}$ by
+$\operatorname*{td}\nolimits_{\varphi\psi,T,\mathbf{Z}^{\prime}}$.
+
+\item Replace all references to Proposition 10.7 by references to Proposition 10.32.
+
+\item Replace all references to (\ref{ToddDef}) by references to
+(\ref{ToddDefZ'}).
+\end{itemize}
+
+\textit{Proof of Proposition 10.33.} This can be proven by induction over $m$.
+The induction base (the case $m=0$) requires showing that $\operatorname*{td}%
+\nolimits_{1,T,\mathbf{Z}^{\prime}}\left(  x\right)  =1$, but this follows
+from Proposition 10.14\footnote{In fact, Proposition 10.30 (applied to $u=0$)
+yields $\operatorname*{td}\nolimits_{1+0t,T,\mathbf{Z}^{\prime}}\left(
+x\right)  =\lambda_{\left(  1\otimes0\right)  T}\left(  x\right)  $. Now
+$\lambda_{\left(  1\otimes0\right)  T}\left(  x\right)  =\operatorname*{ev}%
+\nolimits_{\left(  1\otimes0\right)  T}\left(  \lambda_{T}\left(  x\right)
+\right)  $. Since $\operatorname*{ev}\nolimits_{\left(  1\otimes0\right)
+T}=\operatorname*{ev}\nolimits_{0T}$ is the map $K\left[  \left[  T\right]
+\right]  \rightarrow\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)
+\left[  \left[  T\right]  \right]  $ which sends every power series to its
+constant term tensored with $1$ (viewed as a constant power series over
+$K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$), we have $\operatorname*{ev}%
+\nolimits_{\left(  1\otimes0\right)  T}\left(  \lambda_{T}\left(  x\right)
+\right)  =\underbrace{\left(  \text{constant term of the power series }%
+\lambda_{T}\left(  x\right)  \right)  }_{=1}\otimes1=1\otimes1=1$. Thus,
+$\operatorname*{td}\nolimits_{1,T,\mathbf{Z}^{\prime}}\left(  x\right)
+=\operatorname*{td}\nolimits_{1+0t,T,\mathbf{Z}^{\prime}}\left(  x\right)
+=\lambda_{\left(  1\otimes0\right)  T}\left(  x\right)  =\operatorname*{ev}%
+\nolimits_{\left(  1\otimes0\right)  T}\left(  \lambda_{T}\left(  x\right)
+\right)  =1$.}. The induction step is a straightforward application of
+Proposition 10.32. Thus Proposition 10.33 is proven.
+
+\textit{Proof of Theorem 10.34.} Theorem 2.1 \textbf{(a)} yields $\lambda
+_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)  =\lambda_{T}\left(
+x+y\right)  $ (since $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
+}\right)  $ is a $\lambda$-ring).
+
+Let $\iota:K\rightarrow K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$ be canonical
+map (mapping every $\xi\in K$ to $\xi\otimes1\in K\otimes_{\mathbf{Z}%
+}\mathbf{Z}^{\prime}$). Then, Proposition 10.29 yields $\operatorname*{td}%
+_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)  =\mathfrak{Todd}_{\varphi
+}\left(  \iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(
+x\right)  \right)  \right)  $. Proposition 10.29 (applied to $y$ instead of
+$x$) yields $\operatorname*{td}_{\varphi,T,\mathbf{Z}^{\prime}}\left(
+y\right)  =\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]
+\right]  \left(  \lambda_{T}\left(  y\right)  \right)  \right)  $. Hence,%
+\begin{align*}
+&  \underbrace{\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}%
+}\left(  x\right)  }_{=\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[
+T\right]  \right]  \left(  \lambda_{T}\left(  x\right)  \right)  \right)
+}\cdot\underbrace{\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}%
+}\left(  y\right)  }_{=\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[
+T\right]  \right]  \left(  \lambda_{T}\left(  y\right)  \right)  \right)  }\\
+&  =\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]  \right]
+\left(  \lambda_{T}\left(  x\right)  \right)  \right)  \cdot\mathfrak{Todd}%
+_{\varphi}\left(  \iota\left[  \left[  T\right]  \right]  \left(  \lambda
+_{T}\left(  y\right)  \right)  \right)  =\mathfrak{Todd}_{\varphi}\left(
+\underbrace{\iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(
+x\right)  \right)  \cdot\iota\left[  \left[  T\right]  \right]  \left(
+\lambda_{T}\left(  y\right)  \right)  }_{\substack{=\iota\left[  \left[
+T\right]  \right]  \left(  \lambda_{T}\left(  x\right)  \cdot\lambda
+_{T}\left(  y\right)  \right)  \\\text{(since }\iota\left[  \left[  T\right]
+\right]  \text{ is a ring homomorphism)}}}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 10.16, applied to }%
+p=\iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(  x\right)
+\right)  \text{ and }q=\iota\left[  \left[  T\right]  \right]  \left(
+\lambda_{T}\left(  y\right)  \right)  \right) \\
+&  =\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]  \right]
+\left(  \lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)
+\right)  \right)
+\end{align*}
+Proposition 10.29 (applied to $x+y$ instead of $x$) yields%
+\[
+\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x+y\right)
+=\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]  \right]
+\left(  \underbrace{\lambda_{T}\left(  x+y\right)  }_{\substack{=\lambda
+_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)  }}\right)  \right)
+=\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]  \right]
+\left(  \lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)
+\right)  \right)  .
+\]
+Thus,%
+\[
+\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)
+\cdot\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(
+y\right)  =\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]
+\right]  \left(  \lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(
+y\right)  \right)  \right)  =\operatorname*{td}\nolimits_{\varphi
+,T,\mathbf{Z}^{\prime}}\left(  x+y\right)  .
+\]
+Theorem 10.34 is thus proven.
+
+\textit{Proof of Corollary 10.35.} Every $x\in K$ satisfies
+$\operatorname*{td}_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)
+\in\Lambda\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $ (since
+Proposition 10.31 \textbf{(a)} says that $\operatorname*{Coeff}\nolimits_{0}%
+\left(  \operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(
+x\right)  \right)  =1$, so that the power series $\operatorname*{td}%
+\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)  $ has the constant
+term $1$, and thus $\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime
+}}\left(  x\right)  \in1+\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime
+}\right)  \left[  \left[  T\right]  \right]  ^{+}=\Lambda\left(
+K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $). In other words,
+$\operatorname*{td}_{\varphi,T,\mathbf{Z}^{\prime}}\left(  K\right)
+\subseteq\Lambda\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $.
+
+Now we are going to prove that $\operatorname*{td}_{\varphi,T,\mathbf{Z}%
+^{\prime}}:K\rightarrow\Lambda\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime
+}\right)  $ is a homomorphism of additive groups.
+
+Theorem 10.34 (applied to $x=0$ and $y=0$) yields $\operatorname*{td}%
+\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  0\right)  \cdot
+\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  0\right)
+=\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(
+0+0\right)  =\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}%
+}\left(  0\right)  $ Since $\operatorname*{td}\nolimits_{\varphi
+,T,\mathbf{Z}^{\prime}}\left(  0\right)  $ is an invertible element of
+$\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[  \left[
+T\right]  \right]  $ (because $\operatorname*{td}\nolimits_{\varphi
+,T,\mathbf{Z}^{\prime}}\left(  0\right)  $ is a power series with constant
+term $1$\ \ \ \ \footnote{since $\operatorname*{td}\nolimits_{\varphi
+,T,\mathbf{Z}^{\prime}}\left(  0\right)  \in\operatorname*{td}%
+\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  K\right)  \subseteq
+\Lambda\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  =1+\left(
+K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[  \left[  T\right]
+\right]  ^{+}$}, and every such power series is an invertible element of
+$\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[  \left[
+T\right]  \right]  $), we can cancel $\operatorname*{td}\nolimits_{\varphi
+,T,\mathbf{Z}^{\prime}}\left(  0\right)  $ from this equation, and obtain
+$\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  0\right)
+=1$. Since $0$ is the neutral element of the additive group $K$, while $1$ is
+the neutral element of the additive group $\Lambda\left(  K\otimes
+_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $, this yields that the map
+$\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}$ respects the
+neutral elements of the additive groups $K$ and $\Lambda\left(  K\otimes
+_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $.
+
+Any $x\in K$ and $y\in K$ satisfy%
+\begin{align*}
+\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x+y\right)
+&  =\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(
+x\right)  \cdot\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}%
+}\left(  y\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 10.34}\right)
+\\
+&  =\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(
+x\right)  \widehat{+}\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}%
+^{\prime}}\left(  y\right)
+\end{align*}
+(since multiplication of power series in $1+\left(  K\otimes_{\mathbf{Z}%
+}\mathbf{Z}^{\prime}\right)  \left[  \left[  T\right]  \right]  ^{+}$ is
+addition in the ring $\Lambda\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime
+}\right)  $). Combined with the fact that the map $\operatorname*{td}%
+\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}$ respects the neutral elements of
+the additive groups $K$ and $\Lambda\left(  K\otimes_{\mathbf{Z}}%
+\mathbf{Z}^{\prime}\right)  $, this yields: The map $\operatorname*{td}%
+_{\varphi,T,\mathbf{Z}^{\prime}}:K\rightarrow\Lambda\left(  K\otimes
+_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $ is a homomorphism of additive
+groups. Corollary 10.35 is proven.
+
+\textit{Proof of Proposition 10.36.} Let $\iota:K\rightarrow K\otimes
+_{\mathbf{Z}}\mathbf{Z}^{\prime}$ be canonical map (mapping every $\xi\in K$
+to $\xi\otimes1\in K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$). Then,
+$\iota\left[  \left[  T\right]  \right]  \left(  1+uT\right)  =1+\left(
+u\otimes1\right)  T$.
+
+Proposition 10.29 (applied to $x=u$) yields $\operatorname*{td}_{\varphi
+,T,\mathbf{Z}^{\prime}}\left(  u\right)  =\mathfrak{Todd}_{\varphi}\left(
+\iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(  u\right)
+\right)  \right)  $. But Theorem 8.3 \textbf{(a)} (applied to $x=u$) yields
+that $\lambda_{T}\left(  u\right)  =1+uT$ (since the element $u$ is
+$1$-dimensional). Thus,%
+\begin{align*}
+\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  u\right)
+&  =\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]  \right]
+\left(  \underbrace{\lambda_{T}\left(  u\right)  }_{=1+uT}\right)  \right)
+=\mathfrak{Todd}_{\varphi}\left(  \underbrace{\iota\left[  \left[  T\right]
+\right]  \left(  1+uT\right)  }_{=1+\left(  u\otimes1\right)  T}\right)
+=\mathfrak{Todd}_{\varphi}\left(  1+\left(  u\otimes1\right)  T\right) \\
+&  =\varphi\left(  \left(  u\otimes1\right)  T\right)
+\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Proposition 10.26, applied to}\\
+\mathbf{Z}^{\prime}\text{, }K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\text{ and
+}u\otimes1\text{ instead of }\mathbf{Z}\text{, }K\text{ and }u
+\end{array}
+\right)  .
+\end{align*}
+This proves Proposition 10.36.
+
+\textit{Proof of Theorem 10.37.} Theorem 10.37 can be proven with the help of
+Proposition 10.36 in the same way as we proved Theorem 10.27 with the help of
+Proposition 10.24. We leave the details to the reader.
 
 \begin{center}
 \fbox{\textbf{References}}
