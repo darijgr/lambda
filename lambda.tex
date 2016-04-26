@@ -9,7 +9,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, October 04, 2011 21:56:29}
+%TCIDATA{LastRevised=Saturday, October 08, 2011 00:33:39}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
@@ -877,7 +877,7 @@ every permutation $\sigma$ of the set $\left\{  1,2,...,n\right\}  $.
 only one polynomial $Q\in K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}%
 ,\beta_{1},\beta_{2},...,\beta_{n}\right]  $ such that $P\left(  U_{1}%
 ,U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right)  =Q\left(  X_{1},X_{2}%
-,...,X_{m},Y_{1},Y_{2},...,Y_{m}\right)  $.\ \ \ \ \footnote{In other words,
+,...,X_{m},Y_{1},Y_{2},...,Y_{n}\right)  $.\ \ \ \ \footnote{In other words,
 the subring%
 \[
 \left\{  P\in K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]
@@ -1012,7 +1012,7 @@ Q=\sum_{\left(  \lambda_{1},\lambda_{2},...,\lambda_{n}\right)  \in
 }\beta_{2}^{\lambda_{2}}...\beta_{n}^{\lambda_{n}}%
 \]
 satisfies $P\left(  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right)
-=Q\left(  X_{1},X_{2},...,X_{m},Y_{1},Y_{2},...,Y_{m}\right)  $. It only
+=Q\left(  X_{1},X_{2},...,X_{m},Y_{1},Y_{2},...,Y_{n}\right)  $. It only
 remains to prove that this is the only such polynomial. This amounts to
 showing that $X_{1},$ $X_{2},$ $...,$ $X_{m},$ $Y_{1},$ $Y_{2},$ $...,$
 $Y_{n}$ are algebraically independent over $K$. But this is clear since
@@ -1066,14 +1066,14 @@ _{2},...,\alpha_{m},\beta_{1},\beta_{2},...,\beta_{n}\right]  $ such that%
 \[
 \sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
 1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}\prod_{\left(  i,j\right)
-\in S}U_{i}V_{j}=Q\left(  X_{1},X_{2},...,X_{m},Y_{1},Y_{2},...,Y_{m}\right)
+\in S}U_{i}V_{j}=Q\left(  X_{1},X_{2},...,X_{m},Y_{1},Y_{2},...,Y_{n}\right)
 \]
 in $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]  $.
 Since the polynomial $\sum\limits_{\substack{S\subseteq\left\{
 1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  ;\\\left\vert
-S\right\vert =k}}\prod_{\left(  i,j\right)  \in S}U_{i}V_{j}$ has total degree
-$\leq k$ in the variables $U_{1},$ $U_{2},$ $...,$ $U_{m}$ and of total degree
-$\leq k$ in the variables $V_{1},$ $V_{2},$ $...,$ $V_{n}$, Theorem 4.2
+S\right\vert =k}}\prod\limits_{\left(  i,j\right)  \in S}U_{i}V_{j}$ has total
+degree $\leq k$ in the variables $U_{1},$ $U_{2},$ $...,$ $U_{m}$ and of total
+degree $\leq k$ in the variables $V_{1},$ $V_{2},$ $...,$ $V_{n}$, Theorem 4.2
 \textbf{(b)} yields that%
 \[
 \sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
@@ -1578,8 +1578,9 @@ Now we are going to introduce a $\lambda$-ring structure on a particular set
 defined for any given ring $K.$
 
 \begin{quote}
-\textbf{Definition.} Let $K$ be a ring. Let $K\left[  \left[  T\right]
-\right]  ^{+}$ denote the subset%
+\textbf{Definition.} Let $K$ be a ring. Consider the ring $K\left[  \left[
+T\right]  \right]  $ of formal power series in the variable $T$ over $K$. Let
+$K\left[  \left[  T\right]  \right]  ^{+}$ denote the subset%
 \begin{align*}
 TK\left[  \left[  T\right]  \right]   &  =\left\{  \sum_{i\in\mathbb{N}}%
 a_{i}T^{i}\in K\left[  \left[  T\right]  \right]  \ \mid\ a_{i}\in K\text{ for
@@ -1587,7 +1588,8 @@ all }i,\text{ and }a_{0}=0\right\} \\
 &  =\left\{  p\in K\left[  \left[  T\right]  \right]  \ \mid\ p\text{ is a
 power series with constant term }0\right\}
 \end{align*}
-We are going to define a ring structure on the set
+of the ring $K\left[  \left[  T\right]  \right]  $. We are going to define a
+ring structure on the set
 \begin{align*}
 1+K\left[  \left[  T\right]  \right]  ^{+}  &  =\left\{  1+u\mid u\in K\left[
 \left[  T\right]  \right]  ^{+}\right\} \\
@@ -1632,6 +1634,8 @@ T\right]  \right]  ^{+}$ by%
 =\sum_{k\in\mathbb{N}}P_{k,j}\left(  a_{1},a_{2},...,a_{kj}\right)  T^{k}.
 \]
 
+
+
 \end{quote}
 
 Note that we have denoted the newly-defined addition, subtraction and
@@ -1663,8 +1667,9 @@ We will call this ring $\Lambda\left(  K\right)  $.
 Before we prove this Theorem 5.1, we try to motivate the above definition of
 $\Lambda\left(  K\right)  $:
 
-Let $K\left[  T\right]  ^{+}$ be the subset of $K\left[  T\right]  $ defined
-by%
+\begin{quote}
+\textbf{Definition.} Let $K\left[  T\right]  ^{+}$ be the subset of $K\left[
+T\right]  $ defined by%
 \begin{align*}
 K\left[  T\right]  ^{+}  &  =TK\left[  T\right]  =\left\{  \sum_{i\in
 \mathbb{N}}a_{i}T^{i}\in K\left[  T\right]  \ \mid\ a_{i}\in K\text{ for all
@@ -1673,8 +1678,10 @@ K\left[  T\right]  ^{+}  &  =TK\left[  T\right]  =\left\{  \sum_{i\in
 constant term }0\right\}  .
 \end{align*}
 Then, the set $1+K\left[  T\right]  ^{+}$ is a subset of $1+K\left[  \left[
-T\right]  \right]  ^{+}.$ The elements of $1+K\left[  T\right]  ^{+}$ are
-polynomials. We have:
+T\right]  \right]  ^{+}.$ The elements of $1+K\left[  T\right]  ^{+}$ are polynomials.
+\end{quote}
+
+Now, we have:
 
 \begin{quote}
 \textbf{Theorem 5.2.} Let $K$ be a ring. For every element $p\in1+K\left[
@@ -4874,7 +4881,10 @@ added yet.}
 \fbox{\textbf{10. Todd homomorphisms of polynomials}}
 \end{center}
 
-\textbf{WARNING:} The following may be wrong or differ from the standard
+We now devote a section to the notion of Todd homomorphisms. First, two warnings:
+
+\begin{itemize}
+\item \textbf{Warning:} The following may be wrong or differ from the standard
 notations. I am trying to generalize [1], I \S 6 (mostly because it is
 slightly flawed\footnote{[1], I \S 6, p. 24 states that $\operatorname*{td}%
 _{\varphi}\left(  e\right)  $ is a universal polynomial in $\lambda^{1}\left(
@@ -4884,18 +4894,30 @@ hand, my generalization $\operatorname*{td}\nolimits_{\varphi,T}$ is a
 universal polynomial.} and the generalization looks more natural to me), but I
 cannot guarantee that this is the right generalization.
 
+\item \textbf{Another warning:} In the following, we will often formulate
+results over a ring which we will call $\mathbf{Z}$. The letter $\mathbf{Z}$
+will denote any ring (commutative with unity, of course). Please don't confuse
+it with the similarly-looking letter $\mathbb{Z}$, which always denote the
+ring of integers. The reason why I chose the letter $\mathbf{Z}$ for the ring
+is that in most applications the ring $\mathbf{Z}$ will indeed be the ring
+$\mathbb{Z}$ of integers; however, in some cases it will not (for example,
+even if we would formulate Theorem 10.19 for $\mathbf{Z}=\mathbb{Z}$ only, the
+proof of this theorem would require considering other rings $\mathbf{Z}$ !).
+\end{itemize}
+
 We begin this section with a construction similar to the construction of the
 Adams operations in Section 9. The goal of this construction is to find, for
-every power series $\varphi\in1+\mathbb{Z}\left[  \left[  t\right]  \right]
-^{+}$ with constant term equal to $1$, a polynomial $\operatorname*{Td}%
-_{\varphi,j}\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]
-$ for every $j\in\mathbb{N}$ such that
+every power series $\varphi\in1+\mathbf{Z}\left[  \left[  t\right]  \right]
+^{+}$ with constant term equal to $1$ (where $\mathbf{Z}$ is a ring - in most
+cases, it will be the ring $\mathbb{Z}$ of integers), a polynomial
+$\operatorname*{Td}_{\varphi,j}\in\mathbf{Z}\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{j}\right]  $ for every $j\in\mathbb{N}$ such that
 \[
 \prod\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)  =\sum_{j\in\mathbb{N}%
 }\operatorname*{Td}\nolimits_{\varphi,j}\left(  X_{1},X_{2},...,X_{j}\right)
 T^{j}%
 \]
-in the ring $\left(  \mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)
+in the ring $\left(  \mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)
 \left[  \left[  T\right]  \right]  $ for every $m\in\mathbb{N}$, where
 $X_{i}=\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
 ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{k}$ as usual. To
@@ -4962,37 +4984,73 @@ power series $P\in R\left[  \left[  T\right]  \right]  $ and $Q\in R\left[
 Q\right)  \text{ for all }i\in\mathbb{N}\right)  $, then $P=Q$.
 \end{itemize}
 
+Now let us define what we mean by $1+\mathbf{Z}\left[  \left[  t\right]
+\right]  ^{+}$:
+
+\begin{quote}
+\textbf{Definition.} Let $\mathbf{Z}$ be a ring. Consider the ring
+$\mathbf{Z}\left[  \left[  t\right]  \right]  $ of formal power series in the
+variable $t$ over $\mathbf{Z}$. Let $\mathbf{Z}\left[  \left[  t\right]
+\right]  ^{+}$ denote the subset%
+\begin{align*}
+t\mathbf{Z}\left[  \left[  t\right]  \right]   &  =\left\{  \sum
+_{i\in\mathbb{N}}a_{i}t^{i}\in\mathbf{Z}\left[  \left[  t\right]  \right]
+\ \mid\ a_{i}\in\mathbf{Z}\text{ for all }i,\text{ and }a_{0}=0\right\} \\
+&  =\left\{  p\in\mathbf{Z}\left[  \left[  t\right]  \right]  \ \mid\ p\text{
+is a power series with constant term }0\right\}
+\end{align*}
+of the ring $\mathbf{Z}\left[  \left[  t\right]  \right]  $. Note that
+\begin{align*}
+1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}  &  =\left\{  1+u\mid
+u\in\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}\right\} \\
+&  =\left\{  p\in\mathbf{Z}\left[  \left[  t\right]  \right]  \ \mid\ p\text{
+is a power series with constant term }1\right\}  .
+\end{align*}
+
+
+
+\end{quote}
+
+We notice that this is an exact copy of a definition we made in Section 5,
+with the only difference that the ring that used to be called $K$ in Section 5
+is called $\mathbf{Z}$ here, and that the variable that used to be $T$ in
+Section 5 is $t$ here.
+
 Now to our universal polynomials:
 
 \begin{quote}
-\textbf{Definition.} Let $\varphi\in1+\mathbb{Z}\left[  \left[  t\right]
-\right]  ^{+}$ be a power series with constant term equal to $1$. Our goal is
-to define a polynomial $\operatorname*{Td}_{\varphi,j}\in\mathbb{Z}\left[
-\alpha_{1},\alpha_{2},...,\alpha_{j}\right]  $ for every $j\in\mathbb{N}$ such
-that%
+\textbf{Definition.} Let $\mathbf{Z}$ be a ring. Let $\varphi\in
+1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$\ \ \ \ \footnote{Here and
+in the following, $1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$ is
+defined just as $1+K\left[  \left[  T\right]  \right]  ^{+}$ was defined in
+Section 5, with the only difference that the ring is $\mathbf{Z}$ instead of
+$K$ now, and that the variable is called $t$ instead of $T$ now.} be a power
+series with constant term equal to $1$. Our goal is to define a polynomial
+$\operatorname*{Td}_{\varphi,j}\in\mathbf{Z}\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{j}\right]  $ for every $j\in\mathbb{N}$ such that%
 \begin{equation}
 \prod\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)  =\sum_{j\in\mathbb{N}%
 }\operatorname*{Td}\nolimits_{\varphi,j}\left(  X_{1},X_{2},...,X_{j}\right)
 T^{j} \label{Td1}%
 \end{equation}
-in the ring $\left(  \mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)
+in the ring $\left(  \mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)
 \left[  \left[  T\right]  \right]  $ for every $m\in\mathbb{N}$, where
-$X_{i}=\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}  ;
-\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{k}$ is the $i$-th
+$X_{i}=\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
+;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{k}$ is the $i$-th
 elementary symmetric polynomial in the variables $U_{1},$ $U_{2},$ $...,$
 $U_{m}$ for every $i\in\mathbb{N}$.
 
-In order to do this, we first fix some $m\in\mathbb{N}$ and $j\in\mathbb{N} $.
+In order to do this, we first fix some $m\in\mathbb{N}$ and $j\in\mathbb{N}$.
 Consider the polynomial $\operatorname*{Coeff}\nolimits_{j}\left(
 \prod\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)  \right)  \in
-\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ (this is the coefficient of
+\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ (this is the coefficient of
 the power series $\prod\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)
-\in\left(  \mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[
+\in\left(  \mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[
 \left[  T\right]  \right]  $ before $T^{j}$). This polynomial
 $\operatorname*{Coeff}\nolimits_{j}\left(  \prod\limits_{i=1}^{m}%
 \varphi\left(  U_{i}T\right)  \right)  $ is symmetric. Thus, Theorem 4.1
 \textbf{(a)} yields that there exists one and only one polynomial
-$\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)  }\in\mathbb{Z}%
+$\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)  }\in\mathbf{Z}%
 \left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $ such that
 $\operatorname*{Coeff}\nolimits_{j}\left(  \prod\limits_{i=1}^{m}%
 \varphi\left(  U_{i}T\right)  \right)  =\operatorname*{Todd}\nolimits_{\left(
@@ -5003,7 +5061,7 @@ j$ in the variables $U_{1},$ $U_{2},$ $...,$ $U_{m}\ \ \ \ $%
 \footnote{\textit{Proof.} There are several ways to prove this; here is the
 simplest one: We use the notion of an "equigraded" power series over a graded
 ring; this notion was defined in [8]. Now let $A$ be the graded ring
-$\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $, where the grading is given
+$\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $, where the grading is given
 by the total degree (thus $U_{1}$, $U_{2}$, $...$, $U_{m}$ all lie in the
 $1$-st graded component $A_{1}$). According to Theorem 1 \textbf{(a)} of [8],
 the set%
@@ -5039,8 +5097,8 @@ U_{i}T\right)  \right)  =\operatorname*{Todd}\nolimits_{\left(  \varphi
 \]
 where $\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)  ,j}$ is the
 image of the polynomial $\operatorname*{Todd}\nolimits_{\left(  \varphi
-,j\right)  }$ under the canonical homomorphism $\mathbb{Z}\left[  \alpha
-_{1},\alpha_{2},...,\alpha_{m}\right]  \rightarrow\mathbb{Z}\left[  \alpha
+,j\right)  }$ under the canonical homomorphism $\mathbf{Z}\left[  \alpha
+_{1},\alpha_{2},...,\alpha_{m}\right]  \rightarrow\mathbf{Z}\left[  \alpha
 _{1},\alpha_{2},...,\alpha_{j}\right]  $. However, this polynomial
 $\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)  ,j}$ is not
 independent of $m$ yet (as the polynomial $\operatorname*{Td}%
@@ -5049,16 +5107,16 @@ $\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)  ,j,\left[  m\right]
 }$ rather than just $\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)
 ,j}$.
 
-Now we forget that we fixed $m\in\mathbb{N}$ (but still fix $j\in\mathbb{N}
-$). We have learnt that%
+Now we forget that we fixed $m\in\mathbb{N}$ (but still fix $j\in\mathbb{N}$).
+We have learnt that%
 \[
 \operatorname*{Coeff}\nolimits_{j}\left(  \prod\limits_{i=1}^{m}\varphi\left(
 U_{i}T\right)  \right)  =\operatorname*{Todd}\nolimits_{\left(  \varphi
 ,j\right)  ,j,\left[  m\right]  }\left(  X_{1},X_{2},...,X_{j}\right)  ,
 \]
-in the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ for
+in the polynomial ring $\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ for
 every $m\in\mathbb{N}$. Now, define a polynomial $\operatorname*{Td}%
-\nolimits_{\varphi,j}\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
+\nolimits_{\varphi,j}\in\mathbf{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
 _{j}\right]  $ by $\operatorname*{Td}\nolimits_{\varphi,j}%
 =\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)  ,j,\left[  j\right]
 }.$
@@ -5068,7 +5126,7 @@ $j$\textit{-th Todd polynomial of }$\varphi$.
 
 \textbf{Theorem 10.1.} The polynomials $\operatorname*{Td}\nolimits_{\varphi
 ,j}$ just defined satisfy the equation (\ref{Td1}) in the ring $\left(
-\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[  \left[
+\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[  \left[
 T\right]  \right]  $ for every $m\in\mathbb{N}$. (Hence, the goal mentioned
 above in the definition is actually achieved.)
 \end{quote}
@@ -5078,14 +5136,14 @@ importance, but if we don't formulate it as a lemma we will have to run
 through its proof several times:
 
 \begin{quote}
-\textbf{Lemma 10.2.} Let $\varphi\in1+\mathbb{Z}\left[  \left[  t\right]
-\right]  ^{+}$ be a power series with constant term equal to $1$. Let
-$m\in\mathbb{N}$ and $n\in\mathbb{N}$ be such that $m\geq n$. Then, in the
-polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{n}\right]  $, we have
-$\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)  ,j,\left[  m\right]
-}\left(  X_{1},X_{2},...,X_{j}\right)  =\operatorname*{Todd}\nolimits_{\left(
-\varphi,j\right)  ,j,\left[  n\right]  }\left(  X_{1},X_{2},...,X_{j}\right)
-$.
+\textbf{Lemma 10.2.} Let $\mathbf{Z}$ be a ring. Let $\varphi\in
+1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$ be a power series with
+constant term equal to $1$. Let $m\in\mathbb{N}$ and $n\in\mathbb{N}$ be such
+that $m\geq n$. Then, in the polynomial ring $\mathbf{Z}\left[  U_{1}%
+,U_{2},...,U_{n}\right]  $, we have $\operatorname*{Todd}\nolimits_{\left(
+\varphi,j\right)  ,j,\left[  m\right]  }\left(  X_{1},X_{2},...,X_{j}\right)
+=\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)  ,j,\left[  n\right]
+}\left(  X_{1},X_{2},...,X_{j}\right)  $.
 \end{quote}
 
 \textit{Proof of Lemma 10.2.} By the definition of $\operatorname*{Todd}%
@@ -5096,38 +5154,39 @@ U_{i}T\right)  \right)  =\operatorname*{Todd}\nolimits_{\left(  \varphi
 ,j\right)  ,j,\left[  m\right]  }\left(  X_{1},X_{2},...,X_{j}\right)
 \label{10.1.pf.1}%
 \end{equation}
-in the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $.
+in the polynomial ring $\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $.
 
-Let $\operatorname*{proj}\nolimits_{m,n}$ be the canonical ring epimorphism
-$\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \rightarrow\mathbb{Z}\left[
-U_{1},U_{2},...,U_{n}\right]  $ which maps every $U_{i}$ to $\left\{
+Let $\operatorname*{proj}\nolimits_{m,n}$ be the canonical $\mathbf{Z}%
+$-algebra epimorphism $\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]
+\rightarrow\mathbf{Z}\left[  U_{1},U_{2},...,U_{n}\right]  $ which maps every
+$U_{i}$ to $\left\{
 \begin{array}
 [c]{c}%
 U_{i},\text{ if }i\leq n;\\
 0,\text{ if }i>n
 \end{array}
-\right.  $. This ring homomorphism $\operatorname*{proj}\nolimits_{m,n}$
-induces a ring homomorphism $\operatorname*{proj}\nolimits_{m,n}\left[
-\left[  T\right]  \right]  :\left(  \mathbb{Z}\left[  U_{1},U_{2}%
-,...,U_{m}\right]  \right)  \left[  \left[  T\right]  \right]  \rightarrow
-\left(  \mathbb{Z}\left[  U_{1},U_{2},...,U_{n}\right]  \right)  \left[
-\left[  T\right]  \right]  $ which maps every power series $\sum
-\limits_{i\in\mathbb{N}}a_{i}T^{i}$ (with $a_{i}\in\mathbb{Z}\left[
-U_{1},U_{2},...,U_{m}\right]  $ for every $i\in\mathbb{N}$) to $\sum
-\limits_{i\in\mathbb{N}}\operatorname*{proj}\nolimits_{m,n}\left(
-a_{i}\right)  T^{i}$. For every $i\in\left\{  1,2,...,m\right\}  $, this
-homomorphism $\operatorname*{proj}\nolimits_{m,n}\left[  \left[  T\right]
-\right]  $ maps satisfies $\left(  \operatorname*{proj}\nolimits_{m,n}\left[
-\left[  T\right]  \right]  \right)  \left(  \varphi\left(  U_{i}T\right)
-\right)  =\left\{
+\right.  $. This $\mathbf{Z}$-algebra homomorphism $\operatorname*{proj}%
+\nolimits_{m,n}$ induces a $\mathbf{Z}$-algebra homomorphism
+$\operatorname*{proj}\nolimits_{m,n}\left[  \left[  T\right]  \right]
+:\left(  \mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[
+\left[  T\right]  \right]  \rightarrow\left(  \mathbf{Z}\left[  U_{1}%
+,U_{2},...,U_{n}\right]  \right)  \left[  \left[  T\right]  \right]  $ which
+maps every power series $\sum\limits_{i\in\mathbb{N}}a_{i}T^{i}$ (with
+$a_{i}\in\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ for every
+$i\in\mathbb{N}$) to $\sum\limits_{i\in\mathbb{N}}\operatorname*{proj}%
+\nolimits_{m,n}\left(  a_{i}\right)  T^{i}$. For every $i\in\left\{
+1,2,...,m\right\}  $, this homomorphism $\operatorname*{proj}\nolimits_{m,n}%
+\left[  \left[  T\right]  \right]  $ maps satisfies $\left(
+\operatorname*{proj}\nolimits_{m,n}\left[  \left[  T\right]  \right]  \right)
+\left(  \varphi\left(  U_{i}T\right)  \right)  =\left\{
 \begin{array}
 [c]{c}%
 \varphi\left(  U_{i}T\right)  ,\ \text{if }i\leq n;\\
 1,\text{\ if }i>n
 \end{array}
 \right.  \ \ \ \ $\footnote{\textit{Proof.} Write the power series $\varphi
-\in\mathbb{Z}\left[  \left[  t\right]  \right]  $ in the form $\varphi
-=\sum\limits_{k\in\mathbb{N}}\varphi_{k}t^{k}$ with $\varphi_{k}\in\mathbb{Z}$
+\in\mathbb{N}\left[  \left[  t\right]  \right]  $ in the form $\varphi
+=\sum\limits_{k\in\mathbb{N}}\varphi_{k}t^{k}$ with $\varphi_{k}\in\mathbf{Z}$
 for every $k\in\mathbb{N}$. Notice that $\varphi_{0}=1$ since $\varphi$ has
 constant term $1$.
 \par
@@ -5145,9 +5204,10 @@ $. Thus,
 \underbrace{\operatorname*{proj}\nolimits_{m,n}\left(  \varphi_{k}U_{i}%
 ^{k}\right)  }_{\substack{=\varphi_{k}\left(  \operatorname*{proj}%
 \nolimits_{m,n}U_{i}\right)  ^{k}\\\text{(since }\operatorname*{proj}%
-\nolimits_{m,n}\text{ is a ring}\\\text{homomorphism)}}}T^{k}%
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{proj}%
-\nolimits_{m,n}\left[  \left[  T\right]  \right]  \right) \\
+\nolimits_{m,n}\text{ is a }\mathbf{Z}\text{-algebra}\\\text{homomorphism)}%
+}}T^{k}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }%
+\operatorname*{proj}\nolimits_{m,n}\left[  \left[  T\right]  \right]  \right)
+\\
 &  =\sum\limits_{k\in\mathbb{N}}\varphi_{k}\left(  \operatorname*{proj}%
 \nolimits_{m,n}U_{i}\right)  ^{k}T^{k}=\sum\limits_{k\in\mathbb{N}}\varphi
 _{k}\left(  \left\{
@@ -5195,7 +5255,7 @@ hand}\\
 \right)  ,
 \end{align*}
 qed.}. Now, since $\operatorname*{proj}\nolimits_{m,n}\left[  \left[
-T\right]  \right]  $ is a ring homomorphism, we have%
+T\right]  \right]  $ is a $\mathbf{Z}$-algebra homomorphism, we have%
 \begin{align*}
 \left(  \operatorname*{proj}\nolimits_{m,n}\left[  \left[  T\right]  \right]
 \right)  \left(  \prod\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)  \right)
@@ -5235,8 +5295,8 @@ T\right]  \right]  $ is a ring homomorphism, we have%
 But the diagram%
 \[
 \xymatrixcolsep{5pc}\xymatrix{
-\left(\mathbb Z\left[U_1,U_2,...,U_m\right]\right)\left[\left[T\right]\right] \ar[r]^{\operatorname*{proj}_{m,n}\left[\left[T\right]\right]} \ar[d]_{\operatorname*{Coeff}_j} & \left(\mathbb Z\left[U_1,U_2,...,U_m\right]\right)\left[\left[T\right]\right]  \ar[d]_{\operatorname*{Coeff}_n} \\
-\mathbb Z\left[U_1,U_2,...,U_m\right] \ar[r]^{\operatorname*{proj}_{m,n}} & \mathbb Z\left[U_1,U_2,...,U_n\right]
+\left(\mathbf Z\left[U_1,U_2,...,U_m\right]\right)\left[\left[T\right]\right] \ar[r]^{\operatorname*{proj}_{m,n}\left[\left[T\right]\right]} \ar[d]_{\operatorname*{Coeff}_j} & \left(\mathbf Z\left[U_1,U_2,...,U_m\right]\right)\left[\left[T\right]\right]  \ar[d]_{\operatorname*{Coeff}_n} \\
+\mathbf Z\left[U_1,U_2,...,U_m\right] \ar[r]^{\operatorname*{proj}_{m,n}} & \mathbf Z\left[U_1,U_2,...,U_n\right]
 }
 \]
 is commutative (this is clear from the definitions of $\operatorname*{Coeff}%
@@ -5283,10 +5343,11 @@ m\right]  }\left(  \operatorname*{proj}\nolimits_{m,n}X_{1}%
 \begin{array}
 [c]{c}%
 \text{since }\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)
-,j,\left[  m\right]  }\text{ is a polynomial over }\mathbb{Z}\text{ and
-}\operatorname*{proj}\nolimits_{m,n}\text{ is a ring homomorphism,}\\
-\text{and since polynomials over }\mathbb{Z}\text{ commute with ring
-homomorphisms}%
+,j,\left[  m\right]  }\text{ is a polynomial over }\mathbf{Z}\text{ and
+}\operatorname*{proj}\nolimits_{m,n}\text{ is a }\mathbf{Z}\text{-algebra
+homomorphism,}\\
+\text{and since polynomials over }\mathbf{Z}\text{ commute with }%
+\mathbf{Z}\text{-algebra homomorphisms}%
 \end{array}
 \right) \\
 &  =\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)  ,j,\left[
@@ -5294,8 +5355,8 @@ m\right]  }\left(  X_{1},X_{2},...,X_{j}\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
-\text{since }\operatorname*{proj}\nolimits_{m,n}\text{ is the ring
-homomorphism which maps every }U_{i}\text{ to }\left\{
+\text{since }\operatorname*{proj}\nolimits_{m,n}\text{ is the }\mathbf{Z}%
+\text{-algebra homomorphism which maps every }U_{i}\text{ to }\left\{
 \begin{array}
 [c]{c}%
 U_{i},\text{ if }i\leq n;\\
@@ -5316,7 +5377,7 @@ we obtain%
 }\left(  X_{1},X_{2},...,X_{j}\right)  =\operatorname*{Todd}\nolimits_{\left(
 \varphi,j\right)  ,j,\left[  m\right]  }\left(  X_{1},X_{2},...,X_{j}\right)
 \]
-in the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{n}\right]  $.
+in the polynomial ring $\mathbf{Z}\left[  U_{1},U_{2},...,U_{n}\right]  $.
 This proves Lemma 10.2.
 
 \textit{Proof of Theorem 10.1.} This proof is going to be very similar to the
@@ -5331,8 +5392,8 @@ j$. Then, we claim that $\operatorname*{Todd}\nolimits_{\left(  \varphi
 $\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)  ,j,\left[  m\right]
 }\left(  X_{1},X_{2},...,X_{j}\right)  =\operatorname*{Todd}\nolimits_{\left(
 \varphi,j\right)  ,j,\left[  j\right]  }\left(  X_{1},X_{2},...,X_{j}\right)
-$ in the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{j}\right]  $.
-Since the elements $X_{1},$ $X_{2},$ $...,$ $X_{j}$ of $\mathbb{Z}\left[
+$ in the polynomial ring $\mathbf{Z}\left[  U_{1},U_{2},...,U_{j}\right]  $.
+Since the elements $X_{1},$ $X_{2},$ $...,$ $X_{j}$ of $\mathbf{Z}\left[
 U_{1},U_{2},...,U_{j}\right]  $ are algebraically independent (by Theorem 4.1
 \textbf{(a)}), this yields $\operatorname*{Todd}\nolimits_{\left(
 \varphi,j\right)  ,j,\left[  m\right]  }=\operatorname*{Todd}%
@@ -5344,7 +5405,7 @@ j\right]  }=\operatorname*{Td}\nolimits_{\varphi,j}$, and the 1st Step is proven
 \textit{2nd Step:} For every $m\in\mathbb{N}$ and $j\in\mathbb{N}$, we have
 $\operatorname*{Td}\nolimits_{\varphi,j}\left(  X_{1},X_{2},...,X_{j}\right)
 =\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)  ,j,\left[  m\right]
-}\left(  X_{1},X_{2},...,X_{j}\right)  $ in the ring $\mathbb{Z}\left[
+}\left(  X_{1},X_{2},...,X_{j}\right)  $ in the ring $\mathbf{Z}\left[
 U_{1},U_{2},...,U_{m}\right]  $.
 
 \textit{Proof.} Let $m^{\prime}\in\mathbb{N}$ be such that $m^{\prime}\geq m$
@@ -5355,7 +5416,7 @@ the other hand, Lemma 10.2 (applied to $m^{\prime}$ and $m$ instead of $m$ and
 $n$) yields that $\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)
 ,j,\left[  m^{\prime}\right]  }\left(  X_{1},X_{2},...,X_{j}\right)
 =\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)  ,j,\left[  m\right]
-}\left(  X_{1},X_{2},...,X_{j}\right)  $ in the polynomial ring $\mathbb{Z}%
+}\left(  X_{1},X_{2},...,X_{j}\right)  $ in the polynomial ring $\mathbf{Z}%
 \left[  U_{1},U_{2},...,U_{m}\right]  $. Since $\operatorname*{Todd}%
 \nolimits_{\left(  \varphi,j\right)  ,j,\left[  m^{\prime}\right]
 }=\operatorname*{Td}\nolimits_{\varphi,j}$, this rewrites as
@@ -5364,10 +5425,10 @@ $\operatorname*{Td}\nolimits_{\varphi,j}\left(  X_{1},X_{2},...,X_{j}\right)
 }\left(  X_{1},X_{2},...,X_{j}\right)  $.
 
 \textit{3rd Step:} For every $m\in\mathbb{N}$, the equation (\ref{Td1}) is
-satisfied in the ring $\left(  \mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]
+satisfied in the ring $\left(  \mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]
 \right)  \left[  \left[  T\right]  \right]  $.
 
-\textit{Proof.} Every power series $P\in\left(  \mathbb{Z}\left[  U_{1}%
+\textit{Proof.} Every power series $P\in\left(  \mathbf{Z}\left[  U_{1}%
 ,U_{2},...,U_{m}\right]  \right)  \left[  \left[  T\right]  \right]  $
 satisfies $P=\sum\limits_{j\in\mathbb{N}}\left(  \operatorname*{Coeff}%
 \nolimits_{j}P\right)  T^{j}$ (by the definition of $\operatorname*{Coeff}%
@@ -5387,18 +5448,19 @@ _{\substack{=\operatorname*{Td}\nolimits_{\varphi,j}\left(  X_{1}%
 &  =\sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
 X_{1},X_{2},...,X_{j}\right)  T^{j}%
 \end{align*}
-in the ring $\left(  \mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)
+in the ring $\left(  \mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)
 \left[  \left[  T\right]  \right]  $. This proves the 3rd Step, and thus
 Theorem 10.1 is proven.
 
 Now, let us define the Todd homomorphism:
 
 \begin{quote}
-\textbf{Definition.} Let $\left(  K,\left(  \lambda^{i}\right)  _{i\in
-\mathbb{N}}\right)  $ be a $\lambda$-ring. Let $\varphi\in1+\mathbb{Z}\left[
-\left[  t\right]  \right]  ^{+}$ be a power series with constant term equal to
-$1$. We define a map $\operatorname*{td}_{\varphi,T}:K\rightarrow K\left[
-\left[  T\right]  \right]  $ by%
+\textbf{Definition.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
+$K$ is a $\mathbf{Z}$-algebra. Let $\varphi\in1+\mathbf{Z}\left[  \left[
+t\right]  \right]  ^{+}$ be a power series with constant term equal to $1$. We
+define a map $\operatorname*{td}_{\varphi,T}:K\rightarrow K\left[  \left[
+T\right]  \right]  $ by%
 \begin{equation}
 \operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  =\sum\limits_{j\in
 \mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(  \lambda^{1}\left(
@@ -5432,10 +5494,11 @@ with $u\in K$. Let us begin with computing the $\varphi$-Todd homomorphism for
 $\varphi$ itself being of this form:
 
 \begin{quote}
-\textbf{Proposition 10.3.} Let $\left(  K,\left(  \lambda^{i}\right)
-_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. Let $u\in\mathbb{Z}$. For
-every $x\in K$, we have $\operatorname*{td}\nolimits_{1+ut,T}\left(  x\right)
-=\lambda_{uT}\left(  x\right)  $, where $\lambda_{uT}\left(  x\right)  $ means
+\textbf{Proposition 10.3.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
+$K$ is a $\mathbf{Z}$-algebra. Let $u\in\mathbf{Z}$. For every $x\in K$, we
+have $\operatorname*{td}\nolimits_{1+ut,T}\left(  x\right)  =\lambda
+_{uT}\left(  x\right)  $, where $\lambda_{uT}\left(  x\right)  $ means
 $\operatorname*{ev}\nolimits_{uT}\left(  \lambda_{T}\left(  x\right)  \right)
 $.
 \end{quote}
@@ -5444,22 +5507,23 @@ To prove this, we need to compute the $j$-th Todd polynomials of $1+ut$. This
 can be done explicitly:
 
 \begin{quote}
-\textbf{Proposition 10.4.} Let $u\in\mathbb{Z}$. Then, $\operatorname*{Td}%
-\nolimits_{1+ut,j}=u^{j}\alpha_{j}$ (in the polynomial ring $\mathbb{Z}\left[
-\alpha_{1},\alpha_{2},...,\alpha_{j}\right]  $) for every $j\in\mathbb{N}$.
+\textbf{Proposition 10.4.} Let $\mathbf{Z}$ be a ring. Let $u\in\mathbf{Z}$.
+Then, $\operatorname*{Td}\nolimits_{1+ut,j}=u^{j}\alpha_{j}$ (in the
+polynomial ring $\mathbf{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
+_{j}\right]  $) for every $j\in\mathbb{N}$.
 \end{quote}
 
 \textit{Proof of Proposition 10.4.} Let $m\in\mathbb{N}$. Consider the ring
-$\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ (the polynomial ring in $m$
-indeterminates $U_{1},$ $U_{2},$ $...,$ $U_{m}$ over the ring $\mathbb{Z}$).
+$\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ (the polynomial ring in $m$
+indeterminates $U_{1},$ $U_{2},$ $...,$ $U_{m}$ over the ring $\mathbf{Z}$).
 For every $i\in\mathbb{N}$, let $X_{i}=\sum\limits_{\substack{S\subseteq
 \left\{  1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in
 S}U_{k}$ be the so-called $i$\textit{-th elementary symmetric polynomial} in
 the variables $U_{1},$ $U_{2},$ $...,$ $U_{m}$.
 
 We know from Proposition 10.1 that (\ref{Td1}) holds in the ring $\left(
-\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[  \left[
-T\right]  \right]  $whenever $\varphi\in1+\mathbb{Z}\left[  \left[  t\right]
+\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[  \left[
+T\right]  \right]  $whenever $\varphi\in1+\mathbf{Z}\left[  \left[  t\right]
 \right]  ^{+}$ is a power series with constant term equal to $1$. Applying
 this to $\varphi=1+ut$, we obtain%
 \[
@@ -5478,7 +5542,7 @@ U_{i}T\right)  }_{=1+uU_{i}T=1+U_{i}\cdot uT}\\
 ;\\\left\vert S\right\vert =i}}\prod_{k\in S}U_{k}}_{=X_{i}}%
 \underbrace{\left(  uT\right)  ^{i}}_{=u^{i}T^{i}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Exercise 4.2 \textbf{(b)}, applied to
-}U_{i}\text{, }\left(  \mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]
+}U_{i}\text{, }\left(  \mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]
 \right)  \left[  \left[  T\right]  \right]  \text{, and }uT\text{ instead of
 }\alpha_{i}\text{, }A\text{, and }t\right) \\
 &  =\sum_{i\in\mathbb{N}}X_{i}u^{i}T^{i}=\sum_{j\in\mathbb{N}}X_{j}u^{j}%
@@ -5493,7 +5557,7 @@ this rewrites as%
 By comparing coefficients in this equation, we conclude that%
 \[
 X_{j}u^{j}=\operatorname*{Td}\nolimits_{1+ut,j}\left(  X_{1},X_{2}%
-,...,X_{j}\right)  \text{ in }\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]
+,...,X_{j}\right)  \text{ in }\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]
 \ \ \ \ \ \ \ \ \ \ \text{for all }j\in\mathbb{N}\text{.}%
 \]
 
@@ -5502,30 +5566,30 @@ Now we forget that we fixed $m$. Instead, fix some $j\in\mathbb{N}$, and take
 $m=j$. Then, we have just proved that
 \[
 X_{j}u^{j}=\operatorname*{Td}\nolimits_{1+ut,j}\left(  X_{1},X_{2}%
-,...,X_{j}\right)  \text{ in }\mathbb{Z}\left[  U_{1},U_{2},...,U_{j}\right]
+,...,X_{j}\right)  \text{ in }\mathbf{Z}\left[  U_{1},U_{2},...,U_{j}\right]
 .
 \]
 
 
-Let $\mathfrak{Q}_{1}\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
+Let $\mathfrak{Q}_{1}\in\mathbf{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
 _{j}\right]  $ be the polynomial defined by $\mathfrak{Q}_{1}=u^{j}\alpha_{j}%
-$. Let $\mathfrak{Q}_{2}\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2}%
+$. Let $\mathfrak{Q}_{2}\in\mathbf{Z}\left[  \alpha_{1},\alpha_{2}%
 ,...,\alpha_{j}\right]  $ be the polynomial defined by $\mathfrak{Q}%
 _{2}=\operatorname*{Td}\nolimits_{1+ut,j}$. We are now going to prove that
 $\mathfrak{Q}_{1}=\mathfrak{Q}_{2}$.
 
-Applying Theorem 4.1 \textbf{(a)} to $K=\mathbb{Z}$, $m=j$ and $P=X_{j}u^{j}$,
-we conclude that there exists one and only one polynomial $Q\in\mathbb{Z}%
+Applying Theorem 4.1 \textbf{(a)} to $K=\mathbf{Z}$, $m=j$ and $P=X_{j}u^{j}$,
+we conclude that there exists one and only one polynomial $Q\in\mathbf{Z}%
 \left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  $ such that $X_{j}%
 u^{j}=Q\left(  X_{1},X_{2},...,X_{j}\right)  $. In particular, there exists
-\textit{at most one} such polynomial $Q\in\mathbb{Z}\left[  \alpha_{1}%
+\textit{at most one} such polynomial $Q\in\mathbf{Z}\left[  \alpha_{1}%
 ,\alpha_{2},...,\alpha_{j}\right]  $. Hence,
 \begin{equation}
 \left(
 \begin{array}
 [c]{c}%
-\text{if }\mathfrak{Q}_{1}\in\mathbb{Z}\left[  \alpha_{1},\alpha
-_{2},...,\alpha_{j}\right]  \text{ and }\mathfrak{Q}_{2}\in\mathbb{Z}\left[
+\text{if }\mathfrak{Q}_{1}\in\mathbf{Z}\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{j}\right]  \text{ and }\mathfrak{Q}_{2}\in\mathbf{Z}\left[
 \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  \text{ are two polynomials}\\
 \text{such that }X_{j}u^{j}=\mathfrak{Q}_{1}\left(  X_{1},X_{2},...,X_{j}%
 \right)  \text{ and }X_{j}u^{j}=\mathfrak{Q}_{2}\left(  X_{1},X_{2}%
@@ -5588,17 +5652,17 @@ $\operatorname*{Td}\nolimits_{\varphi,T}\left(  x\right)  $ in the general
 case (with $\varphi$ arbitrary):
 
 \begin{quote}
-\textbf{Proposition 10.5.} Let $\left(  K,\left(  \lambda^{i}\right)
-_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. Let $\varphi\in
-1+\mathbb{Z}\left[  \left[  t\right]  \right]  ^{+}$ be a power series with
-constant term equal to $1$.
+\textbf{Proposition 10.5.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
+$K$ is a $\mathbf{Z}$-algebra. Let $\varphi\in1+\mathbf{Z}\left[  \left[
+t\right]  \right]  ^{+}$ be a power series with constant term equal to $1$.
 
 \textbf{(a)} Then, $\operatorname*{Coeff}\nolimits_{0}\left(
 \operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  \right)  =1$ for
 every $x\in K$.
 
 \textbf{(b)} Let $\varphi_{1}$ be the coefficient of the power series
-$\varphi\in\mathbb{Z}\left[  \left[  t\right]  \right]  $ before $t^{1}$.
+$\varphi\in\mathbf{Z}\left[  \left[  t\right]  \right]  $ before $t^{1}$.
 Then, $\operatorname*{Coeff}\nolimits_{1}\left(  \operatorname*{td}%
 \nolimits_{\varphi,T}\left(  x\right)  \right)  =\varphi_{1}x$ for every $x\in
 K$.
@@ -5608,24 +5672,25 @@ To prove this, we need to compute the $0$-th and the $1$-st Todd polynomials
 of $\varphi$:
 
 \begin{quote}
-\textbf{Proposition 10.6.} Let $\varphi\in1+\mathbb{Z}\left[  \left[
-t\right]  \right]  ^{+}$ be a power series with constant term equal to $1$.
+\textbf{Proposition 10.6.} Let $\mathbf{Z}$ be a ring. Let $\varphi
+\in1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$ be a power series with
+constant term equal to $1$.
 
 \textbf{(a)} Then, $\operatorname*{Td}\nolimits_{\varphi,0}=1$.
 
 \textbf{(b)} Let $\varphi_{1}$ be the coefficient of the power series
-$\varphi\in\mathbb{Z}\left[  \left[  t\right]  \right]  $ before $t^{1}$.
+$\varphi\in\mathbf{Z}\left[  \left[  t\right]  \right]  $ before $t^{1}$.
 Then, $\operatorname*{Td}\nolimits_{\varphi,1}=\varphi_{1}\alpha_{1}$.
 \end{quote}
 
 \textit{Proof of Proposition 10.6.} Let $m\in\mathbb{N}$. Consider the ring
-$\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ and its elements
+$\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ and its elements
 $X_{i}=\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
 ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{k}$ as in the
 definition of $\operatorname*{Td}\nolimits_{\varphi,j}$.
 
 We know from Proposition 10.1 that (\ref{Td1}) holds in the ring $\left(
-\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[  \left[
+\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[  \left[
 T\right]  \right]  $. In other words,%
 \[
 \prod\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)  =\sum_{j\in\mathbb{N}%
@@ -5645,10 +5710,10 @@ X_{1},X_{2},...,X_{j}\right)  T^{j}\right)  =\operatorname*{Td}%
 \footnote{The notation $\operatorname*{Td}\nolimits_{\varphi,0}\left(
 X_{1},X_{2},...,X_{0}\right)  $ is somewhat unusual, but it should not be
 surprising: The polynomial $\operatorname*{Td}\nolimits_{\varphi,0}$ is an
-element of $\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{0}\right]  $,
+element of $\mathbf{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{0}\right]  $,
 that is, a polynomial in zero variables. (Of course, polynomials in zero
 variables are just elements of the base ring - in this case, elements of
-$\mathbb{Z}$.)} (by the definition of $\operatorname*{Coeff}\nolimits_{0}$)
+$\mathbf{Z}$.)} (by the definition of $\operatorname*{Coeff}\nolimits_{0}$)
 and%
 \begin{equation}
 \operatorname*{Coeff}\nolimits_{1}\left(  \prod\limits_{i=1}^{m}\varphi\left(
@@ -5659,12 +5724,12 @@ X_{1},X_{2},...,X_{j}\right)  T^{j}\right)  =\operatorname*{Td}%
 \end{equation}
 (by the definition of $\operatorname*{Coeff}\nolimits_{1}$). Both of these
 equations (\ref{10.6.pf.1}) and (\ref{10.6.pf.2}) hold in the ring
-$\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $.
+$\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $.
 
-\textbf{(a)} Let $m=0$. Then, the polynomial rings $\mathbb{Z}\left[
-U_{1},U_{2},...,U_{m}\right]  =\mathbb{Z}\left[  U_{1},U_{2},...,U_{0}\right]
-$ and $\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{0}\right]  $ can be
-canonically identified with the ring $\mathbb{Z}$ (because they are polynomial
+\textbf{(a)} Let $m=0$. Then, the polynomial rings $\mathbf{Z}\left[
+U_{1},U_{2},...,U_{m}\right]  =\mathbf{Z}\left[  U_{1},U_{2},...,U_{0}\right]
+$ and $\mathbf{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{0}\right]  $ can be
+canonically identified with the ring $\mathbf{Z}$ (because they are polynomial
 rings in zero variables, and a polynomial ring in zero variables over a ring
 $K$ is the same as the ring $K$ itself). Under this identification, the
 "value" $\operatorname*{Td}\nolimits_{\varphi,0}\left(  X_{1},X_{2}%
@@ -5673,9 +5738,9 @@ $K$ is the same as the ring $K$ itself). Under this identification, the
 \nolimits_{\varphi,0}\left(  X_{1},X_{2},...,X_{0}\right)  =\operatorname*{Td}%
 \nolimits_{\varphi,0}$.
 
-But the equation (\ref{10.6.pf.1}) holds in the ring $\mathbb{Z}\left[
-U_{1},U_{2},...,U_{m}\right]  =\mathbb{Z}\left[  U_{1},U_{2},...,U_{0}\right]
-\cong\mathbb{Z}$. Hence, we have%
+But the equation (\ref{10.6.pf.1}) holds in the ring $\mathbf{Z}\left[
+U_{1},U_{2},...,U_{m}\right]  =\mathbf{Z}\left[  U_{1},U_{2},...,U_{0}\right]
+\cong\mathbf{Z}$. Hence, we have%
 \[
 \operatorname*{Td}\nolimits_{\varphi,0}\left(  X_{1},X_{2},...,X_{0}\right)
 =\operatorname*{Coeff}\nolimits_{0}\left(  \underbrace{\prod\limits_{i=1}%
@@ -5683,12 +5748,12 @@ U_{1},U_{2},...,U_{m}\right]  =\mathbb{Z}\left[  U_{1},U_{2},...,U_{0}\right]
 product}\right)  \\\text{(since }m=0\text{)}}}\right)  =\operatorname*{Coeff}%
 \nolimits_{0}\underbrace{\left(  \text{empty product}\right)  }_{=1}=1
 \]
-in the ring $\mathbb{Z}$. Hence, $\operatorname*{Td}\nolimits_{\varphi
+in the ring $\mathbf{Z}$. Hence, $\operatorname*{Td}\nolimits_{\varphi
 ,0}=\operatorname*{Td}\nolimits_{\varphi,0}\left(  X_{1},X_{2},...,X_{0}%
 \right)  =1$. This proves Proposition 10.6 \textbf{(a)}.
 
-\textbf{(b)} Let $m=1$. Then, $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]
-=\mathbb{Z}\left[  U_{1}\right]  $, and in this ring $\mathbb{Z}\left[
+\textbf{(b)} Let $m=1$. Then, $\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]
+=\mathbf{Z}\left[  U_{1}\right]  $, and in this ring $\mathbf{Z}\left[
 U_{1},U_{2},...,U_{m}\right]  $ we have $X_{1}=U_{1}$ (because $X_{1}$ is the
 $1$-st elementary symmetric polynomial of the one variable $U_{1}$). Thus, in
 this ring, we have%
@@ -5708,27 +5773,27 @@ U_{1}T\right)  \text{ before }T^{1}\right) \\
 \end{align*}
 
 
-Now, let $\kappa$ be the $\mathbb{Z}$-algebra homomorphism $\mathbb{Z}\left[
-\alpha_{1}\right]  \rightarrow\mathbb{Z}\left[  U_{1}\right]  $ which maps
+Now, let $\kappa$ be the $\mathbf{Z}$-algebra homomorphism $\mathbf{Z}\left[
+\alpha_{1}\right]  \rightarrow\mathbf{Z}\left[  U_{1}\right]  $ which maps
 $\alpha_{1}$ to $U_{1}$. This homomorphism $\kappa$ must be an isomorphism
 (since $U_{1}$ is obviously algebraically independent). Since $\kappa$ is a
-$\mathbb{Z}$-algebra homomorphism and $\operatorname*{Td}\nolimits_{\varphi
+$\mathbf{Z}$-algebra homomorphism and $\operatorname*{Td}\nolimits_{\varphi
 ,1}$ is a polynomial, we have $\kappa\left(  \operatorname*{Td}%
 \nolimits_{\varphi,1}\left(  \alpha_{1}\right)  \right)  =\operatorname*{Td}%
 \nolimits_{\varphi,1}\left(  \kappa\left(  \alpha_{1}\right)  \right)  $
-(because $\mathbb{Z}$-algebra homomorphisms commute with polynomials). Now,%
+(because $\mathbf{Z}$-algebra homomorphisms commute with polynomials). Now,%
 \begin{align*}
 \kappa\left(  \underbrace{\operatorname*{Td}\nolimits_{\varphi,1}%
 }_{=\operatorname*{Td}\nolimits_{\varphi,1}\left(  \alpha_{1}\right)
-}\right)    & =\kappa\left(  \operatorname*{Td}\nolimits_{\varphi,1}\left(
+}\right)   &  =\kappa\left(  \operatorname*{Td}\nolimits_{\varphi,1}\left(
 \alpha_{1}\right)  \right)  =\operatorname*{Td}\nolimits_{\varphi,1}\left(
 \underbrace{\kappa\left(  \alpha_{1}\right)  }_{=U_{1}}\right)
-=\operatorname*{Td}\nolimits_{\varphi,1}\left(  U_{1}\right)  \\
-& =\underbrace{U_{1}}_{=\kappa\left(  \alpha_{1}\right)  }\varphi_{1}%
+=\operatorname*{Td}\nolimits_{\varphi,1}\left(  U_{1}\right) \\
+&  =\underbrace{U_{1}}_{=\kappa\left(  \alpha_{1}\right)  }\varphi_{1}%
 =\kappa\left(  \alpha_{1}\right)  \varphi_{1}=\varphi_{1}\kappa\left(
 \alpha_{1}\right)  =\kappa\left(  \varphi_{1}\alpha_{1}\right)
 \end{align*}
-(since $\kappa$ is a $\mathbb{Z}$-algebra homomorphism). Thus,
+(since $\kappa$ is a $\mathbf{Z}$-algebra homomorphism). Thus,
 $\operatorname*{Td}\nolimits_{\varphi,1}=\varphi_{1}\alpha_{1}$ (since
 $\kappa$ is an isomorphism). This proves Proposition 10.6 \textbf{(b)}.
 
@@ -5777,22 +5842,23 @@ Proposition 10.5 is now proven.
 Our next proposition is another step to making the $\varphi$-Todd homomorphism manageable:
 
 \begin{quote}
-\textbf{Proposition 10.7.} Let $\left(  K,\left(  \lambda^{i}\right)
-_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. Let $\varphi\in
-1+\mathbb{Z}\left[  \left[  t\right]  \right]  ^{+}$ and $\psi\in
-1+\mathbb{Z}\left[  \left[  t\right]  \right]  ^{+}$ be two power series with
-constant terms equal to $1$. For every $x\in K$, we have $\operatorname*{td}%
-\nolimits_{\varphi\psi,T}\left(  x\right)  =\operatorname*{td}%
-\nolimits_{\varphi,T}\left(  x\right)  \operatorname*{td}\nolimits_{\psi
-,T}\left(  x\right)  $.
+\textbf{Proposition 10.7.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
+$K$ is a $\mathbf{Z}$-algebra. Let $\varphi\in1+\mathbf{Z}\left[  \left[
+t\right]  \right]  ^{+}$ and $\psi\in1+\mathbf{Z}\left[  \left[  t\right]
+\right]  ^{+}$ be two power series with constant terms equal to $1$. For every
+$x\in K$, we have $\operatorname*{td}\nolimits_{\varphi\psi,T}\left(
+x\right)  =\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)
+\operatorname*{td}\nolimits_{\psi,T}\left(  x\right)  $.
 \end{quote}
 
 Again, this boils down to an identity for Todd polynomials:
 
 \begin{quote}
-\textbf{Proposition 10.8.} Let $\varphi\in1+\mathbb{Z}\left[  \left[
-t\right]  \right]  ^{+}$ and $\psi\in1+\mathbb{Z}\left[  \left[  t\right]
-\right]  ^{+}$ be two power series with constant terms equal to $1$. Then,%
+\textbf{Proposition 10.8.} Let $\mathbf{Z}$ be a ring. Let $\varphi
+\in1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$ and $\psi
+\in1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$ be two power series
+with constant terms equal to $1$. Then,%
 \[
 \operatorname*{Td}\nolimits_{\varphi\psi,j}\left(  \alpha_{1},\alpha
 _{2},...,\alpha_{j}\right)  =\sum\limits_{i=0}^{j}\operatorname*{Td}%
@@ -5800,12 +5866,12 @@ _{2},...,\alpha_{j}\right)  =\sum\limits_{i=0}^{j}\operatorname*{Td}%
 \cdot\operatorname*{Td}\nolimits_{\psi,j-i}\left(  \alpha_{1},\alpha
 _{2},...,\alpha_{j-i}\right)
 \]
-(in the polynomial ring $\mathbb{Z}\left[  \alpha_{1},\alpha_{2}%
+(in the polynomial ring $\mathbf{Z}\left[  \alpha_{1},\alpha_{2}%
 ,...,\alpha_{j}\right]  $) for every $j\in\mathbb{N}$.
 \end{quote}
 
 \textit{Proof of Proposition 10.8.} \textit{1st Step:} We have $\varphi\psi
-\in1+\mathbb{Z}\left[  \left[  t\right]  \right]  ^{+}$.
+\in1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$.
 
 \textit{Proof.} The constant term of the product of two power series always
 equals the product of the constant terms of these power series. Applying this
@@ -5813,13 +5879,13 @@ to the power series $\varphi$ and $\psi$, we obtain%
 \begin{align*}
 &  \left(  \text{constant term of the power series }\varphi\psi\right) \\
 &  =\underbrace{\left(  \text{constant term of the power series }%
-\varphi\right)  }_{=1\text{ (since }\varphi\in1+\mathbb{Z}\left[  \left[
+\varphi\right)  }_{=1\text{ (since }\varphi\in1+\mathbf{Z}\left[  \left[
 t\right]  \right]  ^{+}\text{)}}\cdot\underbrace{\left(  \text{constant term
-of the power series }\psi\right)  }_{=1\text{ (since }\psi\in1+\mathbb{Z}%
+of the power series }\psi\right)  }_{=1\text{ (since }\psi\in1+\mathbf{Z}%
 \left[  \left[  t\right]  \right]  ^{+}\text{)}}\\
 &  =1\cdot1=1,
 \end{align*}
-so that $\varphi\psi\in1+\mathbb{Z}\left[  \left[  t\right]  \right]  ^{+}$.
+so that $\varphi\psi\in1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$.
 The 1st Step is thus proven.
 
 \textit{2nd Step:} We are going to show that for every $m\in\mathbb{N}$, we
@@ -5830,7 +5896,7 @@ have%
 X_{1},X_{2},...,X_{i}\right)  \cdot\operatorname*{Td}\nolimits_{\psi
 ,j-i}\left(  X_{1},X_{2},...,X_{j-i}\right)
 \]
-in the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ for
+in the polynomial ring $\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ for
 every $j\in\mathbb{N}$ (where, as usual, $X_{i}$ denotes the polynomial
 $\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}  ;\\\left\vert
 S\right\vert =i}}\prod\limits_{k\in S}U_{k}$ (the $i$-th elementary symmetric
@@ -5838,7 +5904,7 @@ polynomial in the variables $U_{1},$ $U_{2},$ $...,$ $U_{m}$) for every
 $i\in\mathbb{N}$).
 
 \textit{Proof.} Let $m\in\mathbb{N}$. By Theorem 10.1, the equality
-(\ref{Td1}) holds in the ring $\left(  \mathbb{Z}\left[  U_{1},U_{2}%
+(\ref{Td1}) holds in the ring $\left(  \mathbf{Z}\left[  U_{1},U_{2}%
 ,...,U_{m}\right]  \right)  \left[  \left[  T\right]  \right]  $. In other
 words,%
 \[
@@ -5895,13 +5961,13 @@ for every $j\in\mathbb{N}$. This proves the 2nd Step.
 \textit{3rd Step:} Let us now prove Proposition 10.8.
 
 Fix some $j\in\mathbb{N}$. Let $m=j$. We are going to work in the ring
-$\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  =\mathbb{Z}\left[
+$\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  =\mathbf{Z}\left[
 U_{1},U_{2},...,U_{j}\right]  $.
 
-Let $\mathfrak{Q}_{1}\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
+Let $\mathfrak{Q}_{1}\in\mathbf{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
 _{j}\right]  $ be the polynomial defined by $\mathfrak{Q}_{1}%
 =\operatorname*{Td}\nolimits_{\varphi\psi,j}\left(  \alpha_{1},\alpha
-_{2},...,\alpha_{j}\right)  $. Let $\mathfrak{Q}_{2}\in\mathbb{Z}\left[
+_{2},...,\alpha_{j}\right)  $. Let $\mathfrak{Q}_{2}\in\mathbf{Z}\left[
 \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  $ be the polynomial defined by
 $\mathfrak{Q}_{2}=\sum\limits_{i=0}^{j}\operatorname*{Td}\nolimits_{\varphi
 ,i}\left(  \alpha_{1},\alpha_{2},...,\alpha_{i}\right)  \cdot
@@ -5909,20 +5975,20 @@ $\mathfrak{Q}_{2}=\sum\limits_{i=0}^{j}\operatorname*{Td}\nolimits_{\varphi
 ,...,\alpha_{j-i}\right)  $. We are now going to prove that $\mathfrak{Q}%
 _{1}=\mathfrak{Q}_{2}$.
 
-Applying Theorem 4.1 \textbf{(a)} to $K=\mathbb{Z}$, $m=j$ and
+Applying Theorem 4.1 \textbf{(a)} to $K=\mathbf{Z}$, $m=j$ and
 $P=\operatorname*{Td}\nolimits_{\varphi\psi,j}\left(  X_{1},X_{2}%
 ,...,X_{j}\right)  $, we conclude that there exists one and only one
-polynomial $Q\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]
+polynomial $Q\in\mathbf{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]
 $ such that $\operatorname*{Td}\nolimits_{\varphi\psi,j}\left(  X_{1}%
 ,X_{2},...,X_{j}\right)  =Q\left(  X_{1},X_{2},...,X_{j}\right)  $. In
 particular, there exists \textit{at most one} such polynomial $Q\in
-\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  $. Hence,
+\mathbf{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  $. Hence,
 \begin{equation}
 \left(
 \begin{array}
 [c]{c}%
-\text{if }\mathfrak{Q}_{1}\in\mathbb{Z}\left[  \alpha_{1},\alpha
-_{2},...,\alpha_{j}\right]  \text{ and }\mathfrak{Q}_{2}\in\mathbb{Z}\left[
+\text{if }\mathfrak{Q}_{1}\in\mathbf{Z}\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{j}\right]  \text{ and }\mathfrak{Q}_{2}\in\mathbf{Z}\left[
 \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  \text{ are two polynomials}\\
 \text{such that }\operatorname*{Td}\nolimits_{\varphi\psi,j}\left(
 X_{1},X_{2},...,X_{j}\right)  =\mathfrak{Q}_{1}\left(  X_{1},X_{2}%
@@ -6060,11 +6126,12 @@ This proves Proposition 10.7.
 An easy consequence of Proposition 10.7:
 
 \begin{quote}
-\textbf{Proposition 10.9.} Let $\left(  K,\left(  \lambda^{i}\right)
-_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. Let $m\in\mathbb{N}$. For
-every $i\in\left\{  1,2,...,m\right\}  $, let $\varphi_{i}\in1+\mathbb{Z}%
-\left[  \left[  t\right]  \right]  ^{+}$ be a power series with constant term
-equal to $1$. For every $x\in K$, we have%
+\textbf{Proposition 10.9.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
+$K$ is a $\mathbf{Z}$-algebra. Let $m\in\mathbb{N}$. For every $i\in\left\{
+1,2,...,m\right\}  $, let $\varphi_{i}\in1+\mathbf{Z}\left[  \left[  t\right]
+\right]  ^{+}$ be a power series with constant term equal to $1$. For every
+$x\in K$, we have%
 \[
 \operatorname*{td}\nolimits_{\prod\limits_{i=1}^{m}\varphi_{i},T}\left(
 x\right)  =\prod\limits_{i=1}^{m}\operatorname*{td}\nolimits_{\varphi_{i}%
@@ -6087,20 +6154,763 @@ $\operatorname*{ev}\nolimits_{0T}$ is the map $K\left[  \left[  T\right]
 power series to its constant term (viewed as a constant power series), we have
 $\operatorname*{ev}\nolimits_{0T}\left(  \lambda_{T}\left(  x\right)  \right)
 =\left(  \text{constant term of the power series }\lambda_{T}\left(  x\right)
-\right)  =1$. Thus, $\operatorname*{td}\nolimits_{1,T}=\operatorname*{td}%
-\nolimits_{1+0t,T}\left(  x\right)  =\lambda_{0T}\left(  x\right)
-=\operatorname*{ev}\nolimits_{0T}\left(  \lambda_{T}\left(  x\right)  \right)
-=1$.}. The induction step is a straightforward application of Proposition
-10.7. Thus Proposition 10.9 is proven.
+\right)  =1$. Thus, $\operatorname*{td}\nolimits_{1,T}\left(  x\right)
+=\operatorname*{td}\nolimits_{1+0t,T}\left(  x\right)  =\lambda_{0T}\left(
+x\right)  =\operatorname*{ev}\nolimits_{0T}\left(  \lambda_{T}\left(
+x\right)  \right)  =1$.}. The induction step is a straightforward application
+of Proposition 10.7. Thus Proposition 10.9 is proven.
+
+The Proposition 10.9 just proved allows us to show some nontrivial properties
+of $\operatorname*{td}\nolimits_{\varphi,T}$ for $\varphi$ being an arbitrary
+power series (rather than just a power series of the form $1+ut$ as in
+Proposition 10.3). However, it does not yield any of these properties
+directly; it can be directly applied to compute $\operatorname*{td}%
+\nolimits_{\varphi,T}\left(  x\right)  $ only if $\varphi$ is a product of
+finitely many power series $\varphi_{i}$ for which we already have computed
+$\operatorname*{td}\nolimits_{\varphi_{i},T}$ (and the only such series
+$\varphi_{i}$, at the moment, are those of the form $1+ut$). To obtain any
+results for generic $\varphi$, we need two tricks: First, we need a kind of
+continuity (similar to the one we used in Section 5) to reduce the case of
+$\varphi$ a power series to the case of $\varphi$ a polynomial. Second, we
+need to split every arbitrary polynomial $\varphi$ with constant term equal to
+$1$ into a product of polynomials of the form $1+ut$; this will be done by an
+appropriate extension of the ring $\mathbf{Z}$ (again, similarly to how we
+extended $K$ in Section 5). First, let us introduce the version of continuity
+that we need.
+
+The following two definitions are copies of two definitions which we made in
+Section 5, with the only difference that the ring that used to be called $K$
+in Section 5 is called $\mathbf{Z}$ here, and that the variable that used to
+be $T$ in Section 5 is $t$ here.
+
+\begin{quote}
+\textbf{Definition.} Let $\mathbf{Z}$ be a ring. Let $\mathbf{Z}\left[
+t\right]  ^{+}$ be the subset of $\mathbf{Z}\left[  t\right]  $ defined by%
+\begin{align*}
+\mathbf{Z}\left[  t\right]  ^{+}  &  =t\mathbf{Z}\left[  t\right]  =\left\{
+\sum_{i\in\mathbb{N}}a_{i}t^{i}\in\mathbf{Z}\left[  t\right]  \ \mid\ a_{i}%
+\in\mathbf{Z}\text{ for all }i,\text{ and }a_{0}=0\right\} \\
+&  =\left\{  p\in\mathbf{Z}\left[  t\right]  \ \mid\ p\text{ is a polynomial
+with constant term }0\right\}  .
+\end{align*}
+Then, the set $1+\mathbf{Z}\left[  t\right]  ^{+}$ is a subset of
+$1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}.$ The elements of
+$1+\mathbf{Z}\left[  t\right]  ^{+}$ are polynomials.
+
+\textbf{Definition.} Let $\mathbf{Z}$ be a ring. As a $\mathbf{Z}$-module,
+$\mathbf{Z}\left[  \left[  t\right]  \right]  =\bigoplus\limits_{k\in
+\mathbb{N}}\mathbf{Z}t^{k}$. Now, we define the so-called $\left(
+\mathbf{t}\right)  $\textit{-topology} on the ring $\mathbf{Z}\left[  \left[
+t\right]  \right]  $ as the topology generated by%
+\[
+\left\{  0,\varnothing\right\}  \cup\left\{  u+\sum_{k\geq N}\mathbf{Z}%
+t^{k}\ \mid\ u\in\mathbf{Z}\left[  \left[  t\right]  \right]  \text{ and }%
+N\in\mathbb{N}\right\}  .
+\]
+In other words, the open sets of this topology should be $0$, $\varnothing$
+and all translates of the submodules $\sum\limits_{k\geq N}\mathbf{Z}t^{k}$
+for $N\in\mathbb{N}$, as well as the unions of these sets. (Note that the sum
+$\sum\limits_{k\geq N}\mathbf{Z}t^{k}$ is actually a direct sum. Also note
+that every translate of the submodule $\sum\limits_{k\geq N}\mathbf{Z}t^{k}$
+for $N\in\mathbb{N}$ actually has the form $p+\sum\limits_{k\geq N}%
+\mathbf{Z}t^{k}$ for a polynomial $p\in\mathbf{Z}\left[  t\right]  $ of degree
+$<N$, and this polynomial is uniquely determined.)
+\end{quote}
+
+Now, we have:
+
+\begin{quote}
+\textbf{Theorem 10.10.} Let $\mathbf{Z}$ be a ring. The $\left(  t\right)
+$-topology on the ring $\mathbf{Z}\left[  \left[  t\right]  \right]  $
+restricts to a topology on its subset $1+\mathbf{Z}\left[  \left[  t\right]
+\right]  ^{+}$; we call this topology the $\left(  t\right)  $%
+\textit{-topology} again. Whenever we say "open", "continuous", "dense", etc.,
+we are referring to this topology.
+
+\textbf{(a)} The subset $1+\mathbf{Z}\left[  t\right]  ^{+}$ is dense in
+$1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$.
+
+\textbf{(b)} Let $K$ be a ring. Let $f:1+\mathbf{Z}\left[  \left[  t\right]
+\right]  ^{+}\rightarrow K\left[  \left[  T\right]  \right]  $ be a map such
+that for every $n\in\mathbb{N}$ there exists some $N\in\mathbb{N}$ such that
+the first $n$ coefficients of the image of a formal power series under $f$
+depend only on the first $N$ coefficients of the series itself (and not on the
+remaining ones). Then, $f$ is continuous. (Here, the topology on $K\left[
+\left[  T\right]  \right]  $ is supposed to be the $\left(  T\right)  $-adic
+topology defined in Section 5.)
+
+\textbf{(c)} The topological spaces $\mathbf{Z}\left[  \left[  t\right]
+\right]  $ and $1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$ are
+Hausdorff spaces.
+\end{quote}
+
+\textit{Proof of Theorem 10.10.} The parts \textbf{(a)} and \textbf{(c)} of
+Theorem 10.10 are obviously obtained from the parts \textbf{(a)} and
+\textbf{(e)} of Theorem 5.5 by renaming the ring $K$ as $\mathbf{Z}$ and
+renaming the variable $T$ as $t$. Hence, they follow from Theorem 5.5. Part
+\textbf{(b)} of Theorem 10.10 is also true (it is an exercise in topology,
+proven in the same way as Theorem 5.5 \textbf{(b)}). This proves Theorem 10.10.
+
+The good thing about the topology on $1+\mathbf{Z}\left[  \left[  t\right]
+\right]  ^{+}$ just defined is that it makes the map $1+\mathbf{Z}\left[
+\left[  t\right]  \right]  ^{+}\rightarrow K\left[  \left[  T\right]  \right]
+$, $\varphi\mapsto\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  $
+continuous for every given $x\in K$:
+
+\begin{quote}
+\textbf{Proposition 10.11.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
+$K$ is a $\mathbf{Z}$-algebra. Let $x\in K$. Then, the map%
+\[
+1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}\rightarrow K\left[
+\left[  T\right]  \right]  ,\ \ \ \ \ \ \ \ \ \ \varphi\mapsto
+\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)
+\]
+is continuous. Here, the topology on $1+\mathbf{Z}\left[  \left[  t\right]
+\right]  ^{+}$ is supposed to be the $\left(  t\right)  $-topology, and the
+topology on $K\left[  \left[  T\right]  \right]  $ is supposed to be the
+$\left(  T\right)  $-topology defined in Section 5.
+\end{quote}
+
+\textit{Proof of Proposition 10.11.} Let $f$ denote the map
+\[
+1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}\rightarrow K\left[
+\left[  T\right]  \right]  ,\ \ \ \ \ \ \ \ \ \ \varphi\mapsto
+\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  .
+\]
+Then, in order to verify Proposition 10.11, we must prove that this map $f$ is continuous.
+
+\textit{1st Step:} Let $n\in\mathbb{N}$. Let $\varphi\in1+\mathbf{Z}\left[
+\left[  t\right]  \right]  ^{+}$ and $\psi\in1+\mathbf{Z}\left[  \left[
+t\right]  \right]  ^{+}$ be two power series such that the first $n$
+coefficients\footnote{Note that when we say "the first $n$ coefficients" (of
+some power series), we mean the coefficients before $t^{0}$, $t^{1}$, $...$,
+$t^{n-1}$.} of $\varphi$ are equal to the respective coefficients of $\psi$.
+Then, the first $n$ coefficients of the power series $\operatorname*{td}%
+\nolimits_{\varphi,T}\left(  x\right)  $ are equal to the respective
+coefficients of the power series $\operatorname*{td}\nolimits_{\psi,T}\left(
+x\right)  $.
+
+\textit{Proof.} Let $m\in\left\{  0,1,...,n-1\right\}  $ be arbitrary.
+
+Since the first $n$ coefficients of the power series $\varphi$ are equal to
+the respective coefficients of the power series $\psi$, we have $\varphi
+\equiv\psi\operatorname{mod}t^{n}$ in the ring $\mathbf{Z}\left[  \left[
+t\right]  \right]  $. Thus, there exists some formal power series $\eta
+\in\mathbf{Z}\left[  \left[  t\right]  \right]  $ such that $\varphi-\psi=\eta
+t^{n}$. Consider such an $\eta$.
+
+Consider the polynomial ring $\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]
+$ and its elements $X_{i}=\sum\limits_{\substack{S\subseteq\left\{
+1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{k}$
+as in the definition of $\operatorname*{Td}\nolimits_{\varphi,j}$.
+
+Every $i\in\left\{  1,2,...,m\right\}  $ satisfies%
+\begin{align*}
+\varphi\left(  U_{i}T\right)  -\psi\left(  U_{i}T\right)   &
+=\underbrace{\left(  \varphi-\psi\right)  }_{=\eta t^{n}}\left(
+U_{i}T\right)  =\left(  \eta t^{n}\right)  \left(  U_{i}T\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{where }\left(  \eta t^{n}\right)  \left(  U_{i}T\right)  \text{ means
+the application of the formal}\\
+\text{power series }\eta t^{n}\in\mathbf{Z}\left[  \left[  t\right]  \right]
+\text{ to }U_{i}T\text{, and not a product of }\eta t^{n}\\
+\text{with }U_{i}T\text{ (whatever that could mean)}%
+\end{array}
+\right) \\
+&  =\eta\left(  U_{i}T\right)  \cdot\underbrace{\left(  U_{i}T\right)  ^{n}%
+}_{=U_{i}^{n}T^{n}}=\eta\left(  U_{i}T\right)  \cdot U_{i}^{n}T^{n}%
+\end{align*}
+and thus $T^{n}\mid\varphi\left(  U_{i}T\right)  -\psi\left(  U_{i}T\right)
+$, so that $\varphi\left(  U_{i}T\right)  \equiv\psi\left(  U_{i}T\right)
+\operatorname{mod}T^{n}$ in the ring $\left(  \mathbf{Z}\left[  U_{1}%
+,U_{2},...,U_{m}\right]  \right)  \left[  \left[  T\right]  \right]  $.
+Multiplying the congruences $\varphi\left(  U_{i}T\right)  \equiv\psi\left(
+U_{i}T\right)  \operatorname{mod}T^{n}$ for all $i\in\left\{
+1,2,...,m\right\}  $, we obtain $\prod\limits_{i=1}^{m}\varphi\left(
+U_{i}T\right)  \equiv\prod\limits_{i=1}^{m}\psi\left(  U_{i}T\right)
+\operatorname{mod}T^{n}$. In other words, the first $n$ coefficients of the
+power series $\prod\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)  $ are equal
+to the respective coefficients of the power series $\prod\limits_{i=1}^{m}%
+\psi\left(  U_{i}T\right)  $. In other words, every $k\in\left\{
+0,1,...,n-1\right\}  $ satisfies $\operatorname*{Coeff}\nolimits_{k}\left(
+\prod\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)  \right)
+=\operatorname*{Coeff}\nolimits_{k}\left(  \prod\limits_{i=1}^{m}\psi\left(
+U_{i}T\right)  \right)  $. Applied to $k=m$, this yields
+$\operatorname*{Coeff}\nolimits_{m}\left(  \prod\limits_{i=1}^{m}%
+\varphi\left(  U_{i}T\right)  \right)  =\operatorname*{Coeff}\nolimits_{m}%
+\left(  \prod\limits_{i=1}^{m}\psi\left(  U_{i}T\right)  \right)  $.
+
+According to Proposition 10.1, the equation (\ref{Td1}) holds in the ring
+$\left(  \mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[
+\left[  T\right]  \right]  $. Thus,%
+\begin{align*}
+\operatorname*{Coeff}\nolimits_{m}\left(  \prod\limits_{i=1}^{m}\varphi\left(
+U_{i}T\right)  \right)   &  =\operatorname*{Coeff}\nolimits_{m}\left(
+\sum_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
+X_{1},X_{2},...,X_{j}\right)  T^{j}\right)  \ \ \ \ \ \ \ \ \ \ \left(
+\text{by (\ref{Td1})}\right) \\
+&  =\operatorname*{Td}\nolimits_{\varphi,m}\left(  X_{1},X_{2},...,X_{k}%
+\right)  .
+\end{align*}
+The same argument, but applied to $\psi$ instead of $\varphi$, yields%
+\[
+\operatorname*{Coeff}\nolimits_{m}\left(  \prod\limits_{i=1}^{m}\psi\left(
+U_{i}T\right)  \right)  =\operatorname*{Td}\nolimits_{\psi,m}\left(
+X_{1},X_{2},...,X_{k}\right)  .
+\]
+Thus,%
+\[
+\operatorname*{Td}\nolimits_{\varphi,m}\left(  X_{1},X_{2},...,X_{k}\right)
+=\operatorname*{Coeff}\nolimits_{m}\left(  \prod\limits_{i=1}^{m}%
+\varphi\left(  U_{i}T\right)  \right)  =\operatorname*{Coeff}\nolimits_{m}%
+\left(  \prod\limits_{i=1}^{m}\psi\left(  U_{i}T\right)  \right)
+=\operatorname*{Td}\nolimits_{\psi,m}\left(  X_{1},X_{2},...,X_{k}\right)  .
+\]
+
+
+We will now use this to prove $\operatorname*{Td}\nolimits_{\varphi
+,m}=\operatorname*{Td}\nolimits_{\psi,m}$.
+
+In fact, let $\mathfrak{Q}_{1}\in\mathbf{Z}\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{m}\right]  $ be the polynomial defined by $\mathfrak{Q}%
+_{1}=\operatorname*{Td}\nolimits_{\varphi,m}$. Let $\mathfrak{Q}_{2}%
+\in\mathbf{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $ be the
+polynomial defined by $\mathfrak{Q}_{2}=\operatorname*{Td}\nolimits_{\psi,m}$.
+We are now going to prove that $\mathfrak{Q}_{1}=\mathfrak{Q}_{2}$.
+
+Applying Theorem 4.1 \textbf{(a)} to $\mathbf{Z}$ and $\operatorname*{Td}%
+\nolimits_{\varphi,m}\left(  X_{1},X_{2},...,X_{m}\right)  $ instead of $K$
+and $P$, we conclude that there exists one and only one polynomial
+$Q\in\mathbf{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $ such
+that $\operatorname*{Td}\nolimits_{\varphi,m}\left(  X_{1},X_{2}%
+,...,X_{m}\right)  =Q\left(  X_{1},X_{2},...,X_{m}\right)  $. In particular,
+there exists \textit{at most one} such polynomial $Q\in\mathbf{Z}\left[
+\alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $. Hence,
+\begin{equation}
+\left(
+\begin{array}
+[c]{c}%
+\text{if }\mathfrak{Q}_{1}\in\mathbf{Z}\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{m}\right]  \text{ and }\mathfrak{Q}_{2}\in\mathbf{Z}\left[
+\alpha_{1},\alpha_{2},...,\alpha_{m}\right]  \text{ are two polynomials}\\
+\text{such that }\operatorname*{Td}\nolimits_{\varphi,m}\left(  X_{1}%
+,X_{2},...,X_{m}\right)  =\mathfrak{Q}_{1}\left(  X_{1},X_{2},...,X_{m}%
+\right)  \text{ and}\\
+\operatorname*{Td}\nolimits_{\varphi,m}\left(  X_{1},X_{2},...,X_{m}\right)
+=\mathfrak{Q}_{2}\left(  X_{1},X_{2},...,X_{m}\right)  \text{, then
+}\mathfrak{Q}_{1}=\mathfrak{Q}_{2}%
+\end{array}
+\right)  . \label{10.11.pf.1}%
+\end{equation}
+
+
+Since our two polynomials $\mathfrak{Q}_{1}$ and $\mathfrak{Q}_{2}$ satisfy%
+\[
+\mathfrak{Q}_{1}\left(  X_{1},X_{2},...,X_{m}\right)  =\operatorname*{Td}%
+\nolimits_{\varphi,m}\left(  X_{1},X_{2},...,X_{m}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\mathfrak{Q}_{1}=\operatorname*{Td}%
+\nolimits_{\varphi,m}\right)
+\]
+and%
+\begin{align*}
+\mathfrak{Q}_{2}\left(  X_{1},X_{2},...,X_{m}\right)   &  =\operatorname*{Td}%
+\nolimits_{\psi,m}\left(  X_{1},X_{2},...,X_{m}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\mathfrak{Q}_{2}=\operatorname*{Td}%
+\nolimits_{\psi,k}\right) \\
+&  =\operatorname*{Td}\nolimits_{\varphi,m}\left(  X_{1},X_{2},...,X_{m}%
+\right)  ,
+\end{align*}
+we can conclude from (\ref{10.11.pf.1}) that $\mathfrak{Q}_{1}=\mathfrak{Q}%
+_{2}$. Hence, $\operatorname*{Td}\nolimits_{\varphi,m}=\mathfrak{Q}%
+_{1}=\mathfrak{Q}_{2}=\operatorname*{Td}\nolimits_{\psi,m}$.
+
+Now,%
+\begin{align*}
+\operatorname*{Coeff}\nolimits_{m}\left(  \operatorname*{td}\nolimits_{\varphi
+,T}\left(  x\right)  \right)   &  =\operatorname*{Coeff}\nolimits_{m}\left(
+\sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
+\lambda^{1}\left(  x\right)  ,\lambda^{2}\left(  x\right)  ,...,\lambda
+^{j}\left(  x\right)  \right)  T^{j}\right)  \ \ \ \ \ \ \ \ \ \ \left(
+\text{by (\ref{ToddDef})}\right) \\
+&  =\operatorname*{Td}\nolimits_{\varphi,m}\left(  \lambda^{1}\left(
+x\right)  ,\lambda^{2}\left(  x\right)  ,...,\lambda^{m}\left(  x\right)
+\right)  .
+\end{align*}
+The same argument, applied to $\psi$ instead of $\varphi$, yields%
+\[
+\operatorname*{Coeff}\nolimits_{m}\left(  \operatorname*{td}\nolimits_{\psi
+,T}\left(  x\right)  \right)  =\operatorname*{Td}\nolimits_{\psi,m}\left(
+\lambda^{1}\left(  x\right)  ,\lambda^{2}\left(  x\right)  ,...,\lambda
+^{m}\left(  x\right)  \right)  .
+\]
+Thus,%
+\begin{align*}
+\operatorname*{Coeff}\nolimits_{m}\left(  \operatorname*{td}\nolimits_{\varphi
+,T}\left(  x\right)  \right)   &  =\underbrace{\operatorname*{Td}%
+\nolimits_{\varphi,m}}_{=\operatorname*{Td}\nolimits_{\psi,m}}\left(
+\lambda^{1}\left(  x\right)  ,\lambda^{2}\left(  x\right)  ,...,\lambda
+^{m}\left(  x\right)  \right) \\
+&  =\operatorname*{Td}\nolimits_{\psi,m}\left(  \lambda^{1}\left(  x\right)
+,\lambda^{2}\left(  x\right)  ,...,\lambda^{m}\left(  x\right)  \right)
+=\operatorname*{Coeff}\nolimits_{m}\left(  \operatorname*{td}\nolimits_{\psi
+,T}\left(  x\right)  \right)  .
+\end{align*}
+
+
+So we have proven that $\operatorname*{Coeff}\nolimits_{m}\left(
+\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  \right)
+=\operatorname*{Coeff}\nolimits_{m}\left(  \operatorname*{td}\nolimits_{\psi
+,T}\left(  x\right)  \right)  $ for every $m\in\left\{  0,1,...,n-1\right\}
+$. In other words, for every $m\in\left\{  0,1,...,n-1\right\}  $, the $m$-th
+coefficient of the power series $\operatorname*{td}\nolimits_{\varphi
+,T}\left(  x\right)  $ equals the respective coefficient of the power series
+$\operatorname*{td}\nolimits_{\psi,T}\left(  x\right)  $. In other words, the
+first $n$ coefficients of the power series $\operatorname*{td}%
+\nolimits_{\varphi,T}\left(  x\right)  $ are equal to the respective
+coefficients of the power series $\operatorname*{td}\nolimits_{\psi,T}\left(
+x\right)  $.
+
+This proves the 1st Step.
+
+\textit{2nd Step:} Let $n\in\mathbb{N}$. Let $\varphi\in1+\mathbf{Z}\left[
+\left[  t\right]  \right]  ^{+}$ and $\psi\in1+\mathbf{Z}\left[  \left[
+t\right]  \right]  ^{+}$ be two power series such that the first $n$
+coefficients\footnote{Note that when we say "the first $n$ coefficients" (of
+some power series), we mean the coefficients before $t^{0}$, $t^{1}$, $...$,
+$t^{n-1}$.} of $\varphi$ are equal to the respective coefficients of $\psi$.
+Then, the first $n$ coefficients of the power series $f\left(  \varphi\right)
+$ are equal to the respective coefficients of the power series $f\left(
+\psi\right)  $.
+
+\textit{Proof.} This is just an equivalent restatement of the 1st Step, since
+$f\left(  \varphi\right)  =\operatorname*{td}\nolimits_{\varphi,T}\left(
+x\right)  $ (by the definition of $f$) and $f\left(  \psi\right)
+=\operatorname*{td}\nolimits_{\psi,T}\left(  x\right)  $ (by the definition of
+$f$).
+
+\textit{3rd Step:} We can rewrite the result of the 2nd Step as follows: If,
+for some $n\in\mathbb{N}$, two power series $\varphi$ and $\psi$ in
+$1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$ have the same first $n$
+coefficients (i. e., the first $n$ coefficients of $\varphi$ are equal to the
+respective coefficients of $\psi$), then the images $f\left(  \varphi\right)
+$ and $f\left(  \psi\right)  $ of these two power series under $\varphi$ also
+have the same first $n$ coefficients. In other words, for every $n\in
+\mathbb{N}$, the first $n$ coefficients of the image of a formal power series
+under $f$ depend only on the first $n$ coefficients of the series itself (and
+not on the remaining ones).
+
+Hence, for every $n\in\mathbb{N}$, there exists some $N\in\mathbb{N}$ such
+that the first $n$ coefficients of the image of a formal power series under
+$f$ depend only on the first $N$ coefficients of the series itself (and not on
+the remaining ones)\footnote{Namely, we can take $N=n$.}. According to Theorem
+10.10 \textbf{(b)}, this yields that $f$ is continuous.
+
+Since $f$ was defined as the map%
+\[
+1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}\rightarrow K\left[
+\left[  T\right]  \right]  ,\ \ \ \ \ \ \ \ \ \ \varphi\mapsto
+\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  ,
+\]
+this shows that the map%
+\[
+1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}\rightarrow K\left[
+\left[  T\right]  \right]  ,\ \ \ \ \ \ \ \ \ \ \varphi\mapsto
+\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)
+\]
+is continuous. Proposition 10.11 is thus proven.
+
+So much for the topology on $1+\mathbf{Z}\left[  \left[  t\right]  \right]
+^{+}$. We now discuss extensions of $\mathbf{Z}$ that make polynomials factor.
+
+By renaming the ring $K$ as $\mathbf{Z}$ and the variable $T$ as $t$ in
+Theorem 5.2, we obtain the following fact:
+
+\begin{quote}
+\textbf{Theorem 10.12.} Let $\mathbf{Z}$ be a ring. For every element
+$p\in1+\mathbf{Z}\left[  t\right]  ^{+}$, there exists an integer $n$ (the
+degree of the polynomial $p$), a finite-free extension ring $\mathbf{Z}_{p}$
+of the ring $\mathbf{Z}$ and $n$ elements $p_{1},$ $p_{2},$ $...,$ $p_{n}$ of
+this extension ring $\mathbf{Z}_{p}$ such that $p=\prod\limits_{i=1}%
+^{n}\left(  1+p_{i}t\right)  $ in $\mathbf{Z}_{p}\left[  t\right]  $.
+\end{quote}
+
+This is not yet all. We need a slight generalization of our notion of
+$\varphi$-Todd homomorphisms to the case when the power series $\varphi$ does
+not lie in $1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$ but, instead,
+lies in $1+\mathbf{Z}^{\prime}\left[  \left[  t\right]  \right]  ^{+}$ for
+$\mathbf{Z}^{\prime}$ being a commutative $\mathbf{Z}$-algebra. In this case,
+it turns out, not much will change - but, of course, $\operatorname*{td}%
+\nolimits_{\varphi,T}$ will no longer be a map $K\rightarrow K\left[  \left[
+T\right]  \right]  $ but instead will be a map $K\rightarrow\left(
+K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[  \left[  T\right]
+\right]  $. Here is the precise definition:
+
+\begin{quote}
+\textbf{Definition.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
+$K$ is a $\mathbf{Z}$-algebra. Let $\mathbf{Z}^{\prime}$ be a commutative
+$\mathbf{Z}$-algebra. Let $\varphi\in1+\mathbf{Z}^{\prime}\left[  \left[
+t\right]  \right]  ^{+}$ be a power series with constant term equal to $1$. We
+define a map $\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}%
+}:K\rightarrow\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[
+\left[  T\right]  \right]  $ by%
+\begin{equation}
+\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)
+=\sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
+\lambda^{1}\left(  x\right)  \otimes1,\lambda^{2}\left(  x\right)
+\otimes1,...,\lambda^{j}\left(  x\right)  \otimes1\right)  T^{j}%
+\ \ \ \ \ \ \ \ \ \ \text{for every }x\in K. \label{ToddDefZ'}%
+\end{equation}
+
+
+Let me explain what I mean by $\operatorname*{Td}\nolimits_{\varphi,j}\left(
+\lambda^{1}\left(  x\right)  \otimes1,\lambda^{2}\left(  x\right)
+\otimes1,...,\lambda^{j}\left(  x\right)  \otimes1\right)  $ here: The tensor
+product $K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$ is both a $K$-algebra and a
+$\mathbf{Z}^{\prime}$-algebra (since the tensor product of two commutative
+$\mathbf{Z}$-algebras is an algebra over each of its tensorands). Since it is
+a $\mathbf{Z}^{\prime}$-algebra, we can apply the polynomial
+$\operatorname*{Td}\nolimits_{\varphi,j}\in\mathbf{Z}\left[  \alpha_{1}%
+,\alpha_{2},...,\alpha_{j}\right]  $ to the elements $\lambda^{1}\left(
+x\right)  \otimes1$, $\lambda^{2}\left(  x\right)  \otimes1$, $...$,
+$\lambda^{j}\left(  x\right)  \otimes1$ of $K\otimes_{\mathbf{Z}}%
+\mathbf{Z}^{\prime}$; the result of this application is what we denote by
+$\operatorname*{Td}\nolimits_{\varphi,j}\left(  \lambda^{1}\left(  x\right)
+\otimes1,\lambda^{2}\left(  x\right)  \otimes1,...,\lambda^{j}\left(
+x\right)  \otimes1\right)  $.
+
+We call $\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}$ the
+$\left(  \varphi,\mathbf{Z}^{\prime}\right)  $-\textit{Todd homomorphism} of
+the $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
+}\right)  $.
+\end{quote}
+
+Note that, in the particular case when $\mathbf{Z}^{\prime}=\mathbf{Z}$, the
+map $\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}$ is identical
+with the map $\operatorname*{td}\nolimits_{\varphi,T}$ if we make the
+canonical identification of $K$ with $K\otimes_{\mathbf{Z}}\mathbf{Z}$.
+
+All results about maps of the form $\operatorname*{td}\nolimits_{\varphi,T}$
+that we have formulated possess analoga pertaining to $\operatorname*{td}%
+\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}$. Proving these analoga is usually
+as simple as repeating the proofs of the original results and replacing some
+of the $\mathbf{Z}$'s by $\mathbf{Z}^{\prime}$'s, some of the $K$'s by
+$\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $'s, and some of the
+$\lambda^{i}\left(  x\right)  $'s by $\lambda^{i}\left(  x\right)  \otimes
+1$'s. Here is the analogue of Proposition 10.3:
+
+\begin{quote}
+\textbf{Proposition 10.14.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
+$K$ is a $\mathbf{Z}$-algebra. Let $\mathbf{Z}^{\prime}$ be a commutative
+$\mathbf{Z}$-algebra. Let $u\in\mathbf{Z}^{\prime}$. For every $x\in K$, we
+have $\operatorname*{td}\nolimits_{1+ut,T,\mathbf{Z}^{\prime}}\left(
+x\right)  =\lambda_{\left(  1\otimes u\right)  T}\left(  x\right)  $, where
+$\lambda_{\left(  1\otimes u\right)  T}\left(  x\right)  $ means
+$\operatorname*{ev}\nolimits_{\left(  1\otimes u\right)  T}\left(  \lambda
+_{T}\left(  x\right)  \right)  $.
+\end{quote}
+
+\textit{Proof of Proposition 10.14.} The following proof is, of course, a very
+direct calque of our above proof of Proposition 10.3.
+
+Let $x\in K$. Applying (\ref{ToddDefZ'}) to $\varphi=1+ut$, we obtain%
+\begin{align*}
+\operatorname*{td}\nolimits_{1+ut,T,\mathbf{Z}^{\prime}}\left(  x\right)   &
+=\sum_{j\in\mathbb{N}}\underbrace{\operatorname*{Td}\nolimits_{1+ut,j}%
+}_{\substack{=u^{j}\alpha^{j}\\\text{(by Proposition 10.4,}\\\text{applied to
+}\mathbf{Z}^{\prime}\text{ instead of }\mathbf{Z}\text{)}}}\left(  \lambda
+^{1}\left(  x\right)  \otimes1,\lambda^{2}\left(  x\right)  \otimes
+1,...,\lambda^{j}\left(  x\right)  \otimes1\right)  T^{j}\\
+&  =\sum_{j\in\mathbb{N}}\underbrace{\left(  u^{j}\alpha^{j}\right)  \left(
+\lambda^{1}\left(  x\right)  \otimes1,\lambda^{2}\left(  x\right)
+\otimes1,...,\lambda^{j}\left(  x\right)  \otimes1\right)  }_{\substack{=u^{j}%
+\left(  \lambda^{j}\left(  x\right)  \otimes1\right)  =\lambda^{j}\left(
+x\right)  \otimes u^{j}\\=\lambda^{j}\left(  x\right)  \cdot\left(  1\otimes
+u^{j}\right)  }}T^{j}\\
+&  =\sum_{j\in\mathbb{N}}\lambda^{j}\left(  x\right)  \cdot\underbrace{\left(
+1\otimes u^{j}\right)  }_{=\left(  1\otimes u\right)  ^{j}}T^{j}=\sum
+_{j\in\mathbb{N}}\lambda^{j}\left(  x\right)  \left(  1\otimes u\right)
+^{j}T^{j}.
+\end{align*}
+Compared with%
+\[
+\lambda_{\left(  1\otimes u\right)  T}\left(  x\right)  =\operatorname*{ev}%
+\nolimits_{\left(  1\otimes u\right)  T}\left(  \underbrace{\lambda_{T}\left(
+x\right)  }_{=\sum\limits_{j\in\mathbb{N}}\lambda^{j}\left(  x\right)  T^{j}%
+}\right)  =\operatorname*{ev}\nolimits_{\left(  1\otimes u\right)  T}\left(
+\sum\limits_{j\in\mathbb{N}}\lambda^{j}\left(  x\right)  T^{j}\right)
+=\sum_{j\in\mathbb{N}}\lambda^{j}\left(  x\right)  \left(  1\otimes u\right)
+^{j}T^{j}%
+\]
+(by the definition of $\operatorname*{ev}\nolimits_{\left(  1\otimes u\right)
+T}$), this yields that $\operatorname*{td}\nolimits_{1+ut,T,\mathbf{Z}%
+^{\prime}}\left(  x\right)  =\lambda_{\left(  1\otimes u\right)  T}\left(
+x\right)  $. This proves Proposition 10.14.
+
+Similarly, here is the analogue of Proposition 10.5:
+
+\begin{quote}
+\textbf{Proposition 10.15.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
+$K$ is a $\mathbf{Z}$-algebra. Let $\mathbf{Z}^{\prime}$ be a commutative
+$\mathbf{Z}$-algebra. Let $\varphi\in1+\mathbf{Z}^{\prime}\left[  \left[
+t\right]  \right]  ^{+}$ be a power series with constant term equal to $1$.
+
+\textbf{(a)} Then, $\operatorname*{Coeff}\nolimits_{0}\left(
+\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)
+\right)  =1$ for every $x\in K$.
+
+\textbf{(b)} Let $\varphi_{1}$ be the coefficient of the power series
+$\varphi\in\mathbf{Z}^{\prime}\left[  \left[  t\right]  \right]  $ before
+$t^{1}$. Then, $\operatorname*{Coeff}\nolimits_{1}\left(  \operatorname*{td}%
+\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)  \right)
+=\varphi_{1}\left(  x\otimes1\right)  $ for every $x\in K$.
+\end{quote}
+
+\textit{Proof of Proposition 10.15.} Let $x\in K$.
+
+\textbf{(a)} We have%
+\begin{align*}
+\operatorname*{Coeff}\nolimits_{0}\left(  \operatorname*{td}\nolimits_{\varphi
+,T,\mathbf{Z}^{\prime}}\left(  x\right)  \right)   &  =\operatorname*{Coeff}%
+\nolimits_{0}\left(  \sum_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi
+,j}\left(  \lambda^{1}\left(  x\right)  \otimes1,\lambda^{2}\left(  x\right)
+\otimes1,...,\lambda^{j}\left(  x\right)  \otimes1\right)  T^{j}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{ToddDefZ'})}\right) \\
+&  =\operatorname*{Td}\nolimits_{\varphi,0}\left(  \lambda^{1}\left(
+x\right)  \otimes1,\lambda^{2}\left(  x\right)  \otimes1,...,\lambda
+^{j}\left(  x\right)  \otimes1\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+the definition of }\operatorname*{Coeff}\nolimits_{0}\right) \\
+&  =\operatorname*{Td}\nolimits_{\varphi,0}=1\ \ \ \ \ \ \ \ \ \ \left(
+\text{by Proposition 10.6 \textbf{(a)}, applied to }\mathbf{Z}^{\prime}\text{
+instead of }\mathbf{Z}\right)  .
+\end{align*}
+
+
+\textbf{(b)} We have%
+\begin{align*}
+\operatorname*{Coeff}\nolimits_{1}\left(  \operatorname*{td}\nolimits_{\varphi
+,T}\left(  x\right)  \right)   &  =\operatorname*{Coeff}\nolimits_{1}\left(
+\sum_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
+\lambda^{1}\left(  x\right)  \otimes1,\lambda^{2}\left(  x\right)
+\otimes1,...,\lambda^{j}\left(  x\right)  \otimes1\right)  T^{j}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{ToddDef})}\right) \\
+&  =\operatorname*{Td}\nolimits_{\varphi,1}\left(  \lambda^{1}\left(
+x\right)  \otimes1,\lambda^{2}\left(  x\right)  \otimes1,...,\lambda
+^{j}\left(  x\right)  \otimes1\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+the definition of }\operatorname*{Coeff}\nolimits_{1}\right) \\
+&  =\operatorname*{Td}\nolimits_{\varphi,1}\left(  \underbrace{\lambda
+^{1}\left(  x\right)  \otimes1}_{=x\otimes1}\right)  =\operatorname*{Td}%
+\nolimits_{\varphi,1}\left(  x\otimes1\right)  =\varphi_{1}\left(
+x\otimes1\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since Proposition 10.6 \textbf{(b)}
+(applied to }\mathbf{Z}^{\prime}\text{ instead of }\mathbf{Z}\text{) yields
+}\operatorname*{Td}\nolimits_{\varphi,1}=\varphi_{1}\alpha_{1}\right)  .
+\end{align*}
+
+
+Proposition 10.15 is now proven.
+
+The analogue of Proposition 10.7:
+
+\begin{quote}
+\textbf{Proposition 10.16.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
+$K$ is a $\mathbf{Z}$-algebra. Let $\mathbf{Z}^{\prime}$ be a commutative
+$\mathbf{Z}$-algebra. Let $\varphi\in1+\mathbf{Z}^{\prime}\left[  \left[
+t\right]  \right]  ^{+}$ and $\psi\in1+\mathbf{Z}^{\prime}\left[  \left[
+t\right]  \right]  ^{+}$ be two power series with constant terms equal to $1$.
+For every $x\in K$, we have $\operatorname*{td}\nolimits_{\varphi
+\psi,T,\mathbf{Z}^{\prime}}\left(  x\right)  =\operatorname*{td}%
+\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)  \operatorname*{td}%
+\nolimits_{\psi,T,\mathbf{Z}^{\prime}}\left(  x\right)  $.
+\end{quote}
+
+\textit{Proof of Proposition 10.16.} To obtain a proof of Proposition 10.16,
+read the proof of Proposition 10.7, doing the following replacements:
+
+\begin{itemize}
+\item Replace every $\lambda^{k}\left(  x\right)  $ by $\lambda^{k}\left(
+x\right)  \otimes1$ for $k$ any nonnegative integer (that is, replace
+$\lambda^{1}\left(  x\right)  $ by $\lambda^{1}\left(  x\right)  \otimes1$,
+replace $\lambda^{2}\left(  x\right)  $ by $\lambda^{2}\left(  x\right)
+\otimes1$, etc.).
+
+\item Replace every $\operatorname*{td}\nolimits_{\varphi,T}$ by
+$\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}$.
+
+\item Replace every $\operatorname*{td}\nolimits_{\psi,T}$ by
+$\operatorname*{td}\nolimits_{\psi,T,\mathbf{Z}^{\prime}}$.
+
+\item Replace every $\operatorname*{td}\nolimits_{\varphi\psi,T}$ by
+$\operatorname*{td}\nolimits_{\varphi\psi,T,\mathbf{Z}^{\prime}}$.
+
+\item Replace all references to Proposition 10.7 by references to Proposition 10.16.
+\end{itemize}
+
+Next, the analogue of Proposition 10.9:
+
+\begin{quote}
+\textbf{Proposition 10.17.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
+$K$ is a $\mathbf{Z}$-algebra. Let $\mathbf{Z}^{\prime}$ be a commutative
+$\mathbf{Z}$-algebra. Let $m\in\mathbb{N}$. For every $i\in\left\{
+1,2,...,m\right\}  $, let $\varphi_{i}\in1+\mathbf{Z}^{\prime}\left[  \left[
+t\right]  \right]  ^{+}$ be a power series with constant term equal to $1$.
+For every $x\in K$, we have%
+\[
+\operatorname*{td}\nolimits_{\prod\limits_{i=1}^{m}\varphi_{i},T,\mathbf{Z}%
+^{\prime}}\left(  x\right)  =\prod\limits_{i=1}^{m}\operatorname*{td}%
+\nolimits_{\varphi_{i},T,\mathbf{Z}^{\prime}}\left(  x\right)  .
+\]
+
+
+
+\end{quote}
+
+\textit{Proof of Proposition 10.17.} This can be proven by induction over $m$.
+The induction base (the case $m=0$) requires showing that $\operatorname*{td}%
+\nolimits_{1,T,\mathbf{Z}^{\prime}}\left(  x\right)  =1$, but this follows
+from Proposition 10.14\footnote{In fact, Proposition 10.14 (applied to $u=0$)
+yields $\operatorname*{td}\nolimits_{1+0t,T,\mathbf{Z}^{\prime}}\left(
+x\right)  =\lambda_{\left(  1\otimes0\right)  T}\left(  x\right)  $. Now
+$\lambda_{\left(  1\otimes0\right)  T}\left(  x\right)  =\operatorname*{ev}%
+\nolimits_{\left(  1\otimes0\right)  T}\left(  \lambda_{T}\left(  x\right)
+\right)  $. Since $\operatorname*{ev}\nolimits_{\left(  1\otimes0\right)
+T}=\operatorname*{ev}\nolimits_{0T}$ is the map $K\left[  \left[  T\right]
+\right]  \rightarrow\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)
+\left[  \left[  T\right]  \right]  $ which sends every power series to its
+constant term tensored with $1$ (viewed as a constant power series over
+$K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$), we have $\operatorname*{ev}%
+\nolimits_{\left(  1\otimes0\right)  T}\left(  \lambda_{T}\left(  x\right)
+\right)  =\underbrace{\left(  \text{constant term of the power series }%
+\lambda_{T}\left(  x\right)  \right)  }_{=1}\otimes1=1\otimes1=1$. Thus,
+$\operatorname*{td}\nolimits_{1,T,\mathbf{Z}^{\prime}}\left(  x\right)
+=\operatorname*{td}\nolimits_{1+0t,T,\mathbf{Z}^{\prime}}\left(  x\right)
+=\lambda_{\left(  1\otimes0\right)  T}\left(  x\right)  =\operatorname*{ev}%
+\nolimits_{\left(  1\otimes0\right)  T}\left(  \lambda_{T}\left(  x\right)
+\right)  =1$.}. The induction step is a straightforward application of
+Proposition 10.16. Thus Proposition 10.17 is proven.
+
+Finally, the analogue of Proposition 10.11:
+
+\begin{quote}
+\textbf{Proposition 10.18.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
+$K$ is a $\mathbf{Z}$-algebra. Let $\mathbf{Z}^{\prime}$ be a commutative
+$\mathbf{Z}$-algebra. Let $x\in K$. Then, the map%
+\[
+1+\mathbf{Z}^{\prime}\left[  \left[  t\right]  \right]  ^{+}\rightarrow\left(
+K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[  \left[  T\right]
+\right]  ,\ \ \ \ \ \ \ \ \ \ \varphi\mapsto\operatorname*{td}%
+\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)
+\]
+is continuous. Here, the topology on $1+\mathbf{Z}^{\prime}\left[  \left[
+t\right]  \right]  ^{+}$ is supposed to be the $\left(  t\right)  $-topology
+(but for $\mathbf{Z}$ replaced by $\mathbf{Z}^{\prime}$), and the topology on
+$\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[  \left[
+T\right]  \right]  $ is supposed to be the $\left(  T\right)  $-topology
+defined in Section 5 (but for $K$ replaced by $K\otimes_{\mathbf{Z}}%
+\mathbf{Z}^{\prime}$).
+\end{quote}
+
+\textit{Proof of Proposition 10.18.} To obtain a proof of Proposition 10.18,
+read the proof of Proposition 10.11, doing the following replacements:
+
+\begin{itemize}
+\item Replace every $\mathbf{Z}$ by $\mathbf{Z}^{\prime}$.
+
+\item Replace every $K\left[  \left[  T\right]  \right]  $ by $\left(
+K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[  \left[  T\right]
+\right]  $.
+
+\item Replace "Proposition 10.1" by "Proposition 10.1 (applied to
+$\mathbf{Z}^{\prime}$ instead of $\mathbf{Z}$)".
+
+\item Replace every $\operatorname*{td}\nolimits_{\varphi,T}$ by
+$\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}$.
+
+\item Replace every $\operatorname*{td}\nolimits_{\psi,T}$ by
+$\operatorname*{td}\nolimits_{\psi,T,\mathbf{Z}^{\prime}}$.
+
+\item Replace every $\lambda^{k}\left(  x\right)  $ by $\lambda^{k}\left(
+x\right)  \otimes1$ for $k$ any nonnegative integer (that is, replace
+$\lambda^{1}\left(  x\right)  $ by $\lambda^{1}\left(  x\right)  \otimes1$,
+replace $\lambda^{2}\left(  x\right)  $ by $\lambda^{2}\left(  x\right)
+\otimes1$, etc.).
+
+\item Replace all references to Proposition 10.7 by references to Proposition 10.16.
+\end{itemize}
+
+Now we can reap the harvest of these preparations:
+
+\begin{quote}
+\textbf{Theorem 10.19.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
+$K$ is a $\mathbf{Z}$-algebra. Let $\varphi\in1+\mathbf{Z}\left[  \left[
+t\right]  \right]  ^{+}$ be a power series with constant term equal to $1$.
+Let $x\in K$ and $y\in K$. Then, $\operatorname*{td}\nolimits_{\varphi
+,T}\left(  x\right)  \cdot\operatorname*{td}\nolimits_{\varphi,T}\left(
+y\right)  =\operatorname*{td}\nolimits_{\varphi,T}\left(  x+y\right)  $.
+\end{quote}
+
+Even if we were interested only in this theorem, the only way to prove it
+known to me is by generalizing it:
+
+\begin{quote}
+\textbf{Theorem 10.20.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
+$K$ is a $\mathbf{Z}$-algebra. Let $\mathbf{Z}^{\prime}$ be a commutative
+$\mathbf{Z}$-algebra. Let $\varphi\in1+\mathbf{Z}^{\prime}\left[  \left[
+t\right]  \right]  ^{+}$ be a power series with constant term equal to $1$.
+Let $x\in K$ and $y\in K$. Then, $\operatorname*{td}\nolimits_{\varphi
+,T,\mathbf{Z}^{\prime}}\left(  x\right)  \cdot\operatorname*{td}%
+\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  y\right)  =\operatorname*{td}%
+\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x+y\right)  $.
+\end{quote}
+
+\textit{Proof of Theorem 10.20.} \textit{1st Step:} We have
+$\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)
+\cdot\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(
+y\right)  =\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(
+x+y\right)  $ whenever $\varphi\in1+\mathbf{Z}^{\prime}\left[  t\right]  ^{+}$.
+
+\textit{Proof.} Let $\varphi\in1+\mathbf{Z}^{\prime}\left[  t\right]  ^{+}$.
+According to Theorem 10.12 (applied to $\varphi$ and $\mathbf{Z}^{\prime}$
+instead of $p$ and $\mathbf{Z}$), there exists an integer $n$ (the degree of
+the polynomial $\varphi$), a finite-free extension ring $\mathbf{Z}_{\varphi
+}^{\prime}$ of the ring $\mathbf{Z}^{\prime}$ and $n$ elements $p_{1},$
+$p_{2},$ $...,$ $p_{n}$ of this extension ring $\mathbf{Z}_{\varphi}^{\prime}$
+such that $\varphi=\prod\limits_{i=1}^{n}\left(  1+p_{i}t\right)  $ in
+$\mathbf{Z}_{\varphi}^{\prime}\left[  t\right]  $. Consider this ring
+$\mathbf{Z}_{\varphi}^{\prime}$ and these $n$ elements $p_{1},$ $p_{2},$
+$...,$ $p_{n}$.
+
+The canonical embedding $\mathbf{Z}^{\prime}\rightarrow\mathbf{Z}_{\varphi
+}^{\prime}$ is injective. Hence, the map $K\otimes_{\mathbf{Z}}\mathbf{Z}%
+^{\prime}\rightarrow K\otimes_{\mathbf{Z}}\mathbf{Z}_{\varphi}^{\prime}$ that
+it induces must also be injective [...]
+
+[...]
+
+\textit{Proof of Theorem 10.19.} [...]
+
+[...]
 
 As a consequence of Proposition 10.9, we have:
 
-\textbf{Theorem 10.10.} Let $\left(  K,\left(  \lambda^{i}\right)
-_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. Let $\varphi\in
-1+\mathbb{Z}\left[  t\right]  ^{+}$ be a polynomial with constant term equal
-to $1$. Let us use the notations of Section 5. Let $\left(  \widetilde{K}%
-,\left[  u_{1},u_{2},...,u_{n}\right]  \right)  \in K^{\operatorname*{int}}$
-be such that $\varphi\left(  T\right)  =\Pi\left(  \widetilde{K},\left[
+\begin{quote}
+\textbf{Theorem 10.UX.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
+$K$ is a $\mathbf{Z}$-algebra. Let $\varphi\in1+\mathbf{Z}\left[  t\right]
+^{+}$ be a polynomial with constant term equal to $1$. Let us use the
+notations of Section 5. Let $\left(  \widetilde{\mathbf{Z}},\left[
+u_{1},u_{2},...,u_{n}\right]  \right)  \in\mathbf{Z}^{\operatorname*{int}}$ be
+such that $\varphi\left(  T\right)  =\Pi\left(  \widetilde{\mathbf{Z}},\left[
 u_{1},u_{2},...,u_{n}\right]  \right)  $. Then,%
 \[
 \operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  =\prod\limits_{i=1}%
@@ -6109,41 +6919,43 @@ u_{1},u_{2},...,u_{n}\right]  \right)  $. Then,%
 \]
 
 
-[...] SERIOUS\ PROBLEM! we don't have to increase $K$. we have to increase
-$\mathbb{Z}$. but that won't be binomial, so $K$ loses its properties...
+
+\end{quote}
 
 [...]
 
 \begin{quote}
-\textbf{Definition \& Theorem 10.X1.} Let $\varphi\in1+\mathbb{Z}\left[
-\left[  t\right]  \right]  ^{+}$ be a power series with constant term equal to
-$1$. There exists one and only one polynomial $\operatorname*{Td}_{\varphi
-,j}\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  $ for
-every $j\in\mathbb{N}$ such that%
+\textbf{Definition \& Theorem 10.X1.} Let $\mathbf{Z}$ be a ring. Let
+$\varphi\in1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$ be a power
+series with constant term equal to $1$. There exists one and only one
+polynomial $\operatorname*{Td}_{\varphi,j}\in\mathbf{Z}\left[  \alpha
+_{1},\alpha_{2},...,\alpha_{j}\right]  $ for every $j\in\mathbb{N}$ such that%
 \[
 \prod\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)  =\sum_{j\in\mathbb{N}%
 }\operatorname*{Td}\nolimits_{\varphi,j}\left(  X_{1},X_{2},...,X_{j}\right)
 T^{j}%
 \]
-in the ring $\left(  \mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)
+in the ring $\left(  \mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)
 \left[  \left[  T\right]  \right]  $ for every $m\in\mathbb{N}$, where
 $X_{i}=\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
 ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{k}$ as usual.
 
-\textbf{Theorem 10.X2.} Let $\left(  K,\left(  \lambda^{i}\right)
-_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. Let $u_{1},$ $u_{2},$ $...,$
-$u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}$. Then,%
+\textbf{Theorem 10.X2.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
+$K$ is a $\mathbf{Z}$-algebra. Let $u_{1},$ $u_{2},$ $...,$ $u_{m}$ be
+$1$-dimensional elements of $K$. Let $j\in\mathbb{N}$. Then,%
 \[
 \operatorname*{td}\nolimits_{\varphi,T}\left(  u_{1}+u_{2}+...+u_{m}\right)
 =\prod\limits_{i=1}^{m}\varphi\left(  u_{i}T\right)  .
 \]
 
 
-\textbf{Theorem 10.X3.} Let $\left(  K,\left(  \lambda^{i}\right)
-_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. Then, $\operatorname*{td}%
-_{\varphi,T}\left(  K\right)  \subseteq\Lambda\left(  K\right)  $, and
-$\operatorname*{td}_{\varphi,T}:K\rightarrow\Lambda\left(  K\right)  $ is a
-homomorphism of $\mathbb{Z}$-modules.
+\textbf{Theorem 10.X3.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
+$K$ is a $\mathbf{Z}$-algebra. Then, $\operatorname*{td}_{\varphi,T}\left(
+K\right)  \subseteq\Lambda\left(  K\right)  $, and $\operatorname*{td}%
+_{\varphi,T}:K\rightarrow\Lambda\left(  K\right)  $ is a homomorphism of
+additive groups.
 
 \textbf{Definition.} Let $j\in\mathbb{N}\setminus\left\{  0\right\}  $. Let
 $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a
@@ -8188,6 +9000,4 @@ Academic Press 1988, pp. 93-102.
 
 [8] Darij Grinberg, \textit{Witt\#4a: Equigraded power series}.\newline%
 \texttt{www.cip.ifi.lmu.de/\symbol{126}grinberg/algebra/witt4a.pdf}
-
-
 \end{document}
