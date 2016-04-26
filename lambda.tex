@@ -8,7 +8,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.00.0.2570}
-%TCIDATA{LastRevised=Thursday, September 03, 2009 17:09:45}
+%TCIDATA{LastRevised=Thursday, September 03, 2009 17:38:47}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 \voffset=-2.5cm
@@ -2871,9 +2871,104 @@ $-rings. However, it turns out that if an identity can be proven in
 $\Lambda\left(  K\right)  $, then it automatically holds for arbitrary
 $\lambda$-rings! This is one of the so-called $\lambda$\textit{-verification
 principles}\footnote{There exist different and partly stronger $\lambda
-$-verifications such as the one mentioned in [2], p. 27.}:
+$-verifications such as the one mentioned in [2], p. 27.}. Before we formulate
+this principle, let us first formally define what kind of identities it will
+hold for:
 
 \begin{quote}
+\textbf{Definition.} Let $I$ be a set.
+
+\textbf{1)} We will now define a set $\mathbb{Z}\left[  X_{i}\mid i\in
+I\right]  _{\Lambda}$ of terms in the variables $X_{i}$ for all $i\in I$ and
+$\operatorname*{Lambda}^{j}$ for all $j\in\mathbb{N}$. Namely, we define this
+set $\mathbb{Z}\left[  X_{i}\mid i\in I\right]  _{\Lambda}$ as the smallest
+set $T$ satisfying the following three axioms:
+
+\begin{itemize}
+\item For every $i\in I$, the variable $X_{i}$ itself belongs to the set $T$.
+
+\item If $u_{1},$ $u_{2},$ $...,$ $u_{n}$ are some elements of $T$, and $P$ is
+a $\mathbb{Z}$-polynomial term in the variables $X_{1},$ $X_{2},$ $...,$
+$X_{n}\ \ \ \ $\footnote{A \textit{polynomial term} is a valid arithmetical
+term which can be formed from its variables using the operators $+,$ $-,$
+$\cdot,$ $0$ and $1$.}, then the term $P\left(  u_{1},u_{2},...,u_{n}\right)
+$ belongs to the set $T$.
+
+\item If $u$ is an element of $T$, and $j\in\mathbb{N}$, then
+$\operatorname*{Lambda}^{j}\left(  u\right)  \in T$.
+\end{itemize}
+
+\begin{quote}
+(Speaking sloppily, the set $\mathbb{Z}\left[  X_{i}\mid i\in I\right]
+_{\Lambda}$ is the set of all terms in the variables $X_{i}$ for all $i\in I$
+and $\operatorname*{Lambda}^{j}$ for all $j\in\mathbb{N}$ that can appear if
+we allow addition, subtraction and multiplication of the $X_{i}$, usage of the
+zero $0$ and the multiplicative unity $1$, and application of the symbols
+$\operatorname*{Lambda}^{j}$ as functions to the $X_{i}$.)
+
+The elements of this set $\mathbb{Z}\left[  X_{i}\mid i\in I\right]
+_{\Lambda}$ will be called $\lambda$\textit{-polynomial terms} in the
+variables $X_{1},$ $X_{2},$ $...,$ $X_{n}$.
+
+\textbf{2)} For every term $t\in\mathbb{Z}\left[  X_{i}\mid i\in I\right]
+_{\Lambda}$, every $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $, and every family $\left(  a_{k}\right)  _{k\in
+I}\in K^{I}$ of elements of $K$, we will now define an element $t\left(
+\left(  a_{k}\right)  _{k\in I}\right)  $ of $K$, which we will call the
+\textit{evaluation of }$t$ \textit{at }$\left(  a_{k}\right)  _{k\in I}$. This
+element $t\left(  \left(  a_{k}\right)  _{k\in I}\right)  $ is defined by
+recurrence on the construction of the $\lambda$-polynomial term:
+
+\begin{itemize}
+\item If $t=X_{i}$ for some $i\in I$, then $t\left(  \left(  a_{k}\right)
+_{k\in I}\right)  $ is defined as $a_{i}$.
+
+\item If $t=P\left(  u_{1},u_{2},...,u_{n}\right)  $ for some elements
+$u_{1},$ $u_{2},$ $...,$ $u_{n}$ of $T$, then $t\left(  \left(  a_{k}\right)
+_{k\in I}\right)  $ is defined as the evaluation of $P$ at%
+\[
+\left(  u_{1}\left(  \left(  a_{k}\right)  _{k\in I}\right)  ,\ u_{2}\left(
+\left(  a_{k}\right)  _{k\in I}\right)  ,\ ...,\ u_{n}\left(  \left(
+a_{k}\right)  _{k\in I}\right)  \right)  .
+\]
+
+
+\item If $t=\operatorname*{Lambda}^{j}\left(  u\right)  $ for some $u\in T$
+and $j\in\mathbb{N}$, then $t\left(  \left(  a_{k}\right)  _{k\in I}\right)  $
+is defined as $\lambda^{j}\left(  u\left(  \left(  a_{k}\right)  _{k\in
+I}\right)  \right)  $.
+\end{itemize}
+
+\begin{quote}
+\textit{Example:} If $I=\left\{  1,2,3\right\}  $ and
+$t=\operatorname*{Lambda}^{5}\left(  \operatorname*{Lambda}^{2}\left(
+X_{1}\right)  -\operatorname*{Lambda}^{4}\left(  X_{2}\right)  \cdot
+X_{3}\right)  $, then%
+\begin{align*}
+t\left(  \left(  a_{k}\right)  _{k\in I}\right)    & =\left(
+\operatorname*{Lambda}\nolimits^{5}\left(  \operatorname*{Lambda}%
+\nolimits^{2}\left(  X_{1}\right)  -\operatorname*{Lambda}\nolimits^{4}\left(
+X_{2}\right)  \cdot X_{3}\right)  \right)  \left(  \left(  a_{k}\right)
+_{k\in I}\right)  \\
+& =\lambda^{5}\left(  \left(  \operatorname*{Lambda}\nolimits^{2}\left(
+X_{1}\right)  -\operatorname*{Lambda}\nolimits^{4}\left(  X_{2}\right)  \cdot
+X_{3}\right)  \left(  \left(  a_{k}\right)  _{k\in I}\right)  \right)  \\
+& =\lambda^{5}\left(  \left(  \operatorname*{Lambda}\nolimits^{2}\left(
+X_{1}\right)  \right)  \left(  \left(  a_{k}\right)  _{k\in I}\right)
+-\left(  \operatorname*{Lambda}\nolimits^{4}\left(  X_{2}\right)  \right)
+\left(  \left(  a_{k}\right)  _{k\in I}\right)  \cdot X_{3}\left(  \left(
+a_{k}\right)  _{k\in I}\right)  \right)  \\
+& =\lambda^{5}\left(  \lambda^{2}\left(  X_{1}\left(  \left(  a_{k}\right)
+_{k\in I}\right)  \right)  -\lambda^{4}\left(  X_{2}\left(  \left(
+a_{k}\right)  _{k\in I}\right)  \right)  \cdot X_{3}\left(  \left(
+a_{k}\right)  _{k\in I}\right)  \right)  \\
+& =\lambda^{5}\left(  \lambda^{2}\left(  a_{1}\right)  -\lambda^{4}\left(
+a_{2}\right)  \cdot a_{3}\right)  .
+\end{align*}
+
+
+\bigskip
+
 \textbf{Theorem 8.1.} Let $\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring. Let $I$ be a set.
 
