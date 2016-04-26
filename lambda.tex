@@ -9,7 +9,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, September 24, 2011 23:21:15}
+%TCIDATA{LastRevised=Sunday, September 25, 2011 21:54:29}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
@@ -42,7 +42,7 @@
 
 Darij Grinberg
 
-\textit{Version 0.0.7, last revised 16 Sep 2011}
+\textit{Version 0.0.9, last revised 25 Sep 2011}
 \end{center}
 
 This is a \textbf{BETA VERSION} and has never been proofread. \textbf{Please
@@ -4968,9 +4968,8 @@ structure $\left(  \varepsilon,\mathbf{E}\right)  $. The elements of the set
 $\mathbf{E}$ are called the \textit{positive elements} of the $\lambda$-ring
 $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ with its
 positive structure $\left(  \varepsilon,\mathbf{E}\right)  $%
-.\ \ \ \ \footnote{One remark about the assumption that that for every
-invertible element $u\in\mathbf{E}$, the inverse of $u$ must lie in
-$\mathbf{E}$ as well:
+.\ \ \ \ \footnote{One remark about the assumption that for every invertible
+element $u\in\mathbf{E}$, the inverse of $u$ must lie in $\mathbf{E}$ as well:
 \par
 Fulton and Lang do not make this assumption in [1], but this is a mistake on
 their side. In fact, they claim that the set of all $u\in\mathbf{E}$ such that
@@ -5128,33 +5127,29 @@ contains the multiplicative unity of $K$.
 Step and the 2nd Step.
 
 \begin{quote}
-\textbf{Theorem X.2.} If $\left(  K,\left(  \lambda^{i}\right)  _{i\in
-\mathbb{N}}\right)  $ is a $\lambda$-ring with a positive structure $\left(
-\varepsilon,\mathbf{E}\right)  $, then $\left(  K,\left(  \lambda^{i}\right)
-_{i\in\mathbb{N}}\right)  $ is a special $\lambda$-ring.
-
-\textbf{Theorem X.3.} Let $\left(  K,\left(  \lambda^{i}\right)
-_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring with a positive structure
-$\left(  \varepsilon,\mathbf{E}\right)  $. Let $e\in\mathbf{E}$, and let
-$r=\varepsilon\left(  e\right)  -1$. Define a polynomial $p_{e}\in K\left[
-T\right]  $ by $p_{e}\left(  T\right)  =\sum\limits_{i=0}^{r+1}\left(
--1\right)  ^{i}\lambda^{i}\left(  e\right)  T^{r+1-i}$. Set $K_{e}=K\left[
-T\right]  \diagup\left(  p_{e}\left(  T\right)  \right)  =K\left[
-\ell\right]  $, where $\ell$ denotes the equivalence class of $T$ modulo
-$p_{e}\left(  T\right)  $. Then, $K_{e}$ is a finite-free extension ring of
-$K$. There exists a map $\widetilde{\lambda}^{i}:K_{e}\rightarrow K_{e}$ for
-every $i\in\mathbb{N}$ such that $\left(  K_{e},\left(  \widetilde{\lambda
-}^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring such that the
-inclusion $K\rightarrow K_{e}$ is a $\lambda$-ring homomorphism and such that
-$\ell\in K_{e}$ is a $1$-dimensional element. Moreover, there exists a
-positive structure $\left(  \varepsilon_{e},\mathbf{E}_{e}\right)  $ on
-$K_{e}$ defined by $\varepsilon_{e}\left(  \ell\right)  =1$ and $\mathbf{E}%
-_{e}=\left\{  \sum\limits_{i\in\mathbb{N},\ j\in\mathbb{N}}a_{i,j}\ell
-^{i}\left(  e-\ell\right)  ^{j}\ \mid\text{ }a_{i,j}\in\mathbb{E}\text{ for
-all }i\in\mathbb{N}\text{ and }j\in\mathbb{N}\right\}  .$
+\textbf{Theorem X.2.} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a special(?) $\lambda$-ring with a positive
+structure $\left(  \varepsilon,\mathbf{E}\right)  $. Let $e\in\mathbf{E}$, and
+let $r=\varepsilon\left(  e\right)  -1$. Define a polynomial $p_{e}\in
+K\left[  T\right]  $ by $p_{e}\left(  T\right)  =\sum\limits_{i=0}%
+^{r+1}\left(  -1\right)  ^{i}\lambda^{i}\left(  e\right)  T^{r+1-i}$. Set
+$K_{e}=K\left[  T\right]  \diagup\left(  p_{e}\left(  T\right)  \right)
+=K\left[  \ell\right]  $, where $\ell$ denotes the equivalence class of $T$
+modulo $p_{e}\left(  T\right)  $. Then, $K_{e}$ is a finite-free extension
+ring of $K$. There exists a map $\widetilde{\lambda}^{i}:K_{e}\rightarrow
+K_{e}$ for every $i\in\mathbb{N}$ such that $\left(  K_{e},\left(
+\widetilde{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a $\lambda
+$-ring such that the inclusion $K\rightarrow K_{e}$ is a $\lambda$-ring
+homomorphism and such that $\ell\in K_{e}$ is a $1$-dimensional element.
+Moreover, there exists a positive structure $\left(  \varepsilon
+_{e},\mathbf{E}_{e}\right)  $ on $K_{e}$ defined by $\varepsilon_{e}\left(
+\ell\right)  =1$ and $\mathbf{E}_{e}=\left\{  \sum\limits_{i\in\mathbb{N}%
+,\ j\in\mathbb{N}}a_{i,j}\ell^{i}\left(  e-\ell\right)  ^{j}\ \mid\text{
+}a_{i,j}\in\mathbb{E}\text{ for all }i\in\mathbb{N}\text{ and }j\in
+\mathbb{N}\right\}  .$
 \end{quote}
 
-By iterating the construction in Theorem X.3, we can find, for any
+By iterating the construction in Theorem X.2, we can find, for any
 $e\in\mathbf{E}$, an extension ring of $K$ with a $\lambda$-ring structure in
 which $e$ is the sum of $r$ $1$-dimensional elements. This is called the
 \textit{splitting principle}, and is what Fulton/Lang [1] use instead of
@@ -6025,10 +6020,10 @@ cannot conclude anything from this. Instead, $xy=xx^{-1}=1$ yields%
 homomorphism,}\\
 \text{and }1+T\text{ is the multiplicative unity of }\Lambda\left(  K\right)
 \end{array}
-\right)  \\
+\right) \\
 &  =1+xyT=\Pi\left(  K,\left[  xy\right]  \right)  =\Pi\left(  K,\left[
 x\right]  \right)  \widehat{\cdot}\Pi\left(  K,\left[  y\right]  \right)
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 5.3 \textbf{(c)}}\right)  \\
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 5.3 \textbf{(c)}}\right) \\
 &  =\lambda_{T}\left(  x\right)  \widehat{\cdot}\left(  1+yT\right)  .
 \end{align*}
 Together with $\lambda_{T}\left(  xy\right)  =\lambda_{T}\left(  x\right)
