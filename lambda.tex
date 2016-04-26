@@ -8,7 +8,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.00.0.2570}
-%TCIDATA{LastRevised=Monday, August 31, 2009 20:02:06}
+%TCIDATA{LastRevised=Wednesday, September 02, 2009 13:51:53}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 \voffset=-2.5cm
@@ -48,7 +48,8 @@ Some notations that we will use later on:
 \item In the following, $\mathbb{N}$ will denote the set $\left\{
 0,1,2,...\right\}  $.
 
-\item When we say "ring", we will always mean "commutative ring with unity".
+\item When we say "ring", we will always mean "commutative ring with unity". A
+"ring homomorphism" is always supposed to send $1$ to $1$.
 
 \item Let $R$ be a ring. An \textit{extension ring} of $R$ will mean a ring
 $S$ along with a ring monomorphism $R\rightarrow S$. (We will often sloppily
@@ -65,6 +66,12 @@ will contain each object $o$ as often as it appears as an $u_{i}$ for some
 $i\in I$).\newline If $I=\left\{  1,2,...,n\right\}  $ for some $n\in
 \mathbb{N}$, then we also denote the multiset $\left[  u_{i}\mid i\in
 I\right]  $ by $\left[  u_{1},u_{2},...,u_{n}\right]  $.
+
+\item We have not defined $\lambda$-rings yet, but it is important to mention
+some discrepancy in notation between different sources. Namely, some of the
+literature (including [2]) denotes as \textit{pre-}$\lambda$\textit{-rings}
+what we call $\lambda$-rings and denotes as $\lambda$\textit{-rings} what we
+call pre-$\lambda$-rings.
 \end{itemize}
 
 \begin{center}
@@ -204,6 +211,16 @@ $f:K\rightarrow L$ be a map. Then, $f$ is called a $\lambda$\textit{-ring
 homomorphism} (or \textit{homomorphism of }$\lambda$\textit{-rings}) if and
 only if $f$ is a ring homomorphism and satisfies $\mu_{i}\circ f=f\circ
 \lambda^{i}$ for every $i\in\mathbb{N}$.
+
+\textbf{5)} Let $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
+}\right)  $ be a $\lambda$-ring. Let $L$ be a subring of $K$. Then, $L$ is
+said to be a \textit{sub-}$\lambda$\textit{-ring} of $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ if and only if $\lambda
+^{i}\left(  L\right)  \subseteq L$ for every $i\in\mathbb{N}$. Obviously, if
+$L$ is a sub-$\lambda$-ring of $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  ,$ then $\left(  L,\left(  \lambda^{i}\mid
+_{L}\right)  _{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring, and the
+canonical inclusion $L\rightarrow K$ is a $\lambda$-ring homomorphism.
 \end{quote}
 
 First, we give an alternative characterization of $\lambda$-rings:
@@ -234,6 +251,19 @@ $\lambda_{t}\left(  -x\right)  =\left(  \lambda_{t}\left(  x\right)  \right)
 invertible) and $\lambda_{t}\left(  x\right)  \cdot\lambda_{t}\left(
 y\right)  =\lambda_{t}\left(  x+y\right)  $ for every $x\in K$ and every $y\in
 K$.
+
+\textbf{(c)} Let $K$ and $L$ be two $\lambda$-rings. Let $f:K\rightarrow L$ be
+a ring homomorphism. Consider the rings $K\left[  \left[  t\right]  \right]  $
+and $L\left[  \left[  t\right]  \right]  $. Obviously, the homomorphism $f$
+induces a homomorphism $f\left[  \left[  t\right]  \right]  :K\left[  \left[
+t\right]  \right]  \rightarrow L\left[  \left[  t\right]  \right]  $ (defined
+by $\left(  f\left[  \left[  t\right]  \right]  \right)  \left(
+\sum\limits_{i\in\mathbb{N}}a_{i}t^{i}\right)  =\sum\limits_{i\in\mathbb{N}%
+}f\left(  a_{i}\right)  t^{i}$ for every $\sum\limits_{i\in\mathbb{N}}%
+a_{i}t^{i}\in K\left[  \left[  t\right]  \right]  $ with $a_{i}\in K$).
+
+Then, $f$ is a $\lambda$-ring homomorphism if and only if $\mu_{t}\circ
+f=f\left[  \left[  t\right]  \right]  \circ\lambda_{t}.$
 \end{quote}
 
 \textit{Proof of Theorem 2.1:} \textbf{(a)} Every $x\in K$ and every $y\in K$
@@ -275,6 +305,21 @@ $\lambda_{t}\left(  x\right)  \cdot\lambda_{t}\left(  -x\right)
 =\underbrace{\lambda_{t}\left(  0\right)  }_{=1}$, hence $\lambda_{t}\left(
 -x\right)  =\left(  \lambda_{t}\left(  x\right)  \right)  ^{-1}$, and Theorem
 2.1 \textbf{(b)} is proven.
+
+\textbf{(c)} We have $\left(  \mu_{t}\circ f\right)  \left(  x\right)
+=\sum\limits_{i\in\mathbb{N}}\mu^{i}\left(  f\left(  x\right)  \right)  t^{i}$
+and $\left(  f\left[  \left[  t\right]  \right]  \circ\lambda_{t}\right)
+\left(  x\right)  =\left(  f\left[  \left[  t\right]  \right]  \right)
+\left(  \sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  x\right)  t^{i}\right)
+=\sum\limits_{i\in\mathbb{N}}f\left(  \lambda^{i}\left(  x\right)  \right)
+t^{i}$ for every $x\in K$. Hence, $\mu_{t}\circ f=f\left[  \left[  t\right]
+\right]  \circ\lambda_{t}$ is equivalent to $\sum\limits_{i\in\mathbb{N}}%
+\mu^{i}\left(  f\left(  x\right)  \right)  t^{i}=\sum\limits_{i\in\mathbb{N}%
+}f\left(  \lambda^{i}\left(  x\right)  \right)  t^{i}$ for every $x\in K,$
+which in turn is equivalent to $\mu^{i}\left(  f\left(  x\right)  \right)
+=f\left(  \lambda^{i}\left(  x\right)  \right)  $ for every $x\in K$ and every
+$i\in\mathbb{N}$, which in turn means that $\mu_{i}\circ f=f\circ\lambda^{i}$
+for every $i\in\mathbb{N}$. This proves Theorem 2.1 \textbf{(c)}.
 
 \begin{quote}
 \textbf{Theorem 2.2.} Let $\left(  K,\left(  \lambda^{i}\right)
@@ -321,11 +366,429 @@ inverse $u^{-1}$ must lie in $\mathbf{E}$ as well
 
 [1] [Why the fuck does it?]
 
+\begin{quotation}
+\textit{Exercise 2.1.} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ and $\left(  L,\left(  \mu^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be two $\lambda$-rings. Let $f:K\rightarrow L$ be
+a ring homomorphism. Let $E$ be a generating set of the $\mathbb{Z}$-module
+$K$.
+
+\textbf{(a)} Prove that $f$ is a $\lambda$-ring homomorphism if and only if
+every $e\in E$ satisfies $\left(  \mu_{t}\circ f\right)  \left(  e\right)
+=\left(  f\left[  \left[  t\right]  \right]  \circ\lambda_{t}\right)  \left(
+e\right)  $.
+
+\textbf{(b)} Prove that $f$ is a $\lambda$-ring homomorphism if and only if
+every $e\in E$ satisfies $\left(  \mu^{i}\circ f\right)  \left(  e\right)
+=\left(  f\circ\lambda^{i}\right)  \left(  e\right)  $ for every
+$i\in\mathbb{N}$.\ \ \ \ \footnote{\textit{Solution:} \textbf{(a)} Theorem 2.1
+\textbf{(c)} says that $f$ is a homomorphism of $\lambda$-rings if and only if
+$\mu_{t}\circ f=f\left[  \left[  t\right]  \right]  \circ\lambda_{t}$. Thus,
+it remains to show that $\mu_{t}\circ f=f\left[  \left[  t\right]  \right]
+\circ\lambda_{t}$ holds if and only if every $e\in E$ satisfies $\mu_{t}\circ
+f=f\left[  \left[  t\right]  \right]  \circ\lambda_{t}$. Since $E$ is a
+generating set of the $\mathbb{Z}$-module $K$, this comes down to proving the
+following three facts:
+\par
+\begin{itemize}
+\item We have $\left(  \mu_{t}\circ f\right)  \left(  0\right)  =\left(
+f\left[  \left[  t\right]  \right]  \circ\lambda_{t}\right)  \left(  0\right)
+$.
+\par
+\item We have $\left(  \mu_{t}\circ f\right)  \left(  -x\right)  =\left(
+f\left[  \left[  t\right]  \right]  \circ\lambda_{t}\right)  \left(
+-x\right)  $ for every $x\in K$ which satisfies $\left(  \mu_{t}\circ
+f\right)  \left(  x\right)  =\left(  f\left[  \left[  t\right]  \right]
+\circ\lambda_{t}\right)  \left(  x\right)  $.
+\par
+\item We have $\left(  \mu_{t}\circ f\right)  \left(  x+y\right)  =\left(
+f\left[  \left[  t\right]  \right]  \circ\lambda_{t}\right)  \left(
+x+y\right)  $ for any $x\in K$ and $y\in K$ which satisfy $\left(  \mu
+_{t}\circ f\right)  \left(  x\right)  =\left(  f\left[  \left[  t\right]
+\right]  \circ\lambda_{t}\right)  \left(  x\right)  $ and $\left(  \mu
+_{t}\circ f\right)  \left(  y\right)  =\left(  f\left[  \left[  t\right]
+\right]  \circ\lambda_{t}\right)  \left(  y\right)  $.
+\end{itemize}
+\par
+We will only prove the last of these three assertions (the other two are
+similar): If $\left(  \mu_{t}\circ f\right)  \left(  x\right)  =\left(
+f\left[  \left[  t\right]  \right]  \circ\lambda_{t}\right)  \left(  x\right)
+$ and $\left(  \mu_{t}\circ f\right)  \left(  y\right)  =\left(  f\left[
+\left[  t\right]  \right]  \circ\lambda_{t}\right)  \left(  y\right)  $, then%
+\begin{align*}
+\left(  \mu_{t}\circ f\right)  \left(  x+y\right)   &  =\mu_{t}\left(
+f\left(  x+y\right)  \right)  =\mu_{t}\left(  f\left(  x\right)  +f\left(
+y\right)  \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }f\text{ is a ring
+homomorphism}\right) \\
+&  =\mu_{t}\left(  f\left(  x\right)  \right)  \cdot\mu_{t}\left(  f\left(
+y\right)  \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 2.1
+\textbf{(a)}, applied to the }\lambda\text{-ring }\left(  L,\left(  \mu
+^{i}\right)  _{i\in\mathbb{N}}\right)  \right) \\
+&  =\left(  \mu_{t}\circ f\right)  \left(  x\right)  \cdot\left(  \mu_{t}\circ
+f\right)  \left(  y\right)  =\left(  f\left[  \left[  t\right]  \right]
+\circ\lambda_{t}\right)  \left(  x\right)  \cdot\left(  f\left[  \left[
+t\right]  \right]  \circ\lambda_{t}\right)  \left(  y\right) \\
+&  =\left(  f\left[  \left[  t\right]  \right]  \right)  \left(
+\underbrace{\lambda_{t}\left(  x\right)  \cdot\lambda_{t}\left(  y\right)
+}_{=\lambda_{t}\left(  x+y\right)  \text{ by Theorem 2.1 \textbf{(a)}}%
+}\right)  =\left(  f\left[  \left[  t\right]  \right]  \circ\lambda
+_{t}\right)  \left(  x+y\right)  ,
+\end{align*}
+qed.
+\par
+\textbf{(b)} This follows from \textbf{(a)} in the same way as Theorem 2.1
+\textbf{(c)} was proven.}
+
+\textit{Exercise 2.2.} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. Let $L$ be a subset of $K$
+which is closed under addition, multiplication and the maps $\lambda^{i}$.
+Assume that $0\in L$ and $1\in L$. Then, the subset $L-L$ of $K$ (this subset
+$L-L$ is defined by $L-L=\left\{  \ell-\ell^{\prime}\mid\ell\in L,\ \ell
+^{\prime}\in L\right\}  $) is a sub-$\lambda$-ring of $K$%
+.\ \ \ \ \footnote{\textit{Solution:} It is an exercise in basic algebra to
+see that $L-L$ is a subring of $K$. Thus, it only remains to show that
+$\lambda^{i}\left(  L-L\right)  \subseteq L-L$ for every $i\in\mathbb{N}$. In
+other words, we have to prove that $\lambda^{i}\left(  \ell-\ell^{\prime
+}\right)  \in L-L$ for every $\ell\in L$ and $\ell^{\prime}\in L$.
+\par
+We are going to prove this by induction, so we assume that $\lambda^{j}\left(
+\ell-\ell^{\prime}\right)  \in L-L$ for all $j<i$. Then,%
+\begin{align*}
+\lambda^{i}\left(  \ell\right)   &  =\lambda^{i}\left(  \left(  \ell
+-\ell^{\prime}\right)  +\ell^{\prime}\right)  =\sum_{j=0}^{i}\lambda
+^{j}\left(  \ell-\ell^{\prime}\right)  \lambda^{i-j}\left(  \ell^{\prime
+}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }%
+\lambda\text{-rings}\right) \\
+&  =\sum_{j=0}^{i-1}\underbrace{\lambda^{j}\left(  \ell-\ell^{\prime}\right)
+}_{\substack{\in L-L,\text{ since}\\j<n}}\underbrace{\lambda^{i-j}\left(
+\ell^{\prime}\right)  }_{\substack{\in L\text{, since}\\\ell^{\prime}\in
+L}}+\lambda^{i}\left(  \ell-\ell^{\prime}\right)  \underbrace{\lambda
+^{0}\left(  \ell^{\prime}\right)  }_{=1}\in\underbrace{\left(  L-L\right)
+L}_{=L-L}+\lambda^{i}\left(  \ell-\ell^{\prime}\right)  \subseteq\left(
+L-L\right)  +\lambda^{i}\left(  \ell-\ell^{\prime}\right)  .
+\end{align*}
+But $\lambda^{i}\left(  \ell\right)  $ itself lies in $L-L$ (since it lies in
+$L$, because $\ell\in L$), so this yields $\lambda^{i}\left(  \ell
+-\ell^{\prime}\right)  \in L-L,$ and this completes our induction.}
+\end{quotation}
+
 \begin{center}
-\fbox{\textbf{3. Basic examples}}
+\fbox{\textbf{3. Examples of }$\lambda$\textbf{-rings}}
 \end{center}
 
-[2] [...] [Examples]
+Before we go deeper into the theory, it is time for some examples.
+
+Obviously, the trivial ring $0$ (the ring satisfying $0=1$) along with the
+trivial maps $\lambda^{i}:0\rightarrow0$ is a $\lambda$-ring. Let us move on
+to more surprising examples:
+
+\begin{quote}
+\textbf{Theorem 3.1.} For every $i\in\mathbb{N}$, define a map $\lambda
+^{i}:\mathbb{Z}\rightarrow\mathbb{Z}$ by $\lambda^{i}\left(  x\right)
+=\dbinom{x}{i}$ for every $x\in\mathbb{Z}$.\ \ \ \ \footnote{Note that
+$\dbinom{x}{i}$ is defined to be $\dfrac{x\cdot\left(  x-1\right)
+\cdot...\cdot\left(  x-i+1\right)  }{i!}$ for every $x\in\mathbb{R}$ and
+$i\in\mathbb{N}$.} Then, $\left(  \mathbb{Z},\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring.
+\end{quote}
+
+\textit{Proof of Theorem 3.1.} Trivially, $\lambda^{0}\left(  x\right)  =1$
+and $\lambda^{1}\left(  x\right)  =x$ for every $x\in\mathbb{Z}$. The only
+challenge, if there is a challenge in this proof, is to verify the identity
+(\ref{lambda1}) for $K=\mathbb{Z}$. In other words, we have to prove that%
+\begin{equation}
+\dbinom{x+y}{k}=\sum_{i=0}^{k}\dbinom{x}{i}\dbinom{y}{k-i} \label{vandermonde}%
+\end{equation}
+for every $k\in\mathbb{N},$ $x\in\mathbb{Z}$ and $y\in\mathbb{Z}.$ This is the
+so-called \textit{Vandermonde convolution identity}, and probably its shortest
+proof is to fix $k\in\mathbb{N}$, then notice that it is a polynomial identity
+in both $x$ and $y$, so it is enough to prove it for all natural $x$ and $y$
+(because a polynomial identity holding for all natural variables must hold
+everywhere). But for $x$ and $y$ natural, we have%
+\[
+\sum_{k=0}^{x+y}\sum_{i=0}^{k}\dbinom{x}{i}\dbinom{y}{k-i}t^{k}=\underbrace
+{\sum_{i=0}^{x}\dbinom{x}{i}t^{i}}_{\substack{=\left(  1+t\right)  ^{x}\text{
+by the}\\\text{binomial formula}}}\cdot\underbrace{\sum_{j=0}^{y}\dbinom{y}%
+{j}t^{j}}_{\substack{=\left(  1+t\right)  ^{y}\text{ by the}\\\text{binomial
+formula}}}=\left(  1+t\right)  ^{x+y}=\sum_{k=0}^{x+y}\dbinom{x+y}{k}t^{k}%
+\]
+in the polynomial ring $\mathbb{Z}\left[  t\right]  $, and thus
+(\ref{vandermonde}) follows by comparison of
+coefficients.\footnote{\textit{Remark.} It is tempting to apply this argument
+to the general case (where $x$ and $y$ are not required to be natural),
+because the binomial formula holds for negative exponents as well (of course,
+this requires working in the formal series ring $\mathbb{Z}\left[  \left[
+t\right]  \right]  $ rather than in the polynomial ring $\mathbb{Z}\left[
+t\right]  $), but I am not sure whether this argument is free of circular
+reasoning because it is not at all obvious that $\left(  1+t\right)
+^{x}\left(  1+t\right)  ^{y}=\left(  1+t\right)  ^{x+y}$ in $\mathbb{Z}\left[
+\left[  t\right]  \right]  $ for negative $x$ and $y$, and I even fear that
+this is usually proven using (\ref{vandermonde}).} This proves Theorem 3.1.
+
+Our next example is a generalization of Theorem 3.1:
+
+\begin{quote}
+\textbf{Definition.} Let $K$ be a ring. We call $K$ a \textit{binomial ring}
+if and only if none of the elements $1,$ $2,$ $3,$ $...$ is a zero-divisor in
+$K$, and $n!\mid x\cdot\left(  x-1\right)  \cdot...\cdot\left(  x-i+1\right)
+$ for every $x\in K$.
+
+\textbf{Theorem 3.2.} Let $K$ be a binomial ring. For every $i\in\mathbb{N}$,
+define a map $\lambda^{i}:K\rightarrow K$ by $\lambda^{i}\left(  x\right)
+=\dbinom{x}{i}$ for every $x\in K$ (where, again, $\dbinom{x}{i}$ is defined
+to be $\dfrac{x\cdot\left(  x-1\right)  \cdot...\cdot\left(  x-i+1\right)
+}{i!}$). Then, $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
+}\right)  $ is a $\lambda$-ring.
+\end{quote}
+
+Such $\lambda$-rings $K$ are called \textit{binomial }$\lambda$\textit{-rings}.
+
+\textit{Proof of Theorem 3.2.} Obviously, $\lambda^{0}\left(  x\right)  =1$
+and $\lambda^{1}\left(  x\right)  =x$ for every $x\in K$, so it only remains
+to show that (\ref{lambda1}) is satisfied. This means proving
+(\ref{vandermonde}) for every $k\in\mathbb{N},$ $x\in K$ and $y\in K$. But
+this is easy now: Fix $k\in\mathbb{N}$. Then, (\ref{vandermonde}) is a
+polynomial identity in both $x$ and $y$, and since we know that it holds for
+every $x\in\mathbb{Z}$ and every $y\in\mathbb{Z}$ (as we have seen in the
+proof of Theorem 3.1), it follows that it holds for every $x\in K$ and every
+$y\in K$ (since a polynomial identity holding for all integer variables must
+hold everywhere). This completes the proof of Theorem 3.2.
+
+Obviously, the $\lambda$-ring $\left(  \mathbb{Z},\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ defined in Theorem 3.1 is a binomial $\lambda
+$-ring. For other examples of binomial $\lambda$-rings, see Exercise 3.1. Of
+course, every $\mathbb{Q}$-algebra is a binomial ring as well.
+
+Binomial $\lambda$-rings are not the main examples of $\lambda$-rings. We will
+see an important example of $\lambda$-rings in Theorem 5.1 and Exercise 6.1.
+Another simple way to construct new examples from known ones is the following one:
+
+\begin{quote}
+\textbf{Definition.} Let $K$ be a ring. Consider the ring $K\left[  \left[
+T\right]  \right]  $ of formal power series in the indeterminate $T$ over the
+ring $K$. For every $\mu\in K$, we can define a $K$-algebra homomorphism
+$\operatorname*{ev}_{\mu T}:K\left[  \left[  T\right]  \right]  \rightarrow
+K\left[  \left[  T\right]  \right]  $ by setting $\operatorname*{ev}_{\mu
+T}\left(  \sum\limits_{i\in\mathbb{N}}a_{i}T^{i}\right)  =\sum\limits_{i\in
+\mathbb{N}}a_{i}\mu^{i}T^{i}$ for every power series $\sum\limits_{i\in
+\mathbb{N}}a_{i}T^{i}\in K\left[  \left[  T\right]  \right]  $ (which
+satisfies $a_{i}\in K$ for every $i\in\mathbb{N}$). (In other words,
+$\operatorname*{ev}_{\mu T}$ is the map that takes any power series in $T$ and
+replaces every $T$ in this power series by $\mu T$.)
+
+\textbf{Theorem 3.3.} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. Consider the polynomial ring
+$K\left[  S\right]  $. For every $i\in\mathbb{N}$, define a map $\overline
+{\lambda}^{i}:K\left[  S\right]  \rightarrow K\left[  S\right]  $ as follows:
+For every $\sum\limits_{j\in\mathbb{N}}a_{j}S^{j}\in K\left[  S\right]  $
+(with $a_{j}\in K$ for every $j\in\mathbb{N}$), let $\overline{\lambda}%
+^{i}\left(  \sum\limits_{j\in\mathbb{N}}a_{j}S^{j}\right)  $ be the
+coefficient of the power series $\prod\limits_{j\in\mathbb{N}}\lambda_{S^{j}%
+t}\left(  a_{j}\right)  \in\left(  K\left[  S\right]  \right)  \left[  \left[
+t\right]  \right]  $ before $t^{i}$.
+
+Here, $\lambda_{S^{j}t}\left(  a_{j}\right)  $ is defined as
+$\operatorname*{ev}_{S^{j}t}\left(  \lambda_{t}\left(  a_{j}\right)  \right)
+$.
+
+Then, $\left(  K\left[  S\right]  ,\left(  \overline{\lambda}^{i}\right)
+_{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring. The ring $K$ is a
+sub-$\lambda$-ring of $\left(  K\left[  S\right]  ,\left(  \overline{\lambda
+}^{i}\right)  _{i\in\mathbb{N}}\right)  $. Besides, $\overline{\lambda}%
+^{i}\left(  S\right)  =0$ for every $i>0$.
+\end{quote}
+
+\textit{Proof of Theorem 3.3.} The definition of $\overline{\lambda}^{i}$
+makes it clear that $\overline{\lambda}_{t}\left(  \sum\limits_{j\in
+\mathbb{N}}a_{j}S^{j}\right)  =\prod\limits_{j\in\mathbb{N}}\lambda_{S^{j}%
+t}\left(  a_{j}\right)  $ for every $\sum\limits_{j\in\mathbb{N}}a_{j}S^{j}\in
+K\left[  S\right]  $. But by Theorem 2.1 \textbf{(a)}, proving that $\left(
+K\left[  S\right]  ,\left(  \overline{\lambda}^{i}\right)  _{i\in\mathbb{N}%
+}\right)  $ is a $\lambda$-ring boils down to verifying that%
+\[
+\overline{\lambda}_{t}\left(  \sum\limits_{j\in\mathbb{N}}a_{j}S^{j}%
++\sum\limits_{j\in\mathbb{N}}b_{j}S^{j}\right)  =\overline{\lambda}_{t}\left(
+\sum\limits_{j\in\mathbb{N}}a_{j}S^{j}\right)  \cdot\overline{\lambda}%
+_{t}\left(  \sum\limits_{j\in\mathbb{N}}b_{j}S^{j}\right)
+\]
+for every $\sum\limits_{j\in\mathbb{N}}a_{j}S^{j}\in K\left[  S\right]  $ and
+$\sum\limits_{j\in\mathbb{N}}b_{j}S^{j}\in K\left[  S\right]  $. This is
+clear, because%
+\begin{align*}
+\overline{\lambda}_{t}\left(  \sum\limits_{j\in\mathbb{N}}a_{j}S^{j}%
++\sum\limits_{j\in\mathbb{N}}b_{j}S^{j}\right)   &  =\overline{\lambda}%
+_{t}\left(  \sum\limits_{j\in\mathbb{N}}\left(  a_{j}+b_{j}\right)
+S^{j}\right)  =\prod\limits_{j\in\mathbb{N}}\underbrace{\lambda_{S^{j}%
+t}\left(  a_{j}+b_{j}\right)  }_{\substack{=\lambda_{S^{j}t}\left(
+a_{j}\right)  \cdot\lambda_{S^{j}t}\left(  b_{j}\right)  ,\\\text{since
+}\lambda_{t}\left(  a_{j}+b_{j}\right)  =\lambda_{t}\left(  a_{j}\right)
+\cdot\lambda_{t}\left(  b_{j}\right)  \\\text{by Theorem 2.1 \textbf{(a)}}}}\\
+&  =\prod\limits_{j\in\mathbb{N}}\lambda_{S^{j}t}\left(  a_{j}\right)
+\cdot\prod\limits_{j\in\mathbb{N}}\lambda_{S^{j}t}\left(  b_{j}\right)
+=\overline{\lambda}_{t}\left(  \sum\limits_{j\in\mathbb{N}}a_{j}S^{j}\right)
+\cdot\overline{\lambda}_{t}\left(  \sum\limits_{j\in\mathbb{N}}b_{j}%
+S^{j}\right)  .
+\end{align*}
+Thus, $\left(  K\left[  S\right]  ,\left(  \overline{\lambda}^{i}\right)
+_{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring. The rest of Theorem 3.3 is
+yet easier to verify.
+
+The exercises below give some more examples.
+
+\begin{quotation}
+\textit{Exercise 3.1.} Let $p\in\mathbb{N}$ be a prime. Prove that the
+localization $\left\{  1,p,p^{2},...\right\}  ^{-1}\mathbb{Z}$ of the ring
+$\mathbb{Z}$ at the multiplicative subset $\left\{  1,p,p^{2},...\right\}  $
+is a binomial ring.\ \ \ \ \footnote{\textit{Hints to solution:} Count how
+often a prime $q$ appears in $n!$ and $x\cdot\left(  x-1\right)  \cdot
+...\cdot\left(  x-i+1\right)  $. I would prefer a better proof, but I know of
+none.}
+
+[One of the reasons I include this exercise here that I am looking for a nice solution.]
+
+\textit{Exercise 3.2.} Let $K$ be a ring where none of the elements $1,$ $2,$
+$3,$ $...$ is a zero-divisor. Let $E$ be a subset of $K$ that generates $K$ as
+a ring. Assume that $n!\mid x\cdot\left(  x-1\right)  \cdot...\cdot\left(
+x-i+1\right)  $ for every $x\in E$. Prove that $K$ is a binomial
+ring.\ \ \ \ \footnote{\textit{Hints to solution:} Let $\mathbb{N}_{K}^{+}$ be
+the subset $\left\{  1,2,3,...\right\}  $ of $K$. Obviously, this subset is
+multiplicatively closed and contains no zero-divisors. Hence, the localization
+$\left(  \mathbb{N}_{K}^{+}\right)  ^{-1}K$ can be considered as an extension
+ring of $K$. We now can define $\dbinom{x}{i}\in\left(  \mathbb{N}_{K}%
+^{+}\right)  ^{-1}K$ for every $x\in\left(  \mathbb{N}_{K}^{+}\right)  ^{-1}K$
+and $i\in\mathbb{N}$. It remains to show that $\dbinom{x}{i}\in K$ for every
+$x\in K$ and $i\in\mathbb{N}$, given that $\dbinom{x}{i}\in K$ for every $x\in
+E$ and $i\in\mathbb{N}$.
+\par
+This will follow once we have seen that for $i\in\mathbb{N}$ fixed,
+\par
+\begin{itemize}
+\item the polynomial $\dbinom{X+Y}{i}\in\mathbb{Q}\left[  X,Y\right]  $ is a
+polynomial in $\dbinom{X}{0},$ $\dbinom{X}{1},$ $...,$ $\dbinom{X}{i},$
+$\dbinom{Y}{0},$ $\dbinom{Y}{1},$ $...,$ $\dbinom{Y}{i}$ with integer
+coefficients;
+\par
+\item the polynomial $\dbinom{-X}{i}\in\mathbb{Q}\left[  X\right]  $ is a
+polynomial in $\dbinom{X}{0},$ $\dbinom{X}{1},$ $...,$ $\dbinom{X}{i}$ with
+integer coefficients;
+\par
+\item the polynomial $\dbinom{XY}{i}\in\mathbb{Q}\left[  X,Y\right]  $ is a
+polynomial in $\dbinom{X}{0},$ $\dbinom{X}{1},$ $...,$ $\dbinom{X}{i},$
+$\dbinom{Y}{0},$ $\dbinom{Y}{1},$ $...,$ $\dbinom{Y}{i}$ with integer
+coefficients.
+\end{itemize}
+\par
+The first of these three properties follows from (\ref{vandermonde}) (applied
+to $x=X$ and $y=Y$, which is not tragic since it holds in every binomial ring,
+in particular $\mathbb{Q}\left[  X,Y\right]  $). The second one follows from
+the first one and the identity $\dbinom{-x}{i}=\left(  -1\right)  ^{i}%
+\dbinom{x+i-1}{i}$ for every $x\in\mathbb{Z}$ and $i\in\mathbb{N}$ (this is
+the so-called \textit{upper negation identity}). The third one, alas, doesn't
+seem to be that easy. One way to prove it is to use the proof of Theorem 7.1
+below. Another, more elementary way (leading to a different polynomial!!) is
+by recalling the fact ([4], Proposition I.7.3) that the subset%
+\[
+\left\{  p\in\mathbb{Q}\left[  X\right]  \text{ }\mid\ p\left(  n\right)
+\in\mathbb{Z}\text{ for every }n\in\mathbb{Z}\right\}
+\]
+of the polynomial ring $\mathbb{Q}\left[  X\right]  $ is the $\mathbb{Z}%
+$-linear span of the polynomials $\dbinom{X}{0},$ $\dbinom{X}{1},$ $\dbinom
+{X}{2},$ $...$. This generalizes to two variables: The subset
+\[
+\left\{  p\in\mathbb{Q}\left[  X,Y\right]  \text{ }\mid\ p\left(  n,m\right)
+\in\mathbb{Z}\text{ for every }n\in\mathbb{Z}\text{ and every }m\in
+\mathbb{Z}\right\}
+\]
+of the polynomial ring $\mathbb{Q}\left[  X,Y\right]  $ is the $\mathbb{Z}%
+$-linear span of the polynomials $\dbinom{X}{i}\dbinom{Y}{j}$ for
+$i\in\mathbb{N}$ and $j\in\mathbb{N}$. Of course, the polynomial $\dbinom
+{XY}{i}$ belongs to this subset, so all we need is proven.}
+
+[Again, I don't really like the solution that I have.]
+
+\textit{Exercise 3.3.} \textbf{(a)} Let $K$ be a $\mathbb{Q}$-algebra. Let
+$p\in K\left[  \left[  t\right]  \right]  $ be a formal power series with
+coefficient $1$ before $t^{0}$ (we will later denote the set of such power
+series by $1+K\left[  \left[  t\right]  \right]  ^{+}$). For every
+$i\in\mathbb{N}$, define a map $\lambda^{i}:K\rightarrow K$ as follows: For
+every $x\in K$, let $\lambda^{i}\left(  x\right)  $ be the coefficient of the
+formal power series $\left(  1+pt\right)  ^{x}$ (which is defined as
+$\exp\left(  x\ln\left(  1+pt\right)  \right)  $) before $t^{i}$. Prove that
+$\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a
+$\lambda$-ring.
+
+\textbf{(b)} If $p=1$, prove that this $\lambda$-ring is the one defined in
+Theorem 3.2.\ \ \ \ \footnote{\textit{Hints to solution:} \textbf{(a)} Use
+Theorem 2.1 \textbf{(a)} and $\left(  1+pt\right)  ^{x}\left(  1+pt\right)
+^{y}=\left(  1+pt\right)  ^{x+y}$.
+\par
+\textbf{(b)} Use the binomial formula.}
+
+\textit{Exercise 3.4.} Let $M$ be a commutative monoid with neutral element,
+written multiplicatively (this means, in particular, that we denote the
+neutral element of $M$ as $1$). Define a $\mathbb{Z}$-algebra $\mathbb{Z}%
+\left[  M\right]  $ as follows:
+
+As a $\mathbb{Z}$-module, let $\mathbb{Z}\left[  M\right]  $ be the free
+$\mathbb{Z}$-module with the basis $M$. Let the multiplication on
+$\mathbb{Z}\left[  M\right]  $ be the $\mathbb{Z}$-linear extension of the
+multiplication on the monoid $M$.
+
+For every $i\in\mathbb{N}$, define a map $\lambda^{i}:\mathbb{Z}\left[
+M\right]  \rightarrow\mathbb{Z}\left[  M\right]  $ as follows: For every
+$\sum\limits_{m\in M}\alpha_{m}m\in\mathbb{Z}\left[  M\right]  $ (with
+$\alpha_{m}\in\mathbb{Z}$ for every $m\in M$), let $\lambda^{i}\left(
+\sum\limits_{m\in M}\alpha_{m}m\right)  $ be the coefficient of the power
+series $\prod\limits_{m\in M}\left(  1+mt\right)  ^{\alpha_{m}}\in\left(
+\mathbb{Z}\left[  M\right]  \right)  \left[  \left[  t\right]  \right]  $
+before $t^{i}$.
+
+Prove that $\left(  \mathbb{Z}\left[  M\right]  ,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ is a $\lambda$%
+-ring.\ \ \ \ \footnote{\textit{Hints to solution:} It is clear from the very
+definition of $\lambda^{i}$ that Theorem 2.1 \textbf{(a)} is to be applied
+here.}
+
+\textit{Exercise 3.5.} \textbf{(a)} Let $M$ be a commutative monoid with
+neutral element, written multiplicatively (this means, in particular, that we
+denote the neutral element of $M$ as $1$). Let $\left(  K,\left(  \lambda
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring.
+
+Define a $K$-algebra $K\left[  M\right]  $ as follows:
+
+As a $K$-module, let $K\left[  M\right]  $ be the free $K$-module with the
+basis $M$. Let the multiplication on $K\left[  M\right]  $ be the $K$-linear
+extension of the multiplication on the monoid $M$.
+
+For every $i\in\mathbb{N}$, define a map $\overline{\lambda}^{i}:K\left[
+M\right]  \rightarrow K\left[  M\right]  $ as follows: For every
+$\sum\limits_{m\in M}\alpha_{m}m\in K\left[  M\right]  $ (with $\alpha_{m}\in
+K$ for every $m\in M$), let $\overline{\lambda}^{i}\left(  \sum\limits_{m\in
+M}\alpha_{m}m\right)  $ be the coefficient of the power series $\prod
+\limits_{m\in M}\lambda_{mt}\left(  \alpha_{m}\right)  \in\left(  K\left[
+M\right]  \right)  \left[  \left[  t\right]  \right]  $ before $t^{i}$.
+
+Here, $\lambda_{mt}\left(  \alpha_{m}\right)  $ denotes the image of the
+formal power series $\lambda_{t}\left(  \alpha_{m}\right)  $ under the
+$K\left[  M\right]  $-algebra homomorphism $\left(  K\left[  M\right]
+\right)  \left[  \left[  t\right]  \right]  \rightarrow\left(  K\left[
+M\right]  \right)  \left[  \left[  t\right]  \right]  $ which maps $t$ to
+$mt$. (In other words, $\lambda_{mt}\left(  \alpha_{m}\right)  $ is what we
+get if we replace every $t$ by $mt$ in the power series $\lambda_{t}\left(
+\alpha_{m}\right)  .$)
+
+Prove that $\left(  K\left[  M\right]  ,\left(  \overline{\lambda}^{i}\right)
+_{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring. The ring $K$ is a
+sub-$\lambda$-ring of $\left(  K\left[  M\right]  ,\left(  \overline{\lambda
+}^{i}\right)  _{i\in\mathbb{N}}\right)  $. Besides, $\overline{\lambda}%
+^{i}\left(  m\right)  =0$ for every $m\in M$ and $i>0$.
+
+\textbf{(b)} Show that Exercise 3.4 is a particular case of \textbf{(a)} for
+$K=\mathbb{Z}$, and that Theorem 3.3 is a particular case of \textbf{(a)} for
+$M\cong\mathbb{N}$ (where $\mathbb{N}$ denotes the \textit{additive} monoid
+$\mathbb{N}$). \footnote{\textit{Hints to solution:} Same idea as for Exercise
+3.4.}
+\end{quotation}
 
 \begin{center}
 \fbox{\textbf{4. Intermezzo: Symmetric polynomials}}
@@ -966,8 +1429,12 @@ T\right]  \right]  ^{+}$ by%
 \[
 \left(  \sum_{i\in\mathbb{N}}a_{i}T^{i}\right)  \widehat{\cdot}\left(
 \sum_{i\in\mathbb{N}}b_{i}T^{i}\right)  =\sum_{k\in\mathbb{N}}P_{k}\left(
-a_{1},a_{2},...,a_{k},b_{1},b_{2},...,b_{k}\right)  T^{k}.
+a_{1},a_{2},...,a_{k},b_{1},b_{2},...,b_{k}\right)  T^{k}%
 \]
+(here, the $\sum\limits_{k\in\mathbb{N}}$ sign means addition in $K\left[
+\left[  T\right]  \right]  $, not in $1+K\left[  \left[  T\right]  \right]
+^{+}$).
+
 The multiplicative unity of the ring $1+K\left[  \left[  T\right]  \right]
 ^{+}$ will be $1+T$.
 
@@ -980,6 +1447,19 @@ T\right]  \right]  ^{+}$ by%
 \]
 
 
+
+\end{quote}
+
+Note that we have denoted the newly-defined addition and multiplication on the
+set $1+K\left[  \left[  T\right]  \right]  ^{+}$ by $\widehat{+}$ and
+$\widehat{\cdot}$ in order to distinguish them from the addition $+$ and
+multiplication $\cdot$ inherited from $K\left[  \left[  T\right]  \right]  $.
+We will later continue in this spirit (for instance, we will denote a finite
+sum with respect to the addition $\widehat{+}$ by the sign $\widehat{\sum}$,
+while a finite sum with respect to the addition $+$ will be written using the
+normal $\sum$ sign).
+
+\begin{quote}
 \textbf{Theorem 5.1.} \textbf{(a)} The multiplication $\widehat{\cdot}$ just
 defined makes $\left(  1+K\left[  \left[  T\right]  \right]  ^{+},\widehat
 {+},\widehat{\cdot}\right)  $ a ring with multiplicative unity $1+T$. We will
@@ -1007,8 +1487,8 @@ $1+K\left[  T\right]  ^{+}$ are polynomials. We notice that:
 T\right]  ^{+}$, there exists an integer $n$ (the degree of the polynomial
 $p$), a finite-free extension ring $K_{p}$ of the ring $K$ and $n$ elements
 $p_{1},$ $p_{2},$ $...,$ $p_{n}$ of this extension ring $K_{p}$ such that
-$p=\prod\limits_{i=1}^{n}\left(  1+p_{i}T\right)  $ in $1+K\left[  T\right]
-^{+}.$
+$p=\prod\limits_{i=1}^{n}\left(  1+p_{i}T\right)  $ in $K_{p}\left[  T\right]
+$.
 \end{quote}
 
 \textit{Proof of Theorem 5.2.} Let $p=\sum\limits_{i=0}^{n}a_{i}T^{i}$, where
@@ -1019,8 +1499,8 @@ $p=\prod\limits_{i=1}^{n}\left(  1+p_{i}T\right)  $ becomes equivalent to
 $\widetilde{p}=\prod\limits_{i=1}^{n}\left(  p_{i}+T\right)  $, so that
 Theorem 5.2 simply claims that for every monic polynomial over a ring, we can
 find a finite-free extension of the ring over which the polynomial splits into
-linear polynomials. But this is an easy fact (proven in the same way as the
-existence of splitting fields in Galois theory). Thus, Theorem 5.2 is proven.
+linear polynomials. But this is an easy fact (proven in Exercise 5.1). Thus,
+Theorem 5.2 is proven.
 
 Let us introduce some notation again:
 
@@ -1041,29 +1521,32 @@ do form a set.)
 Let $K^{\operatorname*{int}}$ be the subset%
 \[
 \left\{  \left(  \widetilde{K},\left[  u_{1},u_{2},...,u_{n}\right]  \right)
-\in\bigcup_{K^{\prime}\subseteq\operatorname*{Exten}K}\mathcal{P}%
-_{\operatorname*{fin}}^{\ast}\left(  K^{\prime}\right)  \ \ \mid
-\ \ \prod\limits_{i=1}^{n}\left(  1+u_{i}T\right)  \in K\left[  T\right]
-\right\}
+\in\bigcup\limits_{K^{\prime}\subseteq\operatorname*{Exten}K}^{\cdot
+}\mathcal{P}_{\operatorname*{fin}}^{\ast}\left(  K^{\prime}\right)
+\ \ \mid\ \ \prod\limits_{i=1}^{n}\left(  1+u_{i}T\right)  \in K\left[
+T\right]  \right\}
 \]
-of $\bigcup\limits_{K^{\prime}\subseteq\operatorname*{Exten}K}\mathcal{P}%
-_{\operatorname*{fin}}^{\ast}\left(  K^{\prime}\right)  $. We can then define
-a map%
+of $\bigcup\limits_{K^{\prime}\subseteq\operatorname*{Exten}K}^{\cdot
+}\mathcal{P}_{\operatorname*{fin}}^{\ast}\left(  K^{\prime}\right)  $ (where
+the disjoint union $\bigcup\limits_{K^{\prime}\subseteq\operatorname*{Exten}%
+K}^{\cdot}\mathcal{P}_{\operatorname*{fin}}^{\ast}\left(  K^{\prime}\right)  $
+is defined as $\bigcup\limits_{K^{\prime}\subseteq\operatorname*{Exten}%
+K}\left\{  K^{\prime}\right\}  \times\mathcal{P}_{\operatorname*{fin}}^{\ast
+}\left(  K^{\prime}\right)  $). We can then define a map%
 \[
-\Pi:K^{\operatorname*{int}}\rightarrow K\left[  T\right]
+\Pi:K^{\operatorname*{int}}\rightarrow1+K\left[  T\right]  ^{+}%
 \]
 through%
 \[
 \Pi\left(  \widetilde{K},\left[  u_{1},u_{2},...,u_{n}\right]  \right)
-=\prod\limits_{i=1}^{n}\left(  1+u_{i}T\right)  \in K\left[  T\right]
+=\prod\limits_{i=1}^{n}\left(  1+u_{i}T\right)  \in1+K\left[  T\right]  ^{+}%
 \]
 for every $\left(  \widetilde{K},\left[  u_{1},u_{2},...,u_{n}\right]
 \right)  \in K^{\operatorname*{int}}$.
 
 We also define a map%
 \[
-r:1+K\left[  \left[  T\right]  \right]  ^{+}\rightarrow K^{\operatorname*{int}%
-}%
+r:1+K\left[  T\right]  ^{+}\rightarrow K^{\operatorname*{int}}%
 \]
 (the $r$ stands for "roots" here) through
 \[
@@ -1073,11 +1556,11 @@ r\left(  p\right)  =\left(  K_{p},\left[  p_{1},p_{2},...,p_{n}\right]
 where $K_{p}$ and $\left[  p_{1},p_{2},...,p_{n}\right]  $ are defined as in
 Theorem 5.2.
 
-Clearly, $\Pi\circ r=\operatorname*{id}$, so that every polynomial $p\in
-K\left[  T\right]  $ can be written as $p=\Pi\left(  \widetilde{K},\left[
-u_{1},u_{2},...,u_{n}\right]  \right)  $ for some $\left(  \widetilde
-{K},\left[  u_{1},u_{2},...,u_{n}\right]  \right)  \in K^{\operatorname*{int}%
-}$.
+Clearly, $\Pi\circ r=\operatorname*{id}$, so that every polynomial
+$p\in1+K\left[  T\right]  ^{+}$ can be written as $p=\Pi\left(  \widetilde
+{K},\left[  u_{1},u_{2},...,u_{n}\right]  \right)  $ for some $\left(
+\widetilde{K},\left[  u_{1},u_{2},...,u_{n}\right]  \right)  \in
+K^{\operatorname*{int}}$.
 \end{quote}
 
 This way, we have a correspondence between elements of $1+K\left[  T\right]
@@ -1367,15 +1850,15 @@ Then, there exist
 \begin{itemize}
 \item some $\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]
 \right)  \in K^{\operatorname*{int}}$ such that $u=\Pi\left(  \widetilde
-{K},\left[  u_{1},u_{2},...,u_{m}\right]  \right)  ,$
+{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)  ,$
 
 \item some $\left(  \widetilde{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]
 \right)  \in K^{\operatorname*{int}}$ such that $v=\Pi\left(  \widetilde
-{K},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  ,$
+{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  ,$
 
 \item some $\left(  \widetilde{K}_{w},\left[  w_{1},w_{2},...,w_{\ell}\right]
 \right)  \in K^{\operatorname*{int}}$ such that $w=\Pi\left(  \widetilde
-{K},\left[  w_{1},w_{2},...,w_{\ell}\right]  \right)  $.
+{K}_{w},\left[  w_{1},w_{2},...,w_{\ell}\right]  \right)  $.
 \end{itemize}
 
 Let $L=\widetilde{K}_{u}\otimes\widetilde{K}_{v}\otimes\widetilde{K}_{w}$. We
@@ -1443,9 +1926,9 @@ only need to check (\ref{SpezLemma1}) for all $u,v\in1+K\left[  T\right]
 ^{+}$. So let us assume that $u,v\in1+K\left[  T\right]  ^{+}$. Then, there
 exist some $\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]
 \right)  \in K^{\operatorname*{int}}$ such that $u=\Pi\left(  \widetilde
-{K},\left[  u_{1},u_{2},...,u_{m}\right]  \right)  ,$ and some $\left(
+{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)  ,$ and some $\left(
 \widetilde{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  \in
-K^{\operatorname*{int}}$ such that $v=\Pi\left(  \widetilde{K},\left[
+K^{\operatorname*{int}}$ such that $v=\Pi\left(  \widetilde{K}_{v},\left[
 v_{1},v_{2},...,v_{n}\right]  \right)  $. Theorem 5.3 \textbf{(b)} yields%
 \[
 u\widehat{+}v=\Pi\left(  \widetilde{K}_{u,v},\left[  u_{1},u_{2}%
@@ -1531,6 +2014,197 @@ Then, $\lambda_{T}$ is an additive group homomorphism.
 \textit{Proof of Theorem 5.6.} This follows from Theorem 2.1 (with $t$ renamed
 as $T$).
 
+The following properties of the map $\operatorname*{ev}$ defined in Section 3
+will turn out useful to us later:
+
+\begin{quote}
+\textbf{Theorem 5.7.} Let $K$ be a ring.
+
+\textbf{(a)} For every $\mu\in K$, the map $\operatorname*{ev}_{\mu
+T}:K\left[  \left[  T\right]  \right]  \rightarrow K\left[  \left[  T\right]
+\right]  $ is continuous (with respect to the $\left(  T\right)  $-topology).
+
+\textbf{(b)} Let $u\in1+K\left[  T\right]  ^{+}$. Assume that $u=\Pi\left(
+\widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)  $ for some
+$\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)  \in
+K^{\operatorname*{int}}$. Let $\mu\in K$. Then, $\operatorname*{ev}_{\mu
+T}\left(  u\right)  =\Pi\left(  \widetilde{K}_{u},\left[  \mu u_{1},\mu
+u_{2},...,\mu u_{m}\right]  \right)  =\Pi\left(  \widetilde{K}_{u},\left[  \mu
+u_{i}\mid i\in\left\{  1,2,...,m\right\}  \right]  \right)  $.
+
+\textbf{(c)} Let $u\in\Lambda\left(  K\right)  $ and $v\in\Lambda\left(
+K\right)  $. Let $\mu\in K$. Then, $\operatorname*{ev}_{\mu T}\left(
+u\right)  \widehat{+}\operatorname*{ev}_{\mu T}\left(  v\right)
+=\operatorname*{ev}_{\mu T}\left(  u\widehat{+}v\right)  $.
+
+\textbf{(d)} Let $u\in\Lambda\left(  K\right)  $ and $v\in\Lambda\left(
+K\right)  $. Let $\mu\in K$ and $\nu\in K$. Then, $\operatorname*{ev}_{\mu
+T}\left(  u\right)  \widehat{\cdot}\operatorname*{ev}_{\nu T}\left(  v\right)
+=\operatorname*{ev}_{\mu\nu T}\left(  u\widehat{\cdot}v\right)  $.
+
+\textbf{(e)} Let $u\in\Lambda\left(  K\right)  $. Let $\mu\in K$. Let
+$k\in\mathbb{N}$. Then, $\widehat{\lambda}^{k}\left(  \operatorname*{ev}_{\mu
+T}\left(  u\right)  \right)  =\operatorname*{ev}_{\mu^{k}T}\left(
+\widehat{\lambda}^{k}\left(  u\right)  \right)  $.
+\end{quote}
+
+\textit{Proof of Theorem 5.7.} \textbf{(a)} Obvious from Theorem 5.5
+\textbf{(b)}.
+
+\textbf{(b)} By assumption, $u=\Pi\left(  \widetilde{K},\left[  u_{1}%
+,u_{2},...,u_{n}\right]  \right)  =\prod\limits_{i=1}^{n}\left(
+1+u_{i}T\right)  ,$ so that $\operatorname*{ev}_{\mu T}\left(  u\right)
+=\prod\limits_{i=1}^{n}\left(  1+\mu u_{i}T\right)  =\Pi\left(  \widetilde
+{K}_{u},\left[  \mu u_{1},\mu u_{2},...,\mu u_{m}\right]  \right)  $, and
+Theorem 5.7 \textbf{(b)} is proven.
+
+\textbf{(d)} Since the operation $\widehat{\cdot}$ and the map
+$\operatorname*{ev}_{mT}$ are continuous (by Theorem 5.5 \textbf{(d) }and
+Theorem 5.7 \textbf{(a)}), and $1+K\left[  T\right]  ^{+}$ is a dense subset
+of $1+K\left[  \left[  T\right]  \right]  ^{+}$ (by Theorem 5.5 \textbf{(a)}),
+this needs only to be shown for all $u,v\in1+K\left[  T\right]  ^{+}$. So let
+us assume that $u,v\in1+K\left[  T\right]  ^{+}$. Then, there exist some
+$\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)  \in
+K^{\operatorname*{int}}$ such that $u=\Pi\left(  \widetilde{K}_{u},\left[
+u_{1},u_{2},...,u_{m}\right]  \right)  ,$ and some $\left(  \widetilde{K}%
+_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  \in K^{\operatorname*{int}%
+}$ such that $v=\Pi\left(  \widetilde{K}_{v},\left[  v_{1},v_{2}%
+,...,v_{n}\right]  \right)  $. Theorem 5.3 \textbf{(a)} says that there exists
+an extension ring $\widetilde{K}_{u,v}$ containing both $\widetilde{K}_{u}$
+and $\widetilde{K}_{v}$ as subrings. Now, Theorem 5.3 \textbf{(c)} yields
+$u\widehat{\cdot}v=\Pi\left(  \widetilde{K}_{u,v},\left[  u_{i}v_{j}%
+\mid\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  \right]  \right)  $, so that we conclude%
+\begin{align*}
+\operatorname*{ev}\nolimits_{\mu\nu T}\left(  u\widehat{\cdot}v\right)   &
+=\Pi\left(  \widetilde{K}_{u,v},\left[  \mu\nu u_{i}v_{j}\mid\left(
+i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}
+\right]  \right) \\
+&  =\Pi\left(  \widetilde{K}_{u,v},\left[  \mu u_{i}\cdot\nu v_{j}\mid\left(
+i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}
+\right]  \right)
+\end{align*}
+using Theorem 5.7 \textbf{(b)}.
+
+On the other hand, Theorem 5.7 \textbf{(b)} yields $\operatorname*{ev}_{\mu
+T}\left(  u\right)  =\Pi\left(  \widetilde{K}_{u},\left[  \mu u_{1},\mu
+u_{2},...,\mu u_{m}\right]  \right)  $ and (similarly) $\operatorname*{ev}%
+_{\nu T}\left(  v\right)  =\Pi\left(  \widetilde{K}_{v},\left[  \nu v_{1},\nu
+v_{2},...,\nu v_{m}\right]  \right)  $. Thus, Theorem 5.3 \textbf{(c)} yields%
+\[
+\operatorname*{ev}\nolimits_{\mu T}\left(  u\right)  \widehat{\cdot
+}\operatorname*{ev}\nolimits_{\nu T}\left(  v\right)  =\Pi\left(
+\widetilde{K}_{u,v},\left[  \mu u_{i}\cdot\nu v_{j}\mid\left(  i,j\right)
+\in\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right]
+\right)  .
+\]
+Hence, $\operatorname*{ev}_{\mu T}\left(  u\right)  \widehat{\cdot
+}\operatorname*{ev}_{\nu T}\left(  v\right)  =\operatorname*{ev}_{\mu\nu
+T}\left(  u\widehat{\cdot}v\right)  $. This proves Theorem 5.7 \textbf{(d)}.
+
+\textbf{(c)} Similar to \textbf{(d)}.
+
+\textbf{(e)} Since the maps $\widehat{\lambda}^{k}$ and $\operatorname*{ev}%
+_{mT}$ are continuous (by Theorem 5.5 \textbf{(d) }and Theorem 5.7
+\textbf{(a)}), and $1+K\left[  T\right]  ^{+}$ is a dense subset of
+$1+K\left[  \left[  T\right]  \right]  ^{+}$ (by Theorem 5.5 \textbf{(a)}),
+this needs only to be shown for all $u\in1+K\left[  T\right]  ^{+}$. So, from
+now on we assume that $u\in1+K\left[  T\right]  ^{+}$. Then, there exists some
+$\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)  \in
+K^{\operatorname*{int}}$ such that $u=\Pi\left(  \widetilde{K}_{u},\left[
+u_{1},u_{2},...,u_{m}\right]  \right)  $. Theorem 5.3 \textbf{(d)} then yields%
+\[
+\widehat{\lambda}^{k}\left(  u\right)  =\Pi\left(  \widetilde{K}_{u},\left[
+\prod\limits_{i\in I}u_{i}\ \mid\ I\in\mathcal{P}_{k}\left(  \left\{
+1,2,...,m\right\}  \right)  \right]  \right)  =\prod\limits_{I\in
+\mathcal{P}_{k}\left(  \left\{  1,2,...,m\right\}  \right)  }\left(
+1+\prod\limits_{i\in I}u_{i}\cdot T\right)  ,
+\]
+so that%
+\begin{align*}
+\operatorname*{ev}\nolimits_{\mu^{k}T}\left(  \widehat{\lambda}^{k}\left(
+u\right)  \right)   &  =\prod\limits_{I\in\mathcal{P}_{k}\left(  \left\{
+1,2,...,m\right\}  \right)  }\left(  1+\prod\limits_{i\in I}u_{i}\cdot\mu
+^{k}T\right)  =\prod\limits_{I\in\mathcal{P}_{k}\left(  \left\{
+1,2,...,m\right\}  \right)  }\left(  1+\prod\limits_{i\in I}\left(  \mu
+u_{i}\right)  \cdot T\right) \\
+&  =\Pi\left(  \widetilde{K}_{u},\left[  \prod\limits_{i\in I}\left(  \mu
+u_{i}\right)  \ \mid\ I\in\mathcal{P}_{k}\left(  \left\{  1,2,...,m\right\}
+\right)  \right]  \right)  .
+\end{align*}
+On the other hand, Theorem 5.7 \textbf{(b)} yields $\operatorname*{ev}_{\mu
+T}\left(  u\right)  =\Pi\left(  \widetilde{K}_{u},\left[  \mu u_{1},\mu
+u_{2},...,\mu u_{m}\right]  \right)  $ and thus, by Theorem 5.3 \textbf{(d)}
+again,%
+\[
+\widehat{\lambda}^{k}\left(  \operatorname*{ev}\nolimits_{\mu T}\left(
+u\right)  \right)  =\Pi\left(  \widetilde{K}_{u},\left[  \prod\limits_{i\in
+I}\left(  \mu u_{i}\right)  \ \mid\ I\in\mathcal{P}_{k}\left(  \left\{
+1,2,...,m\right\}  \right)  \right]  \right)  ,
+\]
+so that we conclude $\widehat{\lambda}^{k}\left(  \operatorname*{ev}_{\mu
+T}\left(  u\right)  \right)  =\operatorname*{ev}_{\mu^{k}T}\left(
+\widehat{\lambda}^{k}\left(  u\right)  \right)  $, and Theorem 5.7
+\textbf{(e)} is proven.
+
+Finally, a small definition that turns $\Lambda$ into a functor:
+
+\begin{quote}
+\textbf{Definition.} Every homomorphism $\varphi:K\rightarrow L$ of rings
+canonically induces a $\lambda$-ring homomorphism $\Lambda\left(  K\right)
+\rightarrow\Lambda\left(  L\right)  $ (which sends every $\sum\limits_{i\in
+\mathbb{N}}a_{i}T^{i}\in\Lambda\left(  K\right)  $ to $\sum\limits_{i\in
+\mathbb{N}}\varphi\left(  a_{i}\right)  T^{i}\in\Lambda\left(  L\right)  $).
+This homomorphism $\Lambda\left(  K\right)  \rightarrow\Lambda\left(
+L\right)  $ will be denoted by $\Lambda\left(  \varphi\right)  $.
+\end{quote}
+
+It is easy to see that this $\Lambda\left(  \varphi\right)  $ indeed is a
+$\lambda$-ring homomorphism. Besides, it has some obvious properties: If
+$\varphi$ is surjective, then so is $\Lambda\left(  \varphi\right)  $. If
+$\varphi$ is injective, then $\Lambda\left(  \varphi\right)  $ is injective as
+well; thus, if $L$ is an extension ring of $K$, then $\Lambda\left(  L\right)
+$ can be canonically considered an extension ring of $\Lambda\left(  K\right)
+$.
+
+\begin{quotation}
+\textit{Exercise 5.1.} Let $K$ be a ring. For every monic polynomial $P\in
+K\left[  T\right]  $, there exists a finite-free extension ring $K_{p}$ of the
+ring $K$ and $n$ elements $p_{1},$ $p_{2},$ $...,$ $p_{n}$ of this extension
+ring $K_{p}$ such that $p=\prod\limits_{i=1}^{n}\left(  T-p_{i}\right)  $ in
+$K_{p}\left[  T\right]  $, where $n=\deg P$.\ \ \ \ \footnote{\textit{Hints to
+solution:} This can be proven by induction: The ring $K\left[  T\right]
+\diagup\left(  p\right)  $ is a finite-free extension of $K$ containing a root
+of the polynomial $P$ (namely, the equivalence class $\overline{T}$ of $T\in
+K\left[  T\right]  $ modulo $\left(  p\right)  $). Now, the polynomial
+$\dfrac{p\left(  S\right)  }{S-\overline{T}}\in\left(  K\left[  T\right]
+\diagup\left(  p\right)  \right)  \left[  S\right]  $ is monic and has degree
+$n-1$, so by induction there exists a finite-free extension ring $K_{p}$ of
+the ring $K\left[  T\right]  \diagup\left(  p\right)  $ and $n-1$ elements
+$p_{2},$ $...,$ $p_{n}$ of this extension ring $K_{p}$ such that
+$\dfrac{p\left(  S\right)  }{S-\overline{T}}=\prod\limits_{i=2}^{n}\left(
+T-p_{i}\right)  $ in $K_{p}\left[  S\right]  $. Thus, $p\left(  S\right)
+=\left(  S-\overline{T}\right)  \prod\limits_{i=2}^{n}\left(  T-p_{i}\right)
+$ in $K_{p}\left[  S\right]  $. If we denote $\overline{T}$ by $p_{1},$ this
+takes the form $p\left(  S\right)  =\prod\limits_{i=1}^{n}\left(
+T-p_{i}\right)  ,$ which shows that we have just completed the induction step.
+\par
+Notice the similarity between this solution and the proof of the existence of
+splitting fields in Galois theory.}
+
+\textit{Exercise 5.2.} Let $K$ be a ring, and $L$ an extension ring of $K$.
+For some $n\in\mathbb{N}$, an element $u$ of $L$ is said to be $n$%
+\textit{-integral} over $K$ if there exists a monic polynomial $P\in K\left[
+X\right]  $ such that $\deg P=n$ and $P\left(  u\right)  =0$.
+
+Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$. Let $\alpha$ and $\beta$ be two
+elements of $L$ such that $\alpha$ is $n$-integral over $K$ and $\beta$ is
+$m$-integral over $K$. Prove that $\alpha\beta$ is $nm$-integral over $K$.
+
+[This is a known fact, but it turns out to also be a simple corollary of our
+construction of the polynomials $P_{k}$ further above.]\ \ \ \ 
+\end{quotation}
+
 \begin{center}
 \fbox{\textbf{6. Special }$\lambda$\textbf{-rings}}
 \end{center}
@@ -1539,14 +2213,20 @@ Now we will define a particular subclass of $\lambda$-rings that we will be
 interested in from now on:
 
 \begin{quote}
-\textbf{Definition.} Let $\left(  K,\left(  \lambda^{i}\right)  _{i\in
-\mathbb{N}}\right)  $ be a $\lambda$-ring. The map $\lambda_{T}$ defined in
-Theorem 5.6 is an additive group homomorphism (by Theorem 5.6). We call
+\textbf{Definition.} \textbf{1)} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. The map $\lambda_{T}$ defined
+in Theorem 5.6 is an additive group homomorphism (by Theorem 5.6). We call
 $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ a
 \textit{special }$\lambda$\textit{-ring} if this map $\lambda_{T}:\left(
 K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  \rightarrow\left(
 \Lambda\left(  K\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in
-\mathbb{N}}\right)  $ is a homomorphism of $\lambda$-rings.
+\mathbb{N}}\right)  $ is a $\lambda$-ring homomorphism.
+
+\textbf{2)} Let $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
+}\right)  $ be a $\lambda$-ring. Let $L$ be a sub-$\lambda$-ring of $K$. If
+$\left(  K,\left(  \lambda^{i}\mid_{L}\right)  _{i\in\mathbb{N}}\right)  $ is
+a special $\lambda$-ring, then we call $L$ a \textit{special sub-}$\lambda
+$\textit{-ring} of $K$.
 \end{quote}
 
 A different, more down-to-earth characterization of special $\lambda$-rings:
@@ -1580,60 +2260,83 @@ and%
 
 \textit{Proof of Theorem 6.1.} According to the preceeding definition,
 $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a
-special $\lambda$-ring if and only if the map $\lambda_{T}$ is a homomorphism
-of $\lambda$-rings. This map is always an additive group homomorphism (by
-Theorem 5.6) and satisfies $\lambda_{T}\left(  1\right)  =1+T$ (note that
-$1+T$ is the multiplicative uniy of $\Lambda\left(  K\right)  $); hence, it is
-a homomorphism of $\lambda$-rings if and only if it satisfies $\lambda
-_{T}\left(  xy\right)  =\lambda_{T}\left(  x\right)  \widehat{\cdot}%
-\lambda_{T}\left(  y\right)  $ for every $x\in K$ and $y\in K$ and
-$\lambda_{T}\left(  \lambda^{j}\left(  x\right)  \right)  =\widehat{\lambda
-}^{j}\left(  \lambda_{T}\left(  x\right)  \right)  $ for every $x\in K$. But
-these two conditions are equivalent to (\ref{Lkxy}) and (\ref{LkLjx}),
+special $\lambda$-ring if and only if the map $\lambda_{T}$ is a $\lambda
+$-ring homomorphism. This map is always an additive group homomorphism (by
+Theorem 5.6); hence, it is a $\lambda$-ring homomorphism if and only if it
+satisfies the three conditions%
+\begin{align*}
+\lambda_{T}\left(  xy\right)   &  =\lambda_{T}\left(  x\right)  \widehat
+{\cdot}\lambda_{T}\left(  y\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }x\in
+K\text{ and }y\in K,\\
+\lambda_{T}\left(  1\right)   &  =1+T,\ \ \ \ \ \ \ \ \ \ \text{and}\\
+\lambda_{T}\left(  \lambda^{j}\left(  x\right)  \right)   &  =\widehat
+{\lambda}^{j}\left(  \lambda_{T}\left(  x\right)  \right)
+\ \ \ \ \ \ \ \ \ \ \text{for every }j\in\mathbb{N}\text{ and }x\in K
+\end{align*}
+(note that $1+T$ is the multiplicative unity of $\Lambda\left(  K\right)  $).
+The second of these three conditions actually follows from the third one
+(since $\lambda_{T}\left(  \lambda^{j}\left(  x\right)  \right)
+=\widehat{\lambda}^{j}\left(  \lambda_{T}\left(  x\right)  \right)  $, applied
+to $j=0$, yields $\lambda_{T}\left(  1\right)  =1+T$), so we see that the map
+$\lambda_{T}$ is a $\lambda$-ring homomorphism if and only if it satisfies the
+two conditions%
+\begin{align*}
+\lambda_{T}\left(  xy\right)   &  =\lambda_{T}\left(  x\right)  \widehat
+{\cdot}\lambda_{T}\left(  y\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }x\in
+K\text{ and }y\in K,\ \ \ \ \ \ \ \ \ \ \text{and}\\
+\lambda_{T}\left(  \lambda^{j}\left(  x\right)  \right)   &  =\widehat
+{\lambda}^{j}\left(  \lambda_{T}\left(  x\right)  \right)
+\ \ \ \ \ \ \ \ \ \ \text{for every }j\in\mathbb{N}\text{ and }x\in K.
+\end{align*}
+
+
+But these two conditions are equivalent to (\ref{Lkxy}) and (\ref{LkLjx}),
 respectively (because of the definitions of $\widehat{\cdot}$ and
 $\widehat{\lambda}^{j}$ and because two formal power series are equal if and
-only if their respective coefficients are equal). This proves Theorem 6.1.
+only if their respective coefficients are equal, and because $\lambda
+^{0}\left(  1\right)  =0$ and $\lambda^{1}\left(  1\right)  =1$ hold by the
+definition of a $\lambda$-ring). This proves Theorem 6.1.
 
 \begin{quote}
-\textbf{Theorem 6.2.} Let $\left(  K,\left(  \lambda^{i}\right)
-_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. Then, $\left(  \Lambda\left(
-K\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $
-is a special $\lambda$-ring.
+\textbf{Theorem 6.2 (Grothendieck).} Let $\left(  K,\left(  \lambda
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. Then, $\left(
+\Lambda\left(  K\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in
+\mathbb{N}}\right)  $ is a special $\lambda$-ring.
 \end{quote}
 
 \textit{Proof of Theorem 6.2.} According to Theorem 6.1, we only have to prove
 that%
 \begin{align}
-&  \widehat{\lambda}^{k}\left(  u\widehat{\cdot}v\right)  =P_{k}\left(
-\widehat{\lambda}^{1}\left(  u\right)  ,\widehat{\lambda}^{2}\left(  u\right)
-,...,\widehat{\lambda}^{k}\left(  u\right)  ,\widehat{\lambda}^{1}\left(
-v\right)  ,\widehat{\lambda}^{2}\left(  v\right)  ,...,\widehat{\lambda}%
-^{k}\left(  v\right)  \right) \nonumber\\
+&  \widehat{\lambda}^{k}\left(  u\widehat{\cdot}v\right)  =\widehat{P_{k}%
+}\left(  \widehat{\lambda}^{1}\left(  u\right)  ,\widehat{\lambda}^{2}\left(
+u\right)  ,...,\widehat{\lambda}^{k}\left(  u\right)  ,\widehat{\lambda}%
+^{1}\left(  v\right)  ,\widehat{\lambda}^{2}\left(  v\right)  ,...,\widehat
+{\lambda}^{k}\left(  v\right)  \right) \nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \text{for every }k\in\mathbb{N}\text{, }u\in
-\Lambda\left(  K\right)  \text{ and }v\in\Lambda\left(  K\right)
+\Lambda\left(  K\right)  \text{ and }v\in\Lambda\left(  K\right)  ,
 \label{6.2.P.Lkxy}%
 \end{align}
 and%
 \begin{align}
 &  \widehat{\lambda}^{k}\left(  \widehat{\lambda}^{j}\left(  u\right)
-\right)  =P_{k,j}\left(  \widehat{\lambda}^{1}\left(  u\right)  ,\widehat
-{\lambda}^{2}\left(  u\right)  ,...,\widehat{\lambda}^{kj}\left(  u\right)
-\right) \nonumber\\
+\right)  =\widehat{P_{k,j}}\left(  \widehat{\lambda}^{1}\left(  u\right)
+,\widehat{\lambda}^{2}\left(  u\right)  ,...,\widehat{\lambda}^{kj}\left(
+u\right)  \right) \nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \text{for every }k\in\mathbb{N}\text{, }j\in
 \mathbb{N}\text{ and }u\in\Lambda\left(  K\right)  . \label{6.2.P.LkLjx}%
 \end{align}
-Note that when $S\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
-_{kj}\right]  $ is a polynomial, and we are writing $S\left(  \widehat
-{\lambda}^{1}\left(  u\right)  ,\widehat{\lambda}^{2}\left(  u\right)
-,...,\widehat{\lambda}^{kj}\left(  u\right)  \right)  $, we mean the
-polynomial $S$ applied to $\widehat{\lambda}^{1}\left(  u\right)  ,$
-$\widehat{\lambda}^{2}\left(  u\right)  ,$ $...,$ $\widehat{\lambda}%
+Here, we are using the following \textit{notation:} If $S\in\mathbb{Z}\left[
+\alpha_{1},\alpha_{2},...,\alpha_{kj}\right]  $ is a polynomial, then
+$\widehat{S}\left(  \widehat{\lambda}^{1}\left(  u\right)  ,\widehat{\lambda
+}^{2}\left(  u\right)  ,...,\widehat{\lambda}^{kj}\left(  u\right)  \right)  $
+denotes the polynomial $S$ applied to $\widehat{\lambda}^{1}\left(  u\right)
+,$ $\widehat{\lambda}^{2}\left(  u\right)  ,$ $...,$ $\widehat{\lambda}%
 ^{kj}\left(  u\right)  $ \textit{as elements of the ring }$\Lambda\left(
 K\right)  $ (and not as elements of the ring $K\left[  \left[  T\right]
 \right]  $). For instance, if $S=\alpha_{1}+\alpha_{2}+...+\alpha_{kj},$ then
-$S\left(  \widehat{\lambda}^{1}\left(  u\right)  ,\widehat{\lambda}^{2}\left(
-u\right)  ,...,\widehat{\lambda}^{kj}\left(  u\right)  \right)  $ means
-$\widehat{\lambda}^{1}\left(  u\right)  \widehat{+}\widehat{\lambda}%
+$\widehat{S}\left(  \widehat{\lambda}^{1}\left(  u\right)  ,\widehat{\lambda
+}^{2}\left(  u\right)  ,...,\widehat{\lambda}^{kj}\left(  u\right)  \right)  $
+means $\widehat{\lambda}^{1}\left(  u\right)  \widehat{+}\widehat{\lambda}%
 ^{2}\left(  u\right)  \widehat{+}...\widehat{+}\widehat{\lambda}^{kj}\left(
 u\right)  $ (and not $\widehat{\lambda}^{1}\left(  u\right)  +\widehat
 {\lambda}^{2}\left(  u\right)  +...+\widehat{\lambda}^{kj}\left(  u\right)  $,
@@ -1675,18 +2378,18 @@ S}U_{i}$ to%
 \begin{align*}
 \widehat{\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
 ;\\\left\vert S\right\vert =i}}}\widehat{\prod\limits_{k\in S}}\underbrace
-{\left(  1+u_{i}T\right)  }_{=\Pi\left(  K,\left[  u_{i}\right]  \right)  } &
-=\widehat{\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
+{\left(  1+u_{i}T\right)  }_{=\Pi\left(  K,\left[  u_{i}\right]  \right)  }
+&  =\widehat{\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
 ;\\\left\vert S\right\vert =i}}}\underbrace{\widehat{\prod\limits_{k\in S}}%
 \Pi\left(  K,\left[  u_{i}\right]  \right)  }_{\substack{=\Pi\left(  K,\left[
 \prod\limits_{i\in S}u_{i}\right]  \right)  \\\text{according to Corollary 5.4
 \textbf{(b)}}}}=\widehat{\sum\limits_{\substack{S\subseteq\left\{
 1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}}\Pi\left(  K,\left[
-\prod\limits_{i\in S}u_{i}\right]  \right)  \\
+\prod\limits_{i\in S}u_{i}\right]  \right) \\
 &  =\Pi\left(  K,\left[  \prod\limits_{i\in S}u_{i}\mid S\subseteq\left\{
-1,2,...,m\right\}  ;\ \left\vert S\right\vert =i\right]  \right)  \\
+1,2,...,m\right\}  ;\ \left\vert S\right\vert =i\right]  \right) \\
 &  =\Pi\left(  K,\left[  \prod\limits_{i\in S}u_{i}\mid S\in\mathcal{P}%
-_{i}\left(  \left\{  1,2,...,m\right\}  \right)  \right]  \right)  \\
+_{i}\left(  \left\{  1,2,...,m\right\}  \right)  \right]  \right) \\
 &  =\widehat{\lambda}^{i}\left(  u\right)  \ \ \ \ \ \ \ \ \ \ \left(
 \text{after Theorem 5.3 \textbf{(d)}}\right)
 \end{align*}
@@ -1696,10 +2399,11 @@ argument). Hence, applying this homomorphism to (\ref{Pk1}), we obtain%
 \widehat{\sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
 1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}}\widehat{\prod_{\left(
 i,j\right)  \in S}}\left(  1+u_{i}T\right)  \widehat{\cdot}\left(
-1+v_{j}T\right)  =P_{k}\left(  \widehat{\lambda}^{1}\left(  u\right)
-,\widehat{\lambda}^{2}\left(  u\right)  ,...,\widehat{\lambda}^{k}\left(
-u\right)  ,\widehat{\lambda}^{1}\left(  v\right)  ,\widehat{\lambda}%
-^{2}\left(  v\right)  ,...,\widehat{\lambda}^{k}\left(  v\right)  \right)  .
+1+v_{j}T\right)  =\widehat{P_{k}}\left(  \widehat{\lambda}^{1}\left(
+u\right)  ,\widehat{\lambda}^{2}\left(  u\right)  ,...,\widehat{\lambda}%
+^{k}\left(  u\right)  ,\widehat{\lambda}^{1}\left(  v\right)  ,\widehat
+{\lambda}^{2}\left(  v\right)  ,...,\widehat{\lambda}^{k}\left(  v\right)
+\right)  .
 \]
 But%
 \begin{align*}
@@ -1723,17 +2427,343 @@ K,\left[  \prod\limits_{\left(  i,j\right)  \in S}u_{i}v_{j}\right]  \right)
 &  =\Pi\left(  K,\left[  \prod_{\left(  i,j\right)  \in S}u_{i}v_{j}\mid
 S\subseteq\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}
 ;\ \left\vert S\right\vert =k\right]  \right)  \ \ \ \ \ \ \ \ \ \ \left(
-\text{after Corollary 5.4 \textbf{(a)}}\right)  \\
+\text{after Corollary 5.4 \textbf{(a)}}\right) \\
 &  =\Pi\left(  K,\left[  \prod_{\left(  i,j\right)  \in S}u_{i}v_{j}\mid
 S\in\mathcal{P}_{k}\left(  \left\{  1,2,...,m\right\}  \times\left\{
-1,2,...,n\right\}  \right)  \right]  \right)  \\
+1,2,...,n\right\}  \right)  \right]  \right) \\
 &  =\widehat{\lambda}^{k}\left(  u\widehat{\cdot}v\right)
 \end{align*}
-after Theorem 5.3 \textbf{(d)} (applied to $u\widehat{\cdot}v$ instead of $u$,
-since $u\widehat{\cdot}v=\Pi\left(  \widetilde{K}_{u,v},\left[  u_{i}v_{j}%
-\mid\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
-1,2,...,n\right\}  \right]  \right)  $). Thus, (\ref{6.2.P.Lkxy}) is proven.
-Similarly we can show (\ref{6.2.P.LkLjx}) (the details are left to the reader).
+after Theorem 5.3 \textbf{(d)}, applied to $u\widehat{\cdot}v$ instead of $u$
+(and keeping in mind that $u\widehat{\cdot}v=\Pi\left(  \widetilde{K}%
+_{u,v},\left[  u_{i}v_{j}\mid\left(  i,j\right)  \in\left\{
+1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right]  \right)  $).
+Thus, (\ref{6.2.P.Lkxy}) is proven. Similarly we can show (\ref{6.2.P.LkLjx})
+(the details are left to the reader). Theorem 6.2 is thus proven.
+
+Theorem 6.1 gives us an alternative definition of special $\lambda$-rings via
+the polynomials $P_{k}$ and $P_{k,j}$. Why, then, did we define the notion of
+special $\lambda$-rings via the map $\lambda_{T}:\left(  K,\left(  \lambda
+^{i}\right)  _{i\in\mathbb{N}}\right)  \rightarrow\left(  \Lambda\left(
+K\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $
+rather than using Theorem 6.1? The reason is that while Theorem 6.1 provides
+an easy-to-formulate definition of special $\lambda$-rings, it is rather hard
+to work with. In order to check that some given ring is a special $\lambda
+$-ring using Theorem 6.1, we would have to prove the identities (\ref{Lkxy})
+and (\ref{LkLjx}), which is a difficult task since the polynomials $P_{k}$ and
+$P_{k,j}$ are very hard to compute explicitely. Using the definition that we
+gave, we would have to check that $\lambda_{T}:\left(  K,\left(  \lambda
+^{i}\right)  _{i\in\mathbb{N}}\right)  \rightarrow\left(  \Lambda\left(
+K\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $
+is a $\lambda$-ring homomorphism, what seems to be harder, but turns out not
+that hard since Exercise 2.1 reduces this to checking some identity at
+$\mathbb{Z}$-module generators of $K$.
+
+\begin{quotation}
+\textit{Exercise 6.1.} Let $K$ be a ring. Consider the localization $\left(
+1+K\left[  T\right]  ^{+}\right)  ^{-1}K\left[  T\right]  $ of the polynomial
+ring $K\left[  T\right]  $ at the multiplicatively closed subset $1+K\left[
+T\right]  ^{+}$. \ \ \ \ \footnote{When $K$ is a field, this localization is
+simply the (local) ring of the (so-called) rational functions in one variable
+over $K$. ("Rational function" is a bad misnomer, in this case, but at least
+people know what it means.)} This localization $\left(  1+K\left[  T\right]
+^{+}\right)  ^{-1}K\left[  T\right]  $ can be considered a subring of
+$K\left[  \left[  T\right]  \right]  $ (since $K\left[  T\right]  \subseteq
+K\left[  \left[  T\right]  \right]  $, and every element of $1+K\left[
+T\right]  ^{+}$ is invertible in $K\left[  \left[  T\right]  \right]  $).
+Prove that the set $\left(  1+K\left[  T\right]  ^{+}\right)  ^{-1}K\left[
+T\right]  \cap\Lambda\left(  K\right)  $ is a special sub-$\lambda$-ring of
+$\Lambda\left(  K\right)  $.\ \ \ \ \footnote{\textit{Hints to solution:} We
+have $\left(  1+K\left[  T\right]  ^{+}\right)  ^{-1}K\left[  T\right]
+\cap\Lambda\left(  K\right)  =\left(  1+K\left[  T\right]  ^{+}\right)
+\widehat{-}\left(  1+K\left[  T\right]  ^{+}\right)  $, where $U\widehat{-}U$
+denotes the set $\left\{  u\widehat{-}u^{\prime}\mid u\in U,\ u^{\prime}\in
+U\right\}  $ for every subset $U$ of $\Lambda\left(  K\right)  $ (where
+$\widehat{-}$ means subtraction with respect to the addtion $\widehat{+}$ in
+$\Lambda\left(  K\right)  $). The subset $1+K\left[  T\right]  ^{+}$ of
+$\Lambda\left(  K\right)  $ is closed under the addition $\widehat{+}$, the
+multiplication $\widehat{\cdot}$ and the maps $\widehat{\lambda}^{i}$
+(according to Theorem 5.3, since $1+K\left[  T\right]  ^{+}=\Pi\left(
+K^{\operatorname*{int}}\right)  $) and contains the zero $1$ and the unity
+$1+T$. Thus, by Exercise 2.2 (applied to $\Lambda\left(  K\right)  $ and
+$1+K\left[  T\right]  ^{+}$ instead of $K$ and $L$), the conclusion follows.}
+
+\textit{Exercise 6.2.} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring. Then, prove that none
+of the elements $1,$ $2,$ $3,$ $...$ of the ring $K$ equals zero in
+$K$.\ \ \ \ \footnote{\textit{Solution:} Assume, for the sake of
+contradiction, that $m=0$ in $K$ for some positive integer $m$. Then, Theorem
+2.1 \textbf{(a)} yields%
+\begin{align*}
+\lambda_{t}\left(  m\right)   &  =\lambda_{t}\left(  \underbrace
+{1+1+...+1}_{m\text{ times}}\right)  =\underbrace{\lambda_{t}\left(  1\right)
+\cdot\lambda_{t}\left(  1\right)  \cdot...\cdot\lambda_{t}\left(  1\right)
+}_{m\text{ times}}=\left(  \lambda_{t}\left(  1\right)  \right)  ^{m}\\
+&  =\left(  \lambda_{t}\left(  1\right)  \right)  ^{m}=\left(  1+t\right)
+^{m}=1+\sum_{i=1}^{m-1}\dbinom{m}{i}t^{i}+t^{m}\ \ \ \ \ \ \ \ \ \ \left(
+\text{by the binomial formula}\right)
+\end{align*}
+in $K\left[  \left[  t\right]  \right]  $. On the other hand, $\lambda
+_{t}\left(  m\right)  =\lambda_{t}\left(  0\right)  =1.$ Contradiction.}
+\end{quotation}
+
+\begin{center}
+\fbox{\textbf{7. Examples of special }$\lambda$\textbf{-rings}}
+\end{center}
+
+We have learned a lot of examples for $\lambda$-rings, but which of them are
+special? Of course, the trivial ring $0$ with the trivial maps $\lambda
+^{i}:0\rightarrow0$ is a special $\lambda$-ring. Also, we know a vast class of
+special $\lambda$-rings from Theorem 6.2. Obviously, every sub-$\lambda$-ring
+of a special $\lambda$-ring is special. On the other hand, the $\lambda$-ring
+$\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ defined in
+Exercise 3.3 \textbf{(a)} is not special unless $p=1$. What happens to the
+other examples from Section 3?
+
+\begin{quote}
+\textbf{Theorem 7.1.} The $\lambda$-ring $\left(  \mathbb{Z},\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ defined in Theorem 3.1 is special.
+\end{quote}
+
+\textit{Proof of Theorem 7.1.} According to Theorem 6.1, we just have to
+verify the identities (\ref{Lkxy}) and (\ref{LkLjx}) for $K=\mathbb{Z}$. In
+other words, we have to prove that%
+\begin{equation}
+\dbinom{xy}{k}=P_{k}\left(  \dbinom{x}{1},\dbinom{x}{2},...,\dbinom{x}%
+{k},\dbinom{y}{1},\dbinom{y}{2},...,\dbinom{y}{k}\right)  \label{7.1.Lkxy}%
+\end{equation}
+for every $k\in\mathbb{N}$, $x\in\mathbb{Z}$ and $y\in\mathbb{Z}$ and%
+\begin{equation}
+\dbinom{\dbinom{x}{j}}{k}=P_{k,j}\left(  \dbinom{x}{1},\dbinom{x}%
+{2},...,\dbinom{x}{kj}\right)  \label{7.1.LkLjx}%
+\end{equation}
+for every $k\in\mathbb{N}$, $j\in\mathbb{N}$ and $x\in\mathbb{Z}.$
+
+Let us prove (\ref{7.1.Lkxy}): Fix $k\in\mathbb{N}$. Then, (\ref{7.1.Lkxy}) is
+a polynomial identity in $x$ and in $y.$ Hence, (for the same reason as in the
+proof of Theorem 3.1) it is enough to prove (\ref{7.1.Lkxy}) for all natural
+$x$ and $y$. In this case, let $m=x$ and $n=y$. There exists a ring
+homomorphism $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2}%
+,...,V_{n}\right]  \rightarrow\mathbb{Z}$ mapping every $U_{i}$ to $1$ and
+every $V_{j}$ to $1$. This homomorphism maps $X_{i}=\sum
+\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}  ;\\\left\vert
+S\right\vert =i}}\prod\limits_{k\in S}U_{i}$ to%
+\[
+\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}  ;\\\left\vert
+S\right\vert =i}}\prod\limits_{k\in S}1=\sum\limits_{\substack{S\subseteq
+\left\{  1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}1=\sum
+\limits_{S\in\mathcal{P}_{i}\left(  \left\{  1,2,...,m\right\}  \right)
+}1=\left\vert \mathcal{P}_{i}\left(  \left\{  1,2,...,m\right\}  \right)
+\right\vert =\dbinom{m}{i}%
+\]
+for every $i\in\mathbb{N},$ and maps $Y_{j}$ to $\dbinom{n}{j}$ for every
+$j\in\mathbb{N}$. Thus, applying this homomorphism to the polynomial identity
+(\ref{Pk1}), we obtain%
+
+\[
+\sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}\prod_{\left(  i,j\right)
+\in S}1\cdot1=P_{k}\left(  \dbinom{m}{1},\dbinom{m}{2},...,\dbinom{m}%
+{k},\dbinom{n}{1},\dbinom{n}{2},...,\dbinom{n}{k}\right)  .
+\]
+Since $m=x,$ $n=y$ and
+\begin{align*}
+\sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}\underbrace{\prod_{\left(
+i,j\right)  \in S}1\cdot1}_{=1}  &  =\sum_{\substack{S\subseteq\left\{
+1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  ;\\\left\vert
+S\right\vert =k}}1=\sum_{S\in\mathcal{P}_{k}\left(  \left\{
+1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right)  }\\
+&  =\left\vert \mathcal{P}_{k}\left(  \left\{  1,2,...,m\right\}
+\times\left\{  1,2,...,n\right\}  \right)  \right\vert =\dbinom{mn}{k}%
+=\dbinom{xy}{k},
+\end{align*}
+this equality transforms into (\ref{7.1.Lkxy}). Hence, (\ref{7.1.Lkxy}) is
+proven (since, as we said, once it is proven for natural $x$ and $y$, it
+follows for all integers $x$ and $y$). Just as we have derived (\ref{7.1.Lkxy}%
+) from (\ref{Pk1}), we can derive (\ref{LkLjx}) from (\ref{Pkj1}), and Theorem
+7.1 is proven.
+
+This generalizes:
+
+\begin{quote}
+\textbf{Theorem 7.2.} Let $K$ be a binomial ring. The $\lambda$-ring $\left(
+K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ defined in Theorem
+3.2 is special.
+\end{quote}
+
+\textit{Proof of Theorem 7.2.} This follows from our proof of Theorem 7.1 in
+the same way as Theorem 3.2 followed from our proof of Theorem 3.1. To be more
+precise: According to Theorem 6.1, the $\lambda$-ring $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is special if it satisfies the
+identities (\ref{Lkxy}) and (\ref{LkLjx}). This means (\ref{7.1.Lkxy}) for
+every $k\in\mathbb{N}$, $x\in K$ and $y\in K$ and (\ref{7.1.LkLjx}) for every
+$k\in\mathbb{N}$, $j\in\mathbb{N}$ and $x\in K$. In the proof of Theorem 7.1,
+we have proven these identities for $x\in\mathbb{Z}$ and $y\in\mathbb{Z}$; but
+being polynomial identities (for fixed $k$), they become identities for $x\in
+K$ and $y\in K$, and Theorem 7.2 is proven.
+
+Theorem 3.3 has a special version as well:
+
+\begin{quote}
+\textbf{Theorem 7.3.} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring. Then, the $\lambda
+$-ring $\left(  K\left[  S\right]  ,\left(  \overline{\lambda}^{i}\right)
+_{i\in\mathbb{N}}\right)  $ defined in Theorem 3.3 is special.
+\end{quote}
+
+\textit{Proof of Theorem 7.3.} Consider the map $\overline{\lambda}%
+_{T}:K\left[  S\right]  \rightarrow\Lambda\left(  K\left[  S\right]  \right)
+$ defined by $\overline{\lambda}_{T}\left(  \sum\limits_{j\in\mathbb{N}}%
+a_{j}S^{j}\right)  =\prod\limits_{j\in\mathbb{N}}\lambda_{S^{j}t}\left(
+a_{j}\right)  \in\left(  K\left[  S\right]  \right)  \left[  \left[  t\right]
+\right]  $
+
+defined as in Theorem 5.6. Explicitely, this map is given by $\overline
+{\lambda}_{T}$
+
+Theorem 5.6 yields that this map $\overline{\lambda}_{T}$ is an additive group
+homomorphism. In order to show that the $\lambda$-ring $\left(  K\left[
+S\right]  ,\left(  \overline{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $
+is special, we must prove that this map $\overline{\lambda}_{T}$ is a
+$\lambda$-ring homomorphism.
+
+First, it is obvious that $\overline{\lambda}_{T}$ maps the multiplicative
+unity $1$ of $K\left[  S\right]  $ to the multiplicative unity $1+T$ of
+$\Lambda\left(  K\left[  S\right]  \right)  $
+
+Let $E=\left\{  uS^{i}\mid u\in K,\ i\in\mathbb{N}\right\}  $. Obviously, $E$
+is a generating set of the $\mathbb{Z}$-module $K\left[  S\right]  $.
+
+\begin{quote}
+\textbf{Theorem 3.3.} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. Consider the polynomial ring
+$K\left[  S\right]  $. For every $i\in\mathbb{N}$, define a map $\overline
+{\lambda}^{i}:K\left[  S\right]  \rightarrow K\left[  S\right]  $ as follows:
+For every $\sum\limits_{j\in\mathbb{N}}a_{j}S^{j}\in K\left[  S\right]  $
+(with $a_{j}\in K$ for every $j\in\mathbb{N}$), let $\overline{\lambda}%
+^{i}\left(  \sum\limits_{j\in\mathbb{N}}a_{j}S^{j}\right)  $ be the
+coefficient of the power series $\prod\limits_{j\in\mathbb{N}}\lambda_{S^{j}%
+t}\left(  a_{j}\right)  \in\left(  K\left[  S\right]  \right)  \left[  \left[
+t\right]  \right]  $ before $t^{i}$.
+
+Here, $\lambda_{S^{j}t}\left(  a_{j}\right)  $ denotes the image of the formal
+power series $\lambda_{t}\left(  a_{j}\right)  $ under the $K\left[  S\right]
+$-algebra homomorphism $\left(  K\left[  S\right]  \right)  \left[  \left[
+t\right]  \right]  \rightarrow\left(  K\left[  S\right]  \right)  \left[
+\left[  t\right]  \right]  $ which maps $t$ to $S^{j}t$. (In other words,
+$\lambda_{S^{j}t}\left(  a_{j}\right)  $ is what we get if we replace every
+$t$ by $S^{j}t$ in the power series $\lambda_{t}\left(  a_{j}\right)  .$)
+
+Then, $\left(  K\left[  S\right]  ,\left(  \overline{\lambda}^{i}\right)
+_{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring. The ring $K$ is a
+sub-$\lambda$-ring of $\left(  K\left[  S\right]  ,\left(  \overline{\lambda
+}^{i}\right)  _{i\in\mathbb{N}}\right)  $. Besides, $\overline{\lambda}%
+^{i}\left(  S\right)  =0$ for every $i>0$.
+\end{quote}
+
+[...]
+
+\begin{quotation}
+\textit{Exercise 2.1.} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ and $\left(  L,\left(  \mu^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be two $\lambda$-rings. Let $f:K\rightarrow L$ be
+a ring homomorphism. Let $E$ be a generating set of the $\mathbb{Z}$-module
+$K$.
+
+\textbf{(a)} Prove that $f$ is a $\lambda$-ring homomorphism if and only if
+every $e\in E$ satisfies $\left(  \mu_{t}\circ f\right)  \left(  e\right)
+=\left(  f\left[  \left[  t\right]  \right]  \circ\lambda_{t}\right)  \left(
+e\right)  $.
+
+\textbf{(b)} Prove that $f$ is a $\lambda$-ring homomorphism if and only if
+every $e\in E$ satisfies $\left(  \mu^{i}\circ f\right)  \left(  e\right)
+=\left(  f\circ\lambda^{i}\right)  \left(  e\right)  $ for every
+$i\in\mathbb{N}$.\ \ \ \ \footnote{\textit{Solution:} \textbf{(a)} Theorem 2.1
+\textbf{(c)} says that $f$ is a homomorphism of $\lambda$-rings if and only if
+$\mu_{t}\circ f=f\left[  \left[  t\right]  \right]  \circ\lambda_{t}$. Thus,
+it remains to show that $\mu_{t}\circ f=f\left[  \left[  t\right]  \right]
+\circ\lambda_{t}$ holds if and only if every $e\in E$ satisfies $\mu_{t}\circ
+f=f\left[  \left[  t\right]  \right]  \circ\lambda_{t}$. Since $E$ is a
+generating set of the $\mathbb{Z}$-module $K$, this comes down to proving the
+following three facts:
+\par
+\begin{itemize}
+\item We have $\left(  \mu_{t}\circ f\right)  \left(  0\right)  =\left(
+f\left[  \left[  t\right]  \right]  \circ\lambda_{t}\right)  \left(  0\right)
+$.
+\par
+\item We have $\left(  \mu_{t}\circ f\right)  \left(  -x\right)  =\left(
+f\left[  \left[  t\right]  \right]  \circ\lambda_{t}\right)  \left(
+-x\right)  $ for every $x\in K$ which satisfies $\left(  \mu_{t}\circ
+f\right)  \left(  x\right)  =\left(  f\left[  \left[  t\right]  \right]
+\circ\lambda_{t}\right)  \left(  x\right)  $.
+\par
+\item We have $\left(  \mu_{t}\circ f\right)  \left(  x+y\right)  =\left(
+f\left[  \left[  t\right]  \right]  \circ\lambda_{t}\right)  \left(
+x+y\right)  $ for any $x\in K$ and $y\in K$ which satisfy $\left(  \mu
+_{t}\circ f\right)  \left(  x\right)  =\left(  f\left[  \left[  t\right]
+\right]  \circ\lambda_{t}\right)  \left(  x\right)  $ and $\left(  \mu
+_{t}\circ f\right)  \left(  y\right)  =\left(  f\left[  \left[  t\right]
+\right]  \circ\lambda_{t}\right)  \left(  y\right)  $.
+\end{itemize}
+\par
+We will only prove the last of these three assertions (the other two are
+similar): If $\left(  \mu_{t}\circ f\right)  \left(  x\right)  =\left(
+f\left[  \left[  t\right]  \right]  \circ\lambda_{t}\right)  \left(  x\right)
+$ and $\left(  \mu_{t}\circ f\right)  \left(  y\right)  =\left(  f\left[
+\left[  t\right]  \right]  \circ\lambda_{t}\right)  \left(  y\right)  $, then%
+\begin{align*}
+\left(  \mu_{t}\circ f\right)  \left(  x+y\right)   &  =\mu_{t}\left(
+f\left(  x+y\right)  \right)  =\mu_{t}\left(  f\left(  x\right)  +f\left(
+y\right)  \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }f\text{ is a ring
+homomorphism}\right) \\
+&  =\mu_{t}\left(  f\left(  x\right)  \right)  \cdot\mu_{t}\left(  f\left(
+y\right)  \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 2.1
+\textbf{(a)}, applied to the }\lambda\text{-ring }\left(  L,\left(  \mu
+^{i}\right)  _{i\in\mathbb{N}}\right)  \right) \\
+&  =\left(  \mu_{t}\circ f\right)  \left(  x\right)  \cdot\left(  \mu_{t}\circ
+f\right)  \left(  y\right)  =\left(  f\left[  \left[  t\right]  \right]
+\circ\lambda_{t}\right)  \left(  x\right)  \cdot\left(  f\left[  \left[
+t\right]  \right]  \circ\lambda_{t}\right)  \left(  y\right) \\
+&  =\left(  f\left[  \left[  t\right]  \right]  \right)  \left(
+\underbrace{\lambda_{t}\left(  x\right)  \cdot\lambda_{t}\left(  y\right)
+}_{=\lambda_{t}\left(  x+y\right)  \text{ by Theorem 2.1 \textbf{(a)}}%
+}\right)  =\left(  f\left[  \left[  t\right]  \right]  \circ\lambda
+_{t}\right)  \left(  x+y\right)  ,
+\end{align*}
+qed.
+\par
+\textbf{(b)} This follows from \textbf{(a)} in the same way as Theorem 2.1
+\textbf{(c)} was proven.}
+
+
+\end{quotation}
+
+\begin{quote}
+Consider the polynomial ring $K\left[  S\right]  $. For every $i\in\mathbb{N}%
+$, define a map $\overline{\lambda}^{i}:K\left[  S\right]  \rightarrow
+K\left[  S\right]  $ as follows: For every $\sum\limits_{j\in\mathbb{N}}%
+a_{j}S^{j}\in K\left[  S\right]  $ (with $a_{j}\in K$ for every $j\in
+\mathbb{N}$), let $\overline{\lambda}^{i}\left(  \sum\limits_{j\in\mathbb{N}%
+}a_{j}S^{j}\right)  $ be the coefficient of the power series $\prod
+\limits_{j\in\mathbb{N}}\lambda_{S^{j}t}\left(  a_{j}\right)  \in\left(
+K\left[  S\right]  \right)  \left[  \left[  t\right]  \right]  $ before
+$t^{i}$.
+
+Here, $\lambda_{S^{j}t}\left(  a_{j}\right)  $ denotes the image of the formal
+power series $\lambda_{t}\left(  a_{j}\right)  $ under the $K\left[  S\right]
+$-algebra homomorphism $\left(  K\left[  S\right]  \right)  \left[  \left[
+t\right]  \right]  \rightarrow\left(  K\left[  S\right]  \right)  \left[
+\left[  t\right]  \right]  $ which maps $t$ to $S^{j}t$. (In other words,
+$\lambda_{S^{j}t}\left(  a_{j}\right)  $ is what we get if we replace every
+$t$ by $S^{j}t$ in the power series $\lambda_{t}\left(  a_{j}\right)  .$)
+
+Then, $\left(  K\left[  S\right]  ,\left(  \overline{\lambda}^{i}\right)
+_{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring. The ring $K$ is a
+sub-$\lambda$-ring of $\left(  K\left[  S\right]  ,\left(  \overline{\lambda
+}^{i}\right)  _{i\in\mathbb{N}}\right)  $. Besides, $\overline{\lambda}%
+^{i}\left(  S\right)  =0$ for every $i>0$.
+\end{quote}
 
 \begin{center}
 \fbox{\textbf{References}}
@@ -1746,6 +2776,8 @@ the Symmetric Group}, New York 1973.
 
 [3] M. F. Atiyah, I. G. Macdonald, \textit{Introduction to Commutative
 Algebra}, Addison-Wesley 1969.
+
+[4] Robin Hartshorne, \textit{Algebraic Geometry}, Springer 1977.
 
 
 \end{document}
