@@ -11,7 +11,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, February 25, 2013 23:33:13}
+%TCIDATA{LastRevised=Wednesday, April 10, 2013 02:59:13}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
@@ -26,7 +26,7 @@
 
 \title{\fbox{$\lambda$\textbf{-rings: Definitions and basic properties}}}
 \author{Darij Grinberg}
-\date{Version 0.0.17, last revised 29 Dec 2012}
+\date{Version 0.0.17, last revised 9 Apr 2013}
 \maketitle
 \tableofcontents
 
@@ -4958,8 +4958,6 @@ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
 +...+u_{m}^{j}.
 \]
 
-
-
 \end{quote}
 
 \textit{Proof of Theorem 9.4.} Let $x=u_{1}+u_{2}+...+u_{m}$. Just as in the
@@ -5066,7 +5064,8 @@ x,y\right)  \in K^{2}$ be such that each of $x$ and $y$ is the sum of finitely
 many $1$-dimensional elements of $K$. Thus, there exist $1$-dimensional
 elements $u_{1},$ $u_{2},$ $...,$ $u_{m}$ of $K$ such that $x=u_{1}%
 +u_{2}+...+u_{m}$, and there exist $1$-dimensional elements $v_{1},$ $v_{2},$
-$...,$ $v_{n}$ of $K$ such that $y=v_{1}+v_{2}+...+v_{n}$. Then,%
+$...,$ $v_{n}$ of $K$ such that $y=v_{1}+v_{2}+...+v_{n}$. Consider these
+$1$-dimensional elements. Then,%
 \begin{align*}
 &  m_{\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  }\left(
 x,y\right) \\
@@ -5091,10 +5090,10 @@ _{\substack{=\psi^{j}\left(  u_{1}+u_{2}+...+u_{m}\right)  \\\text{by Theorem
 9.4}}}\underbrace{\left(  v_{1}^{j}+v_{2}^{j}+...+v_{n}^{j}\right)
 }_{\substack{=\psi^{j}\left(  v_{1}+v_{2}+...+v_{n}\right)  \\\text{by Theorem
 9.4}}}\\
-&  =\psi^{j}\left(  u_{1}+u_{2}+...+u_{m}\right)  \cdot\psi^{j}\left(
-v_{1}+v_{2}+...+v_{n}\right)  =\psi^{j}\left(  x\right)  \cdot\psi^{j}\left(
-y\right)  =m_{\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)
-}^{\prime}\left(  x,y\right)  ,
+&  =\psi^{j}\left(  \underbrace{u_{1}+u_{2}+...+u_{m}}_{=x}\right)  \cdot
+\psi^{j}\left(  \underbrace{v_{1}+v_{2}+...+v_{n}}_{=y}\right)  =\psi
+^{j}\left(  x\right)  \cdot\psi^{j}\left(  y\right)  =m_{\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  }^{\prime}\left(  x,y\right)  ,
 \end{align*}
 and the proof of the split equality assumption is complete. Thus, using
 Theorem 8.4, we obtain that $\psi^{j}\left(  xy\right)  =\psi^{j}\left(
@@ -5124,14 +5123,16 @@ sum of finitely many $1$-dimensional elements of $K$, and we apply Theorems
 ^{j}\circ\lambda^{i}=\lambda^{i}\circ\psi^{j}$ for every $i\in\mathbb{N}$, and
 thus $\psi^{j}$ is a $\lambda$-ring homomorphism. Theorem 9.3 \textbf{(b)} is proven.
 
-\textbf{(c)} Fix $n\in\mathbb{N}$ and $m\in\mathbb{N}.$ We have to prove that
-$\left(  \psi^{n}\circ\psi^{m}\right)  \left(  x\right)  =\left(  \psi
-^{m}\circ\psi^{n}\right)  \left(  x\right)  =\psi^{nm}\left(  x\right)  $ for
-every $x\in K$. This can be done by the same method as in the proof of part
-\textbf{(b)}: First, reduce the proof to the case when $x$ is the sum of
+\textbf{(c)} Fix $i\in\mathbb{N}\setminus\left\{  0\right\}  $ and
+$j\in\mathbb{N}\setminus\left\{  0\right\}  $. We have to prove that $\psi
+^{i}\circ\psi^{j}=\psi^{j}\circ\psi^{i}=\psi^{ij}$. In other words, we have to
+prove that $\left(  \psi^{i}\circ\psi^{j}\right)  \left(  x\right)  =\left(
+\psi^{j}\circ\psi^{i}\right)  \left(  x\right)  =\psi^{ij}\left(  x\right)  $
+for every $x\in K$. This can be done by the same method as in the proof of
+part \textbf{(b)}: First, reduce the proof to the case when $x$ is the sum of
 finitely many $1$-dimensional elements of $K$ (by an application of Theorem
-8.4); then, verify $\left(  \psi^{n}\circ\psi^{m}\right)  \left(  x\right)
-=\left(  \psi^{m}\circ\psi^{n}\right)  \left(  x\right)  =\psi^{nm}\left(
+8.4); then, verify $\left(  \psi^{i}\circ\psi^{j}\right)  \left(  x\right)
+=\left(  \psi^{j}\circ\psi^{i}\right)  \left(  x\right)  =\psi^{ij}\left(
 x\right)  $ in this case by applying Theorems 9.4 and 8.3 \textbf{(b)}. Thus,
 Theorem 9.3 \textbf{(c)} is proven.
 
@@ -5712,18 +5713,25 @@ $j\in\mathbb{N}\setminus\left\{  0\right\}  $. Then, $\widehat{\psi}%
 $\widehat{\lambda}^{j}$ given in Theorem 5.3 \textbf{(d)}.]
 
 \textit{Exercise 9.2.} Let $K$ be a ring. Let $i\in\mathbb{N}\setminus\left\{
-0\right\}  $. Define a mapping $\operatorname*{coeff}\nolimits_{i}%
-:\Lambda\left(  K\right)  \rightarrow K$ by $\operatorname*{coeff}%
+0\right\}  $. Define a mapping $\operatorname*{Coeff}\nolimits_{i}:K\left[
+\left[  T\right]  \right]  \rightarrow K$ by setting $\operatorname*{Coeff}%
 \nolimits_{i}\left(  \sum\limits_{j\in\mathbb{N}}a_{j}T^{j}\right)  =a_{i}$
-for every $\sum\limits_{j\in\mathbb{N}}a_{j}T^{j}\in\Lambda\left(  K\right)  $
-(with $a_{j}\in K$ for every $j\in\mathbb{N}$). (In other words,
-$\operatorname*{coeff}\nolimits_{i}$ is the mapping that takes a power series
-and returns its coefficient before $T^{i}.$)
+for every $\sum\limits_{j\in\mathbb{N}}a_{j}T^{j}\in K\left[  \left[
+T\right]  \right]  $ (with $a_{j}\in K$ for every $j\in\mathbb{N}$). (In other
+words, $\operatorname*{Coeff}\nolimits_{i}$ is the mapping that takes a power
+series and returns its coefficient before $T^{i}$.)\ \ \ \ \ \footnote{Note
+that we are denoting this mapping by $\operatorname*{Coeff}\nolimits_{i}$ with
+a capital "C" to distinguish it from the mapping $\operatorname*{coeff}%
+\nolimits_{i}$ defined in Exercise 6.5. This distinction is necessary because
+these two mappings have different domains (namely, the map
+$\operatorname*{Coeff}\nolimits_{i}$ is defined on all of $K\left[  \left[
+T\right]  \right]  $, whereas the map $\operatorname*{coeff}\nolimits_{i}$ is
+defined only on $\Lambda\left(  K\right)  $).}
 
 \textbf{(a)} Prove that the map%
 \begin{align*}
 \Lambda\left(  K\right)   &  \rightarrow K,\\
-u  &  \mapsto\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
+u  &  \mapsto\left(  -1\right)  ^{i}\operatorname*{Coeff}\nolimits_{i}\left(
 -T\dfrac{d}{dT}\log u\right)
 \end{align*}
 is a ring homomorphism.
@@ -5937,7 +5945,7 @@ e\right)  ,$ $...,$ $\lambda^{r}\left(  e\right)  $, determined by $\varphi$
 alone. I think it isn't; instead, it is just a power series. On the other
 hand, my generalization $\operatorname*{td}\nolimits_{\varphi,T}$ is a
 universal polynomial.} and the generalization looks more natural to me), but I
-cannot guarantee that this is the right generalization.
+cannot guarantee that this is the "right" generalization.
 
 \item \textbf{Another warning:} In the following, we will often formulate
 results over a ring which we will call $\mathbf{Z}$. The letter $\mathbf{Z}$
@@ -5953,11 +5961,11 @@ $\mathbb{Z}$ of integers.
 
 We begin this section with a construction similar to the construction of the
 Adams operations in Section 9. The goal of this construction is to find, for
-every power series $\varphi\in1+\mathbf{Z}\left[  \left[  t\right]  \right]
-^{+}$ with constant term equal to $1$ (where $\mathbf{Z}$ is a ring - in most
-cases, it will be the ring $\mathbb{Z}$ of integers), a polynomial
-$\operatorname*{Td}_{\varphi,j}\in\mathbf{Z}\left[  \alpha_{1},\alpha
-_{2},...,\alpha_{j}\right]  $ for every $j\in\mathbb{N}$ such that
+every ring $\mathbf{Z}$ (in most cases, this ring will be the ring
+$\mathbb{Z}$ of integers) and every power series $\varphi\in1+\mathbf{Z}%
+\left[  \left[  t\right]  \right]  ^{+}$ with constant term equal to $1$, a
+polynomial $\operatorname*{Td}_{\varphi,j}\in\mathbf{Z}\left[  \alpha
+_{1},\alpha_{2},...,\alpha_{j}\right]  $ for every $j\in\mathbb{N}$ such that
 \[
 \prod\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)  =\sum_{j\in\mathbb{N}%
 }\operatorname*{Td}\nolimits_{\varphi,j}\left(  X_{1},X_{2},...,X_{j}\right)
@@ -5998,6 +6006,10 @@ In other words, we define a map $\operatorname*{Coeff}\nolimits_{i}:R\left[
 Two remarks about this definition:
 
 \begin{itemize}
+\item The definition of $\operatorname*{Coeff}\nolimits_{i}$ that we just gave
+clearly extends the definition of $\operatorname*{Coeff}\nolimits_{i}$ given
+in Exercise 9.2.
+
 \item The only difference between the map $\operatorname*{Coeff}\nolimits_{i}$
 just defined and the map $\operatorname*{coeff}\nolimits_{i}$ defined in
 Exercise 6.5 is that they have different domains (namely, the map
@@ -9353,9 +9365,9 @@ makes this possible is the following generalization of Proposition 10.11:
 $K$ is a $\mathbf{Z}$-algebra. Let $\mathbf{Z}^{\prime}$ be a $\mathbf{Z}%
 $-algebra. Let $\varphi\in1+\mathbf{Z}^{\prime}\left[  \left[  t\right]
 \right]  ^{+}$ be a power series with constant term equal to $1$. Let
-$\iota:K\rightarrow K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$ be canonical map
-(mapping every $\xi\in K$ to $\xi\otimes1\in K\otimes_{\mathbf{Z}}%
-\mathbf{Z}^{\prime}$). Then, every $x\in K$ satisfies $\operatorname*{td}%
+$\iota:K\rightarrow K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$ be the canonical
+map (mapping every $\xi\in K$ to $\xi\otimes1\in K\otimes_{\mathbf{Z}%
+}\mathbf{Z}^{\prime}$). Then, every $x\in K$ satisfies $\operatorname*{td}%
 _{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)  =\mathfrak{Todd}_{\varphi
 }\left(  \iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(
 x\right)  \right)  \right)  $.
@@ -12562,18 +12574,18 @@ multiplicative unity $1$ of $K$. So it only remains to prove that any two
 power series $u\in\Lambda\left(  K\right)  $ and $v\in\Lambda\left(  K\right)
 $ satisfy%
 \begin{equation}
-\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
+\left(  -1\right)  ^{i}\operatorname*{Coeff}\nolimits_{i}\left(  -T\dfrac
 {d}{dT}\log\left(  u\widehat{+}v\right)  \right)  =\left(  -1\right)
-^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log u\right)
-+\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
+^{i}\operatorname*{Coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log u\right)
++\left(  -1\right)  ^{i}\operatorname*{Coeff}\nolimits_{i}\left(  -T\dfrac
 {d}{dT}\log v\right)  \label{9.2.plus}%
 \end{equation}
 and%
 \begin{equation}
-\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
+\left(  -1\right)  ^{i}\operatorname*{Coeff}\nolimits_{i}\left(  -T\dfrac
 {d}{dT}\log\left(  u\widehat{\cdot}v\right)  \right)  =\left(  -1\right)
-^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log u\right)
-\cdot\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
+^{i}\operatorname*{Coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log u\right)
+\cdot\left(  -1\right)  ^{i}\operatorname*{Coeff}\nolimits_{i}\left(
 -T\dfrac{d}{dT}\log v\right)  . \label{9.2.times}%
 \end{equation}
 This needs to be verified for $u\in1+K\left[  T\right]  ^{+}$ and
@@ -12581,7 +12593,7 @@ $v\in1+K\left[  T\right]  ^{+}$ only (since the operations $\widehat{+}$ and
 $\widehat{\cdot}$ and the mapping%
 \begin{align*}
 \Lambda\left(  K\right)   &  \rightarrow K,\\
-u  &  \mapsto\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
+u  &  \mapsto\left(  -1\right)  ^{i}\operatorname*{Coeff}\nolimits_{i}\left(
 -T\dfrac{d}{dT}\log u\right)
 \end{align*}
 are continuous (where the topology on $K$ can be chosen arbitrarily), and
@@ -12590,7 +12602,7 @@ $1+K\left[  T\right]  ^{+}$ is a dense subset of $1+K\left[  \left[  T\right]
 are slightly cheating: This argument works only if the topological space $K$
 is Hausdorff. Thus we are not completely free in choosing the topology on $K$.
 However, there are still enough Hausdorff topologies on $K$ (for example, the
-discrete topology) to choose from - the argument works if we take any of
+discrete topology) to choose from, and the argument works if we take any of
 them.}. So let us assume that $u\in1+K\left[  T\right]  ^{+}$ and
 $v\in1+K\left[  T\right]  ^{+}$. Then, there exists some $\left(
 \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)  \in
@@ -12598,13 +12610,15 @@ K^{\operatorname*{int}}$ such that $u=\Pi\left(  \widetilde{K}_{u},\left[
 u_{1},u_{2},...,u_{m}\right]  \right)  $ and some $\left(  \widetilde{K}%
 _{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  \in K^{\operatorname*{int}%
 }$ such that $v=\Pi\left(  \widetilde{K}_{v},\left[  v_{1},v_{2}%
-,...,v_{n}\right]  \right)  $. Then, Theorem 5.3 \textbf{(c)} says that%
+,...,v_{n}\right]  \right)  $. Then, Theorem 5.3 \textbf{(c)} yields that%
 \[
-u\widehat{\cdot}v=\Pi\left(  \widetilde{K}_{u,v},\left[  u_{i}v_{j}\mid\left(
-i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}
-\right]  \right)  .
+u\widehat{\cdot}v=\Pi\left(  \widetilde{K}_{u,v},\left[  u_{\ell}v_{j}%
+\mid\left(  \ell,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  \right]  \right)
 \]
-
+(here, we renamed the index $i$ as $\ell$ in Theorem 5.3 \textbf{(c)}, because
+we are already using the label $i$ for a fixed element of $\mathbb{N}%
+\setminus\left\{  0\right\}  $).
 
 Now,%
 \[
@@ -12641,34 +12655,34 @@ u_{\tau}T\right)  ^{i}\\
 \left\{  0\right\}  }\left(  -1\right)  ^{i}\sum\limits_{\tau=1}^{m}u_{\tau
 }^{i}T^{i},
 \end{align*}
-so that $\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log
-u\right)  =\left(  -1\right)  ^{i}\sum\limits_{\tau=1}^{m}u_{\tau}^{i}$. In
-other words, $\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
--T\dfrac{d}{dT}\log u\right)  =\sum\limits_{\tau=1}^{m}u_{\tau}^{i}$.
-Similarly, $v=\Pi\left(  \widetilde{K}_{v},\left[  v_{1},v_{2},...,v_{n}%
-\right]  \right)  $ yields $\left(  -1\right)  ^{i}\operatorname*{coeff}%
-\nolimits_{i}\left(  -T\dfrac{d}{dT}\log v\right)  =\sum\limits_{\sigma=1}%
-^{n}v_{\sigma}^{i}$, and $u\widehat{\cdot}v=\Pi\left(  \widetilde{K}%
-_{u,v},\left[  u_{i}v_{j}\mid\left(  i,j\right)  \in\left\{
-1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right]  \right)  $
-yields $\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
--T\dfrac{d}{dT}\log\left(  u\widehat{\cdot}v\right)  \right)  =\sum
-\limits_{\tau=1}^{m}\sum\limits_{\sigma=1}^{n}\left(  u_{\tau}v_{\sigma
-}\right)  ^{i}$. Thus,%
+so that $\operatorname*{Coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log
+u\right)  =\left(  -1\right)  ^{i}\sum\limits_{\tau=1}^{m}u_{\tau}^{i}$
+(because $i\in\mathbb{N}\setminus\left\{  0\right\}  $). In other words,
+$\left(  -1\right)  ^{i}\operatorname*{Coeff}\nolimits_{i}\left(  -T\dfrac
+{d}{dT}\log u\right)  =\sum\limits_{\tau=1}^{m}u_{\tau}^{i}$. Similarly,
+$v=\Pi\left(  \widetilde{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)
+$ yields $\left(  -1\right)  ^{i}\operatorname*{Coeff}\nolimits_{i}\left(
+-T\dfrac{d}{dT}\log v\right)  =\sum\limits_{\sigma=1}^{n}v_{\sigma}^{i}$, and
+$u\widehat{\cdot}v=\Pi\left(  \widetilde{K}_{u,v},\left[  u_{\ell}v_{j}%
+\mid\left(  \ell,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  \right]  \right)  $ yields $\left(  -1\right)
+^{i}\operatorname*{Coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log\left(
+u\widehat{\cdot}v\right)  \right)  =\sum\limits_{\tau=1}^{m}\sum
+\limits_{\sigma=1}^{n}\left(  u_{\tau}v_{\sigma}\right)  ^{i}$. Thus,%
 \begin{align*}
-\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
+\left(  -1\right)  ^{i}\operatorname*{Coeff}\nolimits_{i}\left(  -T\dfrac
 {d}{dT}\log\left(  u\widehat{\cdot}v\right)  \right)   &  =\sum\limits_{\tau
 =1}^{m}\sum\limits_{\sigma=1}^{n}\left(  u_{\tau}v_{\sigma}\right)  ^{i}%
 =\sum\limits_{\tau=1}^{m}\sum\limits_{\sigma=1}^{n}u_{\tau}^{i}v_{\sigma}%
 ^{i}\\
 &  =\underbrace{\sum\limits_{\tau=1}^{m}u_{\tau}^{i}}_{=\left(  -1\right)
-^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log u\right)
+^{i}\operatorname*{Coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log u\right)
 }\cdot\underbrace{\sum\limits_{\sigma=1}^{n}v_{\sigma}^{i}}_{=\left(
--1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log
+-1\right)  ^{i}\operatorname*{Coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log
 v\right)  }\\
-&  =\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
+&  =\left(  -1\right)  ^{i}\operatorname*{Coeff}\nolimits_{i}\left(
 -T\dfrac{d}{dT}\log u\right)  \cdot\left(  -1\right)  ^{i}%
-\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log v\right)  ,
+\operatorname*{Coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log v\right)  ,
 \end{align*}
 and (\ref{9.2.times}) is thus proven. Similarly we can show (\ref{9.2.plus}).
 This completes the proof.
@@ -12684,17 +12698,9 @@ operation $\psi^{i}:K\rightarrow K$ is a ring homomorphism.
 This assertion is a part of Theorem 9.3 \textbf{(b)}.
 
 In order to prove Assertion $\mathcal{F}$ using Exercise 9.2 \textbf{(a)}, we
-notice that the composition of the map $\lambda_{T}:K\rightarrow\Lambda\left(
-K\right)  $ (which is a ring homomorphism, since the $\lambda$-ring $\left(
-K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is special) with the
-map%
-\begin{align*}
-\Lambda\left(  K\right)   &  \rightarrow K,\\
-u  &  \mapsto\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
--T\dfrac{d}{dT}\log u\right)
-\end{align*}
-(which is a ring homomorphism according to Exercise 9.2 \textbf{(a)}) is
-$\psi^{i}$ (because every $x\in K$ satisfies
+proceed as follows:
+
+Every $x\in K$ satisfies%
 \[
 \sum\limits_{i\in\mathbb{N}\setminus\left\{  0\right\}  }\psi^{i}\left(
 x\right)  T^{i}=\widetilde{\psi}_{T}\left(  x\right)  =-T\dfrac{d}{dT}%
@@ -12710,12 +12716,28 @@ x\right)  \left(  -T\right)  ^{i}=-\left(  -T\right)  \dfrac{d}{d\left(
 \]
 what rewrites as $\sum\limits_{i\in\mathbb{N}\setminus\left\{  0\right\}
 }\left(  -1\right)  ^{i}\psi^{i}\left(  x\right)  T^{i}=-T\dfrac{d}{dT}%
-\log\lambda_{T}\left(  x\right)  $, and thus we have $\left(  -1\right)
-^{i}\psi^{i}\left(  x\right)  =\operatorname*{coeff}\nolimits_{i}\left(
+\log\lambda_{T}\left(  x\right)  $. Hence, for every $x\in K$ and
+$i\in\mathbb{N}\setminus\left\{  0\right\}  $, we have $\left(  -1\right)
+^{i}\psi^{i}\left(  x\right)  =\operatorname*{Coeff}\nolimits_{i}\left(
 -T\dfrac{d}{dT}\log\lambda_{T}\left(  x\right)  \right)  $ and therefore
-$\psi^{i}\left(  x\right)  =\left(  -1\right)  ^{i}\operatorname*{coeff}%
+$\psi^{i}\left(  x\right)  =\left(  -1\right)  ^{i}\operatorname*{Coeff}%
 \nolimits_{i}\left(  -T\dfrac{d}{dT}\log\lambda_{T}\left(  x\right)  \right)
-$). Thus, $\psi^{i}$ is a ring homomorphism (since the composition of two ring
+$.
+
+Now fix $i\in\mathbb{N}\setminus\left\{  0\right\}  $. We have shown that
+every $x\in K$ satisfies $\psi^{i}\left(  x\right)  =\left(  -1\right)
+^{i}\operatorname*{Coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log\lambda
+_{T}\left(  x\right)  \right)  $. In other words, the map $\psi^{i}$ is the
+composition of the map $\lambda_{T}:K\rightarrow\Lambda\left(  K\right)  $
+(which is a ring homomorphism, since the $\lambda$-ring $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is special) with the map%
+\begin{align*}
+\Lambda\left(  K\right)   &  \rightarrow K,\\
+u  &  \mapsto\left(  -1\right)  ^{i}\operatorname*{Coeff}\nolimits_{i}\left(
+-T\dfrac{d}{dT}\log u\right)
+\end{align*}
+(which is a ring homomorphism according to Exercise 9.2 \textbf{(a)}). Thus,
+$\psi^{i}$ is a ring homomorphism (since the composition of two ring
 homomorphisms is a ring homomorphism). This proves Assertion $\mathcal{F}$.
 
 \textit{Exercise 9.3: Hints to solution:} \textbf{(a)} We have solved Exercise
@@ -13033,15 +13055,15 @@ T\right]  \right]  ^{+}$ and $v\in1+K\left[  \left[  T\right]  \right]  ^{+}$.
 Let us work with the notations of Exercise 9.2. For every $i\in\mathbb{N}%
 \setminus\left\{  0\right\}  $, we have
 \begin{align*}
-\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log\left(
-uv\right)  \right)   &  =\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
+\operatorname*{Coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log\left(
+uv\right)  \right)   &  =\operatorname*{Coeff}\nolimits_{i}\left(  -T\dfrac
 {d}{dT}\log\left(  u\widehat{+}v\right)  \right)  \ \ \ \ \ \ \ \ \ \ \left(
 \text{since }uv=u\widehat{+}v\right) \\
-&  =\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log u\right)
-+\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log v\right) \\
+&  =\operatorname*{Coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log u\right)
++\operatorname*{Coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log v\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{9.2.plus}), divided by }\left(
 -1\right)  ^{i}\right) \\
-&  =\operatorname*{coeff}\nolimits_{i}\left(  \left(  -T\dfrac{d}{dT}\log
+&  =\operatorname*{Coeff}\nolimits_{i}\left(  \left(  -T\dfrac{d}{dT}\log
 u\right)  +\left(  -T\dfrac{d}{dT}\log v\right)  \right)  .
 \end{align*}
 In other words, the coefficients of the power series $-T\dfrac{d}{dT}%
@@ -13558,7 +13580,7 @@ and%
 ^{M}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{i}\right)  .
 \]
 Since $\psi=\Phi_{M+1}$, we have $\operatorname*{Coeff}\nolimits_{0}%
-\psi=\operatorname*{Coeff}\nolimits_{0}\Phi_{M+1}=1$ (because
+\psi=\operatorname*{Coeff}\nolimits_{0}\left(  \Phi_{M+1}\right)  =1$ (because
 $\operatorname*{Coeff}\nolimits_{0}\left(  \Phi_{i}\right)  =1$ for every
 $i\in\left\{  1,2,...,m\right\}  $). On the other hand, (\ref{10.1.sol.0})
 (applied to $n=1$) yields%
@@ -13570,12 +13592,13 @@ _{k=0}^{1}\operatorname*{Coeff}\nolimits_{k}\varphi\cdot\operatorname*{Coeff}%
 }+\underbrace{\operatorname*{Coeff}\nolimits_{1}\varphi}_{=\sum\limits_{i=1}%
 ^{M}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{i}\right)  }%
 \cdot\underbrace{\operatorname*{Coeff}\nolimits_{0}\psi}_{=1}\\
-&  =1\cdot\operatorname*{Coeff}\nolimits_{1}\Phi_{M+1}+\sum\limits_{i=1}%
-^{M}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{i}\right)  \cdot1\\
-&  =\operatorname*{Coeff}\nolimits_{1}\Phi_{M+1}+\sum\limits_{i=1}%
-^{M}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{i}\right)  =\sum
-\limits_{i=1}^{M+1}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{i}\right)
-.
+&  =1\cdot\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{M+1}\right)
++\sum\limits_{i=1}^{M}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi
+_{i}\right)  \cdot1\\
+&  =\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{M+1}\right)
++\sum\limits_{i=1}^{M}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi
+_{i}\right)  =\sum\limits_{i=1}^{M+1}\operatorname*{Coeff}\nolimits_{1}\left(
+\Phi_{i}\right)  .
 \end{align*}
 Since $\varphi\psi=\prod\limits_{i=1}^{M+1}\Phi_{i}$, this rewrites as
 $\operatorname*{Coeff}\nolimits_{1}\left(  \prod\limits_{i=1}^{M+1}\Phi
@@ -13642,8 +13665,8 @@ x\right)  .
 This proves Proposition 10.29.
 
 \textit{Proof of Proposition 10.30.} Let $\iota:K\rightarrow K\otimes
-_{\mathbf{Z}}\mathbf{Z}^{\prime}$ be canonical map (mapping every $\xi\in K$
-to $\xi\otimes1\in K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$). Proposition
+_{\mathbf{Z}}\mathbf{Z}^{\prime}$ be the canonical map (mapping every $\xi\in
+K$ to $\xi\otimes1\in K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$). Proposition
 10.29 (applied to $\varphi=1+ut$) yields%
 \begin{align*}
 \operatorname*{td}\nolimits_{1+ut,T,\mathbf{Z}^{\prime}}\left(  x\right)   &
@@ -13652,8 +13675,8 @@ to $\xi\otimes1\in K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$). Proposition
 \nolimits_{uT}}_{\substack{=\operatorname*{ev}\nolimits_{\left(  1\otimes
 u\right)  T}\\\text{(since }uT=\left(  1\otimes u\right)  T\\\text{in }\left(
 K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[  \left[  T\right]
-\right]  }}\left(  \iota\left[  \left[  T\right]  \right]  \left(  \lambda
-_{T}\left(  x\right)  \right)  \right) \\
+\right]  \text{)}}}\left(  \iota\left[  \left[  T\right]  \right]  \left(
+\lambda_{T}\left(  x\right)  \right)  \right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -13799,15 +13822,16 @@ _{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)  =\lambda_{T}\left(
 x+y\right)  $ (since $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
 }\right)  $ is a $\lambda$-ring).
 
-Let $\iota:K\rightarrow K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$ be canonical
-map (mapping every $\xi\in K$ to $\xi\otimes1\in K\otimes_{\mathbf{Z}%
-}\mathbf{Z}^{\prime}$). Then, Proposition 10.29 yields $\operatorname*{td}%
-_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)  =\mathfrak{Todd}_{\varphi
-}\left(  \iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(
-x\right)  \right)  \right)  $. Proposition 10.29 (applied to $y$ instead of
-$x$) yields $\operatorname*{td}_{\varphi,T,\mathbf{Z}^{\prime}}\left(
-y\right)  =\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]
-\right]  \left(  \lambda_{T}\left(  y\right)  \right)  \right)  $. Hence,%
+Let $\iota:K\rightarrow K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$ be the
+canonical map (mapping every $\xi\in K$ to $\xi\otimes1\in K\otimes
+_{\mathbf{Z}}\mathbf{Z}^{\prime}$). Then, Proposition 10.29 yields
+$\operatorname*{td}_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)
+=\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]  \right]
+\left(  \lambda_{T}\left(  x\right)  \right)  \right)  $. Proposition 10.29
+(applied to $y$ instead of $x$) yields $\operatorname*{td}_{\varphi
+,T,\mathbf{Z}^{\prime}}\left(  y\right)  =\mathfrak{Todd}_{\varphi}\left(
+\iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(  y\right)
+\right)  \right)  $. Hence,%
 \begin{align*}
 &  \underbrace{\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}%
 }\left(  x\right)  }_{=\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[
@@ -13831,7 +13855,7 @@ p=\iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(  x\right)
 \lambda_{T}\left(  y\right)  \right)  \right) \\
 &  =\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]  \right]
 \left(  \lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)
-\right)  \right)
+\right)  \right)  .
 \end{align*}
 Proposition 10.29 (applied to $x+y$ instead of $x$) yields%
 \[
@@ -13922,8 +13946,8 @@ _{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $ is a homomorphism of additive
 groups. Corollary 10.35 is proven.
 
 \textit{Proof of Proposition 10.36.} Let $\iota:K\rightarrow K\otimes
-_{\mathbf{Z}}\mathbf{Z}^{\prime}$ be canonical map (mapping every $\xi\in K$
-to $\xi\otimes1\in K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$). Then,
+_{\mathbf{Z}}\mathbf{Z}^{\prime}$ be the canonical map (mapping every $\xi\in
+K$ to $\xi\otimes1\in K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$). Then,
 $\iota\left[  \left[  T\right]  \right]  \left(  1+uT\right)  =1+\left(
 u\otimes1\right)  T$.
 
