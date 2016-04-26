@@ -10,7 +10,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, October 28, 2011 12:48:25}
+%TCIDATA{LastRevised=Friday, October 28, 2011 15:24:52}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
@@ -4414,7 +4414,8 @@ _{3}+2\alpha_{2}^{2}-4\alpha_{4}.
 
 
 There are easier ways to compute the $N_{j}$, however. For example, Corollary
-9.7 gives a recurrent formula.
+9.7 gives a recurrent formula, and Exercise 9.6 \textbf{(c)} gives an explicit
+determinantal one.
 
 \subsection{Definition of Adams operations}
 
@@ -4756,6 +4757,8 @@ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
 \psi^{j}\left(  u_{1}+u_{2}+...+u_{m}\right)  =u_{1}^{j}+u_{2}^{j}%
 +...+u_{m}^{j}.
 \]
+
+
 
 \end{quote}
 
@@ -5629,6 +5632,89 @@ every $j\in\mathbb{N}\diagdown\left\{  0\right\}  $.
 [This shows that at least part of Theorem 9.3 \textbf{(b)} does not require
 the $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
 }\right)  $ to be special.]
+
+\textit{Exercise 9.6.} In this exercise, we are going to view $\mathbb{Z}%
+\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $ as a subring of
+$\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{n}\right]  $ for any two
+$m\in\mathbb{N}$ and $n\in\mathbb{N}$ satisfying $m\leq n$. Thus, the
+polynomial $N_{m}\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
+_{m}\right]  $ automatically becomes an element of $\mathbb{Z}\left[
+\alpha_{1},\alpha_{2},...,\alpha_{n}\right]  $ whenever $m\leq n$.
+
+\textbf{(a)} Prove that
+\[
+n\alpha_{n}=\sum_{i=1}^{n}\left(  -1\right)  ^{i-1}\alpha_{n-i}N_{i}\text{ in
+}\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{n}\right]
+\ \ \ \ \ \ \ \ \ \ \text{for every }n\in\mathbb{N}\text{.}%
+\]
+Here, $\alpha_{0}$ is to be understood as $1$.
+
+\textbf{(b)} Let $n\in\mathbb{N}$. Let $A_{n}=\left(  a_{i,j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2}%
+,...,\alpha_{n}\right]  ^{n\times n}$ be the matrix defined by%
+\[
+a_{i,j}=\left\{
+\begin{array}
+[c]{c}%
+N_{i-j+1},\text{ if }i\geq j;\\
+i,\text{ if }i=j-1;\\
+0,\text{ if }i<j-1
+\end{array}
+\right.  .
+\]
+Prove that $n!\alpha_{n}=\det A_{n}$.
+
+[The matrix $A_{n}$ has the following form:%
+\[
+A_{n}=\left(
+\begin{array}
+[c]{cccccc}%
+N_{1} & 1 & 0 & \cdots & 0 & 0\\
+N_{2} & N_{1} & 2 & \cdots & 0 & 0\\
+N_{3} & N_{2} & N_{1} & \cdots & 0 & 0\\
+\vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
+N_{n-1} & N_{n-2} & N_{n-3} & \cdots & N_{1} & n-1\\
+N_{n} & N_{n-1} & N_{n-2} & \cdots & N_{2} & N_{1}%
+\end{array}
+\right)  .
+\]
+]
+
+\textbf{(c)} Let $n\in\mathbb{N}$. Let $B_{n}=\left(  b_{i,j}\right)  _{1\leq
+i\leq n,\ 1\leq j\leq n}\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2}%
+,...,\alpha_{n}\right]  ^{n\times n}$ be the matrix defined by%
+\[
+b_{i,j}=\left\{
+\begin{array}
+[c]{c}%
+i\alpha_{i},\text{ if }j=1;\\
+\alpha_{i-j+1},\text{ if }i\geq j>1;\\
+1,\text{ if }i=j-1;\\
+0,\text{ if }i<j-1
+\end{array}
+\right.  .
+\]
+Prove that $N_{n}=\det B_{n}$, where we define $N_{0}$ to mean $1$.
+
+[The matrix $B_{n}$ has the following form:%
+\[
+B_{n}=\left(
+\begin{array}
+[c]{cccccc}%
+\alpha_{1} & 1 & 0 & \cdots & 0 & 0\\
+2\alpha_{2} & \alpha_{1} & 1 & \cdots & 0 & 0\\
+3\alpha_{3} & \alpha_{2} & \alpha_{1} & \cdots & 0 & 0\\
+\vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
+\left(  n-1\right)  \alpha_{n-1} & \alpha_{n-2} & \alpha_{n-3} & \cdots &
+\alpha_{1} & 1\\
+n\alpha_{n} & \alpha_{n-1} & \alpha_{n-2} & \cdots & \alpha_{2} & \alpha_{1}%
+\end{array}
+\right)  .
+\]
+]
+
+\textbf{(d)} Derive the results of Exercise 9.3 from Exercise 9.6
+\textbf{(a)}, \textbf{(b)}, \textbf{(c)}.
 
 \bigskip
 \end{quotation}
@@ -8638,6 +8724,8 @@ elements of $K$. Then,%
 =\prod\limits_{i=1}^{m}\varphi\left(  u_{i}T\right)  .
 \]
 
+
+
 \end{quote}
 
 \textit{Proof of Theorem 10.27.} By Corollary 10.23, we know that
@@ -9134,8 +9222,6 @@ we have%
 ^{\prime}}\left(  x\right)  =\prod\limits_{i=1}^{m}\operatorname*{td}%
 \nolimits_{\varphi_{i},T,\mathbf{Z}^{\prime}}\left(  x\right)  .
 \]
-
-
 
 \end{quote}
 
@@ -10689,8 +10775,8 @@ T-p_{i}\right)  \text{ in }K_{Q}^{\prime}\left[  T\right]
 \right)  \label{5.1.sol.1}%
 \end{equation}
 (this follows from Exercise 5.1, applied to $K^{\prime}$, $Q$ and $N-1$
-instead of $K$, $Q$ and $n$\ \ \ \ \footnote{In fact, we are allowed to apply
-Exercise 5.1 to $K^{\prime}$, $Q$ and $N-1$ instead of $K$, $Q$ and $n$,
+instead of $K$, $P$ and $n$\ \ \ \ \footnote{In fact, we are allowed to apply
+Exercise 5.1 to $K^{\prime}$, $Q$ and $N-1$ instead of $K$, $P$ and $n$,
 because we assumed that the assertion of Exercise 5.1 is true for $n=N-1$.}).
 
 Let $K$ be a ring, and let $P\in K\left[  T\right]  $ be a monic polynomial
@@ -12025,6 +12111,135 @@ additive groups for every $j\in\mathbb{N}\diagdown\left\{  0\right\}  $.
 
 \textit{Proof.} This follows from the 3rd and 4th steps. This completes the
 5th step and thus solves the problem.
+
+\textit{Exercise 9.6:} \textit{Hints to solution:} \textbf{(a)} Corollary 9.7
+yields%
+\[
+n\alpha_{n}=\sum\limits_{j=1}^{n}\left(  -1\right)  ^{j-1}\alpha_{n-j}%
+N_{j}\left(  \alpha_{1},\alpha_{2},...,\alpha_{j}\right)  .
+\]
+Since we identify the polynomial $N_{j}\left(  \alpha_{1},\alpha
+_{2},...,\alpha_{j}\right)  $ with the polynomial $N_{j}$ (because we view the
+polynomial ring $\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
+_{j}\right]  $ as a subring of $\mathbb{Z}\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{n}\right]  $), this becomes%
+\[
+n\alpha_{n}=\sum\limits_{j=1}^{n}\left(  -1\right)  ^{j-1}\alpha
+_{n-j}\underbrace{N_{j}\left(  \alpha_{1},\alpha_{2},...,\alpha_{j}\right)
+}_{=N_{j}}=\sum\limits_{j=1}^{n}\left(  -1\right)  ^{j-1}\alpha_{n-j}%
+N_{j}=\sum_{i=1}^{n}\left(  -1\right)  ^{i-1}\alpha_{n-i}N_{i}%
+\]
+(here, we renamed the index $j$ as $i$). This solves Exercise 9.6 \textbf{(a)}.
+
+\textbf{(b), (c)} To obtain a solution to Exercises 9.6 \textbf{(b)} and
+\textbf{(c)}, we only have to make the following changes to the solution to
+Exercises 9.3 \textbf{(b)} and \textbf{(c)}:
+
+\begin{itemize}
+\item Replace every occurence of $\lambda^{\ell}\left(  x\right)  $ (where
+$\ell$ is any nonnegative integer) by $\alpha_{\ell}$.
+
+\item Replace every occurence of $\psi^{\ell}\left(  x\right)  $ (where $\ell$
+is any nonnegative integer) by $N_{\ell}$.
+
+\item Replace the equalities $\lambda^{1}\left(  x\right)  =x$ and $\psi
+^{1}\left(  x\right)  =x$ by $\alpha_{1}=\alpha_{1}$ and $N_{1}=\alpha_{1}$
+(this is very easy to prove).
+
+\item Replace every reference to Exercise 9.3 \textbf{(a)} by a reference to
+Exercise 9.6 \textbf{(a)}.
+\end{itemize}
+
+This solves Exercises 9.6 \textbf{(b)} and \textbf{(c)}.
+
+\textbf{(d)} Let $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
+}\right)  $ be a $\lambda$-ring. Let $x\in K$. Let $n\in\mathbb{N}$. By the
+universal property of a polynomial ring, there exists a $\mathbb{Z}$-algebra
+homomorphism $\varrho:\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
+_{n}\right]  $ which maps $\alpha_{i}$ to $\lambda^{i}\left(  x\right)  $ for
+every $i\in\left\{  1,2,...,n\right\}  $. Consider this homomorphism $\varrho
+$. By its construction, this homomorphism $\varrho$ maps every polynomial
+$P\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{n}\right]  $ to its
+value $P\left(  \lambda^{1}\left(  x\right)  ,\lambda^{2}\left(  x\right)
+,...,\lambda^{n}\left(  x\right)  \right)  $.
+
+Every $i\in\left\{  0,1,...,n\right\}  $ satisfies
+\begin{equation}
+\varrho\left(  \alpha_{i}\right)  =\lambda^{i}\left(  x\right)
+\ \ \ \ \ \ \ \ \ \ \text{and}\ \ \ \ \ \ \ \ \ \ \varrho\left(  N_{i}\right)
+=\psi^{i}\left(  x\right)  . \label{9.6.sol.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{9.6.sol.1}).} We distinguish between two
+cases:
+\par
+\textit{Case 1:} We have $i=0$.
+\par
+\textit{Case 2:} We have $i>0$.
+\par
+First consider Case 1: In this case, $\alpha_{i}=\alpha_{0}=1$, $\lambda
+^{i}\left(  x\right)  =\lambda^{0}\left(  x\right)  =1$, $\psi^{i}\left(
+x\right)  =\psi^{0}\left(  x\right)  =1$ and $N_{i}=N_{0}=1$. Also,
+$\varrho\left(  1\right)  =1$ (since $\varrho$ is a $\mathbb{Z}$-algebra
+homomorphism). Thus, $\varrho\left(  \underbrace{\alpha_{i}}_{=1}\right)
+=\varrho\left(  1\right)  =1=\lambda^{i}\left(  x\right)  $ and $\varrho
+\left(  \underbrace{N_{i}}_{=1}\right)  =\varrho\left(  1\right)  =1=\psi
+^{i}\left(  x\right)  $.
+\par
+We have thus proven (\ref{9.6.sol.1}) in Case 1.
+\par
+Now let us consider Case 2: In this case, $i>0$ and $i\in\left\{
+0,1,...,n\right\}  $, so that $i\in\left\{  1,2,...,n\right\}  $. Hence, by
+the definition of $\varrho$, we know that $\varrho$ maps $\alpha_{i}$ to
+$\lambda^{i}\left(  x\right)  $. In other words, $\varrho\left(  \alpha
+_{i}\right)  =\lambda^{i}\left(  x\right)  $. Besides, we know that $\varrho$
+maps every polynomial $P\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2}%
+,...,\alpha_{n}\right]  $ to its value $P\left(  \lambda^{1}\left(  x\right)
+,\lambda^{2}\left(  x\right)  ,...,\lambda^{n}\left(  x\right)  \right)  $.
+Hence, $\varrho$ maps $N_{i}$ to $N_{i}\left(  \lambda^{1}\left(  x\right)
+,\lambda^{2}\left(  x\right)  ,...,\lambda^{n}\left(  x\right)  \right)
+=\psi^{i}\left(  x\right)  $. In other words, $\varrho\left(  N_{i}\right)
+=\psi^{i}\left(  x\right)  $.
+\par
+We have thus proven (\ref{9.6.sol.1}) in Case 2.
+\par
+So we have proven (\ref{9.6.sol.1}) in both possible cases, qed.}
+
+Now, let us derive Exercise 9.3 \textbf{(a)} from Exercise 9.6 \textbf{(a)}:
+According to Exercise 9.6 \textbf{(a)}, the equality%
+\[
+n\alpha_{n}=\sum_{i=1}^{n}\left(  -1\right)  ^{i-1}\alpha_{n-i}N_{i}%
+\]
+holds. Applying $\varrho$ to both sides of the equation, we get $\varrho
+\left(  n\alpha_{n}\right)  =\varrho\left(  \sum\limits_{i=1}^{n}\left(
+-1\right)  ^{i-1}\alpha_{n-i}N_{i}\right)  $. Since%
+\begin{align*}
+\varrho\left(  n\alpha_{n}\right)   &  =n\underbrace{\varrho\left(  \alpha
+_{n}\right)  }_{=\lambda^{n}\left(  x\right)  \text{ (by (\ref{9.6.sol.1}))}%
+}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\varrho\text{ is a }\mathbb{Z}%
+\text{-algebra homomorphism}\right) \\
+&  =n\lambda^{n}\left(  x\right)
+\end{align*}
+and%
+\begin{align*}
+\varrho\left(  \sum\limits_{i=1}^{n}\left(  -1\right)  ^{i-1}\alpha_{n-i}%
+N_{i}\right)   &  =\sum\limits_{i=1}^{n}\left(  -1\right)  ^{i-1}%
+\underbrace{\varrho\left(  \alpha_{n-i}\right)  }_{=\lambda^{n-i}\left(
+x\right)  \text{ (by (\ref{9.6.sol.1}))}}\underbrace{\varrho\left(
+N_{i}\right)  }_{=\psi^{i}\left(  x\right)  \text{ (by (\ref{9.6.sol.1}))}%
+}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\varrho\text{ is a }\mathbb{Z}%
+\text{-algebra homomorphism}\right) \\
+&  =\sum\limits_{i=1}^{n}\left(  -1\right)  ^{i-1}\lambda^{n-i}\left(
+x\right)  \psi^{i}\left(  x\right)  ,
+\end{align*}
+this becomes%
+\[
+n\lambda^{n}\left(  x\right)  =\sum\limits_{i=1}^{n}\left(  -1\right)
+^{i-1}\lambda^{n-i}\left(  x\right)  \psi^{i}\left(  x\right)  .
+\]
+Thus we have proved Exercise 9.3 \textbf{(a)} by means of Exercise 9.6
+\textbf{(a)}. Similarly, we can derive Exercise 9.3 \textbf{(b)} and
+\textbf{(c)} from Exercise 9.6 \textbf{(b)} and \textbf{(c)} (again, by
+applying $\varrho$).
 
 \subsection{To Section 10}
 
