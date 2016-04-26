@@ -10,7 +10,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, November 01, 2012 01:12:36}
+%TCIDATA{LastRevised=Sunday, December 30, 2012 01:49:29}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
@@ -25,7 +25,7 @@
 
 \title{\fbox{$\lambda$\textbf{-rings: Definitions and basic properties}}}
 \author{Darij Grinberg}
-\date{Version 0.0.16, last revised 1 Nov 2012}
+\date{Version 0.0.17, last revised 29 Dec 2012}
 \maketitle
 \tableofcontents
 
@@ -64,11 +64,18 @@ however, some do not.
 
 \subsection*{What is this?}
 
-These notes were written for a seminar talk. They try to cover some of the
-most important properties of $\lambda$-rings with proofs. At the moment, most
-of what is written here is also in Knutson's book [2], albeit sometimes with a
-different proof. In future I plan to add some results from Fulton/Lang [1]
-with better proofs.
+These notes try to cover some of the most important properties of $\lambda
+$-rings with proofs.
+
+They were originally meant to accompany a talk at an undergraduate seminar,
+but quickly grew out of proportion to what could fit into a talk. Still they
+lack in anything really deep. At the moment, most of what is written here,
+except for the Todd homomorphism section, is also in Knutson's book [2],
+albeit sometimes with a different proof. Part of the plan was to add some
+results from Fulton/Lang [1] with better proofs, but this is not currently my
+short-term objective, given that I don't understand much of [1] to begin with.
+Most of the notes was written independently of Yau's 2010 text [10], but
+inevitably intersects with it.
 
 \section*{0. Notation and conventions}
 
@@ -442,7 +449,7 @@ canonical inclusion $L\rightarrow K$ is a $\lambda$-ring homomorphism.
 
 \subsection{An alternative characterization}
 
-First, we give an alternative characterization of $\lambda$-rings:
+We will now give an alternative characterization of $\lambda$-rings:
 
 \begin{quote}
 \textbf{Theorem 2.1.} Let $K$ be a ring. Let $\lambda^{i}:K\rightarrow K$ be a
@@ -494,19 +501,24 @@ every $\sum\limits_{i\in\mathbb{N}}a_{i}T^{i}\in K\left[  \left[  T\right]
 \right]  $ with $a_{i}\in K$).
 
 Then, $f$ is a $\lambda$-ring homomorphism if and only if $\mu_{T}\circ
-f=f\left[  \left[  T\right]  \right]  \circ\lambda_{T}.$
+f=f\left[  \left[  T\right]  \right]  \circ\lambda_{T}$.
+
+\textbf{(d)} Let $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
+}\right)  $ be a $\lambda$-ring. Then, $\lambda^{i}\left(  0\right)  =0$ for
+every positive integer $i$.
 \end{quote}
 
 \textit{Proof of Theorem 2.1.} \textbf{(a)} Every $x\in K$ and every $y\in K$
 satisfy%
 \begin{align*}
-\lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)   &
-=\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  x\right)  T^{i}\cdot
-\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  y\right)  T^{i}%
-\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\lambda_{T}\left(  x\right)
+\lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)   &  =\left(
+\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  x\right)  T^{i}\right)
+\cdot\left(  \sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  y\right)
+T^{i}\right)  \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\lambda_{T}\left(  x\right)
 =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  x\right)  T^{i}\text{ and
 }\lambda_{T}\left(  y\right)  =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
-y\right)  T^{i}\right) \\
+y\right)  T^{i}\right)  \\
 &  =\sum_{k\in\mathbb{N}}\sum_{i=0}^{k}\lambda^{i}\left(  x\right)
 \lambda^{k-i}\left(  y\right)  \cdot T^{k}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the product of two
@@ -517,49 +529,147 @@ and%
 \lambda_{T}\left(  x+y\right)  =\sum_{i\in\mathbb{N}}\lambda^{i}\left(
 x+y\right)  T^{i}=\sum_{k\in\mathbb{N}}\lambda^{k}\left(  x+y\right)  T^{k}.
 \]
-Hence, $\lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)
-=\lambda_{T}\left(  x+y\right)  $ is equivalent to $\sum\limits_{k\in
-\mathbb{N}}\sum\limits_{i=0}^{k}\lambda^{i}\left(  x\right)  \lambda
-^{k-i}\left(  y\right)  \cdot T^{k}=\sum\limits_{k\in\mathbb{N}}\lambda
-^{k}\left(  x+y\right)  T^{k}$, which, in turn, means that every
+Hence, the equation $\lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(
+y\right)  =\lambda_{T}\left(  x+y\right)  $ is equivalent to $\sum
+\limits_{k\in\mathbb{N}}\sum\limits_{i=0}^{k}\lambda^{i}\left(  x\right)
+\lambda^{k-i}\left(  y\right)  \cdot T^{k}=\sum\limits_{k\in\mathbb{N}}%
+\lambda^{k}\left(  x+y\right)  T^{k}$, which, in turn, means that every
 $k\in\mathbb{N}$ satisfies $\sum\limits_{i=0}^{k}\lambda^{i}\left(  x\right)
 \lambda^{k-i}\left(  y\right)  =\lambda^{k}\left(  x+y\right)  $, and this is
 exactly the property (\ref{lambda1}) from the definition of a $\lambda$-ring.
-Thus, $\lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)
+Thus, we have $\lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)
 =\lambda_{T}\left(  x+y\right)  $ for every $x\in K$ and every $y\in K$ if and
 only if $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is
 a $\lambda$-ring. This proves Theorem 2.1 \textbf{(a)}.
 
-\textbf{(b)} Part \textbf{(a)} tells us that $\lambda_{T}\left(  x\right)
-\cdot\lambda_{T}\left(  y\right)  =\lambda_{T}\left(  x+y\right)  $ for every
-$x\in K$ and every $y\in K$. Applied to $x=y=0,$ this takes the form
-$\lambda_{T}\left(  0\right)  \cdot\lambda_{T}\left(  0\right)  =\lambda
-_{T}\left(  0\right)  ,$ what yields $\lambda_{T}\left(  0\right)  =1$ (since
+\textbf{(b)} Theorem 2.1 \textbf{(a)} tells us that $\lambda_{T}\left(
+x\right)  \cdot\lambda_{T}\left(  y\right)  =\lambda_{T}\left(  x+y\right)  $
+for every $x\in K$ and every $y\in K$ if and only if $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring. Since we
+know that $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $
+is a $\lambda$-ring, we thus conclude that
+\begin{equation}
+\lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)  =\lambda
+_{T}\left(  x+y\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }x\in K\text{ and
+every }y\in K. \label{2.1.pf.1}%
+\end{equation}
+Applied to $x=y=0$, this rewrites as $\lambda_{T}\left(  0\right)
+\cdot\lambda_{T}\left(  0\right)  =\lambda_{T}\left(  0+0\right)  =\lambda
+_{T}\left(  0\right)  $, what yields $\lambda_{T}\left(  0\right)  =1$ (since
 $\lambda_{T}\left(  0\right)  $ is invertible in $K\left[  \left[  T\right]
-\right]  $). Now, $\lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(
-y\right)  =\lambda_{T}\left(  x+y\right)  $, applied to $y=-x$, yields
-$\lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  -x\right)
-=\underbrace{\lambda_{T}\left(  0\right)  }_{=1}$, hence $\lambda_{T}\left(
--x\right)  =\left(  \lambda_{T}\left(  x\right)  \right)  ^{-1}$, and Theorem
-2.1 \textbf{(b)} is proven.
+\right]  $).
+
+On the other hand, every $x\in K$ satisfies
+\begin{align*}
+\lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  -x\right)   &
+=\lambda_{T}\left(  0\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{2.1.pf.1}), applied to }y=-x\right) \\
+&  =1,
+\end{align*}
+hence $\lambda_{T}\left(  -x\right)  =\left(  \lambda_{T}\left(  x\right)
+\right)  ^{-1}$. Theorem 2.1 \textbf{(b)} is thus proven.
 
 \textbf{(c)} We have $\left(  \mu_{T}\circ f\right)  \left(  x\right)
 =\mu_{T}\left(  f\left(  x\right)  \right)  =\sum\limits_{i\in\mathbb{N}}%
-\mu^{i}\left(  f\left(  x\right)  \right)  T^{i}$ and $\left(  f\left[
-\left[  T\right]  \right]  \circ\lambda_{T}\right)  \left(  x\right)  =\left(
-f\left[  \left[  T\right]  \right]  \right)  \left(  \lambda_{T}\left(
-x\right)  \right)  =\left(  f\left[  \left[  T\right]  \right]  \right)
-\left(  \sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  x\right)  T^{i}\right)
-=\sum\limits_{i\in\mathbb{N}}f\left(  \lambda^{i}\left(  x\right)  \right)
-T^{i}$ for every $x\in K$. Hence, $\mu_{T}\circ f=f\left[  \left[  T\right]
-\right]  \circ\lambda_{T}$ is equivalent to $\sum\limits_{i\in\mathbb{N}}%
-\mu^{i}\left(  f\left(  x\right)  \right)  T^{i}=\sum\limits_{i\in\mathbb{N}%
-}f\left(  \lambda^{i}\left(  x\right)  \right)  T^{i}$ for every $x\in K,$
-which in turn is equivalent to $\mu^{i}\left(  f\left(  x\right)  \right)
-=f\left(  \lambda^{i}\left(  x\right)  \right)  $ for every $x\in K$ and every
+\mu^{i}\left(  f\left(  x\right)  \right)  T^{i}$ (by the definition of
+$\mu_{T}$) and $\left(  f\left[  \left[  T\right]  \right]  \circ\lambda
+_{T}\right)  \left(  x\right)  =\left(  f\left[  \left[  T\right]  \right]
+\right)  \left(  \lambda_{T}\left(  x\right)  \right)  =\left(  f\left[
+\left[  T\right]  \right]  \right)  \left(  \sum\limits_{i\in\mathbb{N}%
+}\lambda^{i}\left(  x\right)  T^{i}\right)  =\sum\limits_{i\in\mathbb{N}%
+}f\left(  \lambda^{i}\left(  x\right)  \right)  T^{i}$ for every $x\in K$.
+Hence, $\mu_{T}\circ f=f\left[  \left[  T\right]  \right]  \circ\lambda_{T}$
+is equivalent to $\sum\limits_{i\in\mathbb{N}}\mu^{i}\left(  f\left(
+x\right)  \right)  T^{i}=\sum\limits_{i\in\mathbb{N}}f\left(  \lambda
+^{i}\left(  x\right)  \right)  T^{i}$ for every $x\in K,$ which in turn is
+equivalent to $\mu^{i}\left(  f\left(  x\right)  \right)  =f\left(
+\lambda^{i}\left(  x\right)  \right)  $ for every $x\in K$ and every
 $i\in\mathbb{N}$, which in turn means that $\mu^{i}\circ f=f\circ\lambda^{i}$
 for every $i\in\mathbb{N}$, which in turn means that $f$ is a $\lambda$-ring
 homomorphism. This proves Theorem 2.1 \textbf{(c)}.
+
+\textbf{(d)} Applying the equality $\lambda_{T}\left(  x\right)
+=\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  x\right)  T^{i}$ to $x=0$, we
+obtain $\lambda_{T}\left(  0\right)  =\sum\limits_{i\in\mathbb{N}}\lambda
+^{i}\left(  0\right)  T^{i}$. But since $\lambda_{T}\left(  0\right)  =1$,
+this rewrites as $1=\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  0\right)
+T^{i}$. For every positive integer $i$, the coefficient of $T^{i}$ on the left
+hand side of this equality is $0$, while the coefficient of $T^{i}$ on the
+right hand side of this equality is $\lambda^{i}\left(  0\right)  $. Since the
+coefficients of $T^{i}$ on the two sides of an equality must be equal, this
+yields $0=\lambda^{i}\left(  0\right)  $ for every positive integer $i$. This
+proves Theorem 2.1 \textbf{(d)}.
+
+The map $\lambda_{T}$ defined in Theorem 2.1 will follow us through the whole
+theory of $\lambda$-rings. It is often easier to deal with than the maps
+$\lambda^{i}$, since (as Theorem 2.1 \textbf{(a)} and \textbf{(b)} show)
+$\lambda_{T}$ is a monoid homomorphism from $\left(  K,+\right)  $ to $\left(
+K\left[  \left[  T\right]  \right]  ,\cdot\right)  $ when $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring. Many
+properties of $\lambda$-rings are easier to write in terms of $\lambda_{T}$
+than in terms of the separate $\lambda^{i}$. We will later become acquainted
+with the notion of "special $\lambda$-rings", for which $\lambda_{T}$ is not
+only a monoid homomorphism but actually a $\lambda$-ring homomorphism (but not
+to $K\left[  \left[  T\right]  \right]  $ but to a different $\lambda$-ring
+with a new ring structure).
+
+\subsection{$\lambda$-ideals}
+
+Just as rings have ideals and Lie algebras have Lie ideals, there is a notion
+of $\lambda$-ideals defined for $\lambda$-rings. Here is one way to define them:
+
+\begin{quote}
+\textbf{Definition.} Let $\left(  K,\left(  \lambda^{i}\right)  _{i\in
+\mathbb{N}}\right)  $ be a $\lambda$-ring. Let $I$ be an ideal of the ring
+$K$. Then, $I$ is said to be a $\lambda$\textit{-ideal} of $K$ if and only if
+every $t\in I$ and every positive integer $i$ satisfy $\lambda^{i}\left(
+t\right)  \in I$.
+\end{quote}
+
+Just as rings can be factored by ideals to obtain new rings, and Lie algebras
+can be factored by Lie ideals to obtain new Lie algebras, we can factor
+$\lambda$-rings by $\lambda$-ideals and obtain new $\lambda$-rings:
+
+\begin{quote}
+\textbf{Theorem 2.2.} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. Let $I$ be a $\lambda$-ideal
+of the ring $K$. For every $z\in K$, let $\overline{z}$ denote the residue
+class of $z$ modulo $I$. (This $\overline{z}$ lies in $K\diagup I$.)
+
+\textbf{(a)} If $x\in K\diagup I$ is arbitrary, and $y\in K$ and $z\in K$ are
+two elements of $K$ satisfying $\overline{y}=x$ and $\overline{z}=x$, then
+$\overline{\lambda^{i}\left(  y\right)  }=\overline{\lambda^{i}\left(
+z\right)  }$ for every $i\in\mathbb{N}$.
+
+\textbf{(b)} For every $i\in\mathbb{N}$, define a map $\widetilde{\lambda}%
+^{i}:K\diagup I\rightarrow K\diagup I$ as follows: For every $x\in K\diagup
+I$, let $\widetilde{\lambda}^{i}\left(  x\right)  $ be defined as
+$\overline{\lambda^{i}\left(  w\right)  }$, where $w$ is an element of $K$
+satisfying $\overline{w}=x$. (This is well-defined because the value of
+$\overline{\lambda^{i}\left(  w\right)  }$ does not depend on the choice of
+$w$\ \ \ \ \footnote{In fact, any two choices of $w$ lead to the same value of
+$\overline{\lambda^{i}\left(  w\right)  }$ (this follows from Theorem 2.2
+\textbf{(a)}).}.)
+
+Then, $\left(  K\diagup I,\left(  \widetilde{\lambda}^{i}\right)
+_{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring.
+
+\textbf{(c)} The canonical projection $K\rightarrow K\diagup I$ is a $\lambda
+$-ring homomorphism.
+\end{quote}
+
+The proof of Theorem 2.2 is given in the solution of Exercise 2.3.
+
+Along with Theorem 2.2 comes the following result:
+
+\begin{quote}
+\textbf{Theorem 2.3.} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ and $\left(  L,\left(  \mu^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be two $\lambda$-rings. Let $f:K\rightarrow L$ be
+a $\lambda$-ring homomorphism. Then, $\operatorname*{Ker}f$ is a $\lambda$-ideal.
+\end{quote}
+
+The proof of Theorem 2.3 is given in the solution of Exercise 2.4.
 
 \subsection{Exercises}
 
@@ -586,6 +696,10 @@ which is closed under addition, multiplication and the maps $\lambda^{i}$.
 Assume that $0\in L$ and $1\in L$. Then, the subset $L-L$ of $K$ (this subset
 $L-L$ is defined by $L-L=\left\{  \ell-\ell^{\prime}\mid\ell\in L,\ \ell
 ^{\prime}\in L\right\}  $) is a sub-$\lambda$-ring of $K$.
+
+\textit{Exercise 2.3.} Prove Theorem 2.2.
+
+\textit{Exercise 2.4.} Prove Theorem 2.3.
 \end{quotation}
 
 \section{Examples of $\lambda$-rings}
@@ -2413,6 +2527,8 @@ Then,%
 \right)  .
 \]
 
+
+
 \end{quote}
 
 \textit{Proof of Theorem 5.3' \textbf{(d)}.} Since $L$ is a finite set used
@@ -2806,7 +2922,10 @@ group structure on $\Lambda\left(  K\right)  $ is given by $\widehat{+}$).
 every $x\in K$ satisfies $\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
 x\right)  T^{i}\in\Lambda\left(  K\right)  $) because $\lambda^{0}\left(
 x\right)  =1$ for every $x\in K$. The assertion that $\lambda_{T}$ is an
-additive group homomorphism follows from Theorem 2.1. Theorem 5.6 is thus proven.
+additive group homomorphism follows from Theorem 2.1 \textbf{(b)} (because as
+an additive group, $\Lambda\left(  K\right)  =\left(  \Lambda\left(  K\right)
+,\widehat{+}\right)  =\left(  \Lambda\left(  K\right)  ,\cdot\right)  $).
+Theorem 5.6 is thus proven.
 
 While Theorem 5.6 says that $\lambda_{T}$ is an additive group homomorphism,
 it is not in general a ring homomorphism. But for many $\lambda$-rings $K$, it
@@ -3032,6 +3151,36 @@ $m$-integral over $K$. Prove that $\alpha\beta$ is $nm$-integral over $K$.
 
 [This is a known fact, but it turns out to also be a corollary of our
 construction of the polynomials $P_{k}$ further above.]
+
+\textit{Exercise 5.5.} Let $K$ be a ring, and $I$ be an ideal of $K$. Let
+$I\left[  \left[  T\right]  \right]  $ denote the subring%
+\begin{align*}
+&  \left\{  \sum_{i\in\mathbb{N}}a_{i}T^{i}\in K\left[  \left[  T\right]
+\right]  \ \mid\ a_{i}\in I\text{ for all }i\right\} \\
+&  =\left\{  p\in K\left[  \left[  T\right]  \right]  \ \mid\ p\text{ is a
+power series with all its coefficients lying in }I\right\}
+\end{align*}
+of $K\left[  \left[  T\right]  \right]  $. Let $I\left[  \left[  T\right]
+\right]  ^{+}$ denote the subset%
+\begin{align*}
+TI\left[  \left[  T\right]  \right]   &  =\left\{  \sum_{i\in\mathbb{N}}%
+a_{i}T^{i}\in I\left[  \left[  T\right]  \right]  \ \mid\ a_{i}\in I\text{ for
+all }i,\text{ and }a_{0}=0\right\} \\
+&  =\left\{  p\in I\left[  \left[  T\right]  \right]  \ \mid\ p\text{ is a
+power series with constant term }0\right\}
+\end{align*}
+of $I\left[  \left[  T\right]  \right]  $. Consider the subset $1+I\left[
+\left[  T\right]  \right]  ^{+}$ of $1+K\left[  \left[  T\right]  \right]
+^{+}=\Lambda\left(  K\right)  $.\ \ \ \ \footnote{Notice that $I\left[
+\left[  T\right]  \right]  ^{+}\neq I\cdot\left(  K\left[  \left[  T\right]
+\right]  ^{+}\right)  $ in general!} Prove the following:
+
+\textbf{(a)} We have $1+I\left[  \left[  T\right]  \right]  ^{+}%
+=\operatorname*{Ker}\left(  \Lambda\left(  \pi\right)  \right)  $, where $\pi$
+is the canonical projection $K\rightarrow K\diagup I$.
+
+\textbf{(b)} The set $1+I\left[  \left[  T\right]  \right]  ^{+}$ is a
+$\lambda$-ideal of the $\lambda$-ring $\Lambda\left(  K\right)  $.
 \end{quotation}
 
 \section{Special $\lambda$-rings}
@@ -3525,7 +3674,13 @@ of $K$.
 
 Prove that there exists one and only one $\lambda$-ring homomorphism
 $\widetilde{\varphi}:K\rightarrow\Lambda\left(  A\right)  $ such that
-$\operatorname*{coeff}\nolimits_{1}^{A}\circ\widetilde{\varphi}=\varphi.$
+$\operatorname*{coeff}\nolimits_{1}^{A}\circ\widetilde{\varphi}=\varphi$.
+
+\textit{Exercise 6.7.} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring, and $I$ be an ideal
+of $K$. Let $S$ be a subset of $I$ which generates the ideal $I$. Assume that
+every $s\in S$ and every positive integer $i$ satisfy $\lambda^{i}\left(
+s\right)  \in I$. Then, prove that $I$ is a $\lambda$-ideal of $K$.
 \end{quotation}
 
 \section{Examples of special $\lambda$-rings}
@@ -5023,7 +5178,7 @@ a kind of continuation of Theorem 9.1:
 
 \begin{quote}
 \textbf{Theorem 9.6.} Let $m\in\mathbb{N}$. Let us recall that, for every
-$j\in\mathbb{N}\diagdown\left\{  0\right\}  $, we denote by $N_{j}$ the $j$-th
+$j\in\mathbb{N}\setminus\left\{  0\right\}  $, we denote by $N_{j}$ the $j$-th
 Hirzebruch-Newton polynomial (defined at the beginning of Section 9). Let us
 also recall that for every $i\in\mathbb{N}$, we denote by $X_{i}$ the $i$-th
 elementary symmetric polynomial in the polynomial ring $\mathbb{Z}\left[
@@ -5096,13 +5251,13 @@ Since%
 &  \dfrac{d}{dT}\prod\limits_{i=1}^{m}\left(  1-U_{i}T\right) \\
 &  =\dfrac{d}{dT}\sum_{i\in\mathbb{N}}\left(  -1\right)  ^{i}X_{i}%
 T^{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{9.6.pf0})}\right) \\
-&  =\sum_{i\in\mathbb{N}\diagdown\left\{  0\right\}  }\left(  -1\right)
+&  =\sum_{i\in\mathbb{N}\setminus\left\{  0\right\}  }\left(  -1\right)
 ^{i}X_{i}iT^{i-1}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the
 derivative of a power series}\right)  ,
 \end{align*}
 this rewrites as%
 \begin{equation}
-\sum_{i\in\mathbb{N}\diagdown\left\{  0\right\}  }\left(  -1\right)  ^{i}%
+\sum_{i\in\mathbb{N}\setminus\left\{  0\right\}  }\left(  -1\right)  ^{i}%
 X_{i}iT^{i-1}=-\sum\limits_{i=1}^{m}\dfrac{U_{i}}{1-U_{i}T}\prod
 \limits_{i\in\left\{  1,2,...,m\right\}  }\left(  1-U_{i}T\right)  .
 \label{9.6.pf2}%
@@ -5111,13 +5266,13 @@ Now,%
 \begin{align*}
 \sum_{n\in\mathbb{N}}\left(  -1\right)  ^{n}nX_{n}T^{n}  &  =\sum
 _{n\in\mathbb{N}}\left(  -1\right)  ^{n}X_{n}nT^{n}=\sum_{n\in\mathbb{N}%
-\diagdown\left\{  0\right\}  }\left(  -1\right)  ^{n}X_{n}nT^{n}%
+\setminus\left\{  0\right\}  }\left(  -1\right)  ^{n}X_{n}nT^{n}%
 +\underbrace{\left(  -1\right)  ^{0}X_{0}0T^{0}}_{=0}\\
-&  =\sum_{n\in\mathbb{N}\diagdown\left\{  0\right\}  }\left(  -1\right)
-^{n}X_{n}nT^{n}=\sum_{i\in\mathbb{N}\diagdown\left\{  0\right\}  }\left(
+&  =\sum_{n\in\mathbb{N}\setminus\left\{  0\right\}  }\left(  -1\right)
+^{n}X_{n}nT^{n}=\sum_{i\in\mathbb{N}\setminus\left\{  0\right\}  }\left(
 -1\right)  ^{i}X_{i}i\underbrace{T^{i}}_{=TT^{i-1}}\ \ \ \ \ \ \ \ \ \ \left(
 \text{here, we renamed }n\text{ as }i\right) \\
-&  =T\underbrace{\sum_{i\in\mathbb{N}\diagdown\left\{  0\right\}  }\left(
+&  =T\underbrace{\sum_{i\in\mathbb{N}\setminus\left\{  0\right\}  }\left(
 -1\right)  ^{i}X_{i}iT^{i-1}}_{\substack{=-\sum\limits_{i=1}^{m}\dfrac{U_{i}%
 }{1-U_{i}T}\prod\limits_{i\in\left\{  1,2,...,m\right\}  }\left(
 1-U_{i}T\right)  \\\text{(by (\ref{9.6.pf2}))}}}=-T\sum\limits_{i=1}^{m}%
@@ -5167,7 +5322,7 @@ $N_{j}$):
 
 \begin{quote}
 \textbf{Corollary 9.7.} Let us recall that, for every $j\in\mathbb{N}%
-\diagdown\left\{  0\right\}  $, we denote by $N_{j}$ the $j$-th
+\setminus\left\{  0\right\}  $, we denote by $N_{j}$ the $j$-th
 Hirzebruch-Newton polynomial (defined at the beginning of Section 9). Then,
 every $n\in\mathbb{N}$ satisfies%
 \[
@@ -5358,11 +5513,11 @@ power series}\right) \\
 ^{j-1}\lambda^{n-j}\left(  x\right)  \psi^{j}\left(  x\right)  \right)
 }_{\substack{=n\lambda^{n}\left(  x\right)  \\\text{(by the 2nd step)}}%
 }T^{n}=\sum_{n\in\mathbb{N}}n\lambda^{n}\left(  x\right)  T^{n}\\
-&  =\sum_{n\in\mathbb{N}\diagdown\left\{  0\right\}  }n\lambda^{n}\left(
+&  =\sum_{n\in\mathbb{N}\setminus\left\{  0\right\}  }n\lambda^{n}\left(
 x\right)  T^{n}+\underbrace{0\lambda^{0}\left(  x\right)  T^{0}}_{=0}%
-=\sum_{n\in\mathbb{N}\diagdown\left\{  0\right\}  }n\lambda^{n}\left(
+=\sum_{n\in\mathbb{N}\setminus\left\{  0\right\}  }n\lambda^{n}\left(
 x\right)  \underbrace{T^{n}}_{=TT^{n-1}}\\
-&  =T\cdot\sum_{n\in\mathbb{N}\diagdown\left\{  0\right\}  }n\lambda
+&  =T\cdot\sum_{n\in\mathbb{N}\setminus\left\{  0\right\}  }n\lambda
 ^{n}\left(  x\right)  T^{n-1}.
 \end{align*}
 Now, $\lambda_{T}\left(  x\right)  =\sum\limits_{i\in\mathbb{N}}\lambda
@@ -5371,7 +5526,7 @@ x\right)  T^{n}$, so that%
 \begin{align*}
 \dfrac{d}{dT}\lambda_{T}\left(  x\right)   &  =\dfrac{d}{dT}\sum
 \limits_{n\in\mathbb{N}}\lambda^{n}\left(  x\right)  T^{n}=\sum_{n\in
-\mathbb{N}\diagdown\left\{  0\right\}  }n\lambda^{n}\left(  x\right)
+\mathbb{N}\setminus\left\{  0\right\}  }n\lambda^{n}\left(  x\right)
 T^{n-1}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the derivative of a
 formal power series}\right)  ,
@@ -5379,7 +5534,7 @@ formal power series}\right)  ,
 and thus%
 \begin{align*}
 -T\cdot\dfrac{d}{dT}\lambda_{T}\left(  x\right)   &  =-\underbrace{T\cdot
-\sum_{n\in\mathbb{N}\diagdown\left\{  0\right\}  }n\lambda^{n}\left(
+\sum_{n\in\mathbb{N}\setminus\left\{  0\right\}  }n\lambda^{n}\left(
 x\right)  T^{n-1}}_{=\left(  -\widetilde{\psi}_{-T}\left(  x\right)  \right)
 \cdot\lambda_{T}\left(  x\right)  }=-\left(  -\widetilde{\psi}_{-T}\left(
 x\right)  \right)  \cdot\lambda_{T}\left(  x\right) \\
@@ -5412,7 +5567,7 @@ $), so that%
 \begin{align*}
 \dfrac{d}{dT}\left(  \operatorname*{ev}\nolimits_{-T}\alpha\right)   &
 =\dfrac{d}{dT}\sum\limits_{i\in\mathbb{N}}\alpha_{i}\left(  -1\right)
-^{i}T^{i}=\sum\limits_{i\in\mathbb{N}\diagdown\left\{  0\right\}  }\alpha
+^{i}T^{i}=\sum\limits_{i\in\mathbb{N}\setminus\left\{  0\right\}  }\alpha
 _{i}\left(  -1\right)  ^{i}iT^{i-1}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the derivative of a
 formal power series}\right)  .
@@ -5422,7 +5577,7 @@ On the other hand, $\alpha=\sum\limits_{i\in\mathbb{N}}\alpha_{i}T^{i}$, so
 that%
 \begin{align*}
 \dfrac{d}{dT}\alpha &  =\dfrac{d}{dT}\sum\limits_{i\in\mathbb{N}}\alpha
-_{i}T^{i}=\sum\limits_{i\in\mathbb{N}\diagdown\left\{  0\right\}  }\alpha
+_{i}T^{i}=\sum\limits_{i\in\mathbb{N}\setminus\left\{  0\right\}  }\alpha
 _{i}iT^{i-1}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the derivative of a
 formal power series}\right) \\
@@ -5436,13 +5591,13 @@ formal power series}\right) \\
 }\alpha_{i+1}\left(  i+1\right)  \left(  -1\right)  ^{i}T^{i}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{ev}%
 \nolimits_{-T}\right) \\
-&  =\sum\limits_{i\in\mathbb{N}\diagdown\left\{  0\right\}  }\alpha
+&  =\sum\limits_{i\in\mathbb{N}\setminus\left\{  0\right\}  }\alpha
 _{i}i\underbrace{\left(  -1\right)  ^{i-1}}_{=-\left(  -1\right)  ^{i}}%
 T^{i-1}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }i\text{ for
 }i+1\right) \\
-&  =-\sum\limits_{i\in\mathbb{N}\diagdown\left\{  0\right\}  }\alpha
+&  =-\sum\limits_{i\in\mathbb{N}\setminus\left\{  0\right\}  }\alpha
 _{i}\underbrace{i\left(  -1\right)  ^{i}}_{=\left(  -1\right)  ^{i}i}%
-T^{i-1}=-\underbrace{\sum\limits_{i\in\mathbb{N}\diagdown\left\{  0\right\}
+T^{i-1}=-\underbrace{\sum\limits_{i\in\mathbb{N}\setminus\left\{  0\right\}
 }\alpha_{i}\left(  -1\right)  ^{i}iT^{i-1}}_{=\dfrac{d}{dT}\left(
 \operatorname*{ev}\nolimits_{-T}\alpha\right)  }=-\dfrac{d}{dT}\left(
 \operatorname*{ev}\nolimits_{-T}\alpha\right)  ,
@@ -5541,7 +5696,7 @@ proof of Theorem 9.5 is, at the same time, a new proof of Theorem 9.2.
 
 \begin{quotation}
 \textit{Exercise 9.1.} Let $K$ be a ring. Let $u\in1+K\left[  T\right]  ^{+}$.
-For every $j\in\mathbb{N}\diagdown\left\{  0\right\}  $, let us denote by
+For every $j\in\mathbb{N}\setminus\left\{  0\right\}  $, let us denote by
 $\widehat{\psi}^{j}$ the $j$-th Adams operation of the $\lambda$-ring $\left(
 \Lambda\left(  K\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in
 \mathbb{N}}\right)  $.
@@ -5549,7 +5704,7 @@ $\widehat{\psi}^{j}$ the $j$-th Adams operation of the $\lambda$-ring $\left(
 Assume that $u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}%
 \right]  \right)  $ for some $\left(  \widetilde{K}_{u},\left[  u_{1}%
 ,u_{2},...,u_{m}\right]  \right)  \in K^{\operatorname*{int}}$. Let
-$j\in\mathbb{N}\diagdown\left\{  0\right\}  $. Then, $\widehat{\psi}%
+$j\in\mathbb{N}\setminus\left\{  0\right\}  $. Then, $\widehat{\psi}%
 ^{j}\left(  u\right)  =\Pi\left(  \widetilde{K}_{u},\left[  u_{1}^{j}%
 ,u_{2}^{j},...,u_{m}^{j}\right]  \right)  $.
 
@@ -5662,7 +5817,7 @@ n\lambda^{n}\left(  x\right)  & \lambda^{n-1}\left(  x\right)  & \lambda
 
 \textit{Exercise 9.4.} Let $\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ be a binomial $\lambda$-ring. Prove that $\psi
-^{n}=\operatorname*{id}$ for every $n\in\mathbb{N}\diagdown\left\{  0\right\}
+^{n}=\operatorname*{id}$ for every $n\in\mathbb{N}\setminus\left\{  0\right\}
 $.
 
 [Note that, if we recall the definition of a binomial $\lambda$-ring and
@@ -5672,7 +5827,7 @@ reference to $\lambda$-rings.]
 \textit{Exercise 9.5.} Let $\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ be a (not necessarily special) $\lambda$-ring.
 Prove that $\psi^{j}:K\rightarrow K$ is a homomorphism of additive groups for
-every $j\in\mathbb{N}\diagdown\left\{  0\right\}  $.
+every $j\in\mathbb{N}\setminus\left\{  0\right\}  $.
 
 [This shows that at least part of Theorem 9.3 \textbf{(b)} does not require
 the $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
@@ -5684,7 +5839,7 @@ $\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{n}\right]  $ for any two
 $m\in\mathbb{N}$ and $n\in\mathbb{N}$ satisfying $m\leq n$. Thus, the
 polynomial $N_{m}\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
 _{m}\right]  $ automatically becomes an element of $\mathbb{Z}\left[
-\alpha_{1},\alpha_{2},...,\alpha_{n}\right]  $ whenever $m\leq n$.
+\alpha_{1},\alpha_{2},...,\alpha_{n}\right]  $ whenever $1\leq m\leq n$.
 
 \textbf{(a)} Prove that
 \[
@@ -5760,6 +5915,11 @@ n\alpha_{n} & \alpha_{n-1} & \alpha_{n-2} & \cdots & \alpha_{2} & \alpha_{1}%
 
 \textbf{(d)} Derive the results of Exercise 9.3 from Exercise 9.6
 \textbf{(a)}, \textbf{(b)}, \textbf{(c)}.
+
+\textit{Exercise 9.7.} Let $p$ be a prime number. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a (not necessarily special)
+$\lambda$-ring. Prove that $\psi^{p}\left(  x\right)  \equiv x^{p}%
+\operatorname{mod}pK$ for every $x\in K$.
 
 \bigskip
 \end{quotation}
@@ -8833,7 +8993,7 @@ classes}, for whatever reason.]
 \begin{quote}
 \textbf{Theorem 10.28.} Let $\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring. Let $x\in K$. Let
-$j\in\mathbb{N}\diagdown\left\{  0\right\}  $. Let $\operatorname*{fr}%
+$j\in\mathbb{N}\setminus\left\{  0\right\}  $. Let $\operatorname*{fr}%
 \nolimits_{j}:K\left[  \left[  T\right]  \right]  \rightarrow K\left[  \left[
 T\right]  \right]  $ be the map which sends every power series $\sum
 \limits_{i\in\mathbb{N}}a_{i}T^{i}$ (with $a_{i}\in K$ for every
@@ -8942,13 +9102,16 @@ that%
 \begin{align*}
 \lambda_{T}\left(  x\right)   &  =\lambda_{T}\left(  \sum\limits_{i=1}%
 ^{m}u_{i}\right)  =\widehat{\sum\limits_{i=1}^{m}}\lambda_{T}\left(
-u_{i}\right)  =\prod\limits_{i=1}^{m}\lambda_{T}\left(  u_{i}\right) \\
-&  \ \ \ \ \ \ \ \ \ \ \left(
+u_{i}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\lambda_{T}\text{ is a
+ring homomorphism}\right) \\
+&  =\prod\limits_{i=1}^{m}\lambda_{T}\left(  u_{i}\right)
+\ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
-\text{since the addition in the ring }\Lambda\left(  K\right)  \text{ is the
-multiplication of power series,}\\
-\text{so that }\widehat{\sum\limits_{i=1}^{m}}=\prod\limits_{i=1}^{m}%
+\text{since the addition in the ring }\Lambda\left(  K\right)  \text{ is
+the}\\
+\text{ multiplication of power series, and thus }\widehat{\sum\limits_{i=1}%
+^{m}}=\prod\limits_{i=1}^{m}%
 \end{array}
 \right) \\
 &  =\prod\limits_{i=1}^{m}\left(  1+u_{i}T\right)  \ \ \ \ \ \ \ \ \ \ \left(
@@ -8957,9 +9120,9 @@ multiplication of power series,}\\
 [c]{c}%
 \text{because every }i\in\left\{  1,2,...,m\right\}  \text{ satisfies }%
 \lambda_{T}\left(  u_{i}\right)  =1+u_{i}T\\
-\text{(by Theorem 8.3 \textbf{(a)} (applied to }x=u_{i}\text{), since }%
-u_{i}\text{ is}\\
-1\text{-dimensional)}%
+\text{(by Theorem 8.3 \textbf{(a)} (applied to }u_{i}\text{ instead of
+}x\text{),}\\
+\text{since }u_{i}\text{ is }1\text{-dimensional)}%
 \end{array}
 \right)  .
 \end{align*}
@@ -9006,7 +9169,7 @@ T^{j}\right)  .
 
 
 Now, for every $i\in\left\{  1,2,...,m\right\}  $, we can apply Theorem 9.4 to
-$1$ and $u_{i}$ instead of $m$ and $u_{k}$, and obtain $\psi^{j}\left(
+$1$ and $u_{i}$ instead of $m$ and $u_{i}$, and obtain $\psi^{j}\left(
 u_{i}\right)  =u_{i}^{j}$. Hence,%
 \[
 \operatorname*{fr}\nolimits_{j}\left(  \left(  \psi^{j}\left[  \left[
@@ -9588,7 +9751,7 @@ Moreover, there exists a positive structure $\left(  \varepsilon
 _{e},\mathbf{E}_{e}\right)  $ on $K_{e}$ defined by $\varepsilon_{e}\left(
 \ell\right)  =1$ and $\mathbf{E}_{e}=\left\{  \sum\limits_{i\in\mathbb{N}%
 ,\ j\in\mathbb{N}}a_{i,j}\ell^{i}\left(  e-\ell\right)  ^{j}\ \mid\text{
-}a_{i,j}\in\mathbb{E}\text{ for all }i\in\mathbb{N}\text{ and }j\in
+}a_{i,j}\in\mathbf{E}\text{ for all }i\in\mathbb{N}\text{ and }j\in
 \mathbb{N}\right\}  .$
 \end{quote}
 
@@ -9700,6 +9863,221 @@ L$, so that $\lambda^{i}\left(  \ell\right)  \in L$ and thus $\lambda
 ^{i}\left(  \ell\right)  =\underbrace{\lambda^{i}\left(  \ell\right)  }_{\in
 L}-\underbrace{0}_{\in L}\in L-L$), so this yields $\lambda^{i}\left(
 \ell-\ell^{\prime}\right)  \in L-L,$ and this completes our induction.
+
+\textit{Exercise 2.3:} \textit{Solution:} \textit{Proof of Theorem 2.2.}
+\textbf{(a)} Let $x\in K\diagup I$. Let $y\in K$ and $z\in K$ be two elements
+of $K$ satisfying $\overline{y}=x$ and $\overline{z}=x$. Then, $\overline
+{y}=x=\overline{z}$, so that $y\equiv z\operatorname{mod}I$. In other words,
+$y-z\in I$.
+
+We know (from the definition of $\lambda$-ideals) that $I$ is a $\lambda
+$-ideal of $K$ if and only if every $t\in I$ and every positive integer $i$
+satisfy $\lambda^{i}\left(  t\right)  \in I$. Since we know that $I$ is a
+$\lambda$-ideal, we conclude that every $t\in I$ and every positive integer
+$i$ satisfy $\lambda^{i}\left(  t\right)  \in I$. Applied to $t=y-z$, this
+yields that every positive integer $i$ satisfies $\lambda^{i}\left(
+y-z\right)  \in I$.
+
+Fix $k\in\mathbb{N}$. The equality (\ref{lambda1}), applied to $y-z$ and $z$
+instead of $x$ and $y$, yields%
+\begin{align*}
+\lambda^{k}\left(  \left(  y-z\right)  +z\right)   &  =\sum_{i=0}^{k}%
+\lambda^{i}\left(  y-z\right)  \lambda^{k-i}\left(  z\right)
+=\underbrace{\lambda^{0}\left(  y-z\right)  }_{\substack{=1\\\text{(since
+}\lambda^{0}\left(  t\right)  =1\\\text{for every }t\in K\text{)}%
+}}\underbrace{\lambda^{k-0}}_{=\lambda^{k}}\left(  z\right)  +\sum_{i=0}%
+^{k}\underbrace{\lambda^{i}\left(  y-z\right)  }_{\substack{\in
+I\\\text{(since }i\text{ is a positive}\\\text{integer)}}}\lambda^{k-i}\left(
+z\right) \\
+&  \in\underbrace{1\lambda^{k}\left(  z\right)  }_{=\lambda^{k}\left(
+z\right)  }+\underbrace{\sum_{i=0}^{k}I\lambda^{k-i}\left(  z\right)
+}_{\substack{\subseteq I\\\text{(since }I\text{ is an ideal)}}}\subseteq
+\lambda^{k}\left(  z\right)  +I.
+\end{align*}
+Since $\left(  y-z\right)  +z=y$, this rewrites as $\lambda^{k}\left(
+y\right)  \in\lambda^{k}\left(  z\right)  +I$. In other words, $\overline
+{\lambda^{k}\left(  y\right)  }=\overline{\lambda^{k}\left(  z\right)  }$.
+
+Now, forget that we fixed $k$. We thus have proven that $\overline{\lambda
+^{k}\left(  y\right)  }=\overline{\lambda^{k}\left(  z\right)  }$ for every
+$k\in\mathbb{N}$. Renaming $k$ as $i$ in this claim, we conclude that we have
+$\overline{\lambda^{i}\left(  y\right)  }=\overline{\lambda^{i}\left(
+z\right)  }$ for every $i\in\mathbb{N}$. Theorem 2.2 \textbf{(a)} is proven.
+
+\textbf{(b)} First of all,%
+\begin{equation}
+\left(  \widetilde{\lambda}^{0}\left(  x\right)  =1\text{ for every }x\in
+K\diagup I\right)  \label{2.3.sol.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{2.3.sol.1}):} Let $x\in K\diagup I$. By the
+definition of $\widetilde{\lambda}^{0}$, the value $\widetilde{\lambda}%
+^{0}\left(  x\right)  $ is defined as $\overline{\lambda^{0}\left(  w\right)
+}$, where $w$ is an element of $K$ satisfying $\overline{w}=x$. So let $w$ be
+an element of $K$ satisfying $\overline{w}=x$ (such a $w$ clearly exists).
+Then, $\widetilde{\lambda}^{0}\left(  x\right)  =\overline{\lambda^{0}\left(
+w\right)  }$. But $\lambda^{0}\left(  w\right)  =1$ (since every $t\in K$
+satisfies $\lambda^{0}\left(  t\right)  =1$). Thus, $\overline{\lambda
+^{0}\left(  w\right)  }=\overline{1}=1$, so that $\widetilde{\lambda}%
+^{0}\left(  x\right)  =\overline{\lambda^{0}\left(  w\right)  }=1$. This
+proves (\ref{2.3.sol.1}).}. Next,%
+\begin{equation}
+\left(  \widetilde{\lambda}^{1}\left(  x\right)  =x\text{ for every }x\in
+K\diagup I\right)  \label{2.3.sol.2}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{2.3.sol.2}):} Let $x\in K\diagup I$. By the
+definition of $\widetilde{\lambda}^{1}$, the value $\widetilde{\lambda}%
+^{1}\left(  x\right)  $ is defined as $\overline{\lambda^{1}\left(  w\right)
+}$, where $w$ is an element of $K$ satisfying $\overline{w}=x$. So let $w$ be
+an element of $K$ satisfying $\overline{w}=x$ (such a $w$ clearly exists).
+Then, $\widetilde{\lambda}^{1}\left(  x\right)  =\overline{\lambda^{1}\left(
+w\right)  }$. But $\lambda^{1}\left(  w\right)  =w$ (since every $t\in K$
+satisfies $\lambda^{1}\left(  t\right)  =t$). Thus, $\overline{\lambda
+^{1}\left(  w\right)  }=\overline{w}=x$, so that $\widetilde{\lambda}%
+^{1}\left(  x\right)  =\overline{\lambda^{1}\left(  w\right)  }=x$. This
+proves (\ref{2.3.sol.2}).}. Finally,%
+\begin{equation}
+\left(  \widetilde{\lambda}^{k}\left(  x+y\right)  =\sum_{i=0}^{k}%
+\widetilde{\lambda}^{i}\left(  x\right)  \widetilde{\lambda}^{k-i}\left(
+y\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }k\in\mathbb{N},\text{ }x\in
+K\diagup I\text{ and }y\in K\diagup I\right)  \label{2.3.sol.3}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{2.3.sol.3}):} Let $x\in K\diagup I$, $y\in
+K\diagup I$ and $k\in\mathbb{N}$.
+\par
+Let $u$ be an element of $K$ satisfying $\overline{u}=x$. (Such a $u$ clearly
+exists.) Let $v$ be an element of $K$ satisfying $\overline{v}=y$.
+\par
+Let $i\in\left\{  0,1,...,k\right\}  $.
+\par
+By the definition of $\widetilde{\lambda}^{i}$, the value $\widetilde{\lambda
+}^{i}\left(  x\right)  $ is defined as $\overline{\lambda^{i}\left(  w\right)
+}$, where $w$ is an element of $K$ satisfying $\overline{w}=x$. Thus,
+$\widetilde{\lambda}^{i}\left(  x\right)  =\overline{\lambda^{i}\left(
+w\right)  }$ for every $w\in K$ satisfying $\overline{w}=x$. Applied to $w=u$,
+this yields $\widetilde{\lambda}^{i}\left(  x\right)  =\overline{\lambda
+^{i}\left(  u\right)  }$ (since $\overline{u}=x$).
+\par
+By the definition of $\widetilde{\lambda}^{k-i}$, the value
+$\widetilde{\lambda}^{k-i}\left(  y\right)  $ is defined as $\overline
+{\lambda^{k-i}\left(  w\right)  }$, where $w$ is an element of $K$ satisfying
+$\overline{w}=y$. Thus, $\widetilde{\lambda}^{k-i}\left(  y\right)
+=\overline{\lambda^{k-i}\left(  w\right)  }$ for every $w\in K$ satisfying
+$\overline{w}=y$. Applied to $w=v$, this yields $\widetilde{\lambda}%
+^{k-i}\left(  x\right)  =\overline{\lambda^{k-i}\left(  v\right)  }$ (since
+$\overline{v}=y$).
+\par
+Now forget that we fixed $i\in\left\{  0,1,...,k\right\}  $. We thus have
+shown that every $i\in\left\{  0,1,...,k\right\}  $ satisfies
+$\widetilde{\lambda}^{i}\left(  x\right)  =\overline{\lambda^{i}\left(
+u\right)  }$ and $\widetilde{\lambda}^{k-i}\left(  x\right)  =\overline
+{\lambda^{k-i}\left(  v\right)  }$. Thus,%
+\[
+\sum_{i=0}^{k}\underbrace{\widetilde{\lambda}^{i}\left(  x\right)
+}_{=\overline{\lambda^{i}\left(  u\right)  }}\underbrace{\widetilde{\lambda
+}^{k-i}\left(  y\right)  }_{=\overline{\lambda^{k-i}\left(  v\right)  }}%
+=\sum_{i=0}^{k}\overline{\lambda^{i}\left(  u\right)  }\overline{\lambda
+^{k-i}\left(  v\right)  }=\overline{\sum_{i=0}^{k}\lambda^{i}\left(  u\right)
+\lambda^{k-i}\left(  v\right)  }.
+\]
+\par
+By the definition of $\widetilde{\lambda}^{k}$, the value $\widetilde{\lambda
+}^{k}\left(  x+y\right)  $ is defined as $\overline{\lambda^{k}\left(
+w\right)  }$, where $w$ is an element of $K$ satisfying $\overline{w}=x+y$.
+Thus, $\widetilde{\lambda}^{k}\left(  x\right)  =\overline{\lambda^{k}\left(
+w\right)  }$ for every $w\in K$ satisfying $\overline{w}=x+y$. Applied to
+$w=u+v$, this yields $\widetilde{\lambda}^{k}\left(  x+y\right)
+=\overline{\lambda^{k}\left(  u+v\right)  }$ (since $\overline{u+v}%
+=\underbrace{\overline{u}}_{=x}+\underbrace{\overline{v}}_{=y}=x+y$). Thus,%
+\begin{align*}
+\widetilde{\lambda}^{k}\left(  x+y\right)   &  =\overline{\lambda^{k}\left(
+u+v\right)  }=\overline{\sum_{i=0}^{k}\lambda^{i}\left(  u\right)
+\lambda^{k-i}\left(  v\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since (\ref{lambda1}) (applied to }u\text{ and }v\text{ instead of
+}x\text{ and }y\text{) yields}\\
+\lambda^{k}\left(  u+v\right)  =\sum\limits_{i=0}^{k}\lambda^{i}\left(
+u\right)  \lambda^{k-i}\left(  v\right)
+\end{array}
+\right) \\
+&  =\sum_{i=0}^{k}\widetilde{\lambda}^{i}\left(  x\right)  \widetilde{\lambda
+}^{k-i}\left(  y\right)  .
+\end{align*}
+This proves (\ref{2.3.sol.3}).}.
+
+Now, according to the definition of a $\lambda$-ring, we know that $\left(
+K\diagup I,\left(  \widetilde{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $
+is a $\lambda$-ring if and only if it satisfies the relations (\ref{2.3.sol.1}%
+), (\ref{2.3.sol.2}) and (\ref{2.3.sol.3}). Since we have shown that it
+satisfies the relations (\ref{2.3.sol.1}), (\ref{2.3.sol.2}) and
+(\ref{2.3.sol.3}), we thus conclude that $\left(  K\diagup I,\left(
+\widetilde{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a $\lambda
+$-ring. Theorem 2.2 \textbf{(b)} is proven.
+
+\textbf{(c)} Let $\pi$ be the canonical projection $K\rightarrow K\diagup I$.
+
+The definition of a $\lambda$-ring homomorphism tells us: The map $\pi$ is a
+$\lambda$-ring homomorphism if and only if $\pi$ is a ring homomorphism and
+satisfies $\widetilde{\lambda}^{i}\circ\pi=\pi\circ\lambda^{i}$ for every
+$i\in\mathbb{N}$. But since $\pi$ is a ring homomorphism (because it is a
+canonical projection of a ring onto a factor ring) and satisfies
+$\widetilde{\lambda}^{i}\circ\pi=\pi\circ\lambda^{i}$ for every $i\in
+\mathbb{N}$\ \ \ \ \footnote{\textit{Proof.} Let $i\in\mathbb{N}$. Let $z\in
+K$. Then, $\pi\left(  z\right)  =\overline{z}$ (because $\pi$ is the canonical
+projection $K\rightarrow K\diagup I$) and $\pi\left(  \lambda^{i}\left(
+z\right)  \right)  =\overline{\lambda^{i}\left(  z\right)  }$ (for the same
+reason).
+\par
+By the definition of $\widetilde{\lambda}^{i}$, the value $\widetilde{\lambda
+}^{i}\left(  \overline{z}\right)  $ is defined as $\overline{\lambda
+^{i}\left(  w\right)  }$, where $w$ is an element of $K$ satisfying
+$\overline{w}=\overline{z}$. Thus, $\widetilde{\lambda}^{i}\left(
+\overline{z}\right)  =\overline{\lambda^{i}\left(  w\right)  }$ for every
+$w\in K$ satisfying $\overline{w}=\overline{z}$. Applied to $w=z$, this yields
+$\widetilde{\lambda}^{i}\left(  \overline{z}\right)  =\overline{\lambda
+^{i}\left(  z\right)  }$ (since $\overline{z}=\overline{z}$).
+\par
+Now, $\left(  \widetilde{\lambda}^{i}\circ\pi\right)  \left(  z\right)
+=\widetilde{\lambda}^{i}\left(  \underbrace{\pi\left(  z\right)  }%
+_{=\overline{z}}\right)  =\widetilde{\lambda}^{i}\left(  \overline{z}\right)
+=\overline{\lambda^{i}\left(  z\right)  }=\pi\left(  \lambda^{i}\left(
+z\right)  \right)  =\left(  \pi\circ\lambda^{i}\right)  \left(  z\right)  $.
+\par
+Now forget that we fixed $z$. We thus have proven that $\left(
+\widetilde{\lambda}^{i}\circ\pi\right)  \left(  z\right)  =\left(  \pi
+\circ\lambda^{i}\right)  \left(  z\right)  $ for every $z\in K$. In other
+words, $\widetilde{\lambda}^{i}\circ\pi=\pi\circ\lambda^{i}$, qed.}, this
+yields that $\pi$ is a $\lambda$-ring homomorphism. Since $\pi$ is the
+canonical projection $K\rightarrow K\diagup I$, we thus have proven that the
+canonical projection $K\rightarrow K\diagup I$ is a $\lambda$-ring
+homomorphism. Theorem 2.2 \textbf{(c)} is proven.
+
+\textit{Exercise 2.4:} \textit{Solution:} \textit{Proof of Theorem 2.3.} Let
+$t\in\operatorname*{Ker}f$, and let $i$ be a positive integer. Since
+$t\in\operatorname*{Ker}f$, we have $f\left(  t\right)  =0$, thus $\mu
+^{i}\left(  t\right)  =$
+
+Since $f$ is a $\lambda$-ring homomorphism, we have $\mu^{i}\circ
+f=f\circ\lambda^{i}$, so that $\left(  \mu^{i}\circ f\right)  \left(
+t\right)  =\left(  f\circ\lambda^{i}\right)  \left(  t\right)  =f\left(
+\lambda^{i}\left(  t\right)  \right)  $. Thus, $f\left(  \lambda^{i}\left(
+t\right)  \right)  =\left(  \mu^{i}\circ f\right)  \left(  t\right)  =\mu
+^{i}\left(  f\left(  t\right)  \right)  =\mu^{i}\left(  0\right)  =0$ (by
+Theorem 2.1 \textbf{(d)}), so that $\lambda^{i}\left(  t\right)
+\in\operatorname*{Ker}f$.
+
+Now forget that we fixed $t$ and $i$. We have thus proven that every
+$t\in\operatorname*{Ker}f$ and every positive integer $i$ satisfy $\lambda
+^{i}\left(  t\right)  \in\operatorname*{Ker}f$.
+
+But the definition of a $\lambda$-ideal tells us that $\operatorname*{Ker}f$
+is a $\lambda$-ideal if and only if every $t\in\operatorname*{Ker}f$ and every
+positive integer $i$ satisfy $\lambda^{i}\left(  t\right)  \in
+\operatorname*{Ker}f$. Since we know that every $t\in\operatorname*{Ker}f$ and
+every positive integer $i$ satisfy $\lambda^{i}\left(  t\right)
+\in\operatorname*{Ker}f$, we thus conclude that $\operatorname*{Ker}f$ is a
+$\lambda$-ideal. Theorem 2.3 is proven.
 
 \subsection{To Section 3}
 
@@ -9962,33 +10340,33 @@ since $P$ is the set of all subsets of $\left\{  1,2,...,N\right\}  $). Hence,
 $N+1\notin S$. But $\iota\left(  S\right)  =S\cup\left\{  N+1\right\}  $, so
 that%
 \[
-\iota\left(  S\right)  \diagdown\left\{  N+1\right\}  =\left(  S\cup\left\{
-N+1\right\}  \right)  \diagdown\left\{  N+1\right\}  =\underbrace{\left(
-S\diagdown\left\{  N+1\right\}  \right)  }_{=S\text{ (since }N+1\notin
-S\text{)}}\cup\underbrace{\left(  \left\{  N+1\right\}  \diagdown\left\{
+\iota\left(  S\right)  \setminus\left\{  N+1\right\}  =\left(  S\cup\left\{
+N+1\right\}  \right)  \setminus\left\{  N+1\right\}  =\underbrace{\left(
+S\setminus\left\{  N+1\right\}  \right)  }_{=S\text{ (since }N+1\notin
+S\text{)}}\cup\underbrace{\left(  \left\{  N+1\right\}  \setminus\left\{
 N+1\right\}  \right)  }_{=\varnothing}=S\cup\varnothing=S.
 \]
-Similarly, $\iota\left(  S^{\prime}\right)  \diagdown\left\{  N+1\right\}
+Similarly, $\iota\left(  S^{\prime}\right)  \setminus\left\{  N+1\right\}
 =S^{\prime}$. Hence, $S=\underbrace{\iota\left(  S\right)  }_{=\iota\left(
-S^{\prime}\right)  }\diagdown\left\{  N+1\right\}  =\iota\left(  S^{\prime
-}\right)  \diagdown\left\{  N+1\right\}  =S^{\prime}$, qed.}) and surjective
+S^{\prime}\right)  }\setminus\left\{  N+1\right\}  =\iota\left(  S^{\prime
+}\right)  \setminus\left\{  N+1\right\}  =S^{\prime}$, qed.}) and surjective
 (because every $T\in Q$ satisfies $T=\iota\left(  S\right)  $ for some $S\in
-P$\ \ \ \ \footnote{\textit{Proof.} Let $S=T\diagdown\left\{  N+1\right\}  $.
+P$\ \ \ \ \footnote{\textit{Proof.} Let $S=T\setminus\left\{  N+1\right\}  $.
 Now, $T$ is a subset of $\left\{  1,2,...,N+1\right\}  $ satisfying $N+1\in T$
 (since $T\in Q$, and since $Q$ is the set of all subsets $T$ of $\left\{
 1,2,...,N+1\right\}  $ satisfying $N+1\in T$).
 \par
 Since $T$ is a subset of $\left\{  1,2,...,N+1\right\}  $, it is clear that
-$T\diagdown\left\{  N+1\right\}  $ is a subset of $\left\{
-1,2,...,N+1\right\}  \diagdown\left\{  N+1\right\}  =\left\{
-1,2,...,N\right\}  $, so that $T\diagdown\left\{  N+1\right\}  \in P$ (since
+$T\setminus\left\{  N+1\right\}  $ is a subset of $\left\{
+1,2,...,N+1\right\}  \setminus\left\{  N+1\right\}  =\left\{
+1,2,...,N\right\}  $, so that $T\setminus\left\{  N+1\right\}  \in P$ (since
 $P$ is the set of all subsets of $\left\{  1,2,...,N\right\}  $). Hence,
-$S=T\diagdown\left\{  N+1\right\}  \in P$.
+$S=T\setminus\left\{  N+1\right\}  \in P$.
 \par
 Since $N+1\in T$, we have $\left\{  N+1\right\}  \subseteq T$ and thus
-$\left(  T\diagdown\left\{  N+1\right\}  \right)  \cup\left\{  N+1\right\}
+$\left(  T\setminus\left\{  N+1\right\}  \right)  \cup\left\{  N+1\right\}
 =T$. Now, $\iota\left(  S\right)  =S\cup\left\{  N+1\right\}  =\left(
-T\diagdown\left\{  N+1\right\}  \right)  \cup\left\{  N+1\right\}  =T$,
+T\setminus\left\{  N+1\right\}  \right)  \cup\left\{  N+1\right\}  =T$,
 qed.}). Thus, $\iota$ is a bijective map. Hence, we can substitute $S$ for
 $\iota\left(  S\right)  $ in the sum $\sum\limits_{S\in P}\prod\limits_{k\in
 \iota\left(  S\right)  }\alpha_{k}$, so that $\sum\limits_{S\in P}%
@@ -11433,6 +11811,156 @@ $n$, $m$, $\alpha$ and $\beta$) yields that $\left(  -\alpha\beta\right)
 $-1$ is $1$-integral over $K$). In other words, $\alpha\beta$ is $nm$-integral
 over $K$. This solves Exercise 5.4.
 
+\textit{Exercise 5.5:} \textit{Detailed solution:} \textbf{(a)} Let $\pi$ be
+the canonical projection $K\rightarrow K\diagup I$. Then, $\pi$ is a ring
+homomorphism, and thus induces a canonical ring homomorphism $\pi\left[
+\left[  T\right]  \right]  :K\left[  \left[  T\right]  \right]  \rightarrow
+L\left[  \left[  T\right]  \right]  $ (which sends every $\sum\limits_{i\in
+\mathbb{N}}a_{i}T^{i}\in K\left[  \left[  T\right]  \right]  $ to
+$\sum\limits_{i\in\mathbb{N}}\pi\left(  a_{i}\right)  T^{i}\in L\left[
+\left[  T\right]  \right]  $). The morphism $\Lambda\left(  \pi\right)  $ is
+merely the restriction of this homomorphism $\pi\left[  \left[  T\right]
+\right]  $ to the subset $\Lambda\left(  K\right)  $ of $K\left[  \left[
+T\right]  \right]  $ (due to the definition of $\Lambda\left(  \pi\right)  $).
+
+Notice that $1+I\left[  \left[  T\right]  \right]  ^{+}\subseteq1+K\left[
+\left[  T\right]  \right]  ^{+}=\Lambda\left(  K\right)  $.
+
+\textit{1st step:} We have $1+I\left[  \left[  T\right]  \right]
+^{+}\subseteq\operatorname*{Ker}\left(  \Lambda\left(  \pi\right)  \right)  $.
+
+\textit{Proof:} Let $q\in1+I\left[  \left[  T\right]  \right]  ^{+}$. Then,
+$q-1\in I\left[  \left[  T\right]  \right]  ^{+}=TI\left[  \left[  T\right]
+\right]  \subseteq I\left[  \left[  T\right]  \right]  $. Thus, we can write
+$q-1$ in the form $q-1=\sum\limits_{i\geq0}r_{i}T^{i}$ for some sequence
+$\left(  r_{0},r_{1},r_{2},...\right)  $ of elements of $I$. Consider this
+$\left(  r_{0},r_{1},r_{2},...\right)  $. Clearly, $r_{i}\in I$ for every
+$i\geq0$. Thus, $\pi\left(  r_{i}\right)  =0$ for every $i\geq0$ (because
+$\pi$ is the canonical projection $K\rightarrow K\diagup I$). Now, by the
+definition of $\pi\left[  \left[  T\right]  \right]  $, we have%
+\[
+\left(  \pi\left[  \left[  T\right]  \right]  \right)  \left(  \sum
+\limits_{i\geq0}r_{i}T^{i}\right)  =\sum\limits_{i\geq0}\underbrace{\pi\left(
+r_{i}\right)  }_{=0}T^{i}=\sum\limits_{i\geq0}0T^{i}=0.
+\]
+Since $\sum\limits_{i\geq0}r_{i}T^{i}=q-1$, this rewrites as $\left(
+\pi\left[  \left[  T\right]  \right]  \right)  \left(  q-1\right)  =0$. Since%
+\[
+\left(  \pi\left[  \left[  T\right]  \right]  \right)  \left(  q-1\right)
+=\left(  \pi\left[  \left[  T\right]  \right]  \right)  \left(  q\right)
+-1\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\pi\left[  \left[  T\right]
+\right]  \text{ is a ring homomorphism}\right)  ,
+\]
+this rewrites as $\left(  \pi\left[  \left[  T\right]  \right]  \right)
+\left(  q\right)  -1=0$. That is, $\left(  \pi\left[  \left[  T\right]
+\right]  \right)  \left(  q\right)  =1$. Since $\Lambda\left(  \pi\right)  $
+is the restriction of $\pi\left[  \left[  T\right]  \right]  $ to the subset
+$\Lambda\left(  K\right)  $ of $K\left[  \left[  T\right]  \right]  $, and
+since $q\in\Lambda\left(  K\right)  $, we have $\left(  \Lambda\left(
+\pi\right)  \right)  \left(  q\right)  =\left(  \pi\left[  \left[  T\right]
+\right]  \right)  \left(  q\right)  =1$, so that $q\in\operatorname*{Ker}%
+\left(  \Lambda\left(  \pi\right)  \right)  $ (because the power series
+$1\in\Lambda\left(  K\diagup I\right)  $ is the zero of the ring
+$\Lambda\left(  K\diagup I\right)  $).
+
+Now forget that we fixed $q$. We thus have proven that every $q\in1+I\left[
+\left[  T\right]  \right]  ^{+}$ satisfies $q\in\operatorname*{Ker}\left(
+\Lambda\left(  \pi\right)  \right)  $. In other words, $1+I\left[  \left[
+T\right]  \right]  ^{+}\subseteq\operatorname*{Ker}\left(  \Lambda\left(
+\pi\right)  \right)  $. This completes the proof of the 1st step.
+
+\textit{2nd step:} We have $\operatorname*{Ker}\left(  \Lambda\left(
+\pi\right)  \right)  \subseteq1+I\left[  \left[  T\right]  \right]  ^{+}$.
+
+\textit{Proof:} Let $q\in\operatorname*{Ker}\left(  \Lambda\left(  \pi\right)
+\right)  $. Then, $q\in\Lambda\left(  K\right)  $ and $\left(  \Lambda\left(
+\pi\right)  \right)  \left(  q\right)  =1$ (because $1\in\Lambda\left(
+K\diagup I\right)  $ is the zero of the ring $\Lambda\left(  K\diagup
+I\right)  $).
+
+Since $q\in\Lambda\left(  K\right)  \subseteq K\left[  \left[  T\right]
+\right]  $, we can write $q$ in the form $q=\sum\limits_{i\geq0}q_{i}T^{i}$
+for some sequence $\left(  q_{0},q_{1},q_{2},...\right)  $ of elements of $K$.
+Consider this $\left(  q_{0},q_{1},q_{2},...\right)  $. Then, $q_{0}$ is the
+constant term of the power series $q$.
+
+Since $q\in\Lambda\left(  K\right)  =1+K\left[  \left[  T\right]  \right]
+^{+}=\left\{  p\in K\left[  \left[  T\right]  \right]  \ \mid\ p\text{ is a
+power series with constant term }1\right\}  $, we know that $q$ is a power
+series with constant term $1$. In other words, the constant term of the power
+series $q$ is $1$. Since $q_{0}$ is the constant term of the power series $q$,
+this yields that $q_{0}=1$.
+
+Since $\Lambda\left(  \pi\right)  $ is the restriction of $\pi\left[  \left[
+T\right]  \right]  $ to the subset $\Lambda\left(  K\right)  $ of $K\left[
+\left[  T\right]  \right]  $, we have
+\begin{align*}
+\left(  \Lambda\left(  \pi\right)  \right)  \left(  q\right)   &  =\left(
+\pi\left[  \left[  T\right]  \right]  \right)  \left(  q\right)  =\left(
+\pi\left[  \left[  T\right]  \right]  \right)  \left(  \sum\limits_{i\geq
+0}q_{i}T^{i}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }q=\sum
+\limits_{i\geq0}q_{i}T^{i}\right) \\
+&  =\sum\limits_{i\geq0}\pi\left(  q_{i}\right)  T^{i}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\pi\left[  \left[
+T\right]  \right]  \right)  .
+\end{align*}
+Since $\left(  \Lambda\left(  \pi\right)  \right)  \left(  q\right)  =1$, this
+rewrites as $1=\sum\limits_{i\geq0}\pi\left(  q_{i}\right)  T^{i}$.
+
+Now, let $j$ be a positive integer. Then, the coefficient of $T^{j}$ on the
+left hand side of the equality $1=\sum\limits_{i\geq0}\pi\left(  q_{i}\right)
+T^{i}$ is $0$, while the coefficient of $T^{j}$ on the right hand side of this
+equality is $\pi\left(  q_{j}\right)  $. Since the coefficients of $T^{j}$ on
+the two sides of an equality must always be equal, this yields that
+$0=\pi\left(  q_{j}\right)  $. But $\pi$ is the canonical projection
+$K\rightarrow K\diagup I$. Hence, since we have $\pi\left(  q_{j}\right)  =0$,
+we conclude that $q_{j}\in I$.
+
+Now forget that we fixed $j$. We thus have shown that $q_{j}\in I$ for every
+positive integer $j$. Thus, $\sum\limits_{j>0}q_{j}T^{j}\in I\left[  \left[
+T\right]  \right]  $. Since $\sum\limits_{j>0}q_{j}T^{j}$ is a power series
+with constant term $0$, we thus have%
+\[
+\sum\limits_{j>0}q_{j}T^{j}\in\left\{  p\in I\left[  \left[  T\right]
+\right]  \ \mid\ p\text{ is a power series with constant term }0\right\}
+=TI\left[  \left[  T\right]  \right]  =I\left[  \left[  T\right]  \right]
+^{+}.
+\]
+Now,%
+\[
+q=\sum\limits_{i\geq0}q_{i}T^{i}=\underbrace{q_{0}}_{=1}\underbrace{T^{0}%
+}_{=1}+\underbrace{\sum\limits_{i>0}q_{i}T^{i}}_{\in I\left[  \left[
+T\right]  \right]  ^{+}}\in1+I\left[  \left[  T\right]  \right]  ^{+}.
+\]
+
+
+Now forget that we fixed $q$. We thus have proven that every $q\in
+\operatorname*{Ker}\left(  \Lambda\left(  \pi\right)  \right)  $ satisfies
+$q\in1+I\left[  \left[  T\right]  \right]  ^{+}$. In other words,
+$\operatorname*{Ker}\left(  \Lambda\left(  \pi\right)  \right)  \subseteq
+1+I\left[  \left[  T\right]  \right]  ^{+}$. This completes the proof of the
+2nd step.
+
+\textit{3rd step:} We have proven that $1+I\left[  \left[  T\right]  \right]
+^{+}\subseteq\operatorname*{Ker}\left(  \Lambda\left(  \pi\right)  \right)  $
+and $\operatorname*{Ker}\left(  \Lambda\left(  \pi\right)  \right)
+\subseteq1+I\left[  \left[  T\right]  \right]  ^{+}$. Combining these two
+relations, we obtain $1+I\left[  \left[  T\right]  \right]  ^{+}%
+=\operatorname*{Ker}\left(  \Lambda\left(  \pi\right)  \right)  $. This solves
+Exercise 5.5 \textbf{(a)}.
+
+\textbf{(b)} We know that $\Lambda\left(  \pi\right)  $ is a $\lambda$-ring
+homomorphism (since $\pi$ is a ring homomorphism). Thus, $\operatorname*{Ker}%
+\left(  \Lambda\left(  \pi\right)  \right)  $ is a $\lambda$-ideal of
+$\Lambda\left(  K\right)  $ (by Theorem 2.3, applied to $\Lambda\left(
+K\right)  $, $\Lambda\left(  K\diagup I\right)  $ and $\pi$ instead of
+$\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $, $\left(
+L,\left(  \mu^{i}\right)  _{i\in\mathbb{N}}\right)  $ and $f$). Since
+$\operatorname*{Ker}\left(  \Lambda\left(  \pi\right)  \right)  =1+I\left[
+\left[  T\right]  \right]  ^{+}$ (by Exercise 5.5 \textbf{(a)}), this yields
+that $1+I\left[  \left[  T\right]  \right]  ^{+}$ is a $\lambda$-ideal of
+$\Lambda\left(  K\right)  $. This solves Exercise 5.5 \textbf{(b)}.
+
 \subsection{To Section 6}
 
 \textit{Exercise 6.1: Hints to solution:} We have%
@@ -11678,6 +12206,96 @@ $\widetilde{\varphi}:K\rightarrow\Lambda\left(  A\right)  $ such that
 $\operatorname*{coeff}\nolimits_{1}^{A}\circ\widetilde{\varphi}=\varphi,$
 namely the homomorphism $\Lambda\left(  \varphi\right)  \circ\lambda_{T},$ and
 the 2nd Step proves that this is the only such homomorphism).
+
+\textit{Exercise 6.7:} \textit{Solution:} Let $t\in I$. Since $S$ generates
+the ideal $I$, there exists some $r\in\mathbb{N}$, some elements $s_{1}$,
+$s_{2}$, $...$, $s_{r}$ of $S$, and some elements $a_{1}$, $a_{2}$, $...$,
+$a_{r}$ of $A$ such that $t=\sum\limits_{j=1}^{r}a_{j}s_{j}$. Consider this
+$r$, these $s_{1}$, $s_{2}$, $...$, $s_{r}$ and these $a_{1}$, $a_{2}$, $...$,
+$a_{r}$.
+
+Consider the map $\lambda_{T}:K\rightarrow\Lambda\left(  K\right)  $ defined
+in Theorem 5.6. Since $K$ is a special $\lambda$-ring, this map $\lambda_{T}$
+is a $\lambda$-ring homomorphism. In particular, $\lambda_{T}$ is a ring homomorphism.
+
+Consider the set $1+I\left[  \left[  T\right]  \right]  ^{+}$ defined in
+Exercise 5.5. By Exercise 5.5 \textbf{(b)}, this set $1+I\left[  \left[
+T\right]  \right]  ^{+}$ is a $\lambda$-ideal of $\Lambda\left(  K\right)  $,
+thus also an ideal of $\Lambda\left(  K\right)  $.
+
+Now, for every $j\in\left\{  1,2,...,r\right\}  $, we have $\lambda_{T}\left(
+s_{j}\right)  \in1+I\left[  \left[  T\right]  \right]  ^{+}$%
+.\ \ \ \ \footnote{\textit{Proof.} Let $j\in\left\{  1,2,...,r\right\}  $. By
+the definition of $\lambda_{T}$, we have%
+\[
+\lambda_{T}\left(  s_{j}\right)  =\sum\limits_{i\in\mathbb{N}}\lambda
+^{i}\left(  s_{j}\right)  T^{i}=\underbrace{\lambda^{0}\left(  s_{j}\right)
+}_{\substack{=1\\\text{(since }\lambda^{0}\left(  x\right)  =1\\\text{for
+every }x\in K\text{)}}}\underbrace{T^{0}}_{=1}+\sum\limits_{i>0}\lambda
+^{i}\left(  s_{j}\right)  T^{i}=1+\sum\limits_{i>0}\lambda^{i}\left(
+s_{j}\right)  T^{i}.
+\]
+\par
+Now, we have assumed that every $s\in S$ and every positive integer $i$
+satisfy $\lambda^{i}\left(  s\right)  \in I$. Applied to $s=s_{j}$, this
+yields that every positive integer $i$ satisfies $\lambda^{i}\left(
+s_{j}\right)  \in I$. Thus, $\sum\limits_{i>0}\lambda^{i}\left(  s_{j}\right)
+T^{i}\in I\left[  \left[  T\right]  \right]  $. Since $\sum\limits_{i>0}%
+\lambda^{i}\left(  s_{j}\right)  T^{i}$ is a power series with constant term
+$0$, we thus have%
+\[
+\sum\limits_{i>0}\lambda^{i}\left(  s_{j}\right)  T^{i}\in\left\{  p\in
+I\left[  \left[  T\right]  \right]  \ \mid\ p\text{ is a power series with
+constant term }0\right\}  =TI\left[  \left[  T\right]  \right]  =I\left[
+\left[  T\right]  \right]  ^{+}.
+\]
+Now, $\lambda_{T}\left(  s_{j}\right)  =1+\underbrace{\sum\limits_{i>0}%
+\lambda^{i}\left(  s_{j}\right)  T^{i}}_{\in I\left[  \left[  T\right]
+\right]  ^{+}}\in1+I\left[  \left[  T\right]  \right]  ^{+}$, qed.} But since
+$t=\sum\limits_{j=1}^{r}a_{j}s_{j}$, we have%
+\begin{align*}
+\lambda_{T}\left(  t\right)   &  =\lambda_{T}\left(  \sum\limits_{j=1}%
+^{r}a_{j}s_{j}\right)  =\widehat{\sum\limits_{j=1}^{r}}\lambda_{T}\left(
+a_{j}\right)  \widehat{\cdot}\underbrace{\lambda_{T}\left(  s_{j}\right)
+}_{\in1+I\left[  \left[  T\right]  \right]  ^{+}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\lambda_{T}:K\rightarrow
+\Lambda\left(  K\right)  \text{ is a ring homomorphism}\right) \\
+&  \in\widehat{\sum\limits_{j=1}^{r}}\lambda_{T}\left(  a_{j}\right)
+\widehat{\cdot}\left(  1+I\left[  \left[  T\right]  \right]  ^{+}\right)
+\subseteq1+I\left[  \left[  T\right]  \right]  ^{+}%
+\end{align*}
+(since $1+I\left[  \left[  T\right]  \right]  ^{+}$ is an ideal of
+$\Lambda\left(  K\right)  $). In other words, $\lambda_{T}\left(  t\right)
+-1\in I\left[  \left[  T\right]  \right]  ^{+}\subseteq I\left[  \left[
+T\right]  \right]  $. Thus, $\lambda_{T}\left(  t\right)  -1$ is a power
+series with all its coefficients lying in $I$.
+
+By the definition of $\lambda_{T}$, we have $\lambda_{T}\left(  t\right)
+=\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  t\right)  T^{i}$. Thus,
+$\left(  \text{the coefficient before }T^{i}\text{ in }\lambda_{T}\left(
+t\right)  \right)  =\lambda^{i}\left(  t\right)  $ for every $i\in\mathbb{N}$.
+
+Now, let $i$ be a positive integer. Then, $\left(  \text{the coefficient
+before }T^{i}\text{ in }\lambda_{T}\left(  t\right)  -1\right)  \in I$
+(because $\lambda_{T}\left(  t\right)  -1$ is a power series with all its
+coefficients lying in $I$). In view of%
+\begin{align*}
+&  \left(  \text{the coefficient before }T^{i}\text{ in }\lambda_{T}\left(
+t\right)  -1\right) \\
+&  =\underbrace{\left(  \text{the coefficient before }T^{i}\text{ in }%
+\lambda_{T}\left(  t\right)  \right)  }_{=\lambda^{i}\left(  t\right)
+}-\underbrace{\left(  \text{the coefficient before }T^{i}\text{ in }1\right)
+}_{\substack{=0\\\text{(since }i\text{ is positive)}}}=\lambda^{i}\left(
+t\right)  ,
+\end{align*}
+this rewrites as $\lambda^{i}\left(  t\right)  \in I$.
+
+Now, forget that we fixed $t$ and $i$. We thus have proven that every $t\in I$
+and every positive integer $i$ satisfy $\lambda^{i}\left(  t\right)  \in I$.
+But due to the definition of a $\lambda$-ideal, this means precisely that $I$
+is a $\lambda$-ideal of $K$.
+
+Thus, we have proven that $I$ is a $\lambda$-ideal of $K$. Exercise 6.7 is solved.
 
 \subsection{To Section 7}
 
@@ -12296,13 +12914,13 @@ what completes the proof.
 this. Here is one:
 
 We are going to prove that $\psi^{n}=\operatorname*{id}$ for all
-$n\in\mathbb{N}\diagdown\left\{  0\right\}  $. We will do this by strong
+$n\in\mathbb{N}\setminus\left\{  0\right\}  $. We will do this by strong
 induction over $n$. Since a strong induction does not need an induction base,
 let us start with the induction step:
 
-Let $n\in\mathbb{N}\diagdown\left\{  0\right\}  $. Assume (as the induction
+Let $n\in\mathbb{N}\setminus\left\{  0\right\}  $. Assume (as the induction
 hypothesis) that we have already proven $\psi^{i}=\operatorname*{id}$ for all
-$i\in\mathbb{N}\diagdown\left\{  0\right\}  $ satisfying $i<n$. We now must
+$i\in\mathbb{N}\setminus\left\{  0\right\}  $ satisfying $i<n$. We now must
 prove that $\psi^{n}=\operatorname*{id}$.
 
 Let $x\in K$. Exercise 9.3 \textbf{(a)} yields%
@@ -12387,7 +13005,7 @@ x-1\right)  \cdot\left(  x-2\right)  \cdot...\cdot\left(  x-n+1\right)
 x-n+1\right)  }{n!\diagup n}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(
 n-1\right)  !=n!\diagup n\right) \\
 &  =n\underbrace{\dfrac{x\cdot\left(  x-1\right)  \cdot...\cdot\left(
-x-n+1\right)  }{n!}}_{=\dbinom{x}{n}}=n\dbinom{x}{n}%
+x-n+1\right)  }{n!}}_{=\dbinom{x}{n}}=n\dbinom{x}{n},
 \end{align*}
 this transforms into%
 \[
@@ -12398,7 +13016,7 @@ This simplifies to $\left(  -1\right)  ^{n-1}x=\left(  -1\right)  ^{n-1}%
 \psi^{n}\left(  x\right)  $. In other words, $\psi^{n}\left(  x\right)  =x$.
 Since this holds for every $x\in K$, this shows that $\psi^{n}%
 =\operatorname*{id}$. This completes the induction step. Thus, $\psi
-^{n}=\operatorname*{id}$ for every $n\in\mathbb{N}\diagdown\left\{  0\right\}
+^{n}=\operatorname*{id}$ for every $n\in\mathbb{N}\setminus\left\{  0\right\}
 $, and Exercise 9.4 is solved.
 
 \textit{Exercise 9.5: Solution:} \textit{1st step:} Any two power series
@@ -12413,7 +13031,7 @@ T\right]  \right]  ^{+}$ satisfy%
 \textit{First proof of (\ref{9.ex5.s1}).} Let $u\in1+K\left[  \left[
 T\right]  \right]  ^{+}$ and $v\in1+K\left[  \left[  T\right]  \right]  ^{+}$.
 Let us work with the notations of Exercise 9.2. For every $i\in\mathbb{N}%
-\diagdown\left\{  0\right\}  $, we have
+\setminus\left\{  0\right\}  $, we have
 \begin{align*}
 \operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log\left(
 uv\right)  \right)   &  =\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
@@ -12511,7 +13129,7 @@ This proves the 2nd step.
 
 \textit{3rd step:} For every $x\in K$ and $y\in K$, we have $\psi^{j}\left(
 x+y\right)  =\psi^{j}\left(  x\right)  +\psi^{j}\left(  y\right)  $ for every
-$j\in\mathbb{N}\diagdown\left\{  0\right\}  $.
+$j\in\mathbb{N}\setminus\left\{  0\right\}  $.
 
 \textit{Proof.} Let $x\in K$ and $y\in K$. By the definition of
 $\widetilde{\psi}_{T}$, we have $\widetilde{\psi}_{T}\left(  x\right)
@@ -12536,13 +13154,13 @@ x\right)  T^{j}+\sum\limits_{j\in\mathbb{N}\setminus\left\{  0\right\}  }%
 \end{align*}
 Comparing coefficients before $T^{j}$ in this identity of power series, we
 conclude that $\psi^{j}\left(  x+y\right)  =\psi^{j}\left(  x\right)
-+\psi^{j}\left(  y\right)  $ for every $j\in\mathbb{N}\diagdown\left\{
++\psi^{j}\left(  y\right)  $ for every $j\in\mathbb{N}\setminus\left\{
 0\right\}  $. This proves the 3rd step.
 
-\textit{4th step:} For every $j\in\mathbb{N}\diagdown\left\{  0\right\}  $, we
+\textit{4th step:} For every $j\in\mathbb{N}\setminus\left\{  0\right\}  $, we
 have $\psi^{j}\left(  0\right)  =0$.
 
-\textit{Proof.} Let $j\in\mathbb{N}\diagdown\left\{  0\right\}  $. The 3rd
+\textit{Proof.} Let $j\in\mathbb{N}\setminus\left\{  0\right\}  $. The 3rd
 step yields that $\psi^{j}\left(  x+y\right)  =\psi^{j}\left(  x\right)
 +\psi^{j}\left(  y\right)  $ for every $x\in K$ and $y\in K$. Applying this to
 $x=0$ and $y=0$, we obtain $\psi^{j}\left(  0+0\right)  =\psi^{j}\left(
@@ -12551,7 +13169,7 @@ $x=0$ and $y=0$, we obtain $\psi^{j}\left(  0+0\right)  =\psi^{j}\left(
 simplifies to $\psi^{j}\left(  0\right)  =0$. Thus, the 4th step is proven.
 
 \textit{5th step:} The map $\psi^{j}:K\rightarrow K$ is a homomorphism of
-additive groups for every $j\in\mathbb{N}\diagdown\left\{  0\right\}  $.
+additive groups for every $j\in\mathbb{N}\setminus\left\{  0\right\}  $.
 
 \textit{Proof.} This follows from the 3rd and 4th steps. This completes the
 5th step and thus solves the problem.
@@ -12600,12 +13218,12 @@ This solves Exercises 9.6 \textbf{(b)} and \textbf{(c)}.
 }\right)  $ be a $\lambda$-ring. Let $x\in K$. Let $n\in\mathbb{N}$. By the
 universal property of a polynomial ring, there exists a $\mathbb{Z}$-algebra
 homomorphism $\varrho:\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
-_{n}\right]  $ which maps $\alpha_{i}$ to $\lambda^{i}\left(  x\right)  $ for
-every $i\in\left\{  1,2,...,n\right\}  $. Consider this homomorphism $\varrho
-$. By its construction, this homomorphism $\varrho$ maps every polynomial
-$P\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{n}\right]  $ to its
-value $P\left(  \lambda^{1}\left(  x\right)  ,\lambda^{2}\left(  x\right)
-,...,\lambda^{n}\left(  x\right)  \right)  $.
+_{n}\right]  \rightarrow K$ which maps $\alpha_{i}$ to $\lambda^{i}\left(
+x\right)  $ for every $i\in\left\{  1,2,...,n\right\}  $. Consider this
+homomorphism $\varrho$. By its construction, this homomorphism $\varrho$ maps
+every polynomial $P\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
+_{n}\right]  $ to its value $P\left(  \lambda^{1}\left(  x\right)
+,\lambda^{2}\left(  x\right)  ,...,\lambda^{n}\left(  x\right)  \right)  $.
 
 Every $i\in\left\{  0,1,...,n\right\}  $ satisfies
 \begin{equation}
@@ -12684,6 +13302,170 @@ Thus we have proved Exercise 9.3 \textbf{(a)} by means of Exercise 9.6
 \textbf{(a)}. Similarly, we can derive Exercise 9.3 \textbf{(b)} and
 \textbf{(c)} from Exercise 9.6 \textbf{(b)} and \textbf{(c)} (again, by
 applying $\varrho$).
+
+\textit{Exercise 9.7:} \textit{Detailed solution:} First, we will prove that
+$\alpha_{1}^{p}-N_{p}\in p\mathbb{Z}\left[  \alpha_{1},\alpha_{2}%
+,...,\alpha_{p}\right]  $ (where $N_{p}$ is the $p$-th Hirzebruch polynomial
+as defined in the beginning of Section 9). Due to our implicit construction of
+$N_{p}$, this is not easy to prove directly. Instead, we will prove this by
+defining a "universal" polynomial similar to our Hirzebruch polynomials, and
+then prove that this polynomial actually is $\dfrac{\alpha_{1}^{p}-N_{p}}{p}$.
+
+\textit{1st step:} Let $m\in\mathbb{N}$. The polynomial $\dfrac{1}{p}\left(
+\left(  U_{1}+U_{2}+...+U_{m}\right)  ^{p}-\left(  U_{1}^{p}+U_{2}%
+^{p}+...+U_{m}^{p}\right)  \right)  \in\mathbb{Q}\left[  U_{1},U_{2}%
+,...,U_{m}\right]  $ actually lies in $\mathbb{Z}\left[  U_{1},U_{2}%
+,...,U_{m}\right]  $.
+
+\textit{Proof.} We need the following fact as a lemma:%
+\begin{equation}
+\left(
+\begin{array}
+[c]{c}%
+\text{If }m\in\mathbb{N}\text{, if }A\text{ is a commutative ring with unity
+such that }p\cdot1_{A}=0\text{, and}\\
+\text{if }x_{1}\text{, }x_{2}\text{, }...\text{, }x_{m}\text{ are }m\text{
+elements of }A\text{, then }\left(  x_{1}+x_{2}+...+x_{m}\right)  ^{p}%
+=x_{1}^{p}+x_{2}^{p}+...+x_{m}^{p}%
+\end{array}
+\right)  . \label{9.7.sol.idiotbinom}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{9.7.sol.idiotbinom}):} Let $m\in\mathbb{N}$.
+Let $A$ be a commutative ring with unity such that $p\cdot1_{A}=0$. Let
+$x_{1}$, $x_{2}$, $...$, $x_{m}$ be $m$ elements of $A$.
+\par
+Let $\Phi:A\rightarrow A$ be the map defined by $\left(  \Phi\left(  y\right)
+=y^{p}\text{ for every }y\in A\right)  $. Then, $\Phi$ is known to be a ring
+homomorphism (since $p\cdot1_{A}=0$). Thus,
+\[
+\Phi\left(  x_{1}+x_{2}+...+x_{m}\right)  =\Phi\left(  x_{1}\right)
++\Phi\left(  x_{2}\right)  +...+\Phi\left(  x_{m}\right)  =\sum\limits_{i=1}%
+^{m}\underbrace{\Phi\left(  x_{i}\right)  }_{\substack{=x_{i}^{p}\\\text{(by
+the definition of }\Phi\text{)}}}=\sum\limits_{i=1}^{m}x_{i}^{p}=x_{1}%
+^{p}+x_{2}^{p}+...+x_{m}^{p}.
+\]
+Compared with $\Phi\left(  x_{1}+x_{2}+...+x_{m}\right)  =\left(  x_{1}%
++x_{2}+...+x_{m}\right)  ^{p}$ (by the definition of $\Phi$), this yields
+$\left(  x_{1}+x_{2}+...+x_{m}\right)  ^{p}=x_{1}^{p}+x_{2}^{p}+...+x_{m}^{p}%
+$. This proves (\ref{9.7.sol.idiotbinom}).}
+
+Now, let $A$ be the ring $\left(  \mathbb{Z}\left[  U_{1},U_{2},...,U_{m}%
+\right]  \right)  \diagup\left(  p\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}%
+\right]  \right)  $. For every $u\in\mathbb{Z}\left[  U_{1},U_{2}%
+,...,U_{m}\right]  $, let $\overline{u}$ denote the residue class of $u$
+modulo the ideal $p\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $; this
+$\overline{u}$ lies in $\left(  \mathbb{Z}\left[  U_{1},U_{2},...,U_{m}%
+\right]  \right)  \diagup\left(  p\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}%
+\right]  \right)  =A$. Since $p\cdot1_{\mathbb{Z}\left[  U_{1},U_{2}%
+,...,U_{m}\right]  }\in p\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $, we
+have $\overline{p\cdot1_{\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  }}%
+=0$. Since $\overline{p\cdot1_{\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]
+}}=p\cdot1_{A}$, this rewrites as $p\cdot1_{A}=0$. Thus,
+(\ref{9.7.sol.idiotbinom}) (applied to $x_{i}=\overline{U_{i}}$) yields
+$\left(  \overline{U_{1}}+\overline{U_{2}}+...+\overline{U_{m}}\right)
+^{p}=\overline{U_{1}}^{p}+\overline{U_{2}}^{p}+...+\overline{U_{m}}^{p}$.
+Since $\left(  \overline{U_{1}}+\overline{U_{2}}+...+\overline{U_{m}}\right)
+^{p}=\overline{\left(  U_{1}+U_{2}+...+U_{m}\right)  ^{p}}$ and $\overline
+{U_{1}}^{p}+\overline{U_{2}}^{p}+...+\overline{U_{m}}^{p}=\overline{U_{1}%
+^{p}+U_{2}^{p}+...+U_{m}^{p}}$, this rewrites as $\overline{\left(
+U_{1}+U_{2}+...+U_{m}\right)  ^{p}}=\overline{U_{1}^{p}+U_{2}^{p}%
++...+U_{m}^{p}}$. In other words,%
+\[
+\left(  U_{1}+U_{2}+...+U_{m}\right)  ^{p}\equiv U_{1}^{p}+U_{2}^{p}%
++...+U_{m}^{p}\operatorname{mod}p\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}%
+\right]  .
+\]
+In other words, $\left(  U_{1}+U_{2}+...+U_{m}\right)  ^{p}-\left(  U_{1}%
+^{p}+U_{2}^{p}+...+U_{m}^{p}\right)  \in p\mathbb{Z}\left[  U_{1}%
+,U_{2},...,U_{m}\right]  $. Thus, $\dfrac{1}{p}\left(  \left(  U_{1}%
++U_{2}+...+U_{m}\right)  ^{p}-\left(  U_{1}^{p}+U_{2}^{p}+...+U_{m}%
+^{p}\right)  \right)  \in\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $.
+This proves the 1st step.
+
+\textit{2nd step:} Until now, $m$ could be any nonnegative integer. From now
+on, set $m=p$.
+
+The polynomial $\dfrac{1}{p}\left(  \left(  U_{1}+U_{2}+...+U_{m}\right)
+^{p}-\left(  U_{1}^{p}+U_{2}^{p}+...+U_{m}^{p}\right)  \right)  $ lies in
+$\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ (due to the 1st step) and
+is symmetric (since it is a $\mathbb{Q}$-linear combination of the polynomials
+$\left(  U_{1}+U_{2}+...+U_{m}\right)  ^{p}$ and $U_{1}^{p}+U_{2}%
+^{p}+...+U_{m}^{p}$, both of which are symmetric). Thus, Theorem 4.1
+\textbf{(a)} (applied to $P=\dfrac{1}{p}\left(  \left(  U_{1}+U_{2}%
++...+U_{m}\right)  ^{p}-\left(  U_{1}^{p}+U_{2}^{p}+...+U_{m}^{p}\right)
+\right)  $) yields that there exists one and only one polynomial
+$Q\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $ such
+that%
+\begin{equation}
+\dfrac{1}{p}\left(  \left(  U_{1}+U_{2}+...+U_{m}\right)  ^{p}-\left(
+U_{1}^{p}+U_{2}^{p}+...+U_{m}^{p}\right)  \right)  =Q\left(  X_{1}%
+,X_{2},...,X_{m}\right)  . \label{9.7.sol.Q}%
+\end{equation}
+Consider this $Q$. Note that $Q\in\mathbb{Z}\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{m}\right]  =\mathbb{Z}\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{p}\right]  $ (since $m=p$).
+
+For every $i\in\mathbb{N}$, let $X_{i}$ be defined as in Theorem 4.1. For
+every $j\in\mathbb{N}\setminus\left\{  0\right\}  $, define $N_{j}$ as in the
+beginning of Section 9. Applying (\ref{Nj1}) to $j=p$, we obtain%
+\[
+\sum_{i=1}^{m}U_{i}^{p}=N_{p}\underbrace{\left(  X_{1},X_{2},...,X_{p}\right)
+}_{\substack{=\left(  X_{1},X_{2},...,X_{m}\right)  \\\text{(since
+}p=m\text{)}}}=N_{p}\left(  X_{1},X_{2},...,X_{m}\right)  .
+\]
+On the other hand, $X_{1}=U_{1}+U_{2}+...+U_{m}$ (because $X_{1}$ is the
+$1$-st elementary symmetric polynomial in the variables $U_{1}$, $U_{2}$,
+$...$, $U_{m}$), so that $X_{1}^{p}=\left(  U_{1}+U_{2}+...+U_{m}\right)
+^{p}$. Now,%
+\begin{align*}
+\left(  \alpha_{1}^{p}-N_{p}\right)  \left(  X_{1},X_{2},...,X_{m}\right)   &
+=\underbrace{X_{1}^{p}}_{=\left(  U_{1}+U_{2}+...+U_{m}\right)  ^{p}%
+}-\underbrace{N_{p}\left(  X_{1},X_{2},...,X_{m}\right)  }_{=\sum
+\limits_{i=1}^{m}U_{i}^{p}=U_{1}^{p}+U_{2}^{p}+...+U_{m}^{p}}\\
+&  =\left(  U_{1}+U_{2}+...+U_{m}\right)  ^{p}-\left(  U_{1}^{p}+U_{2}%
+^{p}+...+U_{m}^{p}\right) \\
+&  =p\cdot\underbrace{\dfrac{1}{p}\left(  \left(  U_{1}+U_{2}+...+U_{m}%
+\right)  ^{p}-\left(  U_{1}^{p}+U_{2}^{p}+...+U_{m}^{p}\right)  \right)
+}_{\substack{=Q\left(  X_{1},X_{2},...,X_{m}\right)  \\\text{(by
+(\ref{9.7.sol.Q}))}}}\\
+&  =pQ\left(  X_{1},X_{2},...,X_{m}\right)  =\left(  pQ\right)  \left(
+X_{1},X_{2},...,X_{m}\right)  .
+\end{align*}
+Since the elements $X_{1},$ $X_{2},$ $...,$ $X_{m}$ of $\mathbf{Z}\left[
+U_{1},U_{2},...,U_{m}\right]  $ are algebraically independent (by Theorem 4.1
+\textbf{(a)}), this yields $\alpha_{1}^{p}-N_{p}=pQ$. This shows that
+$\alpha_{1}^{p}-N_{p}\in p\mathbb{Z}\left[  \alpha_{1},\alpha_{2}%
+,...,\alpha_{p}\right]  $.
+
+\textit{3rd step:} Let $x\in K$. Applying (\ref{PsiDef}) to $j=p$, we obtain%
+\[
+\psi^{p}\left(  x\right)  =N_{p}\left(  \lambda^{1}\left(  x\right)
+,\lambda^{2}\left(  x\right)  ,...,\lambda^{p}\left(  x\right)  \right)  .
+\]
+Now, we recall that $\alpha_{1}^{p}-N_{p}=pQ$, so that%
+\begin{align*}
+\left(  \alpha_{1}^{p}-N_{p}\right)  \left(  \lambda^{1}\left(  x\right)
+,\lambda^{2}\left(  x\right)  ,...,\lambda^{p}\left(  x\right)  \right)   &
+=\left(  pQ\right)  \left(  \lambda^{1}\left(  x\right)  ,\lambda^{2}\left(
+x\right)  ,...,\lambda^{p}\left(  x\right)  \right) \\
+&  =p\underbrace{Q\left(  \lambda^{1}\left(  x\right)  ,\lambda^{2}\left(
+x\right)  ,...,\lambda^{p}\left(  x\right)  \right)  }_{\in K}\in pK.
+\end{align*}
+Since%
+\begin{align*}
+\left(  \alpha_{1}^{p}-N_{p}\right)  \left(  \lambda^{1}\left(  x\right)
+,\lambda^{2}\left(  x\right)  ,...,\lambda^{p}\left(  x\right)  \right)   &
+=\underbrace{\alpha_{1}^{p}\left(  \lambda^{1}\left(  x\right)  ,\lambda
+^{2}\left(  x\right)  ,...,\lambda^{p}\left(  x\right)  \right)  }_{=\left(
+\lambda^{1}\left(  x\right)  \right)  ^{p}}-\underbrace{N_{p}\left(
+\lambda^{1}\left(  x\right)  ,\lambda^{2}\left(  x\right)  ,...,\lambda
+^{p}\left(  x\right)  \right)  }_{=\psi^{p}\left(  x\right)  }\\
+&  =\left(  \underbrace{\lambda^{1}\left(  x\right)  }%
+_{\substack{=x\\\text{(by the definition}\\\text{of a }\lambda\text{-ring)}%
+}}\right)  ^{p}-\psi^{p}\left(  x\right)  =x^{p}-\psi^{p}\left(  x\right)  ,
+\end{align*}
+this rewrites as $x^{p}-\psi^{p}\left(  x\right)  \in pK$. In other words,
+$\psi^{p}\left(  x\right)  \equiv x^{p}\operatorname{mod}pK$. Exercise 9.7 is solved.
 
 \subsection{To Section 10}
 
@@ -12930,7 +13712,7 @@ x\right)  \otimes1\right)  T^{j}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
 (\ref{ToddDefZ'})}\right) \\
 &  =\operatorname*{Td}\nolimits_{\varphi,0}\left(  \lambda^{1}\left(
 x\right)  \otimes1,\lambda^{2}\left(  x\right)  \otimes1,...,\lambda
-^{j}\left(  x\right)  \otimes1\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+^{0}\left(  x\right)  \otimes1\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
 the definition of }\operatorname*{Coeff}\nolimits_{0}\right) \\
 &  =\operatorname*{Td}\nolimits_{\varphi,0}=1\ \ \ \ \ \ \ \ \ \ \left(
 \text{by Proposition 10.6 \textbf{(a)}, applied to }\mathbf{Z}^{\prime}\text{
@@ -12949,10 +13731,10 @@ x\right)  \otimes1\right)  T^{j}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
 (\ref{ToddDefZ'})}\right) \\
 &  =\operatorname*{Td}\nolimits_{\varphi,1}\left(  \lambda^{1}\left(
 x\right)  \otimes1,\lambda^{2}\left(  x\right)  \otimes1,...,\lambda
-^{j}\left(  x\right)  \otimes1\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+^{1}\left(  x\right)  \otimes1\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
 the definition of }\operatorname*{Coeff}\nolimits_{1}\right) \\
 &  =\operatorname*{Td}\nolimits_{\varphi,1}\left(  \underbrace{\lambda
-^{1}\left(  x\right)  \otimes1}_{=x\otimes1}\right)  =\operatorname*{Td}%
+^{1}\left(  x\right)  }_{=x}\otimes1\right)  =\operatorname*{Td}%
 \nolimits_{\varphi,1}\left(  x\otimes1\right)  =\varphi_{1}\left(
 x\otimes1\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since Proposition 10.6 \textbf{(b)}
@@ -13203,6 +13985,10 @@ Academic Press 1988, pp. 93-102.
 [9] John R. Hopkinson, \textit{Universal Polynomials in Lambda rings and the
 K-theory of the infinite loop space }$tmf$, PhD thesis at MIT, June
 2006.\newline\texttt{http://dspace.mit.edu/handle/1721.1/34544}
+
+[10] Donald Yau, \textit{Lambda-rings}, World Scientific 2010.\newline%
+\texttt{http://www.worldscientific.com/worldscibooks/10.1142/7664}%
+\newline(includes downloadable Chapter 1).
 
 
 \end{document}
