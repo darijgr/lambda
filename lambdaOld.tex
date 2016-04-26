@@ -1,0 +1,1046 @@
+\documentclass[12pt,final,notitlepage,onecolumn,german]{article}%
+\usepackage[all,cmtip]{xy}
+\usepackage{lscape}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsmath}%
+\setcounter{MaxMatrixCols}{30}
+%TCIDATA{OutputFilter=latex2.dll}
+%TCIDATA{Version=5.00.0.2570}
+%TCIDATA{LastRevised=Saturday, September 26, 2009 00:47:57}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+\voffset=-2.5cm
+\hoffset=-2.5cm
+\setlength\textheight{24cm}
+\setlength\textwidth{15.5cm}
+\begin{document}
+
+\begin{center}
+\textbf{Lambda rings}
+
+Darij Grinberg, after Fulton/Lang and other sources
+
+\textit{Version 0.0.1}
+\end{center}
+
+This is a \textbf{BETA VERSION} and has never been proofread. \textbf{Please
+notify me of any mistakes, typos and hard-to-understand arguments you
+find!\footnote{my email address is \texttt{A@B.com}, where
+\texttt{A=darijgrinberg} and \texttt{B=gmail}}}
+
+\bigskip
+
+\fbox{\textbf{What is this?}}
+
+This is not really original content. It is my attempt to make some parts of
+Chapter 1 of Fulton/Lang [1] better accessible by adding some omitted proofs
+and changing the order of exposition.
+
+\begin{center}
+\fbox{\textbf{0. Notation}}
+\end{center}
+
+In the following, $\mathbb{N}$ will denote the set $\left\{
+0,1,2,...\right\}  $.
+
+When we say "ring", we will always mean "commutative ring with unity".
+
+\begin{center}
+\fbox{\textbf{1. Motivation}}
+\end{center}
+
+What is the point of $\lambda$-rings?
+
+Fulton/Lang [1] motivate $\lambda$-rings through vector bundles. Here we are
+going for a more elementary motivation, namely through representation rings in
+group representation theory:
+
+Consider a finite group $G$ and a field $K$. In representation theory, one
+define the so-called \textit{representation ring} of the group $G$ over the
+field $K$. This ring can be constructed as follows:\footnote{I hope I got this
+right. At least in the case $\left\vert G\right\vert \nmid\operatorname*{char}%
+K$ it should be correct.}
+
+Let $\operatorname*{Rep}_{K}G$ be the set of all representations of the group
+$G$ over the field $K$. (We disregard the set-theoretic problematics stemming
+from the notion of such a big set. If you wish, you can call it a class or a
+SET instead of a set, or restrict yourself to a smaller subset containing
+every representation up to isomorphism.)
+
+Let $\operatorname*{FRep}_{K}G$ be the free abelian group over
+$\operatorname*{Rep}_{K}G$. Denote by $1$ the trivial representation of $G$ on
+$K$ (with every element of $G$ acting as identity). We define a ring structure
+on $\operatorname*{FRep}_{K}G$ by letting $1$ be the one of this ring, and
+defining the product of two representations of $G$ as their tensor product
+(over $K$).
+
+Now let $I$ be the two-sided ideal%
+\[
+I=\left\langle U-V\ \mid\ U\text{ and }V\text{ are two isomorphic
+representations of }G\right\rangle
+\]
+of $\operatorname*{FRep}_{K}G$. The \textit{representation ring of the group
+}$G$\textit{ over the field }$K$ is then defined as the ring
+$\operatorname*{FRep}_{K}G\diagup I$. It is a commutative ring, as $V\otimes
+W\cong W\otimes V$ for any two representations $V$ and $W$.
+
+[...]
+
+\begin{center}
+\fbox{\textbf{2. }$\lambda$\textbf{-rings}}
+\end{center}
+
+\begin{quote}
+\textbf{Definition:} \textbf{1)} Let $K$ be a ring. Let $\lambda
+^{i}:K\rightarrow K$ be a mapping\footnote{Here, "mapping" actually means
+"mapping" and not "group homomorphism" of "ring homomorphism".} for every
+$i\in\mathbb{N}$ such that $\lambda^{0}\left(  x\right)  =1$ and $\lambda
+^{1}\left(  x\right)  =x$ for every $x\in K$. Assume that%
+\begin{equation}
+\lambda^{k}\left(  x+y\right)  =\sum_{i=0}^{k}\lambda^{i}\left(  x\right)
+\lambda^{k-i}\left(  y\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }%
+k\in\mathbb{N},\text{ }x\in K\text{ and }y\in K. \label{lambda1}%
+\end{equation}
+Then, we call $\left(  K,\left(  \lambda_{i}\right)  _{i\in\mathbb{N}}\right)
+$ a $\lambda$\textit{-ring}. We will also call $K$ itself a $\lambda$-ring if
+there is an obvious (from the context) choice of the sequence of mappings
+$\left(  \lambda_{i}\right)  _{i\in\mathbb{N}}$ which makes $\left(  K,\left(
+\lambda_{i}\right)  _{i\in\mathbb{N}}\right)  $ a $\lambda$-ring.
+
+\textbf{2)} Let $\left(  K,\left(  \lambda_{i}\right)  _{i\in\mathbb{N}%
+}\right)  $ be a $\lambda$-ring. Let $\varepsilon:K\rightarrow\mathbb{Z}$ be a
+surjective\footnote{I am quoting this from [1]. Personally, I have never have
+met a non-surjective ring homomorphism in my life.} ring homomorphism. Let
+$\mathbf{E}$ be a subset of $K$ such that $\mathbf{E}$ is closed under
+addition and multiplication and contains the subset $\mathbb{Z}^{+}$ of $K$
+(that is, the image of $\mathbb{Z}^{+}$ under the canonical ring homomorphism
+$\mathbb{Z}^{+}\rightarrow K$). Also assume that $K=\mathbf{E}-\mathbf{E}$
+(that is, every element of $K$ can be written as difference of two elements of
+$\mathbf{E}$). Furthermore, assume that every $e\in\mathbf{E}$ satisfies%
+\begin{align*}
+\varepsilon\left(  e\right)   &  >0;\ \ \ \ \ \ \ \ \ \ \lambda^{i}\left(
+e\right)  =0\ \ \ \ \ \ \ \ \ \ \text{for any }i>\varepsilon\left(  e\right)
+,\\
+&  \ \ \ \ \ \ \ \ \ \ \text{and that }\lambda^{\varepsilon\left(  e\right)
+}\left(  e\right)  \text{ is a unit in the ring }K.
+\end{align*}
+
+
+Then, $\left(  \varepsilon,\mathbf{E}\right)  $ is called a \textit{positive
+structure} on the $\lambda$-ring. The homomorphism $\varepsilon:K\rightarrow
+\mathbb{Z}$ is called an \textit{augmentation} for the $\lambda$-ring $\left(
+K,\left(  \lambda_{i}\right)  _{i\in\mathbb{N}}\right)  $ with its positive
+structure $\left(  \varepsilon,\mathbf{E}\right)  $. The elements of the set
+$\mathbf{E}$ are called the \textit{positive elements} of the $\lambda$-ring
+$\left(  K,\left(  \lambda_{i}\right)  _{i\in\mathbb{N}}\right)  $ with its
+positive structure $\left(  \varepsilon,\mathbf{E}\right)  $.
+
+\textbf{3)} Let $\left(  K,\left(  \lambda_{i}\right)  _{i\in\mathbb{N}%
+}\right)  $ be a $\lambda$-ring with a positive structure $\left(
+\varepsilon,\mathbf{E}\right)  .$ The subset $\left\{  u\in\mathbf{E}%
+\ \mid\ \varepsilon\left(  u\right)  =1\right\}  $ of $\mathbf{E}$ is usually
+denoted as $\mathbf{L}$. The elements of $\mathbf{L}$ are called the
+\textit{line elements} of the $\lambda$-ring $\left(  K,\left(  \lambda
+_{i}\right)  _{i\in\mathbb{N}}\right)  $ with its positive structure $\left(
+\varepsilon,\mathbf{E}\right)  $.
+\end{quote}
+
+First, we give an alternative characterization of $\lambda$-rings:
+
+\begin{quote}
+\textbf{Theorem 2.1.} Let $K$ be a ring. Let $\lambda^{i}:K\rightarrow K$ be a
+mapping\footnote{Here, "mapping" actually means "mapping" and not "group
+homomorphism" of "ring homomorphism".} for every $i\in\mathbb{N}$ such that
+$\lambda^{0}\left(  x\right)  =1$ and $\lambda^{1}\left(  x\right)  =x$ for
+every $x\in K$. Consider the ring $K\left[  \left[  t\right]  \right]  $ of
+formal series in the indeterminate $t$ over the ring $K.$ Define a map
+$\lambda_{t}:K\rightarrow K\left[  \left[  t\right]  \right]  $ by
+$\lambda_{t}\left(  x\right)  =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
+x\right)  t^{i}$. Note that the power series $\lambda_{t}\left(  x\right)
+=\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  x\right)  t^{i}$ has the
+coefficient $\lambda^{0}\left(  x\right)  =1$ before $t^{0};$ thus, it is
+invertible in $K\left[  \left[  t\right]  \right]  $.
+
+\textbf{a)} Then, $\lambda_{t}\left(  x\right)  \cdot\lambda_{t}\left(
+y\right)  =\lambda_{t}\left(  x+y\right)  $ for every $x\in K$ and every $y\in
+K$ if and only if $\left(  K,\left(  \lambda_{i}\right)  _{i\in\mathbb{N}%
+}\right)  $ is a $\lambda$-ring.
+
+\textbf{b)} Let $\left(  K,\left(  \lambda_{i}\right)  _{i\in\mathbb{N}%
+}\right)  $ be a $\lambda$-ring. Then, $\lambda_{t}\left(  0\right)  =1$,
+$\lambda_{t}\left(  -x\right)  =\left(  \lambda_{t}\left(  x\right)  \right)
+^{-1}$ (in particular, this means that $\lambda_{t}\left(  x\right)  $ is
+invertible) and $\lambda_{t}\left(  x\right)  \cdot\lambda_{t}\left(
+y\right)  =\lambda_{t}\left(  x+y\right)  $ for every $x\in K$ and every $y\in
+K$.
+\end{quote}
+
+\textit{Proof of Theorem 2.1:} \textbf{a)} Every $x\in K$ and every $y\in K$
+satisfy%
+\[
+\lambda_{t}\left(  x\right)  \cdot\lambda_{t}\left(  y\right)  =\sum
+\limits_{i\in\mathbb{N}}\lambda^{i}\left(  x\right)  t^{i}\cdot\sum
+\limits_{i\in\mathbb{N}}\lambda^{i}\left(  y\right)  t^{i}=\sum\limits_{i\in
+\mathbb{N}}\sum\limits_{j\in\mathbb{N}}\lambda^{i}\left(  x\right)
+\lambda^{j}\left(  y\right)  t^{i+j}=\sum_{k\in\mathbb{N}}\sum_{i=0}%
+^{k}\lambda^{i}\left(  x\right)  \lambda^{k-i}\left(  y\right)  \cdot t^{k}%
+\]
+and%
+\[
+\lambda_{t}\left(  x+y\right)  =\sum_{i\in\mathbb{N}}\lambda^{i}\left(
+x+y\right)  t^{i}=\sum_{k\in\mathbb{N}}\lambda^{k}\left(  x+y\right)  t^{k}.
+\]
+Hence, $\lambda_{t}\left(  x\right)  \cdot\lambda_{t}\left(  y\right)
+=\lambda_{t}\left(  x+y\right)  $ is equivalent to $\sum\limits_{k\in
+\mathbb{N}}\sum\limits_{i=0}^{k}\lambda^{i}\left(  x\right)  \lambda
+^{k-i}\left(  y\right)  \cdot t^{k}=\sum\limits_{k\in\mathbb{N}}\lambda
+^{k}\left(  x+y\right)  t^{k}$, which, in turn, means that $\sum
+\limits_{i=0}^{k}\lambda^{i}\left(  x\right)  \lambda^{k-i}\left(  y\right)
+=\lambda^{k}\left(  x+y\right)  $. Thus, $\lambda_{t}\left(  x\right)
+\cdot\lambda_{t}\left(  y\right)  =\lambda_{t}\left(  x+y\right)  $ for every
+$x\in K$ and every $y\in K$ if and only if $\left(  K,\left(  \lambda
+_{i}\right)  _{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring. This proves
+Theorem 2.1 \textbf{a)}.
+
+\textbf{b)} Part \textbf{a)} tells us that $\lambda_{t}\left(  x\right)
+\cdot\lambda_{t}\left(  y\right)  =\lambda_{t}\left(  x+y\right)  $ for every
+$x\in K$ and every $y\in K$. Applied to $x=y=0,$ this takes the form
+$\lambda_{t}\left(  0\right)  \cdot\lambda_{t}\left(  0\right)  =\lambda
+_{t}\left(  0\right)  ,$ what yields $\lambda_{t}\left(  0\right)  =1$ (since
+$\lambda_{t}\left(  0\right)  $ is invertible in $K\left[  \left[  t\right]
+\right]  $). Now, $\lambda_{t}\left(  x\right)  \cdot\lambda_{t}\left(
+y\right)  =\lambda_{t}\left(  x+y\right)  $, applied to $y=-x$, yields
+$\lambda_{t}\left(  x\right)  \cdot\lambda_{t}\left(  -x\right)
+=\underbrace{\lambda_{t}\left(  0\right)  }_{=1}$, hence $\lambda_{t}\left(
+-x\right)  =\left(  \lambda_{t}\left(  x\right)  \right)  ^{-1}$, and Theorem
+2.1 \textbf{b)} is proven.
+
+\begin{quote}
+\textbf{Theorem 2.2.} Let $\left(  K,\left(  \lambda_{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring with a positive structure
+$\left(  \varepsilon,\mathbf{E}\right)  .$
+
+\textbf{a)} Then, $\mathbf{L}=\left\{  u\in\mathbf{E}\ \mid\ \varepsilon
+\left(  u\right)  =1\right\}  $ is a subgroup of the (multiplicative) unit
+group $K^{\times}$ of $K$. [I don't believe this.]
+
+\textbf{b)} We have $\mathbf{L}=\left\{  u\in\mathbf{E}\ \mid\ \lambda
+_{t}\left(  u\right)  =1+ut\right\}  $.
+\end{quote}
+
+\textit{Proof of Theorem 2.2.} \textbf{b)} Every $u\in\mathbf{L}$ satisfies%
+\[
+\lambda_{t}\left(  u\right)  =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
+u\right)  t^{i}=\underbrace{\lambda^{0}\left(  u\right)  }_{=1}+\underbrace
+{\lambda^{1}\left(  u\right)  }_{=u}t+\sum\limits_{i\geq2}\underbrace
+{\lambda^{i}\left(  u\right)  }_{\substack{=0,\text{ since}\\i>1=\varepsilon
+\left(  u\right)  \\\text{and }u\in\mathbf{L}\subseteq\mathbf{E}}}t^{i}=1+ut.
+\]
+Conversely, if some $u\in\mathbf{E}$ satisfies $\lambda_{t}\left(  u\right)
+=1+ut$, then%
+\[
+\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  u\right)  t^{i}=\lambda
+_{t}\left(  u\right)  =1+ut
+\]
+shows that $\lambda^{i}\left(  u\right)  =0$ for every $i>1$, and thus
+$\varepsilon\left(  u\right)  \leq1$ (because $\lambda^{\varepsilon\left(
+u\right)  }\left(  u\right)  $ is a unit in the ring $K$ (since $u\in
+\mathbf{E}$), so that $\lambda^{\varepsilon\left(  u\right)  }\left(
+u\right)  \neq0$ and thus $\varepsilon\left(  u\right)  \leq1$). Together with
+$\varepsilon\left(  u\right)  >0$, this yields $\varepsilon\left(  u\right)
+=1$ and thus $u\in\mathbf{L}$. This proves \textbf{b)}.
+
+\textbf{a)} First we need to show that every $u\in\mathbf{L}$ is invertible in
+$K$. In fact, let $u\in\mathbf{L}$. Then, $\lambda^{\varepsilon\left(
+u\right)  }\left(  u\right)  $ is a unit in the ring $K$ (since $u\in
+\mathbf{E}$). But $\varepsilon\left(  u\right)  =1$ and thus $\lambda
+^{\varepsilon\left(  u\right)  }\left(  u\right)  =\lambda^{1}\left(
+u\right)  =u$. Thus, $u$ is a unit in $K$; that is, $u$ is invertible. Its
+inverse $u^{-1}$ must lie in $\mathbf{E}$ as well
+
+[1] [Why the fuck does it?]
+
+\begin{center}
+\fbox{\textbf{3. Basic examples}}
+\end{center}
+
+[2] [...] [Examples]
+
+\begin{center}
+\fbox{\textbf{4. Intermezzo: Symmetric polynomials}}
+\end{center}
+
+Our next plan is to introduce a rather general example of $\lambda$-rings that
+we will use as a prototype to the notion of \textit{special }$\lambda
+$\textit{-rings}. Before we do this, we need some rather clumsy theory of
+symmetric polynomials. It's not a bad idea to skip this paragraph until its
+results are actually needed in paragraph 5.
+
+\begin{quote}
+\textbf{Theorem 4.1 (characterization of symmetric polynomials).} Let $K$ be a
+ring. Let $m\in\mathbb{N}$. Consider the ring $K\left[  U_{1},U_{2}%
+,...,U_{m}\right]  $ (the polynomial ring in $m$ indeterminates $U_{1},$
+$U_{2},$ $...,$ $U_{m}$ over the ring $K$). For every $i\in\mathbb{N}$, let
+$X_{i}=\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
+;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{i}$ be the so-called
+$i$\textit{-th elementary symmetric polynomial} in the variables $U_{1},$
+$U_{2},$ $...,$ $U_{m}$. (In particular, $I_{0}=1$ and $I_{i}=0$ for every
+$i>m$.)
+
+A polynomial $P\in K\left[  U_{1},U_{2},...,U_{m}\right]  $ is called
+\textit{symmetric} if it satisfies $P\left(  U_{1},U_{2},...,U_{m}\right)
+=P\left(  U_{\pi\left(  1\right)  },U_{\pi\left(  2\right)  },...,U_{\pi
+\left(  m\right)  }\right)  $ for every permutation $\pi$ of the set $\left\{
+1,2,...,m\right\}  $.
+
+\textbf{(a)} Let $P\in K\left[  U_{1},U_{2},...,U_{m}\right]  $ be a symmetric
+polynomial. Then, there exists one and only one polynomial $Q\in
+\underbrace{K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]
+}_{\text{polynomial ring}}$ such that $P\left(  U_{1},U_{2},...,U_{m}\right)
+=Q\left(  X_{1},X_{2},...,X_{m}\right)  $.\ \ \ \ \footnote{In other words,
+the subring%
+\[
+\left\{  P\in K\left[  U_{1},U_{2},...,U_{m}\right]  \ \mid\ P\text{ is
+symmetric}\right\}
+\]
+of the polynomial ring $K\left[  U_{1},U_{2},...,U_{m}\right]  $ is generated
+by the elements $X_{1},$ $X_{2},$ $...,$ $X_{m}$. Moreover, these elements
+$X_{1},$ $X_{2},$ $...,$ $X_{m}$ are algebraically independent, so that the
+map%
+\[
+\underbrace{K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]
+}_{\text{polynomial ring}}\rightarrow\left\{  P\in K\left[  U_{1}%
+,U_{2},...,U_{m}\right]  \ \mid\ P\text{ is symmetric}\right\}
+\]
+which maps every $\alpha_{i}$ to $U_{i}$ is a bijection.}
+
+\textbf{(b)} Let $\ell\in\mathbb{N}$. Assume, moreover, that $P\in K\left[
+U_{1},U_{2},...,U_{m}\right]  $ is a symmetric polynomial of total degree
+$\leq\ell$ in the variables $U_{1},$ $U_{2},$ $...,$ $U_{m}$. Then, the
+variables $\alpha_{i}$ for $i>\ell$ do not appear in the polynomial $Q$.
+
+There is a canonical homomorphism $K\left[  \alpha_{1},\alpha_{2}%
+,...,\alpha_{m}\right]  \rightarrow K\left[  \alpha_{1},\alpha_{2}%
+,...,\alpha_{\ell}\right]  $ (which is a surjection if $\ell\leq m$ and an
+injection if $\ell\geq m$). If we denote by $Q_{\ell}$ the image of $Q\in
+K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $ under this
+homomorphism, then, $P\left(  U_{1},U_{2},...,U_{m}\right)  =Q\left(
+X_{1},X_{2},...,X_{m}\right)  =Q_{\ell}\left(  X_{1},X_{2},...,X_{\ell
+}\right)  $.
+\end{quote}
+
+We are not going to prove Theorem 4.1 here, since pretty much every good
+algebra book does it.\footnote{Only one remark about Theorem 4.1 \textbf{(b)}:
+We have $Q\left(  X_{1},X_{2},...,X_{m}\right)  =Q_{\ell}\left(  X_{1}%
+,X_{2},...,X_{\ell}\right)  $, because the variables $\alpha_{i}$ for $i>\ell$
+do not appear in the polynomial $Q$.} But we are going to extend it to two
+sets of indeterminates:
+
+\begin{quote}
+\textbf{Theorem 4.2 (characterization of UV-symmetric polynomials).} Let $K$
+be a ring. Let $m\in\mathbb{N}$ and $n\in\mathbb{N}$. Consider the ring
+$K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]  $ (the
+polynomial ring in $m+n$ indeterminates $U_{1},$ $U_{2},$ $...,$ $U_{m},$
+$V_{1},$ $V_{2},$ $...,$ $V_{n}$ over the ring $K$). For every $i\in
+\mathbb{N}$, let $X_{i}=\sum\limits_{\substack{S\subseteq\left\{
+1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{i}$
+be the so-called $i$\textit{-th elementary symmetric polynomial} in the
+variables $U_{1},$ $U_{2},$ $...,$ $U_{m}$. For every $j\in\mathbb{N}$, let
+$Y_{j}=\sum\limits_{\substack{S\subseteq\left\{  1,2,...,n\right\}
+;\\\left\vert S\right\vert =j}}\prod\limits_{k\in S}V_{j}$ be the $j$-th
+elementary symmetric polynomial in the variables $V_{1},$ $V_{2},$ $...,$
+$V_{n}$.
+
+A polynomial $P\in K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}%
+\right]  $ is called \textit{UV-symmetric} if it satisfies%
+\[
+P\left(  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right)  =P\left(
+U_{\pi\left(  1\right)  },U_{\pi\left(  2\right)  },...,U_{\pi\left(
+m\right)  },V_{\sigma\left(  1\right)  },V_{\sigma\left(  2\right)
+},...,V_{\sigma\left(  n\right)  }\right)
+\]
+for every permutation $\pi$ of the set $\left\{  1,2,...,m\right\}  $ and
+every permutation $\sigma$ of the set $\left\{  1,2,...,n\right\}  $.
+
+\textbf{(a)} Let $P\in K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2}%
+,...,V_{n}\right]  $ be a UV-symmetric polynomial. Then, there exists one and
+only one polynomial $Q\in K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}%
+,\beta_{1},\beta_{2},...,\beta_{n}\right]  $ such that $P\left(  U_{1}%
+,U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right)  =Q\left(  X_{1},X_{2}%
+,...,X_{m},Y_{1},Y_{2},...,Y_{m}\right)  $.\ \ \ \ \footnote{In other words,
+the subring%
+\[
+\left\{  P\in K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]
+\ \mid\ P\text{ is UV-symmetric}\right\}
+\]
+of the polynomial ring $K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2}%
+,...,V_{n}\right]  $ is generated by the elements $X_{1},$ $X_{2},$ $...,$
+$X_{m},$ $Y_{1},$ $Y_{2},$ $...,$ $Y_{n}$. Moreover, these elements $X_{1},$
+$X_{2},$ $...,$ $X_{m},$ $Y_{1},$ $Y_{2},$ $...,$ $Y_{n}$ are algebraically
+independent, so that the map%
+\[
+\underbrace{K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m},\beta_{1},\beta
+_{2},...,\beta_{n}\right]  }_{\text{polynomial ring}}\rightarrow\left\{  P\in
+K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]  \ \mid\ P\text{
+is UV-symmetric}\right\}
+\]
+which maps every $\alpha_{i}$ to $X_{i}$ and every $\beta_{j}$ to $Y_{j}$ is a
+bijection.}
+
+\textbf{(b)} Let $\ell\in\mathbb{N}$ and $k\in\mathbb{N}$. Assume, moreover,
+that $P\in K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]  $ is a
+UV-symmetric polynomial of total degree $\leq\ell$ in the variables $U_{1},$
+$U_{2},$ $...,$ $U_{m}$ and of total degree $\leq k$ in the variables $V_{1},$
+$V_{2},$ $...,$ $V_{n}.$ Then, neither the variables $\alpha_{i}$ for $i>\ell$
+nor the variables $\beta_{j}$ for $j>k$ ever appear in the polynomial $Q$.
+
+There is a canonical homomorphism $K\left[  \alpha_{1},\alpha_{2}%
+,...,\alpha_{m},\beta_{1},\beta_{2},...,\beta_{n}\right]  \rightarrow K\left[
+\alpha_{1},\alpha_{2},...,\alpha_{\ell},\beta_{1},\beta_{2},...,\beta
+_{k}\right]  $ (which is composed of the canonical homomorphisms $K\left[
+\alpha_{1},\alpha_{2},...,\alpha_{m}\right]  \rightarrow K\left[  \alpha
+_{1},\alpha_{2},...,\alpha_{\ell}\right]  $ and $K\left[  \beta_{1},\beta
+_{2},...,\beta_{n}\right]  \rightarrow K\left[  \beta_{1},\beta_{2}%
+,...,\beta_{k}\right]  $).
+
+If we denote by $Q_{\ell,k}$ the image of $Q\in K\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{m},\beta_{1},\beta_{2},...,\beta_{n}\right]  $ under this
+homomorphism, then, $P\left(  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}%
+\right)  =Q_{\ell,k}\left(  X_{1},X_{2},...,X_{\ell},Y_{1},Y_{2}%
+,...,Y_{k}\right)  $.
+\end{quote}
+
+\textit{Proof of Theorem 4.2 (\textbf{very} roughly sketched):} \textbf{(a)}
+Consider $P$ as a polynomial in the indeterminates $V_{1},$ $V_{2},$ $...,$
+$V_{n}$ over the ring $K\left[  U_{1},U_{2},...,U_{m}\right]  $. Then, $P$ is
+a symmetric polynomial in these indeterminates $V_{1},$ $V_{2},$ $...,$
+$V_{n}$, so Theorem 4.1 \textbf{(a)} yields the existence of one and only one
+polynomial $\widehat{Q}\in\underbrace{\left(  K\left[  U_{1},U_{2}%
+,...,U_{m}\right]  \right)  \left[  \beta_{1},\beta_{2},...,\beta_{n}\right]
+}_{\text{polynomial ring}}$ such that $P\left(  U_{1},U_{2},...,U_{m}%
+,V_{1},V_{2},...,V_{n}\right)  =\widehat{Q}\left(  Y_{1},Y_{2},...,Y_{n}%
+\right)  $. Now, for every $n$-tuple $\left(  \lambda_{1},\lambda
+_{2},...,\lambda_{n}\right)  \in\mathbb{N}^{n}$, the coefficient of this
+polynomial $\widehat{Q}$ before $\beta_{1}^{\lambda_{1}}\beta_{2}^{\lambda
+_{2}}...\beta_{n}^{\lambda_{n}}$ is a symmetric polynomial in the variables
+$U_{1},$ $U_{2},$ $...,$ $U_{m}\ \ \ \ $\footnote{Okay, the "symmetric" part
+may need an explanation.
+\par
+{}In fact, let $\sigma$ be a permutation of the set $\left\{
+1,2,...,m\right\}  .$
+\par
+Let $\rho$ be the canonical $K$-algebra isomorphism $\left(  K\left[
+U_{1},U_{2},...,U_{m}\right]  \right)  \left[  \beta_{1},\beta_{2}%
+,...,\beta_{n}\right]  \rightarrow\left(  K\left[  \beta_{1},\beta
+_{2},...,\beta_{n}\right]  \right)  \left[  U_{1},U_{2},...,U_{m}\right]  $.
+\par
+Let $\widehat{Q}_{\sigma}\in\left(  K\left[  U_{1},U_{2},...,U_{m}\right]
+\right)  \left[  \beta_{1},\beta_{2},...,\beta_{n}\right]  $ be the polynomial
+defined by $\widehat{Q}_{\sigma}=\rho^{-1}\left(  \left(  \rho\left(
+\widehat{Q}\right)  \right)  \left(  U_{\sigma\left(  1\right)  }%
+,U_{\sigma\left(  2\right)  },...,U_{\sigma\left(  m\right)  }\right)
+\right)  .$ Then, $P\left(  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}%
+\right)  =\widehat{Q}\left(  Y_{1},Y_{2},...,Y_{n}\right)  $ yields $P\left(
+U_{\sigma\left(  1\right)  },U_{\sigma\left(  2\right)  },...,U_{\sigma\left(
+m\right)  },V_{1},V_{2},...,V_{n}\right)  =\widehat{Q}_{\sigma}\left(
+Y_{1},Y_{2},...,Y_{n}\right)  $. But $P\left(  U_{1},U_{2},...,U_{m}%
+,V_{1},V_{2},...,V_{n}\right)  =P\left(  U_{\sigma\left(  1\right)
+},U_{\sigma\left(  2\right)  },...,U_{\sigma\left(  m\right)  },V_{1}%
+,V_{2},...,V_{n}\right)  $ (since $P$ is UV-symmetric). Thus, $\widehat
+{Q}\left(  Y_{1},Y_{2},...,Y_{n}\right)  =\widehat{Q}_{\sigma}\left(
+Y_{1},Y_{2},...,Y_{n}\right)  $ for every permutation $\sigma$ of $\left\{
+1,2,...,m\right\}  $. This yields $\widehat{Q}=\widehat{Q}_{\sigma}$ for every
+permutation $\sigma$ of $\left\{  1,2,...,m\right\}  $ (since $Y_{1},$
+$Y_{2},$ $...,$ $Y_{n}$ are algebraically independent over $K\left[
+U_{1},U_{2},...,U_{m}\right]  $, as we can see by applying Theorem 4.1 to
+$K\left[  U_{1},U_{2},...,U_{m}\right]  $ instead of $K$ and to $V_{1},$
+$V_{2},$ $...,$ $V_{n}$ instead of $U_{1},$ $U_{2},$ $...,$ $U_{m}$). This
+means that the coefficient of this polynomial $\widehat{Q}$ before $\beta
+_{1}^{\lambda_{1}}\beta_{2}^{\lambda_{2}}...\beta_{n}^{\lambda_{n}}$ is a
+symmetric polynomial in the variables $U_{1},$ $U_{2},$ $...,$ $U_{m}$ for
+every $n$-tuple $\left(  \lambda_{1},\lambda_{2},...,\lambda_{n}\right)
+\in\mathbb{N}^{n}$.}. Hence, by Theorem 4.1 \textbf{(a)}, there exists a
+polynomial $R_{\left(  \lambda_{1},\lambda_{2},...,\lambda_{n}\right)  }%
+\in\underbrace{K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]
+}_{\text{polynomial ring}}$ such that the coefficient of the polynomial
+$\widehat{Q}$ before $\beta_{1}^{\lambda_{1}}\beta_{2}^{\lambda_{2}}%
+...\beta_{n}^{\lambda_{n}}$ is $R_{\left(  \lambda_{1},\lambda_{2}%
+,...,\lambda_{n}\right)  }\left(  X_{1},X_{2},...,X_{m}\right)  $. Thus,%
+\begin{align*}
+&  P\left(  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right)  =\widehat
+{Q}\left(  Y_{1},Y_{2},...,Y_{n}\right) \\
+&  =\sum_{\left(  \lambda_{1},\lambda_{2},...,\lambda_{n}\right)
+\in\mathbb{N}^{n}}\left(  \text{the coefficient of the polynomial }\widehat
+{Q}\text{ before }\beta_{1}^{\lambda_{1}}\beta_{2}^{\lambda_{2}}...\beta
+_{n}^{\lambda_{n}}\right)  Y_{1}^{\lambda_{1}}Y_{2}^{\lambda_{2}}%
+...Y_{n}^{\lambda_{n}}\\
+&  =\sum_{\left(  \lambda_{1},\lambda_{2},...,\lambda_{n}\right)
+\in\mathbb{N}^{n}}R_{\left(  \lambda_{1},\lambda_{2},...,\lambda_{n}\right)
+}\left(  X_{1},X_{2},...,X_{m}\right)  Y_{1}^{\lambda_{1}}Y_{2}^{\lambda_{2}%
+}...Y_{n}^{\lambda_{n}}.
+\end{align*}
+Thus, the polynomial $Q\in K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}%
+,\beta_{1},\beta_{2},...,\beta_{n}\right]  $ defined by%
+\[
+Q=\sum_{\left(  \lambda_{1},\lambda_{2},...,\lambda_{n}\right)  \in
+\mathbb{N}^{n}}R_{\left(  \lambda_{1},\lambda_{2},...,\lambda_{n}\right)
+}\left(  \alpha_{1},\alpha_{2},...,\alpha_{m}\right)  \beta_{1}^{\lambda_{1}%
+}\beta_{2}^{\lambda_{2}}...\beta_{n}^{\lambda_{n}}%
+\]
+satisfies $P\left(  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right)
+=Q\left(  X_{1},X_{2},...,X_{m},Y_{1},Y_{2},...,Y_{m}\right)  $. It only
+remains to prove that this is the only such polynomial. This amounts to
+showing that $X_{1},$ $X_{2},$ $...,$ $X_{m},$ $Y_{1},$ $Y_{2},$ $...,$
+$Y_{n}$ are algebraically independent over $K$. But this is clear since the
+variables $U_{1},$ $U_{2},$ $...,$ $U_{m}$ are algebraically independent over
+$K$ (by Theorem 4.1) and the variables $Y_{1},$ $Y_{2},$ $...,$ $Y_{n}$ are
+algebraically independent over $K\left[  X_{1},X_{2},...,X_{m}\right]  $ (by
+Theorem 4.1, applied to $K\left[  X_{1},X_{2},...,X_{m}\right]  $ instead of
+$K$ and to $V_{1},$ $V_{2},$ $...,$ $V_{n}$ instead of $U_{1},$ $U_{2},$
+$...,$ $U_{m}$). [How does this implication work? Just write it down and see.]
+
+For part \textbf{(b)}, we argue the same way as in \textbf{(a)}, but applying
+Theorem 4.1 \textbf{(b)} along with Theorem 4.1 \textbf{(a)}.
+
+Theorem 4.2 allows us to make the following definition:
+
+\begin{quote}
+\textbf{Definition.} Let $K$ be a ring.
+
+Let $k\in\mathbb{N}$. Our goal now is to define a polynomial $P_{k}\in
+K\left[  \alpha_{1},\alpha_{2},...,\alpha_{k},\beta_{1},\beta_{2}%
+,...,\beta_{k}\right]  $ such that%
+\begin{equation}
+\sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}\prod_{\left(  i,j\right)
+\in S}U_{i}V_{j}=P_{k}\left(  X_{1},X_{2},...,X_{k},Y_{1},Y_{2},...,Y_{k}%
+\right)  \label{Pk1}%
+\end{equation}
+in the polynomial ring $K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2}%
+,...,V_{n}\right]  $ for every $n\in\mathbb{N}$ and $m\in\mathbb{N}$, where
+$X_{i}=\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
+;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{i}$ is the $i$-th
+elementary symmetric polynomial in the variables $U_{1},$ $U_{2},$ $...,$
+$U_{m}$ for every $i\in\mathbb{N}$, and $Y_{j}=\sum
+\limits_{\substack{S\subseteq\left\{  1,2,...,n\right\}  ;\\\left\vert
+S\right\vert =j}}\prod\limits_{k\in S}V_{j}$ is the $j$-th elementary
+symmetric polynomial in the variables $V_{1},$ $V_{2},$ $...,$ $V_{n}$ for
+every $j\in\mathbb{N}$.
+
+In order to do this, we first fix some $n\in\mathbb{N}$ and $m\in\mathbb{N}$.
+The polynomial%
+\[
+\sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}\prod_{\left(  i,j\right)
+\in S}U_{i}V_{j}\in K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}%
+\right]
+\]
+is UV-symmetric. Thus, Theorem 4.2 \textbf{(a)} yields that there exists one
+and only one polynomial $Q\in K\left[  \alpha_{1},\alpha_{2},...,\alpha
+_{m},\beta_{1},\beta_{2},...,\beta_{n}\right]  $ such that%
+\[
+\sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}\prod_{\left(  i,j\right)
+\in S}U_{i}V_{j}=Q\left(  X_{1},X_{2},...,X_{m},Y_{1},Y_{2},...,Y_{m}\right)
+.
+\]
+Since the polynomial $\sum\limits_{\substack{S\subseteq\left\{
+1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  ;\\\left\vert
+S\right\vert =k}}\prod_{\left(  i,j\right)  \in S}U_{i}V_{j}$ has total degree
+$\leq k$ in the variables $U_{1},$ $U_{2},$ $...,$ $U_{m}$ and of total degree
+$\leq k$ in the variables $V_{1},$ $V_{2},$ $...,$ $V_{n}$, Theorem 4.2
+\textbf{(b)} yields that%
+\[
+\sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}\prod_{\left(  i,j\right)
+\in S}U_{i}V_{j}=Q_{k,k}\left(  X_{1},X_{2},...,X_{k},Y_{1},Y_{2}%
+,...,Y_{k}\right)  ,
+\]
+where $Q_{k,k}$ is the image of the polynomial $Q$ under the canonical
+homomorphism $K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m},\beta_{1}%
+,\beta_{2},...,\beta_{n}\right]  \rightarrow K\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{k},\beta_{1},\beta_{2},...,\beta_{k}\right]  $. However, this
+polynomial $Q_{k,k}$ is not independent of $n$ and $m$ yet (as the polynomial
+$P_{k}$ that we intend to construct should be), so we call it $Q_{k,k,\left[
+n,m\right]  }$ rather than just $Q_{k,k}$.
+
+Now we forget that we fixed $n\in\mathbb{N}$ and $m\in\mathbb{N}$. We have
+learnt that%
+\[
+\sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}\prod_{\left(  i,j\right)
+\in S}U_{i}V_{j}=Q_{k,k,\left[  n,m\right]  }\left(  X_{1},X_{2}%
+,...,X_{k},Y_{1},Y_{2},...,Y_{k}\right)
+\]
+in the polynomial ring $K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2}%
+,...,V_{n}\right]  $ for every $n\in\mathbb{N}$ and $m\in\mathbb{N}$. Now,
+define a polynomial $P_{k}\in K\left[  \alpha_{1},\alpha_{2},...,\alpha
+_{k},\beta_{1},\beta_{2},...,\beta_{k}\right]  $ by $P_{k}=Q_{k,k,\left[
+k,k\right]  }.$
+
+\textbf{Theorem 4.3.} \textbf{(a)} The polynomial $P_{k}$ just defined
+satisfies the equation (\ref{Pk1}) in the polynomial ring $K\left[
+U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]  $ for every $n\in
+\mathbb{N}$ and $m\in\mathbb{N}$. (Hence, the goal mentioned above in the
+definition is actually achieved.)
+
+\textbf{(b)} For every $n\in\mathbb{N}$ and $m\in\mathbb{N}$, we have%
+\begin{equation}
+\prod_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  }\left(  1+U_{i}V_{j}T\right)  =\sum_{k\in\mathbb{N}}%
+P_{k}\left(  X_{1},X_{2},...,X_{k},Y_{1},Y_{2},...,Y_{k}\right)  T^{k}
+\label{Pk2}%
+\end{equation}
+in the ring $\left(  K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}%
+\right]  \right)  \left[  \left[  T\right]  \right]  $. (Note that the right
+hand side of this equation is a power series with coefficient $1$ before
+$T^{0}$, since $P_{0}=1$.)
+\end{quote}
+
+\textit{Proof of Theorem 4.3:} \textbf{(a)} \textit{1st Step:} Fix
+$n\in\mathbb{N}$ and $m\in\mathbb{N}$ such that $n\geq k$ and $m\geq k$. Then,
+we claim that $Q_{k,k,\left[  n,m\right]  }=P_{k}$.
+
+\textit{Proof.} The definition of $Q_{k,k,\left[  n,m\right]  }$ yields
+\[
+\sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}\prod_{\left(  i,j\right)
+\in S}U_{i}V_{j}=Q_{k,k,\left[  n,m\right]  }\left(  X_{1},X_{2}%
+,...,X_{k},Y_{1},Y_{2},...,Y_{k}\right)
+\]
+in the polynomial ring $K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2}%
+,...,V_{n}\right]  $. Applying the canonical ring epimorphism $K\left[
+U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]  \rightarrow K\left[
+U_{1},U_{2},...,U_{k},V_{1},V_{2},...,V_{k}\right]  $ (which maps every
+$U_{i}$ to $\left\{
+\begin{array}
+[c]{c}%
+U_{i},\text{ if }i\leq k;\\
+0,\text{ if }i>k
+\end{array}
+\right.  $ and every $V_{j}$ to $\left\{
+\begin{array}
+[c]{c}%
+V_{j},\text{ if }j\leq k;\\
+0,\text{ if }j>k
+\end{array}
+\right.  $) to this equation (and noticing that this epimorphism maps every
+$X_{i}$ to the corresponding $X_{i}$ of the image ring and every $Y_{j}$ to
+the corresponding $Y_{j}$ of the image ring!), we obtain%
+\[
+\sum_{\substack{S\subseteq\left\{  1,2,...,k\right\}  \times\left\{
+1,2,...,k\right\}  ;\\\left\vert S\right\vert =k}}\prod_{\left(  i,j\right)
+\in S}U_{i}V_{j}=Q_{k,k,\left[  n,m\right]  }\left(  X_{1},X_{2}%
+,...,X_{k},Y_{1},Y_{2},...,Y_{k}\right)
+\]
+in the polynomial ring $K\left[  U_{1},U_{2},...,U_{k},V_{1},V_{2}%
+,...,V_{k}\right]  $. On the other hand, the definition of $Q_{k,k,\left[
+k,k\right]  }$ yields%
+\[
+\sum_{\substack{S\subseteq\left\{  1,2,...,k\right\}  \times\left\{
+1,2,...,k\right\}  ;\\\left\vert S\right\vert =k}}\prod_{\left(  i,j\right)
+\in S}U_{i}V_{j}=Q_{k,k,\left[  k,k\right]  }\left(  X_{1},X_{2}%
+,...,X_{k},Y_{1},Y_{2},...,Y_{k}\right)
+\]
+in the same ring. These two equations yield%
+\[
+Q_{k,k,\left[  n,m\right]  }\left(  X_{1},X_{2},...,X_{k},Y_{1},Y_{2}%
+,...,Y_{k}\right)  =Q_{k,k,\left[  k,k\right]  }\left(  X_{1},X_{2}%
+,...,X_{k},Y_{1},Y_{2},...,Y_{k}\right)  .
+\]
+Since the elements $X_{1},$ $X_{2},$ $...,$ $X_{k},$ $Y_{1},$ $Y_{2},$ $...,$
+$Y_{k}$ of $K\left[  U_{1},U_{2},...,U_{k},V_{1},V_{2},...,V_{k}\right]  $ are
+algebraically independent (by Theorem 4.2 \textbf{(a)}), this yields
+$Q_{k,k,\left[  n,m\right]  }=Q_{k,k,\left[  k,k\right]  }.$ In other words,
+$Q_{k,k,\left[  n,m\right]  }=P_{k},$ and the 1st Step is proven.
+
+\textit{2nd Step:} For every $n\in\mathbb{N}$ and $m\in\mathbb{N}$, the
+equation (\ref{Pk1}) is satisfied in the polynomial ring $K\left[  U_{1}%
+,U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]  $.
+
+\textit{Proof.} Let $n^{\prime}\in\mathbb{N}$ be such that $n^{\prime}\geq n$
+and $n^{\prime}\geq k$. Let $m^{\prime}\in\mathbb{N}$ be such that $m^{\prime
+}\geq m$ and $m^{\prime}\geq k$. Then, the 1st Step (applied to $n^{\prime}$
+and $m^{\prime}$ instead of $n$ and $m$) yields that $Q_{k,k,\left[
+n^{\prime},m^{\prime}\right]  }=P_{k}.$
+
+The definition of $Q_{k,k,\left[  n^{\prime},m^{\prime}\right]  }$ yields
+\[
+\sum_{\substack{S\subseteq\left\{  1,2,...,m^{\prime}\right\}  \times\left\{
+1,2,...,n^{\prime}\right\}  ;\\\left\vert S\right\vert =k}}\prod_{\left(
+i,j\right)  \in S}U_{i}V_{j}=Q_{k,k,\left[  n^{\prime},m^{\prime}\right]
+}\left(  X_{1},X_{2},...,X_{k},Y_{1},Y_{2},...,Y_{k}\right)
+\]
+in the polynomial ring $K\left[  U_{1},U_{2},...,U_{m^{\prime}},V_{1}%
+,V_{2},...,V_{n^{\prime}}\right]  $. Applying the canonical ring epimorphism
+$K\left[  U_{1},U_{2},...,U_{m^{\prime}},V_{1},V_{2},...,V_{n^{\prime}%
+}\right]  \rightarrow K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2}%
+,...,V_{n}\right]  $ (which maps every $U_{i}$ to $\left\{
+\begin{array}
+[c]{c}%
+U_{i},\text{ if }i\leq m;\\
+0,\text{ if }i>m
+\end{array}
+\right.  $ and every $V_{j}$ to $\left\{
+\begin{array}
+[c]{c}%
+V_{j},\text{ if }j\leq n;\\
+0,\text{ if }j>n
+\end{array}
+\right.  $) to this equation (and noticing that this epimorphism maps every
+$X_{i}$ to the corresponding $X_{i}$ of the image ring and every $Y_{j}$ to
+the corresponding $Y_{j}$ of the image ring!), we obtain%
+\[
+\sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}\prod_{\left(  i,j\right)
+\in S}U_{i}V_{j}=\underbrace{Q_{k,k,\left[  n^{\prime},m^{\prime}\right]  }%
+}_{=P_{k}}\left(  X_{1},X_{2},...,X_{k},Y_{1},Y_{2},...,Y_{k}\right)
+\]
+in the polynomial ring $K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2}%
+,...,V_{n}\right]  $. Hence, the equation (\ref{Pk1}) is satisfied in the
+polynomial ring $K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]
+.$ This completes the 2nd Step and proves Theorem 4.3 \textbf{(a)}.
+
+\textbf{(b)} Immediately follows from part \textbf{(a)}.
+
+Just as our above definition of the polynomials $P_{k}$ and Theorem 4.3 based
+upon Theorem 4.2, we can make another definition basing upon Theorem 4.1:
+
+\begin{quote}
+\textbf{Definition.} Let $K$ be a ring.
+
+For every set $H$ and every $j\in\mathbb{N}$, we denote by $\mathcal{P}%
+_{j}\left(  H\right)  $ the set of all $j$-element subsets of $H.$ (This is
+also often denoted as $\dbinom{H}{j}$.)
+
+Let $j\in\mathbb{N}$. Let $k\in\mathbb{N}$. Our goal now is to define a
+polynomial $P_{k,j}\in K\left[  \alpha_{1},\alpha_{2},...,\alpha_{kj}\right]
+$ such that%
+\begin{equation}
+\sum_{\substack{S\subseteq\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}
+\right)  ;\\\left\vert S\right\vert =k}}\prod_{I\in S}\prod_{i\in I}%
+U_{i}=P_{k,j}\left(  X_{1},X_{2},...,X_{kj}\right)  \label{Pkj1}%
+\end{equation}
+in the polynomial ring $K\left[  U_{1},U_{2},...,U_{m}\right]  $ for every
+$m\in\mathbb{N}$, where $X_{i}=\sum\limits_{\substack{S\subseteq\left\{
+1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{i}$
+is the $i$-th elementary symmetric polynomial in the variables $U_{1},$
+$U_{2},$ $...,$ $U_{m}$ for every $i\in\mathbb{N}$.
+
+In order to do this, we first fix some $m\in\mathbb{N}$. The polynomial%
+\[
+\sum_{\substack{S\subseteq\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}
+\right)  ;\\\left\vert S\right\vert =k}}\prod_{I\in S}\prod_{i\in I}U_{i}\in
+K\left[  U_{1},U_{2},...,U_{m}\right]
+\]
+is symmetric. Thus, Theorem 4.1 \textbf{(a)} yields that there exists one and
+only one polynomial $Q\in K\left[  \alpha_{1},\alpha_{2},...,\alpha
+_{m}\right]  $ such that%
+\[
+\sum_{\substack{S\subseteq\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}
+\right)  ;\\\left\vert S\right\vert =k}}\prod_{I\in S}\prod_{i\in I}%
+U_{i}=Q\left(  X_{1},X_{2},...,X_{m}\right)  .
+\]
+Since the polynomial $\sum\limits_{\substack{S\subseteq\mathcal{P}_{j}\left(
+\left\{  1,2,...,m\right\}  \right)  ;\\\left\vert S\right\vert =k}%
+}\prod\limits_{I\in S}\prod\limits_{i\in I}U_{i}$ has total degree $\leq kj$
+in the variables $U_{1},$ $U_{2},$ $...,$ $U_{m}$, Theorem 4.1 \textbf{(b)}
+yields that%
+\[
+\sum_{\substack{S\subseteq\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}
+\right)  ;\\\left\vert S\right\vert =k}}\prod_{I\in S}\prod_{i\in I}%
+U_{i}=Q_{k,j}\left(  X_{1},X_{2},...,X_{kj}\right)  ,
+\]
+where $Q_{k,j}$ is the image of the polynomial $Q$ under the canonical
+homomorphism $K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]
+\rightarrow K\left[  \alpha_{1},\alpha_{2},...,\alpha_{kj}\right]  $. However,
+this polynomial $Q_{k,j}$ is not independent of $m$ yet (as the polynomial
+$P_{k,j}$ that we intend to construct should be), so we call it
+$Q_{k,j,\left[  m\right]  }$ rather than just $Q_{k,j}$.
+
+Now we forget that we fixed $m\in\mathbb{N}$. We have learnt that%
+\[
+\sum_{\substack{S\subseteq\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}
+\right)  ;\\\left\vert S\right\vert =k}}\prod_{I\in S}\prod_{i\in I}%
+U_{i}=Q_{k,j,\left[  m\right]  }\left(  X_{1},X_{2},...,X_{kj}\right)  ,
+\]
+in the polynomial ring $K\left[  U_{1},U_{2},...,U_{m}\right]  $ for every
+$m\in\mathbb{N}$. Now, define a polynomial $P_{k,j}\in K\left[  \alpha
+_{1},\alpha_{2},...,\alpha_{kj}\right]  $ by $P_{k,j}=Q_{k,j,\left[
+kj\right]  }.$
+
+\textbf{Theorem 4.4.} \textbf{(a)} The polynomial $P_{k,j}$ just defined
+satisfies the equation (\ref{Pkj1}) in the polynomial ring $K\left[
+U_{1},U_{2},...,U_{m}\right]  $ for every $m\in\mathbb{N}$. (Hence, the goal
+mentioned above in the definition is actually achieved.)
+
+\textbf{(b)} For every $m\in\mathbb{N}$ and $j\in\mathbb{N}$, we have%
+\begin{equation}
+\prod_{I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)
+}\left(  1+\prod_{i\in I}U_{i}\cdot T\right)  =\sum_{k\in\mathbb{N}}%
+P_{k,j}\left(  X_{1},X_{2},...,X_{kj}\right)  T^{k} \label{Pkj2}%
+\end{equation}
+in the ring $\left(  K\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[
+\left[  T\right]  \right]  $. (Note that the right hand side of this equation
+is a power series with coefficient $1$ before $T^{0}$, since $P_{0,j}=1$.)
+\end{quote}
+
+\textit{Proof of Theorem 4.4:} \textbf{(a)} \textit{1st Step:} Fix
+$m\in\mathbb{N}$ such that $m\geq kj$. Then, we claim that $Q_{k,j,\left[
+m\right]  }=P_{k,j}$.
+
+\textit{Proof.} The definition of $Q_{k,j,\left[  m\right]  }$ yields
+\[
+\sum_{\substack{S\subseteq\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}
+\right)  ;\\\left\vert S\right\vert =k}}\prod_{I\in S}\prod_{i\in I}%
+U_{i}=Q_{k,j,\left[  m\right]  }\left(  X_{1},X_{2},...,X_{kj}\right)
+\]
+in the polynomial ring $K\left[  U_{1},U_{2},...,U_{m}\right]  $. Applying the
+canonical ring epimorphism $K\left[  U_{1},U_{2},...,U_{m}\right]  \rightarrow
+K\left[  U_{1},U_{2},...,U_{kj}\right]  $ (which maps every $U_{i}$ to
+$\left\{
+\begin{array}
+[c]{c}%
+U_{i},\text{ if }i\leq kj;\\
+0,\text{ if }i>kj
+\end{array}
+\right.  $) to this equation (and noticing that this epimorphism maps every
+$X_{i}$ to the corresponding $X_{i}$ of the image ring!), we obtain%
+\[
+\sum_{\substack{S\subseteq\mathcal{P}_{j}\left(  \left\{  1,2,...,kj\right\}
+\right)  ;\\\left\vert S\right\vert =k}}\prod_{I\in S}\prod_{i\in I}%
+U_{i}=Q_{k,j,\left[  m\right]  }\left(  X_{1},X_{2},...,X_{kj}\right)
+\]
+in the polynomial ring $K\left[  U_{1},U_{2},...,U_{kj}\right]  $. On the
+other hand, the definition of $Q_{k,j,\left[  kj\right]  }$ yields%
+\[
+\sum_{\substack{S\subseteq\mathcal{P}_{j}\left(  \left\{  1,2,...,kj\right\}
+\right)  ;\\\left\vert S\right\vert =k}}\prod_{I\in S}\prod_{i\in I}%
+U_{i}=Q_{k,j,\left[  kj\right]  }\left(  X_{1},X_{2},...,X_{kj}\right)
+\]
+in the same ring. These two equations yield%
+\[
+Q_{k,j,\left[  m\right]  }\left(  X_{1},X_{2},...,X_{kj}\right)
+=Q_{k,j,\left[  kj\right]  }\left(  X_{1},X_{2},...,X_{kj}\right)  .
+\]
+Since the elements $X_{1},$ $X_{2},$ $...,$ $X_{kj}$ of $K\left[  U_{1}%
+,U_{2},...,U_{kj}\right]  $ are algebraically independent (by Theorem 4.1
+\textbf{(a)}), this yields $Q_{k,j,\left[  m\right]  }=Q_{k,j,\left[
+kj\right]  }.$ In other words, $Q_{k,j,\left[  m\right]  }=P_{k,j},$ and the
+1st Step is proven.
+
+\textit{2nd Step:} For every $m\in\mathbb{N}$, the equation (\ref{Pkj1}) is
+satisfied in the polynomial ring $K\left[  U_{1},U_{2},...,U_{m}\right]  $.
+
+\textit{Proof.} Let $m^{\prime}\in\mathbb{N}$ be such that $m^{\prime}\geq m$
+and $m^{\prime}\geq kj$. Then, the 1st Step (applied to $m^{\prime}$ instead
+of $m$) yields that $Q_{k,j,\left[  m^{\prime}\right]  }=P_{k,j}.$
+
+The definition of $Q_{k,j,\left[  m^{\prime}\right]  }$ yields
+\[
+\sum_{\substack{S\subseteq\mathcal{P}_{j}\left(  \left\{  1,2,...,m^{\prime
+}\right\}  \right)  ;\\\left\vert S\right\vert =k}}\prod_{I\in S}\prod_{i\in
+I}U_{i}=Q_{k,j,\left[  m^{\prime}\right]  }\left(  X_{1},X_{2},...,X_{kj}%
+\right)
+\]
+in the polynomial ring $K\left[  U_{1},U_{2},...,U_{m^{\prime}}\right]  $.
+Applying the canonical ring epimorphism $K\left[  U_{1},U_{2},...,U_{m^{\prime
+}}\right]  \rightarrow K\left[  U_{1},U_{2},...,U_{m}\right]  $ (which maps
+every $U_{i}$ to $\left\{
+\begin{array}
+[c]{c}%
+U_{i},\text{ if }i\leq m;\\
+0,\text{ if }i>m
+\end{array}
+\right.  $) to this equation (and noticing that this epimorphism maps every
+$X_{i}$ to the corresponding $X_{i}$ of the image ring!), we obtain%
+\[
+\sum_{\substack{S\subseteq\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}
+\right)  ;\\\left\vert S\right\vert =k}}\prod_{I\in S}\prod_{i\in I}%
+U_{i}=\underbrace{Q_{k,j,\left[  m^{\prime}\right]  }}_{=P_{k,j}}\left(
+X_{1},X_{2},...,X_{kj}\right)
+\]
+in the polynomial ring $K\left[  U_{1},U_{2},...,U_{m}\right]  .$ This means
+that the equation (\ref{Pkj1}) is satisfied in the polynomial ring $K\left[
+U_{1},U_{2},...,U_{m}\right]  .$ This completes the 2nd Step and proves
+Theorem 4.4 \textbf{(a)}.
+
+\textbf{(b)} Immediately follows from part \textbf{(a)}.
+
+\begin{center}
+\fbox{\textbf{5. A }$\lambda$\textbf{-ring structure on }$\Lambda\left(
+K\right)  =1+K\left[  \left[  t\right]  \right]  ^{+}$}
+\end{center}
+
+Now we are going to introduce a $\lambda$-ring structure on a particular set
+defined for any given ring $K.$
+
+\begin{quote}
+\textbf{Definition:} Let $K$ be a ring. Let $K\left[  \left[  t\right]
+\right]  ^{+}$ denote the subset%
+\[
+tK\left[  \left[  t\right]  \right]  =\left\{  \sum_{i\in\mathbb{N}}a_{i}%
+t^{i}\in K\left[  \left[  t\right]  \right]  \ \mid\ a_{i}\in K\text{ for all
+}i,\text{ and }a_{0}=0\right\}  .
+\]
+We will later define a ring structure on the set $1+K\left[  \left[  t\right]
+\right]  ^{+}=\left\{  1+u\mid u\in K\left[  \left[  t\right]  \right]
+\right\}  $. First, we define an Abelian group structure on this set:
+
+Define an addition $+_{\wedge}$ on the set $1+K\left[  \left[  t\right]
+\right]  ^{+}$ by $u+_{\wedge}v=uv$ for every $u\in1+K\left[  \left[
+t\right]  \right]  ^{+}$ and $v\in1+K\left[  \left[  t\right]  \right]  ^{+}$.
+In other words, addition on $1+K\left[  \left[  t\right]  \right]  ^{+}$ is
+defined as multiplication of power series. The zero of $1+K\left[  \left[
+t\right]  \right]  ^{+}$ will be $1$.
+
+Then, clearly, $\left(  1+K\left[  \left[  t\right]  \right]  ^{+},+_{\wedge
+}\right)  $ is an Abelian group with zero $1$.
+
+Now, define a multiplication $\cdot_{\Lambda}$ on the set $1+K\left[  \left[
+t\right]  \right]  ^{+}$ by%
+\[
+\sum_{i\in\mathbb{N}}a_{i}t^{i}\cdot\sum_{i\in\mathbb{N}}b_{i}t^{i}=\sum
+_{k\in\mathbb{N}}P_{k}\left(  a_{1},a_{2},...,a_{k},b_{1},b_{2},...,b_{k}%
+\right)  t^{k}.
+\]
+The multiplicative unity of the ring $1+K\left[  \left[  t\right]  \right]
+^{+}$ will be $1+t$.
+
+Also, for every $j\in\mathbb{N}$, define a mapping $\lambda^{j}:1+K\left[
+\left[  t\right]  \right]  ^{+}\rightarrow1+K\left[  \left[  t\right]
+\right]  ^{+}$ by%
+\[
+\lambda^{j}\left(  \sum_{i\in\mathbb{N}}a_{i}t^{i}\right)  =\sum
+_{k\in\mathbb{N}}P_{kj}\left(  a_{1},a_{2},...,a_{kj}\right)  t^{k}.
+\]
+
+
+\textbf{Theorem 5.1.} \textbf{(a)} The multiplication $\cdot_{\Lambda}$ just
+defined is associative, and $1+t$ is actually its unity. Thus, $\left(
+1+K\left[  \left[  t\right]  \right]  ^{+},+_{\wedge},\cdot_{\wedge}\right)  $
+is a ring. We will call this ring $\Lambda\left(  K\right)  $.
+
+\textbf{(b)} The above defined maps $\lambda^{j}$ make $\left(  \Lambda\left(
+K\right)  ,\left(  \lambda_{i}\right)  _{i\in\mathbb{N}}\right)  $ a $\lambda$-ring.
+\end{quote}
+
+Before we prove this Theorem 5.1, we try to motivate the above definition of
+$\Lambda\left(  K\right)  $:
+
+The set $1+K\left[  t\right]  ^{+}$ (where%
+\[
+K\left[  t\right]  ^{+}=tK\left[  t\right]  =\left\{  \sum_{i\in\mathbb{N}%
+}a_{i}t^{i}\in K\left[  t\right]  \ \mid\ a_{i}\in K\text{ for all }i,\text{
+and }a_{0}=0\right\}
+\]
+) is a subset of $1+K\left[  \left[  t\right]  \right]  ^{+}.$ The elements of
+$1+K\left[  t\right]  ^{+}$ are polynomials. We notice that:
+
+\begin{quote}
+\textbf{Theorem 5.2.} For every element $p\in1+K\left[  t\right]  ^{+}$, there
+exists an integer $n$ (the degree of the polynomial $p$), a finite extension
+$K_{p}$ of the ring $K$ and $n$ elements $p_{1},$ $p_{2},$ $...,$ $p_{n}$ of
+this extension $K_{p}$ such that $p=\prod\limits_{i=1}^{n}\left(
+1+p_{i}t\right)  $ in $1+K\left[  t\right]  ^{+}.$
+\end{quote}
+
+\textit{Proof of Theorem 5.2.} Let $p=\sum\limits_{i=0}^{n}a_{i}t^{i}$, where
+$n=\deg p$. Define a new polynomial $\widetilde{p}=\sum\limits_{i=0}%
+^{n}a_{n-i}t^{i}\in K\left[  t\right]  $. Then, the polynomial $\widetilde{p}$
+is monic (since $p\in1+K\left[  t\right]  ^{+}$), and the equation
+$p=\prod\limits_{i=1}^{n}\left(  1+p_{i}t\right)  $ becomes equivalent to
+$\widetilde{p}=\prod\limits_{i=1}^{n}\left(  p_{i}+t\right)  $, so that
+Theorem 5.2 simply claims that for every monic polynomial over a ring, we can
+find a finite extension of the ring over which the polynomial splits into
+linear polynomials. But this is an easy fact (proven in the same way as the
+existence of splitting fields in Galois theory). Thus, Theorem 5.2 is proven.
+
+Let us introduce some notation again:
+
+\begin{quote}
+\textbf{Definition.} For every set $H$, let $\mathcal{P}_{\operatorname*{fin}%
+}^{\ast}\left(  H\right)  $ denote the set of all finite multisets of $H$. We
+denote the multiset formed by the elements $u_{1},$ $u_{2},$ $...,$ $u_{n}$
+(with multiplicity) by $\left[  u_{1},u_{2},...,u_{n}\right]  $.
+
+For our ring $K$, let $\operatorname*{Exten}K$ be the set of all finite ring
+extensions of $K$. (Again, this is not a set. Again, we don't care. Basically
+it is enough to consider all ring extensions of the form $K\left[  X_{1}%
+,X_{2},...,X_{n}\right]  \diagup I$ with $I$ being an ideal of $K\left[
+X_{1},X_{2},...,X_{n}\right]  $, and \textit{these} extensions do form a set.)
+
+Let $K^{\operatorname*{int}}$ be the subset%
+\[
+\left\{  \left(  \widetilde{K},\left[  u_{1},u_{2},...,u_{n}\right]  \right)
+\in\bigcup_{K^{\prime}\subseteq\operatorname*{Exten}K}\mathcal{P}%
+_{\operatorname*{fin}}^{\ast}\left(  K^{\prime}\right)  \ \ \mid
+\ \ \prod\limits_{i=1}^{n}\left(  1+u_{i}t\right)  \in K\left[  t\right]
+\right\}
+\]
+of $\bigcup\limits_{K^{\prime}\subseteq\operatorname*{Exten}K}\mathcal{P}%
+_{\operatorname*{fin}}^{\ast}\left(  K^{\prime}\right)  $. We define an
+equivalence relation $\sim$ on $K^{\operatorname*{int}}$ by%
+\begin{align*}
+&  \ \ \left(  \widetilde{K},\left[  u_{1},u_{2},...,u_{n}\right]  \right)
+\sim\left(  \overline{K},\left[  v_{1},v_{2},...,v_{n}\right]  \right) \\
+&  \Longleftrightarrow\ \ \left(
+\begin{array}
+[c]{c}%
+\text{there exists a }K\text{-algebra homomorphism }\phi:K\left[  u_{1}%
+,u_{2},...,u_{n}\right]  \rightarrow K\left[  v_{1},v_{2},...,v_{n}\right] \\
+\text{such that }\phi\left(  u_{i}\right)  =v_{i}\text{ for every }%
+i\in\left\{  1,2,...,n\right\}
+\end{array}
+\right)  .
+\end{align*}
+
+
+We define a map%
+\[
+r:1+K\left[  \left[  t\right]  \right]  ^{+}\rightarrow K^{\operatorname*{int}%
+}\diagup\sim
+\]
+(the $r$ stands for "roots" here) through
+\[
+r\left(  p\right)  =\overline{\left(  K_{p},\left[  p_{1},p_{2},...,p_{n}%
+\right]  \right)  },
+\]
+where $K_{p}$ and $\left[  p_{1},p_{2},...,p_{n}\right]  $ are defined as in
+Theorem 5.2, and $\overline{}$ means "equivalence class modulo $\sim$".
+\end{quote}
+
+++++++
+
+This way, we have a one-to-one correspondence between elements of $1+K\left[
+t\right]  ^{+}$ and multisets of elements of an extension of $K$ (modulo
+homomorphisms of extensions of $K$).
+
+Now, for any two polynomials $u\in1+K\left[  t\right]  ^{+}$ and
+$v\in1+K\left[  t\right]  ^{+}$, there exist integers $n$ and $m$, a finite
+extension $\left(  K_{u}\right)  _{v}$ of the ring $K$ and $n+m$ elements
+$u_{1},$ $u_{2},$ $...,$ $u_{n},$ $v_{1},$ $v_{2},$ $...,$ $v_{m}$
+
+[...]
+
+\begin{quote}
+Define a multiplication $\cdot_{\wedge}$ on the set $1+K\left[  \left[
+t\right]  \right]  ^{+}$ by%
+\[
+\prod_{i=1}^{n}\left(  1+a_{i}t\right)  \cdot_{\wedge}\prod_{j=1}^{m}\left(
+1+b_{j}t\right)  =\prod_{i=1}^{n}\prod_{j=1}^{m}\left(  1+a_{i}b_{j}t\right)
+\]
+[this is not a def]
+\end{quote}
+
+\begin{center}
+\fbox{\textbf{References}}
+\end{center}
+
+[1] William Fulton, Serge Lang, \textit{Riemann-Roch algebra}, New York 1985.
+
+[2] Donald Knutson, $\lambda$\textit{-Rings and the Representation Theory of
+the Symmetric Group}, New York 1973.
+\end{document}
