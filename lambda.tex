@@ -8,7 +8,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.00.0.2570}
-%TCIDATA{LastRevised=Wednesday, September 02, 2009 15:06:19}
+%TCIDATA{LastRevised=Wednesday, September 02, 2009 20:07:17}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 \voffset=-2.5cm
@@ -18,7 +18,7 @@
 \begin{document}
 
 \begin{center}
-\textbf{Lambda rings}
+\fbox{$\lambda$\textbf{-rings: Definitions and basic properties}}
 
 Darij Grinberg, after Fulton/Lang and other sources
 
@@ -71,7 +71,7 @@ I\right]  $ by $\left[  u_{1},u_{2},...,u_{n}\right]  $.
 some discrepancy in notation between different sources. Namely, some of the
 literature (including [2]) denotes as \textit{pre-}$\lambda$\textit{-rings}
 what we call $\lambda$-rings and denotes as $\lambda$\textit{-rings} what we
-call pre-$\lambda$-rings.
+call special $\lambda$-rings.
 \end{itemize}
 
 \begin{center}
@@ -142,9 +142,28 @@ build direct sums of representations (this is addition in
 $\operatorname*{FRep}_{K}G\diagup I$) and we can build tensor products (this
 is multiplication in $\operatorname*{FRep}_{K}G\diagup I$), but we can also
 build exterior powers of representations, and we have no idea yet what
-operation on $\operatorname*{FRep}_{K}G\diagup I$ this entails.
+operation on $\operatorname*{FRep}_{K}G\diagup I$ this entails. So we see that
+the abstract notion of a ring is not enough to understand all of
+representation theory. We need a notion of a ring together with some
+operations that "behave like" taking exterior powers. What axioms should these
+operations satisfy?
 
-[...]
+Every representation $V$ of a group $G$ satisfies $\wedge^{0}V\cong1$ and
+$\wedge^{1}V\cong V$. Besides, any two representations $V$ and $W$ satisfy%
+\[
+\wedge^{k}\left(  V\oplus W\right)  \cong\bigoplus_{i=0}^{k}\wedge^{i}\left(
+V\right)  \otimes\wedge^{k-i}\left(  W\right)
+\]
+(and this is a canonical isomorphism!). This already gives us three axioms for
+the operations that we want to introduce. If we extend these three axioms to
+arbitrary elements of $\operatorname*{FRep}_{K}G\diagup I$ (and not just
+actual representations), we obtain the notion of a $\lambda$\textit{-ring}.
+
+We can still wonder whether these axioms are all that we can say about group resentations.
+
+[special $\lambda$-rings, positive structure, $\varepsilon$]
+
+[...] [\#1]
 
 \begin{center}
 \fbox{\textbf{2. }$\lambda$\textbf{-rings}}
@@ -168,51 +187,13 @@ $\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}$ which makes $\left(  K,\left(
 \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ a $\lambda$-ring.
 
 \textbf{2)} Let $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
-}\right)  $ be a $\lambda$-ring. Let $\varepsilon:K\rightarrow\mathbb{Z}$ be a
-surjective\footnote{I am quoting this from [1]. Personally, I have never have
-met a non-surjective ring homomorphism in my life.} ring homomorphism. Let
-$\mathbf{E}$ be a subset of $K$ such that $\mathbf{E}$ is closed under
-addition and multiplication and contains the subset $\mathbb{Z}^{+}$ of $K$
-(that is, the image of $\mathbb{Z}^{+}$ under the canonical ring homomorphism
-$\mathbb{Z}^{+}\rightarrow K$). Also assume that $K=\mathbf{E}-\mathbf{E}$
-(that is, every element of $K$ can be written as difference of two elements of
-$\mathbf{E}$). Furthermore, assume that every $e\in\mathbf{E}$ satisfies%
-\begin{align*}
-\varepsilon\left(  e\right)   &  >0;\ \ \ \ \ \ \ \ \ \ \lambda^{i}\left(
-e\right)  =0\ \ \ \ \ \ \ \ \ \ \text{for any }i>\varepsilon\left(  e\right)
-,\\
-&  \ \ \ \ \ \ \ \ \ \ \text{and that }\lambda^{\varepsilon\left(  e\right)
-}\left(  e\right)  \text{ is a unit in the ring }K.
-\end{align*}
-
-
-Then, $\left(  \varepsilon,\mathbf{E}\right)  $ is called a \textit{positive
-structure} on the $\lambda$-ring. The homomorphism $\varepsilon:K\rightarrow
-\mathbb{Z}$ is called an \textit{augmentation} for the $\lambda$-ring $\left(
-K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ with its positive
-structure $\left(  \varepsilon,\mathbf{E}\right)  $. The elements of the set
-$\mathbf{E}$ are called the \textit{positive elements} of the $\lambda$-ring
-$\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ with its
-positive structure $\left(  \varepsilon,\mathbf{E}\right)  $.
+}\right)  $ and $\left(  L,\left(  \mu^{i}\right)  _{i\in\mathbb{N}}\right)  $
+be two $\lambda$-rings. Let $f:K\rightarrow L$ be a map. Then, $f$ is called a
+$\lambda$\textit{-ring homomorphism} (or \textit{homomorphism of }$\lambda
+$\textit{-rings}) if and only if $f$ is a ring homomorphism and satisfies
+$\mu^{i}\circ f=f\circ\lambda^{i}$ for every $i\in\mathbb{N}$.
 
 \textbf{3)} Let $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
-}\right)  $ be a $\lambda$-ring with a positive structure $\left(
-\varepsilon,\mathbf{E}\right)  .$ The subset $\left\{  u\in\mathbf{E}%
-\ \mid\ \varepsilon\left(  u\right)  =1\right\}  $ of $\mathbf{E}$ is usually
-denoted as $\mathbf{L}$. The elements of $\mathbf{L}$ are called the
-\textit{line elements} of the $\lambda$-ring $\left(  K,\left(  \lambda
-^{i}\right)  _{i\in\mathbb{N}}\right)  $ with its positive structure $\left(
-\varepsilon,\mathbf{E}\right)  $.
-
-\textbf{4)} Let $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
-}\right)  $ and $\left(  L,\left(  \mu^{i}\right)  _{i\in\mathbb{N}}\right)  $
-be two $\lambda$-rings (not necessarily with positive structures). Let
-$f:K\rightarrow L$ be a map. Then, $f$ is called a $\lambda$\textit{-ring
-homomorphism} (or \textit{homomorphism of }$\lambda$\textit{-rings}) if and
-only if $f$ is a ring homomorphism and satisfies $\mu^{i}\circ f=f\circ
-\lambda^{i}$ for every $i\in\mathbb{N}$.
-
-\textbf{5)} Let $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
 }\right)  $ be a $\lambda$-ring. Let $L$ be a subring of $K$. Then, $L$ is
 said to be a \textit{sub-}$\lambda$\textit{-ring} of $\left(  K,\left(
 \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ if and only if $\lambda
@@ -245,12 +226,16 @@ K$ if and only if $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
 }\right)  $ is a $\lambda$-ring.
 
 \textbf{(b)} Let $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
-}\right)  $ be a $\lambda$-ring. Then, $\lambda_{T}\left(  0\right)  =1$,
-$\lambda_{T}\left(  -x\right)  =\left(  \lambda_{T}\left(  x\right)  \right)
-^{-1}$ (in particular, this means that $\lambda_{T}\left(  x\right)  $ is
-invertible) and $\lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(
-y\right)  =\lambda_{T}\left(  x+y\right)  $ for every $x\in K$ and every $y\in
-K$.
+}\right)  $ be a $\lambda$-ring. Then,%
+\begin{align*}
+\lambda_{T}\left(  0\right)   &  =1;\\
+\lambda_{T}\left(  -x\right)   &  =\left(  \lambda_{T}\left(  x\right)
+\right)  ^{-1}\ \ \ \ \ \ \ \ \ \ \text{for every }x\in K;\\
+\lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)   &
+=\lambda_{T}\left(  x+y\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }x\in
+K\text{ and every }y\in K.
+\end{align*}
+
 
 \textbf{(c)} Let $K$ and $L$ be two $\lambda$-rings. Let $f:K\rightarrow L$ be
 a ring homomorphism. Consider the rings $K\left[  \left[  T\right]  \right]  $
@@ -320,51 +305,6 @@ which in turn is equivalent to $\mu^{i}\left(  f\left(  x\right)  \right)
 =f\left(  \lambda^{i}\left(  x\right)  \right)  $ for every $x\in K$ and every
 $i\in\mathbb{N}$, which in turn means that $\mu^{i}\circ f=f\circ\lambda^{i}$
 for every $i\in\mathbb{N}$. This proves Theorem 2.1 \textbf{(c)}.
-
-\begin{quote}
-\textbf{Theorem 2.2.} Let $\left(  K,\left(  \lambda^{i}\right)
-_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring with a positive structure
-$\left(  \varepsilon,\mathbf{E}\right)  .$
-
-\textbf{(a)} Then, $\mathbf{L}=\left\{  u\in\mathbf{E}\ \mid\ \varepsilon
-\left(  u\right)  =1\right\}  $ is a subgroup of the (multiplicative) unit
-group $K^{\times}$ of $K$. [I don't believe this.]
-
-\textbf{(b)} We have $\mathbf{L}=\left\{  u\in\mathbf{E}\ \mid\ \lambda
-_{T}\left(  u\right)  =1+uT\right\}  $.
-\end{quote}
-
-\textit{Proof of Theorem 2.2.} \textbf{(b)} Every $u\in\mathbf{L}$ satisfies%
-\[
-\lambda_{T}\left(  u\right)  =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
-u\right)  T^{i}=\underbrace{\lambda^{0}\left(  u\right)  }_{=1}+\underbrace
-{\lambda^{1}\left(  u\right)  }_{=u}T+\sum\limits_{i\geq2}\underbrace
-{\lambda^{i}\left(  u\right)  }_{\substack{=0,\text{ since}\\i>1=\varepsilon
-\left(  u\right)  \\\text{and }u\in\mathbf{L}\subseteq\mathbf{E}}}T^{i}=1+uT.
-\]
-Conversely, if some $u\in\mathbf{E}$ satisfies $\lambda_{T}\left(  u\right)
-=1+uT$, then%
-\[
-\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  u\right)  T^{i}=\lambda
-_{T}\left(  u\right)  =1+uT
-\]
-shows that $\lambda^{i}\left(  u\right)  =0$ for every $i>1$, and thus
-$\varepsilon\left(  u\right)  \leq1$ (because $\lambda^{\varepsilon\left(
-u\right)  }\left(  u\right)  $ is a unit in the ring $K$ (since $u\in
-\mathbf{E}$), so that $\lambda^{\varepsilon\left(  u\right)  }\left(
-u\right)  \neq0$ and thus $\varepsilon\left(  u\right)  \leq1$). Together with
-$\varepsilon\left(  u\right)  >0$, this yields $\varepsilon\left(  u\right)
-=1$ and thus $u\in\mathbf{L}$. This proves \textbf{(b)}.
-
-\textbf{(a)} First we need to show that every $u\in\mathbf{L}$ is invertible
-in $K$. In fact, let $u\in\mathbf{L}$. Then, $\lambda^{\varepsilon\left(
-u\right)  }\left(  u\right)  $ is a unit in the ring $K$ (since $u\in
-\mathbf{E}$). But $\varepsilon\left(  u\right)  =1$ and thus $\lambda
-^{\varepsilon\left(  u\right)  }\left(  u\right)  =\lambda^{1}\left(
-u\right)  =u$. Thus, $u$ is a unit in $K$; that is, $u$ is invertible. Its
-inverse $u^{-1}$ must lie in $\mathbf{E}$ as well
-
-[1] [Why the fuck does it?]
 
 \begin{quotation}
 \textit{Exercise 2.1.} Let $\left(  K,\left(  \lambda^{i}\right)
@@ -2489,7 +2429,7 @@ $\mathbb{Z}$-module generators of $K$.
 ring $K\left[  T\right]  $ at the multiplicatively closed subset $1+K\left[
 T\right]  ^{+}$. \ \ \ \ \footnote{When $K$ is a field, this localization is
 simply the (local) ring of the (so-called) rational functions in one variable
-over $K$. ("Rational function" is a bad misnomer, in this case, but at least
+over $K$. ("Rational function" is an evil misnomer, in this case, but at least
 people know what it means.)} This localization $\left(  1+K\left[  T\right]
 ^{+}\right)  ^{-1}K\left[  T\right]  $ can be considered a subring of
 $K\left[  \left[  T\right]  \right]  $ (since $K\left[  T\right]  \subseteq
@@ -2737,10 +2677,10 @@ T}\left(  \lambda_{T}\left(  a\right)  \right)  \right)
 \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\overline{\lambda}_{T}\left(
 aS^{\alpha}\right)  =\lambda_{S^{\alpha}T}\left(  a\right)
 =\operatorname*{ev}\nolimits_{S^{\alpha}T}\left(  \lambda_{T}\left(  a\right)
-\right)  \right) \\
+\right)  \right)  \\
 &  =\operatorname*{ev}\nolimits_{\left(  S^{\alpha}\right)  ^{i}T}\left(
 \widehat{\overline{\lambda}}^{i}\left(  \lambda_{T}\left(  a\right)  \right)
-\right) \\
+\right)  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 5.7 \textbf{(e)}, applied to
 }K\left[  S\right]  ,\text{ }\lambda_{T}\left(  a\right)  ,\text{ }S^{\alpha
 }\text{ and }i\text{ instead of }K,\text{ }u,\text{ }\mu\text{ and }k\right)
@@ -2748,13 +2688,19 @@ aS^{\alpha}\right)  =\lambda_{S^{\alpha}T}\left(  a\right)
 &  =\operatorname*{ev}\nolimits_{\left(  S^{\alpha}\right)  ^{i}T}\left(
 \widehat{\lambda}^{i}\left(  \lambda_{T}\left(  a\right)  \right)  \right)
 \ \ \ \ \ \ \ \ \ \ \left(  \text{due to the commutative diagramm
-(\ref{7.3.commdiag})}\right) \\
+(\ref{7.3.commdiag})}\right)  \\
 &  =\operatorname*{ev}\nolimits_{\left(  S^{\alpha}\right)  ^{i}T}\left(
 \lambda_{T}\left(  \lambda^{i}\left(  a\right)  \right)  \right)
-\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\widehat{\lambda}^{i}\circ\lambda
-_{T}=\lambda_{T}\circ\lambda^{i}\text{, because }\left(  K,\left(  \lambda
-^{i}\right)  _{i\in\mathbb{N}}\right)  \text{ is a special }\lambda
-\text{-ring}\right) \\
+\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }\widehat{\lambda}^{i}\circ\lambda_{T}=\lambda_{T}\circ\lambda
+^{i}\text{, because }\lambda_{T}\text{ is a }\lambda\text{-ring homomorphism,}%
+\\
+\text{since }\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)
+\text{ is a special }\lambda\text{-ring}%
+\end{array}
+\right)  \\
 &  =\lambda_{\left(  S^{\alpha}\right)  ^{i}T}\left(  \lambda^{i}\left(
 a\right)  \right)  =\lambda_{S^{\alpha i}T}\left(  \lambda^{i}\left(
 a\right)  \right)  =\overline{\lambda}_{T}\left(  \underbrace{\lambda
@@ -2792,6 +2738,295 @@ defined in Exercise 3.5 \textbf{(a)} is
 special.\ \ \ \ \footnote{\textit{Hints to solution:} Repeat the argument used
 in the proof of Theorem 7.3.}
 \end{quotation}
+
+\begin{center}
+\fbox{\textbf{8. The }$\lambda$\textbf{-verification principle}}
+\end{center}
+
+In Section 5, we have constructed a family of $\lambda$-rings $\Lambda\left(
+K\right)  $ which are halfways nice to work with: If you want to prove an
+identity involving the ring structure of $\Lambda\left(  K\right)  $ (the
+addition $\widehat{+}$, the corresponding subtraction $\widehat{-}$, the zero
+$1$, the multiplication $\widehat{\cdot}$, and the multiplicative unity $1+T$)
+and the mappings $\widehat{\lambda}^{i}$, then it is enough to verify it for
+elements of $1+K\left[  T\right]  ^{+}$ only (by continuity, according to
+Theorem 5.5); and this is usually much easier since we know what $\widehat{+}%
+$, $\widehat{\cdot}$ and $\widehat{\lambda}^{i}$ mean for elements of
+$1+K\left[  T\right]  ^{+}$ (this is what Theorem 5.3 is for).
+
+As a consequence of this, it is no wonder that often an identity is more
+easily proven in $\Lambda\left(  K\right)  $ than in arbitrary $\lambda
+$-rings. However, it turns out that if an identity can be proven in
+$\Lambda\left(  K\right)  $, then it automatically holds for arbitrary
+$\lambda$-rings! This is one of the so-called $\lambda$\textit{-verification
+principles}:
+
+\begin{quote}
+\textbf{Theorem 8.1.} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring. Let $I$ be a set, and
+let $J_{i}$ be a set for every $i\in I$.
+
+First, let us introduce a notation: If $P\in\mathbb{Z}\left[  X_{i,j}\mid i\in
+I,\text{ }j\in J_{i}\right]  $ is a polynomial in the variables $X_{i,j}$, and
+$a_{i,j}$ is an element of a ring $R$ for every $i\in I$ and every $j\in
+J_{i}$, then we denote by $P\left(  X_{i,j}\mid a_{i,j}\right)  $ the value of
+the polynomial $P$ when each variable $X_{i,j}$ is assigned the value
+$a_{i,j}$.
+
+Assume that for every $\left(  u_{i}\right)  _{i\in I}\in\left(
+\Lambda\left(  K\right)  \right)  ^{I}$, we have $\widehat{P}\left(
+X_{i,j}\mid\widehat{\lambda}^{j}\left(  u_{i}\right)  \right)  =0$. (Here, we
+write $\widehat{P}\left(  X_{i,j}\mid\widehat{\lambda}^{j}\left(
+u_{i}\right)  \right)  $ for $P\left(  X_{i,j}\mid\widehat{\lambda}^{j}\left(
+u_{i}\right)  \right)  $ in order to emphasize the point that we are applying
+the polynomial $\widehat{P}$ to the $\widehat{\lambda}^{j}\left(
+u_{i}\right)  $ \textit{as elements of the ring} $\Lambda\left(  K\right)  $
+and not as elements of the ring $K\left[  \left[  T\right]  \right]  .$)
+
+Then, for every $\left(  v_{i}\right)  _{i\in I}\in K^{I}$, we have $P\left(
+X_{i,j}\mid\lambda^{j}\left(  v_{i}\right)  \right)  =0$.
+\end{quote}
+
+The proof of this result turns out to be extremely simple once we note the
+following easy observation:
+
+\begin{quote}
+\textbf{Theorem 8.2.} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring. Define a mapping
+$\operatorname*{coeff}\nolimits_{1}:\Lambda\left(  K\right)  \rightarrow K$ by
+$\operatorname*{coeff}\nolimits_{1}\left(  \sum\limits_{j\in\mathbb{N}}%
+a_{j}T^{j}\right)  =a_{1}$ for every $\sum\limits_{j\in\mathbb{N}}a_{j}%
+T^{j}\in\Lambda\left(  K\right)  $ (with $a_{j}\in K$ for every $j\in
+\mathbb{N}$). (In other words, $\operatorname*{coeff}\nolimits_{1}$ is the
+mapping that takes a power series and returns its coefficient before $T^{1}.$)
+
+\textbf{(a)} Then, $\operatorname*{coeff}\nolimits_{1}:\Lambda\left(
+K\right)  \rightarrow K$ is a ring homomorphism\footnote{but, generally, not a
+$\lambda$-ring homomorphism!}.
+
+\textbf{(b)} We have $\operatorname*{coeff}\nolimits_{1}\circ\lambda
+_{T}=\operatorname*{id}_{K}$.
+\end{quote}
+
+\textit{Proof of Theorem 8.2.} \textbf{(a)} In order to prove this, we must
+verify that%
+\begin{align}
+\operatorname*{coeff}\nolimits_{1}\left(  1\right)   &  =0;\label{8.2.1}\\
+\operatorname*{coeff}\nolimits_{1}\left(  u\widehat{+}v\right)   &
+=\operatorname*{coeff}\nolimits_{1}u+\operatorname*{coeff}\nolimits_{1}%
+v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
+}v\in\Lambda\left(  K\right)  ;\label{8.2.2}\\
+\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;\label{8.2.3}\\
+\operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)   &
+=\operatorname*{coeff}\nolimits_{1}u\cdot\operatorname*{coeff}\nolimits_{1}%
+v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
+}v\in\Lambda\left(  K\right)  . \label{8.2.4}%
+\end{align}
+The equations (\ref{8.2.1}) and (\ref{8.2.3}) are immediately obvious. In
+order to verify the equations (\ref{8.2.2}) and (\ref{8.2.4}), we notice that
+$\operatorname*{coeff}\nolimits_{1}:\Lambda\left(  K\right)  \rightarrow K$ is
+a continuous mapping (with respect to the $\left(  T\right)  $-topology on
+$\Lambda\left(  K\right)  $ and \textit{any arbitrary topology} on $K$) and
+the operations $\widehat{+}$ and $\widehat{\cdot}$ are continuous as well (by
+Theorem 5.5 \textbf{(d)}), and the subset $1+K\left[  T\right]  ^{+}$ of
+$1+K\left[  \left[  T\right]  \right]  ^{+}=\Lambda\left(  K\right)  $ is
+dense (by Theorem 5.5 \textbf{(a)}), so it suffices to verify the equations
+(\ref{8.2.2}) and (\ref{8.2.4}) for $u\in1+K\left[  T\right]  ^{+}$ and
+$v\in1+K\left[  T\right]  ^{+}$ only. So let $u\in1+K\left[  T\right]  ^{+}$
+and $v\in1+K\left[  T\right]  ^{+}$.
+
+Then, there exist some $\left(  \widetilde{K}_{u},\left[  u_{1},u_{2}%
+,...,u_{m}\right]  \right)  \in K^{\operatorname*{int}}$ such that
+$u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
+,$ and some $\left(  \widetilde{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]
+\right)  \in K^{\operatorname*{int}}$ such that $v=\Pi\left(  \widetilde
+{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  .$ Obviously,%
+\[
+u=\Pi\left(  \widetilde{K},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
+=\prod_{i=1}^{m}\left(  1+u_{i}T\right)  =1+\sum_{i=1}^{m}u_{i}\cdot T+\left(
+\text{higher powers of }T\right)
+\]
+yields $\operatorname*{coeff}\nolimits_{1}u=\sum\limits_{i=1}^{m}u_{i}.$
+Similarly, $\operatorname*{coeff}\nolimits_{1}v=\sum\limits_{j=1}^{n}v_{j}$.
+
+By Theorem 5.3 \textbf{(a)}, there exists a finite-free extension ring
+$\widetilde{K}_{u,v}$ of $K$ which contains both $\widetilde{K}_{u}$ and
+$\widetilde{K}_{v}$ as subrings. Theorem 5.3 \textbf{(c)} yields%
+\begin{align*}
+u\widehat{\cdot}v  &  =\Pi\left(  \widetilde{K}_{u,v},\left[  u_{i}v_{j}%
+\mid\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  \right]  \right)  =\prod_{\left(  i,j\right)  \in\left\{
+1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  }\left(  1+u_{i}%
+v_{j}T\right) \\
+&  =1+\sum_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  }u_{i}v_{j}\cdot T+\left(  \text{higher powers of
+}T\right)  ,
+\end{align*}
+and thus%
+\[
+\operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)
+=\sum_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  }u_{i}v_{j}=\sum_{i=1}^{m}\sum_{j=1}^{n}u_{i}v_{j}%
+=\sum_{i=1}^{m}u_{i}\sum_{j=1}^{n}v_{j}=\operatorname*{coeff}\nolimits_{1}%
+u\cdot\operatorname*{coeff}\nolimits_{1}v,
+\]
+so that (\ref{8.2.4}) is proven.
+
+Besides,%
+\begin{align*}
+u\widehat{+}v  &  =uv=\Pi\left(  \widetilde{K}_{u},\left[  u_{1}%
+,u_{2},...,u_{m}\right]  \right)  \cdot\Pi\left(  \widetilde{K}_{v},\left[
+v_{1},v_{2},...,v_{n}\right]  \right) \\
+&  =\prod_{i=1}^{m}\left(  1+u_{i}T\right)  \cdot\prod_{j=1}^{n}\left(
+1+v_{j}T\right)  =1+\left(  \sum_{i=1}^{m}u_{i}+\sum_{j=1}^{n}v_{j}\right)
+\cdot T+\left(  \text{higher powers of }T\right)  ,
+\end{align*}
+and consequently%
+\[
+\operatorname*{coeff}\nolimits_{1}\left(  u\widehat{+}v\right)  =\sum
+_{i=1}^{m}u_{i}+\sum_{j=1}^{n}v_{j}=\operatorname*{coeff}\nolimits_{1}%
+u+\operatorname*{coeff}\nolimits_{1}v,
+\]
+and (\ref{8.2.2}) is proven. Thus, $\operatorname*{coeff}\nolimits_{1}%
+:\Lambda\left(  K\right)  \rightarrow K$ is a ring homomorphism, and Theorem
+8.2 \textbf{(a)} is proven.
+
+\textbf{(b)} This is obvious, since $\left(  \operatorname*{coeff}%
+\nolimits_{1}\circ\lambda_{T}\right)  \left(  x\right)  =\operatorname*{coeff}%
+\nolimits_{1}\left(  \lambda_{T}\left(  x\right)  \right)
+=\operatorname*{coeff}\nolimits_{1}\left(  \sum\limits_{i\in\mathbb{N}}%
+\lambda^{i}\left(  x\right)  \right)  =\lambda^{1}\left(  x\right)  =x$ for
+every $x\in K$.
+
+Theorem 8.2 is now proven.
+
+\textit{Proof of Theorem 8.1.} Let $u_{i}=\lambda_{T}\left(  v_{i}\right)  $
+for every $i\in I$. According to our assumption, we have $\widehat{P}\left(
+X_{i,j}\mid\widehat{\lambda}^{j}\left(  u_{i}\right)  \right)  =0$. Thus,%
+\begin{align*}
+0 &  =\operatorname*{coeff}\nolimits_{1}\left(  \widehat{P}\left(  X_{i,j}%
+\mid\widehat{\lambda}^{j}\left(  u_{i}\right)  \right)  \right)  =P\left(
+X_{i,j}\mid\operatorname*{coeff}\nolimits_{1}\left(  \widehat{\lambda}%
+^{j}\left(  u_{i}\right)  \right)  \right)  \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\operatorname*{coeff}%
+\nolimits_{1}\text{ is a ring homomorphism and }P\text{ is a polynomial}%
+\right)  \\
+&  =P\left(  X_{i,j}\mid\operatorname*{coeff}\nolimits_{1}\left(
+\widehat{\lambda}^{j}\left(  \lambda_{T}\left(  v_{i}\right)  \right)
+\right)  \right)  =P\left(  X_{i,j}\mid\operatorname*{coeff}\nolimits_{1}%
+\left(  \lambda_{T}\left(  \lambda^{j}\left(  v_{i}\right)  \right)  \right)
+\right)  \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }\widehat{\lambda}^{j}\circ\lambda_{T}=\lambda_{T}\circ\lambda
+^{j}\text{, because }\lambda_{T}\text{ is a }\lambda\text{-ring homomorphism,}%
+\\
+\text{since }\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)
+\text{ is a special }\lambda\text{-ring}%
+\end{array}
+\right)  \\
+&  =P\left(  X_{i,j}\mid\lambda^{j}\left(  v_{i}\right)  \right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{after Theorem 8.2 \textbf{(b)}}\right)  ,
+\end{align*}
+and Theorem 8.1 is proven.
+
+\begin{center}
+\fbox{\textbf{Augmentation OR Adams operations}}
+\end{center}
+
+[...]
+
+\begin{center}
+\fbox{\textbf{X. Positive structure on }$\lambda$\textbf{-rings}}
+\end{center}
+
+[...]
+
+\begin{quote}
+\textbf{Definition.} \textbf{1)} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. Let $\varepsilon
+:K\rightarrow\mathbb{Z}$ be a surjective\footnote{I am quoting this from [1].
+Personally, I have never have met a non-surjective ring homomorphism in my
+life.} ring homomorphism. Let $\mathbf{E}$ be a subset of $K$ such that
+$\mathbf{E}$ is closed under addition and multiplication and contains the
+subset $\mathbb{Z}^{+}$ of $K$ (that is, the image of $\mathbb{Z}^{+}$ under
+the canonical ring homomorphism $\mathbb{Z}^{+}\rightarrow K$). Also assume
+that $K=\mathbf{E}-\mathbf{E}$ (that is, every element of $K$ can be written
+as difference of two elements of $\mathbf{E}$). Furthermore, assume that every
+$e\in\mathbf{E}$ satisfies%
+\begin{align*}
+\varepsilon\left(  e\right)   &  >0;\ \ \ \ \ \ \ \ \ \ \lambda^{i}\left(
+e\right)  =0\ \ \ \ \ \ \ \ \ \ \text{for any }i>\varepsilon\left(  e\right)
+,\\
+&  \ \ \ \ \ \ \ \ \ \ \text{and that }\lambda^{\varepsilon\left(  e\right)
+}\left(  e\right)  \text{ is a unit in the ring }K.
+\end{align*}
+
+
+Then, $\left(  \varepsilon,\mathbf{E}\right)  $ is called a \textit{positive
+structure} on the $\lambda$-ring. The homomorphism $\varepsilon:K\rightarrow
+\mathbb{Z}$ is called an \textit{augmentation} for the $\lambda$-ring $\left(
+K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ with its positive
+structure $\left(  \varepsilon,\mathbf{E}\right)  $. The elements of the set
+$\mathbf{E}$ are called the \textit{positive elements} of the $\lambda$-ring
+$\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ with its
+positive structure $\left(  \varepsilon,\mathbf{E}\right)  $.
+
+\textbf{2)} Let $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
+}\right)  $ be a $\lambda$-ring with a positive structure $\left(
+\varepsilon,\mathbf{E}\right)  .$ The subset $\left\{  u\in\mathbf{E}%
+\ \mid\ \varepsilon\left(  u\right)  =1\right\}  $ of $\mathbf{E}$ is usually
+denoted as $\mathbf{L}$. The elements of $\mathbf{L}$ are called the
+\textit{line elements} of the $\lambda$-ring $\left(  K,\left(  \lambda
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ with its positive structure $\left(
+\varepsilon,\mathbf{E}\right)  $.
+
+\textbf{Theorem X.1.} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring with a positive structure
+$\left(  \varepsilon,\mathbf{E}\right)  .$
+
+\textbf{(a)} Then, $\mathbf{L}=\left\{  u\in\mathbf{E}\ \mid\ \varepsilon
+\left(  u\right)  =1\right\}  $ is a subgroup of the (multiplicative) unit
+group $K^{\times}$ of $K$. [I don't believe this.]
+
+\textbf{(b)} We have $\mathbf{L}=\left\{  u\in\mathbf{E}\ \mid\ \lambda
+_{T}\left(  u\right)  =1+uT\right\}  $.
+\end{quote}
+
+\textit{Proof of Theorem X.1.} \textbf{(b)} Every $u\in\mathbf{L}$ satisfies%
+\[
+\lambda_{T}\left(  u\right)  =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
+u\right)  T^{i}=\underbrace{\lambda^{0}\left(  u\right)  }_{=1}+\underbrace
+{\lambda^{1}\left(  u\right)  }_{=u}T+\sum\limits_{i\geq2}\underbrace
+{\lambda^{i}\left(  u\right)  }_{\substack{=0,\text{ since}\\i>1=\varepsilon
+\left(  u\right)  \\\text{and }u\in\mathbf{L}\subseteq\mathbf{E}}}T^{i}=1+uT.
+\]
+Conversely, if some $u\in\mathbf{E}$ satisfies $\lambda_{T}\left(  u\right)
+=1+uT$, then%
+\[
+\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  u\right)  T^{i}=\lambda
+_{T}\left(  u\right)  =1+uT
+\]
+shows that $\lambda^{i}\left(  u\right)  =0$ for every $i>1$, and thus
+$\varepsilon\left(  u\right)  \leq1$ (because $\lambda^{\varepsilon\left(
+u\right)  }\left(  u\right)  $ is a unit in the ring $K$ (since $u\in
+\mathbf{E}$), so that $\lambda^{\varepsilon\left(  u\right)  }\left(
+u\right)  \neq0$ and thus $\varepsilon\left(  u\right)  \leq1$). Together with
+$\varepsilon\left(  u\right)  >0$, this yields $\varepsilon\left(  u\right)
+=1$ and thus $u\in\mathbf{L}$. This proves \textbf{(b)}.
+
+\textbf{(a)} First we need to show that every $u\in\mathbf{L}$ is invertible
+in $K$. In fact, let $u\in\mathbf{L}$. Then, $\lambda^{\varepsilon\left(
+u\right)  }\left(  u\right)  $ is a unit in the ring $K$ (since $u\in
+\mathbf{E}$). But $\varepsilon\left(  u\right)  =1$ and thus $\lambda
+^{\varepsilon\left(  u\right)  }\left(  u\right)  =\lambda^{1}\left(
+u\right)  =u$. Thus, $u$ is a unit in $K$; that is, $u$ is invertible. Its
+inverse $u^{-1}$ must lie in $\mathbf{E}$ as well
+
+[\#2] [Why the fuck does it?]
+
+[...]
 
 \begin{center}
 \fbox{\textbf{References}}
