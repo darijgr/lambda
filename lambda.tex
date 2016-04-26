@@ -8,7 +8,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.00.0.2570}
-%TCIDATA{LastRevised=Monday, September 07, 2009 13:21:12}
+%TCIDATA{LastRevised=Saturday, September 26, 2009 00:22:27}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 \voffset=-2.5cm
@@ -30,7 +30,8 @@ notify me of any mistakes, typos and hard-to-understand arguments you
 find!\footnote{my email address is \texttt{A@B.com}, where
 \texttt{A=darijgrinberg} and \texttt{B=gmail}}}
 
-At the moment, section 1 is incomplete and sections 10-... are more or less missing.
+At the moment, section 1 is missing its proofs and sections 10-... are more or
+less missing.
 
 \bigskip
 
@@ -73,12 +74,12 @@ I\right]  $ by $\left[  u_{1},u_{2},...,u_{n}\right]  $.
 
 \item We have not defined $\lambda$-rings yet, but it is important to mention
 some discrepancy in notation between different sources. Namely, some of the
-literature (including [2]) denotes as \textit{pre-}$\lambda$\textit{-rings}
-what we call $\lambda$-rings and denotes as $\lambda$\textit{-rings} what we
-call special $\lambda$-rings. Even worse, the notations in [1] are totally
-inconsistent\footnote{Often, "$\lambda$-ring" in [1] means "$\lambda$-ring
-with a positive structure" (such $\lambda$-rings are automatically special),
-but sometimes it simply means "$\lambda$-ring".}.
+literature (including [2], [5] and [6]) denotes as \textit{pre-}$\lambda
+$\textit{-rings} what we call $\lambda$-rings and denotes as $\lambda
+$\textit{-rings} what we call special $\lambda$-rings. Even worse, the
+notations in [1] are totally inconsistent\footnote{Often, "$\lambda$-ring" in
+[1] means "$\lambda$-ring with a positive structure" (such $\lambda$-rings are
+automatically special), but sometimes it simply means "$\lambda$-ring".}.
 \end{itemize}
 
 \begin{center}
@@ -91,20 +92,20 @@ Fulton/Lang [1] motivate $\lambda$-rings through vector bundles. Here we are
 going for a more elementary motivation, namely through representation rings in
 group representation theory:
 
-Consider a finite group $G$ and a field $K$. In representation theory, one
+Consider a finite group $G$ and a field $k$. In representation theory, one
 define the so-called \textit{representation ring} of the group $G$ over the
-field $K$. This ring can be constructed as follows:\footnote{I hope I got this
-right. At least in the case $\left\vert G\right\vert \nmid\operatorname*{char}%
-K$ it should be correct.}
+field $k$. This ring can be constructed as follows:
 
-Let $\operatorname*{Rep}_{K}G$ be the set of all representations of the group
-$G$ over the field $K$. (We disregard the set-theoretic problematics stemming
+We consider only finite-dimensional representations of $G$.
+
+Let $\operatorname*{Rep}_{k}G$ be the set of all representations of the group
+$G$ over the field $k$. (We disregard the set-theoretic problematics stemming
 from the notion of such a big set. If you wish, you can call it a class or a
 SET instead of a set, or restrict yourself to a smaller subset containing
 every representation up to isomorphism.)
 
-Let $\operatorname*{FRep}_{K}G$ be the free abelian group over
-$\operatorname*{Rep}_{K}G$. Let $I$ be the subgroup%
+Let $\operatorname*{FRep}_{k}G$ be the free abelian group over
+$\operatorname*{Rep}_{k}G$. Let $I$ be the subgroup%
 \[
 I=\left\langle
 \begin{array}
@@ -114,22 +115,22 @@ U\oplus V-U-V\ \mid\ U\text{ and }V\text{ are two representations of }G
 \end{array}
 \right\rangle
 \]
-of the free abelian group $\operatorname*{FRep}_{K}G$. Then,
-$\operatorname*{FRep}_{K}G\diagup I$ is an abelian group. Whenever $U$ is a
+of the free abelian group $\operatorname*{FRep}_{k}G$. Then,
+$\operatorname*{FRep}_{k}G\diagup I$ is an abelian group. Whenever $U$ is a
 representation of $G,$ we should denote the equivalence class of
-$U\in\operatorname*{FRep}_{K}G$ modulo the ideal $I$ by $\overline{U};$
+$U\in\operatorname*{FRep}_{k}G$ modulo the ideal $I$ by $\overline{U};$
 however, since we are always going to work in $\operatorname*{FRep}%
-_{K}G\diagup I$ (because there is nothing interesting to do in
-$\operatorname*{FRep}_{K}G$ itself), we will simply write $U$ for this
+_{k}G\diagup I$ (because there is nothing interesting to do in
+$\operatorname*{FRep}_{k}G$ itself), we will simply write $U$ for this
 equivalence class. This means that whenever $U$ and $V$ are two isomorphic
 representations of $G$, we will simply write $U=V$, and whenever $U$ and $V$
 are two representations of $G$, we will simply write $U+V=U\oplus V$.
 
 Denote by $1$ the equivalence class of the trivial representation of $G$ on
-$K$ (with every element of $G$ acting as identity) modulo $I$. We now define a
-ring structure on $\operatorname*{FRep}_{K}G\diagup I$ by letting $1$ be the
+$k$ (with every element of $G$ acting as identity) modulo $I$. We now define a
+ring structure on $\operatorname*{FRep}_{k}G\diagup I$ by letting $1$ be the
 one of this ring, and defining the product of two representations of $G$ as
-their tensor product (over $K$). This is indeed a ring structure because we
+their tensor product (over $k$). This is indeed a ring structure because we
 have isomorphisms%
 \begin{align*}
 U\otimes\left(  V\otimes W\right)   &  \cong\left(  U\otimes V\right)  \otimes
@@ -141,36 +142,141 @@ U\otimes V  &  \cong V\otimes U,\\
 \end{align*}
 for any representations $U,$ $V$ and $W$ (and probably some others I have forgotten).
 
-The ring $\operatorname*{FRep}_{K}G\diagup I$ is called the
-\textit{representation ring of the group }$G$\textit{ over the field }$K$. It
-is helpful in working with representations. However, its ring structure does
-not yet reflect everything we can do with representations. In fact, we can
-build direct sums of representations (this is addition in
-$\operatorname*{FRep}_{K}G\diagup I$) and we can build tensor products (this
-is multiplication in $\operatorname*{FRep}_{K}G\diagup I$), but we can also
-build exterior powers of representations, and we have no idea yet what
-operation on $\operatorname*{FRep}_{K}G\diagup I$ this entails. So we see that
-the abstract notion of a ring is not enough to understand all of
-representation theory. We need a notion of a ring together with some
-operations that "behave like" taking exterior powers. What axioms should these
-operations satisfy?
+The ring $\operatorname*{FRep}_{k}G\diagup I$ is called the
+\textit{representation ring of the group }$G$\textit{ over the field }$k$. The
+elements of $\operatorname*{FRep}_{k}G\diagup I$ are called \textit{virtual
+representations}.
+
+This ring $\operatorname*{FRep}_{k}G\diagup I$ is helpful in working with
+representations. However, its ring structure does not yet reflect everything
+we can do with representations. In fact, we can build direct sums of
+representations (this is addition in $\operatorname*{FRep}_{k}G\diagup I$) and
+we can build tensor products (this is multiplication in $\operatorname*{FRep}%
+_{k}G\diagup I$), but we can also build exterior powers of representations,
+and we have no idea yet what operation on $\operatorname*{FRep}_{k}G\diagup I$
+this entails. So we see that the abstract notion of a ring is not enough to
+understand all of representation theory. We need a notion of a ring together
+with some operations that "behave like" taking exterior powers. What axioms
+should these operations satisfy?
 
 Every representation $V$ of a group $G$ satisfies $\wedge^{0}V\cong1$ and
-$\wedge^{1}V\cong V$. Besides, any two representations $V$ and $W$ satisfy%
-\[
+$\wedge^{1}V\cong V$. Besides, for any two representations $V$ and $W$ of $G$
+and every $k\in\mathbb{N}$, there exists an isomorphism%
+\begin{equation}
 \wedge^{k}\left(  V\oplus W\right)  \cong\bigoplus_{i=0}^{k}\wedge^{i}%
-V\otimes\wedge^{k-i}W
+V\otimes\wedge^{k-i}W \label{RepThV+W}%
+\end{equation}
+(see Exercise 1.1). In the representation ring, this means%
+\[
+\wedge^{k}\left(  V+W\right)  =\sum_{i=0}^{k}\left(  \wedge^{i}V\right)
+\cdot\left(  \wedge^{k-i}W\right)  .
 \]
-(and this is a canonical isomorphism!). This already gives us three axioms for
-the operations that we want to introduce. If we extend these three axioms to
-arbitrary elements of $\operatorname*{FRep}_{K}G\diagup I$ (and not just
-actual representations), we obtain the notion of a $\lambda$\textit{-ring}.
+This already gives us three axioms for the operations that we want to
+introduce. If we extend these three axioms to arbitrary elements of
+$\operatorname*{FRep}_{k}G\diagup I$ (and not just actual representations), we
+can compute $\wedge^{k}$ of virtual representations (and it turns out that it
+is well-defined), and we obtain the notion of a $\lambda$\textit{-ring}.
 
-We can still wonder whether these axioms are all that we can say about group resentations.
+We can still wonder whether these axioms are all that we can say about group
+representations. The answer is no: In addition to the formula (\ref{RepThV+W}%
+), there exist relations of the form
+\begin{align}
+&  \wedge^{k}\left(  V\otimes W\right)  =P_{k}\left(  \wedge^{1}V,\wedge
+^{2}V,...,\wedge^{k}V,\wedge^{1}W,\wedge^{2}W,...,\wedge^{k}W\right)
+\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \text{for every }k\in\mathbb{N}\text{ and any two
+representations }V\text{ and }W\text{ of }G \label{RepThVW}%
+\end{align}
+and%
+\begin{align}
+&  \wedge^{k}\left(  \wedge^{j}\left(  V\right)  \right)  =P_{k,j}\left(
+\wedge^{1}V,\wedge^{2}V,...,\wedge^{kj}V\right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \text{for every }k\in\mathbb{N},\text{ }j\in
+\mathbb{N}\text{ and any representation }V\text{ of }G, \label{RepThLL}%
+\end{align}
+where $P_{k}\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{k}%
+,\beta_{1},\beta_{2},...,\beta_{k}\right]  $ and $P_{k,j}\in\mathbb{Z}\left[
+\alpha_{1},\alpha_{2},...,\alpha_{kj}\right]  $ are "universal" polynomials
+(i. e., polynomials only depending on $k$ resp. on $k$ and $j$, but not on
+$V$, $W$ or $G$). These polynomials are rather hard to write down explicitely,
+so it will need some theoretical preparation to define them.\footnote{Note
+that these polynomials can have negative coefficients, so that the equality
+(\ref{RepThVW}) does not necessarily mean an isomorphism of the kind%
+\[
+\wedge^{k}\left(  V\otimes W\right)  \cong\text{direct sum of some tensor
+products of some }\wedge^{i}V\text{ and }\wedge^{j}W,
+\]
+but generally means an isomorphism of the kind%
+\begin{align*}
+&  \wedge^{k}\left(  V\otimes W\right)  \oplus\text{direct sum of some tensor
+products of some }\wedge^{i}V\text{ and }\wedge^{j}W\\
+&  =\text{(another) direct sum of some tensor products of some }\wedge
+^{i}V\text{ and }\wedge^{j}W,
+\end{align*}
+and similarly (\ref{RepThLL}) has to be understood.}
 
-[special $\lambda$-rings, positive structure, $\varepsilon$]
+These relations (\ref{RepThV+W}) and (\ref{RepThLL}), generalized to arbitrary
+virtual representations, abstract to the notion of a \textit{special }%
+$\lambda$\textit{-ring}. So$\ \operatorname*{FRep}_{k}G\diagup I$ is not just
+a $\lambda$-ring; it is a special $\lambda$-ring. However, it has even more
+structure than that: It is an \textit{augmented }$\lambda$\textit{-ring with
+positive structure}. "Augmented" means the existence of a ring homomorphism
+$\varepsilon:\operatorname*{FRep}_{k}G\diagup I\rightarrow\mathbb{Z}$ (a
+so-called \textit{augmentation}) with certain properties; we will list these
+properties later, but let us now notice that for our representation ring
+$\operatorname*{FRep}_{k}G\diagup I,$ the obvious natural choice of
+$\varepsilon$ is the homomorphism which maps every representation $V$ of $G$
+to $\dim V\in\mathbb{Z}$. A "positive structure" is a subset of $K$ closed
+under addition and multiplication and containing $1$, and satisfying other
+properties; in our case, the best choice for a positive structure on
+$\operatorname*{FRep}_{k}G\diagup I$ is the subset%
+\[
+\left\{  \overline{V}\mid V\text{ is a representation of }G\right\}
+\setminus0\subseteq\operatorname*{FRep}\nolimits_{k}G\diagup I.
+\]
 
-[...] [\#1]
+
+Vector bundles over a given compact Hausdorff space are similar to
+representations of a given group in several ways: They are somehow "enriched"
+vector space structures (a vector bundle is, roughly speaking, a family of
+vector spaces with additional topological structure; a representation of a
+group is a vector space with a group action on it), so one can form direct
+sums, tensor products and exterior powers of both of these. Hence, it is not
+surprising that we can define a $\lambda$-ring structure on a kind of "ring of
+vector bundles over a space" similarly to the $\lambda$-ring structure on the
+representation ring of a group. However, we must be more careful with vector
+bundles, because this "ring of vector bundles over a space" actually does not
+consist of vector bundles, but of equivalence classes, and sometimes,
+different vector bundles can lie in one and the same equivalence class (as
+opposed to representations of a group, which are uniquely determined by their
+equivalence class in the representation ring). This "ring of vector bundles"
+is denoted by $K\left(  X\right)  $, where $X$ is the base space, and is the
+first fundamental object of study in K-theory. We will not delve into K-theory
+here; we will only provide some of its backbone, namely the abstract algebraic
+theory of $\lambda$-rings (which appear not only in K-theory, but also in
+representation theory and elsewhere).
+
+\begin{quotation}
+\textit{Exercise 1.1.} Let $G$ be a group, and let $V$ and $W$ be two
+representations of $G$. Let $k\in\mathbb{N}$. Let $\iota_{V}:V\rightarrow
+V\oplus W$ and $\iota_{W}:W\rightarrow V\oplus W$ be the canonical injections.
+Prove that the vector space homomorphism%
+\[
+\bigoplus_{i=0}^{k}\wedge^{i}V\otimes\wedge^{k-i}W\rightarrow\wedge^{k}\left(
+V\oplus W\right)
+\]
+composed of the homomorphisms%
+\begin{align*}
+\wedge^{i}V\otimes\wedge^{k-i}W  &  \rightarrow\wedge^{k}\left(  V\oplus
+W\right)  ,\\
+\left(  v_{1}\wedge v_{2}\wedge...\wedge v_{i}\right)  \otimes\left(
+w_{1}\wedge w_{2}\wedge...\wedge w_{k-i}\right)   &  \mapsto\iota_{V}\left(
+v_{1}\right)  \wedge\iota_{V}\left(  v_{2}\right)  \wedge...\wedge\iota
+_{V}\left(  v_{i}\right)  \wedge\iota_{W}\left(  w_{1}\right)  \wedge\iota
+_{W}\left(  w_{2}\right)  \wedge...\wedge\iota_{W}\left(  w_{k-i}\right)
+\end{align*}
+for all $i\in\left\{  0,1,...,k\right\}  $ is a canonical isomorphism of representations.
+\end{quotation}
 
 \begin{center}
 \fbox{\textbf{2. }$\lambda$\textbf{-rings}}
@@ -329,95 +435,14 @@ e\right)  $.
 \textbf{(b)} Prove that $f$ is a $\lambda$-ring homomorphism if and only if
 every $e\in E$ satisfies $\left(  \mu^{i}\circ f\right)  \left(  e\right)
 =\left(  f\circ\lambda^{i}\right)  \left(  e\right)  $ for every
-$i\in\mathbb{N}$.\ \ \ \ \footnote{\textit{Solution:} \textbf{(a)} Theorem 2.1
-\textbf{(c)} says that $f$ is a homomorphism of $\lambda$-rings if and only if
-$\mu_{T}\circ f=f\left[  \left[  T\right]  \right]  \circ\lambda_{T}$. Thus,
-it remains to show that $\mu_{T}\circ f=f\left[  \left[  T\right]  \right]
-\circ\lambda_{T}$ holds if and only if every $e\in E$ satisfies $\mu_{T}\circ
-f=f\left[  \left[  T\right]  \right]  \circ\lambda_{T}$. Since $E$ is a
-generating set of the $\mathbb{Z}$-module $K$, this comes down to proving the
-following three facts:
-\par
-\begin{itemize}
-\item We have $\left(  \mu_{T}\circ f\right)  \left(  0\right)  =\left(
-f\left[  \left[  T\right]  \right]  \circ\lambda_{T}\right)  \left(  0\right)
-$.
-\par
-\item We have $\left(  \mu_{T}\circ f\right)  \left(  -x\right)  =\left(
-f\left[  \left[  T\right]  \right]  \circ\lambda_{T}\right)  \left(
--x\right)  $ for every $x\in K$ which satisfies $\left(  \mu_{T}\circ
-f\right)  \left(  x\right)  =\left(  f\left[  \left[  T\right]  \right]
-\circ\lambda_{T}\right)  \left(  x\right)  $.
-\par
-\item We have $\left(  \mu_{T}\circ f\right)  \left(  x+y\right)  =\left(
-f\left[  \left[  T\right]  \right]  \circ\lambda_{T}\right)  \left(
-x+y\right)  $ for any $x\in K$ and $y\in K$ which satisfy $\left(  \mu
-_{T}\circ f\right)  \left(  x\right)  =\left(  f\left[  \left[  T\right]
-\right]  \circ\lambda_{T}\right)  \left(  x\right)  $ and $\left(  \mu
-_{T}\circ f\right)  \left(  y\right)  =\left(  f\left[  \left[  T\right]
-\right]  \circ\lambda_{T}\right)  \left(  y\right)  $.
-\end{itemize}
-\par
-We will only prove the last of these three assertions (the other two are
-similar): If $\left(  \mu_{T}\circ f\right)  \left(  x\right)  =\left(
-f\left[  \left[  T\right]  \right]  \circ\lambda_{T}\right)  \left(  x\right)
-$ and $\left(  \mu_{T}\circ f\right)  \left(  y\right)  =\left(  f\left[
-\left[  T\right]  \right]  \circ\lambda_{T}\right)  \left(  y\right)  $, then%
-\begin{align*}
-\left(  \mu_{T}\circ f\right)  \left(  x+y\right)   &  =\mu_{T}\left(
-f\left(  x+y\right)  \right)  =\mu_{T}\left(  f\left(  x\right)  +f\left(
-y\right)  \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }f\text{ is a ring
-homomorphism}\right) \\
-&  =\mu_{T}\left(  f\left(  x\right)  \right)  \cdot\mu_{T}\left(  f\left(
-y\right)  \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 2.1
-\textbf{(a)}, applied to the }\lambda\text{-ring }\left(  L,\left(  \mu
-^{i}\right)  _{i\in\mathbb{N}}\right)  \right) \\
-&  =\left(  \mu_{T}\circ f\right)  \left(  x\right)  \cdot\left(  \mu_{T}\circ
-f\right)  \left(  y\right)  =\left(  f\left[  \left[  T\right]  \right]
-\circ\lambda_{T}\right)  \left(  x\right)  \cdot\left(  f\left[  \left[
-T\right]  \right]  \circ\lambda_{T}\right)  \left(  y\right) \\
-&  =\left(  f\left[  \left[  T\right]  \right]  \right)  \left(
-\underbrace{\lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)
-}_{=\lambda_{T}\left(  x+y\right)  \text{ by Theorem 2.1 \textbf{(a)}}%
-}\right)  =\left(  f\left[  \left[  T\right]  \right]  \circ\lambda
-_{T}\right)  \left(  x+y\right)  ,
-\end{align*}
-qed.
-\par
-\textbf{(b)} This follows from \textbf{(a)} in the same way as Theorem 2.1
-\textbf{(c)} was proven.}
+$i\in\mathbb{N}$.
 
 \textit{Exercise 2.2.} Let $\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. Let $L$ be a subset of $K$
 which is closed under addition, multiplication and the maps $\lambda^{i}$.
 Assume that $0\in L$ and $1\in L$. Then, the subset $L-L$ of $K$ (this subset
 $L-L$ is defined by $L-L=\left\{  \ell-\ell^{\prime}\mid\ell\in L,\ \ell
-^{\prime}\in L\right\}  $) is a sub-$\lambda$-ring of $K$%
-.\ \ \ \ \footnote{\textit{Solution:} It is an exercise in basic algebra to
-see that $L-L$ is a subring of $K$. Thus, it only remains to show that
-$\lambda^{i}\left(  L-L\right)  \subseteq L-L$ for every $i\in\mathbb{N}$. In
-other words, we have to prove that $\lambda^{i}\left(  \ell-\ell^{\prime
-}\right)  \in L-L$ for every $\ell\in L$ and $\ell^{\prime}\in L$.
-\par
-We are going to prove this by induction, so we assume that $\lambda^{j}\left(
-\ell-\ell^{\prime}\right)  \in L-L$ for all $j<i$. Then,%
-\begin{align*}
-\lambda^{i}\left(  \ell\right)   &  =\lambda^{i}\left(  \left(  \ell
--\ell^{\prime}\right)  +\ell^{\prime}\right)  =\sum_{j=0}^{i}\lambda
-^{j}\left(  \ell-\ell^{\prime}\right)  \lambda^{i-j}\left(  \ell^{\prime
-}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }%
-\lambda\text{-rings}\right) \\
-&  =\sum_{j=0}^{i-1}\underbrace{\lambda^{j}\left(  \ell-\ell^{\prime}\right)
-}_{\substack{\in L-L,\text{ since}\\j<n}}\underbrace{\lambda^{i-j}\left(
-\ell^{\prime}\right)  }_{\substack{\in L\text{, since}\\\ell^{\prime}\in
-L}}+\lambda^{i}\left(  \ell-\ell^{\prime}\right)  \underbrace{\lambda
-^{0}\left(  \ell^{\prime}\right)  }_{=1}\in\underbrace{\left(  L-L\right)
-L}_{=L-L}+\lambda^{i}\left(  \ell-\ell^{\prime}\right)  \subseteq\left(
-L-L\right)  +\lambda^{i}\left(  \ell-\ell^{\prime}\right)  .
-\end{align*}
-But $\lambda^{i}\left(  \ell\right)  $ itself lies in $L-L$ (since it lies in
-$L$, because $\ell\in L$), so this yields $\lambda^{i}\left(  \ell
--\ell^{\prime}\right)  \in L-L,$ and this completes our induction.}
+^{\prime}\in L\right\}  $) is a sub-$\lambda$-ring of $K$.
 \end{quotation}
 
 \begin{center}
@@ -609,10 +634,7 @@ The exercises below give some more examples.
 \textit{Exercise 3.1.} Let $p\in\mathbb{N}$ be a prime. Prove that the
 localization $\left\{  1,p,p^{2},...\right\}  ^{-1}\mathbb{Z}$ of the ring
 $\mathbb{Z}$ at the multiplicative subset $\left\{  1,p,p^{2},...\right\}  $
-is a binomial ring.\ \ \ \ \footnote{\textit{Hints to solution:} Count how
-often a prime $q$ appears in $n!$ and $x\cdot\left(  x-1\right)  \cdot
-...\cdot\left(  x-i+1\right)  $. I would prefer a better proof, but I know of
-none.}
+is a binomial ring.
 
 {\small [One of the reasons I include this exercise here that I am looking for
 a nice solution.]}
@@ -621,60 +643,7 @@ a nice solution.]}
 $3,$ $...$ is a zero-divisor. Let $E$ be a subset of $K$ that generates $K$ as
 a ring. Assume that $n!\mid x\cdot\left(  x-1\right)  \cdot...\cdot\left(
 x-i+1\right)  $ for every $x\in E$ and every $n\in\mathbb{N}$. Prove that $K$
-is a binomial ring.\ \ \ \ \footnote{\textit{Hints to solution:} Let
-$\mathbb{N}_{K}^{+}$ be the subset $\left\{  1,2,3,...\right\}  $ of $K$.
-Obviously, this subset is multiplicatively closed and contains no
-zero-divisors. Hence, the localization $\left(  \mathbb{N}_{K}^{+}\right)
-^{-1}K$ can be considered as an extension ring of $K$. We now can define
-$\dbinom{x}{i}\in\left(  \mathbb{N}_{K}^{+}\right)  ^{-1}K$ for every
-$x\in\left(  \mathbb{N}_{K}^{+}\right)  ^{-1}K$ and $i\in\mathbb{N}$. It
-remains to show that $\dbinom{x}{i}\in K$ for every $x\in K$ and
-$i\in\mathbb{N}$, given that $\dbinom{x}{i}\in K$ for every $x\in E$ and
-$i\in\mathbb{N}$.
-\par
-This will follow once we have seen that for $i\in\mathbb{N}$ fixed,
-\par
-\begin{itemize}
-\item the polynomial $\dbinom{X+Y}{i}\in\mathbb{Q}\left[  X,Y\right]  $ is a
-polynomial in $\dbinom{X}{0},$ $\dbinom{X}{1},$ $...,$ $\dbinom{X}{i},$
-$\dbinom{Y}{0},$ $\dbinom{Y}{1},$ $...,$ $\dbinom{Y}{i}$ with integer
-coefficients;
-\par
-\item the polynomial $\dbinom{-X}{i}\in\mathbb{Q}\left[  X\right]  $ is a
-polynomial in $\dbinom{X}{0},$ $\dbinom{X}{1},$ $...,$ $\dbinom{X}{i}$ with
-integer coefficients;
-\par
-\item the polynomial $\dbinom{XY}{i}\in\mathbb{Q}\left[  X,Y\right]  $ is a
-polynomial in $\dbinom{X}{0},$ $\dbinom{X}{1},$ $...,$ $\dbinom{X}{i},$
-$\dbinom{Y}{0},$ $\dbinom{Y}{1},$ $...,$ $\dbinom{Y}{i}$ with integer
-coefficients.
-\end{itemize}
-\par
-The first of these three properties follows from (\ref{vandermonde}) (applied
-to $x=X$ and $y=Y$, which is not tragic since it holds in every binomial ring,
-in particular $\mathbb{Q}\left[  X,Y\right]  $). The second one follows from
-the first one and the identity $\dbinom{-x}{i}=\left(  -1\right)  ^{i}%
-\dbinom{x+i-1}{i}$ for every $x\in\mathbb{Z}$ and $i\in\mathbb{N}$ (this is
-the so-called \textit{upper negation identity}). The third one, alas, doesn't
-seem to be that easy. One way to prove it is to use the proof of Theorem 7.1
-below. Another, more elementary way (leading to a different polynomial!!) is
-by recalling the fact ([4], Proposition I.7.3) that the subset%
-\[
-\left\{  p\in\mathbb{Q}\left[  X\right]  \text{ }\mid\ p\left(  n\right)
-\in\mathbb{Z}\text{ for every }n\in\mathbb{Z}\right\}
-\]
-of the polynomial ring $\mathbb{Q}\left[  X\right]  $ is the $\mathbb{Z}%
-$-linear span of the polynomials $\dbinom{X}{0},$ $\dbinom{X}{1},$ $\dbinom
-{X}{2},$ $...$. This generalizes to two variables: The subset
-\[
-\left\{  p\in\mathbb{Q}\left[  X,Y\right]  \text{ }\mid\ p\left(  n,m\right)
-\in\mathbb{Z}\text{ for every }n\in\mathbb{Z}\text{ and every }m\in
-\mathbb{Z}\right\}
-\]
-of the polynomial ring $\mathbb{Q}\left[  X,Y\right]  $ is the $\mathbb{Z}%
-$-linear span of the polynomials $\dbinom{X}{i}\dbinom{Y}{j}$ for
-$i\in\mathbb{N}$ and $j\in\mathbb{N}$. Of course, the polynomial $\dbinom
-{XY}{i}$ belongs to this subset, so all we need is proven.}
+is a binomial ring.
 
 {\small [Again, I don't really like the solution that I have.]}
 
@@ -694,11 +663,7 @@ $\log\left(  1+T\right)  $ is the power series $\log\left(  1+T\right)
 \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring.
 
 \textbf{(b)} If $p=1$, prove that this $\lambda$-ring is the one defined in
-Theorem 3.2.\ \ \ \ \footnote{\textit{Hints to solution:} \textbf{(a)} Use
-Theorem 2.1 \textbf{(a)} and $\left(  1+pT\right)  ^{x}\left(  1+pT\right)
-^{y}=\left(  1+pT\right)  ^{x+y}$.
-\par
-\textbf{(b)} Use the binomial formula.}
+Theorem 3.2.
 
 \textit{Exercise 3.4.} Let $M$ be a commutative monoid with neutral element,
 written multiplicatively (this means, in particular, that we denote the
@@ -720,10 +685,7 @@ series $\prod\limits_{m\in M}\left(  1+mT\right)  ^{\alpha_{m}}\in\left(
 before $T^{i}$.
 
 Prove that $\left(  \mathbb{Z}\left[  M\right]  ,\left(  \lambda^{i}\right)
-_{i\in\mathbb{N}}\right)  $ is a $\lambda$%
--ring.\ \ \ \ \footnote{\textit{Hints to solution:} It is clear from the very
-definition of $\lambda^{i}$ that Theorem 2.1 \textbf{(a)} is to be applied
-here.}
+_{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring.
 
 \textit{Exercise 3.5.} \textbf{(a)} Let $M$ be a commutative monoid with
 neutral element, written multiplicatively (this means, in particular, that we
@@ -757,8 +719,7 @@ sub-$\lambda$-ring of $\left(  K\left[  M\right]  ,\left(  \overline{\lambda
 \textbf{(b)} Show that Exercise 3.4 is a particular case of \textbf{(a)} for
 $K=\mathbb{Z}$, and that Theorem 3.3 \textbf{(a)} is a particular case of
 \textbf{(a)} for $M\cong\mathbb{N}$ (where $\mathbb{N}$ denotes the
-\textit{additive} monoid $\mathbb{N}$). \footnote{\textit{Hints to solution:}
-Same idea as for Exercise 3.4.}
+\textit{additive} monoid $\mathbb{N}$).
 \end{quotation}
 
 \begin{center}
@@ -1543,7 +1504,13 @@ them from the addition $+,$ subtraction $-$ and multiplication $\cdot$
 inherited from $K\left[  \left[  T\right]  \right]  $. We will later continue
 in this spirit (for instance, we will denote a finite sum with respect to the
 addition $\widehat{+}$ by the sign $\widehat{\sum}$, while a finite sum with
-respect to the addition $+$ will be written using the normal $\sum$ sign).
+respect to the addition $+$ will be written using the normal $\sum$
+sign).\footnote{In [2], Knutson writes $"+"$, $"-"$ and $"\cdot"$ instead of
+$\widehat{+},$ $\widehat{-}$ and $\widehat{\cdot}$ for the newly-defined
+operations. In [1], Fulton and Lang simply write $+,$ $-$ and $\cdot$ for
+$\widehat{+},$ $\widehat{-}$ and $\widehat{\cdot}$, approving the danger of
+confusion with the "old" operations $+,$ $-$ and $\cdot$ inherited from
+$K\left[  \left[  T\right]  \right]  $.}
 
 \begin{quote}
 \textbf{Theorem 5.1.} \textbf{(a)} The multiplication $\widehat{\cdot}$ just
@@ -2287,37 +2254,20 @@ L\right)  $ will be denoted by $\Lambda\left(  \varphi\right)  $.
 \end{quote}
 
 It is easy to see that this $\Lambda\left(  \varphi\right)  $ indeed is a
-$\lambda$-ring homomorphism. Besides, it has some obvious properties: If
-$\varphi$ is surjective, then so is $\Lambda\left(  \varphi\right)  $. If
-$\varphi$ is injective, then $\Lambda\left(  \varphi\right)  $ is injective as
-well; thus, if $L$ is an extension ring of $K$, then $\Lambda\left(  L\right)
-$ can be canonically considered an extension ring of $\Lambda\left(  K\right)
-$.
+$\lambda$-ring homomorphism.\footnote{Basically, this is because the $P_{k}$
+and $P_{k,j}$ are polynomials, and polynomials commute with ring
+homomorphisms.} Besides, it has some obvious properties: If $\varphi$ is
+surjective, then so is $\Lambda\left(  \varphi\right)  $. If $\varphi$ is
+injective, then $\Lambda\left(  \varphi\right)  $ is injective as well; thus,
+if $L$ is an extension ring of $K$, then $\Lambda\left(  L\right)  $ can be
+canonically considered an extension ring of $\Lambda\left(  K\right)  $.
 
 \begin{quotation}
 \textit{Exercise 5.1.} Let $K$ be a ring. For every monic polynomial $P\in
 K\left[  T\right]  $, there exists a finite-free extension ring $K_{p}$ of the
 ring $K$ and $n$ elements $p_{1},$ $p_{2},$ $...,$ $p_{n}$ of this extension
 ring $K_{p}$ such that $p=\prod\limits_{i=1}^{n}\left(  T-p_{i}\right)  $ in
-$K_{p}\left[  T\right]  $, where $n=\deg P$.\ \ \ \ \footnote{\textit{Hints to
-solution:} This can be proven by induction: The ring $K\left[  T\right]
-\diagup\left(  p\right)  $ is a finite-free extension of $K$ containing a root
-of the polynomial $P$ (namely, the equivalence class $\overline{T}$ of $T\in
-K\left[  T\right]  $ modulo $\left(  p\right)  $). Now, the polynomial
-$\dfrac{p\left(  S\right)  }{S-\overline{T}}\in\left(  K\left[  T\right]
-\diagup\left(  p\right)  \right)  \left[  S\right]  $ is monic and has degree
-$n-1$, so by induction there exists a finite-free extension ring $K_{p}$ of
-the ring $K\left[  T\right]  \diagup\left(  p\right)  $ and $n-1$ elements
-$p_{2},$ $...,$ $p_{n}$ of this extension ring $K_{p}$ such that
-$\dfrac{p\left(  S\right)  }{S-\overline{T}}=\prod\limits_{i=2}^{n}\left(
-T-p_{i}\right)  $ in $K_{p}\left[  S\right]  $. Thus, $p\left(  S\right)
-=\left(  S-\overline{T}\right)  \prod\limits_{i=2}^{n}\left(  T-p_{i}\right)
-$ in $K_{p}\left[  S\right]  $. If we denote $\overline{T}$ by $p_{1},$ this
-takes the form $p\left(  S\right)  =\prod\limits_{i=1}^{n}\left(
-T-p_{i}\right)  ,$ which shows that we have just completed the induction step.
-\par
-Notice the similarity between this solution and the proof of the existence of
-splitting fields in Galois theory.}
+$K_{p}\left[  T\right]  $, where $n=\deg P$.
 
 \textit{Exercise 5.2.} Let $K$ be a ring, and $L$ an extension ring of $K$.
 For some $n\in\mathbb{N}$, an element $u$ of $L$ is said to be $n$%
@@ -2420,9 +2370,7 @@ K\text{ and }y\in K,\ \ \ \ \ \ \ \ \ \ \text{and}\\
 But these two conditions are equivalent to (\ref{Lkxy}) and (\ref{LkLjx}),
 respectively (because of the definitions of $\widehat{\cdot}$ and
 $\widehat{\lambda}^{j}$ and because two formal power series are equal if and
-only if their respective coefficients are equal, and because $\lambda
-^{0}\left(  1\right)  =0$ and $\lambda^{1}\left(  1\right)  =1$ hold by the
-definition of a $\lambda$-ring). This proves Theorem 6.1.
+only if their respective coefficients are equal). This proves Theorem 6.1.
 
 \begin{quote}
 \textbf{Theorem 6.2 (Grothendieck).} Let $K$ be a ring. Then, $\left(
@@ -2599,38 +2547,11 @@ K\left[  \left[  T\right]  \right]  $, and every element of $1+K\left[
 T\right]  ^{+}$ is invertible in $K\left[  \left[  T\right]  \right]  $).
 Prove that the set $\left(  1+K\left[  T\right]  ^{+}\right)  ^{-1}K\left[
 T\right]  \cap\Lambda\left(  K\right)  $ is a special sub-$\lambda$-ring of
-$\Lambda\left(  K\right)  $.\ \ \ \ \footnote{\textit{Hints to solution:} We
-have $\left(  1+K\left[  T\right]  ^{+}\right)  ^{-1}K\left[  T\right]
-\cap\Lambda\left(  K\right)  =\left(  1+K\left[  T\right]  ^{+}\right)
-\widehat{-}\left(  1+K\left[  T\right]  ^{+}\right)  $, where $U\widehat{-}U$
-denotes the set $\left\{  u\widehat{-}u^{\prime}\mid u\in U,\ u^{\prime}\in
-U\right\}  $ for every subset $U$ of $\Lambda\left(  K\right)  $ (where
-$\widehat{-}$ means subtraction with respect to the addtion $\widehat{+}$ in
-$\Lambda\left(  K\right)  $). The subset $1+K\left[  T\right]  ^{+}$ of
-$\Lambda\left(  K\right)  $ is closed under the addition $\widehat{+}$, the
-multiplication $\widehat{\cdot}$ and the maps $\widehat{\lambda}^{i}$
-(according to Theorem 5.3, since $1+K\left[  T\right]  ^{+}=\Pi\left(
-K^{\operatorname*{int}}\right)  $) and contains the zero $1$ and the unity
-$1+T$. Thus, by Exercise 2.2 (applied to $\Lambda\left(  K\right)  $ and
-$1+K\left[  T\right]  ^{+}$ instead of $K$ and $L$), the conclusion follows.}
+$\Lambda\left(  K\right)  $.
 
 \textit{Exercise 6.2.} Let $\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring. Then, prove that none
-of the elements $1,$ $2,$ $3,$ $...$ of the ring $K$ equals zero in
-$K$.\ \ \ \ \footnote{\textit{Solution:} Assume, for the sake of
-contradiction, that $m=0$ in $K$ for some positive integer $m$. Then, Theorem
-2.1 \textbf{(a)} yields%
-\begin{align*}
-\lambda_{T}\left(  m\right)   &  =\lambda_{T}\left(  \underbrace
-{1+1+...+1}_{m\text{ times}}\right)  =\underbrace{\lambda_{T}\left(  1\right)
-\cdot\lambda_{T}\left(  1\right)  \cdot...\cdot\lambda_{T}\left(  1\right)
-}_{m\text{ times}}=\left(  \lambda_{T}\left(  1\right)  \right)  ^{m}\\
-&  =\left(  \lambda_{T}\left(  1\right)  \right)  ^{m}=\left(  1+T\right)
-^{m}=1+\sum_{i=1}^{m-1}\dbinom{m}{i}T^{i}+T^{m}\ \ \ \ \ \ \ \ \ \ \left(
-\text{by the binomial formula}\right)
-\end{align*}
-in $K\left[  \left[  T\right]  \right]  $. On the other hand, $\lambda
-_{T}\left(  m\right)  =\lambda_{T}\left(  0\right)  =1.$ Contradiction.}
+of the elements $1,$ $2,$ $3,$ $...$ of the ring $K$ equals zero in $K$.
 
 \textit{Exercise 6.3.} Consider the ring $\mathbb{Z}\left[  X\right]
 \diagup\left(  X^{2},2X\right)  =\mathbb{Z}\left[  x\right]  $, where $x$
@@ -2649,6 +2570,70 @@ x\right)  T^{i}$ for every $x\in K$.
 Prove that $\left(  \mathbb{Z}\left[  x\right]  ,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ is a special $\lambda$-ring. [This way, we see
 that the additive group of a special $\lambda$-ring needs not be torsion-free.]
+
+\textit{Exercise 6.4.} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. Let $E$ be a generating set
+of the $\mathbb{Z}$-module $K$.
+
+Prove that the $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ is special if and only if it satisfies%
+\begin{align}
+&  \lambda^{k}\left(  xy\right)  =P_{k}\left(  \lambda^{1}\left(  x\right)
+,\lambda^{2}\left(  x\right)  ,...,\lambda^{k}\left(  x\right)  ,\lambda
+^{1}\left(  y\right)  ,\lambda^{2}\left(  y\right)  ,...,\lambda^{k}\left(
+y\right)  \right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \text{for every }k\in\mathbb{N}\text{, }x\in E\text{
+and }y\in E \label{LkxyE}%
+\end{align}
+and%
+\begin{align}
+&  \lambda^{k}\left(  \lambda^{j}\left(  x\right)  \right)  =P_{k,j}\left(
+\lambda^{1}\left(  x\right)  ,\lambda^{2}\left(  x\right)  ,...,\lambda
+^{kj}\left(  x\right)  \right) \nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \text{for every }k\in\mathbb{N}\text{, }j\in
+\mathbb{N}\text{ and }x\in E. \label{LkLjxE}%
+\end{align}
+
+
+\textit{Exercise 6.5.} Let $K$ be a ring. Let $i\in\mathbb{N}$. Define a
+mapping $\operatorname*{coeff}\nolimits_{i}:\Lambda\left(  K\right)
+\rightarrow K$ by $\operatorname*{coeff}\nolimits_{i}\left(  \sum
+\limits_{j\in\mathbb{N}}a_{j}T^{j}\right)  =a_{i}$ for every $\sum
+\limits_{j\in\mathbb{N}}a_{j}T^{j}\in\Lambda\left(  K\right)  $ (with
+$a_{j}\in K$ for every $j\in\mathbb{N}$). (In other words,
+$\operatorname*{coeff}\nolimits_{i}$ is the mapping that takes a power series
+and returns its coefficient before $T^{i}.$)
+
+Prove that%
+\[
+\operatorname*{coeff}\nolimits_{i}\left(  u\right)  =\operatorname*{coeff}%
+\nolimits_{1}\left(  \widehat{\lambda}^{i}\left(  u\right)  \right)
+\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  .
+\]
+
+
+\textit{Exercise 6.6.} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring, and $A$ be a ring.
+Let $\varphi:K\rightarrow A$ be a ring homomorphism, and let
+$\operatorname*{coeff}\nolimits_{1}^{A}:\Lambda\left(  A\right)  \rightarrow
+A$ be the mapping defined by $\operatorname*{coeff}\nolimits_{1}^{A}\left(
+\sum\limits_{j\in\mathbb{N}}a_{j}T^{j}\right)  =a_{1}$ for every
+$\sum\limits_{j\in\mathbb{N}}a_{j}T^{j}\in\Lambda\left(  A\right)  $ (with
+$a_{j}\in A$ for every $j\in\mathbb{N}$). (In other words,
+$\operatorname*{coeff}\nolimits_{1}^{A}$ is the mapping that takes a power
+series and returns its coefficient before $T^{1}.$)
+
+As Theorem 5.1 \textbf{(b)} states, $\left(  \Lambda\left(  A\right)  ,\left(
+\widehat{\lambda}_{A}^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a $\lambda
+$-ring, where the maps $\widehat{\lambda}_{A}^{i}:\Lambda\left(  A\right)
+\rightarrow\Lambda\left(  A\right)  $ are defined in the same way as the maps
+$\widehat{\lambda}^{i}:\Lambda\left(  K\right)  \rightarrow\Lambda\left(
+K\right)  $ (which we have defined in Section 5) but for the ring $K$ instead
+of $A$.
+
+Prove that there exists one and only one $\lambda$-ring homomorphism
+$\widetilde{\varphi}:K\rightarrow\Lambda\left(  A\right)  $ such that
+$\operatorname*{coeff}\nolimits_{1}^{A}\circ\widetilde{\varphi}=\varphi.$
 \end{quotation}
 
 \begin{center}
@@ -2899,17 +2884,13 @@ $\overline{\lambda}_{T}$ is a $\lambda$-ring homomorphism. This proves Theorem 7
 \begin{quotation}
 \textit{Exercise 7.1.} Let $M$ be a commutative monoid with neutral element.
 Prove that the $\lambda$-ring $\left(  \mathbb{Z}\left[  M\right]  ,\left(
-\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ defined in Exercise 3.4 is
-special.\ \ \ \ \footnote{\textit{Hints to solution:} See the more general
-Exercise 7.2.}
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ defined in Exercise 3.4 is special.
 
 \textit{Exercise 7.2.} Let $M$ be a commutative monoid with neutral element.
 Let $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a
 special $\lambda$-ring. Prove that the $\lambda$-ring $\left(  K\left[
 M\right]  ,\left(  \overline{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $
-defined in Exercise 3.5 \textbf{(a)} is
-special.\ \ \ \ \footnote{\textit{Hints to solution:} Repeat the argument used
-in the proof of Theorem 7.3.}
+defined in Exercise 3.5 \textbf{(a)} is special.
 \end{quotation}
 
 \begin{center}
@@ -3293,127 +3274,19 @@ _{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring. Define the mapping
 $\operatorname*{coeff}\nolimits_{1}:\Lambda\left(  K\right)  \rightarrow K$ as
 in Theorem 8.2. Then, show that $\operatorname*{coeff}\nolimits_{1}%
 :\Lambda\left(  K\right)  \rightarrow K$ is a ring homomorphism\footnote{but,
-generally, not a $\lambda$-ring homomorphism!}%
-.\ \ \ \ \footnote{\textit{Solution:}
-\par
-\textit{First solution:} In order to prove this, we must verify that%
-\begin{align}
-\operatorname*{coeff}\nolimits_{1}\left(  1\right)   &  =0;\label{8.2.1}\\
-\operatorname*{coeff}\nolimits_{1}\left(  u\widehat{+}v\right)   &
-=\operatorname*{coeff}\nolimits_{1}u+\operatorname*{coeff}\nolimits_{1}%
-v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
-}v\in\Lambda\left(  K\right)  ;\label{8.2.2}\\
-\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;\label{8.2.3}\\
-\operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)   &
-=\operatorname*{coeff}\nolimits_{1}u\cdot\operatorname*{coeff}\nolimits_{1}%
-v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
-}v\in\Lambda\left(  K\right)  . \label{8.2.4}%
-\end{align}
-The equations (\ref{8.2.1}) and (\ref{8.2.3}) are immediately obvious. In
-order to verify the equations (\ref{8.2.2}) and (\ref{8.2.4}), we notice that
-$\operatorname*{coeff}\nolimits_{1}:\Lambda\left(  K\right)  \rightarrow K$ is
-a continuous mapping (with respect to the $\left(  T\right)  $-topology on
-$\Lambda\left(  K\right)  $ and \textit{any arbitrary topology} on $K$) and
-the operations $\widehat{+}$ and $\widehat{\cdot}$ are continuous as well (by
-Theorem 5.5 \textbf{(d)}), and the subset $1+K\left[  T\right]  ^{+}$ of
-$1+K\left[  \left[  T\right]  \right]  ^{+}=\Lambda\left(  K\right)  $ is
-dense (by Theorem 5.5 \textbf{(a)}), so it suffices to verify the equations
-(\ref{8.2.2}) and (\ref{8.2.4}) for $u\in1+K\left[  T\right]  ^{+}$ and
-$v\in1+K\left[  T\right]  ^{+}$ only. So let $u\in1+K\left[  T\right]  ^{+}$
-and $v\in1+K\left[  T\right]  ^{+}$.
-\par
-Then, there exist some $\left(  \widetilde{K}_{u},\left[  u_{1},u_{2}%
-,...,u_{m}\right]  \right)  \in K^{\operatorname*{int}}$ such that
-$u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
-,$ and some $\left(  \widetilde{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]
-\right)  \in K^{\operatorname*{int}}$ such that $v=\Pi\left(  \widetilde
-{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  .$ Obviously,%
-\[
-u=\Pi\left(  \widetilde{K},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
-=\prod_{i=1}^{m}\left(  1+u_{i}T\right)  =1+\sum_{i=1}^{m}u_{i}\cdot T+\left(
-\text{higher powers of }T\right)
-\]
-yields $\operatorname*{coeff}\nolimits_{1}u=\sum\limits_{i=1}^{m}u_{i}.$
-Similarly, $\operatorname*{coeff}\nolimits_{1}v=\sum\limits_{j=1}^{n}v_{j}$.
-\par
-By Theorem 5.3 \textbf{(a)}, there exists a finite-free extension ring
-$\widetilde{K}_{u,v}$ of $K$ which contains both $\widetilde{K}_{u}$ and
-$\widetilde{K}_{v}$ as subrings. Theorem 5.3 \textbf{(c)} yields%
-\begin{align*}
-u\widehat{\cdot}v  &  =\Pi\left(  \widetilde{K}_{u,v},\left[  u_{i}v_{j}%
-\mid\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
-1,2,...,n\right\}  \right]  \right)  =\prod_{\left(  i,j\right)  \in\left\{
-1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  }\left(  1+u_{i}%
-v_{j}T\right) \\
-&  =1+\sum_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
-1,2,...,n\right\}  }u_{i}v_{j}\cdot T+\left(  \text{higher powers of
-}T\right)  ,
-\end{align*}
-and thus%
-\[
-\operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)
-=\sum_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
-1,2,...,n\right\}  }u_{i}v_{j}=\sum_{i=1}^{m}\sum_{j=1}^{n}u_{i}v_{j}%
-=\sum_{i=1}^{m}u_{i}\sum_{j=1}^{n}v_{j}=\operatorname*{coeff}\nolimits_{1}%
-u\cdot\operatorname*{coeff}\nolimits_{1}v,
-\]
-so that (\ref{8.2.4}) is proven.
-\par
-Besides,%
-\begin{align*}
-u\widehat{+}v  &  =uv=\Pi\left(  \widetilde{K}_{u},\left[  u_{1}%
-,u_{2},...,u_{m}\right]  \right)  \cdot\Pi\left(  \widetilde{K}_{v},\left[
-v_{1},v_{2},...,v_{n}\right]  \right) \\
-&  =\prod_{i=1}^{m}\left(  1+u_{i}T\right)  \cdot\prod_{j=1}^{n}\left(
-1+v_{j}T\right)  =1+\left(  \sum_{i=1}^{m}u_{i}+\sum_{j=1}^{n}v_{j}\right)
-\cdot T+\left(  \text{higher powers of }T\right)  ,
-\end{align*}
-and consequently%
-\[
-\operatorname*{coeff}\nolimits_{1}\left(  u\widehat{+}v\right)  =\sum
-_{i=1}^{m}u_{i}+\sum_{j=1}^{n}v_{j}=\operatorname*{coeff}\nolimits_{1}%
-u+\operatorname*{coeff}\nolimits_{1}v,
-\]
-and (\ref{8.2.2}) is proven. Thus, $\operatorname*{coeff}\nolimits_{1}%
-:\Lambda\left(  K\right)  \rightarrow K$ is a ring homomorphism, and Theorem
-8.2 \textbf{(a)} is proven.
-\par
-\textit{Second solution (sketched):} In fact, (\ref{8.2.2}) is trivial using
-$u\widehat{+}v=uv$, and (\ref{8.2.4}) follows from the definition of
-$\widehat{\cdot}$ and the fact that $P_{1}\left(  a_{1},b_{1}\right)
-=a_{1}\cdot b_{1}$.}
+generally, not a $\lambda$-ring homomorphism!}.
 
 \textit{Exercise 8.2.} Let $\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring. If $x\in K$ is an
 invertible $1$-dimensional element of $K$, then prove that $x^{-1}$ is
-$1$-dimensional as well.\ \ \ \ \footnote{\textit{Hints to solution:} Let
-$y=x^{-1}$. We proceed as in the proof of Theorem 8.3 \textbf{(b)}, except
-that we don't know that $\lambda_{T}\left(  y\right)  =\Pi\left(  K,\left[
-y\right]  \right)  $ and thus cannot conclude anything from this. Instead,
-$xy=xx^{-1}=1$ yields%
-\begin{align*}
-\lambda_{T}\left(  xy\right)   &  =\lambda_{T}\left(  1\right)
-=1+T\ \ \ \ \ \ \ \ \ \ \left(
-\begin{array}
-[c]{c}%
-\text{since }\lambda_{T}:K\rightarrow\Lambda\left(  K\right)  \text{ is a ring
-homomorphism,}\\
-\text{and }1+T\text{ is the multiplicative unity of }\Lambda\left(  K\right)
-\end{array}
-\right) \\
-&  =1+xyT=\Pi\left(  K,\left[  xy\right]  \right)  =\Pi\left(  K,\left[
-x\right]  \right)  \widehat{\cdot}\Pi\left(  K,\left[  y\right]  \right)
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 5.3 \textbf{(c)}}\right) \\
-&  =\lambda_{T}\left(  x\right)  \widehat{\cdot}\left(  1+yT\right)  .
-\end{align*}
-Together with $\lambda_{T}\left(  xy\right)  =\lambda_{T}\left(  x\right)
-\widehat{\cdot}\lambda_{T}\left(  y\right)  $, this yields $\lambda_{T}\left(
-x\right)  \widehat{\cdot}\lambda_{T}\left(  y\right)  =\lambda_{T}\left(
-x\right)  \widehat{\cdot}\left(  1+yT\right)  $, so that $\lambda_{T}\left(
-y\right)  =1+yT$ (since $\lambda_{T}\left(  x\right)  \in\Lambda\left(
-K\right)  $ is invertible, because $x\in K$ is invertible and $\lambda
-_{T}:K\rightarrow\Lambda\left(  K\right)  $ is a ring homomorphism), and
-Theorem 8.1 yields that $y$ is $1$-dimensional, qed.}
+$1$-dimensional as well.
+
+\textit{Exercise 8.3.} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. Let $E$ be a generating set
+of the $\mathbb{Z}$-module $K$ such that every element $e\in E$ is $1$-dimensional.
+
+Prove that the $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ is special.
 \end{quotation}
 
 \begin{center}
@@ -4086,51 +3959,7 @@ $j\in\mathbb{N}$. Then, $\widehat{\psi}^{j}\left(  u\right)  =\Pi\left(
 \widetilde{K}_{u},\left[  u_{1}^{j},u_{2}^{j},...,u_{m}^{j}\right]  \right)  $.
 
 [This gives a formula for $\widehat{\psi}^{j}$ similar to the formula for
-$\widehat{\lambda}^{j}$ given in Theorem 5.3 \textbf{(d)}%
-.]\ \ \ \ \footnote{\textit{Hints to solution:} As before, we use the
-$\widehat{\sum}$ sign for summation inside the ring $\Lambda\left(  K\right)
-$. We remember that the addition inside the ring $\Lambda\left(  K\right)  $
-was defined by $u\widehat{+}v=uv$ for any $u\in\Lambda\left(  K\right)  $ and
-$v\in\Lambda\left(  K\right)  $ (in other words, addition in $\Lambda\left(
-K\right)  $ is the multiplication inherited from $K\left[  \left[  T\right]
-\right]  $), so that $\widehat{\sum}=\prod.$ Now,
-\[
-u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
-=\prod_{i=1}^{m}\left(  1+u_{i}T\right)  =\widehat{\sum_{i=1}^{m}}\left(
-1+u_{i}T\right)  .
-\]
-But since $1+u_{i}T$ is a $1$-dimensional element of $\Lambda\left(  K\right)
-$ for every $i\in\left\{  1,2,...,m\right\}  $ (by Theorem 8.3 \textbf{(c)}),
-Theorem 9.4 yields%
-\[
-\widehat{\psi}^{j}\left(  \widehat{\sum_{i=1}^{m}}\left(  1+u_{i}T\right)
-\right)  =\widehat{\sum_{i=1}^{m}}\left(  1+u_{i}T\right)  ^{\widehat{j}},
-\]
-where $\left(  1+u_{i}T\right)  ^{\widehat{j}}$ means the $j$-th power of
-$1+u_{i}T$ \textit{in the ring }$\Lambda\left(  K\right)  $ (in other words,
-$\left(  1+u_{i}T\right)  ^{\widehat{j}}=\underbrace{\left(  1+u_{i}T\right)
-\widehat{\cdot}\left(  1+u_{i}T\right)  \widehat{\cdot}...\widehat{\cdot
-}\left(  1+u_{i}T\right)  }_{j\text{ times}},$ as opposed to $\left(
-1+u_{i}T\right)  ^{j}=\underbrace{\left(  1+u_{i}T\right)  \cdot\left(
-1+u_{i}T\right)  \cdot...\cdot\left(  1+u_{i}T\right)  }_{j\text{ times}}$
-which is the $j$-th power of $1+u_{i}T$ \textit{in the ring }$K\left[  \left[
-T\right]  \right]  $).
-\par
-Hence,%
-\begin{align*}
-\widehat{\psi}^{j}\left(  u\right)   &  =\widehat{\psi}^{j}\left(
-\widehat{\sum_{i=1}^{m}}\left(  1+u_{i}T\right)  \right)  =\widehat{\sum
-_{i=1}^{m}}\left(  1+u_{i}T\right)  ^{\widehat{j}}=\widehat{\sum_{i=1}^{m}%
-}\underbrace{\left(  \Pi\left(  \widetilde{K}_{u},\left[  u_{i}\right]
-\right)  \right)  ^{\widehat{j}}}_{\substack{=\Pi\left(  \widetilde{K}%
-_{u},\left[  u_{i}^{j}\right]  \right)  \text{ by}\\\text{Corollary 5.4
-\textbf{(b)}}}}=\widehat{\sum_{i=1}^{m}}\Pi\left(  \widetilde{K}_{u},\left[
-u_{i}^{j}\right]  \right) \\
-&  =\Pi\left(  \widetilde{K}_{u},\left[  u_{1}^{j},u_{2}^{j},...,u_{m}%
-^{j}\right]  \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Corollary 5.4
-\textbf{(a)}}\right)  .
-\end{align*}
-}
+$\widehat{\lambda}^{j}$ given in Theorem 5.3 \textbf{(d)}.]
 
 \textit{Exercise 9.2.} Let $K$ be a ring. Let $i\in\mathbb{N}\setminus\left\{
 0\right\}  $. Define a mapping $\operatorname*{coeff}\nolimits_{i}%
@@ -4150,154 +3979,52 @@ u  &  \mapsto\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
 is a ring homomorphism.
 
 \textbf{(b)} This fact, combined with Theorem 9.2 \textbf{(b)}, can be used to
-give a new proof of a part of Theorem 9.3 \textbf{(b)}. Which part, and
-how?\ \ \ \ \footnote{\textit{Hints to solution:} \textbf{(a)} It is easy to
-see that the map sends the zero $1$ of $\Lambda\left(  K\right)  $ to the zero
-$0$ of $K$ and the multiplicative unity $1+T$ of $\Lambda\left(  K\right)  $
-to the multiplicative unity $1$ of $K$. So it only remains to prove that any
-two power series $u\in\Lambda\left(  K\right)  $ and $v\in\Lambda\left(
-K\right)  $ satisfy%
-\begin{equation}
-\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
-{d}{dT}\log\left(  u\widehat{+}v\right)  \right)  =\left(  -1\right)
-^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log u\right)
-+\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
-{d}{dT}\log v\right)  \label{9.2.plus}%
-\end{equation}
-and%
-\begin{equation}
-\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
-{d}{dT}\log\left(  u\widehat{\cdot}v\right)  \right)  =\left(  -1\right)
-^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log u\right)
-\cdot\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
--T\dfrac{d}{dT}\log v\right)  . \label{9.2.times}%
-\end{equation}
-This needs to be verified for $u\in1+K\left[  T\right]  ^{+}$ and
-$v\in1+K\left[  T\right]  ^{+}$ only (since the operations $\widehat{+}$ and
-$\widehat{\cdot}$ and the mapping%
-\begin{align*}
-\Lambda\left(  K\right)   &  \rightarrow K,\\
-u  &  \mapsto\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
--T\dfrac{d}{dT}\log u\right)
-\end{align*}
-are continuous (where the topology on $K$ can be chosen arbitrarily), and
-$1+K\left[  T\right]  ^{+}$ is a dense subset of $1+K\left[  \left[  T\right]
-\right]  ^{+}=\Lambda\left(  K\right)  $). So let us assume that
-$u\in1+K\left[  T\right]  ^{+}$ and $v\in1+K\left[  T\right]  ^{+}$. Then,
-there exists some $\left(  \widetilde{K}_{u},\left[  u_{1},u_{2}%
-,...,u_{m}\right]  \right)  \in K^{\operatorname*{int}}$ such that
-$u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
-$ and some $\left(  \widetilde{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]
-\right)  \in K^{\operatorname*{int}}$ such that $v=\Pi\left(  \widetilde
-{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  $. Then, Theorem 5.3
-\textbf{(c)} says that $u\widehat{\cdot}v=\Pi\left(  \widetilde{K}%
-_{u,v},\left[  u_{i}v_{j}\mid\left(  i,j\right)  \in\left\{
-1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right]  \right)  $.
-\par
-Now,%
+give a new proof of a part of Theorem 9.3 \textbf{(b)}. Which part, and how?
+
+\textit{Exercise 9.3.} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring.
+
+\textbf{(a)} Prove that%
 \[
-u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
-=\prod_{k=1}^{m}\left(  1+u_{k}T\right)
+n\lambda^{n}\left(  x\right)  =\sum_{i=1}^{n}\left(  -1\right)  ^{i-1}%
+\lambda^{n-i}\left(  x\right)  \psi^{i}\left(  x\right)
+\ \ \ \ \ \ \ \ \ \ \text{for every }x\in K\text{ and }n\in\mathbb{N}\text{.}%
 \]
-entails%
-\begin{align*}
-\dfrac{d}{dT}u  &  =\dfrac{d}{dT}\prod_{k=1}^{m}\left(  1+u_{k}T\right)
-=\sum_{\tau=1}^{m}\underbrace{\prod_{k\in\left\{  1,2,...,m\right\}
-\setminus\left\{  \tau\right\}  }\left(  1+u_{k}T\right)  }_{=\dfrac
-{\prod\limits_{k=1}^{m}\left(  1+u_{k}T\right)  }{1+u_{\tau}T}}\cdot
-\underbrace{\dfrac{d}{d\tau}\left(  1+u_{\tau}T\right)  }_{=u_{\tau}%
-}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the Leibniz rule}\right) \\
-&  =\sum_{\tau=1}^{m}\left(  \underbrace{\prod\limits_{k=1}^{m}\left(
-1+u_{k}T\right)  }_{=u}\right)  \cdot\dfrac{u_{\tau}}{1+u_{\tau}T}=u\sum
-_{\tau=1}^{m}\dfrac{u_{\tau}}{1+u_{\tau}T}%
-\end{align*}
-and thus%
-\begin{align*}
--T\dfrac{d}{dT}\log u  &  =-T\dfrac{\dfrac{d}{dT}u}{u}=-T\dfrac{u\sum
-\limits_{\tau=1}^{m}\dfrac{u_{\tau}}{1+u_{\tau}T}}{u}=-T\sum\limits_{\tau
-=1}^{m}\dfrac{u_{\tau}}{1+u_{\tau}T}=\sum\limits_{\tau=1}^{m}\left(  -u_{\tau
-}T\right)  \left(  1+u_{\tau}T\right)  ^{-1}=\sum\limits_{\tau=1}^{m}\left(
--u_{\tau}T\right)  \sum_{\rho\in\mathbb{N}}\left(  -1\right)  ^{\rho}\left(
-u_{\tau}T\right)  ^{\rho}\\
-&  =\sum\limits_{\tau=1}^{m}\sum_{\rho\in\mathbb{N}}\left(  -1\right)
-^{\rho+1}\left(  u_{\tau}T\right)  ^{\rho+1}=\sum\limits_{\tau=1}^{m}%
-\sum_{i\in\mathbb{N}\setminus\left\{  0\right\}  }\left(  -1\right)
-^{i}\left(  u_{\tau}T\right)  ^{i}=\sum\limits_{\tau=1}^{m}\sum_{i\in
-\mathbb{N}\setminus\left\{  0\right\}  }\left(  -1\right)  ^{i}u_{\tau}%
-^{i}T^{i}=\sum_{i\in\mathbb{N}\setminus\left\{  0\right\}  }\left(  -1\right)
-^{i}\sum\limits_{\tau=1}^{m}u_{\tau}^{i}T^{i},
-\end{align*}
-so that $\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log
-u\right)  =\left(  -1\right)  ^{i}\sum\limits_{\tau=1}^{m}u_{\tau}^{i}$. In
-other words, $\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
--T\dfrac{d}{dT}\log u\right)  =u_{\tau}^{i}$. Similarly, $v=\Pi\left(
-\widetilde{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  $ yields
-$\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
-{d}{dT}\log v\right)  =\sum\limits_{\sigma=1}^{n}v_{\sigma}^{i}$, and
-$u\widehat{\cdot}v=\Pi\left(  \widetilde{K}_{u,v},\left[  u_{i}v_{j}%
-\mid\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
-1,2,...,n\right\}  \right]  \right)  $ yields $\left(  -1\right)
-^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log\left(
-u\widehat{\cdot}v\right)  \right)  =\sum\limits_{\tau=1}^{m}\sum
-\limits_{\sigma=1}^{n}\left(  u_{\tau}v_{\sigma}\right)  ^{i}$. Thus,%
-\begin{align*}
-\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
-{d}{dT}\log\left(  u\widehat{\cdot}v\right)  \right)   &  =\sum\limits_{\tau
-=1}^{m}\sum\limits_{\sigma=1}^{n}\left(  u_{\tau}v_{\sigma}\right)  ^{i}%
-=\sum\limits_{\tau=1}^{m}\sum\limits_{\sigma=1}^{n}u_{\tau}^{i}v_{\sigma}%
-^{i}=\sum\limits_{\tau=1}^{m}u_{\tau}^{i}\cdot\sum\limits_{\sigma=1}%
-^{n}v_{\sigma}^{i}\\
-&  =\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
--T\dfrac{d}{dT}\log u\right)  \cdot\left(  -1\right)  ^{i}%
-\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log v\right)  ,
-\end{align*}
-and (\ref{9.2.times}) is thus proven. Similarly we can show (\ref{9.2.plus}).
-This completes the proof.
-\par
-\textbf{(b)} Using Exercise 9.2 \textbf{(a)}, we can easily prove the
-following fact:
-\par
-\textit{Assertion }$\mathcal{F}$\textit{:} If $\left(  K,\left(  \lambda
-^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a special $\lambda$-ring, then,
-for any $i\in\mathbb{N}\setminus\left\{  0\right\}  $, the $i$-th Adams
-operation $\psi^{i}:K\rightarrow K$ is a ring homomorphism.
-\par
-This assertion is a part of Theorem 9.3 \textbf{(b)}.
-\par
-In order to prove Assertion $\mathcal{F}$ using Exercise 9.2 \textbf{(a)}, we
-notice that the composition of the map $\lambda_{T}:K\rightarrow\Lambda\left(
-K\right)  $ (which is a ring homomorphism, since the $\lambda$-ring $\left(
-K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is special) with the
-map%
-\begin{align*}
-\Lambda\left(  K\right)   &  \rightarrow K,\\
-u  &  \mapsto\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
--T\dfrac{d}{dT}\log u\right)
-\end{align*}
-(which is a ring homomorphism according to Exercise 9.2 \textbf{(a)}) is
-$\psi^{i}$ (because every $x\in K$ satisfies
+
+
+\textbf{(b)} Let $x\in K$ and $n\in\mathbb{N}$. Let $A_{n}=\left(
+a_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\in K^{n\times n}$ be the
+matrix defined by%
 \[
-\sum\limits_{i\in\mathbb{N}\setminus\left\{  0\right\}  }\psi^{i}\left(
-x\right)  T^{i}=\widetilde{\psi}_{T}\left(  x\right)  =-T\dfrac{d}{dT}%
-\log\lambda_{-T}\left(  x\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem
-9.2 \textbf{(b)}}\right)  ,
+a_{i,j}=\left\{
+\begin{array}
+[c]{c}%
+\psi^{i-j+1}\left(  x\right)  ,\text{ if }i\geq j;\\
+i,\text{ if }i=j-1;\\
+0,\text{ if }i<j-1
+\end{array}
+\right.  .
 \]
-what (upon the substitution of $-T$ for $T$) becomes%
+Prove that $n!\lambda^{n}\left(  x\right)  =\det A_{n}$.
+
+[The matrix $A_{n}$ has the following form:%
 \[
-\sum\limits_{i\in\mathbb{N}\setminus\left\{  0\right\}  }\psi^{i}\left(
-x\right)  \left(  -T\right)  ^{i}=-\left(  -T\right)  \dfrac{d}{d\left(
--T\right)  }\log\lambda_{-\left(  -T\right)  }\left(  x\right)  =-T\dfrac
-{d}{dT}\log\lambda_{T}\left(  x\right)  ,
+A_{n}=\left(
+\begin{array}
+[c]{cccccc}%
+\psi^{1}\left(  x\right)  & 1 & 0 & \cdots & 0 & 0\\
+\psi^{2}\left(  x\right)  & \psi^{1}\left(  x\right)  & 2 & \cdots & 0 & 0\\
+\psi^{3}\left(  x\right)  & \psi^{2}\left(  x\right)  & \psi^{1}\left(
+x\right)  & \cdots & 0 & 0\\
+\vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
+\psi^{n-1}\left(  x\right)  & \psi^{n-2}\left(  x\right)  & \psi^{n-3}\left(
+x\right)  & \cdots & \psi^{1}\left(  x\right)  & n-1\\
+\psi^{n}\left(  x\right)  & \psi^{n-1}\left(  x\right)  & \psi^{n-2}\left(
+x\right)  & \cdots & \psi^{2}\left(  x\right)  & \psi^{1}\left(  x\right)
+\end{array}
+\right)  .
 \]
-what rewrites as $\sum\limits_{i\in\mathbb{N}\setminus\left\{  0\right\}
-}\left(  -1\right)  ^{i}\psi^{i}\left(  x\right)  T^{i}=-T\dfrac{d}{dT}%
-\log\lambda_{T}\left(  x\right)  $, and thus we have $\left(  -1\right)
-^{i}\psi^{i}\left(  x\right)  =\operatorname*{coeff}\nolimits_{i}\left(
--T\dfrac{d}{dT}\log\lambda_{T}\left(  x\right)  \right)  $ and therefore
-$\psi^{i}\left(  x\right)  =\left(  -1\right)  ^{i}\operatorname*{coeff}%
-\nolimits_{i}\left(  -T\dfrac{d}{dT}\log\lambda_{T}\left(  x\right)  \right)
-$). Thus, $\psi^{i}$ is a ring homomorphism (since the composition of two ring
-homomorphisms is a ring homomorphism). This proves Assertion $\mathcal{F}$.}
+]
 
 \bigskip
 \end{quotation}
@@ -4541,10 +4268,901 @@ positive elements, while Theorem 8.4 yields it for arbitrary elements.
 \end{quote}
 
 \begin{center}
+\fbox{\textbf{Hints and solutions to exercises}}
+\end{center}
+
+\textit{Exercise 2.1: Solution:} \textbf{(a)} Theorem 2.1 \textbf{(c)} says
+that $f$ is a homomorphism of $\lambda$-rings if and only if $\mu_{T}\circ
+f=f\left[  \left[  T\right]  \right]  \circ\lambda_{T}$. Thus, it remains to
+show that $\mu_{T}\circ f=f\left[  \left[  T\right]  \right]  \circ\lambda
+_{T}$ holds if and only if every $e\in E$ satisfies $\mu_{T}\circ f=f\left[
+\left[  T\right]  \right]  \circ\lambda_{T}$. Since $E$ is a generating set of
+the $\mathbb{Z}$-module $K$, this comes down to proving the following three facts:
+
+\begin{itemize}
+\item We have $\left(  \mu_{T}\circ f\right)  \left(  0\right)  =\left(
+f\left[  \left[  T\right]  \right]  \circ\lambda_{T}\right)  \left(  0\right)
+$.
+
+\item We have $\left(  \mu_{T}\circ f\right)  \left(  -x\right)  =\left(
+f\left[  \left[  T\right]  \right]  \circ\lambda_{T}\right)  \left(
+-x\right)  $ for every $x\in K$ which satisfies $\left(  \mu_{T}\circ
+f\right)  \left(  x\right)  =\left(  f\left[  \left[  T\right]  \right]
+\circ\lambda_{T}\right)  \left(  x\right)  $.
+
+\item We have $\left(  \mu_{T}\circ f\right)  \left(  x+y\right)  =\left(
+f\left[  \left[  T\right]  \right]  \circ\lambda_{T}\right)  \left(
+x+y\right)  $ for any $x\in K$ and $y\in K$ which satisfy $\left(  \mu
+_{T}\circ f\right)  \left(  x\right)  =\left(  f\left[  \left[  T\right]
+\right]  \circ\lambda_{T}\right)  \left(  x\right)  $ and $\left(  \mu
+_{T}\circ f\right)  \left(  y\right)  =\left(  f\left[  \left[  T\right]
+\right]  \circ\lambda_{T}\right)  \left(  y\right)  $.
+\end{itemize}
+
+We will only prove the last of these three assertions (the other two are
+similar): If $\left(  \mu_{T}\circ f\right)  \left(  x\right)  =\left(
+f\left[  \left[  T\right]  \right]  \circ\lambda_{T}\right)  \left(  x\right)
+$ and $\left(  \mu_{T}\circ f\right)  \left(  y\right)  =\left(  f\left[
+\left[  T\right]  \right]  \circ\lambda_{T}\right)  \left(  y\right)  $, then%
+\begin{align*}
+\left(  \mu_{T}\circ f\right)  \left(  x+y\right)   &  =\mu_{T}\left(
+f\left(  x+y\right)  \right)  =\mu_{T}\left(  f\left(  x\right)  +f\left(
+y\right)  \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }f\text{ is a ring
+homomorphism}\right) \\
+&  =\mu_{T}\left(  f\left(  x\right)  \right)  \cdot\mu_{T}\left(  f\left(
+y\right)  \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 2.1
+\textbf{(a)}, applied to the }\lambda\text{-ring }\left(  L,\left(  \mu
+^{i}\right)  _{i\in\mathbb{N}}\right)  \right) \\
+&  =\left(  \mu_{T}\circ f\right)  \left(  x\right)  \cdot\left(  \mu_{T}\circ
+f\right)  \left(  y\right)  =\left(  f\left[  \left[  T\right]  \right]
+\circ\lambda_{T}\right)  \left(  x\right)  \cdot\left(  f\left[  \left[
+T\right]  \right]  \circ\lambda_{T}\right)  \left(  y\right) \\
+&  =\left(  f\left[  \left[  T\right]  \right]  \right)  \left(
+\underbrace{\lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)
+}_{=\lambda_{T}\left(  x+y\right)  \text{ by Theorem 2.1 \textbf{(a)}}%
+}\right)  =\left(  f\left[  \left[  T\right]  \right]  \circ\lambda
+_{T}\right)  \left(  x+y\right)  ,
+\end{align*}
+qed.
+
+\textbf{(b)} This follows from \textbf{(a)} in the same way as Theorem 2.1
+\textbf{(c)} was proven.
+
+\textit{Exercise 2.2: Solution:} It is an exercise in basic algebra to see
+that $L-L$ is a subring of $K$. Thus, it only remains to show that
+$\lambda^{i}\left(  L-L\right)  \subseteq L-L$ for every $i\in\mathbb{N}$. In
+other words, we have to prove that $\lambda^{i}\left(  \ell-\ell^{\prime
+}\right)  \in L-L$ for every $\ell\in L$ and $\ell^{\prime}\in L$.
+
+We are going to prove this by induction, so we assume that $\lambda^{j}\left(
+\ell-\ell^{\prime}\right)  \in L-L$ for all $j<i$. Then,%
+\begin{align*}
+\lambda^{i}\left(  \ell\right)   &  =\lambda^{i}\left(  \left(  \ell
+-\ell^{\prime}\right)  +\ell^{\prime}\right)  =\sum_{j=0}^{i}\lambda
+^{j}\left(  \ell-\ell^{\prime}\right)  \lambda^{i-j}\left(  \ell^{\prime
+}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }%
+\lambda\text{-rings}\right) \\
+&  =\sum_{j=0}^{i-1}\underbrace{\lambda^{j}\left(  \ell-\ell^{\prime}\right)
+}_{\substack{\in L-L,\text{ since}\\j<n}}\underbrace{\lambda^{i-j}\left(
+\ell^{\prime}\right)  }_{\substack{\in L\text{, since}\\\ell^{\prime}\in
+L}}+\lambda^{i}\left(  \ell-\ell^{\prime}\right)  \underbrace{\lambda
+^{0}\left(  \ell^{\prime}\right)  }_{=1}\in\underbrace{\left(  L-L\right)
+L}_{=L-L}+\lambda^{i}\left(  \ell-\ell^{\prime}\right)  \subseteq\left(
+L-L\right)  +\lambda^{i}\left(  \ell-\ell^{\prime}\right)  .
+\end{align*}
+But $\lambda^{i}\left(  \ell\right)  $ itself lies in $L-L$ (since it lies in
+$L$, because $\ell\in L$), so this yields $\lambda^{i}\left(  \ell
+-\ell^{\prime}\right)  \in L-L,$ and this completes our induction.
+
+\textit{Exercise 3.1: Hints to solution:} Count how often a prime $q$ appears
+in $n!$ and $x\cdot\left(  x-1\right)  \cdot...\cdot\left(  x-i+1\right)  $. I
+would prefer a better proof, but I know of none.
+
+\textit{Exercise 3.2:} \textit{Hints to solution:} Let $\mathbb{N}_{K}^{+}$ be
+the subset $\left\{  1,2,3,...\right\}  $ of $K$. Obviously, this subset is
+multiplicatively closed and contains no zero-divisors. Hence, the localization
+$\left(  \mathbb{N}_{K}^{+}\right)  ^{-1}K$ can be considered as an extension
+ring of $K$. We now can define $\dbinom{x}{i}\in\left(  \mathbb{N}_{K}%
+^{+}\right)  ^{-1}K$ for every $x\in\left(  \mathbb{N}_{K}^{+}\right)  ^{-1}K$
+and $i\in\mathbb{N}$. It remains to show that $\dbinom{x}{i}\in K$ for every
+$x\in K$ and $i\in\mathbb{N}$, given that $\dbinom{x}{i}\in K$ for every $x\in
+E$ and $i\in\mathbb{N}$.
+
+This will follow once we have seen that for $i\in\mathbb{N}$ fixed,
+
+\begin{itemize}
+\item the polynomial $\dbinom{X+Y}{i}\in\mathbb{Q}\left[  X,Y\right]  $ is a
+polynomial in $\dbinom{X}{0},$ $\dbinom{X}{1},$ $...,$ $\dbinom{X}{i},$
+$\dbinom{Y}{0},$ $\dbinom{Y}{1},$ $...,$ $\dbinom{Y}{i}$ with integer coefficients;
+
+\item the polynomial $\dbinom{-X}{i}\in\mathbb{Q}\left[  X\right]  $ is a
+polynomial in $\dbinom{X}{0},$ $\dbinom{X}{1},$ $...,$ $\dbinom{X}{i}$ with
+integer coefficients;
+
+\item the polynomial $\dbinom{XY}{i}\in\mathbb{Q}\left[  X,Y\right]  $ is a
+polynomial in $\dbinom{X}{0},$ $\dbinom{X}{1},$ $...,$ $\dbinom{X}{i},$
+$\dbinom{Y}{0},$ $\dbinom{Y}{1},$ $...,$ $\dbinom{Y}{i}$ with integer coefficients.
+\end{itemize}
+
+The first of these three properties follows from (\ref{vandermonde}) (applied
+to $x=X$ and $y=Y$, which is not tragic since it holds in every binomial ring,
+in particular $\mathbb{Q}\left[  X,Y\right]  $). The second one follows from
+the first one and the identity $\dbinom{-x}{i}=\left(  -1\right)  ^{i}%
+\dbinom{x+i-1}{i}$ for every $x\in\mathbb{Z}$ and $i\in\mathbb{N}$ (this is
+the so-called \textit{upper negation identity}). The third one, alas, doesn't
+seem to be that easy. One way to prove it is to use the proof of Theorem 7.1
+below. Another, more elementary way (leading to a different polynomial!!) is
+by recalling the fact ([4], Proposition I.7.3) that the subset%
+\[
+\left\{  p\in\mathbb{Q}\left[  X\right]  \text{ }\mid\ p\left(  n\right)
+\in\mathbb{Z}\text{ for every }n\in\mathbb{Z}\right\}
+\]
+of the polynomial ring $\mathbb{Q}\left[  X\right]  $ is the $\mathbb{Z}%
+$-linear span of the polynomials $\dbinom{X}{0},$ $\dbinom{X}{1},$ $\dbinom
+{X}{2},$ $...$. This generalizes to two variables: The subset
+\[
+\left\{  p\in\mathbb{Q}\left[  X,Y\right]  \text{ }\mid\ p\left(  n,m\right)
+\in\mathbb{Z}\text{ for every }n\in\mathbb{Z}\text{ and every }m\in
+\mathbb{Z}\right\}
+\]
+of the polynomial ring $\mathbb{Q}\left[  X,Y\right]  $ is the $\mathbb{Z}%
+$-linear span of the polynomials $\dbinom{X}{i}\dbinom{Y}{j}$ for
+$i\in\mathbb{N}$ and $j\in\mathbb{N}$. Of course, the polynomial $\dbinom
+{XY}{i}$ belongs to this subset, so all we need is proven.
+
+\textit{Exercise 3.3: Hints to solution:} \textbf{(a)} Use Theorem 2.1
+\textbf{(a)} and $\left(  1+pT\right)  ^{x}\left(  1+pT\right)  ^{y}=\left(
+1+pT\right)  ^{x+y}$.
+
+\textbf{(b)} Use the binomial formula.
+
+\textit{Exercise 3.4: Hints to solution:} It is clear from the very definition
+of $\lambda^{i}$ that Theorem 2.1 \textbf{(a)} is to be applied here.
+
+\textit{Exercise 3.5: Hints to solution:} Same idea as for Exercise 3.4.
+
+\textit{Exercise 5.1: Hints to solution:} This can be proven by induction: The
+ring $K\left[  T\right]  \diagup\left(  p\right)  $ is a finite-free extension
+of $K$ containing a root of the polynomial $P$ (namely, the equivalence class
+$\overline{T}$ of $T\in K\left[  T\right]  $ modulo $\left(  p\right)  $).
+Now, the polynomial $\dfrac{p\left(  S\right)  }{S-\overline{T}}\in\left(
+K\left[  T\right]  \diagup\left(  p\right)  \right)  \left[  S\right]  $ is
+monic and has degree $n-1$, so by induction there exists a finite-free
+extension ring $K_{p}$ of the ring $K\left[  T\right]  \diagup\left(
+p\right)  $ and $n-1$ elements $p_{2},$ $...,$ $p_{n}$ of this extension ring
+$K_{p}$ such that $\dfrac{p\left(  S\right)  }{S-\overline{T}}=\prod
+\limits_{i=2}^{n}\left(  T-p_{i}\right)  $ in $K_{p}\left[  S\right]  $. Thus,
+$p\left(  S\right)  =\left(  S-\overline{T}\right)  \prod\limits_{i=2}%
+^{n}\left(  T-p_{i}\right)  $ in $K_{p}\left[  S\right]  $. If we denote
+$\overline{T}$ by $p_{1},$ this takes the form $p\left(  S\right)
+=\prod\limits_{i=1}^{n}\left(  T-p_{i}\right)  ,$ which shows that we have
+just completed the induction step.
+
+Notice the similarity between this solution and the proof of the existence of
+splitting fields in Galois theory.
+
+\textit{Exercise 6.1: Hints to solution:} We have $\left(  1+K\left[
+T\right]  ^{+}\right)  ^{-1}K\left[  T\right]  \cap\Lambda\left(  K\right)
+=\left(  1+K\left[  T\right]  ^{+}\right)  \widehat{-}\left(  1+K\left[
+T\right]  ^{+}\right)  $, where $U\widehat{-}U$ denotes the set $\left\{
+u\widehat{-}u^{\prime}\mid u\in U,\ u^{\prime}\in U\right\}  $ for every
+subset $U$ of $\Lambda\left(  K\right)  $ (where $\widehat{-}$ means
+subtraction with respect to the addtion $\widehat{+}$ in $\Lambda\left(
+K\right)  $). The subset $1+K\left[  T\right]  ^{+}$ of $\Lambda\left(
+K\right)  $ is closed under the addition $\widehat{+}$, the multiplication
+$\widehat{\cdot}$ and the maps $\widehat{\lambda}^{i}$ (according to Theorem
+5.3, since $1+K\left[  T\right]  ^{+}=\Pi\left(  K^{\operatorname*{int}%
+}\right)  $) and contains the zero $1$ and the unity $1+T$. Thus, by Exercise
+2.2 (applied to $\Lambda\left(  K\right)  $ and $1+K\left[  T\right]  ^{+}$
+instead of $K$ and $L$), the conclusion follows.
+
+\textit{Exercise 6.2: Solution:} Assume, for the sake of contradiction, that
+$m=0$ in $K$ for some positive integer $m$. Then, Theorem 2.1 \textbf{(a)}
+yields%
+\begin{align*}
+\lambda_{T}\left(  m\right)   &  =\lambda_{T}\left(  \underbrace
+{1+1+...+1}_{m\text{ times}}\right)  =\underbrace{\lambda_{T}\left(  1\right)
+\cdot\lambda_{T}\left(  1\right)  \cdot...\cdot\lambda_{T}\left(  1\right)
+}_{m\text{ times}}=\left(  \lambda_{T}\left(  1\right)  \right)  ^{m}\\
+&  =\left(  \lambda_{T}\left(  1\right)  \right)  ^{m}=\left(  1+T\right)
+^{m}=1+\sum_{i=1}^{m-1}\dbinom{m}{i}T^{i}+T^{m}\ \ \ \ \ \ \ \ \ \ \left(
+\text{by the binomial formula}\right)
+\end{align*}
+in $K\left[  \left[  T\right]  \right]  $. On the other hand, $\lambda
+_{T}\left(  m\right)  =\lambda_{T}\left(  0\right)  =1.$ Contradiction.
+
+\textit{Exercise 6.3: Hints to solution:} Use Exercise 6.4 or the very
+definition of special $\lambda$-rings together with Exercise 2.1. Do not
+forget to check that the map $\lambda_{T}$ is well-defined.
+
+\textit{Exercise 6.4: Hints to solution:} Repeat the proof of Theorem 6.1,
+replacing every appearance of "$x\in K$" by "$x\in E$" and every appearance of
+"$y\in K$" by "$y\in E$". You need the fact that $\lambda_{T}$ is a $\lambda
+$-ring homomorphism if and only if it satisfies the three conditions%
+\begin{align*}
+\lambda_{T}\left(  xy\right)   &  =\lambda_{T}\left(  x\right)  \widehat
+{\cdot}\lambda_{T}\left(  y\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }x\in
+E\text{ and }y\in E,\\
+\lambda_{T}\left(  1\right)   &  =1+T,\ \ \ \ \ \ \ \ \ \ \text{and}\\
+\lambda_{T}\left(  \lambda^{j}\left(  x\right)  \right)   &  =\widehat
+{\lambda}^{j}\left(  \lambda_{T}\left(  x\right)  \right)
+\ \ \ \ \ \ \ \ \ \ \text{for every }j\in\mathbb{N}\text{ and }x\in E.
+\end{align*}
+This is because the first two of these conditions, together with the
+preassumptions that $E$ is a generating set of $K$ as a $\mathbb{Z}$-module
+and that $\lambda_{T}$ is an additive group homomorphism, are equivalent to
+claiming that $\lambda_{T}$ is a ring homomorphism; and the third condition
+then makes $\lambda_{T}$ a $\lambda$-ring homomorphism (according to Exercise
+2.1 \textbf{(b)}).
+
+\textit{Exercise 6.5: Hints to solution:} First, the mapping
+$\operatorname*{coeff}\nolimits_{i}:\Lambda\left(  K\right)  \rightarrow K$ is
+continuous (with respect to the $\left(  T\right)  $-topology on
+$\Lambda\left(  K\right)  $ and \textit{any arbitrary topology} on $K$), and
+the operations $\widehat{+}$ and $\widehat{\cdot}$ are continuous as well (by
+Theorem 5.5 \textbf{(d)}); besides, the subset $1+K\left[  T\right]  ^{+}$ of
+$1+K\left[  \left[  T\right]  \right]  ^{+}=\Lambda\left(  K\right)  $ is
+dense (by Theorem 5.5 \textbf{(a)}). Hence, in order to prove that
+$\operatorname*{coeff}\nolimits_{i}\left(  u\right)  =\operatorname*{coeff}%
+\nolimits_{1}\left(  \widehat{\lambda}^{i}\left(  u\right)  \right)  $ for
+every $u\in\Lambda\left(  K\right)  ,$ it is enough to verify that
+$\operatorname*{coeff}\nolimits_{i}\left(  u\right)  =\operatorname*{coeff}%
+\nolimits_{1}\left(  \widehat{\lambda}^{i}\left(  u\right)  \right)  $ for
+every $u\in1+K\left[  T\right]  ^{+}.$ So let us assume that $u\in1+K\left[
+T\right]  ^{+}$. Then, there exist some $\left(  \widetilde{K}_{u},\left[
+u_{1},u_{2},...,u_{m}\right]  \right)  \in K^{\operatorname*{int}}$ such that
+$u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
+.$%
+\begin{align*}
+u  &  =\Pi\left(  \widetilde{K},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
+=\prod_{i=1}^{m}\left(  1+u_{i}T\right)  =\sum_{i\in\mathbb{N}}\sum
+_{K\in\mathcal{P}_{i}\left(  \left\{  1,2,...,m\right\}  \right)  }%
+\prod\limits_{k\in K}\left(  u_{k}T\right) \\
+&  =\sum_{i\in\mathbb{N}}\left(  \sum_{K\in\mathcal{P}_{i}\left(  \left\{
+1,2,...,m\right\}  \right)  }\prod\limits_{k\in K}u_{k}\right)  \cdot T^{i}%
+\end{align*}
+yields $\operatorname*{coeff}\nolimits_{i}u=\sum\limits_{K\in\mathcal{P}%
+_{i}\left(  \left\{  1,2,...,m\right\}  \right)  }\prod\limits_{k\in K}u_{k}.$
+On the other hand, Theorem 5.3 \textbf{(d)} yields%
+\begin{align*}
+\widehat{\lambda}^{i}\left(  u\right)   &  =\Pi\left(  \widetilde{K}%
+_{u},\left[  \prod\limits_{k\in K}u_{k}\ \mid\ K\in\mathcal{P}_{i}\left(
+\left\{  1,2,...,m\right\}  \right)  \right]  \right) \\
+&  =\prod_{K\in\mathcal{P}_{i}\left(  \left\{  1,2,...,m\right\}  \right)
+}\left(  1+\prod\limits_{k\in K}u_{k}T\right)  =1+\sum_{K\in\mathcal{P}%
+_{i}\left(  \left\{  1,2,...,m\right\}  \right)  }\prod\limits_{k\in K}%
+u_{k}\cdot T+\left(  \text{higher powers of }T\right)  ,
+\end{align*}
+so that%
+\[
+\operatorname*{coeff}\nolimits_{1}\left(  \widehat{\lambda}^{i}\left(
+u\right)  \right)  =\sum_{K\in\mathcal{P}_{i}\left(  \left\{
+1,2,...,m\right\}  \right)  }\prod\limits_{k\in K}u_{k}.
+\]
+Comparing with $\operatorname*{coeff}\nolimits_{i}u=\sum\limits_{K\in
+\mathcal{P}_{i}\left(  \left\{  1,2,...,m\right\}  \right)  }\prod
+\limits_{k\in K}u_{k},$ we get $\operatorname*{coeff}\nolimits_{i}\left(
+u\right)  =\operatorname*{coeff}\nolimits_{1}\left(  \widehat{\lambda}%
+^{i}\left(  u\right)  \right)  ,$ qed.
+
+\textit{Exercise 6.6: Hints to solution:} Consider the maps $\widehat{\lambda
+}^{i}:\Lambda\left(  K\right)  \rightarrow\Lambda\left(  K\right)  $ that we
+have defined in Section 5. Theorem 5.1 \textbf{(b)} yields that $\left(
+\Lambda\left(  K\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in
+\mathbb{N}}\right)  $ is a $\lambda$-ring. Since $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a special $\lambda$-ring,
+the map $\lambda_{T}:K\rightarrow\Lambda\left(  K\right)  $ defined in Theorem
+5.6 is a $\lambda$-ring homomorphism. Also, we know that the ring homomorphism
+$\varphi:K\rightarrow A$ induces a $\lambda$-ring homomorphism $\Lambda\left(
+\varphi\right)  :\Lambda\left(  K\right)  \rightarrow\Lambda\left(  A\right)
+$. Now, consider the composed $\lambda$-ring homomorphism $\Lambda\left(
+\varphi\right)  \circ\lambda_{T}:K\rightarrow\Lambda\left(  A\right)  $.
+
+\textit{1st Step:} We claim that $\operatorname*{coeff}\nolimits_{1}^{A}%
+\circ\Lambda\left(  \varphi\right)  \circ\lambda_{T}=\varphi.$
+
+\textit{Proof.} Define a mapping $\operatorname*{coeff}\nolimits_{i}%
+:\Lambda\left(  K\right)  \rightarrow K$ for every $i\in\mathbb{N}$ as in
+Exercise 6.5. Then, $\operatorname*{coeff}\nolimits_{1}^{A}\circ\Lambda\left(
+\varphi\right)  =\varphi\circ\operatorname*{coeff}\nolimits_{1}$ (by the
+definition of $\Lambda\left(  \varphi\right)  $) and $\operatorname*{coeff}%
+\nolimits_{1}\circ\lambda_{T}=\operatorname*{id}_{K}$ (by Theorem 8.2). Thus,
+$\underbrace{\operatorname*{coeff}\nolimits_{1}^{A}\circ\Lambda\left(
+\varphi\right)  }_{=\varphi\circ\operatorname*{coeff}\nolimits_{1}}%
+\circ\lambda_{T}=\varphi\circ\underbrace{\operatorname*{coeff}\nolimits_{1}%
+\circ\lambda_{T}}_{=\operatorname*{id}_{K}}=\varphi,$ and the 1st Step is proven.
+
+\textit{2nd Step:} We claim that if $\widetilde{\varphi}:K\rightarrow
+\Lambda\left(  A\right)  $ is a $\lambda$-ring homomorphism such that
+$\operatorname*{coeff}\nolimits_{1}^{A}\circ\widetilde{\varphi}=\varphi,$ then
+$\widetilde{\varphi}=\Lambda\left(  \varphi\right)  \circ\lambda_{T}.$
+
+\textit{Proof.} For every $i\in\mathbb{N},$ define a mapping
+$\operatorname*{coeff}\nolimits_{i}^{A}:\Lambda\left(  A\right)  \rightarrow
+A$ by $\operatorname*{coeff}\nolimits_{i}^{A}\left(  \sum\limits_{j\in
+\mathbb{N}}a_{j}T^{j}\right)  =a_{i}$ for every $\sum\limits_{j\in\mathbb{N}%
+}a_{j}T^{j}\in\Lambda\left(  A\right)  $ (with $a_{j}\in A$ for every
+$j\in\mathbb{N}$). (In other words, $\operatorname*{coeff}\nolimits_{i}^{A}$
+is the mapping that takes a power series and returns its coefficient before
+$T^{i}.$) Then, Exercise 6.5 (applied to the ring $A$ instead of $K$) yields
+$\operatorname*{coeff}\nolimits_{i}^{A}=\operatorname*{coeff}\nolimits_{1}%
+^{A}\circ\widehat{\lambda}_{A}^{i}.$ Hence,%
+\[
+\operatorname*{coeff}\nolimits_{i}^{A}\circ\widetilde{\varphi}%
+=\operatorname*{coeff}\nolimits_{1}^{A}\circ\underbrace{\widehat{\lambda}%
+_{A}^{i}\circ\widetilde{\varphi}}_{\substack{=\widetilde{\varphi}\circ
+\lambda^{i},\\\text{since }\widetilde{\varphi}\text{ is a}\\\lambda
+\text{-ring}\\\text{homomorphism}}}=\underbrace{\operatorname*{coeff}%
+\nolimits_{1}^{A}\circ\widetilde{\varphi}}_{=\varphi}\circ\lambda^{i}%
+=\varphi\circ\lambda^{i}.
+\]
+But on the other hand,%
+\[
+\underbrace{\operatorname*{coeff}\nolimits_{i}^{A}\circ\Lambda\left(
+\varphi\right)  }_{\substack{=\varphi\circ\operatorname*{coeff}\nolimits_{i}%
+\text{ by the}\\\text{definition of }\Lambda\left(  \varphi\right)  }%
+}\circ\lambda_{T}=\varphi\circ\underbrace{\operatorname*{coeff}\nolimits_{i}%
+\circ\lambda_{T}}_{\substack{=\lambda^{i}\text{, by the}\\\text{definition of
+}\lambda_{T}}}=\varphi\circ\lambda^{i}.
+\]
+Therefore, $\operatorname*{coeff}\nolimits_{i}^{A}\circ\widetilde{\varphi
+}=\operatorname*{coeff}\nolimits_{i}^{A}\circ\Lambda\left(  \varphi\right)
+\circ\lambda_{T}$ for every $i\in\mathbb{N}$. Thus, $\left(
+\operatorname*{coeff}\nolimits_{i}^{A}\circ\widetilde{\varphi}\right)  \left(
+u\right)  =\left(  \operatorname*{coeff}\nolimits_{i}^{A}\circ\Lambda\left(
+\varphi\right)  \circ\lambda_{T}\right)  \left(  u\right)  $ for every
+$i\in\mathbb{N}$ for every $u\in K$. In other words, for every $u\in K$ and
+for every $i\in\mathbb{N}$, the power series $\widetilde{\varphi}\left(
+u\right)  \in\Lambda\left(  A\right)  $ and $\left(  \Lambda\left(
+\varphi\right)  \circ\lambda_{T}\right)  \left(  u\right)  $ have the same
+coefficient before $T^{i}$. Since this holds for all $i\in\mathbb{N}$ at the
+same time, this simply means that for every $u\in K$, the power series
+$\widetilde{\varphi}\left(  u\right)  \in\Lambda\left(  A\right)  $ and
+$\left(  \Lambda\left(  \varphi\right)  \circ\lambda_{T}\right)  \left(
+u\right)  $ are equal. In other words, $\widetilde{\varphi}=\Lambda\left(
+\varphi\right)  \circ\lambda_{T},$ and thus the 2nd Step is proven.
+
+Together, the 1st and the 2nd Steps yield the assertion of Exercise 6.6 (in
+fact, the 1st Step yields the existence of a $\lambda$-ring homomorphism
+$\widetilde{\varphi}:K\rightarrow\Lambda\left(  A\right)  $ such that
+$\operatorname*{coeff}\nolimits_{1}^{A}\circ\widetilde{\varphi}=\varphi,$
+namely the homomorphism $\Lambda\left(  \varphi\right)  \circ\lambda_{T},$ and
+the 2nd Step proves that this is the only such homomorphism).
+
+\textit{Exercise 7.1: Hints to solution:} See the more general Exercise 7.2.
+
+\textit{Exercise 7.2: Hints to solution:} Repeat the argument used in the
+proof of Theorem 7.3.
+
+\textit{Exercise 8.1: Solution:}
+
+\textit{First solution:} In order to prove this, we must verify that%
+\begin{align}
+\operatorname*{coeff}\nolimits_{1}\left(  1\right)   &  =0;\label{8.2.1}\\
+\operatorname*{coeff}\nolimits_{1}\left(  u\widehat{+}v\right)   &
+=\operatorname*{coeff}\nolimits_{1}u+\operatorname*{coeff}\nolimits_{1}%
+v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
+}v\in\Lambda\left(  K\right)  ;\label{8.2.2}\\
+\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;\label{8.2.3}\\
+\operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)   &
+=\operatorname*{coeff}\nolimits_{1}u\cdot\operatorname*{coeff}\nolimits_{1}%
+v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
+}v\in\Lambda\left(  K\right)  . \label{8.2.4}%
+\end{align}
+The equations (\ref{8.2.1}) and (\ref{8.2.3}) are immediately obvious. In
+order to verify the equations (\ref{8.2.2}) and (\ref{8.2.4}), we notice that
+$\operatorname*{coeff}\nolimits_{1}:\Lambda\left(  K\right)  \rightarrow K$ is
+a continuous mapping (with respect to the $\left(  T\right)  $-topology on
+$\Lambda\left(  K\right)  $ and \textit{any arbitrary topology} on $K$) and
+the operations $\widehat{+}$ and $\widehat{\cdot}$ are continuous as well (by
+Theorem 5.5 \textbf{(d)}), and the subset $1+K\left[  T\right]  ^{+}$ of
+$1+K\left[  \left[  T\right]  \right]  ^{+}=\Lambda\left(  K\right)  $ is
+dense (by Theorem 5.5 \textbf{(a)}), so it suffices to verify the equations
+(\ref{8.2.2}) and (\ref{8.2.4}) for $u\in1+K\left[  T\right]  ^{+}$ and
+$v\in1+K\left[  T\right]  ^{+}$ only. So let $u\in1+K\left[  T\right]  ^{+}$
+and $v\in1+K\left[  T\right]  ^{+}$.
+
+Then, there exist some $\left(  \widetilde{K}_{u},\left[  u_{1},u_{2}%
+,...,u_{m}\right]  \right)  \in K^{\operatorname*{int}}$ such that
+$u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
+,$ and some $\left(  \widetilde{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]
+\right)  \in K^{\operatorname*{int}}$ such that $v=\Pi\left(  \widetilde
+{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  .$ Obviously,%
+\[
+u=\Pi\left(  \widetilde{K},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
+=\prod_{i=1}^{m}\left(  1+u_{i}T\right)  =1+\sum_{i=1}^{m}u_{i}\cdot T+\left(
+\text{higher powers of }T\right)
+\]
+yields $\operatorname*{coeff}\nolimits_{1}u=\sum\limits_{i=1}^{m}u_{i}.$
+Similarly, $\operatorname*{coeff}\nolimits_{1}v=\sum\limits_{j=1}^{n}v_{j}$.
+
+By Theorem 5.3 \textbf{(a)}, there exists a finite-free extension ring
+$\widetilde{K}_{u,v}$ of $K$ which contains both $\widetilde{K}_{u}$ and
+$\widetilde{K}_{v}$ as subrings. Theorem 5.3 \textbf{(c)} yields%
+\begin{align*}
+u\widehat{\cdot}v  &  =\Pi\left(  \widetilde{K}_{u,v},\left[  u_{i}v_{j}%
+\mid\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  \right]  \right)  =\prod_{\left(  i,j\right)  \in\left\{
+1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  }\left(  1+u_{i}%
+v_{j}T\right) \\
+&  =1+\sum_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  }u_{i}v_{j}\cdot T+\left(  \text{higher powers of
+}T\right)  ,
+\end{align*}
+and thus%
+\[
+\operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)
+=\sum_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  }u_{i}v_{j}=\sum_{i=1}^{m}\sum_{j=1}^{n}u_{i}v_{j}%
+=\sum_{i=1}^{m}u_{i}\sum_{j=1}^{n}v_{j}=\operatorname*{coeff}\nolimits_{1}%
+u\cdot\operatorname*{coeff}\nolimits_{1}v,
+\]
+so that (\ref{8.2.4}) is proven.
+
+Besides,%
+\begin{align*}
+u\widehat{+}v  &  =uv=\Pi\left(  \widetilde{K}_{u},\left[  u_{1}%
+,u_{2},...,u_{m}\right]  \right)  \cdot\Pi\left(  \widetilde{K}_{v},\left[
+v_{1},v_{2},...,v_{n}\right]  \right) \\
+&  =\prod_{i=1}^{m}\left(  1+u_{i}T\right)  \cdot\prod_{j=1}^{n}\left(
+1+v_{j}T\right)  =1+\left(  \sum_{i=1}^{m}u_{i}+\sum_{j=1}^{n}v_{j}\right)
+\cdot T+\left(  \text{higher powers of }T\right)  ,
+\end{align*}
+and consequently%
+\[
+\operatorname*{coeff}\nolimits_{1}\left(  u\widehat{+}v\right)  =\sum
+_{i=1}^{m}u_{i}+\sum_{j=1}^{n}v_{j}=\operatorname*{coeff}\nolimits_{1}%
+u+\operatorname*{coeff}\nolimits_{1}v,
+\]
+and (\ref{8.2.2}) is proven. Thus, $\operatorname*{coeff}\nolimits_{1}%
+:\Lambda\left(  K\right)  \rightarrow K$ is a ring homomorphism, and Theorem
+8.2 \textbf{(a)} is proven.
+
+\textit{Second solution (sketched):} In fact, (\ref{8.2.2}) is trivial using
+$u\widehat{+}v=uv$, and (\ref{8.2.4}) follows from the definition of
+$\widehat{\cdot}$ and the fact that $P_{1}\left(  a_{1},b_{1}\right)
+=a_{1}\cdot b_{1}$.
+
+\textit{Exercise 8.2: Hints to solution:} Let $y=x^{-1}$. We proceed as in the
+proof of Theorem 8.3 \textbf{(b)}, except that we don't know that $\lambda
+_{T}\left(  y\right)  =\Pi\left(  K,\left[  y\right]  \right)  $ and thus
+cannot conclude anything from this. Instead, $xy=xx^{-1}=1$ yields%
+\begin{align*}
+\lambda_{T}\left(  xy\right)   &  =\lambda_{T}\left(  1\right)
+=1+T\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }\lambda_{T}:K\rightarrow\Lambda\left(  K\right)  \text{ is a ring
+homomorphism,}\\
+\text{and }1+T\text{ is the multiplicative unity of }\Lambda\left(  K\right)
+\end{array}
+\right) \\
+&  =1+xyT=\Pi\left(  K,\left[  xy\right]  \right)  =\Pi\left(  K,\left[
+x\right]  \right)  \widehat{\cdot}\Pi\left(  K,\left[  y\right]  \right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 5.3 \textbf{(c)}}\right) \\
+&  =\lambda_{T}\left(  x\right)  \widehat{\cdot}\left(  1+yT\right)  .
+\end{align*}
+Together with $\lambda_{T}\left(  xy\right)  =\lambda_{T}\left(  x\right)
+\widehat{\cdot}\lambda_{T}\left(  y\right)  $, this yields $\lambda_{T}\left(
+x\right)  \widehat{\cdot}\lambda_{T}\left(  y\right)  =\lambda_{T}\left(
+x\right)  \widehat{\cdot}\left(  1+yT\right)  $, so that $\lambda_{T}\left(
+y\right)  =1+yT$ (since $\lambda_{T}\left(  x\right)  \in\Lambda\left(
+K\right)  $ is invertible, because $x\in K$ is invertible and $\lambda
+_{T}:K\rightarrow\Lambda\left(  K\right)  $ is a ring homomorphism), and
+Theorem 8.1 yields that $y$ is $1$-dimensional, qed.
+
+\textit{Exercise 8.3: Hints to solution:} According to Exercise 6.4, we only
+have to prove that (\ref{LkxyE}) and (\ref{LkLjxE}) hold. This is equivalent
+to showing that%
+\begin{align*}
+\lambda_{T}\left(  xy\right)   &  =\lambda_{T}\left(  x\right)  \widehat
+{\cdot}\lambda_{T}\left(  y\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }x\in
+E\text{ and }y\in E,\ \ \ \ \ \ \ \ \ \ \text{and}\\
+\lambda_{T}\left(  \lambda^{j}\left(  x\right)  \right)   &  =\widehat
+{\lambda}^{j}\left(  \lambda_{T}\left(  x\right)  \right)
+\ \ \ \ \ \ \ \ \ \ \text{for every }j\in\mathbb{N}\text{ and }x\in E
+\end{align*}
+(because of the definitions of $\widehat{\cdot}$ and $\widehat{\lambda}^{j}$
+and since two formal power series are equal if and only if their respective
+coefficients are equal). But this is true, since%
+\begin{align*}
+\lambda_{T}\left(  xy\right)   &  =1+xyT\ \ \ \ \ \ \ \ \ \ \left(
+\text{since }xy\text{ is }1\text{-dimensional by Theorem 8.3 \textbf{(b)}%
+}\right) \\
+&  =\Pi\left(  K,\left[  xy\right]  \right)  =\Pi\left(  K,\left[  x\right]
+\right)  \widehat{\cdot}\Pi\left(  K,\left[  y\right]  \right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 5.3 \textbf{(c)}}\right) \\
+&  =\left(  1+xT\right)  \cdot\left(  1+yT\right)  =\lambda_{T}\left(
+x\right)  \widehat{\cdot}\lambda_{T}\left(  y\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }x\text{ and }y\text{ are
+}1\text{-dimensional}\right)
+\end{align*}
+for every $x\in E$ and $y\in E,$ and%
+\begin{align*}
+\lambda_{T}\left(  \lambda^{j}\left(  x\right)  \right)   &  =\lambda
+_{T}\left(  \left\{
+\begin{array}
+[c]{c}%
+1,\text{ if }j=0;\\
+x,\text{ if }j=1;\\
+0,\text{ if }j>1
+\end{array}
+\right.  \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }x\text{ is
+}1\text{-dimensional, so that }\lambda^{j}\left(  x\right)  =\left\{
+\begin{array}
+[c]{c}%
+1,\text{ if }j=0;\\
+x,\text{ if }j=1;\\
+0,\text{ if }j>1
+\end{array}
+\right.  \right) \\
+&  =\left\{
+\begin{array}
+[c]{c}%
+\lambda_{T}\left(  1\right)  ,\text{ if }j=0;\\
+\lambda_{T}\left(  x\right)  ,\text{ if }j=1;\\
+\lambda_{T}\left(  0\right)  ,\text{ if }j>1
+\end{array}
+\right.  =\left\{
+\begin{array}
+[c]{c}%
+1+T,\text{ if }j=0;\\
+\lambda_{T}\left(  x\right)  ,\text{ if }j=1;\\
+1,\text{ if }j>1
+\end{array}
+\right. \\
+&  =\widehat{\lambda}^{j}\left(  \lambda_{T}\left(  x\right)  \right)
+\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }\lambda_{T}\left(  x\right)  \text{ is a }1\text{-dimensional
+element of }\Lambda\left(  K\right)  \text{ by Theorem 8.3,}\\
+\text{so that }\widehat{\lambda}^{j}\left(  \lambda_{T}\left(  x\right)
+\right)  =\left\{
+\begin{array}
+[c]{c}%
+1+T,\text{ if }j=0;\\
+\lambda_{T}\left(  x\right)  ,\text{ if }j=1;\\
+1,\text{ if }j>1
+\end{array}
+\right.
+\end{array}
+\right)
+\end{align*}
+for every $j\in\mathbb{N}$ and $x\in E.$
+
+\textit{Exercise 9.1: Hints to solution:} As before, we use the $\widehat
+{\sum}$ sign for summation inside the ring $\Lambda\left(  K\right)  $. We
+remember that the addition inside the ring $\Lambda\left(  K\right)  $ was
+defined by $u\widehat{+}v=uv$ for any $u\in\Lambda\left(  K\right)  $ and
+$v\in\Lambda\left(  K\right)  $ (in other words, addition in $\Lambda\left(
+K\right)  $ is the multiplication inherited from $K\left[  \left[  T\right]
+\right]  $), so that $\widehat{\sum}=\prod.$ Now,
+\[
+u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
+=\prod_{i=1}^{m}\left(  1+u_{i}T\right)  =\widehat{\sum_{i=1}^{m}}\left(
+1+u_{i}T\right)  .
+\]
+But since $1+u_{i}T$ is a $1$-dimensional element of $\Lambda\left(  K\right)
+$ for every $i\in\left\{  1,2,...,m\right\}  $ (by Theorem 8.3 \textbf{(c)}),
+Theorem 9.4 yields%
+\[
+\widehat{\psi}^{j}\left(  \widehat{\sum_{i=1}^{m}}\left(  1+u_{i}T\right)
+\right)  =\widehat{\sum_{i=1}^{m}}\left(  1+u_{i}T\right)  ^{\widehat{j}},
+\]
+where $\left(  1+u_{i}T\right)  ^{\widehat{j}}$ means the $j$-th power of
+$1+u_{i}T$ \textit{in the ring }$\Lambda\left(  K\right)  $ (in other words,
+$\left(  1+u_{i}T\right)  ^{\widehat{j}}=\underbrace{\left(  1+u_{i}T\right)
+\widehat{\cdot}\left(  1+u_{i}T\right)  \widehat{\cdot}...\widehat{\cdot
+}\left(  1+u_{i}T\right)  }_{j\text{ times}},$ as opposed to $\left(
+1+u_{i}T\right)  ^{j}=\underbrace{\left(  1+u_{i}T\right)  \cdot\left(
+1+u_{i}T\right)  \cdot...\cdot\left(  1+u_{i}T\right)  }_{j\text{ times}}$
+which is the $j$-th power of $1+u_{i}T$ \textit{in the ring }$K\left[  \left[
+T\right]  \right]  $).
+
+Hence,%
+\begin{align*}
+\widehat{\psi}^{j}\left(  u\right)   &  =\widehat{\psi}^{j}\left(
+\widehat{\sum_{i=1}^{m}}\left(  1+u_{i}T\right)  \right)  =\widehat{\sum
+_{i=1}^{m}}\left(  1+u_{i}T\right)  ^{\widehat{j}}=\widehat{\sum_{i=1}^{m}%
+}\underbrace{\left(  \Pi\left(  \widetilde{K}_{u},\left[  u_{i}\right]
+\right)  \right)  ^{\widehat{j}}}_{\substack{=\Pi\left(  \widetilde{K}%
+_{u},\left[  u_{i}^{j}\right]  \right)  \text{ by}\\\text{Corollary 5.4
+\textbf{(b)}}}}=\widehat{\sum_{i=1}^{m}}\Pi\left(  \widetilde{K}_{u},\left[
+u_{i}^{j}\right]  \right) \\
+&  =\Pi\left(  \widetilde{K}_{u},\left[  u_{1}^{j},u_{2}^{j},...,u_{m}%
+^{j}\right]  \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Corollary 5.4
+\textbf{(a)}}\right)  .
+\end{align*}
+
+
+\textit{Exercise 9.2: Hints to solution:} \textbf{(a)} It is easy to see that
+the map sends the zero $1$ of $\Lambda\left(  K\right)  $ to the zero $0$ of
+$K$ and the multiplicative unity $1+T$ of $\Lambda\left(  K\right)  $ to the
+multiplicative unity $1$ of $K$. So it only remains to prove that any two
+power series $u\in\Lambda\left(  K\right)  $ and $v\in\Lambda\left(  K\right)
+$ satisfy%
+\begin{equation}
+\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
+{d}{dT}\log\left(  u\widehat{+}v\right)  \right)  =\left(  -1\right)
+^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log u\right)
++\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
+{d}{dT}\log v\right)  \label{9.2.plus}%
+\end{equation}
+and%
+\begin{equation}
+\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
+{d}{dT}\log\left(  u\widehat{\cdot}v\right)  \right)  =\left(  -1\right)
+^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log u\right)
+\cdot\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
+-T\dfrac{d}{dT}\log v\right)  . \label{9.2.times}%
+\end{equation}
+This needs to be verified for $u\in1+K\left[  T\right]  ^{+}$ and
+$v\in1+K\left[  T\right]  ^{+}$ only (since the operations $\widehat{+}$ and
+$\widehat{\cdot}$ and the mapping%
+\begin{align*}
+\Lambda\left(  K\right)   &  \rightarrow K,\\
+u  &  \mapsto\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
+-T\dfrac{d}{dT}\log u\right)
+\end{align*}
+are continuous (where the topology on $K$ can be chosen arbitrarily), and
+$1+K\left[  T\right]  ^{+}$ is a dense subset of $1+K\left[  \left[  T\right]
+\right]  ^{+}=\Lambda\left(  K\right)  $). So let us assume that
+$u\in1+K\left[  T\right]  ^{+}$ and $v\in1+K\left[  T\right]  ^{+}$. Then,
+there exists some $\left(  \widetilde{K}_{u},\left[  u_{1},u_{2}%
+,...,u_{m}\right]  \right)  \in K^{\operatorname*{int}}$ such that
+$u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
+$ and some $\left(  \widetilde{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]
+\right)  \in K^{\operatorname*{int}}$ such that $v=\Pi\left(  \widetilde
+{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  $. Then, Theorem 5.3
+\textbf{(c)} says that%
+\[
+u\widehat{\cdot}v=\Pi\left(  \widetilde{K}_{u,v},\left[  u_{i}v_{j}\mid\left(
+i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}
+\right]  \right)  .
+\]
+
+
+Now,%
+\[
+u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
+=\prod_{k=1}^{m}\left(  1+u_{k}T\right)
+\]
+entails%
+\begin{align*}
+\dfrac{d}{dT}u  &  =\dfrac{d}{dT}\prod_{k=1}^{m}\left(  1+u_{k}T\right)
+=\sum_{\tau=1}^{m}\underbrace{\prod_{k\in\left\{  1,2,...,m\right\}
+\setminus\left\{  \tau\right\}  }\left(  1+u_{k}T\right)  }_{=\dfrac
+{\prod\limits_{k=1}^{m}\left(  1+u_{k}T\right)  }{1+u_{\tau}T}}\cdot
+\underbrace{\dfrac{d}{d\tau}\left(  1+u_{\tau}T\right)  }_{=u_{\tau}%
+}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the Leibniz rule}\right) \\
+&  =\sum_{\tau=1}^{m}\left(  \underbrace{\prod\limits_{k=1}^{m}\left(
+1+u_{k}T\right)  }_{=u}\right)  \cdot\dfrac{u_{\tau}}{1+u_{\tau}T}=u\sum
+_{\tau=1}^{m}\dfrac{u_{\tau}}{1+u_{\tau}T}%
+\end{align*}
+and thus%
+\begin{align*}
+-T\dfrac{d}{dT}\log u  &  =-T\dfrac{\dfrac{d}{dT}u}{u}=-T\dfrac{u\sum
+\limits_{\tau=1}^{m}\dfrac{u_{\tau}}{1+u_{\tau}T}}{u}=-T\sum\limits_{\tau
+=1}^{m}\dfrac{u_{\tau}}{1+u_{\tau}T}=\sum\limits_{\tau=1}^{m}\left(  -u_{\tau
+}T\right)  \left(  1+u_{\tau}T\right)  ^{-1}\\
+&  =\sum\limits_{\tau=1}^{m}\left(  -u_{\tau}T\right)  \sum_{\rho\in
+\mathbb{N}}\left(  -1\right)  ^{\rho}\left(  u_{\tau}T\right)  ^{\rho}%
+=\sum\limits_{\tau=1}^{m}\sum_{\rho\in\mathbb{N}}\left(  -1\right)  ^{\rho
++1}\left(  u_{\tau}T\right)  ^{\rho+1}=\sum\limits_{\tau=1}^{m}\sum
+_{i\in\mathbb{N}\setminus\left\{  0\right\}  }\left(  -1\right)  ^{i}\left(
+u_{\tau}T\right)  ^{i}\\
+&  =\sum\limits_{\tau=1}^{m}\sum_{i\in\mathbb{N}\setminus\left\{  0\right\}
+}\left(  -1\right)  ^{i}u_{\tau}^{i}T^{i}=\sum_{i\in\mathbb{N}\setminus
+\left\{  0\right\}  }\left(  -1\right)  ^{i}\sum\limits_{\tau=1}^{m}u_{\tau
+}^{i}T^{i},
+\end{align*}
+so that $\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log
+u\right)  =\left(  -1\right)  ^{i}\sum\limits_{\tau=1}^{m}u_{\tau}^{i}$. In
+other words, $\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
+-T\dfrac{d}{dT}\log u\right)  =u_{\tau}^{i}$. Similarly, $v=\Pi\left(
+\widetilde{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  $ yields
+$\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
+{d}{dT}\log v\right)  =\sum\limits_{\sigma=1}^{n}v_{\sigma}^{i}$, and
+$u\widehat{\cdot}v=\Pi\left(  \widetilde{K}_{u,v},\left[  u_{i}v_{j}%
+\mid\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  \right]  \right)  $ yields $\left(  -1\right)
+^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log\left(
+u\widehat{\cdot}v\right)  \right)  =\sum\limits_{\tau=1}^{m}\sum
+\limits_{\sigma=1}^{n}\left(  u_{\tau}v_{\sigma}\right)  ^{i}$. Thus,%
+\begin{align*}
+\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
+{d}{dT}\log\left(  u\widehat{\cdot}v\right)  \right)   &  =\sum\limits_{\tau
+=1}^{m}\sum\limits_{\sigma=1}^{n}\left(  u_{\tau}v_{\sigma}\right)  ^{i}%
+=\sum\limits_{\tau=1}^{m}\sum\limits_{\sigma=1}^{n}u_{\tau}^{i}v_{\sigma}%
+^{i}=\sum\limits_{\tau=1}^{m}u_{\tau}^{i}\cdot\sum\limits_{\sigma=1}%
+^{n}v_{\sigma}^{i}\\
+&  =\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
+-T\dfrac{d}{dT}\log u\right)  \cdot\left(  -1\right)  ^{i}%
+\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log v\right)  ,
+\end{align*}
+and (\ref{9.2.times}) is thus proven. Similarly we can show (\ref{9.2.plus}).
+This completes the proof.
+
+\textbf{(b)} Using Exercise 9.2 \textbf{(a)}, we can easily prove the
+following fact:
+
+\textit{Assertion }$\mathcal{F}$\textit{:} If $\left(  K,\left(  \lambda
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a special $\lambda$-ring, then,
+for any $i\in\mathbb{N}\setminus\left\{  0\right\}  $, the $i$-th Adams
+operation $\psi^{i}:K\rightarrow K$ is a ring homomorphism.
+
+This assertion is a part of Theorem 9.3 \textbf{(b)}.
+
+In order to prove Assertion $\mathcal{F}$ using Exercise 9.2 \textbf{(a)}, we
+notice that the composition of the map $\lambda_{T}:K\rightarrow\Lambda\left(
+K\right)  $ (which is a ring homomorphism, since the $\lambda$-ring $\left(
+K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is special) with the
+map%
+\begin{align*}
+\Lambda\left(  K\right)   &  \rightarrow K,\\
+u  &  \mapsto\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
+-T\dfrac{d}{dT}\log u\right)
+\end{align*}
+(which is a ring homomorphism according to Exercise 9.2 \textbf{(a)}) is
+$\psi^{i}$ (because every $x\in K$ satisfies
+\[
+\sum\limits_{i\in\mathbb{N}\setminus\left\{  0\right\}  }\psi^{i}\left(
+x\right)  T^{i}=\widetilde{\psi}_{T}\left(  x\right)  =-T\dfrac{d}{dT}%
+\log\lambda_{-T}\left(  x\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem
+9.2 \textbf{(b)}}\right)  ,
+\]
+what (upon the substitution of $-T$ for $T$) becomes%
+\[
+\sum\limits_{i\in\mathbb{N}\setminus\left\{  0\right\}  }\psi^{i}\left(
+x\right)  \left(  -T\right)  ^{i}=-\left(  -T\right)  \dfrac{d}{d\left(
+-T\right)  }\log\lambda_{-\left(  -T\right)  }\left(  x\right)  =-T\dfrac
+{d}{dT}\log\lambda_{T}\left(  x\right)  ,
+\]
+what rewrites as $\sum\limits_{i\in\mathbb{N}\setminus\left\{  0\right\}
+}\left(  -1\right)  ^{i}\psi^{i}\left(  x\right)  T^{i}=-T\dfrac{d}{dT}%
+\log\lambda_{T}\left(  x\right)  $, and thus we have $\left(  -1\right)
+^{i}\psi^{i}\left(  x\right)  =\operatorname*{coeff}\nolimits_{i}\left(
+-T\dfrac{d}{dT}\log\lambda_{T}\left(  x\right)  \right)  $ and therefore
+$\psi^{i}\left(  x\right)  =\left(  -1\right)  ^{i}\operatorname*{coeff}%
+\nolimits_{i}\left(  -T\dfrac{d}{dT}\log\lambda_{T}\left(  x\right)  \right)
+$). Thus, $\psi^{i}$ is a ring homomorphism (since the composition of two ring
+homomorphisms is a ring homomorphism). This proves Assertion $\mathcal{F}$.
+
+\textit{Exercise 9.3: Hints to solution:} \textbf{(a)} According to Theorem
+9.2 \textbf{(b)}, we have $\widetilde{\psi}_{T}\left(  x\right)
+=-T\cdot\dfrac{d}{dT}\log\lambda_{-T}\left(  x\right)  =-T\cdot\dfrac
+{\dfrac{d}{dT}\lambda_{-T}\left(  x\right)  }{\lambda_{-T}\left(  x\right)  }$
+for every $x\in K$, where the map $\widetilde{\psi}_{T}:K\rightarrow K\left[
+\left[  T\right]  \right]  $ is defined by $\widetilde{\psi}_{T}\left(
+x\right)  =\sum\limits_{j\in\mathbb{N}\setminus\left\{  0\right\}  }\psi
+^{j}\left(  x\right)  T^{j}$ for every $x\in K$. Here, $\lambda_{-T}\left(
+x\right)  $ denotes $\operatorname*{ev}_{-T}\left(  \lambda_{T}\left(
+x\right)  \right)  $. Therefore, if we denote $\operatorname*{ev}_{-T}\left(
+\widetilde{\psi}_{T}\left(  x\right)  \right)  $ by $\widetilde{\psi}%
+_{-T}\left(  x\right)  ,$ then we have%
+\[
+\widetilde{\psi}_{-T}\left(  x\right)  =\operatorname*{ev}\nolimits_{-T}%
+\left(  \widetilde{\psi}_{T}\left(  x\right)  \right)  =\operatorname*{ev}%
+\nolimits_{-T}\left(  -T\cdot\dfrac{\dfrac{d}{dT}\lambda_{-T}\left(  x\right)
+}{\lambda_{-T}\left(  x\right)  }\right)  =-\left(  -T\right)  \cdot
+\dfrac{\dfrac{d}{d\left(  -T\right)  }\lambda_{-\left(  -T\right)  }\left(
+x\right)  }{\lambda_{-\left(  -T\right)  }\left(  x\right)  }=-T\cdot
+\dfrac{\dfrac{d}{dT}\lambda_{T}\left(  x\right)  }{\lambda_{T}\left(
+x\right)  }.
+\]
+Thus,%
+\begin{equation}
+\lambda_{T}\left(  x\right)  \cdot\widetilde{\psi}_{-T}\left(  x\right)
+=-T\cdot\dfrac{d}{dT}\lambda_{T}\left(  x\right)  . \label{9.ex3.s1}%
+\end{equation}
+
+
+Now, $\widetilde{\psi}_{T}\left(  x\right)  =\sum\limits_{j\in\mathbb{N}%
+\setminus\left\{  0\right\}  }\psi^{j}\left(  x\right)  T^{j}$ yields
+$\widetilde{\psi}_{-T}\left(  x\right)  =\sum\limits_{j\in\mathbb{N}%
+\setminus\left\{  0\right\}  }\psi^{j}\left(  x\right)  \left(  -T\right)
+^{j}=\sum\limits_{j\in\mathbb{N}\setminus\left\{  0\right\}  }\left(
+-1\right)  ^{j}\psi^{j}\left(  x\right)  T^{j}.$ Together with $\lambda
+_{T}\left(  x\right)  =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
+x\right)  T^{i}$, this yields%
+\[
+\lambda_{T}\left(  x\right)  \cdot\widetilde{\psi}_{-T}\left(  x\right)
+=\sum_{n\in\mathbb{N}}\sum_{j=1}^{n}\left(  -1\right)  ^{j}\psi^{j}\left(
+x\right)  \lambda^{n-j}\left(  x\right)  T^{n}.
+\]
+On the other hand, $\lambda_{T}\left(  x\right)  =\sum\limits_{i\in\mathbb{N}%
+}\lambda^{i}\left(  x\right)  T^{i}=\sum\limits_{n\in\mathbb{N}}\lambda
+^{n}\left(  x\right)  T^{n}$ yields $\dfrac{d}{dT}\lambda_{T}\left(  x\right)
+=\sum\limits_{n\in\mathbb{N}}n\lambda^{n}\left(  x\right)  T^{n-1}$ and thus
+$-T\cdot\dfrac{d}{dT}\lambda_{T}\left(  x\right)  =-\sum\limits_{n\in
+\mathbb{N}}n\lambda^{n}\left(  x\right)  T^{n}$. Hence, (\ref{9.ex3.s1})
+becomes%
+\[
+\sum_{n\in\mathbb{N}}\sum_{j=1}^{n}\left(  -1\right)  ^{j}\psi^{j}\left(
+x\right)  \lambda^{n-j}\left(  x\right)  T^{n}=-\sum\limits_{n\in\mathbb{N}%
+}n\lambda^{n}\left(  x\right)  T^{n}.
+\]
+Thus, for every $n\in\mathbb{N}$, we have%
+\[
+\sum_{j=1}^{n}\left(  -1\right)  ^{j}\psi^{j}\left(  x\right)  \lambda
+^{n-j}\left(  x\right)  =-n\lambda^{n}\left(  x\right)  .
+\]
+Dividing this by $-1,$ this becomes%
+\[
+\sum_{j=1}^{n}\left(  -1\right)  ^{j-1}\psi^{j}\left(  x\right)  \lambda
+^{n-j}\left(  x\right)  =n\lambda^{n}\left(  x\right)  ,
+\]
+which rewrites as%
+\[
+n\lambda^{n}\left(  x\right)  =\sum_{j=1}^{n}\left(  -1\right)  ^{j-1}\psi
+^{j}\left(  x\right)  \lambda^{n-j}\left(  x\right)  =\sum_{i=1}^{n}\left(
+-1\right)  ^{i-1}\psi^{i}\left(  x\right)  \lambda^{n-i}\left(  x\right)  ,
+\]
+which is exactly what Exercise 9.3 \textbf{(a)} claimed.
+
+\textbf{(b)} We will prove the equation $n!\lambda^{n}\left(  x\right)  =\det
+A_{n}$ by induction over $n$.
+
+The base case, $n=0$, is trivial (for $0!=1,$ $\lambda^{0}\left(  x\right)
+=1$, and the determinant of a $0\times0$ matrix is $1$ by definition). If you
+do not believe in $0\times0$ matrices, the $n=1$ case is trivial as well
+(since $\lambda^{1}\left(  x\right)  =x$ and $\psi^{1}\left(  x\right)  =x$ by
+Theorem 9.3 \textbf{(a)}) and can equally serve as a base case. The
+interesting part is the induction step.
+
+For this step, we develop the determinant of the matrix $A_{n}$ along the
+$n$-th row. We obtain%
+\begin{equation}
+\det A_{n}=\sum_{k=1}^{n}\left(  -1\right)  ^{n-k}\psi^{n-k+1}\left(
+x\right)  \cdot\det\left(  A_{n}\left[  \dfrac{\sim k}{\sim n}\right]
+\right)  , \label{9.ex3.s2}%
+\end{equation}
+where $A_{n}\left[  \dfrac{\sim k}{\sim n}\right]  $ is the matrix obtained
+from $A_{n}$ by removing the $n$-th row and the $k$-th column.
+
+Now, the matrix $A_{n}\left[  \dfrac{\sim k}{\sim n}\right]  $ turns out to be
+a block-triangular matrix, with the left upper block (of size $\left(
+k-1\right)  \times\left(  k-1\right)  $) being equal to $A_{k-1}$ and the
+right lower block (of size $\left(  n-k\right)  \times\left(  n-k\right)  $)
+being a lower triangular matrix with the numbers $k,$ $k+1,$ $...,$ $n-1$ on
+its diagonal. Hence, $\det\left(  A_{n}\left[  \dfrac{\sim k}{\sim n}\right]
+\right)  =\det A_{k-1}\cdot\left(  k\left(  k+1\right)  ...\left(  n-1\right)
+\right)  .$ Since we are proceeding by induction, we can take $\det
+A_{k-1}=\left(  k-1\right)  !\lambda^{k-1}\left(  x\right)  $ for granted
+(since $k-1<n$), and thus obtain%
+\begin{align*}
+\det\left(  A_{n}\left[  \dfrac{\sim k}{\sim n}\right]  \right)   &  =\det
+A_{k-1}\cdot\left(  k\left(  k+1\right)  ...\left(  n-1\right)  \right)
+=\left(  k-1\right)  !\lambda^{k-1}\left(  x\right)  \cdot\left(  k\left(
+k+1\right)  ...\left(  n-1\right)  \right) \\
+&  =\underbrace{\left(  k-1\right)  !\cdot\left(  k\left(  k+1\right)
+...\left(  n-1\right)  \right)  }_{=\left(  n-1\right)  !}\cdot\lambda
+^{k-1}\left(  x\right)  =\left(  n-1\right)  !\cdot\lambda^{k-1}\left(
+x\right)  .
+\end{align*}
+
+
+Thus, (\ref{9.ex3.s2}) becomes%
+\begin{align*}
+\det A_{n}  &  =\sum_{k=1}^{n}\left(  -1\right)  ^{n-k}\psi^{n-k+1}\left(
+x\right)  \cdot\left(  n-1\right)  !\cdot\lambda^{k-1}\left(  x\right)
+=\left(  n-1\right)  !\cdot\sum_{k=1}^{n}\left(  -1\right)  ^{n-k}\psi
+^{n-k+1}\left(  x\right)  \lambda^{k-1}\left(  x\right) \\
+&  =\left(  n-1\right)  !\cdot\underbrace{\sum_{i=1}^{n}\left(  -1\right)
+^{i-1}\psi^{i}\left(  x\right)  \lambda^{n-i}\left(  x\right)  }%
+_{=n\lambda^{n}\left(  x\right)  \text{ by \textbf{(a)}}}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{here we substituted }i\text{ for
+}n-k+1\text{ in the sum}\right) \\
+&  =\underbrace{\left(  n-1\right)  !\cdot n}_{=n!}\lambda^{n}\left(
+x\right)  =n!\lambda^{n}\left(  x\right)  ,
+\end{align*}
+completing the induction step, qed.
+
+\begin{center}
 \fbox{\textbf{References}}
 \end{center}
 
-\begin{quote}
 [1] William Fulton, Serge Lang, \textit{Riemann-Roch algebra}, New York 1985.
 
 [2] Donald Knutson, $\lambda$\textit{-Rings and the Representation Theory of
@@ -4554,7 +5172,12 @@ the Symmetric Group}, New York 1973.
 Algebra}, Addison-Wesley 1969.
 
 [4] Robin Hartshorne, \textit{Algebraic Geometry}, Springer 1977.
-\end{quote}
+
+[5] Michiel Hazewinkel, \textit{Niceness theorems}, arXiv:0810.5691v1
+[math.HO], 2008.\newline\texttt{http://arxiv.org/abs/0810.5691}
+
+[6] Michiel Hazewinkel, \textit{Witt vectors. Part 1}, arXiv:0804.3888v1
+[math.RA], 2008.\newline\texttt{http://arxiv.org/abs/0804.3888}
 
 
 \end{document}
