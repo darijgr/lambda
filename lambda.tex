@@ -9,7 +9,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, October 24, 2011 22:36:09}
+%TCIDATA{LastRevised=Friday, October 28, 2011 00:25:27}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
@@ -42,7 +42,7 @@
 
 Darij Grinberg
 
-\textit{Version 0.0.14, last revised 23 Oct 2011}
+\textit{Version 0.0.15, last revised 24 Oct 2011}
 \end{center}
 
 This is a \textbf{BETA VERSION} and has never been systematically proofread.
@@ -61,6 +61,8 @@ however, some do not.
 
 \bigskip
 
+\subsection{What is this?}
+
 \fbox{\textbf{What is this?}}
 
 These notes were written for a seminar talk. They try to cover some of the
@@ -68,6 +70,8 @@ most important properties of $\lambda$-rings with proofs. At the moment, most
 of what is written here is also in Knutson's book [2], albeit sometimes with a
 different proof. In future I plan to add some results from Fulton/Lang [1]
 with better proofs.
+
+\section{0. Notation}
 
 \begin{center}
 \fbox{\textbf{0. Notation}}
@@ -108,6 +112,32 @@ $\textit{-rings} what we call special $\lambda$-rings. Even worse, the
 notations in [1] are totally inconsistent\footnote{Often, "$\lambda$-ring" in
 [1] means "$\lambda$-ring with a positive structure" (such $\lambda$-rings are
 automatically special), but sometimes it simply means "$\lambda$-ring".}.
+
+\item Most times you read an expression with a $\sum$ or a $\prod$ sign in
+mathematical literature, you know clearly what it means (e. g., the expression
+$\prod\limits_{k=1}^{n}\sin k$ means the product $\left(  \sin1\right)
+\cdot\left(  \sin2\right)  \cdot...\cdot\left(  \sin n\right)  $). However,
+some more complicated expressions with $\sum$ and $\prod$ signs can be
+ambiguous, like the expression $\prod\limits_{k=1}^{n}\sin k\cdot n$: Does
+this expression mean $\left(  \prod\limits_{k=1}^{n}\sin k\right)  \cdot n$ or
+$\prod\limits_{k=1}^{n}\left(  \left(  \sin k\right)  \cdot n\right)  $ ? The
+answer depends on the author of the text.\newline In \textit{this} text, the
+following convention should be resorted to when parsing an expression with
+$\sum$ or $\prod$ signs:\newline The argument of a $\prod$ sign ends as early
+as reasonably possible. Here, "reasonably possible" means that it cannot end
+before the last time the index of the product appears (e. g., the argument of
+$\prod\limits_{k=1}^{n}\sin k\cdot n$ cannot end before the last appearance of
+$k$), that it cannot end inside a bracket (e. g., the argument of
+$\prod\limits_{k=1}^{n}\left(  \left(  \sin k\right)  \cdot n\right)  $ cannot
+end before the end of the $n$), that it cannot end between a symbol and its
+exponent or index or between a function symbol or its arguments, and that the
+usual rules of precedence have to apply. For example, the expression
+$\prod\limits_{k=1}^{n}\sin k\cdot n$ has to be read as $\left(
+\prod\limits_{k=1}^{n}\sin k\right)  \cdot n$, and the expression
+$\prod\limits_{k=1}^{n}\sin k\cdot\left(  \cos k\right)  ^{2}k\cdot\left(
+n+1\right)  kn$ has to be read as $\left(  \prod\limits_{k=1}^{n}\left(  \sin
+k\cdot\left(  \cos k\right)  ^{2}\cdot\left(  n+1\right)  k\right)  \right)
+n$.\newline Similar rules apply to the parsing of a sum expression.
 \end{itemize}
 
 \begin{center}
@@ -241,7 +271,7 @@ but generally means an isomorphism of the kind%
 \begin{align*}
 &  \wedge^{k}\left(  V\otimes W\right)  \oplus\text{direct sum of some tensor
 products of some }\wedge^{i}V\text{ and }\wedge^{j}W\\
-&  =\text{(another) direct sum of some tensor products of some }\wedge
+&  \cong\text{(another) direct sum of some tensor products of some }\wedge
 ^{i}V\text{ and }\wedge^{j}W,
 \end{align*}
 and similarly (\ref{RepThLL}) has to be understood.}
@@ -305,7 +335,7 @@ but I do not understand it. Anyway this result is not as strong as in
 characteristic $0$ anymore, because the equality $\overline{U}=\overline{V}$
 in the Grothendieck ring $\operatorname*{FRep}_{k}G\diagup I$ does not imply
 $U\cong V$ as representations of $G$ when $\operatorname*{char}k\neq0$. So the
-Grothendieck ring is, in some sense, a blurry image of the representation
+Grothendieck ring is, in some sense, a pale shadow of the representation
 theory of $G$.
 
 Vector bundles over a given compact Hausdorff space are similar to
@@ -1089,7 +1119,8 @@ For part \textbf{(b)}, we argue the same way as in \textbf{(a)}, but applying
 Theorem 4.1 \textbf{(b)} along with Theorem 4.1 \textbf{(a)}.
 
 Note that in the following, we are going to use Theorems 4.1 and 4.2 for
-$K=\mathbb{Z}$ only.
+$K=\mathbb{Z}$ only, until Section 10 where we actually get to use them for
+general $K$.
 
 Theorem 4.2 allows us to make the following definition:
 
@@ -1317,6 +1348,159 @@ A=\left(  \mathbb{Z}\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}%
 \end{align*}
 This proves Theorem 4.3 \textbf{(b)}.
 
+\textbf{Example.} The above definition of the polynomials $P_{k}$ was rather
+abstract. Let us sketch an example of how these polynomials are computed -
+namely, let us compute $P_{2}$.
+
+While our definition of $P_{k}$ was somewhat indirect (we constructed $P_{k}$
+in multiple steps; while each of these steps is constructive, this still is a
+rather long way to $P_{k}$), the important thing about $P_{k}$ is that it
+satisfies (\ref{Pk1}). In fact, for every $m\geq k$ and $n\geq k$, the
+polynomial $P_{k}$ is uniquely determined by the equation (\ref{Pk1}%
+)\footnote{\textit{Proof.} Theorem 4.2 \textbf{(a)} yields that the elements
+$X_{1}$, $X_{2}$, $...$, $X_{m}$, $Y_{1}$, $Y_{2}$, $...$, $Y_{n}$ of the
+polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2}%
+,...,V_{n}\right]  $ are algebraically independent. Since $m\geq k$ and $n\geq
+k$, this yields that the elements $X_{1}$, $X_{2}$, $...$, $X_{k}$, $Y_{1}$,
+$Y_{2}$, $...$, $Y_{k}$ of the polynomial ring $\mathbb{Z}\left[  U_{1}%
+,U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]  $ are algebraically
+independent. Hence, a polynomial $\mathfrak{p}\in\mathbb{Z}\left[  \alpha
+_{1},\alpha_{2},...,\alpha_{k},\beta_{1},\beta_{2},...,\beta_{k}\right]  $ is
+uniquely determined by the value $\mathfrak{p}\left(  X_{1},X_{2}%
+,...,X_{k},Y_{1},Y_{2},...,Y_{k}\right)  $. Thus, the polynomial $P_{k}$ is
+uniquely determined by the equation (\ref{Pk1}) (because the equation
+(\ref{Pk1}) determines the value $P_{k}\left(  X_{1},X_{2},...,X_{k}%
+,Y_{1},Y_{2},...,Y_{k}\right)  $).}, so that we only need (\ref{Pk1}) to find
+$P_{k}$.
+
+Since we want to compute $P_{2}$, let us pick $k=2$. Now we need to pick some
+$m\geq k$ and $n\geq k$; the best choice is $m=n=2$ (choosing greater $m$ or
+$n$ would lead to the same polynomial $P_{k}$ in the end, but the computations
+required to obtain it would involve some longer terms). So let $m=n=2$. Then,
+the left hand side of (\ref{Pk1}) is%
+\begin{align*}
+&  \sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}\prod_{\left(  i,j\right)
+\in S}U_{i}V_{j}\\
+&  =\sum_{\substack{S\subseteq\left\{  1,2\right\}  \times\left\{
+1,2\right\}  ;\\\left\vert S\right\vert =2}}\prod_{\left(  i,j\right)  \in
+S}U_{i}V_{j}\\
+&  =\prod_{\left(  i,j\right)  \in\left\{  \left(  1,1\right)  ,\left(
+1,2\right)  \right\}  }U_{i}V_{j}+\prod_{\left(  i,j\right)  \in\left\{
+\left(  1,1\right)  ,\left(  2,1\right)  \right\}  }U_{i}V_{j}+\prod_{\left(
+i,j\right)  \in\left\{  \left(  1,1\right)  ,\left(  2,2\right)  \right\}
+}U_{i}V_{j}\\
+&  \ \ \ \ \ \ \ \ \ \ +\prod_{\left(  i,j\right)  \in\left\{  \left(
+1,2\right)  ,\left(  2,1\right)  \right\}  }U_{i}V_{j}+\prod_{\left(
+i,j\right)  \in\left\{  \left(  1,2\right)  ,\left(  2,2\right)  \right\}
+}U_{i}V_{j}+\prod_{\left(  i,j\right)  \in\left\{  \left(  2,1\right)
+,\left(  2,2\right)  \right\}  }U_{i}V_{j}\\
+&  =U_{1}^{2}V_{1}V_{2}+2U_{1}U_{2}V_{1}^{2}+2U_{1}U_{2}V_{1}V_{2}+U_{1}%
+U_{2}V_{2}^{2}+U_{2}^{2}V_{1}V_{2},
+\end{align*}
+while the right hand side is%
+\[
+P_{k}\left(  X_{1},X_{2},...,X_{k},Y_{1},Y_{2},...,Y_{k}\right)  =P_{2}\left(
+X_{1},X_{2},Y_{1},Y_{2}\right)  .
+\]
+Thus our polynomial $P_{2}$ must satisfy
+\[
+U_{1}^{2}V_{1}V_{2}+U_{1}U_{2}V_{1}^{2}+2U_{1}U_{2}V_{1}V_{2}+U_{1}U_{2}%
+V_{2}^{2}+U_{2}^{2}V_{1}V_{2}=P_{2}\left(  X_{1},X_{2},Y_{1},Y_{2}\right)
+\]
+in $\mathbb{Z}\left[  U_{1},U_{2},V_{1},V_{2}\right]  $. According to Theorem
+4.2 \textbf{(a)}, the polynomial $P_{2}$ is uniquely determined by this
+condition, but in order to actually compute it, we need to recall how Theorem
+4.2 \textbf{(a)} was proven. In other words, we need to recall how to write a
+UV-symmetric polynomial as a polynomial in the elementary symmetric
+polynomials $X_{1}$, $X_{2}$, $...$ and $Y_{1}$, $Y_{2}$, $...$.
+
+Let us look what we did in our proof of Theorem 4.2 \textbf{(a)} above, in the
+particular case of the UV-symmetric polynomial
+\[
+U_{1}^{2}V_{1}V_{2}+U_{1}U_{2}V_{1}^{2}+2U_{1}U_{2}V_{1}V_{2}+U_{1}U_{2}%
+V_{2}^{2}+U_{2}^{2}V_{1}V_{2}.
+\]
+In this case, the proof begins by considering $U_{1}^{2}V_{1}V_{2}+2U_{1}%
+U_{2}V_{1}^{2}+U_{1}U_{2}V_{1}V_{2}+U_{1}U_{2}V_{2}^{2}+U_{2}^{2}V_{1}V_{2}$
+as a polynomial in the indeterminates $V_{1},$ $V_{2}$ over the ring
+$\mathbb{Z}\left[  U_{1},U_{2}\right]  $. Then, $P$ is a symmetric polynomial
+in these indeterminates $V_{1},$ $V_{2}$. Thus, Theorem 4.1 \textbf{(a)}
+yields the existence of one and only one polynomial $\widehat{Q}\in\left(
+K\left[  U_{1},U_{2}\right]  \right)  \left[  \beta_{1},\beta_{2}\right]  $
+such that%
+\[
+U_{1}^{2}V_{1}V_{2}+U_{1}U_{2}V_{1}^{2}+2U_{1}U_{2}V_{1}V_{2}+U_{1}U_{2}%
+V_{2}^{2}+U_{2}^{2}V_{1}V_{2}=\widehat{Q}\left(  Y_{1},Y_{2}\right)  .
+\]
+This polynomial $\widehat{Q}$ can be obtained by any algorithm which writes a
+symmetric polynomial as a polynomial in the elementary symmetric polynomials;
+I assume that you know such an algorithm (if not, read it up; most proofs of
+Theorem 4.1 \textbf{(a)} give such an algorithm). Applying this algorithm, we
+get
+\[
+U_{1}^{2}V_{1}V_{2}+U_{1}U_{2}V_{1}^{2}+2U_{1}U_{2}V_{1}V_{2}+U_{1}U_{2}%
+V_{2}^{2}+U_{2}^{2}V_{1}V_{2}=\left(  U_{1}^{2}+U_{2}^{2}\right)  Y_{2}%
++U_{1}U_{2}Y_{1}^{2},
+\]
+so that $\widehat{Q}=\left(  U_{1}^{2}+U_{2}^{2}\right)  \beta_{2}+U_{1}%
+U_{2}\beta_{1}^{2}$.
+
+Now, for every $2$-tuple $\left(  \lambda_{1},\lambda_{2}\right)
+\in\mathbb{N}^{2}$, the coefficient of this polynomial $\widehat{Q}$ before
+$\beta_{1}^{\lambda_{1}}\beta_{2}^{\lambda_{2}}$ is a symmetric polynomial in
+the variables $U_{1},$ $U_{2}$. Hence, by Theorem 4.1 \textbf{(a)}, there
+exists a polynomial $R_{\left(  \lambda_{1},\lambda_{2}\right)  }\in
+\mathbb{Z}\left[  \alpha_{1},\alpha_{2}\right]  $ such that this coefficient
+is $R_{\left(  \lambda_{1},\lambda_{2}\right)  }\left(  X_{1},X_{2}\right)  $.
+This $R_{\left(  \lambda_{1},\lambda_{2}\right)  }$ can generally be computed
+by any algorithm which writes a symmetric polynomial as a polynomial in the
+elementary symmetric polynomials. In our case, the polynomial $\widehat{Q}$
+has only two nonzero coefficients: the coefficient $U_{1}^{2}+U_{2}^{2}$
+before $\beta_{2}$ and the coefficient $U_{1}U_{2}$ before $\beta_{1}^{2}$. So
+we get two polynomials $R_{\left(  0,1\right)  }$ and $R_{\left(  2,0\right)
+}$, whereas all the other $R_{\left(  \lambda_{1},\lambda_{2}\right)  }$ are
+zero. More concretely, in order to obtain $R_{\left(  0,1\right)  }$, we write
+the symmetric polynomial $U_{1}^{2}+U_{2}^{2}$ (which is the coefficient of
+$\widehat{Q}$ before $\beta_{1}^{0}\beta_{2}^{1}=\beta_{2}$) as a polynomial
+in the elementary symmetric polynomials; this gives us $U_{1}^{2}+U_{2}%
+^{2}=X_{1}^{2}-2X_{2}$, so that $R_{\left(  0,1\right)  }=\alpha_{1}%
+^{2}-2\alpha_{2}$. Similarly, $R_{\left(  2,0\right)  }=\alpha_{2}$.
+
+Now, according to the proof of Theorem 4.2 \textbf{(a)}, a polynomial $P_{2}$
+satisfying $U_{1}V_{1}+U_{1}V_{2}+U_{2}V_{1}+U_{2}V_{2}=P_{2}\left(
+X_{1},X_{2},Y_{1},Y_{2}\right)  $ can be defined by the equation%
+\[
+P_{2}=\sum_{\left(  \lambda_{1},\lambda_{2},...,\lambda_{n}\right)
+\in\mathbb{N}^{n}}R_{\left(  \lambda_{1},\lambda_{2},...,\lambda_{n}\right)
+}\left(  \alpha_{1},\alpha_{2},...,\alpha_{m}\right)  \beta_{1}^{\lambda_{1}%
+}\beta_{2}^{\lambda_{2}}...\beta_{n}^{\lambda_{n}}.
+\]
+In our case, this simplifies to%
+\[
+P_{2}=\underbrace{R_{\left(  0,1\right)  }\left(  \alpha_{1},\alpha
+_{2}\right)  }_{=\alpha_{1}^{2}-2\alpha_{2}}\beta_{1}^{0}\beta_{2}%
+^{1}+\underbrace{R_{\left(  2,0\right)  }\left(  \alpha_{1},\alpha_{2}\right)
+}_{=\alpha_{2}}\beta_{1}^{2}\beta_{2}^{0}=\left(  \alpha_{1}^{2}-2\alpha
+_{2}\right)  \beta_{2}+\alpha_{2}\beta_{1}^{2}=\alpha_{1}^{2}\beta_{2}%
++\alpha_{2}\beta_{1}^{2}-2\alpha_{2}\beta_{2}.
+\]
+
+
+So we have found $P_{2}$. Similarly we can compute $P_{k}$ for all
+$k\in\mathbb{N}$, even though the computations get longer with increasing $k$
+very rapidly. Here are the values for small $k$:%
+\begin{align*}
+P_{0}  &  =1;\\
+P_{1}  &  =\alpha_{1}\beta_{1};\\
+P_{2}  &  =\alpha_{1}^{2}\beta_{2}+\alpha_{2}\beta_{1}^{2}-2\alpha_{2}%
+\beta_{2};\\
+P_{3}  &  =\alpha_{1}^{3}\beta_{3}+\alpha_{3}\beta_{1}^{3}+\alpha_{1}%
+\alpha_{2}\beta_{1}\beta_{2}-3\alpha_{1}\alpha_{2}\beta_{3}-3\alpha_{3}%
+\beta_{1}\beta_{2}+3\alpha_{3}\beta_{3}.
+\end{align*}
+Now back to the general case.
+
 Just as our above definition of the polynomials $P_{k}$ and Theorem 4.3 based
 upon Theorem 4.2, we can make another definition basing upon Theorem 4.1:
 
@@ -1503,14 +1687,35 @@ Q=\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)  \text{,
 \end{align*}
 This proves Theorem 4.4 \textbf{(b)}.
 
+\textbf{Example.} Computing the polynomials $P_{k,j}$ can be done by
+retracking their definition, just as in the case of $P_{k}$. It is even easier
+than computing $P_{k}$, because the definition of $P_{k}$ made use of Theorem
+4.2 \textbf{(a)}, while that of $P_{k,j}$ did not. Thus all we need is
+(\ref{Pkj1}) and an algorithm to write a symmetric polynomial as a polynomial
+in the elementary symmetric ones. I am not doing any example computations for
+this here, but here are some results:%
+\begin{align*}
+P_{0,j}  &  =1\ \ \ \ \ \ \ \ \ \ \text{for all }j\in\mathbb{N}\text{;}\\
+P_{1,0}  &  =1;\\
+P_{1,j}  &  =\alpha_{j}\ \ \ \ \ \ \ \ \ \ \text{for all positive }%
+j\in\mathbb{N}\text{;}\\
+P_{k,0}  &  =0\ \ \ \ \ \ \ \ \ \ \text{for all integers }k\geq2\text{;}\\
+P_{k,1}  &  =\alpha_{k}\ \ \ \ \ \ \ \ \ \ \text{for all positive }%
+k\in\mathbb{N}\text{;}\\
+P_{2,2}  &  =\alpha_{1}\alpha_{3}-\alpha_{4};\\
+P_{2,3}  &  =\alpha_{6}-\alpha_{1}\alpha_{5}+\alpha_{2}\alpha_{4};\\
+P_{3,2}  &  =\alpha_{6}+\alpha_{1}^{2}\alpha_{4}-2\alpha_{2}\alpha_{4}%
+-\alpha_{1}\alpha_{5}+\alpha_{3}^{2}.
+\end{align*}
+Do you see the pattern in the $P_{2,j}$? See Exercise 4.4 for the answer.
+
 \begin{quotation}
 \textit{Exercise 4.1. (Computing }$P_{k}$ \textit{and }$P_{k,j}$ \textit{as
 coefficients of determinants.)} The definitions of the polynomials $P_{k}$ and
 $P_{k,j}$ provide a possibility to recursively compute them for given values
-of $P_{k}$ and $P_{k,j}$ (at least if one knows the constructive proof of
-Theorem 4.1, which is fortunately the one given in most books). In this
-exercise, we will show another way to compute explicit formulas for $P_{k}$
-and $P_{k,j}$:
+of $k$ and $j$ (at least if one knows the constructive proof of Theorem 4.1,
+which is fortunately the one given in most books). In this exercise, we will
+show another way to compute explicit formulas for $P_{k}$ and $P_{k,j}$:
 
 \textbf{(a)} Let $m\in\mathbb{N}$. In the polynomial ring $\mathbb{Z}\left[
 U_{1},U_{2},...,U_{m}\right]  $, let $X_{i}=\sum\limits_{\substack{S\subseteq
@@ -1604,12 +1809,16 @@ any elements of a commutative ring $A$. Then, prove that%
 \[
 \prod\limits_{i=1}^{m}\left(  1+\alpha_{i}t\right)  =\sum\limits_{i\in
 \mathbb{N}}\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
-;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}\alpha_{k}t^{i}%
+;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}\alpha_{k}t^{i}.
 \]
-
+\footnote{Note that a product of the form $\prod\limits_{k\in S}\alpha
+_{k}t^{i}$ has to be read as $\left(  \prod\limits_{k\in S}\alpha_{k}\right)
+t^{i}$, rather than as $\prod\limits_{k\in S}\left(  \alpha_{k}t^{i}\right)
+$. This is a particular case of the general convention about parsing product
+expressions that we made in Section 0.}
 
 \textbf{(c)} Let $\alpha_{1}$, $\alpha_{2}$, $...$, $\alpha_{m}$ and $t$ be
-any elements of a commutative ring $A$ Then, prove that%
+any elements of a commutative ring $A$. Then, prove that%
 \[
 \prod\limits_{i=1}^{m}\left(  1-\alpha_{i}t\right)  =\sum\limits_{i\in
 \mathbb{N}}\left(  -1\right)  ^{i}\sum\limits_{\substack{S\subseteq\left\{
@@ -1619,7 +1828,8 @@ any elements of a commutative ring $A$ Then, prove that%
 
 
 \textbf{(d)} Let $Q$ be a finite set, and let $A$ be a commutative ring. Let
-$\alpha_{q}$ be an element of $A$ for every $q\in Q$. Then, prove that%
+$\alpha_{q}$ be an element of $A$ for every $q\in Q$. Let $t\in A$. Then,
+prove that%
 \[
 \prod\limits_{q\in Q}\left(  1+\alpha_{q}t\right)  =\sum\limits_{k\in
 \mathbb{N}}\sum\limits_{\substack{S\subseteq Q;\\\left\vert S\right\vert
@@ -1638,6 +1848,10 @@ independent over $K$, and that the elements $q_{1}$, $q_{2}$, $...$, $q_{n}$
 are algebraically independent over $T$. Prove that the $m+n$ elements $p_{1}$,
 $p_{2}$, $...$, $p_{m}$, $q_{1}$, $q_{2}$, $...$, $q_{n}$ are algebraically
 independent over $K$.
+
+\textit{Exercise 4.4.} Prove that $P_{2,j}=\sum\limits_{i=0}^{j-1}\left(
+-1\right)  ^{i+j-1}\alpha_{i}\alpha_{2j-i}$ for every $j\in\mathbb{N}$, where
+$\alpha_{0}$ has to be interpreted as $1$.
 \end{quotation}
 
 \begin{center}
@@ -1756,7 +1970,19 @@ Then, the set $1+K\left[  T\right]  ^{+}$ is a subset of $1+K\left[  \left[
 T\right]  \right]  ^{+}.$ The elements of $1+K\left[  T\right]  ^{+}$ are polynomials.
 \end{quote}
 
-Now, we have:
+So $1+K\left[  T\right]  ^{+}$ is the set of all polynomials $p\in K\left[
+T\right]  $ with constant term $1$. Loosely speaking, this means that the
+elements of $1+K\left[  T\right]  ^{+}$ are monic polynomials "turned upside
+down" (in the sense that if $\sum\limits_{i=0}^{n}a_{i}T^{i}$ is a polynomial
+in $1+K\left[  T\right]  ^{+}$ degree $n$ (with $a_{i}\in K$ for every $i$),
+then $\sum\limits_{i=0}^{n}a_{n-i}T^{i}$ is a monic polynomial of degree $n$,
+and conversely). This allows us to take some properties of monic polynomials
+and use them to derive similar properties for polynomials in $1+K\left[
+T\right]  ^{+}$. For example, we can take Exercise 5.1 (which says that
+whenever $P$ is a monic polynomial of degree $n$ over a ring $K$, we can find
+a finite-free extension ring of $K$ over which the polynomial $P$ factors into
+a product of monic linear polynomials), and "turn it upside down", obtaining
+the following fact about polynomials in $1+K\left[  T\right]  ^{+}$:
 
 \begin{quote}
 \textbf{Theorem 5.2.} Let $K$ be a ring. For every element $p\in1+K\left[
@@ -1767,16 +1993,33 @@ $p=\prod\limits_{i=1}^{n}\left(  1+p_{i}T\right)  $ in $K_{p}\left[  T\right]
 $.
 \end{quote}
 
-\textit{Proof of Theorem 5.2.} Let $p=\sum\limits_{i=0}^{n}a_{i}T^{i}$, where
-$n=\deg p$. Define a new polynomial $\widetilde{p}=\sum\limits_{i=0}%
-^{n}a_{n-i}T^{i}\in K\left[  T\right]  $. Then, the polynomial $\widetilde{p}$
-is monic (since $p\in1+K\left[  T\right]  ^{+}$), and the equation
-$p=\prod\limits_{i=1}^{n}\left(  1+p_{i}T\right)  $ becomes equivalent to
-$\widetilde{p}=\prod\limits_{i=1}^{n}\left(  p_{i}+T\right)  $, so that
-Theorem 5.2 simply claims that for every monic polynomial over a ring, we can
-find a finite-free extension of the ring over which the polynomial splits into
-linear polynomials. But this is an easy fact (proven in Exercise 5.1). Thus,
-Theorem 5.2 is proven.
+\textit{Proof of Theorem 5.2.} Write the polynomial $p$ in the form
+$p=\sum\limits_{i=0}^{n}a_{i}T^{i}$, where $n=\deg p$. Define a new polynomial
+$\widetilde{p}=\sum\limits_{i=0}^{n}a_{n-i}T^{i}\in K\left[  T\right]  $.
+Then, the polynomial $\widetilde{p}$ is monic (since $p\in1+K\left[  T\right]
+^{+}$) and satisfies $n=\deg\widetilde{p}$. Hence, by Exercise 5.1 (applied to
+$P=\widetilde{p}$), there exists a finite-free extension ring
+$K_{\widetilde{p}}$ of the ring $K$ and $n$ elements $\widetilde{p}_{1}$,
+$\widetilde{p}_{2}$, $...$, $\widetilde{p}_{n}$ of this extension ring
+$K_{\widetilde{p}}$ such that $\widetilde{p}=\prod\limits_{i=1}^{n}\left(
+T-\widetilde{p}_{i}\right)  $ in $K_{\widetilde{p}}\left[  T\right]  $.
+
+Consider this ring $K_{\widetilde{p}}$ and these $n$ elements $\widetilde{p}%
+_{1}$, $\widetilde{p}_{2}$, $...$, $\widetilde{p}_{n}$. Let $K_{p}$ be the
+extension ring $K_{\widetilde{p}}$, and let $p_{i}$ be the element
+$-\widetilde{p}_{i}\in K_{p}$ for every $i\in\left\{  1,2,...,n\right\}  $.
+Then,
+\[
+\sum\limits_{i=0}^{n}a_{n-i}T^{i}=\widetilde{p}=\prod\limits_{i=1}^{n}\left(
+T-\widetilde{p}_{i}\right)  =\prod\limits_{i=1}^{n}\left(
+T+\underbrace{\left(  -\widetilde{p}_{i}\right)  }_{=p_{i}}\right)
+=\prod\limits_{i=1}^{n}\left(  T+p_{i}\right)  =\prod\limits_{i=1}^{n}\left(
+p_{i}+T\right)  .
+\]
+Therefore, Exercise 5.2 (applied to $L=K_{p}$) yields that $\sum
+\limits_{i=0}^{n}a_{i}T^{i}=\prod\limits_{i=1}^{n}\left(  1+p_{i}T\right)  $.
+Since $p=\sum\limits_{i=0}^{n}a_{i}T^{i}$, this rewrites as $p=\prod
+\limits_{i=1}^{n}\left(  1+p_{i}T\right)  $. Thus, Theorem 5.2 is proven.
 
 Let us introduce some notation again:
 
@@ -2093,13 +2336,14 @@ $1+K\left[  \left[  T\right]  \right]  ^{+}$ is very difficult, but computing
 with elements of $1+K\left[  T\right]  ^{+}$ is rather easy thanks to Theorem
 5.3. Hence, we are going to reduce Theorem 5.1 to the case when our elements
 are in $1+K\left[  T\right]  ^{+}$. The reader is encouraged to try doing this
-on his own. In practice, it is a matter of noticing that only the first so and
-so many coefficients of the power series $u$ and $v$ matter when computing the
-$k$-th element of $u\widehat{\cdot}v$ (for instance), and thus we can truncate
-the power series at these coefficients, thus turning it into a polynomial. The
-abstract algebraical way to formulate this argument is by introducing the
-so-called $\left(  T\right)  $\textit{-topology} (also called the $\left(
-T\right)  $\textit{-adic topology}) on $K\left[  \left[  T\right]  \right]  $:
+on his own. In practice, it is a matter of noticing that for every
+$k\in\mathbb{N}$, only the first so and so many coefficients of the power
+series $u$ and $v$ matter when computing the $k$-th coefficient of
+$u\widehat{\cdot}v$ (for instance), and thus we can truncate the power series
+at these coefficients, thus turning it into a polynomial. The abstract
+algebraical way to formulate this argument is by introducing the so-called
+$\left(  T\right)  $\textit{-topology} (also called the $\left(  T\right)
+$\textit{-adic topology}) on $K\left[  \left[  T\right]  \right]  $:
 
 \begin{quote}
 \textbf{Definition.} Let $K$ be a ring. As a $K$-module, $K\left[  \left[
@@ -2621,7 +2865,22 @@ ring $K$ and $n$ elements $p_{1},$ $p_{2},$ $...,$ $p_{n}$ of this extension
 ring $K_{P}$ such that $P=\prod\limits_{i=1}^{n}\left(  T-p_{i}\right)  $ in
 $K_{P}\left[  T\right]  $, where $n=\deg P$.
 
-\textit{Exercise 5.2.} Let $K$ be a ring, and $L$ an extension ring of $K$.
+\textit{Exercise 5.2.} Let $L$ be a ring. Let $n\in\mathbb{N}$, let $a_{0}$,
+$a_{1}$, $...$, $a_{n}$ be some elements of $L$, and let $p_{1}$, $p_{2}$,
+$...$, $p_{n}$ be some elements of $L$ such that $\sum\limits_{i=0}^{n}%
+a_{n-i}T^{i}=\prod\limits_{i=1}^{n}\left(  p_{i}+T\right)  $ in the polynomial
+ring $L\left[  T\right]  $. Then, prove that $\sum\limits_{i=0}^{n}a_{i}%
+T^{i}=\prod\limits_{i=1}^{n}\left(  1+p_{i}T\right)  $.
+
+\textit{Exercise 5.3.} Let $K$ be a ring. Let $p$ be an element of $K$. Let
+$P\in K\left[  T\right]  $ be a monic polynomial such that $P\left(  p\right)
+=0$. Let $n=\deg P$. Then, there exists a finite-free extension ring
+$K_{P}^{\prime}$ of the ring $K$ and $n$ elements $p_{1},$ $p_{2},$ $...,$
+$p_{n}$ of this extension ring $K_{P}^{\prime}$ such that $P=\prod
+\limits_{i=1}^{n}\left(  T-p_{i}\right)  $ in $K_{P}^{\prime}\left[  T\right]
+$ and such that $p=p_{n}$.
+
+\textit{Exercise 5.4.} Let $K$ be a ring, and $L$ an extension ring of $K$.
 For some $n\in\mathbb{N}$, an element $u$ of $L$ is said to be $n$%
 \textit{-integral} over $K$ if there exists a monic polynomial $P\in K\left[
 X\right]  $ such that $\deg P=n$ and $P\left(  u\right)  =0$.
@@ -3176,7 +3435,6 @@ S\right\vert =i}}\prod\limits_{k\in S}1=\sum\limits_{\substack{S\subseteq
 for every $i\in\mathbb{N},$ and maps $Y_{j}$ to $\dbinom{n}{j}$ for every
 $j\in\mathbb{N}$. Thus, applying this homomorphism to the polynomial identity
 (\ref{Pk1}), we obtain%
-
 \[
 \sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
 1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}\prod_{\left(  i,j\right)
@@ -4363,6 +4621,8 @@ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
 +...+u_{m}^{j}.
 \]
 
+
+
 \end{quote}
 
 \textit{Proof of Theorem 9.4.} Let $x=u_{1}+u_{2}+...+u_{m}$. Just as in the
@@ -4951,11 +5211,9 @@ formal power series}\right) \\
 }\alpha_{i+1}\left(  i+1\right)  \left(  -1\right)  ^{i}T^{i}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{ev}%
 \nolimits_{-T}\right) \\
-&  =\sum\limits_{i\in\mathbb{N}}\alpha_{i+1}\left(  i+1\right)  \left(
--1\right)  ^{i}T^{i}=\sum\limits_{i\in\mathbb{N}\diagdown\left\{  0\right\}
-}\alpha_{i}i\underbrace{\left(  -1\right)  ^{i-1}}_{=-\left(  -1\right)  ^{i}%
-}T^{i-1}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }i\text{ for
+&  =\sum\limits_{i\in\mathbb{N}\diagdown\left\{  0\right\}  }\alpha
+_{i}i\underbrace{\left(  -1\right)  ^{i-1}}_{=-\left(  -1\right)  ^{i}}%
+T^{i-1}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }i\text{ for
 }i+1\right) \\
 &  =-\sum\limits_{i\in\mathbb{N}\diagdown\left\{  0\right\}  }\alpha
 _{i}\underbrace{i\left(  -1\right)  ^{i}}_{=\left(  -1\right)  ^{i}i}%
@@ -5056,15 +5314,17 @@ proof of Theorem 9.5 is, at the same time, a new proof of Theorem 9.2.
 
 \begin{quotation}
 \textit{Exercise 9.1.} Let $K$ be a ring. Let $u\in1+K\left[  T\right]  ^{+}$.
-For every $j\in\mathbb{N}$, let us denote by $\widehat{\psi}^{j}$ the $j$-th
-Adams operation of the $\lambda$-ring $\left(  \Lambda\left(  K\right)
-,\left(  \widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $.
+For every $j\in\mathbb{N}\diagdown\left\{  0\right\}  $, let us denote by
+$\widehat{\psi}^{j}$ the $j$-th Adams operation of the $\lambda$-ring $\left(
+\Lambda\left(  K\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in
+\mathbb{N}}\right)  $.
 
 Assume that $u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}%
 \right]  \right)  $ for some $\left(  \widetilde{K}_{u},\left[  u_{1}%
 ,u_{2},...,u_{m}\right]  \right)  \in K^{\operatorname*{int}}$. Let
-$j\in\mathbb{N}$. Then, $\widehat{\psi}^{j}\left(  u\right)  =\Pi\left(
-\widetilde{K}_{u},\left[  u_{1}^{j},u_{2}^{j},...,u_{m}^{j}\right]  \right)  $.
+$j\in\mathbb{N}\diagdown\left\{  0\right\}  $. Then, $\widehat{\psi}%
+^{j}\left(  u\right)  =\Pi\left(  \widetilde{K}_{u},\left[  u_{1}^{j}%
+,u_{2}^{j},...,u_{m}^{j}\right]  \right)  $.
 
 [This gives a formula for $\widehat{\psi}^{j}$ similar to the formula for
 $\widehat{\lambda}^{j}$ given in Theorem 5.3 \textbf{(d)}.]
@@ -5148,7 +5408,8 @@ i\lambda^{i}\left(  x\right)  ,\text{ if }j=1;\\
 \end{array}
 \right.  .
 \]
-Prove that $\psi^{n}\left(  x\right)  =\det B_{n}$.
+Prove that $\psi^{n}\left(  x\right)  =\det B_{n}$, where we define $\psi
+^{0}\left(  x\right)  $ to mean $1$.
 
 [The matrix $B_{n}$ has the following form:%
 \[
@@ -5277,15 +5538,15 @@ difference, but is substantial enough to cause confusion if we neglect it! For
 example, when we say that $\operatorname*{coeff}\nolimits_{i}$ is a
 homomorphism of additive groups, we mean that it maps sums in $\Lambda\left(
 R\right)  $ to sums in $R$; however, when we say that $\operatorname*{Coeff}%
-\nolimits_{i}$ is a homomorphism of abelian groups, we mean that it maps sums
+\nolimits_{i}$ is a homomorphism of additive groups, we mean that it maps sums
 in $R\left[  \left[  T\right]  \right]  $ to sums in $R$. These are two
 completely different assertions, even though $\Lambda\left(  R\right)  $ is a
 subset of $R\left[  \left[  T\right]  \right]  $ and the maps
-$\operatorname*{coeff}\nolimits_{i}$ and $\operatorname*{Coeff}\nolimits_{i} $
+$\operatorname*{coeff}\nolimits_{i}$ and $\operatorname*{Coeff}\nolimits_{i}$
 are pointwise equal on this subset! (Actually, it is very easy to see that the
 assertion that $\operatorname*{coeff}\nolimits_{i}$ is a homomorphism of
 additive groups is completely different from the assertion that
-$\operatorname*{Coeff}\nolimits_{i}$ is a homomorphism of abelian groups. The
+$\operatorname*{Coeff}\nolimits_{i}$ is a homomorphism of additive groups. The
 latter assertion holds for all $i\in\mathbb{N}$, whereas the former assertion
 holds only for $i=1$ (in general).)
 
@@ -5325,7 +5586,8 @@ is a power series with constant term }1\right\}  .
 
 \end{quote}
 
-We notice that this is an exact copy of a definition we made in Section 5,
+We notice that this is an exact copy of a definition we made in Section 5
+(namely, of the definition of $K\left[  \left[  T\right]  \right]  ^{+}$),
 with the only difference that the ring that used to be called $K$ in Section 5
 is called $\mathbf{Z}$ here, and that the variable that used to be $T$ in
 Section 5 is $t$ here.
@@ -5334,12 +5596,8 @@ Now to our universal polynomials:
 
 \begin{quote}
 \textbf{Definition.} Let $\mathbf{Z}$ be a ring. Let $\varphi\in
-1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$\ \ \ \ \footnote{Here and
-in the following, $1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$ is
-defined just as $1+K\left[  \left[  T\right]  \right]  ^{+}$ was defined in
-Section 5, with the only difference that the ring is $\mathbf{Z}$ instead of
-$K$ now, and that the variable is called $t$ instead of $T$ now.} be a power
-series with constant term equal to $1$. Our goal is to define a polynomial
+1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$ be a power series with
+constant term equal to $1$. Our goal is to define a polynomial
 $\operatorname*{Td}_{\varphi,j}\in\mathbf{Z}\left[  \alpha_{1},\alpha
 _{2},...,\alpha_{j}\right]  $ for every $j\in\mathbb{N}$ such that%
 \begin{equation}
@@ -5393,10 +5651,10 @@ U_{i}T\right)  $ is equigraded. Hence, the coefficient of the power series
 $\prod\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)  $ before $T^{j}$ lies in
 the $j$-th graded component of $A$ (by the definition of "equigraded"). In
 other words, the coefficient of the power series $\prod\limits_{i=1}%
-^{m}\varphi\left(  U_{i}T\right)  $ is a homogeneous polynomial of degree $j$
-in the variables $U_{1}$, $U_{2}$, $...$, $U_{m}$. Since this coefficient is
-$\operatorname*{Coeff}\nolimits_{j}\left(  \prod\limits_{i=1}^{m}%
-\varphi\left(  U_{i}T\right)  \right)  $, this yields that
+^{m}\varphi\left(  U_{i}T\right)  $ before $T^{j}$ is a homogeneous polynomial
+of degree $j$ in the variables $U_{1}$, $U_{2}$, $...$, $U_{m}$. Since this
+coefficient is $\operatorname*{Coeff}\nolimits_{j}\left(  \prod\limits_{i=1}%
+^{m}\varphi\left(  U_{i}T\right)  \right)  $, this yields that
 $\operatorname*{Coeff}\nolimits_{j}\left(  \prod\limits_{i=1}^{m}%
 \varphi\left(  U_{i}T\right)  \right)  $ is a homogeneous polynomial of degree
 $j$ in the variables $U_{1}$, $U_{2}$, $...$, $U_{m}$. Hence,
@@ -5426,7 +5684,7 @@ We have learnt that%
 \[
 \operatorname*{Coeff}\nolimits_{j}\left(  \prod\limits_{i=1}^{m}\varphi\left(
 U_{i}T\right)  \right)  =\operatorname*{Todd}\nolimits_{\left(  \varphi
-,j\right)  ,j,\left[  m\right]  }\left(  X_{1},X_{2},...,X_{j}\right)  ,
+,j\right)  ,j,\left[  m\right]  }\left(  X_{1},X_{2},...,X_{j}\right)
 \]
 in the polynomial ring $\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ for
 every $m\in\mathbb{N}$. Now, define a polynomial $\operatorname*{Td}%
@@ -5485,14 +5743,14 @@ $\operatorname*{proj}\nolimits_{m,n}\left[  \left[  T\right]  \right]
 :\left(  \mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[
 \left[  T\right]  \right]  \rightarrow\left(  \mathbf{Z}\left[  U_{1}%
 ,U_{2},...,U_{n}\right]  \right)  \left[  \left[  T\right]  \right]  $ which
-maps every power series $\sum\limits_{i\in\mathbb{N}}a_{i}T^{i}$ (with
-$a_{i}\in\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ for every
-$i\in\mathbb{N}$) to $\sum\limits_{i\in\mathbb{N}}\operatorname*{proj}%
-\nolimits_{m,n}\left(  a_{i}\right)  T^{i}$. For every $i\in\left\{
+maps every power series $\sum\limits_{k\in\mathbb{N}}a_{k}T^{k}$ (with
+$a_{k}\in\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ for every
+$k\in\mathbb{N}$) to $\sum\limits_{k\in\mathbb{N}}\operatorname*{proj}%
+\nolimits_{m,n}\left(  a_{k}\right)  T^{k}$. For every $i\in\left\{
 1,2,...,m\right\}  $, this homomorphism $\operatorname*{proj}\nolimits_{m,n}%
-\left[  \left[  T\right]  \right]  $ maps satisfies $\left(
-\operatorname*{proj}\nolimits_{m,n}\left[  \left[  T\right]  \right]  \right)
-\left(  \varphi\left(  U_{i}T\right)  \right)  =\left\{
+\left[  \left[  T\right]  \right]  $ satisfies $\left(  \operatorname*{proj}%
+\nolimits_{m,n}\left[  \left[  T\right]  \right]  \right)  \left(
+\varphi\left(  U_{i}T\right)  \right)  =\left\{
 \begin{array}
 [c]{c}%
 \varphi\left(  U_{i}T\right)  ,\ \text{if }i\leq n;\\
@@ -5614,10 +5872,11 @@ But the diagram%
 }
 \]
 is commutative (this is clear from the definitions of $\operatorname*{Coeff}%
-\nolimits_{j}$ and $\operatorname*{proj}\nolimits_{m,n}$), so that
-$\operatorname*{proj}\nolimits_{m,n}\circ\operatorname*{Coeff}\nolimits_{j}%
-=\operatorname*{Coeff}\nolimits_{j}\circ\left(  \operatorname*{proj}%
-\nolimits_{m,n}\left[  \left[  T\right]  \right]  \right)  $ and thus%
+\nolimits_{j}$ and $\operatorname*{proj}\nolimits_{m,n}\left[  \left[
+T\right]  \right]  $), so that $\operatorname*{proj}\nolimits_{m,n}%
+\circ\operatorname*{Coeff}\nolimits_{j}=\operatorname*{Coeff}\nolimits_{j}%
+\circ\left(  \operatorname*{proj}\nolimits_{m,n}\left[  \left[  T\right]
+\right]  \right)  $ and thus%
 \begin{align*}
 \left(  \operatorname*{proj}\nolimits_{m,n}\circ\operatorname*{Coeff}%
 \nolimits_{j}\right)  \left(  \prod\limits_{i=1}^{m}\varphi\left(
@@ -5645,8 +5904,8 @@ U_{i}T\right)  \right) \\
 \underbrace{\operatorname*{Coeff}\nolimits_{j}\left(  \prod\limits_{i=1}%
 ^{m}\varphi\left(  U_{i}T\right)  \right)  }_{\substack{=\operatorname*{Todd}%
 \nolimits_{\left(  \varphi,j\right)  ,j,\left[  m\right]  }\left(  X_{1}%
-,X_{2},...,X_{j}\right)  \\\text{(by (\ref{10.1.pf.1}))}}}\right) \\
-&  =\operatorname*{proj}\nolimits_{m,n}\left(  \operatorname*{Todd}%
+,X_{2},...,X_{j}\right)  \\\text{(by (\ref{10.1.pf.1}))}}}\right)
+=\operatorname*{proj}\nolimits_{m,n}\left(  \operatorname*{Todd}%
 \nolimits_{\left(  \varphi,j\right)  ,j,\left[  m\right]  }\left(  X_{1}%
 ,X_{2},...,X_{j}\right)  \right) \\
 &  =\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)  ,j,\left[
@@ -5736,7 +5995,7 @@ $n$) yields that $\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)
 }=\operatorname*{Td}\nolimits_{\varphi,j}$, this rewrites as
 $\operatorname*{Td}\nolimits_{\varphi,j}\left(  X_{1},X_{2},...,X_{j}\right)
 =\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)  ,j,\left[  m\right]
-}\left(  X_{1},X_{2},...,X_{j}\right)  $.
+}\left(  X_{1},X_{2},...,X_{j}\right)  $. This proves the 2nd Step.
 
 \textit{3rd Step:} For every $m\in\mathbb{N}$, the equation (\ref{Td1}) is
 satisfied in the ring $\left(  \mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]
@@ -5802,10 +6061,10 @@ I am not even sure whether there exists standard terminology for Todd
 homomorphisms - there does not seem to be much literature about them.}
 
 As complicated as this definition was, we might wonder whether there is a more
-explicit approach to $\varphi$-Todd homomorphisms. It turns that there is, if
-$\varphi$ is a polynomial factoring into linear polynomials of the form $1+ut$
-with $u\in K$. Let us begin with computing the $\varphi$-Todd homomorphism for
-$\varphi$ itself being of this form:
+explicit approach to $\varphi$-Todd homomorphisms. It turns out that there is,
+if $\varphi$ is a polynomial factoring into linear polynomials of the form
+$1+ut$ with $u\in\mathbf{Z}$. Let us begin with computing the $\varphi$-Todd
+homomorphism for $\varphi$ itself being of this form:
 
 \begin{quote}
 \textbf{Proposition 10.3.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
@@ -5838,9 +6097,9 @@ For every $i\in\mathbb{N}$, let $X_{i}=\sum\limits_{\substack{S\subseteq
 S}U_{k}$ be the so-called $i$\textit{-th elementary symmetric polynomial} in
 the variables $U_{1},$ $U_{2},$ $...,$ $U_{m}$.
 
-We know from Proposition 10.1 that (\ref{Td1}) holds in the ring $\left(
+We know from Theorem 10.1 that (\ref{Td1}) holds in the ring $\left(
 \mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[  \left[
-T\right]  \right]  $whenever $\varphi\in1+\mathbf{Z}\left[  \left[  t\right]
+T\right]  \right]  $ whenever $\varphi\in1+\mathbf{Z}\left[  \left[  t\right]
 \right]  ^{+}$ is a power series with constant term equal to $1$. Applying
 this to $\varphi=1+ut$, we obtain%
 \[
@@ -5979,7 +6238,7 @@ $X_{i}=\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
 ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{k}$ as in the
 definition of $\operatorname*{Td}\nolimits_{\varphi,j}$.
 
-We know from Proposition 10.1 that (\ref{Td1}) holds in the ring $\left(
+We know from Theorem 10.1 that (\ref{Td1}) holds in the ring $\left(
 \mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[  \left[
 T\right]  \right]  $. In other words,%
 \[
@@ -6147,11 +6406,9 @@ Proposition 10.6 \textbf{(a)},}\\\text{applied to }\varphi=1+ut\text{)}}%
 &  =1T^{0}+\sum_{\substack{j\in\mathbb{N};\\j>0}}\underbrace{\left(
 u^{j}\alpha_{j}\right)  \left(  \lambda^{1}\left(  x\right)  ,\lambda
 ^{2}\left(  x\right)  ,...,\lambda^{j}\left(  x\right)  \right)  }%
-_{=u^{j}\lambda^{j}\left(  x\right)  }T^{j}=1T^{0}+\sum_{\substack{j\in
-\mathbb{N};\\j>0}}\underbrace{u^{j}\lambda^{j}\left(  x\right)  T^{j}%
-}_{=\lambda^{j}\left(  x\right)  u^{j}T^{j}}\\
-&  =1T^{0}+\sum_{\substack{j\in\mathbb{N};\\j>0}}\lambda^{j}\left(  x\right)
-u^{j}T^{j}.
+_{=u^{j}\lambda^{j}\left(  x\right)  =\lambda^{j}\left(  x\right)  u^{j}}%
+T^{j}=1T^{0}+\sum_{\substack{j\in\mathbb{N};\\j>0}}\lambda^{j}\left(
+x\right)  u^{j}T^{j}.
 \end{align*}
 Compared with%
 \begin{align*}
@@ -6644,8 +6901,8 @@ Compared with%
 &  \mathfrak{Todd}_{1+ut}\left(  p\right) \\
 &  =\sum_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{1+ut,j}\left(
 \operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
-p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  T^{j}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{ToddFrak}), applied to }%
+p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  T^{j}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{ToddFrak}), applied to }%
 \varphi=1+ut\right) \\
 &  =\underbrace{\operatorname*{Td}\nolimits_{1+ut,0}\left(
 \operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
@@ -6659,14 +6916,12 @@ _{\substack{=\operatorname*{Td}\nolimits_{1+ut,0}=1\\\text{(by Proposition
 &  =1T^{0}+\sum_{\substack{j\in\mathbb{N};\\j>0}}\underbrace{\left(
 u^{j}\alpha_{j}\right)  \left(  \operatorname*{Coeff}\nolimits_{1}%
 p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}\nolimits_{j}%
-p\right)  }_{=u^{j}\left(  \operatorname*{Coeff}\nolimits_{j}p\right)  ^{j}%
-}T^{j}=1T^{0}+\sum_{\substack{j\in\mathbb{N};\\j>0}}u^{j}\left(
+p\right)  }_{=u^{j}\left(  \operatorname*{Coeff}\nolimits_{j}p\right)  }%
+T^{j}=1T^{0}+\sum_{\substack{j\in\mathbb{N};\\j>0}}u^{j}\left(
 \operatorname*{Coeff}\nolimits_{j}p\right)  T^{j},
 \end{align*}
 this yields that $\operatorname*{ev}\nolimits_{uT}p=\mathfrak{Todd}%
-_{1+ut}\left(  p\right)  $. Since this holds for every $p\in K\left[  \left[
-T\right]  \right]  $, we thus have $\operatorname*{ev}\nolimits_{uT}%
-=\mathfrak{Todd}_{1+ut}$. This proves Proposition 10.12.
+_{1+ut}\left(  p\right)  $. This proves Proposition 10.12.
 
 Next, the generalization of Proposition 10.5:
 
@@ -6687,12 +6942,13 @@ Then, $\operatorname*{Coeff}\nolimits_{1}\left(  \mathfrak{Todd}_{\varphi
 
 \textit{Proof of Proposition 10.13.} \textbf{(a)} We have%
 \begin{align*}
-\operatorname*{Coeff}\nolimits_{0}\left(  \mathfrak{Todd}_{\varphi}\left(
-p\right)  \right)   &  =\operatorname*{Coeff}\nolimits_{0}\left(  \sum
-_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
-\operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
-p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  T^{j}\right)
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{ToddFrak})}\right) \\
+&  \operatorname*{Coeff}\nolimits_{0}\left(  \mathfrak{Todd}_{\varphi}\left(
+p\right)  \right) \\
+&  =\operatorname*{Coeff}\nolimits_{0}\left(  \sum_{j\in\mathbb{N}%
+}\operatorname*{Td}\nolimits_{\varphi,j}\left(  \operatorname*{Coeff}%
+\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}%
+\nolimits_{j}p\right)  T^{j}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{ToddFrak})}\right) \\
 &  =\operatorname*{Td}\nolimits_{\varphi,0}\left(  \operatorname*{Coeff}%
 \nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}%
 \nolimits_{0}p\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of
@@ -6704,12 +6960,13 @@ p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  T^{j}\right)
 
 \textbf{(b)} We have%
 \begin{align*}
-\operatorname*{Coeff}\nolimits_{1}\left(  \mathfrak{Todd}_{\varphi}\left(
-p\right)  \right)   &  =\operatorname*{Coeff}\nolimits_{1}\left(  \sum
-_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
-\operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
-p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  T^{j}\right)
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{ToddDef})}\right) \\
+&  \operatorname*{Coeff}\nolimits_{1}\left(  \mathfrak{Todd}_{\varphi}\left(
+p\right)  \right) \\
+&  =\operatorname*{Coeff}\nolimits_{1}\left(  \sum_{j\in\mathbb{N}%
+}\operatorname*{Td}\nolimits_{\varphi,j}\left(  \operatorname*{Coeff}%
+\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}%
+\nolimits_{j}p\right)  T^{j}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{ToddDef})}\right) \\
 &  =\operatorname*{Td}\nolimits_{\varphi,1}\left(  \operatorname*{Coeff}%
 \nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}%
 \nolimits_{1}p\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of
@@ -7054,9 +7311,9 @@ $\operatorname*{Coeff}\nolimits_{m}\left(  \prod\limits_{i=1}^{m}%
 \varphi\left(  U_{i}T\right)  \right)  =\operatorname*{Coeff}\nolimits_{m}%
 \left(  \prod\limits_{i=1}^{m}\psi\left(  U_{i}T\right)  \right)  $.
 
-According to Proposition 10.1, the equation (\ref{Td1}) holds in the ring
-$\left(  K\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[  \left[
-T\right]  \right]  $. Thus,%
+According to Theorem 10.1, the equation (\ref{Td1}) holds in the ring $\left(
+K\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[  \left[  T\right]
+\right]  $. Thus,%
 \begin{align*}
 \operatorname*{Coeff}\nolimits_{m}\left(  \prod\limits_{i=1}^{m}\varphi\left(
 U_{i}T\right)  \right)   &  =\operatorname*{Coeff}\nolimits_{m}\left(
@@ -7070,15 +7327,15 @@ The same argument, but applied to $\psi$ instead of $\varphi$, yields%
 \[
 \operatorname*{Coeff}\nolimits_{m}\left(  \prod\limits_{i=1}^{m}\psi\left(
 U_{i}T\right)  \right)  =\operatorname*{Td}\nolimits_{\psi,m}\left(
-X_{1},X_{2},...,X_{k}\right)  .
+X_{1},X_{2},...,X_{m}\right)  .
 \]
 Thus,%
 \[
-\operatorname*{Td}\nolimits_{\varphi,m}\left(  X_{1},X_{2},...,X_{k}\right)
+\operatorname*{Td}\nolimits_{\varphi,m}\left(  X_{1},X_{2},...,X_{m}\right)
 =\operatorname*{Coeff}\nolimits_{m}\left(  \prod\limits_{i=1}^{m}%
 \varphi\left(  U_{i}T\right)  \right)  =\operatorname*{Coeff}\nolimits_{m}%
 \left(  \prod\limits_{i=1}^{m}\psi\left(  U_{i}T\right)  \right)
-=\operatorname*{Td}\nolimits_{\psi,m}\left(  X_{1},X_{2},...,X_{k}\right)  .
+=\operatorname*{Td}\nolimits_{\psi,m}\left(  X_{1},X_{2},...,X_{m}\right)  .
 \]
 
 
@@ -7092,14 +7349,13 @@ K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $ be the polynomial
 defined by $\mathfrak{Q}_{2}=\operatorname*{Td}\nolimits_{\psi,m}$. We are now
 going to prove that $\mathfrak{Q}_{1}=\mathfrak{Q}_{2}$.
 
-Applying Theorem 4.1 \textbf{(a)} to $K$ and $\operatorname*{Td}%
-\nolimits_{\varphi,m}\left(  X_{1},X_{2},...,X_{m}\right)  $ instead of $K$
-and $P$, we conclude that there exists one and only one polynomial $Q\in
-K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $ such that
-$\operatorname*{Td}\nolimits_{\varphi,m}\left(  X_{1},X_{2},...,X_{m}\right)
-=Q\left(  X_{1},X_{2},...,X_{m}\right)  $. In particular, there exists
-\textit{at most one} such polynomial $Q\in K\left[  \alpha_{1},\alpha
-_{2},...,\alpha_{m}\right]  $. Hence,
+Applying Theorem 4.1 \textbf{(a)} to $\operatorname*{Td}\nolimits_{\varphi
+,m}\left(  X_{1},X_{2},...,X_{m}\right)  $ instead of $P$, we conclude that
+there exists one and only one polynomial $Q\in K\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{m}\right]  $ such that $\operatorname*{Td}\nolimits_{\varphi
+,m}\left(  X_{1},X_{2},...,X_{m}\right)  =Q\left(  X_{1},X_{2},...,X_{m}%
+\right)  $. In particular, there exists \textit{at most one} such polynomial
+$Q\in K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $. Hence,
 \begin{equation}
 \left(
 \begin{array}
@@ -7130,7 +7386,7 @@ and%
 \mathfrak{Q}_{2}\left(  X_{1},X_{2},...,X_{m}\right)   &  =\operatorname*{Td}%
 \nolimits_{\psi,m}\left(  X_{1},X_{2},...,X_{m}\right)
 \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\mathfrak{Q}_{2}=\operatorname*{Td}%
-\nolimits_{\psi,k}\right) \\
+\nolimits_{\psi,m}\right) \\
 &  =\operatorname*{Td}\nolimits_{\varphi,m}\left(  X_{1},X_{2},...,X_{m}%
 \right)  ,
 \end{align*}
@@ -7865,8 +8121,8 @@ _{\varphi}\left(  \lambda_{T}\left(  y\right)  \right)  $. Hence,%
 &  \underbrace{\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)
 }_{=\mathfrak{Todd}_{\varphi}\left(  \lambda_{T}\left(  x\right)  \right)
 }\cdot\underbrace{\operatorname*{td}\nolimits_{\varphi,T}\left(  y\right)
-}_{=\mathfrak{Todd}_{\varphi}\left(  \lambda_{T}\left(  y\right)  \right)  }\\
-&  =\mathfrak{Todd}_{\varphi}\left(  \lambda_{T}\left(  x\right)  \right)
+}_{=\mathfrak{Todd}_{\varphi}\left(  \lambda_{T}\left(  y\right)  \right)
+}=\mathfrak{Todd}_{\varphi}\left(  \lambda_{T}\left(  x\right)  \right)
 \cdot\mathfrak{Todd}_{\varphi}\left(  \lambda_{T}\left(  y\right)  \right)
 =\mathfrak{Todd}_{\varphi}\left(  \lambda_{T}\left(  x\right)  \cdot
 \lambda_{T}\left(  y\right)  \right) \\
@@ -7921,7 +8177,7 @@ Theorem 10.10 (applied to $x=0$ and $y=0$) yields $\operatorname*{td}%
 \nolimits_{\varphi,T}\left(  0\right)  \cdot\operatorname*{td}%
 \nolimits_{\varphi,T}\left(  0\right)  =\operatorname*{td}\nolimits_{\varphi
 ,T}\left(  0+0\right)  =\operatorname*{td}\nolimits_{\varphi,T}\left(
-0\right)  $ Since $\operatorname*{td}\nolimits_{\varphi,T}\left(  0\right)  $
+0\right)  $. Since $\operatorname*{td}\nolimits_{\varphi,T}\left(  0\right)  $
 is an invertible element of $K\left[  \left[  T\right]  \right]  $ (because
 $\operatorname*{td}\nolimits_{\varphi,T}\left(  0\right)  $ is a power series
 with constant term $1$\ \ \ \ \footnote{since $\operatorname*{td}%
@@ -8029,7 +8285,7 @@ X_{2},X_{3},...,X_{j}\right)  =\left(  0,0,...,0\right)  $. Combining this
 with $X_{1}=U_{1}$, we obtain $\left(  X_{1},X_{2},...,X_{j}\right)  =\left(
 U_{1},0,0,...,0\right)  $.
 
-We know from Proposition 10.1 that (\ref{Td1}) holds in the ring $\left(
+We know from Theorem 10.1 that (\ref{Td1}) holds in the ring $\left(
 \mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[  \left[
 T\right]  \right]  $. In other words,%
 \[
@@ -8551,11 +8807,11 @@ product $K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$ is both a $K$-algebra and a
 $\mathbf{Z}^{\prime}$-algebra (since the tensor product of two commutative
 $\mathbf{Z}$-algebras is an algebra over each of its tensorands). Since it is
 a $\mathbf{Z}^{\prime}$-algebra, we can apply the polynomial
-$\operatorname*{Td}\nolimits_{\varphi,j}\in\mathbf{Z}\left[  \alpha_{1}%
-,\alpha_{2},...,\alpha_{j}\right]  $ to the elements $\lambda^{1}\left(
-x\right)  \otimes1$, $\lambda^{2}\left(  x\right)  \otimes1$, $...$,
-$\lambda^{j}\left(  x\right)  \otimes1$ of $K\otimes_{\mathbf{Z}}%
-\mathbf{Z}^{\prime}$; the result of this application is what we denote by
+$\operatorname*{Td}\nolimits_{\varphi,j}\in\mathbf{Z}^{\prime}\left[
+\alpha_{1},\alpha_{2},...,\alpha_{j}\right]  $ to the elements $\lambda
+^{1}\left(  x\right)  \otimes1$, $\lambda^{2}\left(  x\right)  \otimes1$,
+$...$, $\lambda^{j}\left(  x\right)  \otimes1$ of $K\otimes_{\mathbf{Z}%
+}\mathbf{Z}^{\prime}$; the result of this application is what we denote by
 $\operatorname*{Td}\nolimits_{\varphi,j}\left(  \lambda^{1}\left(  x\right)
 \otimes1,\lambda^{2}\left(  x\right)  \otimes1,...,\lambda^{j}\left(
 x\right)  \otimes1\right)  $.
@@ -9645,7 +9901,7 @@ finite-free extension ring $K_{P}$ of the ring $K\left[  T\right]
 extension ring $K_{P}$ such that $\dfrac{P\left(  S\right)  }{S-\overline{T}%
 }=\prod\limits_{i=2}^{n}\left(  T-p_{i}\right)  $ in $K_{P}\left[  S\right]
 $. Thus, $P\left(  S\right)  =\left(  S-\overline{T}\right)  \prod
-\limits_{i=2}^{n}\left(  T-p_{i}\right)  $ in $K_{p}\left[  S\right]  $. If we
+\limits_{i=2}^{n}\left(  T-p_{i}\right)  $ in $K_{P}\left[  S\right]  $. If we
 denote $\overline{T}$ by $p_{1},$ this takes the form $P\left(  S\right)
 =\prod\limits_{i=1}^{n}\left(  T-p_{i}\right)  ,$ which shows that we have
 just completed the induction step.
@@ -9781,69 +10037,30 @@ Let $p=\overline{T}$. Then, $P\left(  p\right)  =P\left(  \overline{T}\right)
 =\overline{P\left(  T\right)  }=\overline{P}=0$ (since $P\equiv
 0\operatorname{mod}\left(  P\right)  $). This proves Lemma 5.1.S.1.
 
-Now, let us solve Exercise 5.1:
+Another lemma:
 
-We will prove the assertion of Exercise 5.1 by induction over $n$.
+\begin{quote}
+\textbf{Lemma 5.1.S.2.} Let $\mathbf{Z}$ be a ring and $P\in\mathbf{Z}\left[
+T\right]  $ be a polynomial. Let $p$ be an element of $\mathbf{Z}$ such that
+$P\left(  p\right)  =0$.
 
-\textit{Induction base:} For $n=0$, the assertion of Exercise 5.1 is trivially
-true (take $K_{P}=K$). This completes the induction base.
+\textbf{(a)} Then, there exists a polynomial $Q\in\mathbf{Z}\left[  T\right]
+$ of degree $\leq\deg P-1$ such that $P=Q\cdot\left(  T-p\right)  $.
 
-\textit{Induction step:} Let $N\in\mathbb{N}$ be arbitrary. Assume that the
-assertion of Exercise 5.1 is true for $n=N-1$. Let us now prove the assertion
-of Exercise 5.1 for $n=N$.
+\textbf{(b)} If the polynomial $P$ is monic, then this polynomial $Q$ is a
+monic polynomial of degree $N-1$, where $N=\deg P$.
+\end{quote}
 
-First we recall that we assumed that the assertion of Exercise 5.1 is true for
-$n=N-1$. Hence,%
+\textit{Proof of Lemma 5.1.S.2.} \textbf{(a)} Lemma 5.1.S.2 \textbf{(a)} is a
+known fact from basic algebra. We are not going to prove it.
 
-\begin{equation}
-\left(
-\begin{array}
-[c]{c}%
-\text{If }K^{\prime}\text{ is a ring, and if }Q\in K^{\prime}\left[  T\right]
-\text{ is a monic polynomial such that}\\
-\deg Q=N-1\text{, then there exists a finite-free extension ring }%
-K_{Q}^{\prime}\text{ of}\\
-\text{the ring }K\text{ and }N-1\text{ elements }p_{1}\text{, }p_{2}\text{,
-}...\text{, }p_{N-1}\text{ of this extension}\\
-\text{ring }K_{Q}^{\prime}\text{ such that }Q=\prod\limits_{i=1}^{N-1}\left(
-T-p_{i}\right)  \text{ in }K_{Q}^{\prime}\left[  T\right]
-\end{array}
-\right)  \label{5.1.sol.1}%
-\end{equation}
-(this follows from Exercise 5.1, applied to $K^{\prime}$, $Q$ and $N-1$
-instead of $K$, $Q$ and $n$\ \ \ \ \footnote{In fact, we are allowed to apply
-Exercise 5.1 to $K^{\prime}$, $Q$ and $N-1$ instead of $K$, $Q$ and $n$,
-because we assumed that the assertion of Exercise 5.1 is true for $n=N-1$.}).
+\textbf{(b)} Assume that the polynomial $P$ is monic. Consider the polynomial
+$Q$ from Lemma 5.1.S.2 \textbf{(a)}.
 
-Let $K$ be a ring, and let $P\in K\left[  T\right]  $ be a monic polynomial
-such that $\deg P=N$. According to Lemma 5.1.S.1, there exists a finite-free
-extension ring $K^{\prime}$ of the ring $K$ and an element $p\in K^{\prime}$
-such that $P\left(  p\right)  =0$ in $K^{\prime}$. Consider these $K^{\prime}$
-and $p$.
-
-We recall a known fact from basic algebra: If $\mathbf{Z}$ is a ring and
-$\mathfrak{P}\in\mathbf{Z}\left[  T\right]  $ is a polynomial, and if
-$\mathfrak{p}$ is an element of $\mathbf{Z}$ such that $\mathfrak{P}\left(
-\mathfrak{p}\right)  =0$, then there exists a polynomial $\mathfrak{Q}%
-\in\mathbf{Z}\left[  T\right]  $ of degree $\leq\deg\mathfrak{P}-1$ such that
-$\mathfrak{P}=\mathfrak{Q}\cdot\left(  T-\mathfrak{p}\right)  $.
-
-Applying this fact to $\mathbf{Z}=K^{\prime}$, $\mathfrak{P}=P$ and
-$\mathfrak{p}=p$, we obtain: There exists a polynomial $Q\in K^{\prime}\left[
-T\right]  $ of degree $\leq\deg P-1$ such that $P=Q\cdot\left(  T-p\right)  $
-(since $P\left(  p\right)  =0$)\ \ \ \ \footnote{Note that $K^{\prime}\left[
-T\right]  $ denotes the polynomial ring in one indeterminate $T$ over
-$K^{\prime}$. This $T$ here is \textit{not} the $T$ that was used to construct
-$K^{\prime}$ in the proof of Lemma 5.1.S.1. In order to avoid confusing these
-two $T$'s, you are advised to forget the proof of Lemma 5.1.S.1 (you won't
-need it any more).}. Consider this $Q$.
-
-It is easy to see that $Q$ is a monic polynomial of degree $N-1$%
-.\ \ \ \ \footnote{\textit{Proof.} Since $Q$ has degree $\leq\deg P-1$, we
-have $\deg Q\leq\underbrace{\deg P}_{=N}-1=N-1$. We can thus write the
-polynomial $Q$ in the form $Q=\sum\limits_{i=0}^{N-1}q_{i}T^{i}$ for some
-$\left(  q_{0},q_{1},...,q_{N-1}\right)  \in K^{N}$. Writing it this way, we
-have%
+Let $N=\deg P$. Since $Q$ has degree $\leq\deg P-1$, we have $\deg
+Q\leq\underbrace{\deg P}_{=N}-1=N-1$. We can thus write the polynomial $Q$ in
+the form $Q=\sum\limits_{i=0}^{N-1}q_{i}T^{i}$ for some $\left(  q_{0}%
+,q_{1},...,q_{N-1}\right)  \in\mathbf{Z}^{N}$. Writing it this way, we have%
 \begin{align*}
 Q\cdot\left(  T-p\right)   &  =\sum\limits_{i=0}^{N-1}q_{i}T^{i}\cdot\left(
 T-p\right)  =\sum\limits_{i=0}^{N-1}q_{i}\underbrace{T^{i}T}_{=T^{i+1}}%
@@ -9875,13 +10092,63 @@ polynomial }\sum\limits_{i=0}^{N-1}q_{i}pT^{i}\text{ before }T^{N}\right)
 Since $\left(  \text{the coefficient of the polynomial }P\text{ before }%
 T^{N}\right)  =1$ (because $P$ is a monic polynomial with $\deg P=N$), this
 rewrites as $1=q_{N-1}$. Since $\deg q\leq N-1$, this yields that $q$ is a
-monic polynomial of degree $N-1$.} That is, $Q$ is monic and $\deg Q=N-1$.
-According to (\ref{5.1.sol.1}), there therefore exists a finite-free extension
-ring $K_{Q}^{\prime}$ of the ring $K$ and $N-1$ elements $p_{1}$, $p_{2}$,
-$...$, $p_{N-1}$ of this extension ring $K_{Q}^{\prime}$ such that
-$Q=\prod\limits_{i=1}^{N-1}\left(  T-p_{i}\right)  $ in $K_{Q}^{\prime}\left[
-T\right]  $. Consider this $K_{Q}^{\prime}$ and these $p_{1}$, $p_{2}$, $...$,
-$p_{N-1}$.
+monic polynomial of degree $N-1$. This proves Lemma 5.1.S.2.
+
+Now, let us solve Exercise 5.1:
+
+We will prove the assertion of Exercise 5.1 by induction over $n$.
+
+\textit{Induction base:} For $n=0$, the assertion of Exercise 5.1 is trivially
+true (take $K_{P}=K$). This completes the induction base.
+
+\textit{Induction step:} Let $N\in\mathbb{N}$ be arbitrary. Assume that the
+assertion of Exercise 5.1 is true for $n=N-1$. Let us now prove the assertion
+of Exercise 5.1 for $n=N$.
+
+First we recall that we assumed that the assertion of Exercise 5.1 is true for
+$n=N-1$. Hence,%
+\begin{equation}
+\left(
+\begin{array}
+[c]{c}%
+\text{If }K^{\prime}\text{ is a ring, and if }Q\in K^{\prime}\left[  T\right]
+\text{ is a monic polynomial such that}\\
+\deg Q=N-1\text{, then there exists a finite-free extension ring }%
+K_{Q}^{\prime}\text{ of}\\
+\text{the ring }K^{\prime}\text{ and }N-1\text{ elements }p_{1}\text{, }%
+p_{2}\text{, }...\text{, }p_{N-1}\text{ of this extension}\\
+\text{ring }K_{Q}^{\prime}\text{ such that }Q=\prod\limits_{i=1}^{N-1}\left(
+T-p_{i}\right)  \text{ in }K_{Q}^{\prime}\left[  T\right]
+\end{array}
+\right)  \label{5.1.sol.1}%
+\end{equation}
+(this follows from Exercise 5.1, applied to $K^{\prime}$, $Q$ and $N-1$
+instead of $K$, $Q$ and $n$\ \ \ \ \footnote{In fact, we are allowed to apply
+Exercise 5.1 to $K^{\prime}$, $Q$ and $N-1$ instead of $K$, $Q$ and $n$,
+because we assumed that the assertion of Exercise 5.1 is true for $n=N-1$.}).
+
+Let $K$ be a ring, and let $P\in K\left[  T\right]  $ be a monic polynomial
+such that $\deg P=N$. According to Lemma 5.1.S.1, there exists a finite-free
+extension ring $K^{\prime}$ of the ring $K$ and an element $p\in K^{\prime}$
+such that $P\left(  p\right)  =0$ in $K^{\prime}$. Consider these $K^{\prime}$
+and $p$.
+
+By Lemma 5.1.S.2 \textbf{(a)} (applied to $\mathbf{Z}=K^{\prime}$), there
+exists a polynomial $Q\in K^{\prime}\left[  T\right]  $ of degree $\leq\deg
+P-1$ such that $P=Q\cdot\left(  T-p\right)  $ (since $P\left(  p\right)
+=0$)\ \ \ \ \footnote{Note that $K^{\prime}\left[  T\right]  $ denotes the
+polynomial ring in one indeterminate $T$ over $K^{\prime}$. This $T$ here is
+\textit{not} the $T$ that was used to construct $K^{\prime}$ in the proof of
+Lemma 5.1.S.1. In order to avoid confusing these two $T$'s, you are advised to
+forget the proof of Lemma 5.1.S.1 (you won't need it any more).}. Consider
+this $Q$. By Lemma 5.1.S.2 \textbf{(b)} (applied to $\mathbf{Z}=K^{\prime}$),
+this polynomial $Q$ is a monic polynomial of degree $N-1$. That is, $Q$ is
+monic and $\deg Q=N-1$. According to (\ref{5.1.sol.1}), there therefore exists
+a finite-free extension ring $K_{Q}^{\prime}$ of the ring $K^{\prime}$ and
+$N-1$ elements $p_{1}$, $p_{2}$, $...$, $p_{N-1}$ of this extension ring
+$K_{Q}^{\prime}$ such that $Q=\prod\limits_{i=1}^{N-1}\left(  T-p_{i}\right)
+$ in $K_{Q}^{\prime}\left[  T\right]  $. Consider this $K_{Q}^{\prime}$ and
+these $p_{1}$, $p_{2}$, $...$, $p_{N-1}$.
 
 Since $K_{Q}^{\prime}$ is a finite-free $K^{\prime}$-module, and since
 $K^{\prime}$ is a finite-free $K$-module, it is clear that $K_{Q}^{\prime}$ is
@@ -9907,7 +10174,7 @@ ring of $K$. Thus, $K_{Q}^{\prime}$ is a finite-free extension ring of $K$.
 
 Define $K_{P}=K_{Q}^{\prime}$ and $p_{N}=p$. Then, $p_{1}$, $p_{2}$, $...$,
 $p_{N-1}$, $p_{N}$ are $N$ elements of the ring $K_{Q}^{\prime}=K_{P}$. In
-$K_{p}\left[  T\right]  =K_{Q}^{\prime}\left[  T\right]  $, we have%
+$K_{P}\left[  T\right]  =K_{Q}^{\prime}\left[  T\right]  $, we have%
 \[
 P=\underbrace{Q}_{=\prod\limits_{i=1}^{N-1}\left(  T-p_{i}\right)  }%
 \cdot\left(  T-\underbrace{p}_{=p_{N}}\right)  =\prod\limits_{i=1}%
@@ -9925,6 +10192,150 @@ $...,$ $p_{N}$ of this extension ring $K_{P}$ such that $P=\prod
 \limits_{i=1}^{N}\left(  T-p_{i}\right)  $ in $K_{P}\left[  T\right]  $. In
 other words, we have proven the assertion of Exercise 5.1 for $n=N$. Thus, the
 induction step is complete, and Exercise 5.1 is solved.
+
+\textit{Exercise 5.2:} \textit{Hints to solution:} The idea is to evaluate the
+identity $\sum\limits_{i=0}^{n}a_{n-i}T^{i}=\prod\limits_{i=1}^{n}\left(
+p_{i}+T\right)  $ at $T=\dfrac{1}{S}$, where $S$ is a new variable. The only
+nontrivial part of the solution is to make formal sense of this idea (this is
+what Lemma 5.2.S.1 in the solution below is for).
+
+\textit{Detailed solution:} First we need the following lemma:
+
+\begin{quote}
+\textbf{Lemma 5.2.S.1.} Let $L$ be a ring. Consider the polynomial ring
+$L\left[  T\right]  $ as a subring of the polynomial ring $L\left[
+T,S\right]  $. Let $P\in L\left[  T\right]  $ be a polynomial such that
+$TS-1\mid P$ in $L\left[  T,S\right]  $. Then, $P=0$.
+\end{quote}
+
+This is a known and very basic lemma and can be proven, for instance, using
+the fact that the inclusion $L\left[  T\right]  \rightarrow L\left[
+T,S\right]  $ induces an injective map $L\left[  T\right]  \rightarrow
+L\left[  T,S\right]  \diagup\left(  TS-1\right)  $. But let us give a slightly
+different proof of this lemma, in the hope that a clever reader will find a
+better use for the trick it involves:
+
+\textit{Proof of Lemma 5.2.S.1.} Since $TS-1\mid P$ in $L\left[  T,S\right]
+$, there exists a polynomial $Q\in L\left[  T,S\right]  $ such that $P=\left(
+TS-1\right)  \cdot Q$. Consider this $Q$.
+
+Let $m$ be the degree of the polynomial $P\in L\left[  T\right]  $.
+
+By the universal property of the polynomial ring $L\left[  T,S\right]  $,
+there exists a unique $L$-algebra homomorphism $L\left[  T,S\right]
+\rightarrow L\left[  T\right]  $ which maps $T$ and $S$ to $T$ and $T^{m}$,
+respectively. Denote this homomorphism by $\varphi$. Then, $\varphi$ maps $T$
+and $S$ to $T$ and $T^{m}$, respectively, so that $\varphi\left(  T\right)
+=T$ and $\varphi\left(  S\right)  =T^{m}$. Since $\varphi$ is an $L$-algebra
+homomorphism, we have
+\[
+\varphi\left(  \left(  TS-1\right)  \cdot Q\right)  =\left(
+\underbrace{\varphi\left(  T\right)  }_{=T}\underbrace{\varphi\left(
+S\right)  }_{=T^{m}}-1\right)  \cdot\varphi\left(  Q\right)  =\left(
+TT^{m}-1\right)  \cdot\varphi\left(  Q\right)  =\left(  T^{m+1}-1\right)
+\cdot\varphi\left(  Q\right)  .
+\]
+
+
+On the other hand, $\varphi\left(  P\right)  =P$%
+\ \ \ \ \footnote{\textit{Proof.} Since $P\in L\left[  X\right]  $ and $\deg
+P=m$, we can write $P$ in the form $P=\sum\limits_{i=0}^{m}\beta_{i}X^{i}$ for
+some $\left(  \beta_{0},\beta_{1},...,\beta_{m}\right)  \in L^{m+1}$. Thus,%
+\begin{align*}
+\varphi\left(  P\right)   &  =\varphi\left(  \sum\limits_{i=0}^{m}\beta
+_{i}X^{i}\right)  =\sum\limits_{i=0}^{m}\beta_{i}\left(  \underbrace{\varphi
+\left(  X\right)  }_{=X}\right)  ^{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}\varphi\text{ is an }L\text{-algebra homomorphism}\right) \\
+&  =\sum\limits_{i=0}^{m}\beta_{i}X^{i}=P.
+\end{align*}
+}. Now,%
+\[
+P=\varphi\left(  \underbrace{P}_{=\left(  TS-1\right)  \cdot Q}\right)
+=\varphi\left(  \left(  TS-1\right)  \cdot Q\right)  =\left(  T^{m+1}%
+-1\right)  \cdot\varphi\left(  Q\right)  .
+\]
+Hence, the polynomial $P$ is a multiple of $T^{m+1}-1$ in $L\left[  T\right]
+$. Since $T^{m+1}-1$ is a monic polynomial of degree $m+1$, this yields that
+$P$ is a multiple of a monic polynomial of degree $m+1$. But it is known that
+a multiple of a monic polynomial of degree $m+1$ must either have degree $\geq
+m+1$ or be the zero polynomial. Hence, the fact that $P$ is a multiple of a
+monic polynomial of degree $m+1$ yields that $P$ has either degree $\geq m+1$
+or is the zero polynomial. Since we know that $P$ does not have degree $\geq
+m+1$ (because $\deg P=m<m+1$), this tells us that $P$ is the zero polynomial.
+In other words, $P=0$. Lemma 5.2.S.1 is proven.
+
+Now let us solve Exercise 5.2. Consider the polynomial ring $L\left[
+T\right]  $ as a subring of the polynomial ring $L\left[  T,S\right]  $.
+
+We know that $\sum\limits_{i=0}^{n}a_{n-i}T^{i}=\prod\limits_{i=1}^{n}\left(
+p_{i}+T\right)  $. This is a polynomial identity, so we can evaluate it at
+$T=S$ and obtain $\sum\limits_{i=0}^{n}a_{n-i}S^{i}=\prod\limits_{i=1}%
+^{n}\left(  p_{i}+S\right)  $. Thus,%
+\begin{align*}
+T^{n}\sum\limits_{i=0}^{n}a_{n-i}S^{i}  &  =\underbrace{T^{n}}_{=\prod
+\limits_{i=1}^{n}T}\prod\limits_{i=1}^{n}\left(  p_{i}+S\right)
+=\prod\limits_{i=1}^{n}T\prod\limits_{i=1}^{n}\left(  p_{i}+S\right)
+=\prod\limits_{i=1}^{n}\underbrace{\left(  T\left(  p_{i}+S\right)  \right)
+}_{=p_{i}T+TS}\\
+&  =\prod\limits_{i=1}^{n}\left(  p_{i}T+\underbrace{TS}_{\equiv
+1\operatorname{mod}\left(  TS-1\right)  }\right)  \equiv\prod\limits_{i=1}%
+^{n}\left(  p_{i}T+1\right)  =\prod\limits_{i=1}^{n}\left(  1+p_{i}T\right)
+\operatorname{mod}\left(  TS-1\right)  .
+\end{align*}
+Combined with%
+\begin{align*}
+T^{n}\sum\limits_{i=0}^{n}a_{n-i}S^{i}  &  =\sum\limits_{i=0}^{n}%
+a_{n-i}\underbrace{T^{n}}_{=T^{n-i}T^{i}}S^{i}=\sum\limits_{i=0}^{n}%
+a_{n-i}T^{n-i}\underbrace{T^{i}S^{i}}_{=\left(  TS\right)  ^{i}\equiv
+1^{i}\operatorname{mod}\left(  TS-1\right)  }\equiv\sum\limits_{i=0}%
+^{n}a_{n-i}T^{n-i}1^{i}=\sum\limits_{i=0}^{n}a_{n-i}T^{n-i}\\
+&  =\sum\limits_{i=0}^{n}a_{i}T^{i}\operatorname{mod}\left(  TS-1\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{here we renamed }n-i\text{ as }i\right)  ,
+\end{align*}
+this yields $\sum\limits_{i=0}^{n}a_{i}T^{i}\equiv\prod\limits_{i=1}%
+^{n}\left(  1+p_{i}T\right)  \operatorname{mod}\left(  TS-1\right)  $. In
+other words, $TS-1\mid\sum\limits_{i=0}^{n}a_{i}T^{i}-\prod\limits_{i=1}%
+^{n}\left(  1+p_{i}T\right)  $. Thus, Lemma 5.2.S.1 (applied to $P=\sum
+\limits_{i=0}^{n}a_{i}T^{i}-\prod\limits_{i=1}^{n}\left(  1+p_{i}T\right)  $)
+yields that $\sum\limits_{i=0}^{n}a_{i}T^{i}-\prod\limits_{i=1}^{n}\left(
+1+p_{i}T\right)  =0$. In other words, $\sum\limits_{i=0}^{n}a_{i}T^{i}%
+=\prod\limits_{i=1}^{n}\left(  1+p_{i}T\right)  $. This proves Exercise 5.2.
+
+\textit{Exercise 5.3: Hints to solution:} Exercise 5.3 follows from Exercise
+5.1, applied to $\dfrac{P}{T-p}$ instead of $P$.
+
+\textit{Detailed solution:} By Lemma 5.1.S.2 \textbf{(a)} (applied to
+$\mathbf{Z}=K$), there exists a polynomial $Q\in K\left[  T\right]  $ of
+degree $\leq\deg P-1$ such that $P=Q\cdot\left(  T-p\right)  $. Consider this
+$Q$. By Lemma 5.1.S.2 \textbf{(b)} (applied to $\mathbf{Z}=K$), this
+polynomial $Q$ is a monic polynomial of degree $N-1$, where $N=\deg P$. Since
+$N=\deg P=n$, this rewrites as follows: The polynomial $Q$ is a monic
+polynomial of degree $n-1$.
+
+Thus, Exercise 5.1 (applied to $Q$ and $n-1$ instead of $P$ and $n$) yields
+that there exists a finite-free extension ring $K_{Q}$ of the ring $K$ and
+$n-1$ elements $p_{1},$ $p_{2},$ $...,$ $p_{n-1}$ of this extension ring
+$K_{Q}$ such that $Q=\prod\limits_{i=1}^{n-1}\left(  T-p_{i}\right)  $ in
+$K_{Q}\left[  T\right]  $. Consider this ring $K_{Q}$ and these $n-1$ elements
+$p_{1},$ $p_{2},$ $...,$ $p_{n-1}$.
+
+Define a further element $p_{n}$ of $K_{Q}$ by $p_{n}=p$. Then, $p_{1},$
+$p_{2},$ $...,$ $p_{n}$ are $n$ elements of $K_{Q}$ satisfying%
+\[
+P=\underbrace{Q}_{=\prod\limits_{i=1}^{n-1}\left(  T-p_{i}\right)  }%
+\cdot\left(  T-\underbrace{p}_{=p_{n}}\right)  =\prod\limits_{i=1}%
+^{n-1}\left(  T-p_{i}\right)  \cdot\left(  T-p_{n}\right)  =\prod
+\limits_{i=1}^{n}\left(  T-p_{i}\right)
+\]
+in $K_{Q}\left[  T\right]  $.
+
+Let $K_{P}^{\prime}=K_{Q}$. Then, $K_{P}^{\prime}$ is a finite-free extension
+ring of the ring $K$ (since $K_{Q}$ is a finite-free extension ring of the
+ring $K$), and the $n$ elements $p_{1},$ $p_{2},$ $...,$ $p_{n}$ of $K_{Q}$
+satisfy $P=\prod\limits_{i=1}^{n}\left(  T-p_{i}\right)  $ in $K_{P}^{\prime
+}\left[  T\right]  $ and $p=p_{n}$. Thus, Exercise 5.3 is solved.
+
+\textit{Exercise 5.4: Hints to solution:} [...]
 
 \textit{Exercise 6.1: Hints to solution:} We have%
 \[
@@ -10032,10 +10443,10 @@ then makes $\lambda_{T}$ a $\lambda$-ring homomorphism (according to Exercise
 $\operatorname*{coeff}\nolimits_{i}:\Lambda\left(  K\right)  \rightarrow K$ is
 continuous (with respect to the $\left(  T\right)  $-topology on
 $\Lambda\left(  K\right)  $ and \textit{any arbitrary topology} on $K$), and
-the operations $\widehat{+}$ and $\widehat{\cdot}$ are continuous as well (by
-Theorem 5.5 \textbf{(d)}); besides, the subset $1+K\left[  T\right]  ^{+}$ of
-$1+K\left[  \left[  T\right]  \right]  ^{+}=\Lambda\left(  K\right)  $ is
-dense (by Theorem 5.5 \textbf{(a)}). Hence, in order to prove that
+the operation $\widehat{\lambda}^{i}$ is continuous as well (by Theorem 5.5
+\textbf{(d)}); besides, the subset $1+K\left[  T\right]  ^{+}$ of $1+K\left[
+\left[  T\right]  \right]  ^{+}=\Lambda\left(  K\right)  $ is dense (by
+Theorem 5.5 \textbf{(a)}). Hence, in order to prove that
 $\operatorname*{coeff}\nolimits_{i}\left(  u\right)  =\operatorname*{coeff}%
 \nolimits_{1}\left(  \widehat{\lambda}^{i}\left(  u\right)  \right)  $ for
 every $u\in\Lambda\left(  K\right)  ,$ it is enough to verify that
@@ -10388,22 +10799,23 @@ u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
 =\prod_{i=1}^{m}\left(  1+u_{i}T\right)  =\widehat{\sum_{i=1}^{m}}\left(
 1+u_{i}T\right)  .
 \]
-But since $1+u_{i}T$ is a $1$-dimensional element of $\Lambda\left(  K\right)
-$ for every $i\in\left\{  1,2,...,m\right\}  $ (by Theorem 8.3 \textbf{(c)}),
-Theorem 9.4 yields%
+But since $1+u_{i}T$ is a $1$-dimensional element of $\Lambda\left(
+\widetilde{K}_{u}\right)  $ for every $i\in\left\{  1,2,...,m\right\}  $ (by
+Theorem 8.3 \textbf{(c)}), Theorem 9.4 (applied to $1+u_{i}T$ and
+$\Lambda\left(  \widetilde{K}_{u}\right)  $ instead of $u_{i}$ and $K$) yields%
 \[
 \widehat{\psi}^{j}\left(  \widehat{\sum_{i=1}^{m}}\left(  1+u_{i}T\right)
 \right)  =\widehat{\sum_{i=1}^{m}}\left(  1+u_{i}T\right)  ^{\widehat{j}},
 \]
 where $\left(  1+u_{i}T\right)  ^{\widehat{j}}$ means the $j$-th power of
-$1+u_{i}T$ \textit{in the ring }$\Lambda\left(  K\right)  $ (in other words,
-$\left(  1+u_{i}T\right)  ^{\widehat{j}}=\underbrace{\left(  1+u_{i}T\right)
-\widehat{\cdot}\left(  1+u_{i}T\right)  \widehat{\cdot}...\widehat{\cdot
-}\left(  1+u_{i}T\right)  }_{j\text{ times}},$ as opposed to \newline$\left(
-1+u_{i}T\right)  ^{j}=\underbrace{\left(  1+u_{i}T\right)  \cdot\left(
-1+u_{i}T\right)  \cdot...\cdot\left(  1+u_{i}T\right)  }_{j\text{ times}}$
-which is the $j$-th power of $1+u_{i}T$ \textit{in the ring }$K\left[  \left[
-T\right]  \right]  $).
+$1+u_{i}T$ \textit{in the ring }$\Lambda\left(  \widetilde{K}_{u}\right)  $
+(in other words, $\left(  1+u_{i}T\right)  ^{\widehat{j}}=\underbrace{\left(
+1+u_{i}T\right)  \widehat{\cdot}\left(  1+u_{i}T\right)  \widehat{\cdot
+}...\widehat{\cdot}\left(  1+u_{i}T\right)  }_{j\text{ times}},$ as opposed to
+\newline$\left(  1+u_{i}T\right)  ^{j}=\underbrace{\left(  1+u_{i}T\right)
+\cdot\left(  1+u_{i}T\right)  \cdot...\cdot\left(  1+u_{i}T\right)  }_{j\text{
+times}}$ which is the $j$-th power of $1+u_{i}T$ \textit{in the ring
+}$\widetilde{K}_{u}\left[  \left[  T\right]  \right]  $).
 
 Hence,%
 \begin{align*}
@@ -10692,15 +11104,18 @@ where $A_{n}\left[  \dfrac{\sim k}{\sim n}\right]  $ is the matrix obtained
 from $A_{n}$ by removing the $n$-th row and the $k$-th column.
 
 Now, the matrix $A_{n}\left[  \dfrac{\sim k}{\sim n}\right]  $ turns out to be
-a block-triangular matrix, with the left upper block (of size $\left(
-k-1\right)  \times\left(  k-1\right)  $) being equal to $A_{k-1}$ and the
-right lower block (of size $\left(  n-k\right)  \times\left(  n-k\right)  $)
-being a lower triangular matrix with the numbers $k,$ $k+1,$ $...,$ $n-1$ on
-its diagonal. Hence, $\det\left(  A_{n}\left[  \dfrac{\sim k}{\sim n}\right]
-\right)  =\det A_{k-1}\cdot\left(  k\left(  k+1\right)  ...\left(  n-1\right)
-\right)  .$ Since we are proceeding by induction, we can take $\det
-A_{k-1}=\left(  k-1\right)  !\lambda^{k-1}\left(  x\right)  $ for granted
-(since $k-1<n$), and thus obtain%
+a block-triangular matrix\footnote{Here, when I say "block-triangular matrix",
+I always mean a block-triangular matrix whose diagonal blocks are square
+matrices.}, with the left upper block (of size $\left(  k-1\right)
+\times\left(  k-1\right)  $) being equal to $A_{k-1}$ and the right lower
+block (of size $\left(  n-k\right)  \times\left(  n-k\right)  $) being a lower
+triangular matrix with the numbers $k,$ $k+1,$ $...,$ $n-1$ on its diagonal.
+Hence, $\det\left(  A_{n}\left[  \dfrac{\sim k}{\sim n}\right]  \right)  =\det
+A_{k-1}\cdot\left(  k\left(  k+1\right)  ...\left(  n-1\right)  \right)  $
+(since the determinant of any block-triangular matrix is known to equal the
+product of the determinant of its diagonal blocks). Since we are proceeding by
+induction over $n$, we can take $\det A_{k-1}=\left(  k-1\right)
+!\lambda^{k-1}\left(  x\right)  $ for granted (since $k-1<n$), and thus obtain%
 \begin{align*}
 \det\left(  A_{n}\left[  \dfrac{\sim k}{\sim n}\right]  \right)   &  =\det
 A_{k-1}\cdot\left(  k\left(  k+1\right)  ...\left(  n-1\right)  \right)
@@ -10748,16 +11163,23 @@ n\lambda^{n}\left(  x\right)  ,\text{ if }i=0
 \right.  \cdot\psi^{i}\left(  x\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here we substituted }i\text{ for
 }k-1\text{ in the sum}\right) \\
-&  =\left(  -1\right)  ^{n-1}n\lambda^{n}\left(  x\right)  +\sum_{i=1}%
-^{n-1}\left(  -1\right)  ^{n-i-1}\lambda^{n-i}\left(  x\right)  \psi
-^{i}\left(  x\right) \\
+&  =\underbrace{\left(  -1\right)  ^{n-1}}_{=-\left(  -1\right)  ^{n}}%
+n\lambda^{n}\left(  x\right)  \underbrace{\psi^{0}\left(  x\right)
+}_{\substack{\text{we defined this}\\\text{to mean }1}}+\sum_{i=1}%
+^{n-1}\underbrace{\left(  -1\right)  ^{n-i-1}}_{=\left(  -1\right)
+^{n}\left(  -1\right)  ^{i-1}}\lambda^{n-i}\left(  x\right)  \psi^{i}\left(
+x\right) \\
+&  =-\left(  -1\right)  ^{n}n\lambda^{n}\left(  x\right)  +\sum_{i=1}%
+^{n-1}\left(  -1\right)  ^{n}\left(  -1\right)  ^{i-1}\lambda^{n-i}\left(
+x\right)  \psi^{i}\left(  x\right) \\
 &  =\left(  -1\right)  ^{n}\left(  -n\lambda^{n}\left(  x\right)  +\sum
 _{i=1}^{n-1}\left(  -1\right)  ^{i-1}\lambda^{n-i}\left(  x\right)  \psi
 ^{i}\left(  x\right)  \right) \\
-&  =\left(  -1\right)  ^{n}\left(  -\sum_{i=1}^{n}\left(  -1\right)
-^{i-1}\lambda^{n-i}\left(  x\right)  \psi^{i}\left(  x\right)  +\sum
-_{i=1}^{n-1}\left(  -1\right)  ^{i-1}\lambda^{n-i}\left(  x\right)  \psi
-^{i}\left(  x\right)  \right) \\
+&  =\left(  -1\right)  ^{n}\underbrace{\left(  -\sum_{i=1}^{n}\left(
+-1\right)  ^{i-1}\lambda^{n-i}\left(  x\right)  \psi^{i}\left(  x\right)
++\sum_{i=1}^{n-1}\left(  -1\right)  ^{i-1}\lambda^{n-i}\left(  x\right)
+\psi^{i}\left(  x\right)  \right)  }_{=-\left(  -1\right)  ^{n-1}\lambda
+^{n-n}\left(  x\right)  \psi^{n}\left(  x\right)  }\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by part \textbf{(a)}}\right) \\
 &  =\left(  -1\right)  ^{n}\left(  -\left(  -1\right)  ^{n-1}\lambda
 ^{n-n}\left(  x\right)  \psi^{n}\left(  x\right)  \right)
@@ -11131,9 +11553,10 @@ _{k=0}^{1}\operatorname*{Coeff}\nolimits_{k}\varphi\cdot\operatorname*{Coeff}%
 }+\underbrace{\operatorname*{Coeff}\nolimits_{1}\varphi}_{=\sum\limits_{i=1}%
 ^{M}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{i}\right)  }%
 \cdot\underbrace{\operatorname*{Coeff}\nolimits_{0}\psi}_{=1}\\
-&  =1\cdot\Phi_{M+1}+\sum\limits_{i=1}^{M}\operatorname*{Coeff}\nolimits_{1}%
-\left(  \Phi_{i}\right)  \cdot1=\Phi_{M+1}+\sum\limits_{i=1}^{M}%
-\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{i}\right)  =\sum
+&  =1\cdot\operatorname*{Coeff}\nolimits_{1}\Phi_{M+1}+\sum\limits_{i=1}%
+^{M}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{i}\right)  \cdot1\\
+&  =\operatorname*{Coeff}\nolimits_{1}\Phi_{M+1}+\sum\limits_{i=1}%
+^{M}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{i}\right)  =\sum
 \limits_{i=1}^{M+1}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{i}\right)
 .
 \end{align*}
@@ -11263,12 +11686,13 @@ instead prove it directly:
 
 \textbf{(a)} We have%
 \begin{align*}
-\operatorname*{Coeff}\nolimits_{0}\left(  \operatorname*{td}\nolimits_{\varphi
-,T,\mathbf{Z}^{\prime}}\left(  x\right)  \right)   &  =\operatorname*{Coeff}%
-\nolimits_{0}\left(  \sum_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi
-,j}\left(  \lambda^{1}\left(  x\right)  \otimes1,\lambda^{2}\left(  x\right)
-\otimes1,...,\lambda^{j}\left(  x\right)  \otimes1\right)  T^{j}\right)
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{ToddDefZ'})}\right) \\
+&  \operatorname*{Coeff}\nolimits_{0}\left(  \operatorname*{td}%
+\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)  \right) \\
+&  =\operatorname*{Coeff}\nolimits_{0}\left(  \sum_{j\in\mathbb{N}%
+}\operatorname*{Td}\nolimits_{\varphi,j}\left(  \lambda^{1}\left(  x\right)
+\otimes1,\lambda^{2}\left(  x\right)  \otimes1,...,\lambda^{j}\left(
+x\right)  \otimes1\right)  T^{j}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{ToddDefZ'})}\right) \\
 &  =\operatorname*{Td}\nolimits_{\varphi,0}\left(  \lambda^{1}\left(
 x\right)  \otimes1,\lambda^{2}\left(  x\right)  \otimes1,...,\lambda
 ^{j}\left(  x\right)  \otimes1\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
@@ -11281,12 +11705,13 @@ instead of }\mathbf{Z}\right)  .
 
 \textbf{(b)} We have%
 \begin{align*}
-\operatorname*{Coeff}\nolimits_{1}\left(  \operatorname*{td}\nolimits_{\varphi
-,T}\left(  x\right)  \right)   &  =\operatorname*{Coeff}\nolimits_{1}\left(
-\sum_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
-\lambda^{1}\left(  x\right)  \otimes1,\lambda^{2}\left(  x\right)
-\otimes1,...,\lambda^{j}\left(  x\right)  \otimes1\right)  T^{j}\right)
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{ToddDef})}\right) \\
+&  \operatorname*{Coeff}\nolimits_{1}\left(  \operatorname*{td}%
+\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)  \right) \\
+&  =\operatorname*{Coeff}\nolimits_{1}\left(  \sum_{j\in\mathbb{N}%
+}\operatorname*{Td}\nolimits_{\varphi,j}\left(  \lambda^{1}\left(  x\right)
+\otimes1,\lambda^{2}\left(  x\right)  \otimes1,...,\lambda^{j}\left(
+x\right)  \otimes1\right)  T^{j}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{ToddDefZ'})}\right) \\
 &  =\operatorname*{Td}\nolimits_{\varphi,1}\left(  \lambda^{1}\left(
 x\right)  \otimes1,\lambda^{2}\left(  x\right)  \otimes1,...,\lambda
 ^{j}\left(  x\right)  \otimes1\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
@@ -11435,7 +11860,7 @@ Theorem 10.34 (applied to $x=0$ and $y=0$) yields $\operatorname*{td}%
 \operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  0\right)
 =\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(
 0+0\right)  =\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}%
-}\left(  0\right)  $ Since $\operatorname*{td}\nolimits_{\varphi
+}\left(  0\right)  $. Since $\operatorname*{td}\nolimits_{\varphi
 ,T,\mathbf{Z}^{\prime}}\left(  0\right)  $ is an invertible element of
 $\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[  \left[
 T\right]  \right]  $ (because $\operatorname*{td}\nolimits_{\varphi
@@ -11541,4 +11966,6 @@ Academic Press 1988, pp. 93-102.
 
 [8] Darij Grinberg, \textit{Witt\#4a: Equigraded power series}.\newline%
 \texttt{www.cip.ifi.lmu.de/\symbol{126}grinberg/algebra/witt4a.pdf}
+
+
 \end{document}
