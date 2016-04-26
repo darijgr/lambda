@@ -9,7 +9,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, October 19, 2011 21:03:17}
+%TCIDATA{LastRevised=Friday, October 21, 2011 19:44:21}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
@@ -42,19 +42,22 @@
 
 Darij Grinberg
 
-\textit{Version 0.0.12, last revised 18 Oct 2011}
+\textit{Version 0.0.13, last revised 20 Oct 2011}
 \end{center}
 
-This is a \textbf{BETA VERSION} and has never been proofread. \textbf{Please
-notify me of any mistakes, typos and hard-to-understand arguments you
-find!\footnote{my email address is \texttt{A@B.com}, where
+This is a \textbf{BETA VERSION} and has never been systematically proofread.
+\textbf{Please notify me of any mistakes, typos and hard-to-understand
+arguments you find!\footnote{my email address is \texttt{A@B.com}, where
 \texttt{A=darijgrinberg} and \texttt{B=gmail}}}
 
 Thanks to Martin Brandenburg for pointing out several flaws.
 
 At the moment, section 1 is missing a proof (namely, that the representation
 ring is a \textit{special} $\lambda$-ring; I actually don't know this proof)
-and sections 10-... are more or less missing.
+and sections 11-... are more or less missing.
+
+Most exercises have solutions or at least hints given at the end of this text;
+however, some do not.
 
 \bigskip
 
@@ -1001,10 +1004,11 @@ $\widehat{Q}$ before $\beta_{1}^{\lambda_{1}}\beta_{2}^{\lambda_{2}}%
 &  P\left(  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right)  =\widehat{Q}%
 \left(  Y_{1},Y_{2},...,Y_{n}\right) \\
 &  =\sum_{\left(  \lambda_{1},\lambda_{2},...,\lambda_{n}\right)
-\in\mathbb{N}^{n}}\left(  \text{the coefficient of the polynomial }%
-\widehat{Q}\text{ before }\beta_{1}^{\lambda_{1}}\beta_{2}^{\lambda_{2}%
-}...\beta_{n}^{\lambda_{n}}\right)  Y_{1}^{\lambda_{1}}Y_{2}^{\lambda_{2}%
-}...Y_{n}^{\lambda_{n}}\\
+\in\mathbb{N}^{n}}\underbrace{\left(  \text{the coefficient of the polynomial
+}\widehat{Q}\text{ before }\beta_{1}^{\lambda_{1}}\beta_{2}^{\lambda_{2}%
+}...\beta_{n}^{\lambda_{n}}\right)  }_{=R_{\left(  \lambda_{1},\lambda
+_{2},...,\lambda_{n}\right)  }\left(  X_{1},X_{2},...,X_{m}\right)  }%
+Y_{1}^{\lambda_{1}}Y_{2}^{\lambda_{2}}...Y_{n}^{\lambda_{n}}\\
 &  =\sum_{\left(  \lambda_{1},\lambda_{2},...,\lambda_{n}\right)
 \in\mathbb{N}^{n}}R_{\left(  \lambda_{1},\lambda_{2},...,\lambda_{n}\right)
 }\left(  X_{1},X_{2},...,X_{m}\right)  Y_{1}^{\lambda_{1}}Y_{2}^{\lambda_{2}%
@@ -1637,9 +1641,13 @@ T\right]  \right]  ^{+}$ by%
 \sum_{i\in\mathbb{N}}b_{i}T^{i}\right)  =\sum_{k\in\mathbb{N}}P_{k}\left(
 a_{1},a_{2},...,a_{k},b_{1},b_{2},...,b_{k}\right)  T^{k}%
 \]
-(here, the $\sum\limits_{k\in\mathbb{N}}$ sign means addition in $K\left[
-\left[  T\right]  \right]  $, not in $1+K\left[  \left[  T\right]  \right]
-^{+}$).
+\footnote{Here, the $\sum\limits_{k\in\mathbb{N}}$ sign means addition in
+$K\left[  \left[  T\right]  \right]  $, not in $1+K\left[  \left[  T\right]
+\right]  ^{+}$. The same holds for the $\sum\limits_{i\in\mathbb{N}}$ sign.}
+for any two power series $\sum\limits_{i\in\mathbb{N}}a_{i}T^{i}\in1+K\left[
+\left[  T\right]  \right]  ^{+}$ and $\sum\limits_{i\in\mathbb{N}}b_{i}%
+T^{i}\in1+K\left[  \left[  T\right]  \right]  ^{+}$ (where $a_{i}$ and $b_{i}$
+lie in $K$ for every $i\in\mathbb{N}$).
 
 The multiplicative unity of the ring $1+K\left[  \left[  T\right]  \right]
 ^{+}$ will be $1+T$.
@@ -1649,9 +1657,11 @@ Also, for every $j\in\mathbb{N}$, define a mapping $\widehat{\lambda}%
 T\right]  \right]  ^{+}$ by%
 \[
 \widehat{\lambda}^{j}\left(  \sum_{i\in\mathbb{N}}a_{i}T^{i}\right)
-=\sum_{k\in\mathbb{N}}P_{k,j}\left(  a_{1},a_{2},...,a_{kj}\right)  T^{k}.
+=\sum_{k\in\mathbb{N}}P_{k,j}\left(  a_{1},a_{2},...,a_{kj}\right)  T^{k}%
 \]
-
+for every power series $\sum\limits_{i\in\mathbb{N}}a_{i}T^{i}\in1+K\left[
+\left[  T\right]  \right]  ^{+}$ (where $a_{i}\in K$ for every $i\in
+\mathbb{N}$).
 
 
 \end{quote}
@@ -2157,19 +2167,44 @@ u_{i}\left(  v_{j}w_{k}\right)  \mid\left(  i,\left(  j,k\right)  \right)
 \in\left\{  1,2,...,m\right\}  \times\left(  \left\{  1,2,...,n\right\}
 \times\left\{  1,2,...,\ell\right\}  \right)  \right]  \right)  .
 \end{align*}
-Now, $\left(  u\widehat{\cdot}v\right)  \widehat{\cdot}w=u\widehat{\cdot
-}\left(  v\widehat{\cdot}w\right)  $ follows from $\left(  u_{i}v_{j}\right)
-w_{k}=u_{i}\left(  v_{j}w_{k}\right)  $ and
+But there is a canonical isomorphism of sets%
 \[
 \left(  \left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right)
-\times\left\{  1,2,...,\ell\right\}  \cong\left\{  1,2,...,m\right\}
+\times\left\{  1,2,...,\ell\right\}  \rightarrow\left\{  1,2,...,m\right\}
 \times\left(  \left\{  1,2,...,n\right\}  \times\left\{  1,2,...,\ell\right\}
-\right)
+\right)  ,
 \]
-(which is a canonical isomorphism, mapping every $\left(  \left(  i,j\right)
-,k\right)  $ to $\left(  i,\left(  j,k\right)  \right)  $). This proves the
-associativity of $u\widehat{\cdot}\left(  v\widehat{\cdot}w\right)  =\left(
-u\widehat{\cdot}v\right)  \widehat{\cdot}w$.
+mapping every $\left(  \left(  i,j\right)  ,k\right)  $ to $\left(  i,\left(
+j,k\right)  \right)  $. Hence,%
+\begin{align*}
+&  \Pi\left(  L,\left[  \left(  u_{i}v_{j}\right)  w_{k}\mid\left(  \left(
+i,j\right)  ,k\right)  \in\left(  \left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  \right)  \times\left\{  1,2,...,\ell\right\}  \right]
+\right) \\
+&  =\Pi\left(  L,\left[  \underbrace{\left(  u_{i}v_{j}\right)  w_{k}}%
+_{=u_{i}\left(  v_{j}w_{k}\right)  }\mid\left(  i,\left(  j,k\right)  \right)
+\in\left\{  1,2,...,m\right\}  \times\left(  \left\{  1,2,...,n\right\}
+\times\left\{  1,2,...,\ell\right\}  \right)  \right]  \right) \\
+&  =\Pi\left(  L,\left[  u_{i}\left(  v_{j}w_{k}\right)  \mid\left(  i,\left(
+j,k\right)  \right)  \in\left\{  1,2,...,m\right\}  \times\left(  \left\{
+1,2,...,n\right\}  \times\left\{  1,2,...,\ell\right\}  \right)  \right]
+\right)  .
+\end{align*}
+Thus,%
+\begin{align*}
+\left(  u\widehat{\cdot}v\right)  \widehat{\cdot}w  &  =\Pi\left(  L,\left[
+\left(  u_{i}v_{j}\right)  w_{k}\mid\left(  \left(  i,j\right)  ,k\right)
+\in\left(  \left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}
+\right)  \times\left\{  1,2,...,\ell\right\}  \right]  \right) \\
+&  =\Pi\left(  L,\left[  u_{i}\left(  v_{j}w_{k}\right)  \mid\left(  i,\left(
+j,k\right)  \right)  \in\left\{  1,2,...,m\right\}  \times\left(  \left\{
+1,2,...,n\right\}  \times\left\{  1,2,...,\ell\right\}  \right)  \right]
+\right) \\
+&  =u\widehat{\cdot}\left(  v\widehat{\cdot}w\right)  .
+\end{align*}
+This proves the associativity of the operation $\widehat{\cdot}$. As I said
+above, the other ring axioms can be proven similarly, so we can consider
+Theorem 5.1 \textbf{(a)} as proven.
 
 \textbf{(b)} It is easy to see that $\widehat{\lambda}^{0}\left(  x\right)
 =1+T=\left(  \text{the multiplicative unity of the ring }\left(  1+K\left[
@@ -2239,8 +2274,8 @@ But since%
 1,2,...,m+n\right\}  \right)  \text{ can be uniquely}\\
 \text{written as a union of two sets }J\in\mathcal{P}_{i}\left(  \left\{
 1,2,...,m\right\}  \right)  \text{ and}\\
-\mathcal{P}_{j-i}\left(  \left\{  m+1,m+2,...,m+n\right\}  \right)  \text{ for
-some }i\in\left\{  0,1,...,j\right\} \\
+K^{\prime}\in\mathcal{P}_{j-i}\left(  \left\{  m+1,m+2,...,m+n\right\}
+\right)  \text{ for some }i\in\left\{  0,1,...,j\right\} \\
 \text{(namely, these two sets are }J=I\cap\left\{  1,2,...,m\right\}  \text{
 and}\\
 K^{\prime}=I\cap\left\{  m+1,m+2,...,m+n\right\}  \text{, and }i\text{ is the
@@ -4117,8 +4152,6 @@ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
 +...+u_{m}^{j}.
 \]
 
-
-
 \end{quote}
 
 \textit{Proof of Theorem 9.4.} Let $x=u_{1}+u_{2}+...+u_{m}$. Just as in the
@@ -5255,7 +5288,7 @@ $i\in\mathbb{N}$) to $\sum\limits_{i\in\mathbb{N}}\operatorname*{proj}%
 1,\text{\ if }i>n
 \end{array}
 \right.  \ \ \ \ $\footnote{\textit{Proof.} Write the power series $\varphi
-\in\mathbb{N}\left[  \left[  t\right]  \right]  $ in the form $\varphi
+\in\mathbf{Z}\left[  \left[  t\right]  \right]  $ in the form $\varphi
 =\sum\limits_{k\in\mathbb{N}}\varphi_{k}t^{k}$ with $\varphi_{k}\in\mathbf{Z}$
 for every $k\in\mathbb{N}$. Notice that $\varphi_{0}=1$ since $\varphi$ has
 constant term $1$.
@@ -5319,8 +5352,8 @@ hand}\\
 }_{=1}\underbrace{0^{0}}_{=1}\underbrace{T^{0}}_{=1}+\sum
 \limits_{\substack{k\in\mathbb{N};\\k\neq0}}\varphi_{k}\underbrace{0^{k}%
 }_{\substack{=0\\\text{(since }k\neq0\text{)}}}T^{k}=1+\underbrace{\sum
-\limits_{\substack{k\in\mathbb{N};\\k\neq0}}\varphi_{k}0T^{k}}_{=0}=0\\
-\text{for }i>n
+\limits_{\substack{k\in\mathbb{N};\\k\neq0}}\varphi_{k}0T^{k}}_{=0}=1\text{
+for }i>n
 \end{array}
 \right)  ,
 \end{align*}
@@ -5365,7 +5398,7 @@ T\right]  \right]  $ is a $\mathbf{Z}$-algebra homomorphism, we have%
 But the diagram%
 \[
 \xymatrixcolsep{5pc}\xymatrix{
-\left(\mathbf Z\left[U_1,U_2,...,U_m\right]\right)\left[\left[T\right]\right] \ar[r]^{\operatorname*{proj}_{m,n}\left[\left[T\right]\right]} \ar[d]_{\operatorname*{Coeff}_j} & \left(\mathbf Z\left[U_1,U_2,...,U_m\right]\right)\left[\left[T\right]\right]  \ar[d]_{\operatorname*{Coeff}_n} \\
+\left(\mathbf Z\left[U_1,U_2,...,U_m\right]\right)\left[\left[T\right]\right] \ar[r]^{\operatorname*{proj}_{m,n}\left[\left[T\right]\right]} \ar[d]_{\operatorname*{Coeff}_j} & \left(\mathbf Z\left[U_1,U_2,...,U_m\right]\right)\left[\left[T\right]\right]  \ar[d]_{\operatorname*{Coeff}_j} \\
 \mathbf Z\left[U_1,U_2,...,U_m\right] \ar[r]^{\operatorname*{proj}_{m,n}} & \mathbf Z\left[U_1,U_2,...,U_n\right]
 }
 \]
@@ -7254,7 +7287,7 @@ have $\left(  \rho\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  \left(
 U\right)  \right)  \left(  x_{1},x_{2},...,x_{j}\right)  =U\left(  x_{1}%
 ,x_{2},...,x_{j}\right)  $ (because this is more or less how $U\left(
 x_{1},x_{2},...,x_{j}\right)  $ is defined). Applied to $U=\operatorname*{Td}%
-\nolimits_{\varphi,j}$ and $X_{k}=x_{k}$, this yields%
+\nolimits_{\varphi,j}$ and $x_{k}=X_{k}$, this yields%
 \begin{align*}
 \left(  \rho\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  \left(
 \operatorname*{Td}\nolimits_{\varphi,j}\right)  \right)  \left(  X_{1}%
@@ -7599,7 +7632,7 @@ _{\left(  \rho\left[  \left[  t\right]  \right]  \right)  \left(
 _{\left(  \rho\left[  \left[  t\right]  \right]  \right)  \left(
 \varphi\right)  }\left(  p\right)  }\cdot\underbrace{\mathfrak{Todd}_{\varphi
 }\left(  q\right)  }_{=\mathfrak{Todd}_{\left(  \rho\left[  \left[  t\right]
-\right]  \right)  \left(  \varphi\right)  }\left(  p\right)  }=\mathfrak{Todd}%
+\right]  \right)  \left(  \varphi\right)  }\left(  q\right)  }=\mathfrak{Todd}%
 _{\left(  \rho\left[  \left[  t\right]  \right]  \right)  \left(
 \varphi\right)  }\left(  p\right)  \cdot\mathfrak{Todd}_{\left(  \rho\left[
 \left[  t\right]  \right]  \right)  \left(  \varphi\right)  }\left(  q\right)
@@ -7928,8 +7961,6 @@ elements of $K$. Then,%
 \operatorname*{td}\nolimits_{\varphi,T}\left(  u_{1}+u_{2}+...+u_{m}\right)
 =\prod\limits_{i=1}^{m}\varphi\left(  u_{i}T\right)  .
 \]
-
-
 
 \end{quote}
 
@@ -9425,35 +9456,35 @@ onto $K\left[  T\right]  \diagup\left(  P\right)  $ (that is, the residue
 class of $Q$ modulo $\left(  P\right)  $).
 
 Since the polynomial $P$ is monic of degree $n$, we can easily see that
-$\left(  \overline{T^{0}},\overline{T^{1}},...,\overline{X^{n-1}}\right)  $ is
+$\left(  \overline{T^{0}},\overline{T^{1}},...,\overline{T^{n-1}}\right)  $ is
 a basis of the $K$-module $K^{\prime}$. This is because the sequence $\left(
 \overline{T^{0}},\overline{T^{1}},...,\overline{T^{n-1}}\right)  $ is linearly
 independent\footnote{\textit{Proof.} In fact, assume that we have a sequence
 $\left(  \alpha_{0},\alpha_{1},...,\alpha_{n-1}\right)  \in K^{n}$ such that
-$\alpha_{0}\overline{X^{0}}+\alpha_{1}\overline{X^{1}}+...+\alpha
-_{n-1}\overline{X^{n-1}}=0$.
+$\alpha_{0}\overline{T^{0}}+\alpha_{1}\overline{T^{1}}+...+\alpha
+_{n-1}\overline{T^{n-1}}=0$.
 \par
-Then, $0=\alpha_{0}\overline{X^{0}}+\alpha_{1}\overline{X^{1}}+...+\alpha
-_{n-1}\overline{X^{n-1}}=\overline{\alpha_{0}X^{0}+\alpha_{1}X^{1}%
-+...+\alpha_{n-1}X^{n-1}}$, so that $0\equiv\alpha_{0}X^{0}+\alpha_{1}%
-X^{1}+...+\alpha_{n-1}X^{n-1}\operatorname{mod}\left(  P\right)  $. In other
-words, $\alpha_{0}X^{0}+\alpha_{1}X^{1}+...+\alpha_{n-1}X^{n-1}\in\left(
-P\right)  $. In other words, $P\mid\alpha_{0}X^{0}+\alpha_{1}X^{1}%
-+...+\alpha_{n-1}X^{n-1}$. But $P$ is a monic polynomial of degree $n$, and
+Then, $0=\alpha_{0}\overline{T^{0}}+\alpha_{1}\overline{T^{1}}+...+\alpha
+_{n-1}\overline{T^{n-1}}=\overline{\alpha_{0}T^{0}+\alpha_{1}T^{1}%
++...+\alpha_{n-1}T^{n-1}}$, so that $0\equiv\alpha_{0}T^{0}+\alpha_{1}%
+T^{1}+...+\alpha_{n-1}T^{n-1}\operatorname{mod}\left(  P\right)  $. In other
+words, $\alpha_{0}T^{0}+\alpha_{1}T^{1}+...+\alpha_{n-1}T^{n-1}\in\left(
+P\right)  $. In other words, $P\mid\alpha_{0}T^{0}+\alpha_{1}T^{1}%
++...+\alpha_{n-1}T^{n-1}$. But $P$ is a monic polynomial of degree $n$, and
 thus every polynomial divisible by $P$ has either degree $\geq n$ or is the
-zero polynomial. Hence, the polynomial $\alpha_{0}X^{0}+\alpha_{1}%
-X^{1}+...+\alpha_{n-1}X^{n-1}$ must have either degree $\geq n$ or be the zero
-polynomial (since $P\mid\alpha_{0}X^{0}+\alpha_{1}X^{1}+...+\alpha
-_{n-1}X^{n-1}$). Since this polynomial does not have degree $\geq n$, it must
+zero polynomial. Hence, the polynomial $\alpha_{0}T^{0}+\alpha_{1}%
+T^{1}+...+\alpha_{n-1}T^{n-1}$ must have either degree $\geq n$ or be the zero
+polynomial (since $P\mid\alpha_{0}T^{0}+\alpha_{1}T^{1}+...+\alpha
+_{n-1}T^{n-1}$). Since this polynomial does not have degree $\geq n$, it must
 thus be the zero polynomial. This means that all its coefficients are zero.
 That is, $\alpha_{i}=0$ for every $i\in\left\{  0,1,...,n-1\right\}  $.
 \par
 We have thus proven that whenever a sequence $\left(  \alpha_{0},\alpha
-_{1},...,\alpha_{n-1}\right)  \in K^{n}$ satisfies $\alpha_{0}\overline{X^{0}%
-}+\alpha_{1}\overline{X^{1}}+...+\alpha_{n-1}\overline{X^{n-1}}=0$, it must
+_{1},...,\alpha_{n-1}\right)  \in K^{n}$ satisfies $\alpha_{0}\overline{T^{0}%
+}+\alpha_{1}\overline{T^{1}}+...+\alpha_{n-1}\overline{T^{n-1}}=0$, it must
 satisfy $\alpha_{i}=0$ for every $i\in\left\{  0,1,...,n-1\right\}  $. In oter
-words, the sequence $\left(  \overline{X^{0}},\overline{X^{1}},...,\overline
-{X^{n-1}}\right)  $ is linearly independent.} and generates the $K$-module
+words, the sequence $\left(  \overline{T^{0}},\overline{T^{1}},...,\overline
+{T^{n-1}}\right)  $ is linearly independent.} and generates the $K$-module
 $K^{\prime}$\ \ \ \ \footnote{\textit{Proof.} Let $K_{1}^{\prime}$ be the
 $K$-submodule of $K^{\prime}$ generated by $\left(  \overline{T^{0}}%
 ,\overline{T^{1}},...,\overline{T^{n-1}}\right)  $. Then, we will prove that
@@ -9484,9 +9515,10 @@ $\overline{T^{j}}\in K_{1}^{\prime}$ for every $j\in\left\{
 0,1,...,n-1\right\}  $ is not the case. Hence, $j\geq n$, so that $j-n\geq0$.
 Now, $P=\sum\limits_{i=0}^{n}\beta_{i}T^{i}$, so that%
 \[
-P\cdot T^{j-n}=\sum\limits_{i=0}^{n}\beta_{i}T^{i+j-n}=\sum\limits_{i=0}%
-^{n-1}\beta_{i}T^{i+j-n}+\underbrace{\beta_{n}}_{=1}\underbrace{T^{n+j-n}%
-}_{=T^{j}}=\sum\limits_{i=0}^{n-1}\beta_{i}T^{i+j-n}+T^{j}.
+P\cdot T^{j-n}=\sum\limits_{i=0}^{n}\beta_{i}T^{i}\cdot T^{j-n}=\sum
+\limits_{i=0}^{n}\beta_{i}T^{i+j-n}=\sum\limits_{i=0}^{n-1}\beta_{i}%
+T^{i+j-n}+\underbrace{\beta_{n}}_{=1}\underbrace{T^{n+j-n}}_{=T^{j}}%
+=\sum\limits_{i=0}^{n-1}\beta_{i}T^{i+j-n}+T^{j}.
 \]
 Hence, $T^{j}=P\cdot T^{j-n}-\sum\limits_{i=0}^{n-1}\beta_{i}T^{i+j-n}%
 \equiv-\sum\limits_{i=0}^{n-1}\beta_{i}T^{i+j-n}\operatorname{mod}\left(
@@ -9524,7 +9556,7 @@ generated by $\left(  \overline{T^{0}},\overline{T^{1}},...,\overline{T^{n-1}%
 }\right)  $, this yields that the $K$-module $K^{\prime}$ is generated by
 $\left(  \overline{T^{0}},\overline{T^{1}},...,\overline{T^{n-1}}\right)  $.}.
 Thus, the $K$-module $K^{\prime}$ is finite-free. Also, since $\left(
-\overline{T^{0}},\overline{T^{1}},...,\overline{X^{n-1}}\right)  $ is a basis
+\overline{T^{0}},\overline{T^{1}},...,\overline{T^{n-1}}\right)  $ is a basis
 of the $K$-module $K^{\prime}$, its subsequence $\left(  \overline{T^{0}%
 }\right)  =\left(  \overline{1}\right)  $ is linearly independent. Hence, the
 canonical map $K\rightarrow K^{\prime}$ is injective (because it maps the
@@ -9532,8 +9564,8 @@ basis $\left(  1\right)  $ of the $K$-module $K$ to the linearly independent
 sequence $\left(  \overline{1}\right)  $ of the $K$-module $K^{\prime}$).
 Hence, we can view $K^{\prime}$ as an extension ring of $K$.
 
-Let $p=\overline{X}$. Then, $P\left(  p\right)  =P\left(  \overline{X}\right)
-=\overline{P\left(  X\right)  }=\overline{P}=0$ (since $P\equiv
+Let $p=\overline{T}$. Then, $P\left(  p\right)  =P\left(  \overline{T}\right)
+=\overline{P\left(  T\right)  }=\overline{P}=0$ (since $P\equiv
 0\operatorname{mod}\left(  P\right)  $). This proves Lemma 5.1.S.1.
 
 Now, let us solve Exercise 5.1:
