@@ -10,7 +10,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, October 28, 2011 15:24:52}
+%TCIDATA{LastRevised=Saturday, October 29, 2011 22:10:04}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
@@ -1993,7 +1993,7 @@ $\widehat{\lambda}^{j}$ act on factorized linear polynomials (Theorem 5.3).
 Then, with the help of some very basic point-set topology, we will see that
 the subset $1+K\left[  T\right]  ^{+}$ is dense in an appropriate topology on
 $1+K\left[  \left[  T\right]  \right]  ^{+}$ (Theorem 5.5 \textbf{(a)}), that
-this topology is Hausdorff (Theorem 5.5 \textbf{(d)}), and that the operations
+this topology is Hausdorff (Theorem 5.5 \textbf{(e)}), and that the operations
 $\widehat{+}$, $\widehat{\cdot}$ and $\widehat{\lambda}^{j}$ are continuous
 with respect to it (Theorem 5.5 \textbf{(d)}), so that in order to prove the
 ring and $\lambda$-ring axioms for $\Lambda\left(  K\right)  $, we only need
@@ -2070,10 +2070,10 @@ T+\underbrace{\left(  -\widetilde{p}_{i}\right)  }_{=p_{i}}\right)
 =\prod\limits_{i=1}^{n}\left(  T+p_{i}\right)  =\prod\limits_{i=1}^{n}\left(
 p_{i}+T\right)  .
 \]
-Therefore, Exercise 5.2 (applied to $L=K_{p}$) yields that $\sum
-\limits_{i=0}^{n}a_{i}T^{i}=\prod\limits_{i=1}^{n}\left(  1+p_{i}T\right)  $.
-Since $p=\sum\limits_{i=0}^{n}a_{i}T^{i}$, this rewrites as $p=\prod
-\limits_{i=1}^{n}\left(  1+p_{i}T\right)  $. Thus, Theorem 5.2 is proven.
+Therefore, Exercise 5.2 \textbf{(a)} (applied to $L=K_{p}$) yields that
+$\sum\limits_{i=0}^{n}a_{i}T^{i}=\prod\limits_{i=1}^{n}\left(  1+p_{i}%
+T\right)  $. Since $p=\sum\limits_{i=0}^{n}a_{i}T^{i}$, this rewrites as
+$p=\prod\limits_{i=1}^{n}\left(  1+p_{i}T\right)  $. Thus, Theorem 5.2 is proven.
 
 \subsection{Preparing for the proof of Theorem 5.1: extending the ring to make
 polynomials split}
@@ -2376,8 +2376,6 @@ Then,%
 \prod_{\ell\in S}w_{\ell}\mid S\in\mathcal{P}_{k}\left(  L\right)  \right]
 \right)  .
 \]
-
-
 
 \end{quote}
 
@@ -2961,10 +2959,17 @@ $K_{P}\left[  T\right]  $, where $n=\deg P$.
 
 \textit{Exercise 5.2.} Let $L$ be a ring. Let $n\in\mathbb{N}$, let $a_{0}$,
 $a_{1}$, $...$, $a_{n}$ be some elements of $L$, and let $p_{1}$, $p_{2}$,
-$...$, $p_{n}$ be some elements of $L$ such that $\sum\limits_{i=0}^{n}%
-a_{n-i}T^{i}=\prod\limits_{i=1}^{n}\left(  p_{i}+T\right)  $ in the polynomial
-ring $L\left[  T\right]  $. Then, prove that $\sum\limits_{i=0}^{n}a_{i}%
-T^{i}=\prod\limits_{i=1}^{n}\left(  1+p_{i}T\right)  $.
+$...$, $p_{n}$ be some elements of $L$.
+
+\textbf{(a)} If $\sum\limits_{i=0}^{n}a_{n-i}T^{i}=\prod\limits_{i=1}%
+^{n}\left(  p_{i}+T\right)  $ in the polynomial ring $L\left[  T\right]  $,
+then prove that $\sum\limits_{i=0}^{n}a_{i}T^{i}=\prod\limits_{i=1}^{n}\left(
+1+p_{i}T\right)  $.
+
+\textbf{(b)} If $\sum\limits_{i=0}^{n}a_{i}T^{i}=\prod\limits_{i=1}^{n}\left(
+1+p_{i}T\right)  $ in the polynomial ring $L\left[  T\right]  $, then prove
+that $\sum\limits_{i=0}^{n}a_{n-i}T^{i}=\prod\limits_{i=1}^{n}\left(
+p_{i}+T\right)  $.
 
 \textit{Exercise 5.3.} Let $K$ be a ring. Let $p$ be an element of $K$. Let
 $P\in K\left[  T\right]  $ be a monic polynomial such that $P\left(  p\right)
@@ -2977,14 +2982,14 @@ $ and such that $p=p_{n}$.
 \textit{Exercise 5.4.} Let $K$ be a ring, and $L$ an extension ring of $K$.
 For some $n\in\mathbb{N}$, an element $u$ of $L$ is said to be $n$%
 \textit{-integral} over $K$ if there exists a monic polynomial $P\in K\left[
-X\right]  $ such that $\deg P=n$ and $P\left(  u\right)  =0$.
+T\right]  $ such that $\deg P=n$ and $P\left(  u\right)  =0$.
 
 Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$. Let $\alpha$ and $\beta$ be two
 elements of $L$ such that $\alpha$ is $n$-integral over $K$ and $\beta$ is
 $m$-integral over $K$. Prove that $\alpha\beta$ is $nm$-integral over $K$.
 
-[This is a known fact, but it turns out to also be a simple corollary of our
-construction of the polynomials $P_{k}$ further above.]\ \ \ \ 
+[This is a known fact, but it turns out to also be a corollary of our
+construction of the polynomials $P_{k}$ further above.]
 \end{quotation}
 
 \section{Special $\lambda$-rings}
@@ -4758,8 +4763,6 @@ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
 +...+u_{m}^{j}.
 \]
 
-
-
 \end{quote}
 
 \textit{Proof of Theorem 9.4.} Let $x=u_{1}+u_{2}+...+u_{m}$. Just as in the
@@ -6469,7 +6472,7 @@ _{2}$. Hence, $u^{j}\alpha_{j}=\mathfrak{Q}_{1}=\mathfrak{Q}_{2}%
 
 We keep back the proof of Proposition 10.3 for a moment - instead, we first
 show a proposition which gives the first two coefficients of the power series
-$\operatorname*{Td}\nolimits_{\varphi,T}\left(  x\right)  $ in the general
+$\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  $ in the general
 case (with $\varphi$ arbitrary):
 
 \begin{quote}
@@ -8774,10 +8777,10 @@ example of this. First, a definition.
 \begin{quote}
 \textbf{Definition.} Let $j\in\mathbb{N}\setminus\left\{  0\right\}  $. Let
 $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a
-$\lambda$-ring. Define a homomorphism $\theta_{T}^{j}:K\rightarrow K\left[
-\left[  T\right]  \right]  $ by $\theta_{T}^{j}=\operatorname*{td}%
-_{\varphi_{j},T}$, where $\varphi_{j}\in\mathbb{Z}\left[  t\right]  $ is the
-polynomial $1+t+t^{2}+...+t^{j-1}=\dfrac{1-t^{j}}{1-t}$.
+$\lambda$-ring. Define a homomorphism $\theta_{T}^{j}:K\rightarrow
+\Lambda\left(  K\right)  $ of additive groups by $\theta_{T}^{j}%
+=\operatorname*{td}_{\varphi_{j},T}$, where $\varphi_{j}\in\mathbb{Z}\left[
+t\right]  $ is the polynomial $1+t+t^{2}+...+t^{j-1}=\dfrac{1-t^{j}}{1-t}$.
 \end{quote}
 
 [Again, [1] considers only $\theta^{j}:=\theta_{1}^{j},$ which again is
@@ -8998,8 +9001,10 @@ K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  }^{\prime
 }=\operatorname*{Coeff}\nolimits_{k}\circ\operatorname*{td}\nolimits_{1-t^{j}%
 ,T}$ for every $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $. (This is, again, a $1$-operation, since
-(\ref{ToddDef}) shows that $\operatorname*{td}\nolimits_{1-t^{j},T}$ is a
-polynomial in $\lambda^{1},$ $\lambda^{2},$ $...,$ $\lambda^{k}$ with integer coefficients.)
+(\ref{ToddDef}) shows that $\operatorname*{Coeff}\nolimits_{k}\circ
+\operatorname*{td}\nolimits_{1-t^{j},T}=\operatorname*{Td}\nolimits_{1-t^{j}%
+,k}\left(  \lambda^{1},\lambda^{2},...,\lambda^{k}\right)  $ is a polynomial
+in $\lambda^{1},$ $\lambda^{2},$ $...,$ $\lambda^{k}$ with integer coefficients.)
 
 These two $1$-operations $m$ and $m^{\prime}$ satisfy both conditions of
 Theorem 8.4: The continuity assumption holds (since the operations $m$ and
@@ -9222,6 +9227,8 @@ we have%
 ^{\prime}}\left(  x\right)  =\prod\limits_{i=1}^{m}\operatorname*{td}%
 \nolimits_{\varphi_{i},T,\mathbf{Z}^{\prime}}\left(  x\right)  .
 \]
+
+
 
 \end{quote}
 
@@ -10845,11 +10852,12 @@ $...,$ $p_{N}$ of this extension ring $K_{P}$ such that $P=\prod
 other words, we have proven the assertion of Exercise 5.1 for $n=N$. Thus, the
 induction step is complete, and Exercise 5.1 is solved.
 
-\textit{Exercise 5.2:} \textit{Hints to solution:} The idea is to evaluate the
-identity $\sum\limits_{i=0}^{n}a_{n-i}T^{i}=\prod\limits_{i=1}^{n}\left(
-p_{i}+T\right)  $ at $T=\dfrac{1}{S}$, where $S$ is a new variable. The only
-nontrivial part of the solution is to make formal sense of this idea (this is
-what Lemma 5.2.S.1 in the solution below is for).
+\textit{Exercise 5.2:} \textit{Hints to solution:} \textbf{(a)} The idea is to
+evaluate the identity $\sum\limits_{i=0}^{n}a_{n-i}T^{i}=\prod\limits_{i=1}%
+^{n}\left(  p_{i}+T\right)  $ at $T=\dfrac{1}{S}$, where $S$ is a new
+variable. The only nontrivial part of the solution is to make formal sense of
+this idea (this is what Lemma 5.2.S.1 in the solution below is for).
+\textbf{(b)} is similar.
 
 \textit{Detailed solution:} First we need the following lemma:
 
@@ -10919,10 +10927,10 @@ In other words, $P=0$. Lemma 5.2.S.1 is proven.
 Now let us solve Exercise 5.2. Consider the polynomial ring $L\left[
 T\right]  $ as a subring of the polynomial ring $L\left[  T,S\right]  $.
 
-We know that $\sum\limits_{i=0}^{n}a_{n-i}T^{i}=\prod\limits_{i=1}^{n}\left(
-p_{i}+T\right)  $. This is a polynomial identity, so we can evaluate it at
-$T=S$ and obtain $\sum\limits_{i=0}^{n}a_{n-i}S^{i}=\prod\limits_{i=1}%
-^{n}\left(  p_{i}+S\right)  $. Thus,%
+\textbf{(a)} Assume that $\sum\limits_{i=0}^{n}a_{n-i}T^{i}=\prod
+\limits_{i=1}^{n}\left(  p_{i}+T\right)  $. This is a polynomial identity, so
+we can evaluate it at $T=S$ and obtain $\sum\limits_{i=0}^{n}a_{n-i}%
+S^{i}=\prod\limits_{i=1}^{n}\left(  p_{i}+S\right)  $. Thus,%
 \begin{align*}
 T^{n}\sum\limits_{i=0}^{n}a_{n-i}S^{i}  &  =\underbrace{T^{n}}_{=\prod
 \limits_{i=1}^{n}T}\prod\limits_{i=1}^{n}\left(  p_{i}+S\right)
@@ -10951,7 +10959,43 @@ other words, $TS-1\mid\sum\limits_{i=0}^{n}a_{i}T^{i}-\prod\limits_{i=1}%
 \limits_{i=0}^{n}a_{i}T^{i}-\prod\limits_{i=1}^{n}\left(  1+p_{i}T\right)  $)
 yields that $\sum\limits_{i=0}^{n}a_{i}T^{i}-\prod\limits_{i=1}^{n}\left(
 1+p_{i}T\right)  =0$. In other words, $\sum\limits_{i=0}^{n}a_{i}T^{i}%
-=\prod\limits_{i=1}^{n}\left(  1+p_{i}T\right)  $. This proves Exercise 5.2.
+=\prod\limits_{i=1}^{n}\left(  1+p_{i}T\right)  $. This proves Exercise 5.2
+\textbf{(a)}.
+
+\textbf{(b)} Assume that $\sum\limits_{i=0}^{n}a_{i}T^{i}=\prod\limits_{i=1}%
+^{n}\left(  1+p_{i}T\right)  $. This is a polynomial identity, so we can
+evaluate it at $T=S$ and obtain $\sum\limits_{i=0}^{n}a_{i}S^{i}%
+=\prod\limits_{i=1}^{n}\left(  1+p_{i}S\right)  $. Thus,%
+\begin{align*}
+T^{n}\sum\limits_{i=0}^{n}a_{i}S^{i}  &  =\underbrace{T^{n}}_{=\prod
+\limits_{i=1}^{n}T}\prod\limits_{i=1}^{n}\left(  1+p_{i}S\right)
+=\prod\limits_{i=1}^{n}T\prod\limits_{i=1}^{n}\left(  1+p_{i}S\right)
+=\prod\limits_{i=1}^{n}\underbrace{\left(  T\left(  1+p_{i}S\right)  \right)
+}_{=T+p_{i}TS}\\
+&  =\prod\limits_{i=1}^{n}\left(  T+p_{i}\underbrace{TS}_{\equiv
+1\operatorname{mod}\left(  TS-1\right)  }\right)  \equiv\prod\limits_{i=1}%
+^{n}\underbrace{\left(  T+p_{i}1\right)  }_{=p_{i}+T}=\prod\limits_{i=1}%
+^{n}\left(  p_{i}+T\right)  \operatorname{mod}\left(  TS-1\right)  .
+\end{align*}
+Combined with%
+\begin{align*}
+T^{n}\sum\limits_{i=0}^{n}a_{i}S^{i}  &  =\sum\limits_{i=0}^{n}a_{i}%
+\underbrace{T^{n}}_{=T^{n-i}T^{i}}S^{i}=\sum\limits_{i=0}^{n}a_{i}%
+T^{n-i}\underbrace{T^{i}S^{i}}_{=\left(  TS\right)  ^{i}\equiv1^{i}%
+\operatorname{mod}\left(  TS-1\right)  }\equiv\sum\limits_{i=0}^{n}%
+a_{i}T^{n-i}1^{i}=\sum\limits_{i=0}^{n}a_{i}T^{n-i}\\
+&  =\sum\limits_{i=0}^{n}a_{n-i}T^{i}\operatorname{mod}\left(  TS-1\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{here we renamed }n-i\text{ as }i\right)  ,
+\end{align*}
+this yields $\sum\limits_{i=0}^{n}a_{n-i}T^{i}\equiv\prod\limits_{i=1}%
+^{n}\left(  p_{i}+T\right)  \operatorname{mod}\left(  TS-1\right)  $. In other
+words, $TS-1\mid\sum\limits_{i=0}^{n}a_{n-i}T^{i}-\prod\limits_{i=1}%
+^{n}\left(  p_{i}+T\right)  $. Thus, Lemma 5.2.S.1 (applied to $P=\sum
+\limits_{i=0}^{n}a_{n-i}T^{i}-\prod\limits_{i=1}^{n}\left(  p_{i}+T\right)  $)
+yields that $\sum\limits_{i=0}^{n}a_{n-i}T^{i}-\prod\limits_{i=1}^{n}\left(
+p_{i}+T\right)  =0$. In other words, $\sum\limits_{i=0}^{n}a_{n-i}T^{i}%
+=\prod\limits_{i=1}^{n}\left(  p_{i}+T\right)  $. This proves Exercise 5.2
+\textbf{(b)}.
 
 \textit{Exercise 5.3: Hints to solution:} Exercise 5.3 follows from Exercise
 5.1, applied to $\dfrac{P}{T-p}$ instead of $P$.
@@ -10987,7 +11031,364 @@ ring $K$), and the $n$ elements $p_{1},$ $p_{2},$ $...,$ $p_{n}$ of $K_{Q}$
 satisfy $P=\prod\limits_{i=1}^{n}\left(  T-p_{i}\right)  $ in $K_{P}^{\prime
 }\left[  T\right]  $ and $p=p_{n}$. Thus, Exercise 5.3 is solved.
 
-\textit{Exercise 5.4: Hints to solution:} [...]
+\textit{Exercise 5.4: Hints to solution:} First here is a rewriting of
+Exercise 5.2 \textbf{(b)}:
+
+\begin{quote}
+\textbf{Lemma 5.4.S.1.} Let $L$ be a ring. Let $\ell\in\mathbb{N}$. Let
+$a_{0}$, $a_{1}$, $...$, $a_{\ell}$ be elements of $L$. Let $S$ be a finite
+set with $\left\vert S\right\vert =\ell$. For every $s\in S$, let $p_{s}$ be
+an element of $L$. If $\sum\limits_{i=0}^{\ell}a_{i}T^{i}=\prod\limits_{s\in
+S}\left(  1+p_{s}T\right)  $ in the polynomial ring $L\left[  T\right]  $,
+then $\sum\limits_{i=0}^{\ell}a_{\ell-i}T^{i}=\prod\limits_{s\in S}\left(
+p_{s}+T\right)  $.
+\end{quote}
+
+\textit{Proof of Lemma 5.4.S.1.} Assume that $\sum\limits_{i=0}^{\ell}%
+a_{i}T^{i}=\prod\limits_{s\in S}\left(  1+p_{s}T\right)  $.
+
+Since the finite set $S$ is used only for labelling the elements $p_{s}$, we
+can WLOG assume that $S=\left\{  1,2,...,\ell\right\}  $ (since $\left\vert
+S\right\vert =\ell$). Assume this. Then,
+\[
+\prod\limits_{s\in S}\left(  1+p_{s}T\right)  =\prod\limits_{s\in\left\{
+1,2,...,\ell\right\}  }\left(  1+p_{s}T\right)  =\prod\limits_{s=1}^{\ell
+}\left(  1+p_{s}T\right)  =\prod\limits_{i=1}^{\ell}\left(  1+p_{i}T\right)
+\]
+(here we renamed the index $s$ as $i$) and%
+\[
+\prod\limits_{s\in S}\left(  p_{s}+T\right)  =\prod\limits_{s\in\left\{
+1,2,...,\ell\right\}  }\left(  p_{s}+T\right)  =\prod\limits_{s=1}^{\ell
+}\left(  p_{s}+T\right)  =\prod\limits_{i=1}^{\ell}\left(  p_{i}+T\right)
+\]
+(here we renamed the index $s$ as $i$).
+
+Now, $\sum\limits_{i=0}^{\ell}a_{i}T^{i}=\prod\limits_{s\in S}\left(
+1+p_{s}T\right)  =\prod\limits_{i=1}^{\ell}\left(  1+p_{i}T\right)  $. Hence,
+Exercise 5.2 \textbf{(b)} (applied to $n=\ell$) yields $\sum\limits_{i=0}%
+^{\ell}a_{\ell-i}T^{i}=\prod\limits_{i=1}^{\ell}\left(  p_{i}+T\right)
+=\prod\limits_{s\in S}\left(  p_{s}+T\right)  $. This proves Lemma 5.4.S.1.
+
+The next lemma is more or less the statement of our exercise (except for that
+it has $-\alpha\beta$ instead of $\alpha\beta$, but this doesn't make that
+much of a difference):
+
+\begin{quote}
+\textbf{Lemma 5.4.S.2.} Let $K$ be a ring, and $L$ an extension ring of $K$.
+Let $n\in\mathbb{N}$ and $m\in\mathbb{N}$. Let $\alpha$ and $\beta$ be two
+elements of $L$ such that $\alpha$ is $n$-integral over $K$ and $\beta$ is
+$m$-integral over $K$. Then, $-\alpha\beta$ is $nm$-integral over $K$.
+\end{quote}
+
+\textit{Proof of Lemma 5.4.S.2.} Since $\alpha$ is $n$-integral over $K$,
+there exists a monic polynomial $P\in K\left[  T\right]  $ such that $\deg
+P=n$ and $P\left(  \alpha\right)  =0$ (by the definition of "$n$-integral").
+
+Since $\beta$ is $m$-integral over $K$, there exists a monic polynomial $Q\in
+K\left[  T\right]  $ such that $\deg Q=m$ and $Q\left(  \beta\right)  =0$ (by
+the definition of "$m$-integral").
+
+Since $\deg P=n$, we can write the polynomial $P\in K\left[  T\right]  $ in
+the form $P=\sum\limits_{i=0}^{n}c_{i}T^{i}$ for some $\left(  c_{0}%
+,c_{1},...,c_{n}\right)  \in K^{n+1}$. Consider this $\left(  c_{0}%
+,c_{1},...,c_{n}\right)  $. Then, $c_{n}=\left(  \text{the coefficient of
+}P\text{ before }T^{n}\right)  =1$ (since $P$ is a monic polynomial with $\deg
+P=n$).
+
+Since $\deg Q=m$, we can write the polynomial $Q\in K\left[  T\right]  $ in
+the form $Q=\sum\limits_{i=0}^{m}d_{i}T^{i}$ for some $\left(  d_{0}%
+,d_{1},...,d_{m}\right)  \in K^{m+1}$. Consider this $\left(  d_{0}%
+,d_{1},...,d_{m}\right)  $. Then, $d_{m}=\left(  \text{the coefficient of
+}Q\text{ before }T^{m}\right)  =1$ (since $Q$ is a monic polynomial with $\deg
+Q=m$).
+
+For every $i\in\mathbb{N}$, define an element $a_{i}\in K$ by $a_{i}=\left\{
+\begin{array}
+[c]{c}%
+c_{n-i}\text{, if }i\leq n;\\
+0\text{, if }i>n
+\end{array}
+\right.  $. For every $i\in\mathbb{N}$, define an element $b_{i}\in K$ by
+$b_{i}=\left\{
+\begin{array}
+[c]{c}%
+d_{m-i}\text{, if }i\leq m;\\
+0\text{, if }i>m
+\end{array}
+\right.  $.
+
+Let $R\in K\left[  T\right]  $ be the polynomial defined by%
+\[
+R=\sum\limits_{i=0}^{mn}P_{mn-i}\left(  a_{1},a_{2},...,a_{mn-i},b_{1}%
+,b_{2},...,b_{mn-i}\right)  T^{i}.
+\]
+
+
+Now we claim that $R$ is a monic polynomial, that $\deg R=mn$ and that
+$R\left(  -\alpha\beta\right)  =0$.
+
+\textit{Proof.} Exercise 5.3 (applied to $\alpha$ and $L$ instead of $p$ and
+$K$) yields that there exists a finite-free extension ring $L_{P}^{\prime}$ of
+$L$ and $n$ elements $p_{1}$, $p_{2}$, $...$, $p_{n}$ of this extension ring
+$L_{P}^{\prime}$ such that $P=\prod\limits_{i=1}^{n}\left(  T-p_{i}\right)  $
+in $L_{P}^{\prime}\left[  T\right]  $ and such that $\alpha=p_{n}$. Consider
+this extension ring $L_{P}^{\prime}$ and these elements $p_{1}$, $p_{2}$,
+$...$, $p_{n}$. Denote this extension ring $L_{P}^{\prime}$ by $M$. All we
+need to know about $M$ is that $M$ is an extension ring of $L$ containing
+$p_{1}$, $p_{2}$, $...$, $p_{n}$.
+
+Exercise 5.3 (applied to $Q$, $m$, $\beta$ and $M$ instead of $P$, $n$, $p$
+and $K$) yields that there exists a finite-free extension ring $M_{Q}^{\prime
+}$ of $M$ and $m$ elements $q_{1}$, $q_{2}$, $...$, $q_{m}$ of this extension
+ring $M_{Q}^{\prime}$ such that $Q=\prod\limits_{i=1}^{m}\left(
+T-q_{i}\right)  $ in $M_{Q}^{\prime}\left[  T\right]  $ and such that
+$\beta=q_{m}$. Consider this extension ring $M_{Q}^{\prime}$ and these
+elements $q_{1}$, $q_{2}$, $...$, $q_{m}$. Denote this extension ring
+$M_{Q}^{\prime}$ by $N$. All we need to know about $N$ is that $N$ is an
+extension ring of $L$ (since $N$ is an extension ring of $M$, which, in turn,
+is an extension ring of $L$) containing $p_{1}$, $p_{2}$, $...$, $p_{n}$
+(because it contains $L$ and because $L$ contains $p_{1}$, $p_{2}$, $...$,
+$p_{n}$) and containing $q_{1}$, $q_{2}$, $...$, $q_{m}$.
+
+Let $\widetilde{P}\in K\left[  T\right]  $ be the polynomial $\sum
+\limits_{i=0}^{n}c_{n-i}T^{i}$. This polynomial $\widetilde{P}$ has constant
+term $c_{n-0}=c_{n}=1$, hence lies in $1+K\left[  T\right]  ^{+}$.
+
+Let $\widetilde{Q}\in K\left[  T\right]  $ be the polynomial $\sum
+\limits_{i=0}^{m}d_{m-i}T^{i}$. This polynomial $\widetilde{Q}$ has constant
+term $d_{m-0}=d_{m}=1$, hence lies in $1+K\left[  T\right]  ^{+}$.
+
+We have $\sum\limits_{i=0}^{n}\underbrace{c_{n-\left(  n-i\right)  }}_{=c_{i}%
+}T^{i}=\sum\limits_{i=0}^{n}c_{i}T^{i}=P=\prod\limits_{i=1}^{n}%
+\underbrace{\left(  T-p_{i}\right)  }_{=-p_{i}+T}=\prod\limits_{i=1}%
+^{n}\left(  -p_{i}+T\right)  $. Therefore, Exercise 5.2 \textbf{(a)} (applied
+to $N$, $c_{n-i}$ and $-p_{i}$ instead of $L$, $a_{i}$ and $p_{i}$) yields
+that%
+\[
+\sum\limits_{i=0}^{n}c_{n-i}T^{i}=\prod\limits_{i=1}^{n}\left(  1+\left(
+-p_{i}\right)  T\right)  .
+\]
+Thus,%
+\[
+\widetilde{P}=\sum\limits_{i=0}^{n}c_{n-i}T^{i}=\prod\limits_{i=1}^{n}\left(
+1+\left(  -p_{i}\right)  T\right)  =\Pi\left(  N,\left[  -p_{1},-p_{2}%
+,...,-p_{n}\right]  \right)  .
+\]
+
+
+We have $\sum\limits_{i=0}^{m}\underbrace{d_{m-\left(  m-i\right)  }}_{=d_{i}%
+}T^{i}=\sum\limits_{i=0}^{m}d_{i}T^{i}=Q=\prod\limits_{i=1}^{m}%
+\underbrace{\left(  T-q_{i}\right)  }_{=-q_{i}+T}=\prod\limits_{i=1}%
+^{m}\left(  -q_{i}+T\right)  $. Therefore, Exercise 5.2 \textbf{(a)} (applied
+to $N$, $m$, $d_{m-i}$ and $-q_{i}$ instead of $L$, $n$, $a_{i}$ and $p_{i}$)
+yields that%
+\[
+\sum\limits_{i=0}^{m}d_{m-i}T^{i}=\prod\limits_{i=1}^{m}\left(  1+\left(
+-q_{i}\right)  T\right)  .
+\]
+Thus,%
+\[
+\widetilde{Q}=\sum\limits_{i=0}^{m}d_{m-i}T^{i}=\prod\limits_{i=1}^{m}\left(
+1+\left(  -q_{i}\right)  T\right)  =\Pi\left(  N,\left[  -q_{1},-q_{2}%
+,...,-q_{m}\right]  \right)  .
+\]
+
+
+Since $\widetilde{Q}=\Pi\left(  N,\left[  -q_{1},-q_{2},...,-q_{n}\right]
+\right)  $ and $\widetilde{P}=\Pi\left(  N,\left[  -p_{1},-p_{2}%
+,...,-p_{n}\right]  \right)  $, we can apply Theorem 5.3 \textbf{(c)} to
+$u=\widetilde{Q}$, $v=\widetilde{P}$, $\widetilde{K}_{u}=N$, $\widetilde{K}%
+_{v}=N$, $\widetilde{K}_{u,v}=N$, $u_{i}=-q_{i}$ and $v_{j}=-p_{j}$. As a
+result we obtain%
+\begin{align*}
+\widetilde{Q}\widehat{\cdot}\widetilde{P} &  =\Pi\left(  N,\left[
+\underbrace{\left(  -q_{i}\right)  \left(  -p_{j}\right)  }_{=p_{j}q_{i}%
+}\ \mid\ \left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  \right]  \right)  \\
+&  =\Pi\left(  N,\left[  p_{j}q_{i}\ \mid\ \left(  i,j\right)  \in\left\{
+1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right]  \right)
+=\prod\limits_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}
+\times\left\{  1,2,...,n\right\}  }\left(  1+p_{j}q_{i}T\right)  .
+\end{align*}
+Thus, $\widetilde{Q}\widehat{\cdot}\widetilde{P}$ is a polynomial of degree%
+\begin{align*}
+\deg\left(  \widetilde{Q}\widehat{\cdot}\widetilde{P}\right)   &  =\deg\left(
+\prod\limits_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}
+\times\left\{  1,2,...,n\right\}  }\left(  1+p_{j}q_{i}T\right)  \right)  \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\widetilde{Q}\widehat{\cdot
+}\widetilde{P}=\prod\limits_{\left(  i,j\right)  \in\left\{
+1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  }\left(  1+p_{j}%
+q_{i}T\right)  \right)  \\
+&  \leq\sum\limits_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}
+\times\left\{  1,2,...,n\right\}  }\underbrace{\left(  1+p_{j}q_{i}T\right)
+}_{\leq1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since the degree of a product of some polynomials}\\
+\text{is }\leq\text{ to the sum of the degrees of these polynomials}%
+\end{array}
+\right)  \\
+&  \leq\sum\limits_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}
+\times\left\{  1,2,...,n\right\}  }1=\left\vert \left\{  1,2,...,m\right\}
+\times\left\{  1,2,...,n\right\}  \right\vert =mn.
+\end{align*}
+
+
+But%
+\begin{align*}
+\sum\limits_{i\in\mathbb{N}}a_{i}T^{i}  &  =\sum\limits_{i\in\mathbb{N}%
+}\left\{
+\begin{array}
+[c]{c}%
+c_{n-i}\text{, if }i\leq n;\\
+0\text{, if }i>n
+\end{array}
+\right.  T^{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }a_{i}=\left\{
+\begin{array}
+[c]{c}%
+c_{n-i}\text{, if }i\leq n;\\
+0\text{, if }i>n
+\end{array}
+\right.  \right) \\
+&  =\sum\limits_{i=0}^{n}\underbrace{\left\{
+\begin{array}
+[c]{c}%
+c_{n-i}\text{, if }i\leq n;\\
+0\text{, if }i>n
+\end{array}
+\right.  }_{=c_{n-i}\text{ (since }i\leq n\text{)}}T^{i}+\sum\limits_{i=n+1}%
+^{\infty}\underbrace{\left\{
+\begin{array}
+[c]{c}%
+c_{n-i}\text{, if }i\leq n;\\
+0\text{, if }i>n
+\end{array}
+\right.  }_{=0}T^{i}\\
+&  =\sum\limits_{i=0}^{n}c_{n-i}T^{i}+\underbrace{\sum\limits_{i=n+1}^{\infty
+}0T^{i}}_{=0}=\sum\limits_{i=0}^{n}c_{n-i}T^{i}=\widetilde{P}%
+\end{align*}
+and similarly $\sum\limits_{i\in\mathbb{N}}b_{i}T^{i}=\widetilde{Q}$. Now,%
+\begin{align*}
+\widetilde{Q}\widehat{\cdot}\widetilde{P}  &  =\widetilde{P}\widehat{\cdot
+}\widetilde{Q}=\left(  \sum\limits_{i\in\mathbb{N}}a_{i}T^{i}\right)
+\widehat{\cdot}\left(  \sum\limits_{i\in\mathbb{N}}b_{i}T^{i}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\widetilde{P}=\sum\limits_{i\in
+\mathbb{N}}a_{i}T^{i}\text{ and }\widetilde{Q}=\sum\limits_{i\in\mathbb{N}%
+}b_{i}T^{i}\right) \\
+&  =\sum_{k\in\mathbb{N}}P_{k}\left(  a_{1},a_{2},...,a_{k},b_{1}%
+,b_{2},...,b_{k}\right)  T^{k}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\widehat{\cdot
+}\text{ at the beginning of Section 5}\right)  .
+\end{align*}
+Hence, for every $k\in\mathbb{N}$, we have%
+\[
+\left(  \text{the coefficient of the polynomial }\widetilde{Q}\widehat{\cdot
+}\widetilde{P}\text{ before }T^{k}\right)  =P_{k}\left(  a_{1},a_{2}%
+,...,a_{k},b_{1},b_{2},...,b_{k}\right)  .
+\]
+
+
+But since $\widetilde{Q}\widehat{\cdot}\widetilde{P}$ is a polynomial of
+degree $\leq mn$, we have%
+\begin{align*}
+\widetilde{Q}\widehat{\cdot}\widetilde{P} &  =\sum_{k=0}^{mn}%
+\underbrace{\left(  \text{the coefficient of the polynomial }\widetilde{Q}%
+\widehat{\cdot}\widetilde{P}\text{ before }T^{k}\right)  }_{=P_{k}\left(
+a_{1},a_{2},...,a_{k},b_{1},b_{2},...,b_{k}\right)  }T^{k}\\
+&  =\sum_{k=0}^{mn}P_{k}\left(  a_{1},a_{2},...,a_{k},b_{1},b_{2}%
+,...,b_{k}\right)  T^{k}\\
+&  =\sum_{i=0}^{mn}P_{i}\left(  a_{1},a_{2},...,a_{i},b_{1},b_{2}%
+,...,b_{i}\right)  T^{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed
+}k\text{ as }i\right)  .
+\end{align*}
+Thus,%
+\[
+\sum_{i=0}^{mn}P_{i}\left(  a_{1},a_{2},...,a_{i},b_{1},b_{2},...,b_{i}%
+\right)  T^{i}=\widetilde{Q}\widehat{\cdot}\widetilde{P}=\prod\limits_{\left(
+i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}
+}\left(  1+p_{j}q_{i}T\right)  .
+\]
+Define $r_{\left(  i,j\right)  }$ to mean $p_{j}q_{i}$ for every $\left(
+i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}
+$. Then,%
+\begin{align*}
+&  \sum_{i=0}^{mn}P_{i}\left(  a_{1},a_{2},...,a_{i},b_{1},b_{2}%
+,...,b_{i}\right)  T^{i}\\
+&  =\prod\limits_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}
+\times\left\{  1,2,...,n\right\}  }\left(  1+\underbrace{p_{j}q_{i}%
+}_{=r_{\left(  i,j\right)  }}T\right)  =\prod\limits_{\left(  i,j\right)
+\in\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  }\left(
+1+r_{\left(  i,j\right)  }T\right)  \\
+&  =\prod\limits_{s\in\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  }\left(  1+r_{s}T\right)
+\end{align*}
+(here, we renamed the index $\left(  i,j\right)  $ as $s$). Thus, Lemma
+5.4.S.1 (applied to $N$, $mn$, $P_{i}\left(  a_{1},a_{2},...,a_{i},b_{1}%
+,b_{2},...,b_{i}\right)  $, $\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  $ and $r_{s}$ instead of $L$, $\ell$, $a_{i}$, $S$ and
+$p_{s}$) yields that%
+\[
+\sum\limits_{i=0}^{mn}P_{mn-i}\left(  a_{1},a_{2},...,a_{mn-i},b_{1}%
+,b_{2},...,b_{mn-i}\right)  T^{i}=\prod\limits_{s\in\left\{
+1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  }\left(  r_{s}+T\right)
+.
+\]
+Since $\sum\limits_{i=0}^{mn}P_{mn-i}\left(  a_{1},a_{2},...,a_{mn-i}%
+,b_{1},b_{2},...,b_{mn-i}\right)  T^{i}=R$, this rewrites as%
+\begin{align*}
+R &  =\prod\limits_{s\in\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  }\left(  r_{s}+T\right)  =\prod\limits_{\left(  i,j\right)
+\in\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  }\left(
+\underbrace{r_{\left(  i,j\right)  }}_{=p_{j}q_{i}}+T\right)  \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the index }s\text{ as
+}\left(  i,j\right)  \right)  \\
+&  =\prod\limits_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}
+\times\left\{  1,2,...,n\right\}  }\left(  p_{j}q_{i}+T\right)  .
+\end{align*}
+Therefore,%
+\begin{equation}
+R\left(  -\alpha\beta\right)  =\prod\limits_{\left(  i,j\right)  \in\left\{
+1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  }\left(  p_{j}%
+q_{i}+\left(  -\alpha\beta\right)  \right)  .\label{5.4.sol.1}%
+\end{equation}
+One of the factors of the product on the right hand side of (\ref{5.4.sol.1})
+(namely, the one for $\left(  i,j\right)  =\left(  m,n\right)  $) is%
+\[
+\underbrace{p_{n}}_{=\alpha}\underbrace{q_{m}}_{=\beta}+\left(  -\alpha
+\beta\right)  =\alpha\beta+\left(  -\alpha\beta\right)  =0.
+\]
+Hence, the product on the right hand side of (\ref{5.4.sol.1}) is $0$. Thus,
+(\ref{5.4.sol.1}) simplifies to $R\left(  -\alpha\beta\right)  =0$.
+
+Since $R$ was defined by
+\[
+R=\sum\limits_{i=0}^{mn}P_{mn-i}\left(  a_{1},a_{2},...,a_{mn-i},b_{1}%
+,b_{2},...,b_{mn-i}\right)  T^{i},
+\]
+it is clear that the polynomial $R$ has degree $\leq mn$, and that the
+coefficient of $R$ before $T^{mn}$ is%
+\[
+P_{mn-mn}\left(  a_{1},a_{2},...,a_{mn-mn},b_{1},b_{2},...,b_{mn-mn}\right)
+=P_{0}\left(  a_{1},a_{2},...,a_{0},b_{1},b_{2},...,b_{0}\right)  =P_{0}=1
+\]
+(here we are using the fact that $P_{0}=1$; this is very easy to see from the
+definition of $P_{0}$). Thus, $R$ is a monic polynomial of degree $mn$. Hence
+$\deg R=mn=nm$.
+
+So we have found a monic polynomial $R\in K\left[  T\right]  $ such that $\deg
+R=nm$ and $R\left(  -\alpha\beta\right)  =0$. By the definition of
+"$nm$-integral", this yields that $-\alpha\beta$ is $nm$-integral over $K$.
+This proves Lemma 5.4.S.2.
+
+Now let us finally solve the problem. Let $\alpha$ and $\beta$ be two elements
+of $L$ such that $\alpha$ is $n$-integral over $K$ and $\beta$ is $m$-integral
+over $K$. Then, Lemma 5.4.S.2 yields $-\alpha\beta$ is $nm$-integral over $K$.
+Hence, Lemma 5.4.S.2 (applied to $nm$, $1$, $-\alpha\beta$ and $-1$ instead of
+$n$, $m$, $\alpha$ and $\beta$) yields that $\left(  -\alpha\beta\right)
+\left(  -1\right)  $ is $\left(  nm\right)  \cdot1$-integral over $K$ (since
+$-1$ is $1$-integral over $K$). In other words, $\alpha\beta$ is $nm$-integral
+over $K$. This solves Exercise 5.4.
 
 \subsection{To Section 6}
 
