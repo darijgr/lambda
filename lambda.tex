@@ -9,7 +9,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, September 25, 2011 21:54:29}
+%TCIDATA{LastRevised=Monday, September 26, 2011 00:39:25}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
@@ -2832,8 +2832,8 @@ As Theorem 5.1 \textbf{(b)} states, $\left(  \Lambda\left(  A\right)  ,\left(
 $-ring, where the maps $\widehat{\lambda}_{A}^{i}:\Lambda\left(  A\right)
 \rightarrow\Lambda\left(  A\right)  $ are defined in the same way as the maps
 $\widehat{\lambda}^{i}:\Lambda\left(  K\right)  \rightarrow\Lambda\left(
-K\right)  $ (which we have defined in Section 5) but for the ring $K$ instead
-of $A$.
+K\right)  $ (which we have defined in Section 5) but for the ring $A$ instead
+of $K$.
 
 Prove that there exists one and only one $\lambda$-ring homomorphism
 $\widetilde{\varphi}:K\rightarrow\Lambda\left(  A\right)  $ such that
@@ -2947,14 +2947,18 @@ _{i\in\mathbb{N}}\right)  $ defined in Theorem 3.3 is special.
 
 \textit{Proof of Theorem 7.3.} As in the proof of Theorem 3.3, we can define a
 map $\overline{\lambda}_{T}:K\left[  S\right]  \rightarrow\left(  K\left[
-S\right]  \right)  \left[  \left[  T\right]  \right]  $ by $\overline{\lambda
-}_{T}\left(  u\right)  =\sum\limits_{i\in\mathbb{N}}\overline{\lambda}%
-^{i}\left(  u\right)  T^{j}$ for every $u\in K\left[  S\right]  $. Noting that
-$\overline{\lambda}_{T}\left(  u\right)  \in\Lambda\left(  K\left[  S\right]
-\right)  $ for every $u\in K\left[  S\right]  $ (since $\left(  K,\left(
-\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring), we see
-that we can actually consider $\overline{\lambda}_{T}$ as a map $K\left[
-S\right]  \rightarrow\Lambda\left(  K\left[  S\right]  \right)  $.
+S\right]  \right)  \left[  \left[  T\right]  \right]  $ by
+\[
+\overline{\lambda}_{T}\left(  u\right)  =\sum\limits_{i\in\mathbb{N}}%
+\overline{\lambda}^{i}\left(  u\right)  T^{i}\ \ \ \ \ \ \ \ \ \ \text{for
+every }u\in K\left[  S\right]  .
+\]
+Noting that $\overline{\lambda}_{T}\left(  u\right)  \in\Lambda\left(
+K\left[  S\right]  \right)  $ for every $u\in K\left[  S\right]  $ (since
+$\left(  K\left[  S\right]  ,\left(  \overline{\lambda}^{i}\right)
+_{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring), we see that we can actually
+consider $\overline{\lambda}_{T}$ as a map $K\left[  S\right]  \rightarrow
+\Lambda\left(  K\left[  S\right]  \right)  $.
 
 Theorem 5.6 yields that the map $\overline{\lambda}_{T}$ is an additive group
 homomorphism. In order to show that the $\lambda$-ring $\left(  K\left[
@@ -3021,11 +3025,10 @@ Now, for every $i\in\mathbb{N}$, let us define a map $\widehat{\overline
 {\lambda}}^{i}:\Lambda\left(  K\left[  S\right]  \right)  \rightarrow
 \Lambda\left(  K\left[  S\right]  \right)  $ in the same way as the map
 $\widehat{\lambda}^{i}:\Lambda\left(  K\right)  \rightarrow\Lambda\left(
-K\right)  $ was defined in Section 5 (but with $K$ replaced by $\Lambda\left(
-K\right)  $). Then, the diagram%
+K\right)  $ was defined in Section 5 (but with $K$ replaced by $K\left[
+S\right]  $). Then, the diagram%
 \begin{equation}
-\xymatrixcolsep{4pc}\xymatrix{ \Lambda\left(K\right) \ar@{^{(}->}[d] \ar[r]^{\widehat{\lambda}^i} & \Lambda\left(K\right) \ar@{^{(}->}[d] \\ \Lambda\left(K\left[S\right]\right) \ar[r]_{\widehat{\overline{\lambda}}^i} & \Lambda\left(K\left[S\right]\right) }
-\label{7.3.commdiag}%
+\xymatrixcolsep{4pc}\xymatrix{ \Lambda\left(K\right) \ar@{^{(}->}[d] \ar[r]^{\widehat{\lambda}^i} & \Lambda\left(K\right) \ar@{^{(}->}[d] \\ \Lambda\left(K\left[S\right]\right) \ar[r]_{\widehat{\overline{\lambda}}^i} & \Lambda\left(K\left[S\right]\right) }\label{7.3.commdiag}%
 \end{equation}
 (where the vertical arrows are induced by the canonical inclusion
 $K\rightarrow K\left[  S\right]  $) is commutative (since the maps
@@ -5796,18 +5799,22 @@ every $u\in1+K\left[  T\right]  ^{+}.$ So let us assume that $u\in1+K\left[
 T\right]  ^{+}$. Then, there exist some $\left(  \widetilde{K}_{u},\left[
 u_{1},u_{2},...,u_{m}\right]  \right)  \in K^{\operatorname*{int}}$ such that
 $u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
-.$%
+.$ Consider this $\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}%
+\right]  \right)  $. Then,
 \begin{align*}
 u  &  =\Pi\left(  \widetilde{K},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
-=\prod_{i=1}^{m}\left(  1+u_{i}T\right)  =\sum_{i\in\mathbb{N}}\sum
-_{K\in\mathcal{P}_{i}\left(  \left\{  1,2,...,m\right\}  \right)  }%
-\prod\limits_{k\in K}\left(  u_{k}T\right) \\
+=\prod_{i=1}^{m}\left(  1+u_{i}T\right)  =\sum_{i\in\mathbb{N}}\left(
+\sum_{\substack{K\subseteq\left\{  1,2,...,m\right\}  ;\\\left\vert
+K\right\vert =i}}\prod\limits_{k\in K}u_{k}\right)  \cdot T^{i}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Exercise 4.2 \textbf{(b)}, applied to
+}A=\widetilde{K}\left[  \left[  T\right]  \right]  \text{, }\alpha_{i}%
+=u_{i}\text{ and }t=T\right) \\
 &  =\sum_{i\in\mathbb{N}}\left(  \sum_{K\in\mathcal{P}_{i}\left(  \left\{
 1,2,...,m\right\}  \right)  }\prod\limits_{k\in K}u_{k}\right)  \cdot T^{i}%
 \end{align*}
-yields $\operatorname*{coeff}\nolimits_{i}u=\sum\limits_{K\in\mathcal{P}%
-_{i}\left(  \left\{  1,2,...,m\right\}  \right)  }\prod\limits_{k\in K}u_{k}.$
-On the other hand, Theorem 5.3 \textbf{(d)} yields%
+and therefore $\operatorname*{coeff}\nolimits_{i}u=\sum\limits_{K\in
+\mathcal{P}_{i}\left(  \left\{  1,2,...,m\right\}  \right)  }\prod
+\limits_{k\in K}u_{k}.$ On the other hand, Theorem 5.3 \textbf{(d)} yields%
 \begin{align*}
 \widehat{\lambda}^{i}\left(  u\right)   &  =\Pi\left(  \widetilde{K}%
 _{u},\left[  \prod\limits_{k\in K}u_{k}\ \mid\ K\in\mathcal{P}_{i}\left(
