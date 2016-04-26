@@ -8,7 +8,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.00.0.2570}
-%TCIDATA{LastRevised=Saturday, September 05, 2009 12:00:51}
+%TCIDATA{LastRevised=Monday, September 07, 2009 13:21:12}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 \voffset=-2.5cm
@@ -22,7 +22,7 @@
 
 Darij Grinberg
 
-\textit{Version 0.0.1, last revised 4 Sep 2009}
+\textit{Version 0.0.2, last revised 7 Sep 2009}
 \end{center}
 
 This is a \textbf{BETA VERSION} and has never been proofread. \textbf{Please
@@ -479,7 +479,7 @@ Our next example is a generalization of Theorem 3.1:
 \textbf{Definition.} Let $K$ be a ring. We call $K$ a \textit{binomial ring}
 if and only if none of the elements $1,$ $2,$ $3,$ $...$ is a zero-divisor in
 $K$, and $n!\mid x\cdot\left(  x-1\right)  \cdot...\cdot\left(  x-i+1\right)
-$ for every $x\in K$.
+$ for every $x\in K$ and every $n\in\mathbb{N}$.
 
 \textbf{Theorem 3.2.} Let $K$ be a binomial ring. For every $i\in\mathbb{N}$,
 define a map $\lambda^{i}:K\rightarrow K$ by $\lambda^{i}\left(  x\right)
@@ -620,16 +620,17 @@ a nice solution.]}
 \textit{Exercise 3.2.} Let $K$ be a ring where none of the elements $1,$ $2,$
 $3,$ $...$ is a zero-divisor. Let $E$ be a subset of $K$ that generates $K$ as
 a ring. Assume that $n!\mid x\cdot\left(  x-1\right)  \cdot...\cdot\left(
-x-i+1\right)  $ for every $x\in E$. Prove that $K$ is a binomial
-ring.\ \ \ \ \footnote{\textit{Hints to solution:} Let $\mathbb{N}_{K}^{+}$ be
-the subset $\left\{  1,2,3,...\right\}  $ of $K$. Obviously, this subset is
-multiplicatively closed and contains no zero-divisors. Hence, the localization
-$\left(  \mathbb{N}_{K}^{+}\right)  ^{-1}K$ can be considered as an extension
-ring of $K$. We now can define $\dbinom{x}{i}\in\left(  \mathbb{N}_{K}%
-^{+}\right)  ^{-1}K$ for every $x\in\left(  \mathbb{N}_{K}^{+}\right)  ^{-1}K$
-and $i\in\mathbb{N}$. It remains to show that $\dbinom{x}{i}\in K$ for every
-$x\in K$ and $i\in\mathbb{N}$, given that $\dbinom{x}{i}\in K$ for every $x\in
-E$ and $i\in\mathbb{N}$.
+x-i+1\right)  $ for every $x\in E$ and every $n\in\mathbb{N}$. Prove that $K$
+is a binomial ring.\ \ \ \ \footnote{\textit{Hints to solution:} Let
+$\mathbb{N}_{K}^{+}$ be the subset $\left\{  1,2,3,...\right\}  $ of $K$.
+Obviously, this subset is multiplicatively closed and contains no
+zero-divisors. Hence, the localization $\left(  \mathbb{N}_{K}^{+}\right)
+^{-1}K$ can be considered as an extension ring of $K$. We now can define
+$\dbinom{x}{i}\in\left(  \mathbb{N}_{K}^{+}\right)  ^{-1}K$ for every
+$x\in\left(  \mathbb{N}_{K}^{+}\right)  ^{-1}K$ and $i\in\mathbb{N}$. It
+remains to show that $\dbinom{x}{i}\in K$ for every $x\in K$ and
+$i\in\mathbb{N}$, given that $\dbinom{x}{i}\in K$ for every $x\in E$ and
+$i\in\mathbb{N}$.
 \par
 This will follow once we have seen that for $i\in\mathbb{N}$ fixed,
 \par
@@ -2630,6 +2631,24 @@ contradiction, that $m=0$ in $K$ for some positive integer $m$. Then, Theorem
 \end{align*}
 in $K\left[  \left[  T\right]  \right]  $. On the other hand, $\lambda
 _{T}\left(  m\right)  =\lambda_{T}\left(  0\right)  =1.$ Contradiction.}
+
+\textit{Exercise 6.3.} Consider the ring $\mathbb{Z}\left[  X\right]
+\diagup\left(  X^{2},2X\right)  =\mathbb{Z}\left[  x\right]  $, where $x$
+denotes the residue class of $X$ modulo the ideal $\left(  X^{2},2X\right)  $.
+
+Define a map $\lambda_{T}:\mathbb{Z}\left[  x\right]  \rightarrow\left(
+\mathbb{Z}\left[  x\right]  \right)  \left[  \left[  T\right]  \right]  $ by
+$\lambda_{T}\left(  a+bx\right)  =\left(  1+T\right)  ^{a}\left(  1+xT\right)
+^{b}$ for every $a\in\mathbb{Z}$ and $b\in\mathbb{Z}$.
+
+Define a map $\lambda^{i}:\mathbb{Z}\left[  x\right]  \rightarrow
+\mathbb{Z}\left[  x\right]  $ for every $i\in\mathbb{N}$ through the condition
+$\lambda_{T}\left(  x\right)  =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
+x\right)  T^{i}$ for every $x\in K$.
+
+Prove that $\left(  \mathbb{Z}\left[  x\right]  ,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ is a special $\lambda$-ring. [This way, we see
+that the additive group of a special $\lambda$-ring needs not be torsion-free.]
 \end{quotation}
 
 \begin{center}
@@ -4151,14 +4170,14 @@ and%
 {d}{dT}\log\left(  u\widehat{\cdot}v\right)  \right)  =\left(  -1\right)
 ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log u\right)
 \cdot\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
--T\dfrac{d}{dT}\log v\right)  .\label{9.2.times}%
+-T\dfrac{d}{dT}\log v\right)  . \label{9.2.times}%
 \end{equation}
 This needs to be verified for $u\in1+K\left[  T\right]  ^{+}$ and
 $v\in1+K\left[  T\right]  ^{+}$ only (since the operations $\widehat{+}$ and
 $\widehat{\cdot}$ and the mapping%
 \begin{align*}
 \Lambda\left(  K\right)   &  \rightarrow K,\\
-u &  \mapsto\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
+u  &  \mapsto\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
 -T\dfrac{d}{dT}\log u\right)
 \end{align*}
 are continuous (where the topology on $K$ can be chosen arbitrarily), and
@@ -4182,19 +4201,19 @@ u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
 \]
 entails%
 \begin{align*}
-\dfrac{d}{dT}u &  =\dfrac{d}{dT}\prod_{k=1}^{m}\left(  1+u_{k}T\right)
+\dfrac{d}{dT}u  &  =\dfrac{d}{dT}\prod_{k=1}^{m}\left(  1+u_{k}T\right)
 =\sum_{\tau=1}^{m}\underbrace{\prod_{k\in\left\{  1,2,...,m\right\}
 \setminus\left\{  \tau\right\}  }\left(  1+u_{k}T\right)  }_{=\dfrac
 {\prod\limits_{k=1}^{m}\left(  1+u_{k}T\right)  }{1+u_{\tau}T}}\cdot
 \underbrace{\dfrac{d}{d\tau}\left(  1+u_{\tau}T\right)  }_{=u_{\tau}%
-}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the Leibniz rule}\right)  \\
+}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the Leibniz rule}\right) \\
 &  =\sum_{\tau=1}^{m}\left(  \underbrace{\prod\limits_{k=1}^{m}\left(
 1+u_{k}T\right)  }_{=u}\right)  \cdot\dfrac{u_{\tau}}{1+u_{\tau}T}=u\sum
 _{\tau=1}^{m}\dfrac{u_{\tau}}{1+u_{\tau}T}%
 \end{align*}
 and thus%
 \begin{align*}
--T\dfrac{d}{dT}\log u &  =-T\dfrac{\dfrac{d}{dT}u}{u}=-T\dfrac{u\sum
+-T\dfrac{d}{dT}\log u  &  =-T\dfrac{\dfrac{d}{dT}u}{u}=-T\dfrac{u\sum
 \limits_{\tau=1}^{m}\dfrac{u_{\tau}}{1+u_{\tau}T}}{u}=-T\sum\limits_{\tau
 =1}^{m}\dfrac{u_{\tau}}{1+u_{\tau}T}=\sum\limits_{\tau=1}^{m}\left(  -u_{\tau
 }T\right)  \left(  1+u_{\tau}T\right)  ^{-1}=\sum\limits_{\tau=1}^{m}\left(
@@ -4252,7 +4271,7 @@ K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is special) with the
 map%
 \begin{align*}
 \Lambda\left(  K\right)   &  \rightarrow K,\\
-u &  \mapsto\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
+u  &  \mapsto\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
 -T\dfrac{d}{dT}\log u\right)
 \end{align*}
 (which is a ring homomorphism according to Exercise 9.2 \textbf{(a)}) is
