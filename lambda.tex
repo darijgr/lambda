@@ -9,7 +9,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, October 21, 2011 19:44:21}
+%TCIDATA{LastRevised=Monday, October 24, 2011 22:36:09}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
@@ -42,7 +42,7 @@
 
 Darij Grinberg
 
-\textit{Version 0.0.13, last revised 20 Oct 2011}
+\textit{Version 0.0.14, last revised 23 Oct 2011}
 \end{center}
 
 This is a \textbf{BETA VERSION} and has never been systematically proofread.
@@ -120,9 +120,9 @@ Fulton/Lang [1] motivate $\lambda$-rings through vector bundles. Here we are
 going for a more elementary motivation, namely through representation rings in
 group representation theory:
 
-Consider a finite group $G$ and a field $k$. In representation theory, one
-define the so-called \textit{representation ring} of the group $G$ over the
-field $k$. This ring can be constructed as follows:
+Consider a finite group $G$ and a field $k$ of characteristic $0$. In
+representation theory, one define the so-called \textit{representation ring}
+of the group $G$ over the field $k$. This ring can be constructed as follows:
 
 We consider only finite-dimensional representations of $G$.
 
@@ -132,20 +132,20 @@ from the notion of such a big set. If you wish, you can call it a class or a
 SET instead of a set, or restrict yourself to a smaller subset containing
 every representation up to isomorphism.)
 
-Let $\operatorname*{FRep}_{k}G$ be the free abelian group over
+Let $\operatorname*{FRep}_{k}G$ be the free abelian group on the set
 $\operatorname*{Rep}_{k}G$. Let $I$ be the subgroup%
 \begin{align*}
 I  &  =\left\langle U-V\ \mid\ U\text{ and }V\text{ are two isomorphic
 representations of }G\right\rangle \\
-&  +\left\langle U\oplus V-U-V\ \mid\ U\text{ and }V\text{ are two
-representations of }G\right\rangle
+&  \ \ \ \ \ \ \ \ \ \ +\left\langle U\oplus V-U-V\ \mid\ U\text{ and }V\text{
+are two representations of }G\right\rangle
 \end{align*}
 of the free abelian group $\operatorname*{FRep}_{k}G$ (written additively).
 Then, $\operatorname*{FRep}_{k}G\diagup I$ is an abelian group. Whenever $U$
 is a representation of $G,$ we should denote the equivalence class of
 $U\in\operatorname*{FRep}_{k}G$ modulo the ideal $I$ by $\overline{U};$
-however, since we are always going to work in $\operatorname*{FRep}%
-_{k}G\diagup I$ (because there is nothing interesting to do in
+however, since we are going to work in $\operatorname*{FRep}_{k}G\diagup I$
+throughout this Section 1 (because there is not much of interest to do in
 $\operatorname*{FRep}_{k}G$ itself), we will simply write $U$ for this
 equivalence class. This means that whenever $U$ and $V$ are two isomorphic
 representations of $G$, we will simply write $U=V$, and whenever $U$ and $V$
@@ -162,10 +162,16 @@ U\otimes\left(  V\otimes W\right)   &  \cong\left(  U\otimes V\right)  \otimes
 W,\\
 \left(  U\oplus V\right)  \otimes W  &  \cong\left(  U\otimes W\right)
 \oplus\left(  V\otimes W\right)  ,\\
+U\otimes\left(  V\oplus W\right)   &  \cong\left(  U\otimes V\right)
+\oplus\left(  U\otimes W\right)  ,\\
 U\otimes V  &  \cong V\otimes U,\\
-1\otimes U  &  \cong U\otimes1\cong U
+1\otimes U  &  \cong U\otimes1\cong U,\\
+0\otimes U  &  \cong U\otimes0\cong0
 \end{align*}
-for any representations $U,$ $V$ and $W$ (and probably some others I have forgotten).
+for any representations $U,$ $V$ and $W$, and because tensor products preserve
+isomorphisms (this means that if $U$, $V$ and $W$ are three representations of
+$G$ such that $V\cong W$ (as representations), then $U\otimes V\cong U\otimes
+W$ and $V\otimes U\cong W\otimes U$).
 
 The ring $\operatorname*{FRep}_{k}G\diagup I$ is called the
 \textit{representation ring of the group }$G$\textit{ over the field }$k$. The
@@ -261,6 +267,47 @@ $\operatorname*{FRep}_{k}G\diagup I$ is the subset%
 \]
 
 
+The reader may wonder how much the ring $\operatorname*{FRep}_{k}G\diagup I$
+actually tells us about representations of $G$. For example, if $U$ and $V$
+are two representations of $G$ such that $\overline{U}=\overline{V}$ in
+$\operatorname*{FRep}_{k}G\diagup I$, does this mean that $U\cong V$ ? It
+turns out that this is true, thanks to the cancellative property of
+representation theory\footnote{This is the property that whenever $U$, $V$ and
+$W$ are three representations of a finite group $G$ such that $U\oplus W\cong
+V\oplus W$ (where we recall once again that "representation" means
+"finite-dimensional representation" for us!), then $U\cong V$. This can be
+proven using the Krull-Remak-Schmidt theorem, or, when the characteristic of
+the field is $0$, using semisimplicity of $k\left[  G\right]  $.}; hence,
+abstract algebraic identities that we can prove to hold in arbitrary special
+$\lambda$-rings yield actual isomorphies of representations of finite groups.
+(Of course, they only yield them once we will have proven that
+$\operatorname*{FRep}_{k}G\diagup I$ is a special $\lambda$-ring. At the
+moment, this is not proven in this text, although it is rather easy to show
+using character theory.)
+
+The situation gets more complicated when the field over which we are working
+is not of characteristic $0$. In this case, it turns out that
+$\operatorname*{FRep}_{k}G\diagup I$ is not necessarily a special $\lambda
+$-ring any more (although still a $\lambda$-ring by Exercise 1.1). If we
+insist on getting a special $\lambda$-ring, we must modify our definition of
+$I$ to%
+\begin{align*}
+I  &  =\left\langle V-U-W\ \mid\ U\text{, }V\text{ and }W\text{ are three
+representations of }G\text{ such that}\right. \\
+&  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \left.  \text{there
+exists an exact sequence }0\rightarrow U\rightarrow V\rightarrow
+W\rightarrow0\right\rangle .
+\end{align*}
+The resulting ring $\operatorname*{FRep}_{k}G\diagup I$ is called the
+\textit{Grothendieck ring} of representations of $G$ over our field. A proof
+that it is a special $\lambda$-ring is sketched in [7] (Example on page 95),
+but I do not understand it. Anyway this result is not as strong as in
+characteristic $0$ anymore, because the equality $\overline{U}=\overline{V}$
+in the Grothendieck ring $\operatorname*{FRep}_{k}G\diagup I$ does not imply
+$U\cong V$ as representations of $G$ when $\operatorname*{char}k\neq0$. So the
+Grothendieck ring is, in some sense, a blurry image of the representation
+theory of $G$.
+
 Vector bundles over a given compact Hausdorff space are similar to
 representations of a given group in several ways: They are somehow "enriched"
 vector space structures (a vector bundle is, roughly speaking, a family of
@@ -269,15 +316,17 @@ group is a vector space with a group action on it), so one can form direct
 sums, tensor products and exterior powers of both of these. Hence, it is not
 surprising that we can define a $\lambda$-ring structure on a kind of "ring of
 vector bundles over a space" similarly to the $\lambda$-ring structure on the
-representation ring of a group. However, we must be more careful with vector
-bundles, because this "ring of vector bundles over a space" actually does not
-consist of vector bundles, but of equivalence classes, and sometimes,
-different vector bundles can lie in one and the same equivalence class (as
-opposed to representations of a group, which are uniquely determined by their
-equivalence class in the representation ring). This "ring of vector bundles"
-is denoted by $K\left(  X\right)  $, where $X$ is the base space, and is the
-first fundamental object of study in K-theory. We will not delve into K-theory
-here; we will only provide some of its backbone, namely the abstract algebraic
+representation ring of a group. However, just as in the case of
+representations of a group over nonzero characteristic, we must be careful
+with vector bundles, because this "ring of vector bundles over a space"
+actually does not consist of vector bundles, but of equivalence classes, and
+sometimes, different vector bundles can lie in one and the same equivalence
+class (just as representations of groups are no longer uniquely determined by
+their equivalence class in the representation ring when the characteristic of
+the ground field is not $0$). This "ring of vector bundles" is denoted by
+$K\left(  X\right)  $, where $X$ is the base space, and is the first
+fundamental object of study in K-theory. We will not delve into K-theory here;
+we will only provide some of its backbone, namely the abstract algebraic
 theory of $\lambda$-rings (which appear not only in K-theory, but also in
 representation theory and elsewhere).
 
@@ -1662,8 +1711,6 @@ T\right]  \right]  ^{+}$ by%
 for every power series $\sum\limits_{i\in\mathbb{N}}a_{i}T^{i}\in1+K\left[
 \left[  T\right]  \right]  ^{+}$ (where $a_{i}\in K$ for every $i\in
 \mathbb{N}$).
-
-
 \end{quote}
 
 Note that we have denoted the newly-defined addition, subtraction and
@@ -1999,6 +2046,45 @@ a_{2}\cdot a_{3}$).
 \textit{Proof of Corollary 5.4.} Part \textbf{(a)} follows by induction from
 Theorem 5.3 \textbf{(b)}, and part \textbf{(b)} follows by induction from
 Theorem 5.3 \textbf{(c)}.
+
+For later use, we restate part \textbf{(d)} of Theorem 5.3 in somewhat more
+flexible notations:
+
+\begin{quote}
+\textbf{Theorem 5.3' (d)}. Let $K$ be a ring. Let $w\in1+K\left[  T\right]
+^{+}$. Assume that $w=\Pi\left(  \widetilde{K},\left[  w_{\ell}\mid\ell\in
+L\right]  \right)  $ for some $\left(  \widetilde{K},\left[  w_{\ell}\mid
+\ell\in L\right]  \right)  \in K^{\operatorname*{int}}$. Let $k\in\mathbb{N}$.
+Then,%
+\[
+\widehat{\lambda}^{k}\left(  w\right)  =\Pi\left(  \widetilde{K},\left[
+\prod_{\ell\in S}w_{\ell}\mid S\in\mathcal{P}_{k}\left(  L\right)  \right]
+\right)  .
+\]
+
+
+
+\end{quote}
+
+\textit{Proof of Theorem 5.3' \textbf{(d)}.} Since $L$ is a finite set used
+only for labelling, we can WLOG assume that $L=\left\{  1,2,...,m\right\}  $
+for some $m\in\mathbb{N}$. Thus, $w=\Pi\left(  \widetilde{K},\left[  w_{\ell
+}\mid\ell\in L\right]  \right)  $ rewrites as $w=\Pi\left(  \widetilde{K}%
+,\left[  w_{\ell}\mid\ell\in\left\{  1,2,...,m\right\}  \right]  \right)
+=\Pi\left(  \widetilde{K},\left[  w_{1},w_{2},...,w_{m}\right]  \right)  $.
+Hence, we can apply Theorem 5.3 \textbf{(d)} to $u=w$, $j=k$, $\widetilde{K}%
+_{u}=\widetilde{K}$, and $u_{\ell}=w_{\ell}$ and obtain%
+\begin{align*}
+\widehat{\lambda}^{k}\left(  w\right)   &  =\Pi\left(  \widetilde{K},\left[
+\prod_{i\in I}w_{i}\mid I\in\mathcal{P}_{k}\left(  \underbrace{\left\{
+1,2,...,m\right\}  }_{=L}\right)  \right]  \right)  =\Pi\left(  \widetilde{K}%
+,\left[  \prod_{i\in I}w_{i}\mid I\in\mathcal{P}_{k}\left(  L\right)  \right]
+\right) \\
+&  =\Pi\left(  \widetilde{K},\left[  \prod_{\ell\in S}w_{\ell}\mid
+S\in\mathcal{P}_{k}\left(  L\right)  \right]  \right)
+\end{align*}
+(here, we renamed $i$ and $I$ as $\ell$ and $S$). This proves Theorem 5.3'
+\textbf{(d)}.
 
 We are approaching the proof of Theorem 5.1. The idea of the proof is: We have
 to show some identities for elements of $1+K\left[  \left[  T\right]  \right]
@@ -2423,7 +2509,8 @@ there exists an extension ring $\widetilde{K}_{u,v}$ containing both
 $\widetilde{K}_{u}$ and $\widetilde{K}_{v}$ as subrings. Now, Theorem 5.3
 \textbf{(c)} yields $u\widehat{\cdot}v=\Pi\left(  \widetilde{K}_{u,v},\left[
 u_{i}v_{j}\mid\left(  i,j\right)  \in\left\{  1,2,...,m\right\}
-\times\left\{  1,2,...,n\right\}  \right]  \right)  $, so that we conclude%
+\times\left\{  1,2,...,n\right\}  \right]  \right)  $, so that Theorem 5.7
+\textbf{(b)} gives us%
 \begin{align*}
 \operatorname*{ev}\nolimits_{\mu\nu T}\left(  u\widehat{\cdot}v\right)   &
 =\Pi\left(  \widetilde{K}_{u,v},\left[  \mu\nu u_{i}v_{j}\mid\left(
@@ -2431,15 +2518,15 @@ i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}
 \right]  \right) \\
 &  =\Pi\left(  \widetilde{K}_{u,v},\left[  \mu u_{i}\cdot\nu v_{j}\mid\left(
 i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}
-\right]  \right)
+\right]  \right)  .
 \end{align*}
-using Theorem 5.7 \textbf{(b)}.
+
 
 On the other hand, Theorem 5.7 \textbf{(b)} yields $\operatorname*{ev}_{\mu
 T}\left(  u\right)  =\Pi\left(  \widetilde{K}_{u},\left[  \mu u_{1},\mu
 u_{2},...,\mu u_{m}\right]  \right)  $ and (similarly) $\operatorname*{ev}%
 _{\nu T}\left(  v\right)  =\Pi\left(  \widetilde{K}_{v},\left[  \nu v_{1},\nu
-v_{2},...,\nu v_{m}\right]  \right)  $. Thus, Theorem 5.3 \textbf{(c)} yields%
+v_{2},...,\nu v_{n}\right]  \right)  $. Thus, Theorem 5.3 \textbf{(c)} yields%
 \[
 \operatorname*{ev}\nolimits_{\mu T}\left(  u\right)  \widehat{\cdot
 }\operatorname*{ev}\nolimits_{\nu T}\left(  v\right)  =\Pi\left(
@@ -2683,7 +2770,7 @@ $+$ denotes the addition in the ring $K\left[  \left[  T\right]  \right]  $).
 This explains how the right hand sides of the equations (\ref{6.2.P.Lkxy}) and
 (\ref{6.2.P.LkLjx}) should be understood.
 
-Let us prove (\ref{6.2.P.Lkxy}) here. Since the subset $1+K\left[  T\right]
+Let us first prove (\ref{6.2.P.Lkxy}): Since the subset $1+K\left[  T\right]
 ^{+}$ is dense in $1+K\left[  \left[  T\right]  \right]  ^{+}=\Lambda\left(
 K\right)  $ (by Theorem 5.5 \textbf{(a)}), and since $\widehat{\cdot}$ and
 $\widehat{\lambda}^{i}$ are continuous (by Theorem 5.5 \textbf{(d)}), it will
@@ -2704,6 +2791,22 @@ assume that $u_{1},$ $u_{2},$ $...,$ $u_{m},$ $v_{1},$ $v_{2},$ $...,$ $v_{n}$
 all lie in $K$. Theorem 5.3 \textbf{(c)} yields $u\widehat{\cdot}v=\Pi\left(
 \widetilde{K}_{u,v},\left[  u_{i}v_{j}\mid\left(  i,j\right)  \in\left\{
 1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right]  \right)  $.
+Since we identified $\widetilde{K}_{u,v}$ with $K$, this becomes%
+\[
+u\widehat{\cdot}v=\Pi\left(  K,\left[  u_{i}v_{j}\mid\left(  i,j\right)
+\in\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right]
+\right)  .
+\]
+Thus, Theorem 5.3' \textbf{(d)} (applied to $w=u\widehat{\cdot}v$,
+$\widetilde{K}=K$, $L=\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  $ and $w_{\left(  i,j\right)  }=u_{i}v_{j}$) yields%
+\[
+\widehat{\lambda}^{k}\left(  u\widehat{\cdot}v\right)  =\Pi\left(  K,\left[
+\prod_{\left(  i,j\right)  \in S}u_{i}v_{j}\mid S\in\mathcal{P}_{k}\left(
+\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right)
+\right]  \right)  .
+\]
+
 
 There exists a ring homomorphism%
 \[
@@ -2746,7 +2849,7 @@ homomorphism to (\ref{Pk1}), we obtain%
 u\right)  ,\widehat{\lambda}^{1}\left(  v\right)  ,\widehat{\lambda}%
 ^{2}\left(  v\right)  ,...,\widehat{\lambda}^{k}\left(  v\right)  \right)  .
 \end{align*}
-But%
+But combined with%
 \begin{align*}
 &  \widehat{\sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}
 \times\left\{  1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}%
@@ -2772,14 +2875,118 @@ S\subseteq\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}
 &  =\Pi\left(  K,\left[  \prod_{\left(  i,j\right)  \in S}u_{i}v_{j}\mid
 S\in\mathcal{P}_{k}\left(  \left\{  1,2,...,m\right\}  \times\left\{
 1,2,...,n\right\}  \right)  \right]  \right) \\
-&  =\widehat{\lambda}^{k}\left(  u\widehat{\cdot}v\right)
+&  =\widehat{\lambda}^{k}\left(  u\widehat{\cdot}v\right)  ,
 \end{align*}
-after Theorem 5.3 \textbf{(d)}, applied to $u\widehat{\cdot}v$ instead of $u$
-(and keeping in mind that $u\widehat{\cdot}v=\Pi\left(  \widetilde{K}%
-_{u,v},\left[  u_{i}v_{j}\mid\left(  i,j\right)  \in\left\{
-1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right]  \right)  $).
-Thus, (\ref{6.2.P.Lkxy}) is proven. Similarly we can show (\ref{6.2.P.LkLjx})
-(the details are left to the reader). Theorem 6.2 is thus proven.
+this yields%
+\[
+\widehat{\lambda}^{k}\left(  u\widehat{\cdot}v\right)  =\widehat{P_{k}}\left(
+\widehat{\lambda}^{1}\left(  u\right)  ,\widehat{\lambda}^{2}\left(  u\right)
+,...,\widehat{\lambda}^{k}\left(  u\right)  ,\widehat{\lambda}^{1}\left(
+v\right)  ,\widehat{\lambda}^{2}\left(  v\right)  ,...,\widehat{\lambda}%
+^{k}\left(  v\right)  \right)  .
+\]
+Thus, (\ref{6.2.P.Lkxy}) is proven.
+
+Next we are going to prove (\ref{6.2.P.LkLjx}) (the argument will be similar
+to the above proof of (\ref{6.2.P.Lkxy})):
+
+Since the subset $1+K\left[  T\right]  ^{+}$ is dense in $1+K\left[  \left[
+T\right]  \right]  ^{+}=\Lambda\left(  K\right)  $ (by Theorem 5.5
+\textbf{(a)}), and since all the $\widehat{\lambda}^{i}$ are continuous (by
+Theorem 5.5 \textbf{(d)}), it will be enough to verify (\ref{6.2.P.LkLjx}) for
+the case $u\in1+K\left[  T\right]  ^{+}$. But in this case, there exists some
+$\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)  \in
+K^{\operatorname*{int}}$ such that $u=\Pi\left(  \widetilde{K},\left[
+u_{1},u_{2},...,u_{m}\right]  \right)  $. By definition, $\widetilde{K}_{u}$
+is a finite-free extension of $K$.
+
+We replace $K$ by $\widetilde{K}_{u}$ now (silently using the obvious fact
+that the injection $K\rightarrow\widetilde{K}_{u}$ canonically yields an
+injection $\Lambda\left(  K\right)  \rightarrow\Lambda\left(  \widetilde{K}%
+_{u}\right)  $). Hence, we can now assume that $u_{1},$ $u_{2},$ $...,$
+$u_{m}$ all lie in $K$. Theorem 5.3 \textbf{(d)} yields $\widehat{\lambda}%
+^{j}\left(  u\right)  =\Pi\left(  \widetilde{K}_{u},\left[  \prod\limits_{i\in
+I}u_{i}\ \mid\ I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)
+\right]  \right)  $. Since we identified $\widetilde{K}_{u,v}$ with $K$, this
+becomes%
+\[
+\widehat{\lambda}^{j}\left(  u\right)  =\Pi\left(  K,\left[  \prod
+\limits_{i\in I}u_{i}\ \mid\ I\in\mathcal{P}_{j}\left(  \left\{
+1,2,...,m\right\}  \right)  \right]  \right)  .
+\]
+Thus, Theorem 5.3' \textbf{(d)} (applied to $w=\widehat{\lambda}^{j}\left(
+u\right)  $, $\widetilde{K}=K$, $L=\mathcal{P}_{j}\left(  \left\{
+1,2,...,m\right\}  \right)  $ and $w_{I}=\prod\limits_{i\in I}u_{i}$) yields%
+\[
+\widehat{\lambda}^{k}\left(  \widehat{\lambda}^{j}\left(  u\right)  \right)
+=\Pi\left(  K,\left[  \prod_{I\in S}\prod\limits_{i\in I}u_{i}\ \mid
+\ S\in\mathcal{P}_{k}\left(  \mathcal{P}_{j}\left(  \left\{
+1,2,...,m\right\}  \right)  \right)  \right]  \right)  .
+\]
+
+
+There exists a ring homomorphism%
+\[
+\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \rightarrow\Lambda\left(
+K\right)
+\]
+which maps $U_{i}$ to $1+u_{i}T$ for every $i$. This homomorphism maps
+$X_{i}=\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
+;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{k}$ to
+$\widehat{\lambda}^{i}\left(  u\right)  $\ \ \ \ \footnote{This can be proven
+exactly in the same way as we have showed, during the proof of
+(\ref{6.2.P.Lkxy}), that the ring homomorphism
+\[
+\mathbb{Z}\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]
+\rightarrow\Lambda\left(  K\right)
+\]
+which maps $U_{i}$ to $1+u_{i}T$ for every $i$ and $V_{j}$ to $1+v_{j}T$ for
+every $j$ must map $X_{i}=\sum\limits_{\substack{S\subseteq\left\{
+1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{k}$
+to $\widehat{\lambda}^{i}\left(  u\right)  $ (where the notations are the ones
+we introduced in our above proof of (\ref{6.2.P.Lkxy})).}. Hence, applying
+this homomorphism to (\ref{Pkj1}), we obtain%
+\[
+\widehat{\sum_{\substack{S\subseteq\mathcal{P}_{j}\left(  \left\{
+1,2,...,m\right\}  \right)  ;\\\left\vert S\right\vert =k}}}\widehat{\prod
+_{I\in S}}\widehat{\prod_{i\in I}}\left(  1+u_{i}T\right)  =\widehat{P_{k,j}%
+}\left(  \widehat{\lambda}^{1}\left(  u\right)  ,\widehat{\lambda}^{2}\left(
+u\right)  ,...,\widehat{\lambda}^{kj}\left(  u\right)  \right)  .
+\]
+But combined with%
+\begin{align*}
+\widehat{\sum_{\substack{S\subseteq\mathcal{P}_{j}\left(  \left\{
+1,2,...,m\right\}  \right)  ;\\\left\vert S\right\vert =k}}}\widehat{\prod
+_{I\in S}}\underbrace{\widehat{\prod_{i\in I}}\left(  1+u_{i}T\right)
+}_{\substack{=\Pi\left(  K,\left[  \prod\limits_{i\in I}u_{i}\right]  \right)
+\\\text{after Corollary 5.4 \textbf{(b)}}}}  &  =\widehat{\sum
+_{\substack{S\subseteq\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}
+\right)  ;\\\left\vert S\right\vert =k}}}\underbrace{\widehat{\prod_{I\in S}%
+}\Pi\left(  K,\left[  \prod\limits_{i\in I}u_{i}\right]  \right)
+}_{\substack{=\Pi\left(  K,\left[  \prod\limits_{I\in S}\prod\limits_{i\in
+I}u_{i}\right]  \right)  \\\text{after Corollary 5.4 \textbf{(b)}}}}\\
+&  =\widehat{\sum_{\substack{S\subseteq\mathcal{P}_{j}\left(  \left\{
+1,2,...,m\right\}  \right)  ;\\\left\vert S\right\vert =k}}}\Pi\left(
+K,\left[  \prod\limits_{I\in S}\prod\limits_{i\in I}u_{i}\right]  \right) \\
+&  =\Pi\left(  K,\left[  \prod\limits_{I\in S}\prod\limits_{i\in I}u_{i}%
+\ \mid\ S\subseteq\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)
+;\ \left\vert S\right\vert =k\right]  \right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{after Corollary 5.4 \textbf{(a)}}\right)
+\\
+&  =\Pi\left(  K,\left[  \prod_{I\in S}\prod\limits_{i\in I}u_{i}\ \mid
+\ S\in\mathcal{P}_{k}\left(  \mathcal{P}_{j}\left(  \left\{
+1,2,...,m\right\}  \right)  \right)  \right]  \right) \\
+&  =\widehat{\lambda}^{k}\left(  \widehat{\lambda}^{j}\left(  u\right)
+\right)  ,
+\end{align*}
+this becomes%
+\[
+\widehat{\lambda}^{k}\left(  \widehat{\lambda}^{j}\left(  u\right)  \right)
+=\widehat{P_{k,j}}\left(  \widehat{\lambda}^{1}\left(  u\right)
+,\widehat{\lambda}^{2}\left(  u\right)  ,...,\widehat{\lambda}^{kj}\left(
+u\right)  \right)  .
+\]
+Thus, we have verified (\ref{6.2.P.LkLjx}). Theorem 6.2 is thus proven.
 
 Theorem 6.1 gives us an alternative definition of special $\lambda$-rings via
 the polynomials $P_{k}$ and $P_{k,j}$. Why, then, did we define the notion of
@@ -2983,7 +3190,7 @@ Since $m=x,$ $n=y$ and
 i,j\right)  \in S}1\cdot1}_{=1}  &  =\sum_{\substack{S\subseteq\left\{
 1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  ;\\\left\vert
 S\right\vert =k}}1=\sum_{S\in\mathcal{P}_{k}\left(  \left\{
-1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right)  }\\
+1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right)  }1\\
 &  =\left\vert \mathcal{P}_{k}\left(  \left\{  1,2,...,m\right\}
 \times\left\{  1,2,...,n\right\}  \right)  \right\vert =\dbinom{mn}{k}%
 =\dbinom{xy}{k},
@@ -3054,12 +3261,16 @@ we have%
 \begin{align*}
 &  \overline{\lambda}_{T}\left(  aS^{\alpha}\right)  \widehat{\cdot}%
 \overline{\lambda}_{T}\left(  bS^{\beta}\right)  =\lambda_{S^{\alpha}T}\left(
-a\right)  \widehat{\cdot}\lambda_{S^{\beta}T}\left(  b\right)
-=\operatorname*{ev}\nolimits_{S^{\alpha}T}\left(  \lambda_{T}\left(  a\right)
-\right)  \widehat{\cdot}\operatorname*{ev}\nolimits_{S^{\beta}T}\left(
-\lambda_{T}\left(  b\right)  \right) \\
-&  =\operatorname*{ev}\nolimits_{S^{\alpha}S^{\beta}T}\left(  \lambda
-_{T}\left(  a\right)  \widehat{\cdot}\lambda_{T}\left(  b\right)  \right) \\
+a\right)  \widehat{\cdot}\lambda_{S^{\beta}T}\left(  b\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\overline{\lambda}_{T}\left(
+aS^{\alpha}\right)  =\lambda_{S^{\alpha}T}\left(  a\right)  \text{ and
+similarly }\overline{\lambda}_{T}\left(  bS^{\beta}\right)  =\lambda
+_{S^{\beta}T}\left(  b\right)  \right) \\
+&  =\operatorname*{ev}\nolimits_{S^{\alpha}T}\left(  \lambda_{T}\left(
+a\right)  \right)  \widehat{\cdot}\operatorname*{ev}\nolimits_{S^{\beta}%
+T}\left(  \lambda_{T}\left(  b\right)  \right)  =\operatorname*{ev}%
+\nolimits_{S^{\alpha}S^{\beta}T}\left(  \lambda_{T}\left(  a\right)
+\widehat{\cdot}\lambda_{T}\left(  b\right)  \right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -7962,6 +8173,8 @@ elements of $K$. Then,%
 =\prod\limits_{i=1}^{m}\varphi\left(  u_{i}T\right)  .
 \]
 
+
+
 \end{quote}
 
 \textit{Proof of Theorem 10.27.} By Corollary 10.23, we know that
@@ -11328,6 +11541,4 @@ Academic Press 1988, pp. 93-102.
 
 [8] Darij Grinberg, \textit{Witt\#4a: Equigraded power series}.\newline%
 \texttt{www.cip.ifi.lmu.de/\symbol{126}grinberg/algebra/witt4a.pdf}
-
-
 \end{document}
