@@ -9,7 +9,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, October 08, 2011 00:33:39}
+%TCIDATA{LastRevised=Monday, October 10, 2011 12:26:24}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
@@ -42,7 +42,7 @@
 
 Darij Grinberg
 
-\textit{Version 0.0.10, last revised 29 Sep 2011}
+\textit{Version 0.0.11, last revised 9 Oct 2011}
 \end{center}
 
 This is a \textbf{BETA VERSION} and has never been proofread. \textbf{Please
@@ -77,7 +77,9 @@ Some notations that we will use later on:
 0,1,2,...\right\}  $.
 
 \item When we say "ring", we will always mean "commutative ring with unity". A
-"ring homomorphism" is always supposed to send $1$ to $1$.
+"ring homomorphism" is always supposed to send $1$ to $1$. When we say
+"$R$-algebra" (with $R$ a ring), we will always mean "commutative $R$-algebra
+with unity".
 
 \item Let $R$ be a ring. An \textit{extension ring} of $R$ will mean a ring
 $S$ along with a ring monomorphism $R\rightarrow S$. (We will often sloppily
@@ -407,14 +409,22 @@ f=f\left[  \left[  T\right]  \right]  \circ\lambda_{T}.$
 
 \textit{Proof of Theorem 2.1.} \textbf{(a)} Every $x\in K$ and every $y\in K$
 satisfy%
-\[
-\lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)  =\sum
-\limits_{i\in\mathbb{N}}\lambda^{i}\left(  x\right)  T^{i}\cdot\sum
-\limits_{i\in\mathbb{N}}\lambda^{i}\left(  y\right)  T^{i}=\sum\limits_{i\in
-\mathbb{N}}\sum\limits_{j\in\mathbb{N}}\lambda^{i}\left(  x\right)
-\lambda^{j}\left(  y\right)  T^{i+j}=\sum_{k\in\mathbb{N}}\sum_{i=0}%
-^{k}\lambda^{i}\left(  x\right)  \lambda^{k-i}\left(  y\right)  \cdot T^{k}%
-\]
+\begin{align*}
+\lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)   &
+=\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  x\right)  T^{i}\cdot
+\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  y\right)  T^{i}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\lambda_{T}\left(  x\right)
+=\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  x\right)  T^{i}\text{ and
+}\lambda_{T}\left(  y\right)  =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
+y\right)  T^{i}\right) \\
+&  =\sum_{k\in\mathbb{N}}\sum_{i=0}^{k}\underbrace{\lambda^{i}\left(
+x\right)  T^{i}\cdot\lambda^{k-i}\left(  x\right)  T^{k-i}}_{=\lambda
+^{i}\left(  x\right)  \lambda^{k-i}\left(  y\right)  \cdot T^{k}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the product of two
+formal power series}\right) \\
+&  =\sum_{k\in\mathbb{N}}\sum_{i=0}^{k}\lambda^{i}\left(  x\right)
+\lambda^{k-i}\left(  y\right)  \cdot T^{k}%
+\end{align*}
 and%
 \[
 \lambda_{T}\left(  x+y\right)  =\sum_{i\in\mathbb{N}}\lambda^{i}\left(
@@ -3338,9 +3348,10 @@ Similarly, $\lambda_{T}\left(  y\right)  =\Pi\left(  K,\left[  y\right]
 \widehat{\cdot}\Pi\left(  K,\left[  y\right]  \right)  =\Pi\left(  K,\left[
 xy\right]  \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{after Theorem 5.3
 \textbf{(c)}}\right) \\
-&  =1+xyT,
+&  =1+xyT.
 \end{align*}
-and Theorem 8.3 \textbf{(b)} is proven.
+By Theorem 8.3 \textbf{(a)} (applied to $xy$ instead of $x$), this yields that
+$xy$ is $1$-dimensional. Thus, Theorem 8.3 \textbf{(b)} is proven.
 
 \textbf{(c)} For every integer $i>1$, the element%
 \begin{align*}
@@ -3868,7 +3879,7 @@ finitely many $1$-dimensional elements of $K$.
 }\right)  $ be a special $\lambda$-ring, and let $x\in K$ be a sum of finitely
 many $1$-dimensional elements of $K$. In other words, $x=u_{1}+u_{2}%
 +...+u_{m}$ for some $1$-dimensional elements $u_{1},$ $u_{2},$ $...,$ $u_{m}$
-of $K$.
+of $K$. Consider these elements $u_{1},$ $u_{2},$ $...,$ $u_{m}$.
 
 Then,%
 \[
@@ -4043,6 +4054,8 @@ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
 \psi^{j}\left(  u_{1}+u_{2}+...+u_{m}\right)  =u_{1}^{j}+u_{2}^{j}%
 +...+u_{m}^{j}.
 \]
+
+
 
 \end{quote}
 
@@ -4874,9 +4887,6 @@ the $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
 \bigskip
 \end{quotation}
 
-\fbox{\textbf{WARNING:} The following is incomplete and no proofs have been
-added yet.}
-
 \begin{center}
 \fbox{\textbf{10. Todd homomorphisms of polynomials}}
 \end{center}
@@ -4900,9 +4910,7 @@ will denote any ring (commutative with unity, of course). Please don't confuse
 it with the similarly-looking letter $\mathbb{Z}$, which always denote the
 ring of integers. The reason why I chose the letter $\mathbf{Z}$ for the ring
 is that in most applications the ring $\mathbf{Z}$ will indeed be the ring
-$\mathbb{Z}$ of integers; however, in some cases it will not (for example,
-even if we would formulate Theorem 10.19 for $\mathbf{Z}=\mathbb{Z}$ only, the
-proof of this theorem would require considering other rings $\mathbf{Z}$ !).
+$\mathbb{Z}$ of integers.
 \end{itemize}
 
 We begin this section with a construction similar to the construction of the
@@ -5510,8 +5518,11 @@ can be done explicitly:
 \textbf{Proposition 10.4.} Let $\mathbf{Z}$ be a ring. Let $u\in\mathbf{Z}$.
 Then, $\operatorname*{Td}\nolimits_{1+ut,j}=u^{j}\alpha_{j}$ (in the
 polynomial ring $\mathbf{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
-_{j}\right]  $) for every $j\in\mathbb{N}$.
+_{j}\right]  $) for every positive $j\in\mathbb{N}$.
 \end{quote}
+
+Note that Proposition 10.4 makes no sense for $j=0$; this will cause us some
+minor trouble in the proof of Proposition 10.3.
 
 \textit{Proof of Proposition 10.4.} Let $m\in\mathbb{N}$. Consider the ring
 $\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ (the polynomial ring in $m$
@@ -5562,8 +5573,8 @@ X_{j}u^{j}=\operatorname*{Td}\nolimits_{1+ut,j}\left(  X_{1},X_{2}%
 \]
 
 
-Now we forget that we fixed $m$. Instead, fix some $j\in\mathbb{N}$, and take
-$m=j$. Then, we have just proved that
+Now we forget that we fixed $m$. Instead, fix some positive $j\in\mathbb{N}$,
+and take $m=j$. Then, we have just proved that
 \[
 X_{j}u^{j}=\operatorname*{Td}\nolimits_{1+ut,j}\left(  X_{1},X_{2}%
 ,...,X_{j}\right)  \text{ in }\mathbf{Z}\left[  U_{1},U_{2},...,U_{j}\right]
@@ -5619,35 +5630,8 @@ we can conclude from (\ref{10.4.pf.1}) that $\mathfrak{Q}_{1}=\mathfrak{Q}%
 _{2}$. Hence, $u^{j}\alpha_{j}=\mathfrak{Q}_{1}=\mathfrak{Q}_{2}%
 =\operatorname*{Td}\nolimits_{1+ut,j}$. This proves Proposition 10.4.
 
-\textit{Proof of Proposition 10.3.} Let $x\in K$. Applying (\ref{ToddDef}) to
-$\varphi=1+ut$, we obtain%
-\begin{align*}
-\operatorname*{td}\nolimits_{1+ut,T}\left(  x\right)   &  =\sum_{j\in
-\mathbb{N}}\underbrace{\operatorname*{Td}\nolimits_{1+ut,j}}_{\substack{=u^{j}%
-\alpha^{j}\\\text{(by Proposition 10.4)}}}\left(  \lambda^{1}\left(  x\right)
-,\lambda^{2}\left(  x\right)  ,...,\lambda^{j}\left(  x\right)  \right)
-T^{j}\\
-&  =\sum_{j\in\mathbb{N}}\underbrace{\left(  u^{j}\alpha^{j}\right)  \left(
-\lambda^{1}\left(  x\right)  ,\lambda^{2}\left(  x\right)  ,...,\lambda
-^{j}\left(  x\right)  \right)  }_{=u^{j}\lambda^{j}\left(  x\right)  }%
-T^{j}=\sum_{j\in\mathbb{N}}\underbrace{u^{j}\lambda^{j}\left(  x\right)
-T^{j}}_{=\lambda^{j}\left(  x\right)  u^{j}T^{j}}=\sum_{j\in\mathbb{N}}%
-\lambda^{j}\left(  x\right)  u^{j}T^{j}.
-\end{align*}
-Compared with%
-\[
-\lambda_{uT}\left(  x\right)  =\operatorname*{ev}\nolimits_{uT}\left(
-\underbrace{\lambda_{T}\left(  x\right)  }_{=\sum\limits_{j\in\mathbb{N}%
-}\lambda^{j}\left(  x\right)  T^{j}}\right)  =\operatorname*{ev}%
-\nolimits_{uT}\left(  \sum\limits_{j\in\mathbb{N}}\lambda^{j}\left(  x\right)
-T^{j}\right)  =\sum\limits_{j\in\mathbb{N}}\lambda^{j}\left(  x\right)
-u^{j}T^{j}%
-\]
-(by the definition of $\operatorname*{ev}\nolimits_{uT}$), this yields that
-$\operatorname*{td}\nolimits_{1+ut,T}\left(  x\right)  =\lambda_{uT}\left(
-x\right)  $. This proves Proposition 10.3.
-
-The following proposition gives the first two coefficients of the power series
+We keep back the proof of Proposition 10.3 for a moment - instead, we first
+show a proposition which gives the first two coefficients of the power series
 $\operatorname*{Td}\nolimits_{\varphi,T}\left(  x\right)  $ in the general
 case (with $\varphi$ arbitrary):
 
@@ -5694,7 +5678,7 @@ We know from Proposition 10.1 that (\ref{Td1}) holds in the ring $\left(
 T\right]  \right]  $. In other words,%
 \[
 \prod\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)  =\sum_{j\in\mathbb{N}%
-}\operatorname*{Td}\nolimits_{\varphi,0}\left(  X_{1},X_{2},...,X_{j}\right)
+}\operatorname*{Td}\nolimits_{\varphi,j}\left(  X_{1},X_{2},...,X_{j}\right)
 T^{j}.
 \]
 
@@ -5838,6 +5822,48 @@ yields }\operatorname*{Td}\nolimits_{\varphi,1}=\varphi_{1}\alpha_{1}\right)
 
 
 Proposition 10.5 is now proven.
+
+\textit{Proof of Proposition 10.3.} Let $x\in K$. Applying (\ref{ToddDef}) to
+$\varphi=1+ut$, we obtain%
+\begin{align*}
+&  \operatorname*{td}\nolimits_{1+ut,T}\left(  x\right) \\
+&  =\sum_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{1+ut,j}\left(
+\lambda^{1}\left(  x\right)  ,\lambda^{2}\left(  x\right)  ,...,\lambda
+^{j}\left(  x\right)  \right)  T^{j}\\
+&  =\underbrace{\operatorname*{Td}\nolimits_{1+ut,0}\left(  \lambda^{1}\left(
+x\right)  ,\lambda^{2}\left(  x\right)  ,...,\lambda^{0}\left(  x\right)
+\right)  }_{\substack{=\operatorname*{Td}\nolimits_{1+ut,0}=1\\\text{(by
+Proposition 10.6 \textbf{(a)},}\\\text{applied to }\varphi=1+ut\text{)}}%
+}T^{0}+\sum_{\substack{j\in\mathbb{N};\\j>0}}\underbrace{\operatorname*{Td}%
+\nolimits_{1+ut,j}}_{\substack{=u^{j}\alpha_{j}\\\text{(by Proposition 10.4)}%
+}}\left(  \lambda^{1}\left(  x\right)  ,\lambda^{2}\left(  x\right)
+,...,\lambda^{j}\left(  x\right)  \right)  T^{j}\\
+&  =1T^{0}+\sum_{\substack{j\in\mathbb{N};\\j>0}}\underbrace{\left(
+u^{j}\alpha_{j}\right)  \left(  \lambda^{1}\left(  x\right)  ,\lambda
+^{2}\left(  x\right)  ,...,\lambda^{j}\left(  x\right)  \right)  }%
+_{=u^{j}\lambda^{j}\left(  x\right)  }T^{j}=1T^{0}+\sum_{\substack{j\in
+\mathbb{N};\\j>0}}\underbrace{u^{j}\lambda^{j}\left(  x\right)  T^{j}%
+}_{=\lambda^{j}\left(  x\right)  u^{j}T^{j}}\\
+&  =1T^{0}+\sum_{\substack{j\in\mathbb{N};\\j>0}}\lambda^{j}\left(  x\right)
+u^{j}T^{j}.
+\end{align*}
+Compared with%
+\begin{align*}
+\lambda_{uT}\left(  x\right)   &  =\operatorname*{ev}\nolimits_{uT}\left(
+\underbrace{\lambda_{T}\left(  x\right)  }_{=\sum\limits_{j\in\mathbb{N}%
+}\lambda^{j}\left(  x\right)  T^{j}}\right)  =\operatorname*{ev}%
+\nolimits_{uT}\left(  \sum\limits_{j\in\mathbb{N}}\lambda^{j}\left(  x\right)
+T^{j}\right) \\
+&  =\sum\limits_{j\in\mathbb{N}}\lambda^{j}\left(  x\right)  u^{j}%
+T^{j}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }%
+\operatorname*{ev}\nolimits_{uT}\right) \\
+&  =\underbrace{\lambda^{0}\left(  x\right)  }_{=1}\underbrace{u^{0}}%
+_{=1}T^{0}+\sum_{\substack{j\in\mathbb{N};\\j>0}}\lambda^{j}\left(  x\right)
+u^{j}T^{j}=1T^{0}+\sum_{\substack{j\in\mathbb{N};\\j>0}}\lambda^{j}\left(
+x\right)  u^{j}T^{j},
+\end{align*}
+this yields that $\operatorname*{td}\nolimits_{1+ut,T}\left(  x\right)
+=\lambda_{uT}\left(  x\right)  $. This proves Proposition 10.3.
 
 Our next proposition is another step to making the $\varphi$-Todd homomorphism manageable:
 
@@ -6036,15 +6062,16 @@ This proves Proposition 10.8.
 
 \textit{Proof of Proposition 10.7.} \textit{1st Step:} For every
 $j\in\mathbb{N}$, we have%
-\[
-\operatorname*{Td}\nolimits_{\varphi\psi,j}\left(  \lambda^{1}\left(
+\begin{align*}
+&  \operatorname*{Td}\nolimits_{\varphi\psi,j}\left(  \lambda^{1}\left(
 x\right)  ,\lambda^{2}\left(  x\right)  ,...,\lambda^{j}\left(  x\right)
-\right)  =\sum\limits_{i=0}^{j}\operatorname*{Td}\nolimits_{\varphi,i}\left(
+\right) \\
+&  =\sum\limits_{i=0}^{j}\operatorname*{Td}\nolimits_{\varphi,i}\left(
 \lambda^{1}\left(  x\right)  ,\lambda^{2}\left(  x\right)  ,...,\lambda
 ^{i}\left(  x\right)  \right)  \cdot\operatorname*{Td}\nolimits_{\psi
 ,j-i}\left(  \lambda^{1}\left(  x\right)  ,\lambda^{2}\left(  x\right)
 ,...,\lambda^{j-i}\left(  x\right)  \right)  .
-\]
+\end{align*}
 
 
 \textit{Proof.} Let $j\in\mathbb{N}$. Since the polynomials
@@ -6160,150 +6187,528 @@ x\right)  =\operatorname*{ev}\nolimits_{0T}\left(  \lambda_{T}\left(
 x\right)  \right)  =1$.}. The induction step is a straightforward application
 of Proposition 10.7. Thus Proposition 10.9 is proven.
 
-The Proposition 10.9 just proved allows us to show some nontrivial properties
-of $\operatorname*{td}\nolimits_{\varphi,T}$ for $\varphi$ being an arbitrary
-power series (rather than just a power series of the form $1+ut$ as in
-Proposition 10.3). However, it does not yield any of these properties
-directly; it can be directly applied to compute $\operatorname*{td}%
-\nolimits_{\varphi,T}\left(  x\right)  $ only if $\varphi$ is a product of
-finitely many power series $\varphi_{i}$ for which we already have computed
-$\operatorname*{td}\nolimits_{\varphi_{i},T}$ (and the only such series
-$\varphi_{i}$, at the moment, are those of the form $1+ut$). To obtain any
-results for generic $\varphi$, we need two tricks: First, we need a kind of
-continuity (similar to the one we used in Section 5) to reduce the case of
-$\varphi$ a power series to the case of $\varphi$ a polynomial. Second, we
-need to split every arbitrary polynomial $\varphi$ with constant term equal to
-$1$ into a product of polynomials of the form $1+ut$; this will be done by an
-appropriate extension of the ring $\mathbf{Z}$ (again, similarly to how we
-extended $K$ in Section 5). First, let us introduce the version of continuity
-that we need.
-
-The following two definitions are copies of two definitions which we made in
-Section 5, with the only difference that the ring that used to be called $K$
-in Section 5 is called $\mathbf{Z}$ here, and that the variable that used to
-be $T$ in Section 5 is $t$ here.
+Our next goal is to show the following general property of $\operatorname*{td}%
+\nolimits_{\varphi,T}$:
 
 \begin{quote}
-\textbf{Definition.} Let $\mathbf{Z}$ be a ring. Let $\mathbf{Z}\left[
-t\right]  ^{+}$ be the subset of $\mathbf{Z}\left[  t\right]  $ defined by%
-\begin{align*}
-\mathbf{Z}\left[  t\right]  ^{+}  &  =t\mathbf{Z}\left[  t\right]  =\left\{
-\sum_{i\in\mathbb{N}}a_{i}t^{i}\in\mathbf{Z}\left[  t\right]  \ \mid\ a_{i}%
-\in\mathbf{Z}\text{ for all }i,\text{ and }a_{0}=0\right\} \\
-&  =\left\{  p\in\mathbf{Z}\left[  t\right]  \ \mid\ p\text{ is a polynomial
-with constant term }0\right\}  .
-\end{align*}
-Then, the set $1+\mathbf{Z}\left[  t\right]  ^{+}$ is a subset of
-$1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}.$ The elements of
-$1+\mathbf{Z}\left[  t\right]  ^{+}$ are polynomials.
+\textbf{Theorem 10.10.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
+$K$ is a $\mathbf{Z}$-algebra. Let $\varphi\in1+\mathbf{Z}\left[  \left[
+t\right]  \right]  ^{+}$ be a power series with constant term equal to $1$.
+Let $x\in K$ and $y\in K$. Then, $\operatorname*{td}\nolimits_{\varphi
+,T}\left(  x\right)  \cdot\operatorname*{td}\nolimits_{\varphi,T}\left(
+y\right)  =\operatorname*{td}\nolimits_{\varphi,T}\left(  x+y\right)  $.
+\end{quote}
 
-\textbf{Definition.} Let $\mathbf{Z}$ be a ring. As a $\mathbf{Z}$-module,
-$\mathbf{Z}\left[  \left[  t\right]  \right]  =\bigoplus\limits_{k\in
-\mathbb{N}}\mathbf{Z}t^{k}$. Now, we define the so-called $\left(
-\mathbf{t}\right)  $\textit{-topology} on the ring $\mathbf{Z}\left[  \left[
-t\right]  \right]  $ as the topology generated by%
+How can we prove a theorem like this? By using Proposition 10.3, we could
+prove it in the case of $\varphi$ being a polynomial of the form $1+ut$ with
+$u\in\mathbf{Z}$. Using Proposition 10.9, we could therefore also prove it in
+the case of $\varphi$ being a product of finitely many such polynomials.
+However, the case of $\varphi$ being a general power series does not directly
+follow from any of our above-proven propositions. Not even the case of
+$\varphi$ being a general polynomial - in fact, a general polynomial does not
+always factor into polynomials of the form $1+ut$ with $u\in\mathbf{Z}$.
+
+However, we can prove Theorem 10.10 (and similar results) using the following
+two tricks: First, we need a kind of continuity (similar to the one we used in
+Section 5) to reduce the case of $\varphi$ a power series to the case of
+$\varphi$ a polynomial. Second, we need to split every arbitrary polynomial
+$\varphi$ with constant term equal to $1$ into a product of polynomials of the
+form $1+ut$; this will be done by an appropriate extension of the ring
+$\mathbf{Z}$ (again, similarly to how we extended $K$ in Section 5). However,
+these tricks do not yet give us a proof of Theorem 10.10 unless we change our
+viewpoint to a more general one: Rather than working in a $\lambda$-ring
+$\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $, we work
+with power series over an arbitrary ring. Here is what we do, precisely:
+
+\begin{quote}
+\textbf{Definition.} Let $\mathbf{Z}$ be a ring. Let $K$ be a $\mathbf{Z}%
+$-algebra. Let $\varphi\in1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$
+be a power series with constant term equal to $1$. We define a map
+$\mathfrak{Todd}_{\varphi}:K\left[  \left[  T\right]  \right]  \rightarrow
+K\left[  \left[  T\right]  \right]  $ by
+\begin{equation}
+\mathfrak{Todd}_{\varphi}\left(  p\right)  =\sum\limits_{j\in\mathbb{N}%
+}\operatorname*{Td}\nolimits_{\varphi,j}\left(  \operatorname*{Coeff}%
+\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}%
+\nolimits_{j}p\right)  T^{j}\ \ \ \ \ \ \ \ \ \ \text{for every }p\in K\left[
+\left[  T\right]  \right]  . \label{ToddFrak}%
+\end{equation}
+
+
+
+\end{quote}
+
+The reason why we can consider this a generalization of the $\varphi$-Todd
+homomorphism is the following:
+
+\begin{quote}
+\textbf{Proposition 10.11.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
+$K$ is a $\mathbf{Z}$-algebra. Let $\varphi\in1+\mathbf{Z}\left[  \left[
+t\right]  \right]  ^{+}$ be a power series with constant term equal to $1$.
+Then, every $x\in K$ satisfies $\operatorname*{td}_{\varphi,T}\left(
+x\right)  =\mathfrak{Todd}_{\varphi}\left(  \lambda_{T}\left(  x\right)
+\right)  $.
+\end{quote}
+
+\textit{Proof of Proposition 10.11.} Let $x\in K$. Then, $\lambda_{T}\left(
+x\right)  =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  x\right)  T^{i}$, so
+that every $k\in\mathbb{N}$ satisfies $\operatorname*{Coeff}\nolimits_{k}%
+\left(  \lambda_{T}\left(  x\right)  \right)  =\operatorname*{Coeff}%
+\nolimits_{k}\left(  \sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  x\right)
+T^{i}\right)  =\lambda^{k}\left(  x\right)  $ (by the definition of
+$\operatorname*{Coeff}\nolimits_{k}$). Thus, $\left(  \operatorname*{Coeff}%
+\nolimits_{1}\left(  \lambda_{T}\left(  x\right)  \right)
+,\operatorname*{Coeff}\nolimits_{2}\left(  \lambda_{T}\left(  x\right)
+\right)  ,...,\operatorname*{Coeff}\nolimits_{j}\left(  \lambda_{T}\left(
+x\right)  \right)  \right)  =\left(  \lambda^{1}\left(  x\right)  ,\lambda
+^{2}\left(  x\right)  ,...,\lambda^{j}\left(  x\right)  \right)  $ for every
+$j\in\mathbb{N}$. Now, (\ref{ToddFrak}) (applied to $p=\lambda_{T}\left(
+x\right)  $) yields%
+\begin{align*}
+&  \mathfrak{Todd}_{\varphi}\left(  \lambda_{T}\left(  x\right)  \right) \\
+&  =\sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
+\operatorname*{Coeff}\nolimits_{1}\left(  \lambda_{T}\left(  x\right)
+\right)  ,\operatorname*{Coeff}\nolimits_{2}\left(  \lambda_{T}\left(
+x\right)  \right)  ,...,\operatorname*{Coeff}\nolimits_{j}\left(  \lambda
+_{T}\left(  x\right)  \right)  \right)  T^{j}\\
+&  =\sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
+\lambda^{1}\left(  x\right)  ,\lambda^{2}\left(  x\right)  ,...,\lambda
+^{j}\left(  x\right)  \right)  T^{j}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  \operatorname*{Coeff}%
+\nolimits_{1}\left(  \lambda_{T}\left(  x\right)  \right)
+,\operatorname*{Coeff}\nolimits_{2}\left(  \lambda_{T}\left(  x\right)
+\right)  ,...,\operatorname*{Coeff}\nolimits_{j}\left(  \lambda_{T}\left(
+x\right)  \right)  \right)  =\left(  \lambda^{1}\left(  x\right)  ,\lambda
+^{2}\left(  x\right)  ,...,\lambda^{j}\left(  x\right)  \right)  \right) \\
+&  =\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  .
+\end{align*}
+This proves Proposition 10.11.
+
+Now let us generalize our above results about $\operatorname*{td}%
+\nolimits_{\varphi,T}$ to results about $\mathfrak{Todd}_{\varphi}$. This will
+be rather easy since our proofs generalize.
+
+Here comes the generalization of Proposition 10.3:
+
+\begin{quote}
+\textbf{Proposition 10.12.} Let $\mathbf{Z}$ be a ring. Let $K$ be a
+$\mathbf{Z}$-algebra. Let $u\in\mathbf{Z}$. Let $p\in1+K\left[  \left[
+T\right]  \right]  ^{+}$. Then, $\mathfrak{Todd}_{1+ut}\left(  p\right)
+=\operatorname*{ev}\nolimits_{uT}\left(  p\right)  $.\ \ \ \ \footnote{Let us
+recall that $\operatorname*{ev}\nolimits_{uT}$ denotes the map $K\left[
+\left[  T\right]  \right]  \rightarrow K\left[  \left[  T\right]  \right]  $
+defined by%
 \[
-\left\{  0,\varnothing\right\}  \cup\left\{  u+\sum_{k\geq N}\mathbf{Z}%
-t^{k}\ \mid\ u\in\mathbf{Z}\left[  \left[  t\right]  \right]  \text{ and }%
-N\in\mathbb{N}\right\}  .
+\operatorname*{ev}\nolimits_{uT}\left(  \sum\limits_{i\in\mathbb{N}}a_{i}%
+T^{i}\right)  =\sum\limits_{i\in\mathbb{N}}a_{i}u^{i}T^{i}%
+\ \ \ \ \ \ \ \ \ \ \text{for every power series }\sum\limits_{i\in\mathbb{N}%
+}a_{i}T^{i}\in K\left[  \left[  T\right]  \right]  \text{ (with }a_{i}\in
+K\text{ for every }i\text{).}%
+\]
+}
+\end{quote}
+
+\textit{Proof of Proposition 10.12.} The coefficient of the power series $p$
+before $T^{0}$ is $1$ (since $p\in1+K\left[  \left[  T\right]  \right]  ^{+}%
+$). In other words, $\operatorname*{Coeff}\nolimits_{0}p=1$ (since
+$\operatorname*{Coeff}\nolimits_{0}p$ is defined as the coefficient of the
+power series $p$ before $T^{0}$).
+
+For every $j\in\mathbb{N}$, the coefficient of $p$ before $T^{j}$ is
+$\operatorname*{Coeff}\nolimits_{j}p$. Hence, $p=\sum\limits_{j\in\mathbb{N}%
+}\left(  \operatorname*{Coeff}\nolimits_{j}p\right)  \cdot T^{j}$. Thus,
+\begin{align*}
+\operatorname*{ev}\nolimits_{uT}p  &  =\operatorname*{ev}\nolimits_{uT}\left(
+\sum\limits_{j\in\mathbb{N}}\left(  \operatorname*{Coeff}\nolimits_{j}%
+p\right)  \cdot T^{j}\right)  =\sum\limits_{j\in\mathbb{N}}\left(
+\operatorname*{Coeff}\nolimits_{j}p\right)  \cdot u^{j}T^{j}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{ev}%
+\nolimits_{uT}\right) \\
+&  =\sum_{j\in\mathbb{N}}u^{j}\left(  \operatorname*{Coeff}\nolimits_{j}%
+p\right)  T^{j}=\underbrace{u^{0}}_{=1}\underbrace{\left(
+\operatorname*{Coeff}\nolimits_{0}p\right)  }_{=1}T^{0}+\sum_{\substack{j\in
+\mathbb{N};\\j>0}}u^{j}\left(  \operatorname*{Coeff}\nolimits_{j}p\right)
+T^{j}=1T^{0}+\sum_{\substack{j\in\mathbb{N};\\j>0}}u^{j}\left(
+\operatorname*{Coeff}\nolimits_{j}p\right)  T^{j}.
+\end{align*}
+Compared with%
+\begin{align*}
+&  \mathfrak{Todd}_{1+ut}\left(  p\right) \\
+&  =\sum_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{1+ut,j}\left(
+\operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
+p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  T^{j}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{ToddFrak}), applied to }%
+\varphi=1+ut\right) \\
+&  =\underbrace{\operatorname*{Td}\nolimits_{1+ut,0}\left(
+\operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
+p,...,\operatorname*{Coeff}\nolimits_{0}p\right)  }%
+_{\substack{=\operatorname*{Td}\nolimits_{1+ut,0}=1\\\text{(by Proposition
+10.6 \textbf{(a)},}\\\text{applied to }\varphi=1+ut\text{)}}}T^{0}%
++\sum_{\substack{j\in\mathbb{N};\\j>0}}\underbrace{\operatorname*{Td}%
+\nolimits_{1+ut,j}}_{\substack{=u^{j}\alpha_{j}\\\text{(by Proposition 10.4)}%
+}}\left(  \operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}%
+\nolimits_{2}p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  T^{j}\\
+&  =1T^{0}+\sum_{\substack{j\in\mathbb{N};\\j>0}}\underbrace{\left(
+u^{j}\alpha_{j}\right)  \left(  \operatorname*{Coeff}\nolimits_{1}%
+p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}\nolimits_{j}%
+p\right)  }_{=u^{j}\left(  \operatorname*{Coeff}\nolimits_{j}p\right)  ^{j}%
+}T^{j}=1T^{0}+\sum_{\substack{j\in\mathbb{N};\\j>0}}u^{j}\left(
+\operatorname*{Coeff}\nolimits_{j}p\right)  T^{j},
+\end{align*}
+this yields that $\operatorname*{ev}\nolimits_{uT}p=\mathfrak{Todd}%
+_{1+ut}\left(  p\right)  $. Since this holds for every $p\in K\left[  \left[
+T\right]  \right]  $, we thus have $\operatorname*{ev}\nolimits_{uT}%
+=\mathfrak{Todd}_{1+ut}$. This proves Proposition 10.12.
+
+Next, the generalization of Proposition 10.5:
+
+\begin{quote}
+\textbf{Proposition 10.13.} Let $\mathbf{Z}$ be a ring. Let $K$ be a
+$\mathbf{Z}$-algebra. Let $\varphi\in1+\mathbf{Z}\left[  \left[  t\right]
+\right]  ^{+}$ be a power series with constant term equal to $1$. Let $p\in
+K\left[  \left[  T\right]  \right]  $.
+
+\textbf{(a)} Then, $\operatorname*{Coeff}\nolimits_{0}\left(  \mathfrak{Todd}%
+_{\varphi}\left(  p\right)  \right)  =1$.
+
+\textbf{(b)} Let $\varphi_{1}$ be the coefficient of the power series
+$\varphi\in\mathbf{Z}\left[  \left[  t\right]  \right]  $ before $t^{1}$.
+Then, $\operatorname*{Coeff}\nolimits_{1}\left(  \mathfrak{Todd}_{\varphi
+}\left(  p\right)  \right)  =\varphi_{1}\operatorname*{Coeff}\nolimits_{1}p$.
+\end{quote}
+
+\textit{Proof of Proposition 10.13.} \textbf{(a)} We have%
+\begin{align*}
+\operatorname*{Coeff}\nolimits_{0}\left(  \mathfrak{Todd}_{\varphi}\left(
+p\right)  \right)   &  =\operatorname*{Coeff}\nolimits_{0}\left(  \sum
+_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
+\operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
+p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  T^{j}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{ToddFrak})}\right) \\
+&  =\operatorname*{Td}\nolimits_{\varphi,0}\left(  \operatorname*{Coeff}%
+\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}%
+\nolimits_{0}p\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of
+}\operatorname*{Coeff}\nolimits_{0}\right) \\
+&  =\operatorname*{Td}\nolimits_{\varphi,0}=1\ \ \ \ \ \ \ \ \ \ \left(
+\text{by Proposition 10.6 \textbf{(a)}}\right)  .
+\end{align*}
+
+
+\textbf{(b)} We have%
+\begin{align*}
+\operatorname*{Coeff}\nolimits_{1}\left(  \mathfrak{Todd}_{\varphi}\left(
+p\right)  \right)   &  =\operatorname*{Coeff}\nolimits_{1}\left(  \sum
+_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
+\operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
+p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  T^{j}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{ToddDef})}\right) \\
+&  =\operatorname*{Td}\nolimits_{\varphi,1}\left(  \operatorname*{Coeff}%
+\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}%
+\nolimits_{1}p\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of
+}\operatorname*{Coeff}\nolimits_{1}\right) \\
+&  =\operatorname*{Td}\nolimits_{\varphi,1}\left(  \operatorname*{Coeff}%
+\nolimits_{1}p\right)  =\varphi_{1}\operatorname*{Coeff}\nolimits_{1}p\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since Proposition 10.6 \textbf{(b)}
+yields }\operatorname*{Td}\nolimits_{\varphi,1}=\varphi_{1}\alpha_{1}\right)
+.
+\end{align*}
+
+
+Proposition 10.13 is now proven.
+
+Our next generalization is that of Proposition 10.7:
+
+\begin{quote}
+\textbf{Proposition 10.14.} Let $\mathbf{Z}$ be a ring. Let $K$ be a
+$\mathbf{Z}$-algebra. Let $\varphi\in1+\mathbf{Z}\left[  \left[  t\right]
+\right]  ^{+}$ and $\psi\in1+\mathbf{Z}\left[  \left[  t\right]  \right]
+^{+}$ be two power series with constant terms equal to $1$. Let $p\in K\left[
+\left[  T\right]  \right]  $. Then, $\mathfrak{Todd}_{\varphi\psi}\left(
+p\right)  =\mathfrak{Todd}_{\varphi}\left(  p\right)  \cdot\mathfrak{Todd}%
+_{\psi}\left(  p\right)  $.
+\end{quote}
+
+\textit{Proof of Proposition 10.14.} For every $j\in\mathbb{N}$, we will
+abbreviate $\operatorname*{Coeff}\nolimits_{j}p$ by $p_{j}$. Then, $\left(
+\operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
+p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  =\left(  p_{1}%
+,p_{2},...,p_{j}\right)  $.
+
+\textit{1st Step:} For every $j\in\mathbb{N}$, we have%
+\[
+\operatorname*{Td}\nolimits_{\varphi\psi,j}\left(  p_{1},p_{2},...,p_{j}%
+\right)  =\sum\limits_{i=0}^{j}\operatorname*{Td}\nolimits_{\varphi,i}\left(
+p_{1},p_{2},...,p_{i}\right)  \cdot\operatorname*{Td}\nolimits_{\psi
+,j-i}\left(  p_{1},p_{2},...,p_{j-i}\right)  .
+\]
+
+
+\textit{Proof.} Let $j\in\mathbb{N}$. Since the polynomials
+$\operatorname*{Td}\nolimits_{\varphi\psi,j}\left(  \alpha_{1},\alpha
+_{2},...,\alpha_{j}\right)  $ and $\sum\limits_{i=0}^{j}\operatorname*{Td}%
+\nolimits_{\varphi,i}\left(  \alpha_{1},\alpha_{2},...,\alpha_{i}\right)
+\cdot\operatorname*{Td}\nolimits_{\psi,j-i}\left(  \alpha_{1},\alpha
+_{2},...,\alpha_{j-i}\right)  $ are equal (by Proposition 10.8), their
+evaluations at $\left(  p_{1},p_{2},...,p_{j}\right)  $ must also be equal.
+But since the evaluation of $\operatorname*{Td}\nolimits_{\varphi\psi
+,j}\left(  \alpha_{1},\alpha_{2},...,\alpha_{j}\right)  $ at $\left(
+p_{1},p_{2},...,p_{j}\right)  $ is $\operatorname*{Td}\nolimits_{\varphi
+\psi,j}\left(  p_{1},p_{2},...,p_{j}\right)  $, whereas the evaluation of
+$\sum\limits_{i=0}^{j}\operatorname*{Td}\nolimits_{\varphi,i}\left(
+\alpha_{1},\alpha_{2},...,\alpha_{i}\right)  \cdot\operatorname*{Td}%
+\nolimits_{\psi,j-i}\left(  \alpha_{1},\alpha_{2},...,\alpha_{j-i}\right)  $
+at $\left(  p_{1},p_{2},...,p_{j}\right)  $ is $\sum\limits_{i=0}%
+^{j}\operatorname*{Td}\nolimits_{\varphi,i}\left(  p_{1},p_{2},...,p_{i}%
+\right)  \cdot\operatorname*{Td}\nolimits_{\psi,j-i}\left(  p_{1}%
+,p_{2},...,p_{j-i}\right)  $, this yields that the values $\operatorname*{Td}%
+\nolimits_{\varphi\psi,j}\left(  p_{1},p_{2},...,p_{j}\right)  $ and
+$\sum\limits_{i=0}^{j}\operatorname*{Td}\nolimits_{\varphi,i}\left(
+p_{1},p_{2},...,p_{i}\right)  \cdot\operatorname*{Td}\nolimits_{\psi
+,j-i}\left(  p_{1},p_{2},...,p_{j-i}\right)  $ are equal. This proves the 1st step.
+
+\textit{2nd Step:} Now let us prove Proposition 10.14.
+
+By (\ref{ToddFrak}) (applied to $\varphi\psi$ instead of $\varphi$), we have%
+\begin{align*}
+\mathfrak{Todd}_{\varphi\psi}\left(  p\right)   &  =\sum\limits_{j\in
+\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi\psi,j}\underbrace{\left(
+\operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
+p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  }_{=\left(  p_{1}%
+,p_{2},...,p_{j}\right)  }T^{j}\\
+&  =\sum_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi\psi,j}\left(
+p_{1},p_{2},...,p_{j}\right)  T^{j}.
+\end{align*}
+But%
+\begin{align*}
+&  \underbrace{\mathfrak{Todd}_{\varphi}\left(  p\right)  }_{\substack{=\sum
+\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
+\operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
+p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  T^{j}\\\text{(by
+(\ref{ToddFrak}))}}}\underbrace{\mathfrak{Todd}_{\psi}\left(  p\right)
+}_{\substack{=\sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\psi
+,j}\left(  \operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}%
+\nolimits_{2}p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  T^{j}%
+\\\text{(by (\ref{ToddFrak}), applied to }\psi\text{ instead of }%
+\varphi\text{)}}}\\
+&  =\left(  \sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi
+,j}\underbrace{\left(  \operatorname*{Coeff}\nolimits_{1}%
+p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}\nolimits_{j}%
+p\right)  }_{=\left(  p_{1},p_{2},...,p_{j}\right)  }T^{j}\right)
+\cdot\left(  \sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\psi
+,j}\underbrace{\left(  \operatorname*{Coeff}\nolimits_{1}%
+p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}\nolimits_{j}%
+p\right)  }_{=\left(  p_{1},p_{2},...,p_{j}\right)  }T^{j}\right) \\
+&  =\left(  \sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi
+,j}\left(  p_{1},p_{2},...,p_{j}\right)  T^{j}\right)  \cdot\left(
+\sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\psi,j}\left(
+p_{1},p_{2},...,p_{j}\right)  T^{j}\right) \\
+&  =\sum\limits_{j\in\mathbb{N}}\underbrace{\left(  \sum\limits_{i=0}%
+^{j}\operatorname*{Td}\nolimits_{\varphi,i}\left(  p_{1},p_{2},...,p_{i}%
+\right)  \cdot\operatorname*{Td}\nolimits_{\psi,j-i}\left(  p_{1}%
+,p_{2},...,p_{j-i}\right)  \right)  }_{\substack{=\operatorname*{Td}%
+\nolimits_{\varphi\psi,j}\left(  p_{1},p_{2},...,p_{j}\right)  \\\text{(by the
+1st Step)}}}T^{i}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the product of two
+formal power series}\right) \\
+&  =\sum_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi\psi,j}\left(
+p_{1},p_{2},...,p_{j}\right)  T^{j}=\mathfrak{Todd}_{\varphi\psi}\left(
+p\right)  .
+\end{align*}
+This proves Proposition 10.14.
+
+Next, Proposition 10.9 generalizes to the following result:
+
+\begin{quote}
+\textbf{Proposition 10.15.} Let $\mathbf{Z}$ be a ring. Let $K$ be a
+$\mathbf{Z}$-algebra. Let $m\in\mathbb{N}$. For every $i\in\left\{
+1,2,...,m\right\}  $, let $\varphi_{i}\in1+\mathbf{Z}\left[  \left[  t\right]
+\right]  ^{+}$ be a power series with constant term equal to $1$. Let $p\in
+K\left[  \left[  T\right]  \right]  $. Then,%
+\[
+\mathfrak{Todd}_{\prod\limits_{i=1}^{m}\varphi_{i}}\left(  p\right)
+=\prod\limits_{i=1}^{m}\mathfrak{Todd}_{\varphi_{i}}\left(  p\right)  .
+\]
+
+
+
+\end{quote}
+
+\textit{Proof of Proposition 10.15.} This can be proven by induction over $m$.
+The induction base (the case $m=0$) requires showing that $\mathfrak{Todd}%
+_{1}\left(  p\right)  =1$, but this is easy\footnote{\textit{Proof.} Applying
+(\ref{ToddFrak}) to $\varphi=1$, we obtain%
+\begin{align*}
+&  \mathfrak{Todd}_{1}\left(  p\right)  =\sum\limits_{j\in\mathbb{N}%
+}\operatorname*{Td}\nolimits_{1,j}\left(  \operatorname*{Coeff}\nolimits_{1}%
+p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}\nolimits_{j}%
+p\right)  T^{j}\\
+&  =\underbrace{\operatorname*{Td}\nolimits_{1,0}\left(  \operatorname*{Coeff}%
+\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}%
+\nolimits_{0}p\right)  }_{\substack{=\operatorname*{Td}\nolimits_{1,0}%
+=1\\\text{(by Proposition 10.6 \textbf{(a)},}\\\text{applied to }%
+\varphi=1\text{)}}}T^{0}+\sum_{\substack{j\in\mathbb{N};\\j>0}%
+}\underbrace{\operatorname*{Td}\nolimits_{1,j}}_{\substack{=\operatorname*{Td}%
+\nolimits_{1+0t,j}=0^{j}\alpha_{j}\\\text{(by Proposition 10.4,}%
+\\\text{applied to }u=0\text{)}}}\left(  \operatorname*{Coeff}\nolimits_{1}%
+p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}\nolimits_{j}%
+p\right)  T^{j}\\
+&  =\underbrace{1T^{0}}_{=1}+\sum_{\substack{j\in\mathbb{N};\\j>0}%
+}\underbrace{0^{j}}_{\substack{=0\\\text{(since }j>0\text{)}}}\alpha
+_{j}\left(  \operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}%
+\nolimits_{2}p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  T^{j}\\
+&  =1+\underbrace{\sum_{\substack{j\in\mathbb{N};\\j>0}}0\alpha_{j}\left(
+\operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
+p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  T^{j}}_{=0}=1.
+\end{align*}
+}. The induction step is a straightforward application of Proposition 10.14.
+Thus Proposition 10.15 is proven.
+
+We now formulate our generalization of Theorem 10.10 - it is through this
+generalization that we are going to prove Theorem 10.10:
+
+\begin{quote}
+\textbf{Theorem 10.16.} Let $\mathbf{Z}$ be a ring. Let $K$ be a $\mathbf{Z}%
+$-algebra. Let $\varphi\in1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$
+be a power series with constant term equal to $1$. Let $p\in1+K\left[  \left[
+T\right]  \right]  ^{+}$ and $q\in1+K\left[  \left[  T\right]  \right]  ^{+}$.
+Then, $\mathfrak{Todd}_{\varphi}\left(  p\right)  \cdot\mathfrak{Todd}%
+_{\varphi}\left(  q\right)  =\mathfrak{Todd}_{\varphi}\left(  pq\right)  $.
+\end{quote}
+
+To prove this theorem, we first reduce it to the case when $K=\mathbf{Z}$:
+
+\begin{quote}
+\textbf{Lemma 10.17.} Let $K$ be a ring. Let $\varphi\in1+K\left[  \left[
+t\right]  \right]  ^{+}$ be a power series with constant term equal to $1$.
+Let $p\in1+K\left[  \left[  T\right]  \right]  ^{+}$ and $q\in1+K\left[
+\left[  T\right]  \right]  ^{+}$. Then, $\mathfrak{Todd}_{\varphi}\left(
+p\right)  \cdot\mathfrak{Todd}_{\varphi}\left(  q\right)  =\mathfrak{Todd}%
+_{\varphi}\left(  pq\right)  $.
+\end{quote}
+
+We will now prepare to the proof of this lemma. First, let us introduce the
+version of continuity that we need.
+
+The following two definitions are copies of two definitions which we made in
+Section 5, with the only difference that the variable that used to be $T$ in
+Section 5 is called $t$ here.
+
+\begin{quote}
+\textbf{Definition.} Let $K$ be a ring. Let $K\left[  t\right]  ^{+}$ be the
+subset of $K\left[  t\right]  $ defined by%
+\begin{align*}
+K\left[  t\right]  ^{+}  &  =tK\left[  t\right]  =\left\{  \sum_{i\in
+\mathbb{N}}a_{i}t^{i}\in K\left[  t\right]  \ \mid\ a_{i}\in K\text{ for all
+}i,\text{ and }a_{0}=0\right\} \\
+&  =\left\{  p\in K\left[  t\right]  \ \mid\ p\text{ is a polynomial with
+constant term }0\right\}  .
+\end{align*}
+Then, the set $1+K\left[  t\right]  ^{+}$ is a subset of $1+K\left[  \left[
+t\right]  \right]  ^{+}.$ The elements of $1+K\left[  t\right]  ^{+}$ are polynomials.
+
+\textbf{Definition.} Let $K$ be a ring. As a $K$-module, $K\left[  \left[
+t\right]  \right]  =\bigoplus\limits_{k\in\mathbb{N}}Kt^{k}$. Now, we define
+the so-called $\left(  t\right)  $\textit{-topology} on the ring $K\left[
+\left[  t\right]  \right]  $ as the topology generated by%
+\[
+\left\{  0,\varnothing\right\}  \cup\left\{  u+\sum_{k\geq N}Kt^{k}%
+\ \mid\ u\in K\left[  \left[  t\right]  \right]  \text{ and }N\in
+\mathbb{N}\right\}  .
 \]
 In other words, the open sets of this topology should be $0$, $\varnothing$
-and all translates of the submodules $\sum\limits_{k\geq N}\mathbf{Z}t^{k}$
-for $N\in\mathbb{N}$, as well as the unions of these sets. (Note that the sum
-$\sum\limits_{k\geq N}\mathbf{Z}t^{k}$ is actually a direct sum. Also note
-that every translate of the submodule $\sum\limits_{k\geq N}\mathbf{Z}t^{k}$
-for $N\in\mathbb{N}$ actually has the form $p+\sum\limits_{k\geq N}%
-\mathbf{Z}t^{k}$ for a polynomial $p\in\mathbf{Z}\left[  t\right]  $ of degree
-$<N$, and this polynomial is uniquely determined.)
+and all translates of the submodules $\sum\limits_{k\geq N}Kt^{k}$ for
+$N\in\mathbb{N}$, as well as the unions of these sets. (Note that the sum
+$\sum\limits_{k\geq N}Kt^{k}$ is actually a direct sum. Also note that every
+translate of the submodule $\sum\limits_{k\geq N}Kt^{k}$ for $N\in\mathbb{N}$
+actually has the form $p+\sum\limits_{k\geq N}Kt^{k}$ for a polynomial $p\in
+K\left[  t\right]  $ of degree $<N$, and this polynomial is uniquely determined.)
 \end{quote}
 
 Now, we have:
 
 \begin{quote}
-\textbf{Theorem 10.10.} Let $\mathbf{Z}$ be a ring. The $\left(  t\right)
-$-topology on the ring $\mathbf{Z}\left[  \left[  t\right]  \right]  $
-restricts to a topology on its subset $1+\mathbf{Z}\left[  \left[  t\right]
-\right]  ^{+}$; we call this topology the $\left(  t\right)  $%
-\textit{-topology} again. Whenever we say "open", "continuous", "dense", etc.,
-we are referring to this topology.
+\textbf{Theorem 10.18.} Let $K$ be a ring. The $\left(  t\right)  $-topology
+on the ring $K\left[  \left[  t\right]  \right]  $ restricts to a topology on
+its subset $1+K\left[  \left[  t\right]  \right]  ^{+}$; we call this topology
+the $\left(  t\right)  $\textit{-topology} again. Whenever we say "open",
+"continuous", "dense", etc., we are referring to this topology.
 
-\textbf{(a)} The subset $1+\mathbf{Z}\left[  t\right]  ^{+}$ is dense in
-$1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$.
+\textbf{(a)} The subset $1+K\left[  t\right]  ^{+}$ is dense in $1+K\left[
+\left[  t\right]  \right]  ^{+}$.
 
-\textbf{(b)} Let $K$ be a ring. Let $f:1+\mathbf{Z}\left[  \left[  t\right]
-\right]  ^{+}\rightarrow K\left[  \left[  T\right]  \right]  $ be a map such
-that for every $n\in\mathbb{N}$ there exists some $N\in\mathbb{N}$ such that
-the first $n$ coefficients of the image of a formal power series under $f$
-depend only on the first $N$ coefficients of the series itself (and not on the
-remaining ones). Then, $f$ is continuous. (Here, the topology on $K\left[
-\left[  T\right]  \right]  $ is supposed to be the $\left(  T\right)  $-adic
-topology defined in Section 5.)
+\textbf{(b)} Let $f:1+K\left[  \left[  t\right]  \right]  ^{+}\rightarrow
+K\left[  \left[  T\right]  \right]  $ be a map such that for every
+$n\in\mathbb{N}$ there exists some $N\in\mathbb{N}$ such that the first $n$
+coefficients of the image of a formal power series under $f$ depend only on
+the first $N$ coefficients of the series itself (and not on the remaining
+ones). Then, $f$ is continuous. (Here, the topology on $K\left[  \left[
+T\right]  \right]  $ is supposed to be the $\left(  T\right)  $-adic topology
+defined in Section 5.)
 
-\textbf{(c)} The topological spaces $\mathbf{Z}\left[  \left[  t\right]
-\right]  $ and $1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$ are
-Hausdorff spaces.
+\textbf{(c)} The topological spaces $K\left[  \left[  t\right]  \right]  $ and
+$1+K\left[  \left[  t\right]  \right]  ^{+}$ are Hausdorff spaces.
 \end{quote}
 
-\textit{Proof of Theorem 10.10.} The parts \textbf{(a)} and \textbf{(c)} of
-Theorem 10.10 are obviously obtained from the parts \textbf{(a)} and
-\textbf{(e)} of Theorem 5.5 by renaming the ring $K$ as $\mathbf{Z}$ and
-renaming the variable $T$ as $t$. Hence, they follow from Theorem 5.5. Part
-\textbf{(b)} of Theorem 10.10 is also true (it is an exercise in topology,
-proven in the same way as Theorem 5.5 \textbf{(b)}). This proves Theorem 10.10.
+\textit{Proof of Theorem 10.18.} The parts \textbf{(a)} and \textbf{(c)} of
+Theorem 10.18 are obviously obtained from the parts \textbf{(a)} and
+\textbf{(e)} of Theorem 5.5 by renaming the variable $T$ as $t$. Hence, they
+follow from Theorem 5.5. Part \textbf{(b)} of Theorem 10.18 is also true (it
+is an exercise in topology, proven in the same way as Theorem 5.5
+\textbf{(b)}). This proves Theorem 10.18.
 
-The good thing about the topology on $1+\mathbf{Z}\left[  \left[  t\right]
-\right]  ^{+}$ just defined is that it makes the map $1+\mathbf{Z}\left[
-\left[  t\right]  \right]  ^{+}\rightarrow K\left[  \left[  T\right]  \right]
-$, $\varphi\mapsto\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  $
-continuous for every given $x\in K$:
+The good thing about the topology on $1+K\left[  \left[  t\right]  \right]
+^{+}$ just defined is that it makes the map $1+K\left[  \left[  t\right]
+\right]  ^{+}\rightarrow K\left[  \left[  T\right]  \right]  $, $\varphi
+\mapsto\mathfrak{Todd}_{\varphi}\left(  p\right)  $ continuous for every given
+$p\in K\left[  \left[  T\right]  \right]  $:
 
 \begin{quote}
-\textbf{Proposition 10.11.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
-\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
-$K$ is a $\mathbf{Z}$-algebra. Let $x\in K$. Then, the map%
+\textbf{Proposition 10.19.} Let $K$ be a ring. Let $p\in K\left[  \left[
+T\right]  \right]  $. Then, the map%
 \[
-1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}\rightarrow K\left[
-\left[  T\right]  \right]  ,\ \ \ \ \ \ \ \ \ \ \varphi\mapsto
-\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)
+1+K\left[  \left[  t\right]  \right]  ^{+}\rightarrow K\left[  \left[
+T\right]  \right]  ,\ \ \ \ \ \ \ \ \ \ \varphi\mapsto\mathfrak{Todd}%
+_{\varphi}\left(  p\right)
 \]
-is continuous. Here, the topology on $1+\mathbf{Z}\left[  \left[  t\right]
-\right]  ^{+}$ is supposed to be the $\left(  t\right)  $-topology, and the
-topology on $K\left[  \left[  T\right]  \right]  $ is supposed to be the
-$\left(  T\right)  $-topology defined in Section 5.
+is continuous. Here, the topology on $1+K\left[  \left[  t\right]  \right]
+^{+}$ is supposed to be the $\left(  t\right)  $-topology, and the topology on
+$K\left[  \left[  T\right]  \right]  $ is supposed to be the $\left(
+T\right)  $-topology defined in Section 5.
 \end{quote}
 
-\textit{Proof of Proposition 10.11.} Let $f$ denote the map
+\textit{Proof of Proposition 10.19.} Let $f$ denote the map
 \[
-1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}\rightarrow K\left[
-\left[  T\right]  \right]  ,\ \ \ \ \ \ \ \ \ \ \varphi\mapsto
-\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  .
+1+K\left[  \left[  t\right]  \right]  ^{+}\rightarrow K\left[  \left[
+T\right]  \right]  ,\ \ \ \ \ \ \ \ \ \ \varphi\mapsto\mathfrak{Todd}%
+_{\varphi}\left(  p\right)  .
 \]
-Then, in order to verify Proposition 10.11, we must prove that this map $f$ is continuous.
+Then, in order to verify Proposition 10.19, we must prove that this map $f$ is continuous.
 
-\textit{1st Step:} Let $n\in\mathbb{N}$. Let $\varphi\in1+\mathbf{Z}\left[
-\left[  t\right]  \right]  ^{+}$ and $\psi\in1+\mathbf{Z}\left[  \left[
-t\right]  \right]  ^{+}$ be two power series such that the first $n$
-coefficients\footnote{Note that when we say "the first $n$ coefficients" (of
-some power series), we mean the coefficients before $t^{0}$, $t^{1}$, $...$,
-$t^{n-1}$.} of $\varphi$ are equal to the respective coefficients of $\psi$.
-Then, the first $n$ coefficients of the power series $\operatorname*{td}%
-\nolimits_{\varphi,T}\left(  x\right)  $ are equal to the respective
-coefficients of the power series $\operatorname*{td}\nolimits_{\psi,T}\left(
-x\right)  $.
+\textit{1st Step:} Let $n\in\mathbb{N}$. Let $\varphi\in1+K\left[  \left[
+t\right]  \right]  ^{+}$ and $\psi\in1+K\left[  \left[  t\right]  \right]
+^{+}$ be two power series such that the first $n$ coefficients\footnote{Note
+that when we say "the first $n$ coefficients" (of some power series), we mean
+the coefficients before $t^{0}$, $t^{1}$, $...$, $t^{n-1}$.} of $\varphi$ are
+equal to the respective coefficients of $\psi$. Then, the first $n$
+coefficients of the power series $\mathfrak{Todd}_{\varphi}\left(  p\right)  $
+are equal to the respective coefficients of the power series $\mathfrak{Todd}%
+_{\psi}\left(  p\right)  $.
 
 \textit{Proof.} Let $m\in\left\{  0,1,...,n-1\right\}  $ be arbitrary.
 
 Since the first $n$ coefficients of the power series $\varphi$ are equal to
 the respective coefficients of the power series $\psi$, we have $\varphi
-\equiv\psi\operatorname{mod}t^{n}$ in the ring $\mathbf{Z}\left[  \left[
-t\right]  \right]  $. Thus, there exists some formal power series $\eta
-\in\mathbf{Z}\left[  \left[  t\right]  \right]  $ such that $\varphi-\psi=\eta
-t^{n}$. Consider such an $\eta$.
+\equiv\psi\operatorname{mod}t^{n}$ in the ring $K\left[  \left[  t\right]
+\right]  $. Thus, there exists some formal power series $\eta\in K\left[
+\left[  t\right]  \right]  $ such that $\varphi-\psi=\eta t^{n}$. Consider
+such an $\eta$.
 
-Consider the polynomial ring $\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]
-$ and its elements $X_{i}=\sum\limits_{\substack{S\subseteq\left\{
-1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{k}$
-as in the definition of $\operatorname*{Td}\nolimits_{\varphi,j}$.
+Consider the polynomial ring $K\left[  U_{1},U_{2},...,U_{m}\right]  $ and its
+elements $X_{i}=\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
+;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{k}$ as in the
+definition of $\operatorname*{Td}\nolimits_{\varphi,j}$.
 
 Every $i\in\left\{  1,2,...,m\right\}  $ satisfies%
 \begin{align*}
@@ -6315,8 +6720,8 @@ U_{i}T\right)  =\left(  \eta t^{n}\right)  \left(  U_{i}T\right) \\
 [c]{c}%
 \text{where }\left(  \eta t^{n}\right)  \left(  U_{i}T\right)  \text{ means
 the application of the formal}\\
-\text{power series }\eta t^{n}\in\mathbf{Z}\left[  \left[  t\right]  \right]
-\text{ to }U_{i}T\text{, and not a product of }\eta t^{n}\\
+\text{power series }\eta t^{n}\in K\left[  \left[  t\right]  \right]  \text{
+to }U_{i}T\text{, and not a product of }\eta t^{n}\\
 \text{with }U_{i}T\text{ (whatever that could mean)}%
 \end{array}
 \right) \\
@@ -6325,9 +6730,9 @@ the application of the formal}\\
 \end{align*}
 and thus $T^{n}\mid\varphi\left(  U_{i}T\right)  -\psi\left(  U_{i}T\right)
 $, so that $\varphi\left(  U_{i}T\right)  \equiv\psi\left(  U_{i}T\right)
-\operatorname{mod}T^{n}$ in the ring $\left(  \mathbf{Z}\left[  U_{1}%
-,U_{2},...,U_{m}\right]  \right)  \left[  \left[  T\right]  \right]  $.
-Multiplying the congruences $\varphi\left(  U_{i}T\right)  \equiv\psi\left(
+\operatorname{mod}T^{n}$ in the ring $\left(  K\left[  U_{1},U_{2}%
+,...,U_{m}\right]  \right)  \left[  \left[  T\right]  \right]  $. Multiplying
+the congruences $\varphi\left(  U_{i}T\right)  \equiv\psi\left(
 U_{i}T\right)  \operatorname{mod}T^{n}$ for all $i\in\left\{
 1,2,...,m\right\}  $, we obtain $\prod\limits_{i=1}^{m}\varphi\left(
 U_{i}T\right)  \equiv\prod\limits_{i=1}^{m}\psi\left(  U_{i}T\right)
@@ -6344,8 +6749,8 @@ $\operatorname*{Coeff}\nolimits_{m}\left(  \prod\limits_{i=1}^{m}%
 \left(  \prod\limits_{i=1}^{m}\psi\left(  U_{i}T\right)  \right)  $.
 
 According to Proposition 10.1, the equation (\ref{Td1}) holds in the ring
-$\left(  \mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[
-\left[  T\right]  \right]  $. Thus,%
+$\left(  K\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[  \left[
+T\right]  \right]  $. Thus,%
 \begin{align*}
 \operatorname*{Coeff}\nolimits_{m}\left(  \prod\limits_{i=1}^{m}\varphi\left(
 U_{i}T\right)  \right)   &  =\operatorname*{Coeff}\nolimits_{m}\left(
@@ -6374,28 +6779,28 @@ Thus,%
 We will now use this to prove $\operatorname*{Td}\nolimits_{\varphi
 ,m}=\operatorname*{Td}\nolimits_{\psi,m}$.
 
-In fact, let $\mathfrak{Q}_{1}\in\mathbf{Z}\left[  \alpha_{1},\alpha
-_{2},...,\alpha_{m}\right]  $ be the polynomial defined by $\mathfrak{Q}%
-_{1}=\operatorname*{Td}\nolimits_{\varphi,m}$. Let $\mathfrak{Q}_{2}%
-\in\mathbf{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $ be the
-polynomial defined by $\mathfrak{Q}_{2}=\operatorname*{Td}\nolimits_{\psi,m}$.
-We are now going to prove that $\mathfrak{Q}_{1}=\mathfrak{Q}_{2}$.
+In fact, let $\mathfrak{Q}_{1}\in K\left[  \alpha_{1},\alpha_{2}%
+,...,\alpha_{m}\right]  $ be the polynomial defined by $\mathfrak{Q}%
+_{1}=\operatorname*{Td}\nolimits_{\varphi,m}$. Let $\mathfrak{Q}_{2}\in
+K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $ be the polynomial
+defined by $\mathfrak{Q}_{2}=\operatorname*{Td}\nolimits_{\psi,m}$. We are now
+going to prove that $\mathfrak{Q}_{1}=\mathfrak{Q}_{2}$.
 
-Applying Theorem 4.1 \textbf{(a)} to $\mathbf{Z}$ and $\operatorname*{Td}%
+Applying Theorem 4.1 \textbf{(a)} to $K$ and $\operatorname*{Td}%
 \nolimits_{\varphi,m}\left(  X_{1},X_{2},...,X_{m}\right)  $ instead of $K$
-and $P$, we conclude that there exists one and only one polynomial
-$Q\in\mathbf{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $ such
-that $\operatorname*{Td}\nolimits_{\varphi,m}\left(  X_{1},X_{2}%
-,...,X_{m}\right)  =Q\left(  X_{1},X_{2},...,X_{m}\right)  $. In particular,
-there exists \textit{at most one} such polynomial $Q\in\mathbf{Z}\left[
-\alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $. Hence,
+and $P$, we conclude that there exists one and only one polynomial $Q\in
+K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $ such that
+$\operatorname*{Td}\nolimits_{\varphi,m}\left(  X_{1},X_{2},...,X_{m}\right)
+=Q\left(  X_{1},X_{2},...,X_{m}\right)  $. In particular, there exists
+\textit{at most one} such polynomial $Q\in K\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{m}\right]  $. Hence,
 \begin{equation}
 \left(
 \begin{array}
 [c]{c}%
-\text{if }\mathfrak{Q}_{1}\in\mathbf{Z}\left[  \alpha_{1},\alpha
-_{2},...,\alpha_{m}\right]  \text{ and }\mathfrak{Q}_{2}\in\mathbf{Z}\left[
-\alpha_{1},\alpha_{2},...,\alpha_{m}\right]  \text{ are two polynomials}\\
+\text{if }\mathfrak{Q}_{1}\in K\left[  \alpha_{1},\alpha_{2},...,\alpha
+_{m}\right]  \text{ and }\mathfrak{Q}_{2}\in K\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{m}\right]  \text{ are two polynomials}\\
 \text{such that }\operatorname*{Td}\nolimits_{\varphi,m}\left(  X_{1}%
 ,X_{2},...,X_{m}\right)  =\mathfrak{Q}_{1}\left(  X_{1},X_{2},...,X_{m}%
 \right)  \text{ and}\\
@@ -6429,71 +6834,67 @@ _{1}=\mathfrak{Q}_{2}=\operatorname*{Td}\nolimits_{\psi,m}$.
 
 Now,%
 \begin{align*}
-\operatorname*{Coeff}\nolimits_{m}\left(  \operatorname*{td}\nolimits_{\varphi
-,T}\left(  x\right)  \right)   &  =\operatorname*{Coeff}\nolimits_{m}\left(
+\operatorname*{Coeff}\nolimits_{m}\left(  \mathfrak{Todd}_{\varphi}\left(
+p\right)  \right)   &  =\operatorname*{Coeff}\nolimits_{m}\left(
 \sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
-\lambda^{1}\left(  x\right)  ,\lambda^{2}\left(  x\right)  ,...,\lambda
-^{j}\left(  x\right)  \right)  T^{j}\right)  \ \ \ \ \ \ \ \ \ \ \left(
-\text{by (\ref{ToddDef})}\right) \\
-&  =\operatorname*{Td}\nolimits_{\varphi,m}\left(  \lambda^{1}\left(
-x\right)  ,\lambda^{2}\left(  x\right)  ,...,\lambda^{m}\left(  x\right)
-\right)  .
+\operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
+p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  T^{j}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{ToddFrak})}\right) \\
+&  =\operatorname*{Td}\nolimits_{\varphi,m}\left(  \operatorname*{Coeff}%
+\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}%
+\nolimits_{m}p\right)  .
 \end{align*}
 The same argument, applied to $\psi$ instead of $\varphi$, yields%
 \[
-\operatorname*{Coeff}\nolimits_{m}\left(  \operatorname*{td}\nolimits_{\psi
-,T}\left(  x\right)  \right)  =\operatorname*{Td}\nolimits_{\psi,m}\left(
-\lambda^{1}\left(  x\right)  ,\lambda^{2}\left(  x\right)  ,...,\lambda
-^{m}\left(  x\right)  \right)  .
+\operatorname*{Coeff}\nolimits_{m}\left(  \mathfrak{Todd}_{\psi}\left(
+p\right)  \right)  =\operatorname*{Td}\nolimits_{\psi,m}\left(
+\operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
+p,...,\operatorname*{Coeff}\nolimits_{m}p\right)  .
 \]
 Thus,%
 \begin{align*}
-\operatorname*{Coeff}\nolimits_{m}\left(  \operatorname*{td}\nolimits_{\varphi
-,T}\left(  x\right)  \right)   &  =\underbrace{\operatorname*{Td}%
-\nolimits_{\varphi,m}}_{=\operatorname*{Td}\nolimits_{\psi,m}}\left(
-\lambda^{1}\left(  x\right)  ,\lambda^{2}\left(  x\right)  ,...,\lambda
-^{m}\left(  x\right)  \right) \\
-&  =\operatorname*{Td}\nolimits_{\psi,m}\left(  \lambda^{1}\left(  x\right)
-,\lambda^{2}\left(  x\right)  ,...,\lambda^{m}\left(  x\right)  \right)
-=\operatorname*{Coeff}\nolimits_{m}\left(  \operatorname*{td}\nolimits_{\psi
-,T}\left(  x\right)  \right)  .
+\operatorname*{Coeff}\nolimits_{m}\left(  \mathfrak{Todd}_{\varphi}\left(
+p\right)  \right)   &  =\underbrace{\operatorname*{Td}\nolimits_{\varphi,m}%
+}_{=\operatorname*{Td}\nolimits_{\psi,m}}\left(  \operatorname*{Coeff}%
+\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}%
+\nolimits_{m}p\right) \\
+&  =\operatorname*{Td}\nolimits_{\psi,m}\left(  \operatorname*{Coeff}%
+\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}%
+\nolimits_{m}p\right)  =\operatorname*{Coeff}\nolimits_{m}\left(
+\mathfrak{Todd}_{\psi}\left(  p\right)  \right)  .
 \end{align*}
 
 
 So we have proven that $\operatorname*{Coeff}\nolimits_{m}\left(
-\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  \right)
-=\operatorname*{Coeff}\nolimits_{m}\left(  \operatorname*{td}\nolimits_{\psi
-,T}\left(  x\right)  \right)  $ for every $m\in\left\{  0,1,...,n-1\right\}
-$. In other words, for every $m\in\left\{  0,1,...,n-1\right\}  $, the $m$-th
-coefficient of the power series $\operatorname*{td}\nolimits_{\varphi
-,T}\left(  x\right)  $ equals the respective coefficient of the power series
-$\operatorname*{td}\nolimits_{\psi,T}\left(  x\right)  $. In other words, the
-first $n$ coefficients of the power series $\operatorname*{td}%
-\nolimits_{\varphi,T}\left(  x\right)  $ are equal to the respective
-coefficients of the power series $\operatorname*{td}\nolimits_{\psi,T}\left(
-x\right)  $.
+\mathfrak{Todd}_{\varphi}\left(  p\right)  \right)  =\operatorname*{Coeff}%
+\nolimits_{m}\left(  \mathfrak{Todd}_{\psi}\left(  p\right)  \right)  $ for
+every $m\in\left\{  0,1,...,n-1\right\}  $. In other words, for every
+$m\in\left\{  0,1,...,n-1\right\}  $, the $m$-th coefficient of the power
+series $\mathfrak{Todd}_{\varphi}\left(  p\right)  $ equals the respective
+coefficient of the power series $\mathfrak{Todd}_{\psi}\left(  p\right)  $. In
+other words, the first $n$ coefficients of the power series $\mathfrak{Todd}%
+_{\varphi}\left(  p\right)  $ are equal to the respective coefficients of the
+power series $\mathfrak{Todd}_{\psi}\left(  p\right)  $.
 
 This proves the 1st Step.
 
-\textit{2nd Step:} Let $n\in\mathbb{N}$. Let $\varphi\in1+\mathbf{Z}\left[
-\left[  t\right]  \right]  ^{+}$ and $\psi\in1+\mathbf{Z}\left[  \left[
-t\right]  \right]  ^{+}$ be two power series such that the first $n$
-coefficients\footnote{Note that when we say "the first $n$ coefficients" (of
-some power series), we mean the coefficients before $t^{0}$, $t^{1}$, $...$,
-$t^{n-1}$.} of $\varphi$ are equal to the respective coefficients of $\psi$.
-Then, the first $n$ coefficients of the power series $f\left(  \varphi\right)
-$ are equal to the respective coefficients of the power series $f\left(
-\psi\right)  $.
+\textit{2nd Step:} Let $n\in\mathbb{N}$. Let $\varphi\in1+K\left[  \left[
+t\right]  \right]  ^{+}$ and $\psi\in1+K\left[  \left[  t\right]  \right]
+^{+}$ be two power series such that the first $n$ coefficients\footnote{Note
+that when we say "the first $n$ coefficients" (of some power series), we mean
+the coefficients before $t^{0}$, $t^{1}$, $...$, $t^{n-1}$.} of $\varphi$ are
+equal to the respective coefficients of $\psi$. Then, the first $n$
+coefficients of the power series $f\left(  \varphi\right)  $ are equal to the
+respective coefficients of the power series $f\left(  \psi\right)  $.
 
 \textit{Proof.} This is just an equivalent restatement of the 1st Step, since
-$f\left(  \varphi\right)  =\operatorname*{td}\nolimits_{\varphi,T}\left(
-x\right)  $ (by the definition of $f$) and $f\left(  \psi\right)
-=\operatorname*{td}\nolimits_{\psi,T}\left(  x\right)  $ (by the definition of
-$f$).
+$f\left(  \varphi\right)  =\mathfrak{Todd}_{\varphi}\left(  p\right)  $ (by
+the definition of $f$) and $f\left(  \psi\right)  =\mathfrak{Todd}_{\psi
+}\left(  p\right)  $ (by the definition of $f$).
 
 \textit{3rd Step:} We can rewrite the result of the 2nd Step as follows: If,
 for some $n\in\mathbb{N}$, two power series $\varphi$ and $\psi$ in
-$1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$ have the same first $n$
+$1+K\left[  \left[  t\right]  \right]  ^{+}$ have the same first $n$
 coefficients (i. e., the first $n$ coefficients of $\varphi$ are equal to the
 respective coefficients of $\psi$), then the images $f\left(  \varphi\right)
 $ and $f\left(  \psi\right)  $ of these two power series under $\varphi$ also
@@ -6506,56 +6907,1327 @@ Hence, for every $n\in\mathbb{N}$, there exists some $N\in\mathbb{N}$ such
 that the first $n$ coefficients of the image of a formal power series under
 $f$ depend only on the first $N$ coefficients of the series itself (and not on
 the remaining ones)\footnote{Namely, we can take $N=n$.}. According to Theorem
-10.10 \textbf{(b)}, this yields that $f$ is continuous.
+10.18 \textbf{(b)}, this yields that $f$ is continuous.
 
 Since $f$ was defined as the map%
 \[
-1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}\rightarrow K\left[
-\left[  T\right]  \right]  ,\ \ \ \ \ \ \ \ \ \ \varphi\mapsto
-\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  ,
+1+K\left[  \left[  t\right]  \right]  ^{+}\rightarrow K\left[  \left[
+T\right]  \right]  ,\ \ \ \ \ \ \ \ \ \ \varphi\mapsto\mathfrak{Todd}%
+_{\varphi}\left(  p\right)  ,
 \]
 this shows that the map%
 \[
-1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}\rightarrow K\left[
-\left[  T\right]  \right]  ,\ \ \ \ \ \ \ \ \ \ \varphi\mapsto
-\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)
+1+K\left[  \left[  t\right]  \right]  ^{+}\rightarrow K\left[  \left[
+T\right]  \right]  ,\ \ \ \ \ \ \ \ \ \ \varphi\mapsto\mathfrak{Todd}%
+_{\varphi}\left(  p\right)
 \]
-is continuous. Proposition 10.11 is thus proven.
+is continuous. Proposition 10.19 is thus proven.
 
-So much for the topology on $1+\mathbf{Z}\left[  \left[  t\right]  \right]
-^{+}$. We now discuss extensions of $\mathbf{Z}$ that make polynomials factor.
+So much for the topology on $1+K\left[  \left[  t\right]  \right]  ^{+}$. We
+now discuss extensions of $K$ that make polynomials factor.
 
-By renaming the ring $K$ as $\mathbf{Z}$ and the variable $T$ as $t$ in
+By renaming the polynomial $p$ as $\varphi$ and the variable $T$ as $t$ in
 Theorem 5.2, we obtain the following fact:
 
 \begin{quote}
-\textbf{Theorem 10.12.} Let $\mathbf{Z}$ be a ring. For every element
-$p\in1+\mathbf{Z}\left[  t\right]  ^{+}$, there exists an integer $n$ (the
-degree of the polynomial $p$), a finite-free extension ring $\mathbf{Z}_{p}$
-of the ring $\mathbf{Z}$ and $n$ elements $p_{1},$ $p_{2},$ $...,$ $p_{n}$ of
-this extension ring $\mathbf{Z}_{p}$ such that $p=\prod\limits_{i=1}%
-^{n}\left(  1+p_{i}t\right)  $ in $\mathbf{Z}_{p}\left[  t\right]  $.
+\textbf{Theorem 10.20.} Let $K$ be a ring. For every element $\varphi
+\in1+K\left[  t\right]  ^{+}$, there exists an integer $n$ (the degree of the
+polynomial $\varphi$), a finite-free extension ring $K_{\varphi}$ of the ring
+$K$ and $n$ elements $p_{1},$ $p_{2},$ $...,$ $p_{n}$ of this extension ring
+$K_{\varphi}$ such that $\varphi=\prod\limits_{i=1}^{n}\left(  1+p_{i}%
+t\right)  $ in $K_{\varphi}\left[  t\right]  $.
 \end{quote}
 
-This is not yet all. We need a slight generalization of our notion of
-$\varphi$-Todd homomorphisms to the case when the power series $\varphi$ does
-not lie in $1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$ but, instead,
-lies in $1+\mathbf{Z}^{\prime}\left[  \left[  t\right]  \right]  ^{+}$ for
-$\mathbf{Z}^{\prime}$ being a commutative $\mathbf{Z}$-algebra. In this case,
-it turns out, not much will change - but, of course, $\operatorname*{td}%
-\nolimits_{\varphi,T}$ will no longer be a map $K\rightarrow K\left[  \left[
-T\right]  \right]  $ but instead will be a map $K\rightarrow\left(
-K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[  \left[  T\right]
-\right]  $. Here is the precise definition:
+Now, finally, to the proof of Lemma 10.17:
+
+\textit{Proof of Lemma 10.17.} Fix $p\in1+K\left[  \left[  T\right]  \right]
+^{+}$ and $q\in1+K\left[  \left[  T\right]  \right]  ^{+}$, but let
+$\varphi\in1+K\left[  \left[  t\right]  \right]  ^{+}$ vary.
+
+\textit{1st Step:} For every $\varphi\in1+K\left[  t\right]  ^{+}$, we have
+$\mathfrak{Todd}_{\varphi}\left(  p\right)  \cdot\mathfrak{Todd}_{\varphi
+}\left(  q\right)  =\mathfrak{Todd}_{\varphi}\left(  pq\right)  $.
+
+\textit{Proof.} Assume that $\varphi\in1+K\left[  t\right]  ^{+}$. According
+to Theorem 10.20, there exists an integer $n$ (the degree of the polynomial
+$\varphi$), a finite-free extension ring $K_{\varphi}$ of the ring $K$ and $n$
+elements $p_{1},$ $p_{2},$ $...,$ $p_{n}$ of this extension ring $K_{\varphi}$
+such that $\varphi=\prod\limits_{i=1}^{n}\left(  1+p_{i}t\right)  $ in
+$K_{\varphi}\left[  t\right]  $. Consider this ring $K_{\varphi}$ and these
+$n$ elements $p_{1},$ $p_{2},$ $...,$ $p_{n}$.
+
+Since $K$ is a subring of $K_{\varphi}$, we can canonically view the ring
+$K\left[  t\right]  $ as a subring of $K_{\varphi}\left[  t\right]  $, and
+similarly we can view the ring $K\left[  \left[  t\right]  \right]  $ as a
+subring of $K_{\varphi}\left[  \left[  t\right]  \right]  $, and we can view
+the ring $K\left[  \left[  T\right]  \right]  $ as a subring of $K_{\varphi
+}\left[  \left[  T\right]  \right]  $.
+
+Here is a trivial observation that we will tacitly use: For every $r\in
+K\left[  \left[  T\right]  \right]  $, the value of the term $\mathfrak{Todd}%
+_{\varphi}\left(  r\right)  $ does not depend on whether we interpret
+$\varphi$ as an element of $1+K\left[  t\right]  ^{+}$ or as an element of
+$1+K_{\varphi}\left[  t\right]  ^{+}$, and also does not depend on whether we
+interpret $r$ as an element of $K\left[  \left[  T\right]  \right]  $ or as an
+element of $K_{\varphi}\left[  \left[  T\right]  \right]  $. This is because
+the definition of $\mathfrak{Todd}_{\varphi}\left(  r\right)  $ was functorial
+both in $\mathbf{Z}$ and in $K$.
+
+Let $r\in1+K\left[  \left[  T\right]  \right]  ^{+}$ be arbitrary. Proposition
+10.15 (applied to $r$, $K_{\varphi}$, $K_{\varphi}$, $n$ and $1+p_{i}t$
+instead of $p$, $K$, $\mathbf{Z}$, $m$ and $\varphi_{i}$) yields that
+$\mathfrak{Todd}_{\prod\limits_{i=1}^{n}\left(  1+p_{i}t\right)  }\left(
+r\right)  =\prod\limits_{i=1}^{n}\mathfrak{Todd}_{1+p_{i}t}\left(  r\right)
+$. Since $\prod\limits_{i=1}^{n}\left(  1+p_{i}t\right)  =\varphi$, this
+rewrites as%
+\begin{equation}
+\mathfrak{Todd}_{\varphi}\left(  r\right)  =\prod\limits_{i=1}^{n}%
+\underbrace{\mathfrak{Todd}_{1+p_{i}t}\left(  r\right)  }%
+_{\substack{=\operatorname*{ev}\nolimits_{p_{i}T}\left(  r\right)  \\\text{(by
+Proposition 10.12,}\\\text{applied to }K_{\varphi}\text{, }K_{\varphi}\text{,
+}r\text{ and }p_{i}\\\text{instead of }\mathbf{Z}\text{, }K\text{, }p\text{
+and }u\text{)}}}=\prod\limits_{i=1}^{n}\operatorname*{ev}\nolimits_{p_{i}%
+T}\left(  r\right)  . \label{10.20.pf.1}%
+\end{equation}
+Applying (\ref{10.20.pf.1}) to $r=p$, we obtain $\mathfrak{Todd}_{\varphi
+}\left(  p\right)  =\prod\limits_{i=1}^{n}\operatorname*{ev}\nolimits_{p_{i}%
+T}\left(  p\right)  $. Applying (\ref{10.20.pf.1}) to $r=q$, we obtain
+$\mathfrak{Todd}_{\varphi}\left(  q\right)  =\prod\limits_{i=1}^{n}%
+\operatorname*{ev}\nolimits_{p_{i}T}\left(  q\right)  $. Applying
+(\ref{10.20.pf.1}) to $r=pq$, we obtain
+\begin{align*}
+\mathfrak{Todd}_{\varphi}\left(  pq\right)   &  =\prod\limits_{i=1}%
+^{n}\underbrace{\operatorname*{ev}\nolimits_{p_{i}T}\left(  pq\right)
+}_{\substack{=\operatorname*{ev}\nolimits_{p_{i}T}\left(  p\right)
+\cdot\operatorname*{ev}\nolimits_{p_{i}T}\left(  q\right)  \\\text{(since
+}\operatorname*{ev}\nolimits_{p_{i}T}\text{ is a ring}\\\text{homomorphism)}%
+}}=\prod\limits_{i=1}^{n}\left(  \operatorname*{ev}\nolimits_{p_{i}T}\left(
+p\right)  \cdot\operatorname*{ev}\nolimits_{p_{i}T}\left(  q\right)  \right)
+=\underbrace{\prod\limits_{i=1}^{n}\operatorname*{ev}\nolimits_{p_{i}T}\left(
+p\right)  }_{=\mathfrak{Todd}_{\varphi}\left(  p\right)  }\cdot
+\underbrace{\prod\limits_{i=1}^{n}\operatorname*{ev}\nolimits_{p_{i}T}\left(
+q\right)  }_{=\mathfrak{Todd}_{\varphi}\left(  q\right)  }\\
+&  =\mathfrak{Todd}_{\varphi}\left(  p\right)  \cdot\mathfrak{Todd}_{\varphi
+}\left(  q\right)  .
+\end{align*}
+This proves the 1st Step.
+
+\textit{2nd Step:} Let $\mathfrak{f}_{1}:1+K\left[  \left[  t\right]  \right]
+^{+}\rightarrow K\left[  \left[  T\right]  \right]  $ be the map which sends
+every $\varphi\in1+K\left[  \left[  t\right]  \right]  ^{+}$ to
+$\mathfrak{Todd}_{\varphi}\left(  p\right)  \cdot\mathfrak{Todd}_{\varphi
+}\left(  q\right)  $.
+
+Let $\mathfrak{f}_{2}:1+K\left[  \left[  t\right]  \right]  ^{+}\rightarrow
+K\left[  \left[  T\right]  \right]  $ be the map which sends every $\varphi
+\in1+K\left[  \left[  t\right]  \right]  ^{+}$ to $\mathfrak{Todd}_{\varphi
+}\left(  pq\right)  $.
+
+These maps $\mathfrak{f}_{1}$ and $\mathfrak{f}_{2}$ are equal to each other
+on a dense subset of $1+K\left[  \left[  t\right]  \right]  ^{+}$.
+
+\textit{Proof.} Every $\varphi\in1+K\left[  t\right]  ^{+}$ satisfies
+$\mathfrak{f}_{1}\left(  \varphi\right)  =\mathfrak{Todd}_{\varphi}\left(
+p\right)  \cdot\mathfrak{Todd}_{\varphi}\left(  q\right)  $ (by the definition
+of $\mathfrak{f}_{1}$) and $\mathfrak{f}_{2}\left(  \varphi\right)
+=\mathfrak{Todd}_{\varphi}\left(  pq\right)  $ (by the definition of
+$\mathfrak{f}_{2}$). Thus, every $\varphi\in1+K\left[  t\right]  ^{+}$
+satisfies%
+\begin{align*}
+\mathfrak{f}_{1}\left(  \varphi\right)   &  =\mathfrak{Todd}_{\varphi}\left(
+p\right)  \cdot\mathfrak{Todd}_{\varphi}\left(  q\right)  =\mathfrak{Todd}%
+_{\varphi}\left(  pq\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the 1st
+Step}\right) \\
+&  =\mathfrak{f}_{2}\left(  \varphi\right)  .
+\end{align*}
+In other words, the maps $\mathfrak{f}_{1}$ and $\mathfrak{f}_{2}$ are equal
+to each other on the subset $1+K\left[  t\right]  ^{+}$. Since $1+K\left[
+t\right]  ^{+}$ is a dense subset of $1+K\left[  \left[  t\right]  \right]
+^{+}$ (by Theorem 10.18 \textbf{(a)}), this yields that the maps
+$\mathfrak{f}_{1}$ and $\mathfrak{f}_{2}$ are equal to each other on a dense
+subset of $1+K\left[  \left[  t\right]  \right]  ^{+}$. This proves the 2nd Step.
+
+\textit{3rd Step:} Consider the maps $\mathfrak{f}_{1}$ and $\mathfrak{f}_{2}$
+defined in the 2nd Step.
+
+The map $1+K\left[  \left[  t\right]  \right]  ^{+}\rightarrow K\left[
+\left[  T\right]  \right]  $, $\varphi\mapsto\mathfrak{Todd}_{\varphi}\left(
+p\right)  $ is continuous (by Proposition 10.19), and the map $1+K\left[
+\left[  t\right]  \right]  ^{+}\rightarrow K\left[  \left[  T\right]  \right]
+$, $\varphi\mapsto\mathfrak{Todd}_{\varphi}\left(  q\right)  $ is continuous
+(by Proposition 10.19, applied to $q$ instead of $p$). The pointwise product
+of these two maps is the map $1+K\left[  \left[  t\right]  \right]
+^{+}\rightarrow K\left[  \left[  T\right]  \right]  $, $\varphi\mapsto
+\mathfrak{Todd}_{\varphi}\left(  p\right)  \cdot\mathfrak{Todd}_{\varphi
+}\left(  q\right)  $; this is clearly the map $\mathfrak{f}_{1}$. Hence, we
+see that the map $\mathfrak{f}_{1}$ is the pointwise product of two continuous
+maps. Thus, the map $\mathfrak{f}_{1}$ itself is continuous (because the
+multiplication map $K\left[  \left[  T\right]  \right]  \times K\left[
+\left[  T\right]  \right]  \rightarrow K\left[  \left[  T\right]  \right]  $
+is continuous, and therefore the pointwise product of two continuous maps to
+$K\left[  \left[  T\right]  \right]  $ must be continuous itself).
+
+On the other hand, the map $\mathfrak{f}_{2}$ equals the map $1+K\left[
+\left[  t\right]  \right]  ^{+}\rightarrow K\left[  \left[  T\right]  \right]
+$, $\varphi\mapsto\mathfrak{Todd}_{\varphi}\left(  pq\right)  $, and this map
+is continuous (by Proposition 10.19, applied to $pq$ instead of $p$). We thus
+see that the map $\mathfrak{f}_{2}$ is continuous.
+
+Recall the known fact that if two continuous maps from a topological space
+$\mathfrak{P}$ to a Hausdorff topological space $\mathfrak{Q}$ are equal to
+each other on a dense subset of $\mathfrak{P}$, then they are equal to each
+other on the whole $\mathfrak{P}$. Applying this to the two continuous maps
+$\mathfrak{f}_{1}$ and $\mathfrak{f}_{2}$ from the topological space
+$1+K\left[  \left[  t\right]  \right]  ^{+}$ to the Hausdorff topological
+space $K\left[  \left[  T\right]  \right]  $, we conclude that the maps
+$\mathfrak{f}_{1}$ and $\mathfrak{f}_{2}$ are equal to each other on the whole
+$1+K\left[  \left[  t\right]  \right]  ^{+}$ (because we know from the 2nd
+Step that they are equal to each other on a dense subset of $1+K\left[
+\left[  t\right]  \right]  ^{+}$).
+
+In other words, every $\varphi\in1+K\left[  \left[  t\right]  \right]  ^{+}$
+satisfies $\mathfrak{f}_{1}\left(  \varphi\right)  =\mathfrak{f}_{2}\left(
+\varphi\right)  $. Since every $\varphi\in1+K\left[  \left[  t\right]
+\right]  ^{+}$ satisfies $\mathfrak{f}_{1}\left(  \varphi\right)
+=\mathfrak{Todd}_{\varphi}\left(  p\right)  \cdot\mathfrak{Todd}_{\varphi
+}\left(  q\right)  $ (by the definition of $\mathfrak{f}_{1}$) and
+$\mathfrak{f}_{2}\left(  \varphi\right)  =\mathfrak{Todd}_{\varphi}\left(
+pq\right)  $ (by the definition of $\mathfrak{f}_{2}$), this rewrites as
+follows: Every $\varphi\in1+K\left[  \left[  t\right]  \right]  ^{+}$
+satisfies $\mathfrak{Todd}_{\varphi}\left(  p\right)  \cdot\mathfrak{Todd}%
+_{\varphi}\left(  q\right)  =\mathfrak{Todd}_{\varphi}\left(  pq\right)  $.
+This proves Lemma 10.17.
+
+We next have to will derive Theorem 10.16 from Lemma 10.17. This requires a
+very easy proposition and its corollary:
+
+\begin{quote}
+\textbf{Proposition 10.21.} Let $\mathbf{Z}$ and $\mathbf{Z}^{\prime}$ be two
+rings, and let $\rho:\mathbf{Z}\rightarrow\mathbf{Z}^{\prime}$ be a ring
+homomorphism. Let $j\in\mathbb{N}$. Clearly, the ring homomorphism
+$\rho:\mathbf{Z}\rightarrow\mathbf{Z}^{\prime}$ canonically induces a ring
+homomorphism $\rho\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]
+:\mathbf{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  \rightarrow
+\mathbf{Z}^{\prime}\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  $ and
+a ring homomorphism $\rho\left[  \left[  t\right]  \right]  :\mathbf{Z}\left[
+\left[  t\right]  \right]  \rightarrow\mathbf{Z}^{\prime}\left[  \left[
+t\right]  \right]  $. It is also clear that the latter homomorphism
+$\rho\left[  \left[  t\right]  \right]  $ maps the subset $1+\mathbf{Z}\left[
+\left[  t\right]  \right]  ^{+}$ to the subset $1+\mathbf{Z}^{\prime}\left[
+\left[  t\right]  \right]  ^{+}$.
+
+Every $\varphi\in1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$
+satisfies $\operatorname*{Td}\nolimits_{\left(  \rho\left[  \left[  t\right]
+\right]  \right)  \left(  \varphi\right)  ,j}=\rho\left[  \alpha_{1}%
+,\alpha_{2},...,\alpha_{j}\right]  \left(  \operatorname*{Td}%
+\nolimits_{\varphi,j}\right)  $.
+\end{quote}
+
+All that this proposition tells us is that the object $\operatorname*{Td}%
+\nolimits_{\varphi,j}$ is canonical with respect to the ring $\mathbf{Z}$. You
+may consider this obvious (it does, indeed, become obvious if you add to
+Theorem 4.1 \textbf{(a)} the additional assertion that the polynomial $Q$, for
+fixed $P$, is canonical with respect to the ring $K$); if you do so, then you
+can immediately continue to Corollary 10.22. Here is, however, an alternative
+proof of Proposition 10.21 which does not resort to this kind of handwaving:
+
+\textit{Proof of Proposition 10.21.} Let $\varphi\in1+\mathbf{Z}\left[
+\left[  t\right]  \right]  ^{+}$.
+
+Let $m=j$. We are going to work in the ring $\mathbf{Z}^{\prime}\left[
+U_{1},U_{2},...,U_{m}\right]  =\mathbf{Z}^{\prime}\left[  U_{1},U_{2}%
+,...,U_{j}\right]  $. Note that the ring homomorphism $\rho:\mathbf{Z}%
+\rightarrow\mathbf{Z}^{\prime}$ canonically induces a ring homomorphism
+$\rho\left[  U_{1},U_{2},...,U_{m}\right]  :\mathbf{Z}\left[  U_{1}%
+,U_{2},...,U_{m}\right]  \rightarrow\mathbf{Z}^{\prime}\left[  U_{1}%
+,U_{2},...,U_{m}\right]  $. Also note that%
+\[
+\left(  \rho\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  \left(
+\operatorname*{Td}\nolimits_{\varphi,j}\right)  \right)  \left(  X_{1}%
+,X_{2},...,X_{j}\right)  =\rho\left[  U_{1},U_{2},...,U_{m}\right]  \left(
+\operatorname*{Td}\nolimits_{\varphi,j}\left(  X_{1},X_{2},...,X_{j}\right)
+\right)  .
+\]
+\footnote{\textit{Proof.} Let $\rho^{\prime}=\rho\left[  U_{1},U_{2}%
+,...,U_{m}\right]  $. Then, $\rho^{\prime}$ is the ring homomorphism
+$\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \rightarrow\mathbf{Z}%
+^{\prime}\left[  U_{1},U_{2},...,U_{m}\right]  $ canonically induced by the
+ring homomorphism $\rho:\mathbf{Z}\rightarrow\mathbf{Z}^{\prime}$. Hence,
+$\rho^{\prime}$ is a $\mathbf{Z}$-algebra homomorphism (where $\mathbf{Z}%
+^{\prime}$ becomes a $\mathbf{Z}$-algebra by virtue of the ring homomorphism
+$\rho:\mathbf{Z}\rightarrow\mathbf{Z}^{\prime}$) satisfying $\rho^{\prime
+}\left(  U_{k}\right)  =U_{k}$ for every $k\in\left\{  1,2,...,m\right\}  $.
+Thus,%
+\begin{align*}
+\rho^{\prime}\left(  X_{i}\right)   &  =\rho^{\prime}\left(  \sum
+\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}  ;\\\left\vert
+S\right\vert =i}}\prod\limits_{k\in S}U_{k}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }X_{i}=\sum
+\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}  ;\\\left\vert
+S\right\vert =i}}\prod\limits_{k\in S}U_{k}\right) \\
+&  =\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}  ;\\\left\vert
+S\right\vert =i}}\prod\limits_{k\in S}\underbrace{\rho^{\prime}\left(
+U_{k}\right)  }_{=U_{k}}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\rho^{\prime
+}\text{ is a }\mathbf{Z}\text{-algebra homomorphism}\right) \\
+&  =\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}  ;\\\left\vert
+S\right\vert =i}}\prod\limits_{k\in S}U_{k}=X_{i}%
+\end{align*}
+for every $i\in\mathbb{N}$. Thus, $\left(  \rho^{\prime}\left(  X_{1}\right)
+,\rho^{\prime}\left(  X_{2}\right)  ,...,\rho^{\prime}\left(  X_{j}\right)
+\right)  =\left(  X_{1},X_{2},...,X_{j}\right)  $.
+\par
+Since $\rho^{\prime}$ is a $\mathbf{Z}$-algebra homomorphism and
+$\operatorname*{Td}\nolimits_{\varphi,j}$ is a polynomial over $\mathbf{Z}$,
+we have $\rho^{\prime}\left(  \operatorname*{Td}\nolimits_{\varphi,j}\left(
+X_{1},X_{2},...,X_{j}\right)  \right)  =\operatorname*{Td}\nolimits_{\varphi
+,j}\left(  \rho^{\prime}\left(  X_{1}\right)  ,\rho^{\prime}\left(
+X_{2}\right)  ,...,\rho^{\prime}\left(  X_{j}\right)  \right)  $ (because
+$\mathbf{Z}$-algebra homomorphisms commute with polynomials over $\mathbf{Z}%
+$).
+\par
+On the other hand, whenever $U\in\mathbf{Z}\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{j}\right]  $ is a polynomial and $x_{1}$, $x_{2}$, $...$,
+$x_{j}$ are $j$ elements of a commutative $\mathbf{Z}^{\prime}$-algebra, we
+have $\left(  \rho\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  \left(
+U\right)  \right)  \left(  x_{1},x_{2},...,x_{j}\right)  =U\left(  x_{1}%
+,x_{2},...,x_{j}\right)  $ (because this is more or less how $U\left(
+x_{1},x_{2},...,x_{j}\right)  $ is defined). Applied to $U=\operatorname*{Td}%
+\nolimits_{\varphi,j}$ and $X_{k}=x_{k}$, this yields%
+\begin{align*}
+\left(  \rho\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  \left(
+\operatorname*{Td}\nolimits_{\varphi,j}\right)  \right)  \left(  X_{1}%
+,X_{2},...,X_{j}\right)   &  =\operatorname*{Td}\nolimits_{\varphi
+,j}\underbrace{\left(  X_{1},X_{2},...,X_{j}\right)  }_{=\left(  \rho^{\prime
+}\left(  X_{1}\right)  ,\rho^{\prime}\left(  X_{2}\right)  ,...,\rho^{\prime
+}\left(  X_{j}\right)  \right)  }\\
+&  =\operatorname*{Td}\nolimits_{\varphi,j}\left(  \rho^{\prime}\left(
+X_{1}\right)  ,\rho^{\prime}\left(  X_{2}\right)  ,...,\rho^{\prime}\left(
+X_{j}\right)  \right) \\
+&  =\underbrace{\rho^{\prime}}_{=\rho\left[  U_{1},U_{2},...,U_{m}\right]
+}\left(  \operatorname*{Td}\nolimits_{\varphi,j}\left(  X_{1},X_{2}%
+,...,X_{j}\right)  \right) \\
+&  =\rho\left[  U_{1},U_{2},...,U_{m}\right]  \left(  \operatorname*{Td}%
+\nolimits_{\varphi,j}\left(  X_{1},X_{2},...,X_{j}\right)  \right)  ,
+\end{align*}
+qed.}
+
+The ring homomorphism $\rho\left[  U_{1},U_{2},...,U_{m}\right]
+:\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \rightarrow\mathbf{Z}%
+^{\prime}\left[  U_{1},U_{2},...,U_{m}\right]  $ canonically induces a ring
+homomorphism $\rho\left[  U_{1},U_{2},...,U_{m}\right]  \left[  \left[
+T\right]  \right]  :\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \left[
+\left[  T\right]  \right]  \rightarrow\mathbf{Z}^{\prime}\left[  U_{1}%
+,U_{2},...,U_{m}\right]  \left[  \left[  T\right]  \right]  $ which is
+continuous with respect to the $\left(  T\right)  $-adic topology. By
+definition of this ring homomorphism, the diagram%
+\[
+\xymatrixcolsep{6pc}\xymatrix{
+\mathbf Z\left[U_1,U_2,...,U_m\right]\left[\left[T\right]\right] \ar[r]^{\operatorname*{Coeff}_j} \ar[d]_{\rho\left[U_1,U_2,...,U_m\right]\left[\left[T\right]\right]} & \mathbf Z\left[U_1,U_2,...,U_m\right] \ar[d]^{\rho\left[U_1,U_2,...,U_m\right]} \\
+\mathbf Z^{\prime}\left[U_1,U_2,...,U_m\right]\left[\left[T\right]\right] \ar[r]^{\operatorname*{Coeff}_j} & \mathbf Z^{\prime}\left[U_1,U_2,...,U_m\right]
+}
+\]
+commutes. Hence,
+\[
+\rho\left[  U_{1},U_{2},...,U_{m}\right]  \left(  \operatorname*{Coeff}%
+\nolimits_{j}\left(  \prod\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)
+\right)  \right)  =\operatorname*{Coeff}\nolimits_{j}\left(  \rho\left[
+U_{1},U_{2},...,U_{m}\right]  \left[  \left[  T\right]  \right]  \left(
+\prod\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)  \right)  \right)  .
+\]
+
+
+Also,
+\[
+\underbrace{\operatorname*{Td}\nolimits_{\varphi,j}}%
+_{\substack{=\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)
+,j,\left[  j\right]  }\\=\operatorname*{Todd}\nolimits_{\left(  \varphi
+,j\right)  ,j,\left[  m\right]  }\\\text{(since }j=m\text{)}}}\left(
+X_{1},X_{2},...,X_{j}\right)  =\operatorname*{Todd}\nolimits_{\left(
+\varphi,j\right)  ,j,\left[  m\right]  }\left(  X_{1},X_{2},...,X_{j}\right)
+=\operatorname*{Coeff}\nolimits_{j}\left(  \prod\limits_{i=1}^{m}%
+\varphi\left(  U_{i}T\right)  \right)
+\]
+(by (\ref{10.1.pf.1})), so that%
+\begin{align}
+\rho\left[  U_{1},U_{2},...,U_{m}\right]  \left(  \operatorname*{Td}%
+\nolimits_{\varphi,j}\left(  X_{1},X_{2},...,X_{j}\right)  \right)   &
+=\rho\left[  U_{1},U_{2},...,U_{m}\right]  \left(  \operatorname*{Coeff}%
+\nolimits_{j}\left(  \prod\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)
+\right)  \right)  \nonumber\\
+&  =\operatorname*{Coeff}\nolimits_{j}\left(  \rho\left[  U_{1},U_{2}%
+,...,U_{m}\right]  \left[  \left[  T\right]  \right]  \left(  \prod
+\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)  \right)  \right)
+.\label{10.21.pf.3}%
+\end{align}
+
+
+The map $\rho\left[  U_{1},U_{2},...,U_{m}\right]  \left[  \left[  T\right]
+\right]  $ is a $\mathbf{Z}$-algebra homomorphism continuous with respect to
+the $\left(  T\right)  $-adic topology. Hence, it commutes with power series
+over $\mathbf{Z}$. Thus, for every $i\in\left\{  1,2,...,m\right\}  $, we have%
+\[
+\rho\left[  U_{1},U_{2},...,U_{m}\right]  \left[  \left[  T\right]  \right]
+\left(  \varphi\left(  U_{i}T\right)  \right)  =\varphi\left(  \rho\left[
+U_{1},U_{2},...,U_{m}\right]  \left[  \left[  T\right]  \right]  \left(
+U_{i}T\right)  \right)  .
+\]
+Since $\rho\left[  U_{1},U_{2},...,U_{m}\right]  \left[  \left[  T\right]
+\right]  \left(  U_{i}T\right)  =U_{i}T$ (because the map $\rho\left[
+U_{1},U_{2},...,U_{m}\right]  \left[  \left[  T\right]  \right]  $ is a ring
+homomorphism which (by its definition) maps $U_{i}$ to $U_{i}$ and $T$ to
+$T$), this simplifies to%
+\[
+\rho\left[  U_{1},U_{2},...,U_{m}\right]  \left[  \left[  T\right]  \right]
+\left(  \varphi\left(  U_{i}T\right)  \right)  =\varphi\left(  U_{i}T\right)
+=\left(  \left(  \rho\left[  \left[  t\right]  \right]  \right)  \left(
+\varphi\right)  \right)  \left(  U_{i}T\right)  .
+\]
+Now,%
+\begin{align*}
+\rho\left[  U_{1},U_{2},...,U_{m}\right]  \left[  \left[  T\right]  \right]
+\left(  \prod\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)  \right)   &
+=\prod\limits_{i=1}^{m}\underbrace{\rho\left[  U_{1},U_{2},...,U_{m}\right]
+\left[  \left[  T\right]  \right]  \left(  \varphi\left(  U_{i}T\right)
+\right)  }_{=\left(  \left(  \rho\left[  \left[  t\right]  \right]  \right)
+\left(  \varphi\right)  \right)  \left(  U_{i}T\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\rho\left[  U_{1},U_{2}%
+,...,U_{m}\right]  \left[  \left[  T\right]  \right]  \text{ is a ring
+homomorphism}\right) \\
+&  =\prod\limits_{i=1}^{m}\left(  \left(  \rho\left[  \left[  t\right]
+\right]  \right)  \left(  \varphi\right)  \right)  \left(  U_{i}T\right)  ,
+\end{align*}
+so that (\ref{10.21.pf.3}) becomes%
+\[
+\rho\left[  U_{1},U_{2},...,U_{m}\right]  \left(  \operatorname*{Td}%
+\nolimits_{\varphi,j}\left(  X_{1},X_{2},...,X_{j}\right)  \right)
+=\operatorname*{Coeff}\nolimits_{j}\left(  \prod\limits_{i=1}^{m}\left(
+\left(  \rho\left[  \left[  t\right]  \right]  \right)  \left(  \varphi
+\right)  \right)  \left(  U_{i}T\right)  \right)  .
+\]
+Compared with%
+\begin{align*}
+\underbrace{\operatorname*{Td}\nolimits_{\left(  \rho\left[  \left[  t\right]
+\right]  \right)  \left(  \varphi\right)  ,j}}%
+_{\substack{=\operatorname*{Todd}\nolimits_{\left(  \left(  \rho\left[
+\left[  t\right]  \right]  \right)  \left(  \varphi\right)  ,j\right)
+,j,\left[  j\right]  }\\=\operatorname*{Todd}\nolimits_{\left(  \left(
+\rho\left[  \left[  t\right]  \right]  \right)  \left(  \varphi\right)
+,j\right)  ,j,\left[  m\right]  }\\\text{(since }j=m\text{)}}}\left(
+X_{1},X_{2},...,X_{j}\right)   &  =\operatorname*{Todd}\nolimits_{\left(
+\left(  \rho\left[  \left[  t\right]  \right]  \right)  \left(  \varphi
+\right)  ,j\right)  ,j,\left[  m\right]  }\left(  X_{1},X_{2},...,X_{j}\right)
+\\
+&  =\operatorname*{Coeff}\nolimits_{j}\left(  \prod\limits_{i=1}^{m}\left(
+\left(  \rho\left[  \left[  t\right]  \right]  \right)  \left(  \varphi
+\right)  \right)  \left(  U_{i}T\right)  \right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{10.1.pf.1}), applied to }\left(
+\rho\left[  \left[  t\right]  \right]  \right)  \left(  \varphi\right)  \text{
+instead of }\varphi\right)  ,
+\end{align*}
+this yields%
+\begin{equation}
+\rho\left[  U_{1},U_{2},...,U_{m}\right]  \left(  \operatorname*{Td}%
+\nolimits_{\varphi,j}\left(  X_{1},X_{2},...,X_{j}\right)  \right)
+=\operatorname*{Td}\nolimits_{\left(  \rho\left[  \left[  t\right]  \right]
+\right)  \left(  \varphi\right)  ,j}\left(  X_{1},X_{2},...,X_{j}\right)  .
+\label{10.21.pf.5}%
+\end{equation}
+
+
+Let $\mathfrak{Q}_{1}\in\mathbf{Z}^{\prime}\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{j}\right]  $ be the polynomial defined by $\mathfrak{Q}%
+_{1}=\operatorname*{Td}\nolimits_{\left(  \rho\left[  \left[  t\right]
+\right]  \right)  \left(  \varphi\right)  ,j}$. Let $\mathfrak{Q}_{2}%
+\in\mathbf{Z}^{\prime}\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  $
+be the polynomial defined by $\mathfrak{Q}_{2}=\rho\left[  \alpha_{1}%
+,\alpha_{2},...,\alpha_{j}\right]  \left(  \operatorname*{Td}%
+\nolimits_{\varphi,j}\right)  $. We are now going to prove that $\mathfrak{Q}%
+_{1}=\mathfrak{Q}_{2}$.
+
+Applying Theorem 4.1 \textbf{(a)} to $K=\mathbf{Z}^{\prime}$, $m=j$ and
+$P=\operatorname*{Td}\nolimits_{\left(  \rho\left[  \left[  t\right]  \right]
+\right)  \left(  \varphi\right)  ,j}\left(  X_{1},X_{2},...,X_{j}\right)  $,
+we conclude that there exists one and only one polynomial $Q\in\mathbf{Z}%
+^{\prime}\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  $ such that
+$\operatorname*{Td}\nolimits_{\left(  \rho\left[  \left[  t\right]  \right]
+\right)  \left(  \varphi\right)  ,j}\left(  X_{1},X_{2},...,X_{j}\right)
+=Q\left(  X_{1},X_{2},...,X_{j}\right)  $. In particular, there exists
+\textit{at most one} such polynomial $Q\in\mathbf{Z}^{\prime}\left[
+\alpha_{1},\alpha_{2},...,\alpha_{j}\right]  $. Hence,
+\begin{equation}
+\left(
+\begin{array}
+[c]{c}%
+\text{if }\mathfrak{Q}_{1}\in\mathbf{Z}^{\prime}\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{j}\right]  \text{ and }\mathfrak{Q}_{2}\in\mathbf{Z}^{\prime
+}\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  \text{ are two
+polynomials}\\
+\text{such that }\operatorname*{Td}\nolimits_{\left(  \rho\left[  \left[
+t\right]  \right]  \right)  \left(  \varphi\right)  ,j}\left(  X_{1}%
+,X_{2},...,X_{j}\right)  =\mathfrak{Q}_{1}\left(  X_{1},X_{2},...,X_{j}%
+\right)  \text{ and}\\
+\operatorname*{Td}\nolimits_{\left(  \rho\left[  \left[  t\right]  \right]
+\right)  \left(  \varphi\right)  ,j}\left(  X_{1},X_{2},...,X_{j}\right)
+=\mathfrak{Q}_{2}\left(  X_{1},X_{2},...,X_{j}\right)  \text{, then
+}\mathfrak{Q}_{1}=\mathfrak{Q}_{2}%
+\end{array}
+\right)  . \label{10.21.pf.1}%
+\end{equation}
+
+
+Since our two polynomials $\mathfrak{Q}_{1}$ and $\mathfrak{Q}_{2}$ satisfy%
+\[
+\mathfrak{Q}_{1}\left(  X_{1},X_{2},...,X_{j}\right)  =\operatorname*{Td}%
+\nolimits_{\left(  \rho\left[  \left[  t\right]  \right]  \right)  \left(
+\varphi\right)  ,j}\left(  X_{1},X_{2},...,X_{j}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\mathfrak{Q}_{1}=\operatorname*{Td}%
+\nolimits_{\left(  \rho\left[  \left[  t\right]  \right]  \right)  \left(
+\varphi\right)  ,j}\right)
+\]
+and%
+\begin{align*}
+\mathfrak{Q}_{2}\left(  X_{1},X_{2},...,X_{j}\right)   &  =\left(  \rho\left[
+\alpha_{1},\alpha_{2},...,\alpha_{j}\right]  \left(  \operatorname*{Td}%
+\nolimits_{\varphi,j}\right)  \right)  \left(  X_{1},X_{2},...,X_{j}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\mathfrak{Q}_{2}=\rho\left[
+\alpha_{1},\alpha_{2},...,\alpha_{j}\right]  \left(  \operatorname*{Td}%
+\nolimits_{\varphi,j}\right)  \right) \\
+&  =\rho\left[  U_{1},U_{2},...,U_{m}\right]  \left(  \operatorname*{Td}%
+\nolimits_{\varphi,j}\left(  X_{1},X_{2},...,X_{j}\right)  \right) \\
+&  =\operatorname*{Td}\nolimits_{\left(  \rho\left[  \left[  t\right]
+\right]  \right)  \left(  \varphi\right)  ,j}\left(  X_{1},X_{2}%
+,...,X_{j}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{10.21.pf.5}%
+)}\right)  ,
+\end{align*}
+we can conclude from (\ref{10.21.pf.1}) that $\mathfrak{Q}_{1}=\mathfrak{Q}%
+_{2}$. Hence,%
+\[
+\operatorname*{Td}\nolimits_{\left(  \rho\left[  \left[  t\right]  \right]
+\right)  \left(  \varphi\right)  ,j}=\mathfrak{Q}_{1}=\mathfrak{Q}_{2}%
+=\rho\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  \left(
+\operatorname*{Td}\nolimits_{\varphi,j}\right)  .
+\]
+This proves Proposition 10.21.
+
+\begin{quote}
+\textbf{Corollary 10.22.} Let $\mathbf{Z}$ and $\mathbf{Z}^{\prime}$ be two
+rings, and let $\rho:\mathbf{Z}\rightarrow\mathbf{Z}^{\prime}$ be a ring
+homomorphism. Clearly, the ring homomorphism $\rho:\mathbf{Z}\rightarrow
+\mathbf{Z}^{\prime}$ canonically induces a ring homomorphism $\rho\left[
+\left[  t\right]  \right]  :\mathbf{Z}\left[  \left[  t\right]  \right]
+\rightarrow\mathbf{Z}^{\prime}\left[  \left[  t\right]  \right]  $. It is also
+clear that the latter homomorphism $\rho\left[  \left[  t\right]  \right]  $
+maps the subset $1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$ to the
+subset $1+\mathbf{Z}^{\prime}\left[  \left[  t\right]  \right]  ^{+}$.
+
+Let $K$ be a $\mathbf{Z}^{\prime}$-algebra. Then, $K$ also becomes a
+$\mathbf{Z}$-algebra by virtue of the ring homomorphism $\rho$. Let
+$\varphi\in1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$ be a power
+series with constant term equal to $1$.
+
+Let $p\in K\left[  \left[  T\right]  \right]  $. Then, $\mathfrak{Todd}%
+_{\varphi}\left(  p\right)  =\mathfrak{Todd}_{\left(  \rho\left[  \left[
+t\right]  \right]  \right)  \left(  \varphi\right)  }\left(  p\right)  $.
+\end{quote}
+
+\textit{Proof of Corollary 10.22.} Clearly, the ring homomorphism
+$\rho:\mathbf{Z}\rightarrow\mathbf{Z}^{\prime}$ canonically induces a ring
+homomorphism $\rho\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]
+:\mathbf{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  \rightarrow
+\mathbf{Z}^{\prime}\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  $.
+
+Let $j\in\mathbb{N}$. Since $K$ is a $\mathbf{Z}$-algebra by virtue of the
+ring homomorphism $\rho$, the value of $\operatorname*{Td}\nolimits_{\varphi
+,j}\left(  \operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}%
+\nolimits_{2}p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  $ is actually
+defined as%
+\[
+\left(  \rho\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  \left(
+\operatorname*{Td}\nolimits_{\varphi,j}\right)  \right)  \left(
+\operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
+p,...,\operatorname*{Coeff}\nolimits_{j}p\right)
+\]
+(since $\operatorname*{Td}\nolimits_{\varphi,j}$ itself is a polynomial over
+$\mathbf{Z}$ rather than over $\mathbf{Z}^{\prime}$). Thus,%
+\begin{align*}
+\operatorname*{Td}\nolimits_{\varphi,j}\left(  \operatorname*{Coeff}%
+\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}%
+\nolimits_{j}p\right)   &  =\underbrace{\left(  \rho\left[  \alpha_{1}%
+,\alpha_{2},...,\alpha_{j}\right]  \left(  \operatorname*{Td}%
+\nolimits_{\varphi,j}\right)  \right)  }_{\substack{=\operatorname*{Td}%
+\nolimits_{\left(  \rho\left[  \left[  t\right]  \right]  \right)  \left(
+\varphi\right)  ,j}\\\text{(by Proposition 10.21)}}}\left(
+\operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
+p,...,\operatorname*{Coeff}\nolimits_{j}p\right) \\
+&  =\operatorname*{Td}\nolimits_{\left(  \rho\left[  \left[  t\right]
+\right]  \right)  \left(  \varphi\right)  ,j}\left(  \operatorname*{Coeff}%
+\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}%
+\nolimits_{j}p\right)  .
+\end{align*}
+
+
+Now, forget that we fixed $j$. By (\ref{ToddFrak}), we have%
+\begin{align*}
+\mathfrak{Todd}_{\varphi}\left(  p\right)   &  =\sum\limits_{j\in\mathbb{N}%
+}\underbrace{\operatorname*{Td}\nolimits_{\varphi,j}\left(
+\operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
+p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  }_{=\operatorname*{Td}%
+\nolimits_{\left(  \rho\left[  \left[  t\right]  \right]  \right)  \left(
+\varphi\right)  ,j}\left(  \operatorname*{Coeff}\nolimits_{1}%
+p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}\nolimits_{j}%
+p\right)  }T^{j}\\
+&  =\sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\left(
+\rho\left[  \left[  t\right]  \right]  \right)  \left(  \varphi\right)
+,j}\left(  \operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}%
+\nolimits_{2}p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  T^{j}.
+\end{align*}
+
+
+On the other hand, (\ref{ToddFrak}) (applied to $\mathbf{Z}^{\prime}$ and
+$\left(  \rho\left[  \left[  t\right]  \right]  \right)  \left(
+\varphi\right)  $ instead of $\mathbf{Z}$ and $\varphi$) yields
+\[
+\mathfrak{Todd}_{\left(  \rho\left[  \left[  t\right]  \right]  \right)
+\left(  \varphi\right)  }\left(  p\right)  =\sum\limits_{j\in\mathbb{N}%
+}\operatorname*{Td}\nolimits_{\left(  \rho\left[  \left[  t\right]  \right]
+\right)  \left(  \varphi\right)  ,j}\left(  \operatorname*{Coeff}%
+\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}%
+\nolimits_{j}p\right)  T^{j}.
+\]
+Thus,%
+\begin{align*}
+\mathfrak{Todd}_{\varphi}\left(  p\right)   &  =\sum\limits_{j\in\mathbb{N}%
+}\operatorname*{Td}\nolimits_{\left(  \rho\left[  \left[  t\right]  \right]
+\right)  \left(  \varphi\right)  ,j}\left(  \operatorname*{Coeff}%
+\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}%
+\nolimits_{j}p\right)  T^{j}\\
+&  =\mathfrak{Todd}_{\left(  \rho\left[  \left[  t\right]  \right]  \right)
+\left(  \varphi\right)  }\left(  p\right)  .
+\end{align*}
+This proves Corollary 10.22.
+
+\textit{Proof of Theorem 10.16.} Since $K$ is a $\mathbf{Z}$-algebra, there is
+a canonical ring homomorphism $\rho:\mathbf{Z}\rightarrow K$. This
+homomorphism induces a canonical ring homomorphism $\rho\left[  \left[
+t\right]  \right]  :\mathbf{Z}\left[  \left[  t\right]  \right]  \rightarrow
+K\left[  \left[  t\right]  \right]  $, which maps the subset $1+\mathbf{Z}%
+\left[  \left[  t\right]  \right]  ^{+}$ to $1+K\left[  \left[  t\right]
+\right]  ^{+}$. Thus, $\left(  \rho\left[  \left[  t\right]  \right]  \right)
+\left(  \varphi\right)  \in1+K\left[  \left[  t\right]  \right]  ^{+}$ (since
+$\varphi\in1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$).
+
+Corollary 10.22 yields $\mathfrak{Todd}_{\varphi}\left(  p\right)
+=\mathfrak{Todd}_{\left(  \rho\left[  \left[  t\right]  \right]  \right)
+\left(  \varphi\right)  }\left(  p\right)  $. Corollary 10.22 (applied to $q$
+instead of $p$) yields $\mathfrak{Todd}_{\varphi}\left(  q\right)
+=\mathfrak{Todd}_{\left(  \rho\left[  \left[  t\right]  \right]  \right)
+\left(  \varphi\right)  }\left(  q\right)  $. Corollary 10.22 (applied to $pq$
+instead of $p$) yields $\mathfrak{Todd}_{\varphi}\left(  pq\right)
+=\mathfrak{Todd}_{\left(  \rho\left[  \left[  t\right]  \right]  \right)
+\left(  \varphi\right)  }\left(  pq\right)  $. Lemma 10.17 (applied to
+$\left(  \rho\left[  \left[  t\right]  \right]  \right)  \left(
+\varphi\right)  $ instead of $\varphi$) yields $\mathfrak{Todd}_{\left(
+\rho\left[  \left[  t\right]  \right]  \right)  \left(  \varphi\right)
+}\left(  p\right)  \cdot\mathfrak{Todd}_{\left(  \rho\left[  \left[  t\right]
+\right]  \right)  \left(  \varphi\right)  }\left(  q\right)  =\mathfrak{Todd}%
+_{\left(  \rho\left[  \left[  t\right]  \right]  \right)  \left(
+\varphi\right)  }\left(  pq\right)  $. Now,
+\[
+\underbrace{\mathfrak{Todd}_{\varphi}\left(  p\right)  }_{=\mathfrak{Todd}%
+_{\left(  \rho\left[  \left[  t\right]  \right]  \right)  \left(
+\varphi\right)  }\left(  p\right)  }\cdot\underbrace{\mathfrak{Todd}_{\varphi
+}\left(  q\right)  }_{=\mathfrak{Todd}_{\left(  \rho\left[  \left[  t\right]
+\right]  \right)  \left(  \varphi\right)  }\left(  p\right)  }=\mathfrak{Todd}%
+_{\left(  \rho\left[  \left[  t\right]  \right]  \right)  \left(
+\varphi\right)  }\left(  p\right)  \cdot\mathfrak{Todd}_{\left(  \rho\left[
+\left[  t\right]  \right]  \right)  \left(  \varphi\right)  }\left(  q\right)
+=\mathfrak{Todd}_{\left(  \rho\left[  \left[  t\right]  \right]  \right)
+\left(  \varphi\right)  }\left(  pq\right)  =\mathfrak{Todd}_{\varphi}\left(
+pq\right)  .
+\]
+Theorem 10.16 is thus proven.
+
+\textit{Proof of Theorem 10.10.} Theorem 2.1 \textbf{(a)} yields $\lambda
+_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)  =\lambda_{T}\left(
+x+y\right)  $ (since $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
+}\right)  $ is a $\lambda$-ring). Proposition 10.11 yields $\operatorname*{td}%
+_{\varphi,T}\left(  x\right)  =\mathfrak{Todd}_{\varphi}\left(  \lambda
+_{T}\left(  x\right)  \right)  $. Proposition 10.11 (applied to $y$ instead of
+$x$) yields $\operatorname*{td}_{\varphi,T}\left(  y\right)  =\mathfrak{Todd}%
+_{\varphi}\left(  \lambda_{T}\left(  y\right)  \right)  $. Hence,%
+\begin{align*}
+&  \underbrace{\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)
+}_{=\mathfrak{Todd}_{\varphi}\left(  \lambda_{T}\left(  x\right)  \right)
+}\cdot\underbrace{\operatorname*{td}\nolimits_{\varphi,T}\left(  y\right)
+}_{=\mathfrak{Todd}_{\varphi}\left(  \lambda_{T}\left(  y\right)  \right)  }\\
+&  =\mathfrak{Todd}_{\varphi}\left(  \lambda_{T}\left(  x\right)  \right)
+\cdot\mathfrak{Todd}_{\varphi}\left(  \lambda_{T}\left(  y\right)  \right)
+=\mathfrak{Todd}_{\varphi}\left(  \lambda_{T}\left(  x\right)  \cdot
+\lambda_{T}\left(  y\right)  \right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 10.16, applied to }%
+p=\lambda_{T}\left(  x\right)  \text{ and }q=\lambda_{T}\left(  y\right)
+\right)  .
+\end{align*}
+Proposition 10.11 (applied to $x+y$ instead of $x$) yields%
+\[
+\operatorname*{td}\nolimits_{\varphi,T}\left(  x+y\right)  =\mathfrak{Todd}%
+_{\varphi}\left(  \underbrace{\lambda_{T}\left(  x+y\right)  }%
+_{\substack{=\lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)
+}}\right)  =\mathfrak{Todd}_{\varphi}\left(  \lambda_{T}\left(  x\right)
+\cdot\lambda_{T}\left(  y\right)  \right)  .
+\]
+Thus,%
+\[
+\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  \cdot
+\operatorname*{td}\nolimits_{\varphi,T}\left(  y\right)  =\mathfrak{Todd}%
+_{\varphi}\left(  \lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(
+y\right)  \right)  =\operatorname*{td}\nolimits_{\varphi,T}\left(  x+y\right)
+.
+\]
+Theorem 10.10 is thus proven.
+
+A slightly improved restatement of Theorem 10.10:
+
+\begin{quote}
+\textbf{Corollary 10.23.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
+$K$ is a $\mathbf{Z}$-algebra. Let $\varphi\in1+\mathbf{Z}\left[  \left[
+t\right]  \right]  ^{+}$ be a power series with constant term equal to $1$.
+Then, $\operatorname*{td}_{\varphi,T}\left(  K\right)  \subseteq\Lambda\left(
+K\right)  $, and $\operatorname*{td}_{\varphi,T}:K\rightarrow\Lambda\left(
+K\right)  $ is a homomorphism of additive groups.
+\end{quote}
+
+\textit{Proof of Corollary 10.23.} Every $x\in K$ satisfies
+$\operatorname*{td}_{\varphi,T}\left(  x\right)  \in\Lambda\left(  K\right)  $
+(since Proposition 10.5 \textbf{(a)} says that $\operatorname*{Coeff}%
+\nolimits_{0}\left(  \operatorname*{td}_{\varphi,T}\left(  x\right)  \right)
+=1$, so that the power series $\operatorname*{td}_{\varphi,T}\left(  x\right)
+$ has the constant term $1$, and thus $\operatorname*{td}_{\varphi,T}\left(
+x\right)  \in1+K\left[  \left[  T\right]  \right]  ^{+}=\Lambda\left(
+K\right)  $). In other words, $\operatorname*{td}_{\varphi,T}\left(  K\right)
+\subseteq\Lambda\left(  K\right)  $.
+
+Now we are going to prove that $\operatorname*{td}_{\varphi,T}:K\rightarrow
+\Lambda\left(  K\right)  $ is a homomorphism of additive groups.
+
+Theorem 10.10 (applied to $x=0$ and $y=0$) yields $\operatorname*{td}%
+\nolimits_{\varphi,T}\left(  0\right)  \cdot\operatorname*{td}%
+\nolimits_{\varphi,T}\left(  0\right)  =\operatorname*{td}\nolimits_{\varphi
+,T}\left(  0+0\right)  =\operatorname*{td}\nolimits_{\varphi,T}\left(
+0\right)  $ Since $\operatorname*{td}\nolimits_{\varphi,T}\left(  0\right)  $
+is an invertible element of $K\left[  \left[  T\right]  \right]  $ (because
+$\operatorname*{td}\nolimits_{\varphi,T}\left(  0\right)  $ is a power series
+with constant term $1$\ \ \ \ \footnote{since $\operatorname*{td}%
+\nolimits_{\varphi,T}\left(  0\right)  \in\operatorname*{td}\nolimits_{\varphi
+,T}\left(  K\right)  \subseteq\Lambda\left(  K\right)  =1+K\left[  \left[
+T\right]  \right]  ^{+}$}, and every such power series is an invertible
+element of $K\left[  \left[  T\right]  \right]  $), we can cancel
+$\operatorname*{td}\nolimits_{\varphi,T}\left(  0\right)  $ from this
+equation, and obtain $\operatorname*{td}\nolimits_{\varphi,T}\left(  0\right)
+=1$. Since $0$ is the neutral element of the additive group $K$, while $1$ is
+the neutral element of the additive group $\Lambda\left(  K\right)  $, this
+yields that the map $\operatorname*{td}\nolimits_{\varphi,T}$ respects the
+neutral elements of the additive groups $K$ and $\Lambda\left(  K\right)  $.
+
+Any $x\in K$ and $y\in K$ satisfy%
+\begin{align*}
+\operatorname*{td}\nolimits_{\varphi,T}\left(  x+y\right)   &
+=\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  \cdot
+\operatorname*{td}\nolimits_{\varphi,T}\left(  y\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 10.10}\right) \\
+&  =\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  \widehat{+}%
+\operatorname*{td}\nolimits_{\varphi,T}\left(  y\right)
+\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since multiplication of power series in }1+K\left[  \left[  T\right]
+\right]  ^{+}\\
+\text{is addition in the ring }\Lambda\left(  K\right)
+\end{array}
+\right)  .
+\end{align*}
+Combined with the fact that the map $\operatorname*{td}\nolimits_{\varphi,T}$
+respects the neutral elements of the additive groups $K$ and $\Lambda\left(
+K\right)  $, this yields: The map $\operatorname*{td}_{\varphi,T}%
+:K\rightarrow\Lambda\left(  K\right)  $ is a homomorphism of additive groups.
+Corollary 10.23 is proven.
+
+Next on our plan is to compute $\operatorname*{td}\nolimits_{\varphi,T}\left(
+x\right)  $ for $x$ any $1$-dimensional element of $K$. We recall that we
+defined the notion of a $1$-dimensional element of a $\lambda$-ring in Section 8.
+
+Our main claim here is:
+
+\begin{quote}
+\textbf{Proposition 10.24.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
+$K$ is a $\mathbf{Z}$-algebra. Let $u$ be a $1$-dimensional element of $K$.
+Let $\varphi\in1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$ be a power
+series with constant term equal to $1$. Then, $\operatorname*{td}%
+\nolimits_{\varphi,T}\left(  u\right)  =\varphi\left(  uT\right)  $.
+\end{quote}
+
+For the proof of this, we again have to study the universal polynomials
+$\operatorname*{Td}\nolimits_{\varphi,j}$:
+
+\begin{quote}
+\textbf{Proposition 10.25.} Let $\mathbf{Z}$ be a ring. Let $\varphi
+\in1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$ be a power series with
+constant term equal to $1$. Let $j\in\mathbb{N}$. Let $\varphi_{j}$ denote the
+coefficient of the power series $\varphi\in1+\mathbf{Z}\left[  \left[
+t\right]  \right]  ^{+}$ before $t^{j}$. Then, in the polynomial ring
+$\mathbf{Z}\left[  S\right]  $, we have $\operatorname*{Td}\nolimits_{\varphi
+,j}\left(  S,0,0,...,0\right)  =\varphi_{j}S^{j}$. (Here, when $j=0$, the term
+$\operatorname*{Td}\nolimits_{\varphi,j}\left(  S,0,0,...,0\right)  $ is
+understood to denote $\operatorname*{Td}\nolimits_{\varphi,j}$.)
+\end{quote}
+
+And again, we can generalize Proposition 10.24 (and in fact, we are going to
+prove Proposition 10.24 via this generalization):
+
+\begin{quote}
+\textbf{Proposition 10.26.} Let $\mathbf{Z}$ be a ring. Let $\varphi
+\in1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$ be a power series with
+constant term equal to $1$. Let $K$ be a $\mathbf{Z}$-algebra. Let $u\in K$.
+Then, $\mathfrak{Todd}_{\varphi}\left(  1+uT\right)  =\varphi\left(
+uT\right)  $.
+\end{quote}
+
+\textit{Proof of Proposition 10.25.} Let $m=1$. Consider the ring
+$\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ and its elements
+$X_{i}=\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
+;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{k}$ as in the
+definition of $\operatorname*{Td}\nolimits_{\varphi,j}$.
+
+Since $m=1$, we have $\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]
+=\mathbf{Z}\left[  U_{1}\right]  $, and in this ring $\mathbf{Z}\left[
+U_{1},U_{2},...,U_{m}\right]  $ we have $X_{1}=U_{1}$ (because $X_{1}$ is the
+$1$-st elementary symmetric polynomial of the one variable $U_{1}$).
+
+For every integer $i>1$, we have%
+\begin{align*}
+X_{i}  &  =\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
+;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{k}=\sum
+\limits_{\substack{S\subseteq\left\{  1\right\}  ;\\\left\vert S\right\vert
+=i}}\prod\limits_{k\in S}U_{k}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}m=1\text{, so that }\left\{  1,2,...,m\right\}  =\left\{  1\right\}  \right)
+\\
+&  =\left(  \text{empty sum}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since
+there doesn't exist any }S\subseteq\left\{  1\right\}  \text{ with }\left\vert
+S\right\vert =i\text{ (because }i>1\text{)}\right) \\
+&  =0
+\end{align*}
+in the ring $\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $. Thus, $\left(
+X_{2},X_{3},...,X_{j}\right)  =\left(  0,0,...,0\right)  $. Combining this
+with $X_{1}=U_{1}$, we obtain $\left(  X_{1},X_{2},...,X_{j}\right)  =\left(
+U_{1},0,0,...,0\right)  $.
+
+We know from Proposition 10.1 that (\ref{Td1}) holds in the ring $\left(
+\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[  \left[
+T\right]  \right]  $. In other words,%
+\[
+\prod\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)  =\sum_{i\in\mathbb{N}%
+}\operatorname*{Td}\nolimits_{\varphi,i}\left(  X_{1},X_{2},...,X_{i}\right)
+T^{i}%
+\]
+(this follows from (\ref{Td1}) upon renaming the index $j$ as $i$). Since
+$\prod\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)  =\varphi\left(
+U_{1}T\right)  $ (because $m=1$), this rewrites as
+\[
+\varphi\left(  U_{1}T\right)  =\sum_{i\in\mathbb{N}}\operatorname*{Td}%
+\nolimits_{\varphi,i}\left(  X_{1},X_{2},...,X_{i}\right)  T^{i}.
+\]
+Thus,%
+\begin{align*}
+\operatorname*{Coeff}\nolimits_{j}\left(  \varphi\left(  U_{1}T\right)
+\right)   &  =\operatorname*{Coeff}\nolimits_{j}\left(  \sum_{i\in\mathbb{N}%
+}\operatorname*{Td}\nolimits_{\varphi,i}\left(  X_{1},X_{2},...,X_{i}\right)
+T^{i}\right)  =\operatorname*{Td}\nolimits_{\varphi,j}\underbrace{\left(
+X_{1},X_{2},...,X_{j}\right)  }_{=\left(  U_{1},0,0,...,0\right)  }\\
+&  =\operatorname*{Td}\nolimits_{\varphi,j}\left(  U_{1},0,0,...,0\right)  .
+\end{align*}
+Combined with%
+\begin{align*}
+\operatorname*{Coeff}\nolimits_{j}\left(  \varphi\left(  U_{1}T\right)
+\right)   &  =\left(  \text{the coefficient of the power series }%
+\varphi\left(  U_{1}T\right)  \text{ before }T^{j}\right) \\
+&  =U_{1}^{j}\underbrace{\left(  \text{the coefficient of the power series
+}\varphi\text{ before }t^{j}\right)  }_{=\varphi_{j}}=U_{1}^{j}\varphi
+_{j}=\varphi_{j}U_{1}^{j},
+\end{align*}
+this yields
+\[
+\operatorname*{Td}\nolimits_{\varphi,j}\left(  U_{1},0,0,...,0\right)
+=\varphi_{j}U_{1}^{j}.
+\]
+
+
+Now, let $\kappa$ be the $\mathbf{Z}$-algebra homomorphism $\mathbf{Z}\left[
+S\right]  \rightarrow\mathbf{Z}\left[  U_{1}\right]  $ which maps $S$ to
+$U_{1}$. This homomorphism $\kappa$ must be an isomorphism (since $U_{1}$ is
+obviously algebraically independent). Since $\kappa$ is a $\mathbf{Z}$-algebra
+homomorphism and $\operatorname*{Td}\nolimits_{\varphi,j}$ is a polynomial, we
+have $\kappa\left(  \operatorname*{Td}\nolimits_{\varphi,j}\left(
+S,0,0,...,0\right)  \right)  =\operatorname*{Td}\nolimits_{\varphi,j}\left(
+\kappa\left(  S\right)  ,\kappa\left(  0\right)  ,\kappa\left(  0\right)
+,...,\kappa\left(  0\right)  \right)  $ (because $\mathbf{Z}$-algebra
+homomorphisms commute with polynomials). But $\left(  \kappa\left(  S\right)
+,\kappa\left(  0\right)  ,\kappa\left(  0\right)  ,...,\kappa\left(  0\right)
+\right)  =\left(  U_{1},0,0,...,0\right)  $ (since $\kappa\left(  S\right)
+=U_{1}$ and $\kappa\left(  0\right)  =0$). Thus,%
+\begin{align*}
+\kappa\left(  \operatorname*{Td}\nolimits_{\varphi,j}\left(
+S,0,0,...,0\right)  \right)   &  =\operatorname*{Td}\nolimits_{\varphi
+,j}\underbrace{\left(  \kappa\left(  S\right)  ,\kappa\left(  0\right)
+,\kappa\left(  0\right)  ,...,\kappa\left(  0\right)  \right)  }_{=\left(
+U_{1},0,0,...,0\right)  }=\operatorname*{Td}\nolimits_{\varphi,j}\left(
+U_{1},0,0,...,0\right)  =\varphi_{j}U_{1}^{j}\\
+&  =\varphi_{j}\kappa\left(  S\right)  ^{j}\ \ \ \ \ \ \ \ \ \ \left(
+\text{since }U_{1}=\kappa\left(  S\right)  \right) \\
+&  =\kappa\left(  \varphi_{j}S^{j}\right)  \ \ \ \ \ \ \ \ \ \ \left(
+\text{since }\kappa\text{ is a }\mathbf{Z}\text{-algebra homomorphism}\right)
+.
+\end{align*}
+Thus, $\operatorname*{Td}\nolimits_{\varphi,j}\left(  S,0,0,...,0\right)
+=\varphi_{j}S^{j}$ (since $\kappa$ is an isomorphism). This proves Proposition 10.25.
+
+\textit{Proof of Proposition 10.26.} For every $j\in\mathbb{N}$, let
+$\varphi_{j}$ denote the coefficient of the power series $\varphi
+\in1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$ before $t^{j}$. Let
+$p=1+uT$. Then, $\operatorname*{Coeff}\nolimits_{1}p=u$ (by the definition of
+$\operatorname*{Coeff}\nolimits_{1}$) and $\operatorname*{Coeff}%
+\nolimits_{i}p=0$ for every integer $i>1$.
+
+Let $j\in\mathbb{N}$ be arbitrary. Proposition 10.25 yields
+$\operatorname*{Td}\nolimits_{\varphi,j}\left(  S,0,0,...,0\right)
+=\varphi_{j}S^{j}$ in the polynomial ring $\mathbf{Z}\left[  S\right]  $.
+Applying this polynomial identity to $S=u$, we obtain $\operatorname*{Td}%
+\nolimits_{\varphi,j}\left(  u,0,0,...,0\right)  =\varphi_{j}u^{j}$.
+
+On the other hand, $\left(  \operatorname*{Coeff}\nolimits_{2}%
+p,\operatorname*{Coeff}\nolimits_{3}p,...,\operatorname*{Coeff}\nolimits_{j}%
+p\right)  =\left(  0,0,...,0\right)  $ (since $\operatorname*{Coeff}%
+\nolimits_{i}p=0$ for every integer $i>1$). Combining this with
+$\operatorname*{Coeff}\nolimits_{1}p=u$, we obtain $\left(
+\operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
+p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  =\left(  u,0,0,...,0\right)
+$. Thus,%
+\[
+\operatorname*{Td}\nolimits_{\varphi,j}\underbrace{\left(
+\operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
+p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  }_{=\left(
+u,0,0,...,0\right)  }=\operatorname*{Td}\nolimits_{\varphi,j}\left(
+u,0,0,...,0\right)  =\varphi_{j}u^{j}.
+\]
+
+
+Now forget that we fixed $j\in\mathbb{N}$. By (\ref{ToddFrak}) (applied to
+$p=1+uT$), we have%
+\[
+\mathfrak{Todd}_{\varphi}\left(  1+uT\right)  =\sum\limits_{j\in\mathbb{N}%
+}\underbrace{\operatorname*{Td}\nolimits_{\varphi,j}\left(
+\operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
+p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  }_{=\varphi_{j}u^{j}}%
+T^{j}=\sum\limits_{j\in\mathbb{N}}\varphi_{j}\underbrace{u^{j}T^{j}}_{=\left(
+uT\right)  ^{j}}=\sum\limits_{j\in\mathbb{N}}\varphi_{j}\left(  uT\right)
+^{j}.
+\]
+On the other hand, $\varphi=\sum\limits_{j\in\mathbb{N}}\varphi_{j}t^{j}$
+(since the coefficient of the power series $\varphi$ before $t^{j}$ is
+$\varphi_{j}$ for every $j\in\mathbb{N}$) and thus $\varphi\left(  uT\right)
+=\sum\limits_{j\in\mathbb{N}}\varphi_{j}\left(  uT\right)  ^{j}$.
+
+Altogether, $\mathfrak{Todd}_{\varphi}\left(  1+uT\right)  =\sum
+\limits_{j\in\mathbb{N}}\varphi_{j}\left(  uT\right)  ^{j}=\varphi\left(
+uT\right)  $. This proves Proposition 10.26.
+
+\textit{Proof of Proposition 10.24.} Proposition 10.11 (applied to $x=u$)
+yields $\operatorname*{td}\nolimits_{\varphi,T}\left(  u\right)
+=\mathfrak{Todd}_{\varphi}\left(  \lambda_{T}\left(  u\right)  \right)  $. But
+Theorem 8.3 \textbf{(a)} (applied to $x=u$) yields that $\lambda_{T}\left(
+u\right)  =1+uT$ (since the element $u$ is $1$-dimensional). Thus,
+$\operatorname*{td}\nolimits_{\varphi,T}\left(  u\right)  =\mathfrak{Todd}%
+_{\varphi}\left(  \underbrace{\lambda_{T}\left(  u\right)  }_{=1+uT}\right)
+=\mathfrak{Todd}_{\varphi}\left(  1+uT\right)  =\varphi\left(  uT\right)  $
+(by Proposition 10.26). This proves Proposition 10.24.
+
+As a consequence of Proposition 10.24, we can obtain the following formula for
+$\operatorname*{td}\nolimits_{\varphi,T}$ on sums of $1$-dimensional elements:
+
+\begin{quote}
+\textbf{Theorem 10.27.} Let $\mathbf{Z}$ be a ring. Let $\varphi
+\in1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$ be a power series with
+constant term equal to $1$. Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that $K$ is a
+$\mathbf{Z}$-algebra. Let $u_{1},$ $u_{2},$ $...,$ $u_{m}$ be $1$-dimensional
+elements of $K$. Then,%
+\[
+\operatorname*{td}\nolimits_{\varphi,T}\left(  u_{1}+u_{2}+...+u_{m}\right)
+=\prod\limits_{i=1}^{m}\varphi\left(  u_{i}T\right)  .
+\]
+
+
+
+\end{quote}
+
+\textit{Proof of Theorem 10.27.} By Corollary 10.23, we know that
+$\operatorname*{td}_{\varphi,T}:K\rightarrow\Lambda\left(  K\right)  $ is a
+homomorphism of additive groups. Hence,%
+\begin{align*}
+\operatorname*{td}\nolimits_{\varphi,T}\left(  \sum\limits_{i=1}^{m}%
+u_{i}\right)   &  =\widehat{\sum\limits_{i=1}^{m}}\operatorname*{td}%
+\nolimits_{\varphi,T}\left(  u_{i}\right)  =\prod\limits_{i=1}^{m}%
+\operatorname*{td}\nolimits_{\varphi,T}\left(  u_{i}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since the addition in the ring }\Lambda\left(  K\right)  \text{ is the
+multiplication of power series,}\\
+\text{so that }\widehat{\sum\limits_{i=1}^{m}}=\prod\limits_{i=1}^{m}%
+\end{array}
+\right) \\
+&  =\prod\limits_{i=1}^{m}\varphi\left(  u_{i}T\right)
+\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{because every }i\in\left\{  1,2,...,m\right\}  \text{ satisfies
+}\operatorname*{td}\nolimits_{\varphi,T}\left(  u_{i}\right)  =\varphi\left(
+u_{i}T\right) \\
+\text{(by Proposition 10.24, applied to }u=u_{i}\text{)}%
+\end{array}
+\right)  .
+\end{align*}
+Since $\sum\limits_{i=1}^{m}u_{i}=u_{1}+u_{2}+...+u_{m}$, this rewrites as
+$\operatorname*{td}\nolimits_{\varphi,T}\left(  u_{1}+u_{2}+...+u_{m}\right)
+=\prod\limits_{i=1}^{m}\varphi\left(  u_{i}T\right)  $. Theorem 10.27 is thus proven.
+
+Theorem 10.27 gives us a shortcut to working with $\operatorname*{td}%
+\nolimits_{\varphi,T}$ in the case when $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ is a \textit{special} $\lambda$-ring: In fact, in
+this case, we can often prove a property of an arbitrary element of a special
+$\lambda$-ring just by proving it for sums of $1$-dimensional elements
+(because of Theorem 8.4), and Theorem 10.27 gives us an explicit formula for
+the value of $\operatorname*{td}\nolimits_{\varphi,T}$ at every sum of
+$1$-dimensional elements. The next theorem (Theorem 10.28) will give an
+example of this. First, a definition.
+
+\begin{quote}
+\textbf{Definition.} Let $j\in\mathbb{N}\setminus\left\{  0\right\}  $. Let
+$\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a
+$\lambda$-ring. Define a homomorphism $\theta_{T}^{j}:K\rightarrow K\left[
+\left[  T\right]  \right]  $ by $\theta_{T}^{j}=\operatorname*{td}%
+_{\varphi_{j},T}$, where $\varphi_{j}\in\mathbb{Z}\left[  t\right]  $ is the
+polynomial $1+t+t^{2}+...+t^{j-1}=\dfrac{1-t^{j}}{1-t}$.
+\end{quote}
+
+[Again, [1] considers only $\theta^{j}:=\theta_{1}^{j},$ which again is
+defined on $x$ only if $x$ is finite-dimensional. These $\theta^{j}$ (or
+$\theta^{j}\left(  x\right)  $ ?) are called \textit{Bott's cannibalistic
+classes}, for whatever reason.]
+
+\begin{quote}
+\textbf{Theorem 10.28.} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring. Let $x\in K$. Let
+$j\in\mathbb{N}\diagdown\left\{  0\right\}  $. Let $\operatorname*{fr}%
+\nolimits_{j}:K\left[  \left[  T\right]  \right]  \rightarrow K\left[  \left[
+T\right]  \right]  $ be the map which sends every power series $\sum
+\limits_{i\in\mathbb{N}}a_{i}T^{i}$ (with $a_{i}\in K$ for every
+$i\in\mathbb{N}$) to the power series $\sum\limits_{i\in\mathbb{N}}a_{i}%
+T^{ji}$. Then, $\operatorname*{fr}\nolimits_{j}\left(  \left(  \psi^{j}\left[
+\left[  T\right]  \right]  \right)  \left(  \lambda_{-T}\left(  x\right)
+\right)  \right)  =\operatorname*{td}\nolimits_{1-t^{j},T}\left(  x\right)
+=\lambda_{-T}\left(  x\right)  \theta_{T}^{j}\left(  x\right)  $ (where
+$\psi^{j}\left[  \left[  T\right]  \right]  $ means the homomorphism $K\left[
+\left[  T\right]  \right]  \rightarrow K\left[  \left[  T\right]  \right]  $
+defined by $\left(  \psi^{j}\left[  \left[  T\right]  \right]  \right)
+\left(  \sum\limits_{i\in\mathbb{N}}a_{i}T^{i}\right)  =\sum\limits_{i\in
+\mathbb{N}}\psi^{j}\left(  a_{i}\right)  T^{i}$ for every power series
+$\sum\limits_{i\in\mathbb{N}}a_{i}T^{i}\in K\left[  \left[  T\right]  \right]
+$).
+\end{quote}
+
+\textit{Proof of Theorem 10.28.} \textit{1st Step:} The equality
+$\operatorname*{td}\nolimits_{1-t^{j},T}\left(  x\right)  =\lambda_{-T}\left(
+x\right)  \theta_{T}^{j}\left(  x\right)  $ holds for every $x\in K$ (no
+matter whether the $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ is special or not).
+
+\textit{Proof.} Let $\varphi_{j}\in\mathbb{Z}\left[  t\right]  $ be the
+polynomial $1+t+t^{2}+...+t^{j-1}=\dfrac{1-t^{j}}{1-t}$. According to the
+definition of $\theta_{T}^{j}$, we have $\theta_{T}^{j}=\operatorname*{td}%
+_{\varphi_{j},T}$.
+
+Let $x\in K$. Applying Proposition 10.7 to $\mathbf{Z}=\mathbb{Z}$,
+$\varphi=1-t$ and $\psi=\varphi_{j}$, we obtain $\operatorname*{td}%
+\nolimits_{\varphi\psi,T}\left(  x\right)  =\operatorname*{td}%
+\nolimits_{\varphi,T}\left(  x\right)  \operatorname*{td}\nolimits_{\psi
+,T}\left(  x\right)  $. Since%
+\[
+\operatorname*{td}\nolimits_{\varphi\psi,T}\left(  x\right)
+=\operatorname*{td}\nolimits_{1-t^{j},T}\left(  x\right)
+\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{because }\varphi=1-t\text{ and }\psi=\varphi_{j}=\dfrac{1-t^{j}}%
+{1-t}\text{,}\\
+\text{so that }\varphi\psi=\left(  1-t\right)  \cdot\dfrac{1-t^{j}}%
+{1-t}=1-t^{j}%
+\end{array}
+\right)  ,
+\]%
+\begin{align*}
+\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)   &
+=\operatorname*{td}\nolimits_{1+\left(  -1\right)  t,T}\left(  x\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\varphi=1-t=1+\left(  -1\right)
+t\right) \\
+&  =\lambda_{\left(  -1\right)  T}\left(  x\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by Proposition 10.3, applied to }%
+\mathbf{Z}=\mathbb{Z}\text{ and }u=-1\right) \\
+&  =\lambda_{-T}\left(  x\right)
+\end{align*}
+and%
+\begin{align*}
+\operatorname*{td}\nolimits_{\psi,T}\left(  x\right)   &
+=\underbrace{\operatorname*{td}\nolimits_{\varphi_{j},T}}_{=\theta_{T}^{j}%
+}\left(  x\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\psi=\varphi
+_{j}\right) \\
+&  =\theta_{T}^{j}\left(  x\right)  ,
+\end{align*}
+this rewrites as $\operatorname*{td}\nolimits_{1-t^{j},T}\left(  x\right)
+=\lambda_{-T}\left(  x\right)  \theta_{T}^{j}\left(  x\right)  $. This proves
+the 1st Step.
+
+\textit{2nd Step:} A remark about the map $\operatorname*{fr}\nolimits_{j}$:
+This map sends every power series $P\in K\left[  \left[  T\right]  \right]  $
+to the power series $P\left(  T^{j}\right)  $. It is easy to see that this map
+$\operatorname*{fr}\nolimits_{j}$ is a $K$-algebra homomorphism continuous
+with respect to the $\left(  T\right)  $-topology. It satisfies
+$\operatorname*{fr}\nolimits_{j}\left(  T\right)  =T^{j}$ (obviously) and can
+be shown to be the only continuous (with respect to the $\left(  T\right)
+$-topology) ring homomorphism $K\left[  \left[  T\right]  \right]  \rightarrow
+K\left[  \left[  T\right]  \right]  $ which sends $T$ to $T^{j}$.
+
+\textit{3rd Step:} The equality $\operatorname*{fr}\nolimits_{j}\left(
+\left(  \psi^{j}\left[  \left[  T\right]  \right]  \right)  \left(
+\lambda_{-T}\left(  x\right)  \right)  \right)  =\operatorname*{td}%
+\nolimits_{1-t^{j},T}\left(  x\right)  $ holds for every special $\lambda
+$-ring $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ and
+every $x\in K$ such that $x$ is the sum of finitely many $1$-dimensional
+elements of $K$.
+
+\textit{Proof.} Let $\varphi=1-t^{j}$.
+
+Let $x\in K$ be such that $x$ is the sum of finitely many $1$-dimensional
+elements of $K$. In other words, $x=u_{1}+u_{2}+...+u_{m}$ for some
+$1$-dimensional elements $u_{1},$ $u_{2},$ $...,$ $u_{m}$ of $K$. Consider
+these elements $u_{1},$ $u_{2},$ $...,$ $u_{m}$. Then,%
+\begin{align*}
+\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)   &
+=\operatorname*{td}\nolimits_{\varphi,T}\left(  u_{1}+u_{2}+...+u_{m}\right)
+=\prod\limits_{i=1}^{m}\underbrace{\varphi\left(  u_{i}T\right)
+}_{\substack{=1-\left(  u_{i}T\right)  ^{j}\\\text{(since }\varphi
+=1-t^{j}\text{)}}}\ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 10.27}\right)
+\\
+&  =\prod\limits_{i=1}^{m}\left(  1-\underbrace{\left(  u_{i}T\right)  ^{j}%
+}_{=u_{i}^{j}T^{j}}\right)  =\prod\limits_{i=1}^{m}\left(  1-u_{i}^{j}%
+T^{j}\right)  .
+\end{align*}
+On the other hand, $x=u_{1}+u_{2}+...+u_{m}=\sum\limits_{i=1}^{m}u_{i}$, so
+that%
+\begin{align*}
+\lambda_{T}\left(  x\right)   &  =\lambda_{T}\left(  \sum\limits_{i=1}%
+^{m}u_{i}\right)  =\widehat{\sum\limits_{i=1}^{m}}\lambda_{T}\left(
+u_{i}\right)  =\prod\limits_{i=1}^{m}\lambda_{T}\left(  u_{i}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since the addition in the ring }\Lambda\left(  K\right)  \text{ is the
+multiplication of power series,}\\
+\text{so that }\widehat{\sum\limits_{i=1}^{m}}=\prod\limits_{i=1}^{m}%
+\end{array}
+\right) \\
+&  =\prod\limits_{i=1}^{m}\left(  1+u_{i}T\right)  \ \ \ \ \ \ \ \ \ \ \left(
+%
+\begin{array}
+[c]{c}%
+\text{because every }i\in\left\{  1,2,...,m\right\}  \text{ satisfies }%
+\lambda_{T}\left(  u_{i}\right)  =1+u_{i}T\\
+\text{(by Theorem 8.3 \textbf{(a)} (applied to }x=u_{i}\text{), since }%
+u_{i}\text{ is}\\
+1\text{-dimensional)}%
+\end{array}
+\right)  .
+\end{align*}
+Now,%
+\begin{align*}
+\lambda_{-T}\left(  x\right)   &  =\operatorname*{ev}\nolimits_{-T}\left(
+\underbrace{\lambda_{T}\left(  x\right)  }_{=\prod\limits_{i=1}^{m}\left(
+1+u_{i}T\right)  }\right)  =\operatorname*{ev}\nolimits_{-T}\left(
+\prod\limits_{i=1}^{m}\left(  1+u_{i}T\right)  \right) \\
+&  =\prod\limits_{i=1}^{m}\underbrace{\operatorname*{ev}\nolimits_{-T}\left(
+1+u_{i}T\right)  }_{\substack{=1-u_{i}T\\\text{(by the definition of
+}\operatorname*{ev}\nolimits_{-T}\text{)}}}\ \ \ \ \ \ \ \ \ \ \left(
+\text{since }\operatorname*{ev}\nolimits_{-T}\text{ is a ring homomorphism}%
+\right) \\
+&  =\prod\limits_{i=1}^{m}\left(  1-u_{i}T\right)  .
+\end{align*}
+Thus,%
+\begin{align*}
+\left(  \psi^{j}\left[  \left[  T\right]  \right]  \right)  \left(
+\lambda_{-T}\left(  x\right)  \right)   &  =\left(  \psi^{j}\left[  \left[
+T\right]  \right]  \right)  \left(  \prod\limits_{i=1}^{m}\left(
+1-u_{i}T\right)  \right)  =\prod\limits_{i=1}^{m}\left(  1-\underbrace{\left(
+\psi^{j}\left[  \left[  T\right]  \right]  \right)  \left(  u_{i}T\right)
+}_{\substack{=\psi^{j}\left(  u_{i}\right)  T\\\text{(by the definition of
+}\psi^{j}\left[  \left[  T\right]  \right]  \text{)}}}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\psi^{j}\left[  \left[  T\right]
+\right]  \text{ is a ring homomorphism}\right) \\
+&  =\prod\limits_{i=1}^{m}\left(  1-\psi^{j}\left(  u_{i}\right)  T\right)  ,
+\end{align*}
+so that%
+\begin{align*}
+\operatorname*{fr}\nolimits_{j}\left(  \left(  \psi^{j}\left[  \left[
+T\right]  \right]  \right)  \left(  \lambda_{-T}\left(  x\right)  \right)
+\right)   &  =\operatorname*{fr}\nolimits_{j}\left(  \prod\limits_{i=1}%
+^{m}\left(  1-\psi^{j}\left(  u_{i}\right)  T\right)  \right)  =\prod
+\limits_{i=1}^{m}\left(  1-\psi^{j}\left(  u_{i}\right)
+\underbrace{\operatorname*{fr}\nolimits_{j}\left(  T\right)  }_{=T^{j}}\right)
+\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\operatorname*{fr}\nolimits_{j}%
+\text{ is a }K\text{-algebra homomorphism}\right) \\
+&  =\prod\limits_{i=1}^{m}\left(  1-\psi^{j}\left(  u_{i}\right)
+T^{j}\right)  .
+\end{align*}
+
+
+Now, for every $i\in\left\{  1,2,...,m\right\}  $, we can apply Theorem 9.4 to
+$1$ and $u_{i}$ instead of $m$ and $u_{k}$, and obtain $\psi^{j}\left(
+u_{i}\right)  =u_{i}^{j}$. Hence,%
+\[
+\operatorname*{fr}\nolimits_{j}\left(  \left(  \psi^{j}\left[  \left[
+T\right]  \right]  \right)  \left(  \lambda_{-T}\left(  x\right)  \right)
+\right)  =\prod\limits_{i=1}^{m}\left(  1-\underbrace{\psi^{j}\left(
+u_{i}\right)  }_{=u_{i}^{j}}T^{j}\right)  =\prod\limits_{i=1}^{m}\left(
+1-u_{i}^{j}T^{j}\right)  =\operatorname*{td}\nolimits_{\varphi,T}\left(
+x\right)  =\operatorname*{td}\nolimits_{1-t^{j},T}\left(  x\right)
+\]
+(since $\varphi=1-t^{j}$). This proves the 3rd Step.
+
+\textit{4th Step:} The equality $\operatorname*{fr}\nolimits_{j}\left(
+\left(  \psi^{j}\left[  \left[  T\right]  \right]  \right)  \left(
+\lambda_{-T}\left(  x\right)  \right)  \right)  =\operatorname*{td}%
+\nolimits_{1-t^{j},T}\left(  x\right)  $ holds for every special $\lambda
+$-ring $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ and
+every $x\in K$.
+
+\textit{Proof.} We want to derive this from the 3rd Step by applying Theorem 8.4.
+
+Fix some $k\in\mathbb{N}$.
+
+Define a $1$-operation $m$ of special $\lambda$-rings by $m_{\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  }=\operatorname*{Coeff}%
+\nolimits_{k}\circ\operatorname*{fr}\nolimits_{j}\circ\left(  \psi^{j}\left[
+\left[  T\right]  \right]  \right)  \circ\lambda_{-T}$ for every special
+$\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
+}\right)  $. (This is indeed a $1$-operation, since (\ref{PsiDef}) shows that
+$\psi^{j}$ is a polynomial in $\lambda^{1},$ $\lambda^{2},$ $...,$
+$\lambda^{j}$ with integer coefficients.)
+
+Define a $1$-operation $m^{\prime}$ of special $\lambda$-rings by $m_{\left(
+K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  }^{\prime
+}=\operatorname*{Coeff}\nolimits_{k}\circ\operatorname*{td}\nolimits_{1-t^{j}%
+,T}$ for every $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $. (This is, again, a $1$-operation, since
+(\ref{ToddDef}) shows that $\operatorname*{td}\nolimits_{1-t^{j},T}$ is a
+polynomial in $\lambda^{1},$ $\lambda^{2},$ $...,$ $\lambda^{k}$ with integer coefficients.)
+
+These two $1$-operations $m$ and $m^{\prime}$ satisfy both conditions of
+Theorem 8.4: The continuity assumption holds (since the operations $m$ and
+$m^{\prime}$ are obtained by taking polynomials (with integer coefficients)
+and compositions of finitely many of the $\lambda^{1},$ $\lambda^{2},$
+$\lambda^{3},$ $...$, so that the maps $m_{\left(  \Lambda\left(  K\right)
+,\left(  \widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  }$ and
+$m_{\left(  \Lambda\left(  K\right)  ,\left(  \widehat{\lambda}^{i}\right)
+_{i\in\mathbb{N}}\right)  }^{\prime}$ are obtained by taking polynomials (with
+integer coefficients) and compositions of finitely many of the
+$\widehat{\lambda}^{1},$ $\widehat{\lambda}^{2},$ $\widehat{\lambda}^{3},$
+$...$, and therefore continuous because of Theorem 5.5 \textbf{(d)}), and the
+split equality assumption holds (since it states that for every special
+$\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
+}\right)  $ and every $x\in K$ such that $x$ is the sum of finitely many
+$1$-dimensional elements of $K$, we have $m_{\left(  K,\left(  \lambda
+^{i}\right)  _{i\in\mathbb{N}}\right)  }\left(  x\right)  =m_{\left(
+K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  }^{\prime}\left(
+x\right)  $; but this simply means that $\operatorname*{Coeff}\nolimits_{k}%
+\left(  \operatorname*{fr}\nolimits_{j}\left(  \left(  \psi^{j}\left[  \left[
+T\right]  \right]  \right)  \left(  \lambda_{-T}\left(  x\right)  \right)
+\right)  \right)  =\operatorname*{Coeff}\nolimits_{k}\left(
+\operatorname*{td}\nolimits_{1-t^{j},T}\left(  x\right)  \right)  ,$ which was
+proven in the 3rd step). Hence, by Theorem 8.4, we have $m=m^{\prime}$. Hence,
+for every special $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ and every $x\in K$, we have $m_{\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  }\left(  x\right)  =m_{\left(
+K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  }^{\prime}\left(
+x\right)  $. Since $m_{\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
+}\right)  }\left(  x\right)  =\operatorname*{Coeff}\nolimits_{k}\left(
+\operatorname*{fr}\nolimits_{j}\left(  \left(  \psi^{j}\left[  \left[
+T\right]  \right]  \right)  \left(  \lambda_{-T}\left(  x\right)  \right)
+\right)  \right)  $ (by the definition of $m_{\left(  K,\left(  \lambda
+^{i}\right)  _{i\in\mathbb{N}}\right)  }$) and $m_{\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  }^{\prime}\left(  x\right)
+=\operatorname*{Coeff}\nolimits_{k}\left(  \operatorname*{td}%
+\nolimits_{1-t^{j},T}\left(  x\right)  \right)  $ (by the definition of
+$m_{\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  }^{\prime
+}$), this rewrites as follows: For every special $\lambda$-ring $\left(
+K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ and every $x\in K$,
+we have $\operatorname*{Coeff}\nolimits_{k}\left(  \operatorname*{fr}%
+\nolimits_{j}\left(  \left(  \psi^{j}\left[  \left[  T\right]  \right]
+\right)  \left(  \lambda_{-T}\left(  x\right)  \right)  \right)  \right)
+=\operatorname*{Coeff}\nolimits_{k}\left(  \operatorname*{td}%
+\nolimits_{1-t^{j},T}\left(  x\right)  \right)  $.
+
+Now fix some special $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ and some $x\in K$, and forget that we fixed $k$.
+We have just proven that $\operatorname*{Coeff}\nolimits_{k}\left(
+\operatorname*{fr}\nolimits_{j}\left(  \left(  \psi^{j}\left[  \left[
+T\right]  \right]  \right)  \left(  \lambda_{-T}\left(  x\right)  \right)
+\right)  \right)  =\operatorname*{Coeff}\nolimits_{k}\left(
+\operatorname*{td}\nolimits_{1-t^{j},T}\left(  x\right)  \right)  $ for every
+$k\in\mathbb{N}$. In other words, we have just proven that each coefficient of
+the power series $\operatorname*{fr}\nolimits_{j}\left(  \left(  \psi
+^{j}\left[  \left[  T\right]  \right]  \right)  \left(  \lambda_{-T}\left(
+x\right)  \right)  \right)  $ equals to the corresponding coefficient of the
+power series $\operatorname*{td}\nolimits_{1-t^{j},T}\left(  x\right)  $.
+Thus, $\operatorname*{fr}\nolimits_{j}\left(  \left(  \psi^{j}\left[  \left[
+T\right]  \right]  \right)  \left(  \lambda_{-T}\left(  x\right)  \right)
+\right)  =\operatorname*{td}\nolimits_{1-t^{j},T}\left(  x\right)  $. This
+proves the 4th Step.
+
+\textit{5th Step:} Theorem 10.28 now follows by combining the 1st Step and the
+4th Step.
+
+Having proven Theorem 10.28, we are done proving all important properties of
+the $\varphi$-Todd homomorphisms. One thing that I still want to do is to give
+a (not particularly unexpected, and apparently not particularly useful)
+generalization of our notion of $\varphi$-Todd homomorphisms to the case when
+the power series $\varphi$ does not lie in $1+\mathbf{Z}\left[  \left[
+t\right]  \right]  ^{+}$ but, instead, lies in $1+\mathbf{Z}^{\prime}\left[
+\left[  t\right]  \right]  ^{+}$ for $\mathbf{Z}^{\prime}$ being a
+$\mathbf{Z}$-algebra. In this case, it turns out, not much will change - but,
+of course, $\operatorname*{td}\nolimits_{\varphi,T}$ will no longer be a map
+$K\rightarrow K\left[  \left[  T\right]  \right]  $ but instead will be a map
+$K\rightarrow\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[
+\left[  T\right]  \right]  $. Here is the precise definition:
 
 \begin{quote}
 \textbf{Definition.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
 \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
-$K$ is a $\mathbf{Z}$-algebra. Let $\mathbf{Z}^{\prime}$ be a commutative
-$\mathbf{Z}$-algebra. Let $\varphi\in1+\mathbf{Z}^{\prime}\left[  \left[
-t\right]  \right]  ^{+}$ be a power series with constant term equal to $1$. We
-define a map $\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}%
-}:K\rightarrow\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[
+$K$ is a $\mathbf{Z}$-algebra. Let $\mathbf{Z}^{\prime}$ be a $\mathbf{Z}%
+$-algebra. Let $\varphi\in1+\mathbf{Z}^{\prime}\left[  \left[  t\right]
+\right]  ^{+}$ be a power series with constant term equal to $1$. We define a
+map $\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}%
+:K\rightarrow\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[
 \left[  T\right]  \right]  $ by%
 \begin{equation}
 \operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)
@@ -6600,65 +8272,152 @@ as simple as repeating the proofs of the original results and replacing some
 of the $\mathbf{Z}$'s by $\mathbf{Z}^{\prime}$'s, some of the $K$'s by
 $\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $'s, and some of the
 $\lambda^{i}\left(  x\right)  $'s by $\lambda^{i}\left(  x\right)  \otimes
-1$'s. Here is the analogue of Proposition 10.3:
+1$'s. However, it is yet easier to prove these analoga by deriving them from
+the corresponding properties of the maps $\mathfrak{Todd}_{\varphi}$. What
+makes this possible is the following generalization of Proposition 10.11:
 
 \begin{quote}
-\textbf{Proposition 10.14.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\textbf{Proposition 10.29.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
 \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
-$K$ is a $\mathbf{Z}$-algebra. Let $\mathbf{Z}^{\prime}$ be a commutative
-$\mathbf{Z}$-algebra. Let $u\in\mathbf{Z}^{\prime}$. For every $x\in K$, we
-have $\operatorname*{td}\nolimits_{1+ut,T,\mathbf{Z}^{\prime}}\left(
-x\right)  =\lambda_{\left(  1\otimes u\right)  T}\left(  x\right)  $, where
+$K$ is a $\mathbf{Z}$-algebra. Let $\mathbf{Z}^{\prime}$ be a $\mathbf{Z}%
+$-algebra. Let $\varphi\in1+\mathbf{Z}^{\prime}\left[  \left[  t\right]
+\right]  ^{+}$ be a power series with constant term equal to $1$. Let
+$\iota:K\rightarrow K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$ be canonical map
+(mapping every $\xi\in K$ to $\xi\otimes1\in K\otimes_{\mathbf{Z}}%
+\mathbf{Z}^{\prime}$). Then, every $x\in K$ satisfies $\operatorname*{td}%
+_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)  =\mathfrak{Todd}_{\varphi
+}\left(  \iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(
+x\right)  \right)  \right)  $.
+\end{quote}
+
+\textit{Proof of Proposition 10.29.} Let $x\in K$. Then, $\lambda_{T}\left(
+x\right)  =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  x\right)  T^{i}$, so
+that%
+\[
+\iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(  x\right)
+\right)  =\iota\left[  \left[  T\right]  \right]  \left(  \sum\limits_{i\in
+\mathbb{N}}\lambda^{i}\left(  x\right)  T^{i}\right)  =\sum\limits_{i\in
+\mathbb{N}}\underbrace{\iota\left(  \lambda^{i}\left(  x\right)  \right)
+}_{\substack{=\lambda^{i}\left(  x\right)  \otimes1\\\text{(by the definition
+of }\iota\text{)}}}T^{i}=\sum\limits_{i\in\mathbb{N}}\left(  \lambda
+^{i}\left(  x\right)  \otimes1\right)  T^{i}.
+\]
+Hence, every $k\in\mathbb{N}$ satisfies $\operatorname*{Coeff}\nolimits_{k}%
+\left(  \iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(
+x\right)  \right)  \right)  =\operatorname*{Coeff}\nolimits_{k}\left(
+\sum\limits_{i\in\mathbb{N}}\left(  \lambda^{i}\left(  x\right)
+\otimes1\right)  T^{i}\right)  =\lambda^{k}\left(  x\right)  \otimes1$ (by the
+definition of $\operatorname*{Coeff}\nolimits_{k}$). Thus,
+\begin{align}
+&  \left(  \operatorname*{Coeff}\nolimits_{1}\left(  \iota\left[  \left[
+T\right]  \right]  \left(  \lambda_{T}\left(  x\right)  \right)  \right)
+,\operatorname*{Coeff}\nolimits_{2}\left(  \iota\left[  \left[  T\right]
+\right]  \left(  \lambda_{T}\left(  x\right)  \right)  \right)
+,...,\operatorname*{Coeff}\nolimits_{j}\left(  \iota\left[  \left[  T\right]
+\right]  \left(  \lambda_{T}\left(  x\right)  \right)  \right)  \right)
+\nonumber\\
+&  =\left(  \lambda^{1}\left(  x\right)  \otimes1,\lambda^{2}\left(  x\right)
+\otimes1,...,\lambda^{j}\left(  x\right)  \otimes1\right)  \label{10.29.pf.1}%
+\end{align}
+for every $j\in\mathbb{N}$. Now, (\ref{ToddFrak}) (applied to $p=\iota\left[
+\left[  T\right]  \right]  \left(  \lambda_{T}\left(  x\right)  \right)  $)
+yields%
+\begin{align*}
+&  \mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]  \right]
+\left(  \lambda_{T}\left(  x\right)  \right)  \right) \\
+&  =\sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
+\operatorname*{Coeff}\nolimits_{1}\left(  \iota\left[  \left[  T\right]
+\right]  \left(  \lambda_{T}\left(  x\right)  \right)  \right)
+,\operatorname*{Coeff}\nolimits_{2}\left(  \iota\left[  \left[  T\right]
+\right]  \left(  \lambda_{T}\left(  x\right)  \right)  \right)
+,...,\operatorname*{Coeff}\nolimits_{j}\left(  \iota\left[  \left[  T\right]
+\right]  \left(  \lambda_{T}\left(  x\right)  \right)  \right)  \right)
+T^{j}\\
+&  =\sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
+\lambda^{1}\left(  x\right)  \otimes1,\lambda^{2}\left(  x\right)
+\otimes1,...,\lambda^{j}\left(  x\right)  \otimes1\right)  T^{j}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{10.29.pf.1})}\right) \\
+&  =\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(
+x\right)  .
+\end{align*}
+This proves Proposition 10.29.
+
+Here is the analogue of Proposition 10.3:
+
+\begin{quote}
+\textbf{Proposition 10.30.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
+$K$ is a $\mathbf{Z}$-algebra. Let $\mathbf{Z}^{\prime}$ be a $\mathbf{Z}%
+$-algebra. Let $u\in\mathbf{Z}^{\prime}$. For every $x\in K$, we have
+$\operatorname*{td}\nolimits_{1+ut,T,\mathbf{Z}^{\prime}}\left(  x\right)
+=\lambda_{\left(  1\otimes u\right)  T}\left(  x\right)  $, where
 $\lambda_{\left(  1\otimes u\right)  T}\left(  x\right)  $ means
 $\operatorname*{ev}\nolimits_{\left(  1\otimes u\right)  T}\left(  \lambda
 _{T}\left(  x\right)  \right)  $.
 \end{quote}
 
-\textit{Proof of Proposition 10.14.} The following proof is, of course, a very
-direct calque of our above proof of Proposition 10.3.
-
-Let $x\in K$. Applying (\ref{ToddDefZ'}) to $\varphi=1+ut$, we obtain%
+\textit{Proof of Proposition 10.30.} Let $\iota:K\rightarrow K\otimes
+_{\mathbf{Z}}\mathbf{Z}^{\prime}$ be canonical map (mapping every $\xi\in K$
+to $\xi\otimes1\in K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$). Proposition
+10.29 (applied to $\varphi=1+ut$) yields%
 \begin{align*}
 \operatorname*{td}\nolimits_{1+ut,T,\mathbf{Z}^{\prime}}\left(  x\right)   &
-=\sum_{j\in\mathbb{N}}\underbrace{\operatorname*{Td}\nolimits_{1+ut,j}%
-}_{\substack{=u^{j}\alpha^{j}\\\text{(by Proposition 10.4,}\\\text{applied to
-}\mathbf{Z}^{\prime}\text{ instead of }\mathbf{Z}\text{)}}}\left(  \lambda
-^{1}\left(  x\right)  \otimes1,\lambda^{2}\left(  x\right)  \otimes
-1,...,\lambda^{j}\left(  x\right)  \otimes1\right)  T^{j}\\
-&  =\sum_{j\in\mathbb{N}}\underbrace{\left(  u^{j}\alpha^{j}\right)  \left(
-\lambda^{1}\left(  x\right)  \otimes1,\lambda^{2}\left(  x\right)
-\otimes1,...,\lambda^{j}\left(  x\right)  \otimes1\right)  }_{\substack{=u^{j}%
-\left(  \lambda^{j}\left(  x\right)  \otimes1\right)  =\lambda^{j}\left(
-x\right)  \otimes u^{j}\\=\lambda^{j}\left(  x\right)  \cdot\left(  1\otimes
-u^{j}\right)  }}T^{j}\\
-&  =\sum_{j\in\mathbb{N}}\lambda^{j}\left(  x\right)  \cdot\underbrace{\left(
-1\otimes u^{j}\right)  }_{=\left(  1\otimes u\right)  ^{j}}T^{j}=\sum
-_{j\in\mathbb{N}}\lambda^{j}\left(  x\right)  \left(  1\otimes u\right)
-^{j}T^{j}.
+=\mathfrak{Todd}_{1+ut}\left(  \iota\left[  \left[  T\right]  \right]  \left(
+\lambda_{T}\left(  x\right)  \right)  \right)  =\underbrace{\operatorname*{ev}%
+\nolimits_{uT}}_{\substack{=\operatorname*{ev}\nolimits_{\left(  1\otimes
+u\right)  T}\\\text{(since }uT=\left(  1\otimes u\right)  T\\\text{in }\left(
+K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[  \left[  T\right]
+\right]  }}\left(  \iota\left[  \left[  T\right]  \right]  \left(  \lambda
+_{T}\left(  x\right)  \right)  \right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Proposition 10.12, applied to }\mathbf{Z}^{\prime}\text{, }%
+K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\text{ and }\iota\left[  \left[
+T\right]  \right]  \left(  \lambda_{T}\left(  x\right)  \right) \\
+\text{instead of }\mathbf{Z}\text{, }K\text{ and }p
+\end{array}
+\right) \\
+&  =\operatorname*{ev}\nolimits_{\left(  1\otimes u\right)  T}\left(
+\iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(  x\right)
+\right)  \right)  =\left(  \operatorname*{ev}\nolimits_{\left(  1\otimes
+u\right)  T}\circ\iota\left[  \left[  T\right]  \right]  \right)  \left(
+\lambda_{T}\left(  x\right)  \right)  .
 \end{align*}
-Compared with%
+But the diagram%
 \[
-\lambda_{\left(  1\otimes u\right)  T}\left(  x\right)  =\operatorname*{ev}%
-\nolimits_{\left(  1\otimes u\right)  T}\left(  \underbrace{\lambda_{T}\left(
-x\right)  }_{=\sum\limits_{j\in\mathbb{N}}\lambda^{j}\left(  x\right)  T^{j}%
-}\right)  =\operatorname*{ev}\nolimits_{\left(  1\otimes u\right)  T}\left(
-\sum\limits_{j\in\mathbb{N}}\lambda^{j}\left(  x\right)  T^{j}\right)
-=\sum_{j\in\mathbb{N}}\lambda^{j}\left(  x\right)  \left(  1\otimes u\right)
-^{j}T^{j}%
+\xymatrixcolsep{5pc}\xymatrix{
+K \left[\left[T\right]\right] \ar[r]^{\iota \left[\left[T\right]\right]} \ar[dr]_{\operatorname*{ev}_{\left(1\otimes u\right)T}} & \left(K \otimes_{\mathbf Z} \mathbf Z^{\prime}\right) \left[\left[T\right]\right] \ar[d]^{\operatorname*{ev}_{\left(1\otimes u\right)T}} \\
+&  \left(K \otimes_{\mathbf Z} \mathbf Z^{\prime}\right) \left[\left[T\right]\right]
+}
 \]
-(by the definition of $\operatorname*{ev}\nolimits_{\left(  1\otimes u\right)
-T}$), this yields that $\operatorname*{td}\nolimits_{1+ut,T,\mathbf{Z}%
-^{\prime}}\left(  x\right)  =\lambda_{\left(  1\otimes u\right)  T}\left(
-x\right)  $. This proves Proposition 10.14.
+commutes (since the definition of the map $\operatorname*{ev}\nolimits_{\mu
+T}:K\left[  \left[  T\right]  \right]  \rightarrow L\left[  \left[  T\right]
+\right]  $ for any ring $K$, any $K$-algebra $L$ and any element $\mu$ of $L$
+was canonical with respect to $K$). Thus, $\operatorname*{ev}%
+\nolimits_{\left(  1\otimes u\right)  T}\circ\iota\left[  \left[  T\right]
+\right]  =\operatorname*{ev}\nolimits_{\left(  1\otimes u\right)  T}$. Now,%
+\[
+\operatorname*{td}\nolimits_{1+ut,T,\mathbf{Z}^{\prime}}\left(  x\right)
+=\underbrace{\left(  \operatorname*{ev}\nolimits_{\left(  1\otimes u\right)
+T}\circ\iota\left[  \left[  T\right]  \right]  \right)  }_{=\operatorname*{ev}%
+\nolimits_{\left(  1\otimes u\right)  T}}\left(  \lambda_{T}\left(  x\right)
+\right)  =\operatorname*{ev}\nolimits_{\left(  1\otimes u\right)  T}\left(
+\lambda_{T}\left(  x\right)  \right)  .
+\]
+This proves Proposition 10.30.
+
+Alternatively, we could have proven Proposition 10.30 by repeating the proof
+of Proposition 10.3 with some minor changes.
 
 Similarly, here is the analogue of Proposition 10.5:
 
 \begin{quote}
-\textbf{Proposition 10.15.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\textbf{Proposition 10.31.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
 \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
-$K$ is a $\mathbf{Z}$-algebra. Let $\mathbf{Z}^{\prime}$ be a commutative
-$\mathbf{Z}$-algebra. Let $\varphi\in1+\mathbf{Z}^{\prime}\left[  \left[
-t\right]  \right]  ^{+}$ be a power series with constant term equal to $1$.
+$K$ is a $\mathbf{Z}$-algebra. Let $\mathbf{Z}^{\prime}$ be a $\mathbf{Z}%
+$-algebra. Let $\varphi\in1+\mathbf{Z}^{\prime}\left[  \left[  t\right]
+\right]  ^{+}$ be a power series with constant term equal to $1$.
 
 \textbf{(a)} Then, $\operatorname*{Coeff}\nolimits_{0}\left(
 \operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)
@@ -6671,7 +8430,11 @@ $t^{1}$. Then, $\operatorname*{Coeff}\nolimits_{1}\left(  \operatorname*{td}%
 =\varphi_{1}\left(  x\otimes1\right)  $ for every $x\in K$.
 \end{quote}
 
-\textit{Proof of Proposition 10.15.} Let $x\in K$.
+We could derive Proposition 10.31 from Proposition 10.13 (just as we derived
+Proposition 10.30 from Proposition 10.12) using Proposition 10.29, but let us
+instead prove it directly:
+
+\textit{Proof of Proposition 10.31.} Let $x\in K$.
 
 \textbf{(a)} We have%
 \begin{align*}
@@ -6713,24 +8476,24 @@ x\otimes1\right) \\
 \end{align*}
 
 
-Proposition 10.15 is now proven.
+Proposition 10.31 is now proven.
 
 The analogue of Proposition 10.7:
 
 \begin{quote}
-\textbf{Proposition 10.16.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\textbf{Proposition 10.32.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
 \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
-$K$ is a $\mathbf{Z}$-algebra. Let $\mathbf{Z}^{\prime}$ be a commutative
-$\mathbf{Z}$-algebra. Let $\varphi\in1+\mathbf{Z}^{\prime}\left[  \left[
-t\right]  \right]  ^{+}$ and $\psi\in1+\mathbf{Z}^{\prime}\left[  \left[
-t\right]  \right]  ^{+}$ be two power series with constant terms equal to $1$.
-For every $x\in K$, we have $\operatorname*{td}\nolimits_{\varphi
-\psi,T,\mathbf{Z}^{\prime}}\left(  x\right)  =\operatorname*{td}%
-\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)  \operatorname*{td}%
-\nolimits_{\psi,T,\mathbf{Z}^{\prime}}\left(  x\right)  $.
+$K$ is a $\mathbf{Z}$-algebra. Let $\mathbf{Z}^{\prime}$ be a $\mathbf{Z}%
+$-algebra. Let $\varphi\in1+\mathbf{Z}^{\prime}\left[  \left[  t\right]
+\right]  ^{+}$ and $\psi\in1+\mathbf{Z}^{\prime}\left[  \left[  t\right]
+\right]  ^{+}$ be two power series with constant terms equal to $1$. For every
+$x\in K$, we have $\operatorname*{td}\nolimits_{\varphi\psi,T,\mathbf{Z}%
+^{\prime}}\left(  x\right)  =\operatorname*{td}\nolimits_{\varphi
+,T,\mathbf{Z}^{\prime}}\left(  x\right)  \operatorname*{td}\nolimits_{\psi
+,T,\mathbf{Z}^{\prime}}\left(  x\right)  $.
 \end{quote}
 
-\textit{Proof of Proposition 10.16.} To obtain a proof of Proposition 10.16,
+\textit{Proof of Proposition 10.32.} To obtain a proof of Proposition 10.16,
 read the proof of Proposition 10.7, doing the following replacements:
 
 \begin{itemize}
@@ -6749,19 +8512,22 @@ $\operatorname*{td}\nolimits_{\psi,T,\mathbf{Z}^{\prime}}$.
 \item Replace every $\operatorname*{td}\nolimits_{\varphi\psi,T}$ by
 $\operatorname*{td}\nolimits_{\varphi\psi,T,\mathbf{Z}^{\prime}}$.
 
-\item Replace all references to Proposition 10.7 by references to Proposition 10.16.
+\item Replace all references to Proposition 10.7 by references to Proposition 10.32.
+
+\item Replace all references to (\ref{ToddDef}) by references to
+(\ref{ToddDefZ'}).
 \end{itemize}
 
 Next, the analogue of Proposition 10.9:
 
 \begin{quote}
-\textbf{Proposition 10.17.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\textbf{Proposition 10.33.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
 \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
-$K$ is a $\mathbf{Z}$-algebra. Let $\mathbf{Z}^{\prime}$ be a commutative
-$\mathbf{Z}$-algebra. Let $m\in\mathbb{N}$. For every $i\in\left\{
-1,2,...,m\right\}  $, let $\varphi_{i}\in1+\mathbf{Z}^{\prime}\left[  \left[
-t\right]  \right]  ^{+}$ be a power series with constant term equal to $1$.
-For every $x\in K$, we have%
+$K$ is a $\mathbf{Z}$-algebra. Let $\mathbf{Z}^{\prime}$ be a $\mathbf{Z}%
+$-algebra. Let $m\in\mathbb{N}$. For every $i\in\left\{  1,2,...,m\right\}  $,
+let $\varphi_{i}\in1+\mathbf{Z}^{\prime}\left[  \left[  t\right]  \right]
+^{+}$ be a power series with constant term equal to $1$. For every $x\in K$,
+we have%
 \[
 \operatorname*{td}\nolimits_{\prod\limits_{i=1}^{m}\varphi_{i},T,\mathbf{Z}%
 ^{\prime}}\left(  x\right)  =\prod\limits_{i=1}^{m}\operatorname*{td}%
@@ -6772,10 +8538,10 @@ For every $x\in K$, we have%
 
 \end{quote}
 
-\textit{Proof of Proposition 10.17.} This can be proven by induction over $m$.
+\textit{Proof of Proposition 10.33.} This can be proven by induction over $m$.
 The induction base (the case $m=0$) requires showing that $\operatorname*{td}%
 \nolimits_{1,T,\mathbf{Z}^{\prime}}\left(  x\right)  =1$, but this follows
-from Proposition 10.14\footnote{In fact, Proposition 10.14 (applied to $u=0$)
+from Proposition 10.14\footnote{In fact, Proposition 10.30 (applied to $u=0$)
 yields $\operatorname*{td}\nolimits_{1+0t,T,\mathbf{Z}^{\prime}}\left(
 x\right)  =\lambda_{\left(  1\otimes0\right)  T}\left(  x\right)  $. Now
 $\lambda_{\left(  1\otimes0\right)  T}\left(  x\right)  =\operatorname*{ev}%
@@ -6794,196 +8560,231 @@ $\operatorname*{td}\nolimits_{1,T,\mathbf{Z}^{\prime}}\left(  x\right)
 =\lambda_{\left(  1\otimes0\right)  T}\left(  x\right)  =\operatorname*{ev}%
 \nolimits_{\left(  1\otimes0\right)  T}\left(  \lambda_{T}\left(  x\right)
 \right)  =1$.}. The induction step is a straightforward application of
-Proposition 10.16. Thus Proposition 10.17 is proven.
+Proposition 10.32. Thus Proposition 10.33 is proven.
 
-Finally, the analogue of Proposition 10.11:
+Next, the analogue of Theorem 10.10:
 
 \begin{quote}
-\textbf{Proposition 10.18.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\textbf{Theorem 10.34.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
 \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
-$K$ is a $\mathbf{Z}$-algebra. Let $\mathbf{Z}^{\prime}$ be a commutative
-$\mathbf{Z}$-algebra. Let $x\in K$. Then, the map%
+$K$ is a $\mathbf{Z}$-algebra. Let $\mathbf{Z}^{\prime}$ be a $\mathbf{Z}%
+$-algebra. Let $\varphi\in1+\mathbf{Z}^{\prime}\left[  \left[  t\right]
+\right]  ^{+}$ be a power series with constant term equal to $1$. Let $x\in K$
+and $y\in K$. Then, $\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}%
+^{\prime}}\left(  x\right)  \cdot\operatorname*{td}\nolimits_{\varphi
+,T,\mathbf{Z}^{\prime}}\left(  y\right)  =\operatorname*{td}\nolimits_{\varphi
+,T,\mathbf{Z}^{\prime}}\left(  x+y\right)  $.
+\end{quote}
+
+\textit{Proof of Theorem 10.34.} Theorem 2.1 \textbf{(a)} yields $\lambda
+_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)  =\lambda_{T}\left(
+x+y\right)  $ (since $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
+}\right)  $ is a $\lambda$-ring).
+
+Let $\iota:K\rightarrow K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$ be canonical
+map (mapping every $\xi\in K$ to $\xi\otimes1\in K\otimes_{\mathbf{Z}%
+}\mathbf{Z}^{\prime}$). Then, Proposition 10.29 yields $\operatorname*{td}%
+_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)  =\mathfrak{Todd}_{\varphi
+}\left(  \iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(
+x\right)  \right)  \right)  $. Proposition 10.29 (applied to $y$ instead of
+$x$) yields $\operatorname*{td}_{\varphi,T,\mathbf{Z}^{\prime}}\left(
+y\right)  =\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]
+\right]  \left(  \lambda_{T}\left(  y\right)  \right)  \right)  $. Hence,%
+\begin{align*}
+&  \underbrace{\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}%
+}\left(  x\right)  }_{=\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[
+T\right]  \right]  \left(  \lambda_{T}\left(  x\right)  \right)  \right)
+}\cdot\underbrace{\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}%
+}\left(  y\right)  }_{=\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[
+T\right]  \right]  \left(  \lambda_{T}\left(  y\right)  \right)  \right)  }\\
+&  =\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]  \right]
+\left(  \lambda_{T}\left(  x\right)  \right)  \right)  \cdot\mathfrak{Todd}%
+_{\varphi}\left(  \iota\left[  \left[  T\right]  \right]  \left(  \lambda
+_{T}\left(  y\right)  \right)  \right)  =\mathfrak{Todd}_{\varphi}\left(
+\underbrace{\iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(
+x\right)  \right)  \cdot\iota\left[  \left[  T\right]  \right]  \left(
+\lambda_{T}\left(  y\right)  \right)  }_{\substack{=\iota\left[  \left[
+T\right]  \right]  \left(  \lambda_{T}\left(  x\right)  \cdot\lambda
+_{T}\left(  y\right)  \right)  \\\text{(since }\iota\left[  \left[  T\right]
+\right]  \text{ is a ring homomorphism)}}}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 10.16, applied to }%
+p=\iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(  x\right)
+\right)  \text{ and }q=\iota\left[  \left[  T\right]  \right]  \left(
+\lambda_{T}\left(  y\right)  \right)  \right) \\
+&  =\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]  \right]
+\left(  \lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)
+\right)  \right)
+\end{align*}
+Proposition 10.29 (applied to $x+y$ instead of $x$) yields%
 \[
-1+\mathbf{Z}^{\prime}\left[  \left[  t\right]  \right]  ^{+}\rightarrow\left(
-K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[  \left[  T\right]
-\right]  ,\ \ \ \ \ \ \ \ \ \ \varphi\mapsto\operatorname*{td}%
-\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)
+\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x+y\right)
+=\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]  \right]
+\left(  \underbrace{\lambda_{T}\left(  x+y\right)  }_{\substack{=\lambda
+_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)  }}\right)  \right)
+=\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]  \right]
+\left(  \lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)
+\right)  \right)  .
 \]
-is continuous. Here, the topology on $1+\mathbf{Z}^{\prime}\left[  \left[
-t\right]  \right]  ^{+}$ is supposed to be the $\left(  t\right)  $-topology
-(but for $\mathbf{Z}$ replaced by $\mathbf{Z}^{\prime}$), and the topology on
-$\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[  \left[
-T\right]  \right]  $ is supposed to be the $\left(  T\right)  $-topology
-defined in Section 5 (but for $K$ replaced by $K\otimes_{\mathbf{Z}}%
-\mathbf{Z}^{\prime}$).
-\end{quote}
-
-\textit{Proof of Proposition 10.18.} To obtain a proof of Proposition 10.18,
-read the proof of Proposition 10.11, doing the following replacements:
-
-\begin{itemize}
-\item Replace every $\mathbf{Z}$ by $\mathbf{Z}^{\prime}$.
-
-\item Replace every $K\left[  \left[  T\right]  \right]  $ by $\left(
-K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[  \left[  T\right]
-\right]  $.
-
-\item Replace "Proposition 10.1" by "Proposition 10.1 (applied to
-$\mathbf{Z}^{\prime}$ instead of $\mathbf{Z}$)".
-
-\item Replace every $\operatorname*{td}\nolimits_{\varphi,T}$ by
-$\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}$.
-
-\item Replace every $\operatorname*{td}\nolimits_{\psi,T}$ by
-$\operatorname*{td}\nolimits_{\psi,T,\mathbf{Z}^{\prime}}$.
-
-\item Replace every $\lambda^{k}\left(  x\right)  $ by $\lambda^{k}\left(
-x\right)  \otimes1$ for $k$ any nonnegative integer (that is, replace
-$\lambda^{1}\left(  x\right)  $ by $\lambda^{1}\left(  x\right)  \otimes1$,
-replace $\lambda^{2}\left(  x\right)  $ by $\lambda^{2}\left(  x\right)
-\otimes1$, etc.).
-
-\item Replace all references to Proposition 10.7 by references to Proposition 10.16.
-\end{itemize}
-
-Now we can reap the harvest of these preparations:
-
-\begin{quote}
-\textbf{Theorem 10.19.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
-\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
-$K$ is a $\mathbf{Z}$-algebra. Let $\varphi\in1+\mathbf{Z}\left[  \left[
-t\right]  \right]  ^{+}$ be a power series with constant term equal to $1$.
-Let $x\in K$ and $y\in K$. Then, $\operatorname*{td}\nolimits_{\varphi
-,T}\left(  x\right)  \cdot\operatorname*{td}\nolimits_{\varphi,T}\left(
-y\right)  =\operatorname*{td}\nolimits_{\varphi,T}\left(  x+y\right)  $.
-\end{quote}
-
-Even if we were interested only in this theorem, the only way to prove it
-known to me is by generalizing it:
-
-\begin{quote}
-\textbf{Theorem 10.20.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
-\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
-$K$ is a $\mathbf{Z}$-algebra. Let $\mathbf{Z}^{\prime}$ be a commutative
-$\mathbf{Z}$-algebra. Let $\varphi\in1+\mathbf{Z}^{\prime}\left[  \left[
-t\right]  \right]  ^{+}$ be a power series with constant term equal to $1$.
-Let $x\in K$ and $y\in K$. Then, $\operatorname*{td}\nolimits_{\varphi
-,T,\mathbf{Z}^{\prime}}\left(  x\right)  \cdot\operatorname*{td}%
-\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  y\right)  =\operatorname*{td}%
-\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x+y\right)  $.
-\end{quote}
-
-\textit{Proof of Theorem 10.20.} \textit{1st Step:} We have
-$\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)
+Thus,%
+\[
+\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)
 \cdot\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(
-y\right)  =\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(
-x+y\right)  $ whenever $\varphi\in1+\mathbf{Z}^{\prime}\left[  t\right]  ^{+}$.
+y\right)  =\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]
+\right]  \left(  \lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(
+y\right)  \right)  \right)  =\operatorname*{td}\nolimits_{\varphi
+,T,\mathbf{Z}^{\prime}}\left(  x+y\right)  .
+\]
+Theorem 10.34 is thus proven.
 
-\textit{Proof.} Let $\varphi\in1+\mathbf{Z}^{\prime}\left[  t\right]  ^{+}$.
-According to Theorem 10.12 (applied to $\varphi$ and $\mathbf{Z}^{\prime}$
-instead of $p$ and $\mathbf{Z}$), there exists an integer $n$ (the degree of
-the polynomial $\varphi$), a finite-free extension ring $\mathbf{Z}_{\varphi
-}^{\prime}$ of the ring $\mathbf{Z}^{\prime}$ and $n$ elements $p_{1},$
-$p_{2},$ $...,$ $p_{n}$ of this extension ring $\mathbf{Z}_{\varphi}^{\prime}$
-such that $\varphi=\prod\limits_{i=1}^{n}\left(  1+p_{i}t\right)  $ in
-$\mathbf{Z}_{\varphi}^{\prime}\left[  t\right]  $. Consider this ring
-$\mathbf{Z}_{\varphi}^{\prime}$ and these $n$ elements $p_{1},$ $p_{2},$
-$...,$ $p_{n}$.
-
-The canonical embedding $\mathbf{Z}^{\prime}\rightarrow\mathbf{Z}_{\varphi
-}^{\prime}$ is injective. Hence, the map $K\otimes_{\mathbf{Z}}\mathbf{Z}%
-^{\prime}\rightarrow K\otimes_{\mathbf{Z}}\mathbf{Z}_{\varphi}^{\prime}$ that
-it induces must also be injective [...]
-
-[...]
-
-\textit{Proof of Theorem 10.19.} [...]
-
-[...]
-
-As a consequence of Proposition 10.9, we have:
+The analogue of Corollary 10.23 is what one would expect it to be:
 
 \begin{quote}
-\textbf{Theorem 10.UX.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\textbf{Corollary 10.35.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
 \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
-$K$ is a $\mathbf{Z}$-algebra. Let $\varphi\in1+\mathbf{Z}\left[  t\right]
-^{+}$ be a polynomial with constant term equal to $1$. Let us use the
-notations of Section 5. Let $\left(  \widetilde{\mathbf{Z}},\left[
-u_{1},u_{2},...,u_{n}\right]  \right)  \in\mathbf{Z}^{\operatorname*{int}}$ be
-such that $\varphi\left(  T\right)  =\Pi\left(  \widetilde{\mathbf{Z}},\left[
-u_{1},u_{2},...,u_{n}\right]  \right)  $. Then,%
+$K$ is a $\mathbf{Z}$-algebra. Let $\mathbf{Z}^{\prime}$ be a $\mathbf{Z}%
+$-algebra. Let $\varphi\in1+\mathbf{Z}^{\prime}\left[  \left[  t\right]
+\right]  ^{+}$ be a power series with constant term equal to $1$. Then,
+$\operatorname*{td}_{\varphi,T,\mathbf{Z}^{\prime}}\left(  K\right)
+\subseteq\Lambda\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $,
+and $\operatorname*{td}_{\varphi,T,\mathbf{Z}^{\prime}}:K\rightarrow
+\Lambda\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $ is a
+homomorphism of additive groups.
+\end{quote}
+
+\textit{Proof of Corollary 10.35.} Every $x\in K$ satisfies
+$\operatorname*{td}_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)
+\in\Lambda\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $ (since
+Proposition 10.31 \textbf{(a)} says that $\operatorname*{Coeff}\nolimits_{0}%
+\left(  \operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(
+x\right)  \right)  =1$, so that the power series $\operatorname*{td}%
+\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)  $ has the constant
+term $1$, and thus $\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime
+}}\left(  x\right)  \in1+\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime
+}\right)  \left[  \left[  T\right]  \right]  ^{+}=\Lambda\left(
+K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $). In other words,
+$\operatorname*{td}_{\varphi,T,\mathbf{Z}^{\prime}}\left(  K\right)
+\subseteq\Lambda\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $.
+
+Now we are going to prove that $\operatorname*{td}_{\varphi,T,\mathbf{Z}%
+^{\prime}}:K\rightarrow\Lambda\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime
+}\right)  $ is a homomorphism of additive groups.
+
+Theorem 10.34 (applied to $x=0$ and $y=0$) yields $\operatorname*{td}%
+\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  0\right)  \cdot
+\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  0\right)
+=\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(
+0+0\right)  =\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}%
+}\left(  0\right)  $ Since $\operatorname*{td}\nolimits_{\varphi
+,T,\mathbf{Z}^{\prime}}\left(  0\right)  $ is an invertible element of
+$\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[  \left[
+T\right]  \right]  $ (because $\operatorname*{td}\nolimits_{\varphi
+,T,\mathbf{Z}^{\prime}}\left(  0\right)  $ is a power series with constant
+term $1$\ \ \ \ \footnote{since $\operatorname*{td}\nolimits_{\varphi
+,T,\mathbf{Z}^{\prime}}\left(  0\right)  \in\operatorname*{td}%
+\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  K\right)  \subseteq
+\Lambda\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  =1+\left(
+K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[  \left[  T\right]
+\right]  ^{+}$}, and every such power series is an invertible element of
+$\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  \left[  \left[
+T\right]  \right]  $), we can cancel $\operatorname*{td}\nolimits_{\varphi
+,T,\mathbf{Z}^{\prime}}\left(  0\right)  $ from this equation, and obtain
+$\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  0\right)
+=1$. Since $0$ is the neutral element of the additive group $K$, while $1$ is
+the neutral element of the additive group $\Lambda\left(  K\otimes
+_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $, this yields that the map
+$\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}$ respects the
+neutral elements of the additive groups $K$ and $\Lambda\left(  K\otimes
+_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $.
+
+Any $x\in K$ and $y\in K$ satisfy%
+\begin{align*}
+\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x+y\right)
+&  =\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(
+x\right)  \cdot\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}%
+}\left(  y\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 10.34}\right)
+\\
+&  =\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(
+x\right)  \widehat{+}\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}%
+^{\prime}}\left(  y\right)
+\end{align*}
+(since multiplication of power series in $1+\left(  K\otimes_{\mathbf{Z}%
+}\mathbf{Z}^{\prime}\right)  \left[  \left[  T\right]  \right]  ^{+}$ is
+addition in the ring $\Lambda\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime
+}\right)  $). Combined with the fact that the map $\operatorname*{td}%
+\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}$ respects the neutral elements of
+the additive groups $K$ and $\Lambda\left(  K\otimes_{\mathbf{Z}}%
+\mathbf{Z}^{\prime}\right)  $, this yields: The map $\operatorname*{td}%
+_{\varphi,T,\mathbf{Z}^{\prime}}:K\rightarrow\Lambda\left(  K\otimes
+_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $ is a homomorphism of additive
+groups. Corollary 10.35 is proven.
+
+We can also generalize Proposition 10.24:
+
+\begin{quote}
+\textbf{Proposition 10.36.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
+$K$ is a $\mathbf{Z}$-algebra. Let $u$ be a $1$-dimensional element of $K$.
+Let $\mathbf{Z}^{\prime}$ be a $\mathbf{Z}$-algebra. Let $\varphi
+\in1+\mathbf{Z}^{\prime}\left[  \left[  t\right]  \right]  ^{+}$ be a power
+series with constant term equal to $1$. Then, $\operatorname*{td}%
+\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  u\right)  =\varphi\left(
+\left(  u\otimes1\right)  T\right)  $, where $u\otimes1$ denotes the element
+$u\otimes1$ of $K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$.
+\end{quote}
+
+\textit{Proof of Proposition 10.36.} Let $\iota:K\rightarrow K\otimes
+_{\mathbf{Z}}\mathbf{Z}^{\prime}$ be canonical map (mapping every $\xi\in K$
+to $\xi\otimes1\in K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$). Then,
+$\iota\left[  \left[  T\right]  \right]  \left(  1+uT\right)  =1+\left(
+u\otimes1\right)  T$.
+
+Proposition 10.29 (applied to $x=u$) yields $\operatorname*{td}_{\varphi
+,T,\mathbf{Z}^{\prime}}\left(  u\right)  =\mathfrak{Todd}_{\varphi}\left(
+\iota\left[  \left[  T\right]  \right]  \left(  \lambda_{T}\left(  u\right)
+\right)  \right)  $. But Theorem 8.3 \textbf{(a)} (applied to $x=u$) yields
+that $\lambda_{T}\left(  u\right)  =1+uT$ (since the element $u$ is
+$1$-dimensional). Thus,%
+\begin{align*}
+\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  u\right)
+&  =\mathfrak{Todd}_{\varphi}\left(  \iota\left[  \left[  T\right]  \right]
+\left(  \underbrace{\lambda_{T}\left(  u\right)  }_{=1+uT}\right)  \right)
+=\mathfrak{Todd}_{\varphi}\left(  \underbrace{\iota\left[  \left[  T\right]
+\right]  \left(  1+uT\right)  }_{=1+\left(  u\otimes1\right)  T}\right)
+=\mathfrak{Todd}_{\varphi}\left(  1+\left(  u\otimes1\right)  T\right) \\
+&  =\varphi\left(  \left(  u\otimes1\right)  T\right)
+\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Proposition 10.26, applied to}\\
+\mathbf{Z}^{\prime}\text{, }K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\text{ and
+}u\otimes1\text{ instead of }\mathbf{Z}\text{, }K\text{ and }u
+\end{array}
+\right)  .
+\end{align*}
+This proves Proposition 10.36.
+
+Finally, the analogue to Theorem 10.27:
+
+\begin{quote}
+\textbf{Theorem 10.37.} Let $\mathbf{Z}$ be a ring. Let $\mathbf{Z}^{\prime}$
+be a $\mathbf{Z}$-algebra. Let $\varphi\in1+\mathbf{Z}^{\prime}\left[  \left[
+t\right]  \right]  ^{+}$ be a power series with constant term equal to $1$.
+Let $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a
+$\lambda$-ring such that $K$ is a $\mathbf{Z}$-algebra. Let $u_{1},$ $u_{2},$
+$...,$ $u_{m}$ be $1$-dimensional elements of $K$. Then,%
 \[
-\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  =\prod\limits_{i=1}%
-^{m}\operatorname*{td}\nolimits_{\varphi_{i},T}\left(  x\right)
-\ \ \ \ \ \ \ \ \ \ \text{for every }x\in\widetilde{K}.
+\operatorname*{td}\nolimits_{\varphi,T,\mathbf{Z}^{\prime}}\left(  u_{1}%
++u_{2}+...+u_{m}\right)  =\prod\limits_{i=1}^{m}\varphi\left(  \left(
+u_{i}\otimes1\right)  T\right)  .
 \]
 
 
 
 \end{quote}
 
-[...]
-
-\begin{quote}
-\textbf{Definition \& Theorem 10.X1.} Let $\mathbf{Z}$ be a ring. Let
-$\varphi\in1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$ be a power
-series with constant term equal to $1$. There exists one and only one
-polynomial $\operatorname*{Td}_{\varphi,j}\in\mathbf{Z}\left[  \alpha
-_{1},\alpha_{2},...,\alpha_{j}\right]  $ for every $j\in\mathbb{N}$ such that%
-\[
-\prod\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)  =\sum_{j\in\mathbb{N}%
-}\operatorname*{Td}\nolimits_{\varphi,j}\left(  X_{1},X_{2},...,X_{j}\right)
-T^{j}%
-\]
-in the ring $\left(  \mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)
-\left[  \left[  T\right]  \right]  $ for every $m\in\mathbb{N}$, where
-$X_{i}=\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
-;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{k}$ as usual.
-
-\textbf{Theorem 10.X2.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
-\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
-$K$ is a $\mathbf{Z}$-algebra. Let $u_{1},$ $u_{2},$ $...,$ $u_{m}$ be
-$1$-dimensional elements of $K$. Let $j\in\mathbb{N}$. Then,%
-\[
-\operatorname*{td}\nolimits_{\varphi,T}\left(  u_{1}+u_{2}+...+u_{m}\right)
-=\prod\limits_{i=1}^{m}\varphi\left(  u_{i}T\right)  .
-\]
-
-
-\textbf{Theorem 10.X3.} Let $\mathbf{Z}$ be a ring. Let $\left(  K,\left(
-\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring such that
-$K$ is a $\mathbf{Z}$-algebra. Then, $\operatorname*{td}_{\varphi,T}\left(
-K\right)  \subseteq\Lambda\left(  K\right)  $, and $\operatorname*{td}%
-_{\varphi,T}:K\rightarrow\Lambda\left(  K\right)  $ is a homomorphism of
-additive groups.
-
-\textbf{Definition.} Let $j\in\mathbb{N}\setminus\left\{  0\right\}  $. Let
-$\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a
-$\lambda$-ring. Define a homomorphism $\theta_{T}^{j}:K\rightarrow K\left[
-\left[  T\right]  \right]  $ by $\theta_{T}^{j}=\operatorname*{td}%
-_{\varphi_{j},T},$ where $\varphi_{j}\in\mathbb{Z}\left[  t\right]  $ is the
-polynomial $1+t+t^{2}+...+t^{j-1}=\dfrac{1-t^{j}}{1-t}$.
-\end{quote}
-
-[Again, [1] considers only $\theta^{j}:=\theta_{1}^{j},$ which again is
-defined on $x$ only if $x$ is finite-dimensional. These $\theta^{j}$ (or
-$\theta^{j}\left(  x\right)  $ ?) are called \textit{Bott's cannibalistic
-classes}, for whatever reason.]
-
-\begin{quote}
-\textbf{Theorem 10.X4.} Let $\left(  K,\left(  \lambda^{i}\right)
-_{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring. Let $x\in K$. Let
-$j\in\mathbb{N}\diagdown\left\{  0\right\}  $. Then, $\left(  \psi^{j}\left[
-\left[  T\right]  \right]  \right)  \left(  \lambda_{-T}\left(  x\right)
-\right)  =\lambda_{-T}\left(  x\right)  \theta_{T}^{j}\left(  x\right)  $
-(where $\psi^{j}\left[  \left[  T\right]  \right]  $ means the homomorphism
-$K\left[  \left[  T\right]  \right]  \rightarrow K\left[  \left[  T\right]
-\right]  $ defined by $\left(  \psi^{j}\left[  \left[  T\right]  \right]
-\right)  \left(  \sum\limits_{i\in\mathbb{N}}a_{i}T^{i}\right)  =\sum
-\limits_{i\in\mathbb{N}}\psi^{j}\left(  a_{i}\right)  T^{i}$ for every power
-series $\sum\limits_{i\in\mathbb{N}}a_{i}T^{i}\in K\left[  \left[  T\right]
-\right]  $).
-\end{quote}
+\textit{Proof of Theorem 10.37.} Theorem 10.37 can be proven with the help of
+Proposition 10.36 in the same way as we proved Theorem 10.27 with the help of
+Proposition 10.24. We leave the details to the reader.
 
 \begin{quotation}
 \textit{Exercise 10.1.} Let $K$ be a ring. Let $m\in\mathbb{N}$. For every
@@ -7004,6 +8805,21 @@ _{i}\right)  =1$ and $\operatorname*{Coeff}\nolimits_{1}\left(  \prod
 [This is a very easy exercise. It stands here because I used it to prove
 Proposition 10.6 in an earlier version of this text.]
 \end{quotation}
+
+\bigskip
+
+\fbox{\textbf{WARNING:} The following is incomplete and no proofs have been
+added yet.}
+
+\begin{center}
+\fbox{\textbf{11. Representation and Grothendieck rings}}
+\end{center}
+
+This Section, once it is written, will contain Seiler's proof that
+representation rings (Grothendieck rings of categories of representations on
+projective modules) are special $\lambda$-rings.
+
+[...]
 
 \begin{center}
 \fbox{\textbf{X. Positive structure on }$\lambda$\textbf{-rings}}
@@ -9000,4 +10816,6 @@ Academic Press 1988, pp. 93-102.
 
 [8] Darij Grinberg, \textit{Witt\#4a: Equigraded power series}.\newline%
 \texttt{www.cip.ifi.lmu.de/\symbol{126}grinberg/algebra/witt4a.pdf}
+
+
 \end{document}
