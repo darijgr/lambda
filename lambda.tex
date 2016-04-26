@@ -8,7 +8,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.00.0.2570}
-%TCIDATA{LastRevised=Friday, September 04, 2009 16:13:08}
+%TCIDATA{LastRevised=Saturday, September 05, 2009 12:00:51}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 \voffset=-2.5cm
@@ -3587,8 +3587,9 @@ Now, let us define Adams operations:
 ,\lambda^{2}\left(  x\right)  ,...,\lambda^{j}\left(  x\right)  \right)
 \ \ \ \ \ \ \ \ \ \ \text{for every }x\in K. \label{PsiDef}%
 \end{equation}
-We call $\psi^{j}$ the $j$\textit{-th Adams character} of the $\lambda$-ring
-$\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $.
+We call $\psi^{j}$ the $j$\textit{-th Adams operation} (or the $j$\textit{-th
+Adams character}) of the $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $.
 \end{quote}
 
 Before we prove a batch of properties of these Adams characters, let us show
@@ -4056,7 +4057,7 @@ Theorem 9.3 \textbf{(c)} is proven.
 \begin{quotation}
 \textit{Exercise 9.1.} Let $K$ be a ring. Let $u\in1+K\left[  T\right]  ^{+}$.
 For every $j\in\mathbb{N}$, let us denote by $\widehat{\psi}^{j}$ the $j$-th
-Adams character of the $\lambda$-ring $\left(  \Lambda\left(  K\right)
+Adams operation of the $\lambda$-ring $\left(  \Lambda\left(  K\right)
 ,\left(  \widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $.
 
 Assume that $u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}%
@@ -4111,6 +4112,173 @@ u_{i}^{j}\right]  \right) \\
 \textbf{(a)}}\right)  .
 \end{align*}
 }
+
+\textit{Exercise 9.2.} Let $K$ be a ring. Let $i\in\mathbb{N}\setminus\left\{
+0\right\}  $. Define a mapping $\operatorname*{coeff}\nolimits_{i}%
+:\Lambda\left(  K\right)  \rightarrow K$ by $\operatorname*{coeff}%
+\nolimits_{i}\left(  \sum\limits_{j\in\mathbb{N}}a_{j}T^{j}\right)  =a_{i}$
+for every $\sum\limits_{j\in\mathbb{N}}a_{j}T^{j}\in\Lambda\left(  K\right)  $
+(with $a_{j}\in K$ for every $j\in\mathbb{N}$). (In other words,
+$\operatorname*{coeff}\nolimits_{i}$ is the mapping that takes a power series
+and returns its coefficient before $T^{i}.$)
+
+\textbf{(a)} Prove that the map%
+\begin{align*}
+\Lambda\left(  K\right)   &  \rightarrow K,\\
+u  &  \mapsto\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
+-T\dfrac{d}{dT}\log u\right)
+\end{align*}
+is a ring homomorphism.
+
+\textbf{(b)} This fact, combined with Theorem 9.2 \textbf{(b)}, can be used to
+give a new proof of a part of Theorem 9.3 \textbf{(b)}. Which part, and
+how?\ \ \ \ \footnote{\textit{Hints to solution:} \textbf{(a)} It is easy to
+see that the map sends the zero $1$ of $\Lambda\left(  K\right)  $ to the zero
+$0$ of $K$ and the multiplicative unity $1+T$ of $\Lambda\left(  K\right)  $
+to the multiplicative unity $1$ of $K$. So it only remains to prove that any
+two power series $u\in\Lambda\left(  K\right)  $ and $v\in\Lambda\left(
+K\right)  $ satisfy%
+\begin{equation}
+\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
+{d}{dT}\log\left(  u\widehat{+}v\right)  \right)  =\left(  -1\right)
+^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log u\right)
++\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
+{d}{dT}\log v\right)  \label{9.2.plus}%
+\end{equation}
+and%
+\begin{equation}
+\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
+{d}{dT}\log\left(  u\widehat{\cdot}v\right)  \right)  =\left(  -1\right)
+^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log u\right)
+\cdot\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
+-T\dfrac{d}{dT}\log v\right)  .\label{9.2.times}%
+\end{equation}
+This needs to be verified for $u\in1+K\left[  T\right]  ^{+}$ and
+$v\in1+K\left[  T\right]  ^{+}$ only (since the operations $\widehat{+}$ and
+$\widehat{\cdot}$ and the mapping%
+\begin{align*}
+\Lambda\left(  K\right)   &  \rightarrow K,\\
+u &  \mapsto\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
+-T\dfrac{d}{dT}\log u\right)
+\end{align*}
+are continuous (where the topology on $K$ can be chosen arbitrarily), and
+$1+K\left[  T\right]  ^{+}$ is a dense subset of $1+K\left[  \left[  T\right]
+\right]  ^{+}=\Lambda\left(  K\right)  $). So let us assume that
+$u\in1+K\left[  T\right]  ^{+}$ and $v\in1+K\left[  T\right]  ^{+}$. Then,
+there exists some $\left(  \widetilde{K}_{u},\left[  u_{1},u_{2}%
+,...,u_{m}\right]  \right)  \in K^{\operatorname*{int}}$ such that
+$u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
+$ and some $\left(  \widetilde{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]
+\right)  \in K^{\operatorname*{int}}$ such that $v=\Pi\left(  \widetilde
+{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  $. Then, Theorem 5.3
+\textbf{(c)} says that $u\widehat{\cdot}v=\Pi\left(  \widetilde{K}%
+_{u,v},\left[  u_{i}v_{j}\mid\left(  i,j\right)  \in\left\{
+1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right]  \right)  $.
+\par
+Now,%
+\[
+u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
+=\prod_{k=1}^{m}\left(  1+u_{k}T\right)
+\]
+entails%
+\begin{align*}
+\dfrac{d}{dT}u &  =\dfrac{d}{dT}\prod_{k=1}^{m}\left(  1+u_{k}T\right)
+=\sum_{\tau=1}^{m}\underbrace{\prod_{k\in\left\{  1,2,...,m\right\}
+\setminus\left\{  \tau\right\}  }\left(  1+u_{k}T\right)  }_{=\dfrac
+{\prod\limits_{k=1}^{m}\left(  1+u_{k}T\right)  }{1+u_{\tau}T}}\cdot
+\underbrace{\dfrac{d}{d\tau}\left(  1+u_{\tau}T\right)  }_{=u_{\tau}%
+}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the Leibniz rule}\right)  \\
+&  =\sum_{\tau=1}^{m}\left(  \underbrace{\prod\limits_{k=1}^{m}\left(
+1+u_{k}T\right)  }_{=u}\right)  \cdot\dfrac{u_{\tau}}{1+u_{\tau}T}=u\sum
+_{\tau=1}^{m}\dfrac{u_{\tau}}{1+u_{\tau}T}%
+\end{align*}
+and thus%
+\begin{align*}
+-T\dfrac{d}{dT}\log u &  =-T\dfrac{\dfrac{d}{dT}u}{u}=-T\dfrac{u\sum
+\limits_{\tau=1}^{m}\dfrac{u_{\tau}}{1+u_{\tau}T}}{u}=-T\sum\limits_{\tau
+=1}^{m}\dfrac{u_{\tau}}{1+u_{\tau}T}=\sum\limits_{\tau=1}^{m}\left(  -u_{\tau
+}T\right)  \left(  1+u_{\tau}T\right)  ^{-1}=\sum\limits_{\tau=1}^{m}\left(
+-u_{\tau}T\right)  \sum_{\rho\in\mathbb{N}}\left(  -1\right)  ^{\rho}\left(
+u_{\tau}T\right)  ^{\rho}\\
+&  =\sum\limits_{\tau=1}^{m}\sum_{\rho\in\mathbb{N}}\left(  -1\right)
+^{\rho+1}\left(  u_{\tau}T\right)  ^{\rho+1}=\sum\limits_{\tau=1}^{m}%
+\sum_{i\in\mathbb{N}\setminus\left\{  0\right\}  }\left(  -1\right)
+^{i}\left(  u_{\tau}T\right)  ^{i}=\sum\limits_{\tau=1}^{m}\sum_{i\in
+\mathbb{N}\setminus\left\{  0\right\}  }\left(  -1\right)  ^{i}u_{\tau}%
+^{i}T^{i}=\sum_{i\in\mathbb{N}\setminus\left\{  0\right\}  }\left(  -1\right)
+^{i}\sum\limits_{\tau=1}^{m}u_{\tau}^{i}T^{i},
+\end{align*}
+so that $\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log
+u\right)  =\left(  -1\right)  ^{i}\sum\limits_{\tau=1}^{m}u_{\tau}^{i}$. In
+other words, $\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
+-T\dfrac{d}{dT}\log u\right)  =u_{\tau}^{i}$. Similarly, $v=\Pi\left(
+\widetilde{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  $ yields
+$\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
+{d}{dT}\log v\right)  =\sum\limits_{\sigma=1}^{n}v_{\sigma}^{i}$, and
+$u\widehat{\cdot}v=\Pi\left(  \widetilde{K}_{u,v},\left[  u_{i}v_{j}%
+\mid\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  \right]  \right)  $ yields $\left(  -1\right)
+^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log\left(
+u\widehat{\cdot}v\right)  \right)  =\sum\limits_{\tau=1}^{m}\sum
+\limits_{\sigma=1}^{n}\left(  u_{\tau}v_{\sigma}\right)  ^{i}$. Thus,%
+\begin{align*}
+\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
+{d}{dT}\log\left(  u\widehat{\cdot}v\right)  \right)   &  =\sum\limits_{\tau
+=1}^{m}\sum\limits_{\sigma=1}^{n}\left(  u_{\tau}v_{\sigma}\right)  ^{i}%
+=\sum\limits_{\tau=1}^{m}\sum\limits_{\sigma=1}^{n}u_{\tau}^{i}v_{\sigma}%
+^{i}=\sum\limits_{\tau=1}^{m}u_{\tau}^{i}\cdot\sum\limits_{\sigma=1}%
+^{n}v_{\sigma}^{i}\\
+&  =\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
+-T\dfrac{d}{dT}\log u\right)  \cdot\left(  -1\right)  ^{i}%
+\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log v\right)  ,
+\end{align*}
+and (\ref{9.2.times}) is thus proven. Similarly we can show (\ref{9.2.plus}).
+This completes the proof.
+\par
+\textbf{(b)} Using Exercise 9.2 \textbf{(a)}, we can easily prove the
+following fact:
+\par
+\textit{Assertion }$\mathcal{F}$\textit{:} If $\left(  K,\left(  \lambda
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a special $\lambda$-ring, then,
+for any $i\in\mathbb{N}\setminus\left\{  0\right\}  $, the $i$-th Adams
+operation $\psi^{i}:K\rightarrow K$ is a ring homomorphism.
+\par
+This assertion is a part of Theorem 9.3 \textbf{(b)}.
+\par
+In order to prove Assertion $\mathcal{F}$ using Exercise 9.2 \textbf{(a)}, we
+notice that the composition of the map $\lambda_{T}:K\rightarrow\Lambda\left(
+K\right)  $ (which is a ring homomorphism, since the $\lambda$-ring $\left(
+K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is special) with the
+map%
+\begin{align*}
+\Lambda\left(  K\right)   &  \rightarrow K,\\
+u &  \mapsto\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
+-T\dfrac{d}{dT}\log u\right)
+\end{align*}
+(which is a ring homomorphism according to Exercise 9.2 \textbf{(a)}) is
+$\psi^{i}$ (because every $x\in K$ satisfies
+\[
+\sum\limits_{i\in\mathbb{N}\setminus\left\{  0\right\}  }\psi^{i}\left(
+x\right)  T^{i}=\widetilde{\psi}_{T}\left(  x\right)  =-T\dfrac{d}{dT}%
+\log\lambda_{-T}\left(  x\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem
+9.2 \textbf{(b)}}\right)  ,
+\]
+what (upon the substitution of $-T$ for $T$) becomes%
+\[
+\sum\limits_{i\in\mathbb{N}\setminus\left\{  0\right\}  }\psi^{i}\left(
+x\right)  \left(  -T\right)  ^{i}=-\left(  -T\right)  \dfrac{d}{d\left(
+-T\right)  }\log\lambda_{-\left(  -T\right)  }\left(  x\right)  =-T\dfrac
+{d}{dT}\log\lambda_{T}\left(  x\right)  ,
+\]
+what rewrites as $\sum\limits_{i\in\mathbb{N}\setminus\left\{  0\right\}
+}\left(  -1\right)  ^{i}\psi^{i}\left(  x\right)  T^{i}=-T\dfrac{d}{dT}%
+\log\lambda_{T}\left(  x\right)  $, and thus we have $\left(  -1\right)
+^{i}\psi^{i}\left(  x\right)  =\operatorname*{coeff}\nolimits_{i}\left(
+-T\dfrac{d}{dT}\log\lambda_{T}\left(  x\right)  \right)  $ and therefore
+$\psi^{i}\left(  x\right)  =\left(  -1\right)  ^{i}\operatorname*{coeff}%
+\nolimits_{i}\left(  -T\dfrac{d}{dT}\log\lambda_{T}\left(  x\right)  \right)
+$). Thus, $\psi^{i}$ is a ring homomorphism (since the composition of two ring
+homomorphisms is a ring homomorphism). This proves Assertion $\mathcal{F}$.}
 
 \bigskip
 \end{quotation}
