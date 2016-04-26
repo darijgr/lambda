@@ -7,8 +7,8 @@
 \usepackage{amsmath}%
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
-%TCIDATA{Version=5.50.0.2890}
-%TCIDATA{LastRevised=Thursday, June 16, 2011 11:53:56}
+%TCIDATA{Version=5.50.0.2960}
+%TCIDATA{LastRevised=Thursday, September 15, 2011 12:21:43}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
@@ -20,7 +20,6 @@
 \setlength\textheight{24cm}
 \setlength\textwidth{15.5cm}
 \begin{document}
-
 
 %\begin{titlepage}
 %$\ $\\[20mm]
@@ -36,12 +35,13 @@
 %$\ \ \ $
 %\newpage
 
+
 \begin{center}
 \fbox{$\lambda$\textbf{-rings: Definitions and basic properties}}
 
 Darij Grinberg
 
-\textit{Version 0.0.5, last revised 15 Jun 2011}
+\textit{Version 0.0.6, last revised 15 Sep 2011}
 \end{center}
 
 This is a \textbf{BETA VERSION} and has never been proofread. \textbf{Please
@@ -49,9 +49,13 @@ notify me of any mistakes, typos and hard-to-understand arguments you
 find!\footnote{my email address is \texttt{A@B.com}, where
 \texttt{A=darijgrinberg} and \texttt{B=gmail}}}
 
+Thanks to Martin Brandenburg for pointing out several flaws.
+
 At the moment, section 1 is missing a proof (namely, that the representation
 ring is a \textit{special} $\lambda$-ring; I actually don't know this proof)
-and sections 10-... are more or less missing.
+and sections 10-... are more or less missing. Also, I am searching for a nice
+proof (or a counterexample) to Theorem 9.2 in the case of arbitrary
+(non-special) $\lambda$-rings.
 
 \bigskip
 
@@ -520,11 +524,12 @@ in both $x$ and $y$, so it is enough to prove it for all natural $x$ and $y$
 (because a polynomial identity holding for all natural variables must hold
 everywhere). But for $x$ and $y$ natural, we have%
 \[
-\sum_{k=0}^{x+y}\sum_{i=0}^{k}\dbinom{x}{i}\dbinom{y}{k-i}T^{k}=\underbrace
-{\sum_{i=0}^{x}\dbinom{x}{i}T^{i}}_{\substack{=\left(  1+T\right)  ^{x}\text{
-by the}\\\text{binomial formula}}}\cdot\underbrace{\sum_{j=0}^{y}\dbinom{y}%
-{j}T^{j}}_{\substack{=\left(  1+T\right)  ^{y}\text{ by the}\\\text{binomial
-formula}}}=\left(  1+T\right)  ^{x+y}=\sum_{k=0}^{x+y}\dbinom{x+y}{k}T^{k}%
+\sum_{k=0}^{x+y}\sum_{i=0}^{k}\dbinom{x}{i}\dbinom{y}{k-i}T^{k}%
+=\underbrace{\sum_{i=0}^{x}\dbinom{x}{i}T^{i}}_{\substack{=\left(  1+T\right)
+^{x}\text{ by the}\\\text{binomial formula}}}\cdot\underbrace{\sum_{j=0}%
+^{y}\dbinom{y}{j}T^{j}}_{\substack{=\left(  1+T\right)  ^{y}\text{ by
+the}\\\text{binomial formula}}}=\left(  1+T\right)  ^{x+y}=\sum_{k=0}%
+^{x+y}\dbinom{x+y}{k}T^{k}%
 \]
 in the polynomial ring $\mathbb{Z}\left[  T\right]  $, and thus
 (\ref{vandermonde}) follows by comparison of
@@ -609,8 +614,7 @@ T\right]  \right]  $ is defined as $\operatorname*{ev}_{S^{j}T}\left(
 \textbf{(a)} Then, $\left(  K\left[  S\right]  ,\left(  \overline{\lambda}%
 ^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring. The ring $K$ is
 a sub-$\lambda$-ring of $\left(  K\left[  S\right]  ,\left(  \overline
-{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $. Besides, $\overline
-{\lambda}^{i}\left(  S\right)  =0$ for every $i>0$.
+{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $.
 
 \textbf{(b)} For every $a\in K$ and $\alpha\in\mathbb{N}$, we have
 $\overline{\lambda}^{i}\left(  aS^{\alpha}\right)  =\lambda^{i}\left(
@@ -754,13 +758,14 @@ $.
 Prove that $\left(  K\left[  M\right]  ,\left(  \overline{\lambda}^{i}\right)
 _{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring. The ring $K$ is a
 sub-$\lambda$-ring of $\left(  K\left[  M\right]  ,\left(  \overline{\lambda
-}^{i}\right)  _{i\in\mathbb{N}}\right)  $. Besides, $\overline{\lambda}%
-^{i}\left(  m\right)  =0$ for every $m\in M$ and $i>0$.
+}^{i}\right)  _{i\in\mathbb{N}}\right)  $. For every $a\in K$ and $m\in M$, we
+have $\overline{\lambda}^{i}\left(  am\right)  =\lambda^{i}\left(  a\right)
+m^{i}$ for every $i\in\mathbb{N}$.
 
 \textbf{(b)} Show that Exercise 3.4 is a particular case of \textbf{(a)} for
-$K=\mathbb{Z}$, and that Theorem 3.3 \textbf{(a)} is a particular case of
-\textbf{(a)} for $M\cong\mathbb{N}$ (where $\mathbb{N}$ denotes the
-\textit{additive} monoid $\mathbb{N}$).
+$K=\mathbb{Z}$, and that Theorem 3.3 is a particular case of \textbf{(a)} for
+$M\cong\mathbb{N}$ (where $\mathbb{N}$ denotes the \textit{additive} monoid
+$\mathbb{N}$).
 \end{quotation}
 
 \begin{center}
@@ -964,9 +969,9 @@ m\right)  },V_{1},V_{2},...,V_{n}\right)  =\widehat{Q}_{\sigma}\left(
 Y_{1},Y_{2},...,Y_{n}\right)  $. But $P\left(  U_{1},U_{2},...,U_{m}%
 ,V_{1},V_{2},...,V_{n}\right)  =P\left(  U_{\sigma\left(  1\right)
 },U_{\sigma\left(  2\right)  },...,U_{\sigma\left(  m\right)  },V_{1}%
-,V_{2},...,V_{n}\right)  $ (since $P$ is UV-symmetric). Thus, $\widehat
-{Q}\left(  Y_{1},Y_{2},...,Y_{n}\right)  =\widehat{Q}_{\sigma}\left(
-Y_{1},Y_{2},...,Y_{n}\right)  $ for every permutation $\sigma$ of $\left\{
+,V_{2},...,V_{n}\right)  $ (since $P$ is UV-symmetric). Thus, $\widehat{Q}%
+\left(  Y_{1},Y_{2},...,Y_{n}\right)  =\widehat{Q}_{\sigma}\left(  Y_{1}%
+,Y_{2},...,Y_{n}\right)  $ for every permutation $\sigma$ of $\left\{
 1,2,...,m\right\}  $. This yields $\widehat{Q}=\widehat{Q}_{\sigma}$ for every
 permutation $\sigma$ of $\left\{  1,2,...,m\right\}  $ (since $Y_{1},$
 $Y_{2},$ $...,$ $Y_{n}$ are algebraically independent over $K\left[
@@ -985,13 +990,13 @@ $\widehat{Q}$ before $\beta_{1}^{\lambda_{1}}\beta_{2}^{\lambda_{2}}%
 ...\beta_{n}^{\lambda_{n}}$ is $R_{\left(  \lambda_{1},\lambda_{2}%
 ,...,\lambda_{n}\right)  }\left(  X_{1},X_{2},...,X_{m}\right)  $. Thus,%
 \begin{align*}
-&  P\left(  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right)  =\widehat
-{Q}\left(  Y_{1},Y_{2},...,Y_{n}\right) \\
+&  P\left(  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right)  =\widehat{Q}%
+\left(  Y_{1},Y_{2},...,Y_{n}\right) \\
 &  =\sum_{\left(  \lambda_{1},\lambda_{2},...,\lambda_{n}\right)
-\in\mathbb{N}^{n}}\left(  \text{the coefficient of the polynomial }\widehat
-{Q}\text{ before }\beta_{1}^{\lambda_{1}}\beta_{2}^{\lambda_{2}}...\beta
-_{n}^{\lambda_{n}}\right)  Y_{1}^{\lambda_{1}}Y_{2}^{\lambda_{2}}%
-...Y_{n}^{\lambda_{n}}\\
+\in\mathbb{N}^{n}}\left(  \text{the coefficient of the polynomial }%
+\widehat{Q}\text{ before }\beta_{1}^{\lambda_{1}}\beta_{2}^{\lambda_{2}%
+}...\beta_{n}^{\lambda_{n}}\right)  Y_{1}^{\lambda_{1}}Y_{2}^{\lambda_{2}%
+}...Y_{n}^{\lambda_{n}}\\
 &  =\sum_{\left(  \lambda_{1},\lambda_{2},...,\lambda_{n}\right)
 \in\mathbb{N}^{n}}R_{\left(  \lambda_{1},\lambda_{2},...,\lambda_{n}\right)
 }\left(  X_{1},X_{2},...,X_{m}\right)  Y_{1}^{\lambda_{1}}Y_{2}^{\lambda_{2}%
@@ -1062,13 +1067,13 @@ _{2},...,\alpha_{m},\beta_{1},\beta_{2},...,\beta_{n}\right]  $ such that%
 1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}\prod_{\left(  i,j\right)
 \in S}U_{i}V_{j}=Q\left(  X_{1},X_{2},...,X_{m},Y_{1},Y_{2},...,Y_{m}\right)
 \]
-in $\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{m},\beta_{1},\beta
-_{2},...,\beta_{n}\right]  $. Since the polynomial $\sum
-\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
-1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}\prod_{\left(  i,j\right)
-\in S}U_{i}V_{j}$ has total degree $\leq k$ in the variables $U_{1},$ $U_{2},$
-$...,$ $U_{m}$ and of total degree $\leq k$ in the variables $V_{1},$ $V_{2},$
-$...,$ $V_{n}$, Theorem 4.2 \textbf{(b)} yields that%
+in $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]  $.
+Since the polynomial $\sum\limits_{\substack{S\subseteq\left\{
+1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  ;\\\left\vert
+S\right\vert =k}}\prod_{\left(  i,j\right)  \in S}U_{i}V_{j}$ has total degree
+$\leq k$ in the variables $U_{1},$ $U_{2},$ $...,$ $U_{m}$ and of total degree
+$\leq k$ in the variables $V_{1},$ $V_{2},$ $...,$ $V_{n}$, Theorem 4.2
+\textbf{(b)} yields that%
 \[
 \sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
 1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}\prod_{\left(  i,j\right)
@@ -1424,7 +1429,7 @@ F_{U}=\left(
 \end{array}
 \right)  .
 \]
-Prove that the polynomial $\det\left(  TU+I_{m}\right)  \in\left(
+Prove that the polynomial $\det\left(  TF_{U}+I_{m}\right)  \in\left(
 \mathbb{Z}\left[  X_{1},X_{2},...,X_{m}\right]  \right)  \left[  T\right]  $
 equals $\prod\limits_{i=1}^{m}\left(  1+U_{i}T\right)  $.
 
@@ -1457,7 +1462,7 @@ F_{V}=\left(
 \end{array}
 \right)  .
 \]
-Prove that the polynomial $\det\left(  -T\left(  U\otimes V\right)
+Prove that the polynomial $\det\left(  -T\left(  F_{U}\otimes F_{V}\right)
 +I_{mn}\right)  \in\left(  \mathbb{Z}\left[  X_{1},X_{2},...,X_{m},Y_{1}%
 ,Y_{2},...,Y_{n}\right]  \right)  \left[  T\right]  $ equals $\prod
 \limits_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
@@ -1517,8 +1522,8 @@ v=\dfrac{u}{v}$ for every $u\in1+K\left[  \left[  T\right]  \right]  ^{+}$ and
 $v\in1+K\left[  \left[  T\right]  \right]  ^{+}$ (since every $v\in1+K\left[
 \left[  T\right]  \right]  ^{+}$ is an invertible power series).
 
-Then, clearly, $\left(  1+K\left[  \left[  T\right]  \right]  ^{+},\widehat
-{+}\right)  $ is an Abelian group with zero $1$.
+Then, clearly, $\left(  1+K\left[  \left[  T\right]  \right]  ^{+}%
+,\widehat{+}\right)  $ is an Abelian group with zero $1$.
 
 Now, define a multiplication $\widehat{\cdot}$ on the set $1+K\left[  \left[
 T\right]  \right]  ^{+}$ by%
@@ -1563,9 +1568,9 @@ $\cdot$ inherited from $K\left[  \left[  T\right]  \right]  $.}
 
 \begin{quote}
 \textbf{Theorem 5.1.} \textbf{(a)} The multiplication $\widehat{\cdot}$ just
-defined makes $\left(  1+K\left[  \left[  T\right]  \right]  ^{+},\widehat
-{+},\widehat{\cdot}\right)  $ a ring with multiplicative unity $1+T$. We will
-call this ring $\Lambda\left(  K\right)  $.
+defined makes $\left(  1+K\left[  \left[  T\right]  \right]  ^{+}%
+,\widehat{+},\widehat{\cdot}\right)  $ a ring with multiplicative unity $1+T$.
+We will call this ring $\Lambda\left(  K\right)  $.
 
 \textbf{(b)} The above defined maps $\widehat{\lambda}^{j}$ make $\left(
 \Lambda\left(  K\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in
@@ -1575,16 +1580,18 @@ call this ring $\Lambda\left(  K\right)  $.
 Before we prove this Theorem 5.1, we try to motivate the above definition of
 $\Lambda\left(  K\right)  $:
 
-The set $1+K\left[  T\right]  ^{+}$, defined by%
+Let $K\left[  T\right]  ^{+}$ be the subset of $K\left[  T\right]  $ defined
+by%
 \begin{align*}
 K\left[  T\right]  ^{+}  &  =TK\left[  T\right]  =\left\{  \sum_{i\in
 \mathbb{N}}a_{i}T^{i}\in K\left[  T\right]  \ \mid\ a_{i}\in K\text{ for all
 }i,\text{ and }a_{0}=0\right\} \\
 &  =\left\{  p\in K\left[  T\right]  \ \mid\ p\text{ is a polynomial with
-constant term }0\right\}  ,
+constant term }0\right\}  .
 \end{align*}
-is a subset of $1+K\left[  \left[  T\right]  \right]  ^{+}.$ The elements of
-$1+K\left[  T\right]  ^{+}$ are polynomials. We have:
+Then, the set $1+K\left[  T\right]  ^{+}$ is a subset of $1+K\left[  \left[
+T\right]  \right]  ^{+}.$ The elements of $1+K\left[  T\right]  ^{+}$ are
+polynomials. We have:
 
 \begin{quote}
 \textbf{Theorem 5.2.} Let $K$ be a ring. For every element $p\in1+K\left[
@@ -1666,8 +1673,8 @@ where $K_{p}$ and $\left[  p_{1},p_{2},...,p_{n}\right]  $ are defined as in
 Theorem 5.2.
 
 Clearly, $\Pi\circ r=\operatorname*{id}$, so that every polynomial
-$p\in1+K\left[  T\right]  ^{+}$ can be written as $p=\Pi\left(  \widetilde
-{K},\left[  u_{1},u_{2},...,u_{n}\right]  \right)  $ for some $\left(
+$p\in1+K\left[  T\right]  ^{+}$ can be written as $p=\Pi\left(  \widetilde{K}%
+,\left[  u_{1},u_{2},...,u_{n}\right]  \right)  $ for some $\left(
 \widetilde{K},\left[  u_{1},u_{2},...,u_{n}\right]  \right)  \in
 K^{\operatorname*{int}}$.
 \end{quote}
@@ -1677,8 +1684,8 @@ This way, we have a correspondence between elements of $1+K\left[  T\right]
 correspondence is neither injective nor surjective, but it reminds us of the
 correspondence between polynomials over a field and their roots over
 extensions of that field (and the proof of Theorem 5.2 explains why), and it
-will help us to understand $\widehat{+},$ $\widehat{\cdot}$ and $\widehat
-{\lambda}^{j}$ better.
+will help us to understand $\widehat{+},$ $\widehat{\cdot}$ and
+$\widehat{\lambda}^{j}$ better.
 
 In fact, we have the following fact:
 
@@ -1701,8 +1708,8 @@ $\widetilde{K}_{u}\otimes\widetilde{K}_{v}$ is a finite-free extension ring of
 $K$, and we can canonically identify $\widetilde{K}_{u}$ with the subring
 $\widetilde{K}_{u}\otimes1$ of $\widetilde{K}_{u}\otimes\widetilde{K}_{v}$,
 and $\widetilde{K}_{v}$ with the subring $1\otimes\widetilde{K}_{v}$ of
-$\widetilde{K}_{u}\otimes\widetilde{K}_{v}$; hence, we can set $\widetilde
-{K}_{u,v}=\widetilde{K}_{u}\otimes\widetilde{K}_{v}$.
+$\widetilde{K}_{u}\otimes\widetilde{K}_{v}$; hence, we can set $\widetilde{K}%
+_{u,v}=\widetilde{K}_{u}\otimes\widetilde{K}_{v}$.
 
 \textbf{(b)} We have $u\widehat{+}v=\Pi\left(  \widetilde{K}_{u,v},\left[
 u_{1},u_{2},...,u_{m},v_{1},v_{2},...,v_{n}\right]  \right)  $.
@@ -1717,9 +1724,9 @@ u_{i}\ \mid\ I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)
 \right]  \right)  $.
 \end{quote}
 
-\textit{Proof of Theorem 5.3.} The assumption that $u=\Pi\left(  \widetilde
-{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)  $ is just a different
-way to say that $u=\prod\limits_{i=1}^{m}\left(  1+u_{i}T\right)  $.
+\textit{Proof of Theorem 5.3.} The assumption that $u=\Pi\left(
+\widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)  $ is just a
+different way to say that $u=\prod\limits_{i=1}^{m}\left(  1+u_{i}T\right)  $.
 Similarly, $v=\prod\limits_{j=1}^{n}\left(  1+v_{j}T\right)  $. Let
 $u=\sum\limits_{i\in\mathbb{N}}a_{i}T^{i}$ and $v=\sum\limits_{i\in\mathbb{N}%
 }b_{i}T^{i}$.
@@ -1727,8 +1734,8 @@ $u=\sum\limits_{i\in\mathbb{N}}a_{i}T^{i}$ and $v=\sum\limits_{i\in\mathbb{N}%
 \textbf{(a)} Obvious.
 
 \textbf{(b)} The equations $u=\prod\limits_{i=1}^{m}\left(  1+u_{i}T\right)  $
-and $v=\prod\limits_{j=1}^{n}\left(  1+v_{j}T\right)  $ yield $u\widehat
-{+}v=uv=\prod\limits_{i=1}^{m}\left(  1+u_{i}T\right)  \prod\limits_{j=1}%
+and $v=\prod\limits_{j=1}^{n}\left(  1+v_{j}T\right)  $ yield $u\widehat{+}%
+v=uv=\prod\limits_{i=1}^{m}\left(  1+u_{i}T\right)  \prod\limits_{j=1}%
 ^{n}\left(  1+v_{j}T\right)  $, what rewrites as $u\widehat{+}v=\Pi\left(
 \widetilde{K}_{u,v},\left[  u_{1},u_{2},...,u_{m},v_{1},v_{2},...,v_{n}%
 \right]  \right)  .$
@@ -1766,8 +1773,8 @@ But%
 \[
 \sum_{k\in\mathbb{N}}P_{k}\left(  a_{1},a_{2},...,a_{k},b_{1},b_{2}%
 ,...,b_{k}\right)  T^{k}=\left(  \sum_{i\in\mathbb{N}}a_{i}T^{i}\right)
-\widehat{\cdot}\left(  \sum_{i\in\mathbb{N}}b_{i}T^{i}\right)  =u\widehat
-{\cdot}v,
+\widehat{\cdot}\left(  \sum_{i\in\mathbb{N}}b_{i}T^{i}\right)
+=u\widehat{\cdot}v,
 \]
 so this becomes%
 \[
@@ -1946,6 +1953,9 @@ the map%
 and the map $\widehat{\lambda}^{j}:1+K\left[  \left[  T\right]  \right]
 ^{+}\rightarrow1+K\left[  \left[  T\right]  \right]  ^{+}$ for every
 $j\in\mathbb{N}$ are continuous.
+
+\textbf{(e)} The topological spaces $K\left[  \left[  T\right]  \right]  $ and
+$1+K\left[  \left[  T\right]  \right]  ^{+}$ are Hausdorff spaces.
 \end{quote}
 
 Note that Theorem 5.5 \textbf{(d)} yields that any finite compositions of the
@@ -1954,8 +1964,8 @@ maps $\widehat{+},$ $\widehat{-},$ $\widehat{\cdot}$ and $\widehat{\lambda
 continuous). In particular, any polynomial with integral coefficients acts on
 $1+K\left[  \left[  T\right]  \right]  ^{+}$ as a continuous map.
 
-\textit{Proof of Theorem 5.5.} \textbf{(a)} is done in any commutative algebra
-book such as [3], Chapter 10.
+\textit{Proof of Theorem 5.5.} \textbf{(a)} and \textbf{(e)} are done in any
+commutative algebra book such as [3], Chapter 10.
 
 \textbf{(b)} and \textbf{(c)} are basic exercises in topology.
 
@@ -1977,26 +1987,27 @@ u\widehat{\cdot}v\right)  \widehat{\cdot}w$ for all $u,v,w\in1+K\left[
 continuous (by Theorem 5.5 \textbf{(d)}), and $1+K\left[  T\right]  ^{+}$ is a
 dense subset of $1+K\left[  \left[  T\right]  \right]  ^{+}$ (by Theorem 5.5
 \textbf{(a)}), this needs only to be shown for all $u,v,w\in1+K\left[
-T\right]  ^{+}$. So let us assume that $u,v,w\in1+K\left[  T\right]  ^{+}$.
-Then, there exist
+T\right]  ^{+}$.\ \ \ \ \footnote{At this point, we are actually also using
+Theorem 5.5 \textbf{(e)}.} So let us assume that $u,v,w\in1+K\left[  T\right]
+^{+}$. Then, there exist
 
 \begin{itemize}
 \item some $\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]
-\right)  \in K^{\operatorname*{int}}$ such that $u=\Pi\left(  \widetilde
-{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)  ,$
+\right)  \in K^{\operatorname*{int}}$ such that $u=\Pi\left(  \widetilde{K}%
+_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)  ,$
 
 \item some $\left(  \widetilde{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]
-\right)  \in K^{\operatorname*{int}}$ such that $v=\Pi\left(  \widetilde
-{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  ,$
+\right)  \in K^{\operatorname*{int}}$ such that $v=\Pi\left(  \widetilde{K}%
+_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  ,$
 
 \item some $\left(  \widetilde{K}_{w},\left[  w_{1},w_{2},...,w_{\ell}\right]
-\right)  \in K^{\operatorname*{int}}$ such that $w=\Pi\left(  \widetilde
-{K}_{w},\left[  w_{1},w_{2},...,w_{\ell}\right]  \right)  $.
+\right)  \in K^{\operatorname*{int}}$ such that $w=\Pi\left(  \widetilde{K}%
+_{w},\left[  w_{1},w_{2},...,w_{\ell}\right]  \right)  $.
 \end{itemize}
 
 Let $L=\widetilde{K}_{u}\otimes\widetilde{K}_{v}\otimes\widetilde{K}_{w}$. We
-identify the rings $\widetilde{K}_{u},$ $\widetilde{K}_{v},$ $\widetilde
-{K}_{w}$ with the subrings $\widetilde{K}_{u}\otimes1\otimes1,$ $1\otimes
+identify the rings $\widetilde{K}_{u},$ $\widetilde{K}_{v},$ $\widetilde{K}%
+_{w}$ with the subrings $\widetilde{K}_{u}\otimes1\otimes1,$ $1\otimes
 \widetilde{K}_{v}\otimes1,$ $1\otimes1\otimes\widetilde{K}_{w}$ of the ring
 $L=\widetilde{K}_{u}\otimes\widetilde{K}_{v}\otimes\widetilde{K}_{w},$
 respectively. This way, $L$ becomes an extension ring of $K$ which contains
@@ -2036,11 +2047,13 @@ associativity of $u\widehat{\cdot}\left(  v\widehat{\cdot}w\right)  =\left(
 u\widehat{\cdot}v\right)  \widehat{\cdot}w$.
 
 \textbf{(b)} It is easy to see that $\widehat{\lambda}^{0}\left(  x\right)
-=1$ and $\widehat{\lambda}^{1}\left(  x\right)  =x$ for every $x\in
-\Lambda\left(  K\right)  $. It now remains to prove that%
+=1+T=\left(  \text{the multiplicative unity of the ring }\left(  1+K\left[
+\left[  T\right]  \right]  ^{+},\widehat{+},\widehat{\cdot}\right)  \right)  $
+and $\widehat{\lambda}^{1}\left(  x\right)  =x$ for every $x\in\Lambda\left(
+K\right)  $. It now remains to prove that%
 \begin{equation}
-\widehat{\lambda}^{j}\left(  u+v\right)  =\widehat{\sum_{i=0}^{j}}%
-\widehat{\lambda}^{i}\left(  u\right)  \widehat{\cdot}\widehat{\lambda}%
+\widehat{\lambda}^{j}\left(  u+v\right)  =\widehat{\sum_{i=0}^{j}%
+}\widehat{\lambda}^{i}\left(  u\right)  \widehat{\cdot}\widehat{\lambda}%
 ^{j-i}\left(  v\right)  \label{SpezLemma1}%
 \end{equation}
 for every $j\in\mathbb{N},$ $u\in\Lambda\left(  K\right)  $ and $v\in
@@ -2082,8 +2095,8 @@ u\widehat{+}v=\Pi\left(  \widetilde{K}_{u,v},\left[  w_{1},w_{2}%
 \]
 Thus, Theorem 5.3 \textbf{(d)} yields%
 \[
-\widehat{\lambda}^{j}\left(  u\widehat{+}v\right)  =\Pi\left(  \widetilde
-{K}_{u,v},\left[  \prod\limits_{i\in I}w_{i}\ \mid\ I\in\mathcal{P}_{j}\left(
+\widehat{\lambda}^{j}\left(  u\widehat{+}v\right)  =\Pi\left(  \widetilde{K}%
+_{u,v},\left[  \prod\limits_{i\in I}w_{i}\ \mid\ I\in\mathcal{P}_{j}\left(
 \left\{  1,2,...,m+n\right\}  \right)  \right]  \right)  .
 \]
 But since%
@@ -2217,7 +2230,10 @@ T}\left(  u\right)  \right)  =\operatorname*{ev}_{\mu^{k}T}\left(
 \end{quote}
 
 \textit{Proof of Theorem 5.7.} \textbf{(a)} Obvious from Theorem 5.5
-\textbf{(b)}.
+\textbf{(b)} (or, more precisely, from the assertion you get if you replace
+$1+K\left[  \left[  T\right]  \right]  ^{+}$ by $K\left[  \left[  T\right]
+\right]  $ in Theorem 5.5 \textbf{(b)}; but this assertion is proven in the
+same way as Theorem 5.5 \textbf{(b)}).
 
 \textbf{(b)} By assumption, $u=\Pi\left(  \widetilde{K},\left[  u_{1}%
 ,u_{2},...,u_{m}\right]  \right)  =\prod\limits_{i=1}^{m}\left(
@@ -2274,7 +2290,16 @@ Hence, $\operatorname*{ev}_{\mu T}\left(  u\right)  \widehat{\cdot
 }\operatorname*{ev}_{\nu T}\left(  v\right)  =\operatorname*{ev}_{\mu\nu
 T}\left(  u\widehat{\cdot}v\right)  $. This proves Theorem 5.7 \textbf{(d)}.
 
-\textbf{(c)} Similar to \textbf{(d)}.
+\textbf{(c)} We can prove Theorem 5.7 \textbf{(c)} similarly to our above
+proof of Theorem 5.7 \textbf{(d)}. However, there is also a much simpler proof
+of Theorem 5.7 \textbf{(c)}: Since $\operatorname*{ev}\nolimits_{\mu T}$ is a
+ring homomorphism, we have $\operatorname*{ev}\nolimits_{\mu T}\left(
+u\right)  \cdot\operatorname*{ev}\nolimits_{\nu T}\left(  v\right)
+=\operatorname*{ev}\nolimits_{\mu T}\left(  u\cdot v\right)  $. Since
+$\widehat{+}$ is the multiplication on $1+K\left[  \left[  T\right]  \right]
+^{+}$, this rewrites as $\operatorname*{ev}_{\mu T}\left(  u\right)
+\widehat{+}\operatorname*{ev}_{\mu T}\left(  v\right)  =\operatorname*{ev}%
+_{\mu T}\left(  u\widehat{+}v\right)  $. This proves Theorem 5.7 \textbf{(c)}.
 
 \textbf{(e)} Since the maps $\widehat{\lambda}^{k}$ and $\operatorname*{ev}%
 _{mT}$ are continuous (by Theorem 5.5 \textbf{(d) }and Theorem 5.7
@@ -2420,12 +2445,12 @@ homomorphism. This map is always an additive group homomorphism (by Theorem
 5.6); hence, it is a $\lambda$-ring homomorphism if and only if it satisfies
 the three conditions%
 \begin{align*}
-\lambda_{T}\left(  xy\right)   &  =\lambda_{T}\left(  x\right)  \widehat
-{\cdot}\lambda_{T}\left(  y\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }x\in
+\lambda_{T}\left(  xy\right)   &  =\lambda_{T}\left(  x\right)  \widehat{\cdot
+}\lambda_{T}\left(  y\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }x\in
 K\text{ and }y\in K,\\
 \lambda_{T}\left(  1\right)   &  =1+T,\ \ \ \ \ \ \ \ \ \ \text{and}\\
-\lambda_{T}\left(  \lambda^{j}\left(  x\right)  \right)   &  =\widehat
-{\lambda}^{j}\left(  \lambda_{T}\left(  x\right)  \right)
+\lambda_{T}\left(  \lambda^{j}\left(  x\right)  \right)   &  =\widehat{\lambda
+}^{j}\left(  \lambda_{T}\left(  x\right)  \right)
 \ \ \ \ \ \ \ \ \ \ \text{for every }j\in\mathbb{N}\text{ and }x\in K
 \end{align*}
 (note that $1+T$ is the multiplicative unity of $\Lambda\left(  K\right)  $).
@@ -2436,11 +2461,11 @@ to $j=0$, yields $\lambda_{T}\left(  1\right)  =1+T$), so we see that the map
 $\lambda_{T}$ is a $\lambda$-ring homomorphism if and only if it satisfies the
 two conditions%
 \begin{align*}
-\lambda_{T}\left(  xy\right)   &  =\lambda_{T}\left(  x\right)  \widehat
-{\cdot}\lambda_{T}\left(  y\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }x\in
+\lambda_{T}\left(  xy\right)   &  =\lambda_{T}\left(  x\right)  \widehat{\cdot
+}\lambda_{T}\left(  y\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }x\in
 K\text{ and }y\in K,\ \ \ \ \ \ \ \ \ \ \text{and}\\
-\lambda_{T}\left(  \lambda^{j}\left(  x\right)  \right)   &  =\widehat
-{\lambda}^{j}\left(  \lambda_{T}\left(  x\right)  \right)
+\lambda_{T}\left(  \lambda^{j}\left(  x\right)  \right)   &  =\widehat{\lambda
+}^{j}\left(  \lambda_{T}\left(  x\right)  \right)
 \ \ \ \ \ \ \ \ \ \ \text{for every }j\in\mathbb{N}\text{ and }x\in K.
 \end{align*}
 
@@ -2462,8 +2487,8 @@ that%
 &  \widehat{\lambda}^{k}\left(  u\widehat{\cdot}v\right)  =\widehat{P_{k}%
 }\left(  \widehat{\lambda}^{1}\left(  u\right)  ,\widehat{\lambda}^{2}\left(
 u\right)  ,...,\widehat{\lambda}^{k}\left(  u\right)  ,\widehat{\lambda}%
-^{1}\left(  v\right)  ,\widehat{\lambda}^{2}\left(  v\right)  ,...,\widehat
-{\lambda}^{k}\left(  v\right)  \right) \nonumber\\
+^{1}\left(  v\right)  ,\widehat{\lambda}^{2}\left(  v\right)
+,...,\widehat{\lambda}^{k}\left(  v\right)  \right) \nonumber\\
 &  \ \ \ \ \ \ \ \ \ \ \text{for every }k\in\mathbb{N}\text{, }u\in
 \Lambda\left(  K\right)  \text{ and }v\in\Lambda\left(  K\right)  ,
 \label{6.2.P.Lkxy}%
@@ -2490,19 +2515,19 @@ $\widehat{S}\left(  \widehat{\lambda}^{1}\left(  u\right)  ,\widehat{\lambda
 }^{2}\left(  u\right)  ,...,\widehat{\lambda}^{kj}\left(  u\right)  \right)  $
 means $\widehat{\lambda}^{1}\left(  u\right)  \widehat{+}\widehat{\lambda}%
 ^{2}\left(  u\right)  \widehat{+}...\widehat{+}\widehat{\lambda}^{kj}\left(
-u\right)  $ (and not $\widehat{\lambda}^{1}\left(  u\right)  +\widehat
-{\lambda}^{2}\left(  u\right)  +...+\widehat{\lambda}^{kj}\left(  u\right)  $,
-where $+$ denotes the addition in the ring $K\left[  \left[  T\right]
-\right]  $). This explains how the right hand sides of the equations
-(\ref{6.2.P.Lkxy}) and (\ref{6.2.P.LkLjx}) should be understood.
+u\right)  $ (and not $\widehat{\lambda}^{1}\left(  u\right)  +\widehat{\lambda
+}^{2}\left(  u\right)  +...+\widehat{\lambda}^{kj}\left(  u\right)  $, where
+$+$ denotes the addition in the ring $K\left[  \left[  T\right]  \right]  $).
+This explains how the right hand sides of the equations (\ref{6.2.P.Lkxy}) and
+(\ref{6.2.P.LkLjx}) should be understood.
 
 Let us prove (\ref{6.2.P.Lkxy}) here. Since the subset $1+K\left[  T\right]
 ^{+}$ is dense in $1+K\left[  \left[  T\right]  \right]  ^{+}=\Lambda\left(
 K\right)  $ (by Theorem 5.5 \textbf{(a)}), and since $\widehat{\cdot}$ and
 $\widehat{\lambda}^{i}$ are continuous (by Theorem 5.5 \textbf{(d)}), it will
 be enough to verify (\ref{6.2.P.Lkxy}) for $u\in1+K\left[  T\right]  ^{+}$ and
-$v\in1+K\left[  T\right]  ^{+}$. Then, there exist some $\left(  \widetilde
-{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)  \in
+$v\in1+K\left[  T\right]  ^{+}$. Then, there exist some $\left(
+\widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)  \in
 K^{\operatorname*{int}}$ such that $u=\Pi\left(  \widetilde{K},\left[
 u_{1},u_{2},...,u_{m}\right]  \right)  ,$ and some $\left(  \widetilde{K}%
 _{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  \in K^{\operatorname*{int}%
@@ -2510,8 +2535,8 @@ _{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  \in K^{\operatorname*{int}%
 \right)  .$ By Theorem 5.3 \textbf{(a)}, there exists a finite-free extension
 ring $\widetilde{K}_{u,v}$ of $K$ which contains both $\widetilde{K}_{u}$ and
 $\widetilde{K}_{v}$ as subrings. We replace $K$ by $\widetilde{K}_{u,v}$ now
-(silently using the obvious fact that the injection $K\rightarrow\widetilde
-{K}_{u,v}$ canonically yields an injection $\Lambda\left(  K\right)
+(silently using the obvious fact that the injection $K\rightarrow
+\widetilde{K}_{u,v}$ canonically yields an injection $\Lambda\left(  K\right)
 \rightarrow\Lambda\left(  \widetilde{K}_{u,v}\right)  $). Hence, we can now
 assume that $u_{1},$ $u_{2},$ $...,$ $u_{m},$ $v_{1},$ $v_{2},$ $...,$ $v_{n}$
 all lie in $K$. Theorem 5.3 \textbf{(c)} yields $u\widehat{\cdot}v=\Pi\left(
@@ -2529,15 +2554,16 @@ every $j$. This homomorphism maps $X_{i}=\sum\limits_{\substack{S\subseteq
 S}U_{k}$ to%
 \begin{align*}
 \widehat{\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
-;\\\left\vert S\right\vert =i}}}\widehat{\prod\limits_{k\in S}}\underbrace
-{\left(  1+u_{k}T\right)  }_{=\Pi\left(  K,\left[  u_{k}\right]  \right)  }
-&  =\widehat{\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
-;\\\left\vert S\right\vert =i}}}\underbrace{\widehat{\prod\limits_{k\in S}}%
-\Pi\left(  K,\left[  u_{k}\right]  \right)  }_{\substack{=\Pi\left(  K,\left[
-\prod\limits_{k\in S}u_{k}\right]  \right)  \\\text{according to Corollary 5.4
-\textbf{(b)}}}}=\widehat{\sum\limits_{\substack{S\subseteq\left\{
-1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}}\Pi\left(  K,\left[
-\prod\limits_{k\in S}u_{k}\right]  \right) \\
+;\\\left\vert S\right\vert =i}}}\widehat{\prod\limits_{k\in S}}%
+\underbrace{\left(  1+u_{k}T\right)  }_{=\Pi\left(  K,\left[  u_{k}\right]
+\right)  }  &  =\widehat{\sum\limits_{\substack{S\subseteq\left\{
+1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}}\underbrace{\widehat{\prod
+\limits_{k\in S}}\Pi\left(  K,\left[  u_{k}\right]  \right)  }_{\substack{=\Pi
+\left(  K,\left[  \prod\limits_{k\in S}u_{k}\right]  \right)
+\\\text{according to Corollary 5.4 \textbf{(b)}}}}=\widehat{\sum
+\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}  ;\\\left\vert
+S\right\vert =i}}}\Pi\left(  K,\left[  \prod\limits_{k\in S}u_{k}\right]
+\right) \\
 &  =\Pi\left(  K,\left[  \prod\limits_{k\in S}u_{k}\mid S\subseteq\left\{
 1,2,...,m\right\}  ;\ \left\vert S\right\vert =i\right]  \right) \\
 &  =\Pi\left(  K,\left[  \prod\limits_{k\in S}u_{k}\mid S\in\mathcal{P}%
@@ -2550,8 +2576,8 @@ $j\in\mathbb{N}$ (according to a similar argument). Hence, applying this
 homomorphism to (\ref{Pk1}), we obtain%
 \begin{align*}
 &  \widehat{\sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}
-\times\left\{  1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}}%
-\widehat{\prod_{\left(  i,j\right)  \in S}}\left(  1+u_{i}T\right)
+\times\left\{  1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}%
+}}\widehat{\prod_{\left(  i,j\right)  \in S}}\left(  1+u_{i}T\right)
 \widehat{\cdot}\left(  1+v_{j}T\right) \\
 &  =\widehat{P_{k}}\left(  \widehat{\lambda}^{1}\left(  u\right)
 ,\widehat{\lambda}^{2}\left(  u\right)  ,...,\widehat{\lambda}^{k}\left(
@@ -2561,18 +2587,17 @@ u\right)  ,\widehat{\lambda}^{1}\left(  v\right)  ,\widehat{\lambda}%
 But%
 \begin{align*}
 &  \widehat{\sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}
-\times\left\{  1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}}%
-\widehat{\prod_{\left(  i,j\right)  \in S}}\underbrace{\left(  1+u_{i}%
-T\right)  \widehat{\cdot}\left(  1+v_{j}T\right)  }_{\substack{=\Pi\left(
-K,\left[  u_{i}\right]  \right)  \widehat{\cdot}\Pi\left(  K,\left[
+\times\left\{  1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}%
+}}\widehat{\prod_{\left(  i,j\right)  \in S}}\underbrace{\left(
+1+u_{i}T\right)  \widehat{\cdot}\left(  1+v_{j}T\right)  }_{\substack{=\Pi
+\left(  K,\left[  u_{i}\right]  \right)  \widehat{\cdot}\Pi\left(  K,\left[
 v_{j}\right]  \right)  \\=\Pi\left(  K,\left[  u_{i}v_{j}\right]  \right)
 \text{ after}\\\text{Theorem 5.3 \textbf{(c)}}}}=\widehat{\sum
 _{\substack{S\subseteq\left\{  1,2,...,m\right\}  \times\left\{
-1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}}\underbrace{\widehat
-{\prod_{\left(  i,j\right)  \in S}}\Pi\left(  K,\left[  u_{i}v_{j}\right]
-\right)  }_{\substack{=\Pi\left(  K,\left[  \prod\limits_{\left(  i,j\right)
-\in S}u_{i}v_{j}\right]  \right)  \\\text{after Corollary 5.4 \textbf{(b)}}%
-}}\\
+1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}}\underbrace{\widehat{\prod
+_{\left(  i,j\right)  \in S}}\Pi\left(  K,\left[  u_{i}v_{j}\right]  \right)
+}_{\substack{=\Pi\left(  K,\left[  \prod\limits_{\left(  i,j\right)  \in
+S}u_{i}v_{j}\right]  \right)  \\\text{after Corollary 5.4 \textbf{(b)}}}}\\
 &  =\widehat{\sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}
 \times\left\{  1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}}}\Pi\left(
 K,\left[  \prod\limits_{\left(  i,j\right)  \in S}u_{i}v_{j}\right]  \right)
@@ -2636,7 +2661,7 @@ _{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring. Then, prove that:
 of the ring $K$.
 
 \textbf{(b)} None of the elements $1,$ $2,$ $3,$ $...$ of the ring $K$ equals
-zero in $K$.
+zero in $K$, unless $K$ is the trivial ring.
 
 \textit{Exercise 6.3.} Consider the ring $\mathbb{Z}\left[  X\right]
 \diagup\left(  X^{2},2X\right)  =\mathbb{Z}\left[  x\right]  $, where $x$
@@ -2795,8 +2820,8 @@ S\right\vert =k}}1=\sum_{S\in\mathcal{P}_{k}\left(  \left\{
 this equality transforms into (\ref{7.1.Lkxy}). Hence, (\ref{7.1.Lkxy}) is
 proven (since, as we said, once it is proven for natural $x$ and $y$, it
 follows for all integers $x$ and $y$). Just as we have derived (\ref{7.1.Lkxy}%
-) from (\ref{Pk1}), we can derive (\ref{LkLjx}) from (\ref{Pkj1}), and Theorem
-7.1 is proven.
+) from (\ref{Pk1}), we can derive (\ref{7.1.LkLjx}) from (\ref{Pkj1}), and
+Theorem 7.1 is proven.
 
 This generalizes:
 
@@ -2886,7 +2911,7 @@ bS^{\beta}\right)  =\overline{\lambda}_{T}\left(  aS^{\alpha}\cdot bS^{\beta
 \widehat{\cdot}\overline{\lambda}_{T}\left(  f\right)  =\overline{\lambda}%
 _{T}\left(  ef\right)  $ for any two elements $e$ and $f$ of $E$. Since $E$ is
 a generating set of the $\mathbb{Z}$-module $K\left[  S\right]  $, and since
-$\overline{\lambda}_{T}$ is already knows to be an additive group
+$\overline{\lambda}_{T}$ is already known to be an additive group
 homomorphism, it thus follows that $\overline{\lambda}_{T}\left(  x\right)
 \widehat{\cdot}\overline{\lambda}_{T}\left(  y\right)  =\overline{\lambda}%
 _{T}\left(  xy\right)  $ for any two elements $x$ and $y$ of $K\left[
@@ -2995,9 +3020,9 @@ subtraction $\widehat{-}$, the zero $1$, the multiplication $\widehat{\cdot}$,
 and the multiplicative unity $1+T$) and the mappings $\widehat{\lambda}^{i}$,
 then it is enough to verify it for elements of $1+K\left[  T\right]  ^{+}$
 only (by continuity, according to Theorem 5.5); and this is usually much
-easier since we know what $\widehat{+}$, $\widehat{\cdot}$ and $\widehat
-{\lambda}^{i}$ mean for elements of $1+K\left[  T\right]  ^{+}$ (this is what
-Theorem 5.3 is for).
+easier since we know what $\widehat{+}$, $\widehat{\cdot}$ and
+$\widehat{\lambda}^{i}$ mean for elements of $1+K\left[  T\right]  ^{+}$ (this
+is what Theorem 5.3 is for).
 
 As a consequence of this, it is no wonder that often an identity is more
 easily proven in $\Lambda\left(  K\right)  $ than in arbitrary $\lambda
@@ -3167,8 +3192,8 @@ $\lambda$-ring $\Lambda\left(  K\right)  $ is $1$-dimensional.
 \textit{Proof of Theorem 8.3.} \textbf{(a)} In fact,%
 \[
 \lambda_{T}\left(  x\right)  =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
-x\right)  T^{i}=\underbrace{\lambda^{0}\left(  x\right)  }_{=1}+\underbrace
-{\lambda^{1}\left(  x\right)  }_{=x}T+\sum
+x\right)  T^{i}=\underbrace{\lambda^{0}\left(  x\right)  }_{=1}%
++\underbrace{\lambda^{1}\left(  x\right)  }_{=x}T+\sum
 \limits_{\substack{i>1\\\text{integer}}}\lambda^{i}\left(  x\right)
 T^{i}=1+xT+\sum\limits_{\substack{i>1\\\text{integer}}}\lambda^{i}\left(
 x\right)  T^{i}.
@@ -3186,8 +3211,8 @@ $\lambda_{T}\left(  x\right)  =1+xT=\Pi\left(  K,\left[  x\right]  \right)  $.
 Similarly, $\lambda_{T}\left(  y\right)  =\Pi\left(  K,\left[  y\right]
 \right)  $. Thus,%
 \begin{align*}
-\lambda_{T}\left(  xy\right)   &  =\lambda_{T}\left(  x\right)  \widehat
-{\cdot}\lambda_{T}\left(  y\right)  =\Pi\left(  K,\left[  x\right]  \right)
+\lambda_{T}\left(  xy\right)   &  =\lambda_{T}\left(  x\right)  \widehat{\cdot
+}\lambda_{T}\left(  y\right)  =\Pi\left(  K,\left[  x\right]  \right)
 \widehat{\cdot}\Pi\left(  K,\left[  y\right]  \right)  =\Pi\left(  K,\left[
 xy\right]  \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{after Theorem 5.3
 \textbf{(c)}}\right) \\
@@ -3197,14 +3222,14 @@ and Theorem 8.3 \textbf{(b)} is proven.
 
 \textbf{(c)} For every integer $i>1$, the element%
 \begin{align*}
-\widehat{\lambda}^{i}\left(  1+eT\right)   &  =\Pi\left(  K^{\prime
-},\underbrace{\left[  \prod_{i\in I}e\mid I\in\mathcal{P}_{i}\left(  \left\{
+\widehat{\lambda}^{i}\left(  1+eT\right)   &  =\Pi\left(
+K,\underbrace{\left[  \prod_{i\in I}e\mid I\in\mathcal{P}_{i}\left(  \left\{
 1\right\}  \right)  \right]  }_{\substack{\text{empty multiset,}\\\text{since
 }i>1\text{ yields }\mathcal{P}_{i}\left(  \left\{  1\right\}  \right)
 =\varnothing}}\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 5.3 \textbf{(d)}, since
-}1+eT=\Pi\left(  K^{\prime},\left[  e\right]  \right)  \right) \\
-&  =\Pi\left(  K^{\prime},\text{ empty multiset}\right)  =1
+}1+eT=\Pi\left(  K,\left[  e\right]  \right)  \right) \\
+&  =\Pi\left(  K,\text{ empty multiset}\right)  =1
 \end{align*}
 is the zero of $\Lambda\left(  K\right)  $. Thus, $1+eT$ is $1$-dimensional.
 Theorem 8.3 \textbf{(c)} is proven.
@@ -3413,7 +3438,7 @@ $\sum\limits_{i=1}^{m}U_{i}^{j}\in\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}%
 \right]  $ is symmetric. Thus, Theorem 4.1 \textbf{(a)} yields that there
 exists one and only one polynomial $Q\in\mathbb{Z}\left[  \alpha_{1}%
 ,\alpha_{2},...,\alpha_{m}\right]  $ such that $\sum\limits_{i=1}^{m}U_{i}%
-^{j}=Q\left(  X_{1},X_{2},...,X_{m}\right)  .$Since the polynomial
+^{j}=Q\left(  X_{1},X_{2},...,X_{m}\right)  .$ Since the polynomial
 $\sum\limits_{i=1}^{m}U_{i}^{j}$ has total degree $\leq j$ in the variables
 $U_{1},$ $U_{2},$ $...,$ $U_{m}$, Theorem 4.1 \textbf{(b)} yields that%
 \[
@@ -3433,7 +3458,7 @@ Now we forget that we fixed $m\in\mathbb{N}$. We have learnt that%
 \]
 in the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ for
 every $m\in\mathbb{N}$. Now, define a polynomial $N_{j}\in\mathbb{Z}\left[
-\alpha_{1},\alpha_{2},...,\alpha_{kj}\right]  $ by $N_{j}=Q_{j,\left[
+\alpha_{1},\alpha_{2},...,\alpha_{j}\right]  $ by $N_{j}=Q_{j,\left[
 j\right]  }.$
 
 This polynomial $N_{j}$ is called the $j$\textit{-th Hirzebruch-Newton
@@ -3534,11 +3559,11 @@ m^{\prime}\right]  }=N_{j}$). This completes the 2nd Step and proves Theorem
 
 \textbf{(b)} We have%
 \begin{align*}
-T\sum_{i=1}^{m}\dfrac{U_{i}}{1-U_{i}T}  &  =\sum_{i=1}^{m}U_{i}T\underbrace
-{\left(  1-U_{i}T\right)  ^{-1}}_{=\sum\limits_{j\in\mathbb{N}}\left(
-U_{i}T\right)  ^{j}}=\sum_{i=1}^{m}\sum_{j\in\mathbb{N}}\left(  U_{i}T\right)
-^{j+1}=\sum_{i=1}^{m}\sum_{j\in\mathbb{N}\setminus\left\{  0\right\}  }\left(
-U_{i}T\right)  ^{j}\\
+T\sum_{i=1}^{m}\dfrac{U_{i}}{1-U_{i}T}  &  =\sum_{i=1}^{m}U_{i}%
+T\underbrace{\left(  1-U_{i}T\right)  ^{-1}}_{=\sum\limits_{j\in\mathbb{N}%
+}\left(  U_{i}T\right)  ^{j}}=\sum_{i=1}^{m}\sum_{j\in\mathbb{N}}\left(
+U_{i}T\right)  ^{j+1}=\sum_{i=1}^{m}\sum_{j\in\mathbb{N}\setminus\left\{
+0\right\}  }\left(  U_{i}T\right)  ^{j}\\
 &  =\sum_{j\in\mathbb{N}\setminus\left\{  0\right\}  }\sum_{i=1}^{m}\left(
 U_{i}T\right)  ^{j}=\sum_{j\in\mathbb{N}\setminus\left\{  0\right\}
 }\underbrace{\sum_{i=1}^{m}U_{i}^{j}}_{\substack{=N_{j}\left(  X_{1}%
@@ -3859,15 +3884,13 @@ the $\psi^{i}$:
 
 \begin{quote}
 \textbf{Theorem 9.4.} Let $\left(  K,\left(  \lambda^{i}\right)
-_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. Let $u_{1},$ $u_{2},$ $...,$
-$u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
-\left\{  0\right\}  $. Then,%
+_{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring. Let $u_{1},$ $u_{2},$
+$...,$ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}%
+\setminus\left\{  0\right\}  $. Then,%
 \[
 \psi^{j}\left(  u_{1}+u_{2}+...+u_{m}\right)  =u_{1}^{j}+u_{2}^{j}%
 +...+u_{m}^{j}.
 \]
-
-
 
 \end{quote}
 
@@ -3875,10 +3898,9 @@ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
 proof of Theorem 9.2 (in the 2nd step), we can show that%
 \[
 T\sum\limits_{i=1}^{m}\dfrac{u_{i}}{1-u_{i}T}=\sum\limits_{j\in\mathbb{N}%
-\setminus\left\{  0\right\}  }\psi^{j}\left(  x\right)  T^{j}%
+\setminus\left\{  0\right\}  }\psi^{j}\left(  x\right)  T^{j}.
 \]
-(indeed, the proof of this works for any $\lambda$-ring $\left(  K,\left(
-\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $, not only for special ones).
+
 
 Thus,%
 \begin{align*}
@@ -3895,6 +3917,15 @@ x\right)  T^{j}  &  =T\sum\limits_{i=1}^{m}\dfrac{u_{i}}{1-u_{i}T}%
 Comparing coefficients yields $\psi^{j}\left(  x\right)  =\sum\limits_{i=1}%
 ^{m}u_{i}^{j}$ for every $j\in\mathbb{N}\setminus\left\{  0\right\}  ,$ and
 thus Theorem 9.4 is proven.
+
+\textit{Remark:} If we would remove the word "special" in the definition of
+$\psi^{j}$, then Theorem 9.4 would be true for all $\lambda$-rings $\left(
+K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ (not only for
+special $\lambda$-rings $\left(  K,\left(  \lambda^{i}\right)  _{i\in
+\mathbb{N}}\right)  $). In fact, the proof of Theorem 9.4 (and the 2nd step of
+the proof of Theorem 9.2) work for \textit{any} $\lambda$-ring $\left(
+K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $, not only for
+special ones.
 
 \textit{Proof of Theorem 9.3.} \textbf{(a)} is trivial (for instance, by
 Theorem 9.2 \textbf{(a)}).
@@ -4332,10 +4363,11 @@ is }1\text{-dimensional}\right\}  $.
 \textit{Proof of Theorem X.1.} \textbf{(b)} Every $u\in\mathbf{L}$ satisfies%
 \[
 \lambda_{T}\left(  u\right)  =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
-u\right)  T^{i}=\underbrace{\lambda^{0}\left(  u\right)  }_{=1}+\underbrace
-{\lambda^{1}\left(  u\right)  }_{=u}T+\sum\limits_{i\geq2}\underbrace
-{\lambda^{i}\left(  u\right)  }_{\substack{=0,\text{ since}\\i>1=\varepsilon
-\left(  u\right)  \\\text{and }u\in\mathbf{L}\subseteq\mathbf{E}}}T^{i}=1+uT.
+u\right)  T^{i}=\underbrace{\lambda^{0}\left(  u\right)  }_{=1}%
++\underbrace{\lambda^{1}\left(  u\right)  }_{=u}T+\sum\limits_{i\geq
+2}\underbrace{\lambda^{i}\left(  u\right)  }_{\substack{=0,\text{
+since}\\i>1=\varepsilon\left(  u\right)  \\\text{and }u\in\mathbf{L}%
+\subseteq\mathbf{E}}}T^{i}=1+uT.
 \]
 Conversely, if some $u\in\mathbf{E}$ satisfies $\lambda_{T}\left(  u\right)
 =1+uT$, then%
@@ -4745,8 +4777,8 @@ Comparing this with $\lambda_{T}\left(  n\cdot1\right)  =\sum\limits_{i=0}%
 \textbf{(b)} Assume, for the sake of contradiction, that $m=0$ in $K$ for some
 positive integer $m$. Then, Theorem 2.1 \textbf{(a)} yields%
 \begin{align*}
-\lambda_{T}\left(  m\right)   &  =\lambda_{T}\left(  \underbrace
-{1+1+...+1}_{m\text{ times}}\right)  =\underbrace{\lambda_{T}\left(  1\right)
+\lambda_{T}\left(  m\right)   &  =\lambda_{T}\left(  \underbrace{1+1+...+1}%
+_{m\text{ times}}\right)  =\underbrace{\lambda_{T}\left(  1\right)
 \cdot\lambda_{T}\left(  1\right)  \cdot...\cdot\lambda_{T}\left(  1\right)
 }_{m\text{ times}}=\left(  \lambda_{T}\left(  1\right)  \right)  ^{m}\\
 &  =\left(  \lambda_{T}\left(  1\right)  \right)  ^{m}=\left(  1+T\right)
@@ -4754,7 +4786,8 @@ positive integer $m$. Then, Theorem 2.1 \textbf{(a)} yields%
 \text{by the binomial formula}\right)
 \end{align*}
 in $K\left[  \left[  T\right]  \right]  $. On the other hand, $\lambda
-_{T}\left(  m\right)  =\lambda_{T}\left(  0\right)  =1.$ Contradiction.
+_{T}\left(  m\right)  =\lambda_{T}\left(  0\right)  =1.$ Contradiction (unless
+$K$ is the trivial ring).
 
 \textit{Exercise 6.3: Hints to solution:} Use Exercise 6.4 or the very
 definition of special $\lambda$-rings together with Exercise 2.1. Do not
@@ -4765,12 +4798,12 @@ replacing every appearance of "$x\in K$" by "$x\in E$" and every appearance of
 "$y\in K$" by "$y\in E$". You need the fact that $\lambda_{T}$ is a $\lambda
 $-ring homomorphism if and only if it satisfies the three conditions%
 \begin{align*}
-\lambda_{T}\left(  xy\right)   &  =\lambda_{T}\left(  x\right)  \widehat
-{\cdot}\lambda_{T}\left(  y\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }x\in
+\lambda_{T}\left(  xy\right)   &  =\lambda_{T}\left(  x\right)  \widehat{\cdot
+}\lambda_{T}\left(  y\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }x\in
 E\text{ and }y\in E,\\
 \lambda_{T}\left(  1\right)   &  =1+T,\ \ \ \ \ \ \ \ \ \ \text{and}\\
-\lambda_{T}\left(  \lambda^{j}\left(  x\right)  \right)   &  =\widehat
-{\lambda}^{j}\left(  \lambda_{T}\left(  x\right)  \right)
+\lambda_{T}\left(  \lambda^{j}\left(  x\right)  \right)   &  =\widehat{\lambda
+}^{j}\left(  \lambda_{T}\left(  x\right)  \right)
 \ \ \ \ \ \ \ \ \ \ \text{for every }j\in\mathbb{N}\text{ and }x\in E.
 \end{align*}
 This is because the first two of these conditions, together with the
@@ -4951,8 +4984,8 @@ Then, there exist some $\left(  \widetilde{K}_{u},\left[  u_{1},u_{2}%
 ,...,u_{m}\right]  \right)  \in K^{\operatorname*{int}}$ such that
 $u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
 ,$ and some $\left(  \widetilde{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]
-\right)  \in K^{\operatorname*{int}}$ such that $v=\Pi\left(  \widetilde
-{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  .$ Obviously,%
+\right)  \in K^{\operatorname*{int}}$ such that $v=\Pi\left(  \widetilde{K}%
+_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  .$ Obviously,%
 \[
 u=\Pi\left(  \widetilde{K},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
 =\prod_{i=1}^{m}\left(  1+u_{i}T\right)  =1+\sum_{i=1}^{m}u_{i}\cdot T+\left(
@@ -5040,11 +5073,11 @@ Theorem 8.1 yields that $y$ is $1$-dimensional, qed.
 have to prove that (\ref{LkxyE}) and (\ref{LkLjxE}) hold. This is equivalent
 to showing that%
 \begin{align*}
-\lambda_{T}\left(  xy\right)   &  =\lambda_{T}\left(  x\right)  \widehat
-{\cdot}\lambda_{T}\left(  y\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }x\in
+\lambda_{T}\left(  xy\right)   &  =\lambda_{T}\left(  x\right)  \widehat{\cdot
+}\lambda_{T}\left(  y\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }x\in
 E\text{ and }y\in E,\ \ \ \ \ \ \ \ \ \ \text{and}\\
-\lambda_{T}\left(  \lambda^{j}\left(  x\right)  \right)   &  =\widehat
-{\lambda}^{j}\left(  \lambda_{T}\left(  x\right)  \right)
+\lambda_{T}\left(  \lambda^{j}\left(  x\right)  \right)   &  =\widehat{\lambda
+}^{j}\left(  \lambda_{T}\left(  x\right)  \right)
 \ \ \ \ \ \ \ \ \ \ \text{for every }j\in\mathbb{N}\text{ and }x\in E
 \end{align*}
 (because of the definitions of $\widehat{\cdot}$ and $\widehat{\lambda}^{j}$
@@ -5116,11 +5149,11 @@ element of }\Lambda\left(  K\right)  \text{ by Theorem 8.3,}\\
 \end{align*}
 for every $j\in\mathbb{N}$ and $x\in E.$
 
-\textit{Exercise 9.1: Hints to solution:} As before, we use the $\widehat
-{\sum}$ sign for summation inside the ring $\Lambda\left(  K\right)  $. We
-remember that the addition inside the ring $\Lambda\left(  K\right)  $ was
-defined by $u\widehat{+}v=uv$ for any $u\in\Lambda\left(  K\right)  $ and
-$v\in\Lambda\left(  K\right)  $ (in other words, addition in $\Lambda\left(
+\textit{Exercise 9.1: Hints to solution:} As before, we use the $\widehat{\sum
+}$ sign for summation inside the ring $\Lambda\left(  K\right)  $. We remember
+that the addition inside the ring $\Lambda\left(  K\right)  $ was defined by
+$u\widehat{+}v=uv$ for any $u\in\Lambda\left(  K\right)  $ and $v\in
+\Lambda\left(  K\right)  $ (in other words, addition in $\Lambda\left(
 K\right)  $ is the multiplication inherited from $K\left[  \left[  T\right]
 \right]  $), so that $\widehat{\sum}=\prod.$ Now,
 \[
@@ -5198,8 +5231,8 @@ there exists some $\left(  \widetilde{K}_{u},\left[  u_{1},u_{2}%
 ,...,u_{m}\right]  \right)  \in K^{\operatorname*{int}}$ such that
 $u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
 $ and some $\left(  \widetilde{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]
-\right)  \in K^{\operatorname*{int}}$ such that $v=\Pi\left(  \widetilde
-{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  $. Then, Theorem 5.3
+\right)  \in K^{\operatorname*{int}}$ such that $v=\Pi\left(  \widetilde{K}%
+_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  $. Then, Theorem 5.3
 \textbf{(c)} says that%
 \[
 u\widehat{\cdot}v=\Pi\left(  \widetilde{K}_{u,v},\left[  u_{i}v_{j}\mid\left(
@@ -5476,9 +5509,9 @@ _{i=1}^{n-1}\left(  -1\right)  ^{i-1}\lambda^{n-i}\left(  x\right)  \psi
 ^{i}\left(  x\right)  \right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by part \textbf{(a)}}\right) \\
 &  =\left(  -1\right)  ^{n}\left(  -\left(  -1\right)  ^{n-1}\lambda
-^{n-n}\left(  x\right)  \psi^{n}\left(  x\right)  \right)  =\underbrace
-{\lambda^{n-n}\left(  x\right)  }_{=\lambda^{0}\left(  x\right)  =1}\psi
-^{n}\left(  x\right)  =\psi^{n}\left(  x\right)  ,
+^{n-n}\left(  x\right)  \psi^{n}\left(  x\right)  \right)
+=\underbrace{\lambda^{n-n}\left(  x\right)  }_{=\lambda^{0}\left(  x\right)
+=1}\psi^{n}\left(  x\right)  =\psi^{n}\left(  x\right)  ,
 \end{align*}
 what completes the proof.
 
