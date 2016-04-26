@@ -9,7 +9,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, September 16, 2011 00:50:00}
+%TCIDATA{LastRevised=Saturday, September 24, 2011 23:21:15}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
@@ -3478,7 +3478,9 @@ times}\right) \\
 =1+u_{j}T\right) \\
 &  =\sum_{i\in\mathbb{N}}\sum\limits_{\substack{S\subseteq\left\{
 1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}%
-u_{k}\cdot T^{i}.
+u_{k}\cdot T^{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{by Exercise 4.2
+\textbf{(b)}, applied to }A=K\left[  T\right]  \text{, }\alpha_{j}=u_{j}\text{
+and }t=T\right)
 \end{align*}
 Comparing coefficients yields the assertion of Theorem 8.5.
 
@@ -4941,21 +4943,22 @@ nature carry an additional structure called a \textit{positive structure}:
 \textbf{Definition.} \textbf{1)} Let $\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. Let $\varepsilon
 :K\rightarrow\mathbb{Z}$ be a surjective\footnote{I am quoting this from [1].
-Personally, I have never have met a non-surjective ring homomorphism in my
-life.} ring homomorphism. Let $\mathbf{E}$ be a subset of $K$ such that
-$\mathbf{E}$ is closed under addition and multiplication and contains the
-subset $\mathbb{Z}^{+}$ of $K$ (that is, the image of $\mathbb{Z}^{+}$ under
-the canonical ring homomorphism $\mathbb{Z}^{+}\rightarrow K$). Also assume
-that $K=\mathbf{E}-\mathbf{E}$ (that is, every element of $K$ can be written
-as difference of two elements of $\mathbf{E}$). Furthermore, assume that every
-$e\in\mathbf{E}$ satisfies%
+Personally, I have never have met a non-surjective ring homomorphism to
+$\mathbb{Z}$ in my life.} ring homomorphism. Let $\mathbf{E}$ be a subset of
+$K$ such that $\mathbf{E}$ is closed under addition and multiplication and
+contains the subset $\mathbb{Z}^{+}$ of $K$ (that is, the image of
+$\mathbb{Z}^{+}$ under the canonical ring homomorphism $\mathbb{Z}%
+^{+}\rightarrow K$). Also assume that $K=\mathbf{E}-\mathbf{E}$ (that is,
+every element of $K$ can be written as difference of two elements of
+$\mathbf{E}$). Furthermore, assume that every $e\in\mathbf{E}$ satisfies%
 \[
 \varepsilon\left(  e\right)  >0;\ \ \ \ \ \ \ \ \ \ \lambda^{i}\left(
 e\right)  =0\ \ \ \ \ \ \ \ \ \ \text{for any }i>\varepsilon\left(  e\right)
 ,\ \ \ \ \ \ \ \ \ \ \text{and that }\lambda^{\varepsilon\left(  e\right)
 }\left(  e\right)  \text{ is a unit in the ring }K.
 \]
-
+Besides, we assume that for every invertible element $u\in\mathbf{E}$, the
+inverse of $u$ must lie in $\mathbf{E}$ as well.
 
 Then, $\left(  \varepsilon,\mathbf{E}\right)  $ is called a \textit{positive
 structure} on the $\lambda$-ring. The homomorphism $\varepsilon:K\rightarrow
@@ -4964,14 +4967,54 @@ K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ with its positive
 structure $\left(  \varepsilon,\mathbf{E}\right)  $. The elements of the set
 $\mathbf{E}$ are called the \textit{positive elements} of the $\lambda$-ring
 $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ with its
-positive structure $\left(  \varepsilon,\mathbf{E}\right)  $.
+positive structure $\left(  \varepsilon,\mathbf{E}\right)  $%
+.\ \ \ \ \footnote{One remark about the assumption that that for every
+invertible element $u\in\mathbf{E}$, the inverse of $u$ must lie in
+$\mathbf{E}$ as well:
+\par
+Fulton and Lang do not make this assumption in [1], but this is a mistake on
+their side. In fact, they claim that the set of all $u\in\mathbf{E}$ such that
+$\varepsilon\left(  u\right)  =1$ is a subgroup of $K^{\times}$. But to make
+this claim, they need the above-mentioned assumption (or another similar one).
+In fact, here is an example of a $\lambda$-ring $K\ $which satisfies all of
+their assumptions, but for which the set of all $u\in\mathbf{E}$ such that
+$\varepsilon\left(  u\right)  =1$ is \textit{not} a subgroup of $K^{\times}$:
+\par
+Let $Z$ be the free group on one generator. (This group $Z$ is, of course,
+none other than $\mathbb{Z}$, written multiplicatively; however we must avoid
+calling it $\mathbb{Z}$, lest it is confused with the \textit{ring}
+$\mathbb{Z}$.) Let $X$ be the generator of $Z$. Applying Exercise 3.4 to
+$M=Z$, we get a $\lambda$-ring $\left(  \mathbb{Z}\left[  Z\right]  ,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $. Now define a map
+$\varepsilon:\mathbb{Z}\left[  Z\right]  \rightarrow\mathbb{Z}$ by%
+\[
+\varepsilon\left(  \sum_{m\in Z}\alpha_{m}m\right)  =\sum_{m\in Z}\alpha
+_{m}\ \ \ \ \ \ \ \ \ \ \text{for all }\left(  \alpha_{m}\right)  _{m\in Z}%
+\in\mathbb{Z}^{\left(  Z\right)  }.
+\]
+Then, $\varepsilon$ is a surjective ring homomorphism. Define $\mathbf{E}$ to
+be the additive and multiplicative closure of the subset%
+\[
+\left\{  1,X,X^{2},...\right\}  \cup\left\{  1+X^{-1},1+X^{-2},1+X^{-3}%
+,...\right\}
+\]
+of $\mathbb{Z}\left[  Z\right]  $. It is easy to see that all of our
+conditions are satisfied, except for the assumption that for every invertible
+element $u\in\mathbf{E}$, the inverse of $u$ must lie in $\mathbf{E}$ as well.
+Hence, if we would omit this assumption (as Fulton and Lang do in [1]), the
+pair $\left(  \varepsilon,\mathbf{E}\right)  $ would be a positive structure
+on our $\lambda$-ring $\left(  \mathbb{Z}\left[  Z\right]  ,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $. However, the set of all
+$u\in\mathbf{E}$ such that $\varepsilon\left(  u\right)  =1$ is not a subgroup
+of $K^{\times}$ in this case, since this set contains $X$ but not its inverse
+$X^{-1}$ (in fact, it is easy to see that $X^{-1}\notin\mathbf{E}$; otherwise
+$X^{-1}$ would be a sum of products of elements of $\left\{  1,X,X^{2}%
+,...\right\}  \cup\left\{  1+X^{-1},1+X^{-2},1+X^{-3},...\right\}  $, and
+applying $\varepsilon$ we would conclude that the sum has only $1$ summand,
+which is easy to rule out).}
 
-[Some axioms may be missing here. For example, every element $u\in\mathbf{E}$
-satisfying $\varepsilon\left(  u\right)  =1$ is invertible, which is easy to
-prove; but [1] goes on claiming that the inverse must lie in $\mathbf{E}$ as
-well, what I cannot prove. Maybe it should be an additional axiom. Besides,
-maybe $\lambda^{i}\left(  \mathbf{E}\right)  \subseteq\mathbf{E}$ should also
-be a requirement.]
+[Some assumptions may still be missing here. For example, we might want to
+require that $\lambda^{i}\left(  \mathbf{E}\right)  \subseteq\mathbf{E}$.] [\#2]
 
 \textbf{2)} Let $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
 }\right)  $ be a $\lambda$-ring with a positive structure $\left(
@@ -4988,46 +5031,101 @@ $\left(  \varepsilon,\mathbf{E}\right)  .$
 
 \textbf{(a)} Then, $\mathbf{L}=\left\{  u\in\mathbf{E}\ \mid\ \varepsilon
 \left(  u\right)  =1\right\}  $ is a subgroup of the (multiplicative) unit
-group $K^{\times}$ of $K$. [As I said, this may require additional axioms.]
+group $K^{\times}$ of $K$.
 
 \textbf{(b)} We have $\mathbf{L}=\left\{  u\in\mathbf{E}\ \mid\ \lambda
 _{T}\left(  u\right)  =1+uT\right\}  =\left\{  u\in\mathbf{E}\ \mid\ u\text{
 is }1\text{-dimensional}\right\}  $.
 \end{quote}
 
-\textit{Proof of Theorem X.1.} \textbf{(b)} Every $u\in\mathbf{L}$ satisfies%
+\textit{Proof of Theorem X.1.} \textbf{(b)} \textit{1st Step:} We have
+$\mathbf{L}\subseteq\left\{  u\in\mathbf{E}\ \mid\ u\text{ is }%
+1\text{-dimensional}\right\}  $.
+
+\textit{Proof.} For every $u\in\mathbf{L}$, we have $\varepsilon\left(
+u\right)  =1$ (by the definition of $\mathbf{L}$) and $\lambda^{i}\left(
+u\right)  =0$ for any $i>\varepsilon\left(  u\right)  $ (by the axioms of a
+positive structure, since $u\in\mathbf{L}\subseteq\mathbf{E}$). Thus, for
+every $u\in\mathbf{L}$, we have $\lambda^{i}\left(  u\right)  =0$ for any
+$i>1$ (because for any $i>1$, we have $i>1=\varepsilon\left(  u\right)  $ and
+thus $\lambda^{i}\left(  u\right)  =0$). In other words, every $u\in
+\mathbf{L}$ is $1$-dimensional. Thus, $\mathbf{L}\subseteq\left\{
+u\in\mathbf{E}\ \mid\ u\text{ is }1\text{-dimensional}\right\}  $.
+
+\textit{2nd Step:} We have $\left\{  u\in\mathbf{E}\ \mid\ u\text{ is
+}1\text{-dimensional}\right\}  \subseteq\left\{  u\in\mathbf{E}\ \mid
+\ \lambda_{T}\left(  u\right)  =1+uT\right\}  $.
+
+\textit{Proof.} Every $1$-dimensional $u\in\mathbf{E}$ satisfies $\lambda
+^{i}\left(  u\right)  =0$ for any $i>1$ (by the definition of "$1$%
+-dimensional"). Now, every $1$-dimensional $u\in\mathbf{E}$ satisfies%
 \[
 \lambda_{T}\left(  u\right)  =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
 u\right)  T^{i}=\underbrace{\lambda^{0}\left(  u\right)  }_{=1}%
 +\underbrace{\lambda^{1}\left(  u\right)  }_{=u}T+\sum\limits_{i\geq
-2}\underbrace{\lambda^{i}\left(  u\right)  }_{\substack{=0,\text{
-since}\\i>1=\varepsilon\left(  u\right)  \\\text{and }u\in\mathbf{L}%
-\subseteq\mathbf{E}}}T^{i}=1+uT.
+2}\underbrace{\lambda^{i}\left(  u\right)  }_{\substack{=0,\text{ since}%
+\\i>1}}T^{i}=1+uT.
 \]
-Conversely, if some $u\in\mathbf{E}$ satisfies $\lambda_{T}\left(  u\right)
-=1+uT$, then%
+Thus, we have shown that every $1$-dimensional $u\in\mathbf{E}$ satisfies
+$\lambda_{T}\left(  u\right)  =1+uT$. In other words, $\left\{  u\in
+\mathbf{E}\ \mid\ u\text{ is }1\text{-dimensional}\right\}  \subseteq\left\{
+u\in\mathbf{E}\ \mid\ \lambda_{T}\left(  u\right)  =1+uT\right\}  $.
+
+\textit{3rd Step:} We have $\left\{  u\in\mathbf{E}\ \mid\ \lambda_{T}\left(
+u\right)  =1+uT\right\}  \subseteq\mathbf{L}$.
+
+\textit{Proof.} Let $u\in\mathbf{E}$ be an element satisfying $\lambda
+_{T}\left(  u\right)  =1+uT$. Then this $u$ must satisfy%
 \[
 \sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  u\right)  T^{i}=\lambda
-_{T}\left(  u\right)  =1+uT
+_{T}\left(  u\right)  =1+uT,
 \]
-shows that $\lambda^{i}\left(  u\right)  =0$ for every $i>1$, and thus
-$\varepsilon\left(  u\right)  \leq1$ (because $\lambda^{\varepsilon\left(
-u\right)  }\left(  u\right)  $ is a unit in the ring $K$ (since $u\in
-\mathbf{E}$), so that $\lambda^{\varepsilon\left(  u\right)  }\left(
-u\right)  \neq0$ and thus $\varepsilon\left(  u\right)  \leq1$). Together with
-$\varepsilon\left(  u\right)  >0$, this yields $\varepsilon\left(  u\right)
-=1$ and thus $u\in\mathbf{L}$. This proves \textbf{(b)}.
+and thus (by comparison of coefficients) $\lambda^{i}\left(  u\right)  =0$ for
+every $i>1$, so that $\varepsilon\left(  u\right)  \leq1$ (because
+$\lambda^{\varepsilon\left(  u\right)  }\left(  u\right)  $ is a unit in the
+ring $K$ (since $u\in\mathbf{E}$), so that $\lambda^{\varepsilon\left(
+u\right)  }\left(  u\right)  \neq0$ and thus $\varepsilon\left(  u\right)
+\leq1$). Together with $\varepsilon\left(  u\right)  >0$, this yields
+$\varepsilon\left(  u\right)  =1$ and thus $u\in\mathbf{L}$.
 
-\textbf{(a)} First we need to show that every $u\in\mathbf{L}$ is invertible
-in $K$. In fact, let $u\in\mathbf{L}$. Then, $\lambda^{\varepsilon\left(
-u\right)  }\left(  u\right)  $ is a unit in the ring $K$ (since $u\in
-\mathbf{E}$). But $\varepsilon\left(  u\right)  =1$ and thus $\lambda
-^{\varepsilon\left(  u\right)  }\left(  u\right)  =\lambda^{1}\left(
-u\right)  =u$. Thus, $u$ is a unit in $K$; that is, $u$ is invertible. Its
-inverse $u^{-1}$ must lie in $\mathbf{E}$ as well
+We have thus proven that every $u\in\mathbf{E}$ satisfying $\lambda_{T}\left(
+u\right)  =1+uT$ must satisfy $u\in\mathbf{L}$. In other words, we have proven
+that $\left\{  u\in\mathbf{E}\ \mid\ \lambda_{T}\left(  u\right)
+=1+uT\right\}  \subseteq\mathbf{L}$.
 
-[\#2] [I'm not sure anymore that it must. Maybe this should be added as an
-additional axiom for positive structure?]
+\textit{4th Step:} Combining the results of the 1st Step, the 2nd Step and the
+3rd Step, we conclude that $\mathbf{L}=\left\{  u\in\mathbf{E}\ \mid
+\ \lambda_{T}\left(  u\right)  =1+uT\right\}  =\left\{  u\in\mathbf{E}%
+\ \mid\ u\text{ is }1\text{-dimensional}\right\}  $. This proves Theorem X.1
+\textbf{(b)}.
+
+\textbf{(a)} \textit{1st Step:} Every $u\in\mathbf{L}$ is invertible in $K$,
+and the inverse of every $u\in\mathbf{L}$ lies in $\mathbf{L}$.
+
+\textit{Proof.} Let $u\in\mathbf{L}$. Then, $\lambda^{\varepsilon\left(
+u\right)  }\left(  u\right)  $ is a unit in the ring $K$ (since $u\in
+\mathbf{E}$). But $\varepsilon\left(  u\right)  =1$ (since $u\in\mathbf{L}$)
+and thus $\lambda^{\varepsilon\left(  u\right)  }\left(  u\right)
+=\lambda^{1}\left(  u\right)  =u$. Thus, $u$ is a unit in $K$; that is, $u$ is
+invertible. Its inverse $u^{-1}$ must lie in $\mathbf{E}$ as well (because
+$u\in\mathbf{L}\subseteq\mathbf{E}$, and because of our assumption that for
+every invertible element $u\in\mathbf{E}$, the inverse of $u$ must lie in
+$\mathbf{E}$ as well). Since $\varepsilon$ is a ring homomorphism, we have
+$\varepsilon\left(  u^{-1}\right)  =\left(  \underbrace{\varepsilon\left(
+u\right)  }_{=1}\right)  ^{-1}=1^{-1}=1$. This, together with $u^{-1}%
+\in\mathbf{E}$, yields $u^{-1}\in\mathbf{L}$ (by the definition of
+$\mathbf{L}$).
+
+We have thus proven that every $u\in\mathbf{L}$ is invertible in $K$, and the
+inverse of every $u\in\mathbf{L}$ lies in $\mathbf{L}$.
+
+\textit{2nd Step:} The set $\mathbf{L}$ is closed under multiplication and
+contains the multiplicative unity of $K$.
+
+\textit{Proof.} This is trivial.
+
+\textit{3rd Step:} Theorem X.1 \textbf{(a)} trivially follows from the 1st
+Step and the 2nd Step.
 
 \begin{quote}
 \textbf{Theorem X.2.} If $\left(  K,\left(  \lambda^{i}\right)  _{i\in
@@ -5927,10 +6025,10 @@ cannot conclude anything from this. Instead, $xy=xx^{-1}=1$ yields%
 homomorphism,}\\
 \text{and }1+T\text{ is the multiplicative unity of }\Lambda\left(  K\right)
 \end{array}
-\right) \\
+\right)  \\
 &  =1+xyT=\Pi\left(  K,\left[  xy\right]  \right)  =\Pi\left(  K,\left[
 x\right]  \right)  \widehat{\cdot}\Pi\left(  K,\left[  y\right]  \right)
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 5.3 \textbf{(c)}}\right) \\
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 5.3 \textbf{(c)}}\right)  \\
 &  =\lambda_{T}\left(  x\right)  \widehat{\cdot}\left(  1+yT\right)  .
 \end{align*}
 Together with $\lambda_{T}\left(  xy\right)  =\lambda_{T}\left(  x\right)
@@ -5940,7 +6038,7 @@ x\right)  \widehat{\cdot}\left(  1+yT\right)  $, so that $\lambda_{T}\left(
 y\right)  =1+yT$ (since $\lambda_{T}\left(  x\right)  \in\Lambda\left(
 K\right)  $ is invertible, because $x\in K$ is invertible and $\lambda
 _{T}:K\rightarrow\Lambda\left(  K\right)  $ is a ring homomorphism), and
-Theorem 8.1 yields that $y$ is $1$-dimensional, qed.
+Theorem 8.3 \textbf{(a)} yields that $y$ is $1$-dimensional, qed.
 
 \textit{Exercise 8.3: Hints to solution:} According to Exercise 6.4, we only
 have to prove that (\ref{LkxyE}) and (\ref{LkLjxE}) hold. This is equivalent
