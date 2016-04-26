@@ -4,11 +4,12 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage{amsmath}%
+\usepackage{amsmath}
+\usepackage{comment}%
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, September 15, 2011 12:21:43}
+%TCIDATA{LastRevised=Friday, September 16, 2011 00:50:00}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
@@ -41,7 +42,7 @@
 
 Darij Grinberg
 
-\textit{Version 0.0.6, last revised 15 Sep 2011}
+\textit{Version 0.0.7, last revised 16 Sep 2011}
 \end{center}
 
 This is a \textbf{BETA VERSION} and has never been proofread. \textbf{Please
@@ -53,9 +54,7 @@ Thanks to Martin Brandenburg for pointing out several flaws.
 
 At the moment, section 1 is missing a proof (namely, that the representation
 ring is a \textit{special} $\lambda$-ring; I actually don't know this proof)
-and sections 10-... are more or less missing. Also, I am searching for a nice
-proof (or a counterexample) to Theorem 9.2 in the case of arbitrary
-(non-special) $\lambda$-rings.
+and sections 10-... are more or less missing.
 
 \bigskip
 
@@ -523,14 +522,16 @@ proof is to fix $k\in\mathbb{N}$, then notice that it is a polynomial identity
 in both $x$ and $y$, so it is enough to prove it for all natural $x$ and $y$
 (because a polynomial identity holding for all natural variables must hold
 everywhere). But for $x$ and $y$ natural, we have%
-\[
-\sum_{k=0}^{x+y}\sum_{i=0}^{k}\dbinom{x}{i}\dbinom{y}{k-i}T^{k}%
+\begin{align*}
+\sum_{k=0}^{x+y}\sum_{i=0}^{k}\dbinom{x}{i}\dbinom{y}{k-i}T^{k}  &
 =\underbrace{\sum_{i=0}^{x}\dbinom{x}{i}T^{i}}_{\substack{=\left(  1+T\right)
 ^{x}\text{ by the}\\\text{binomial formula}}}\cdot\underbrace{\sum_{j=0}%
 ^{y}\dbinom{y}{j}T^{j}}_{\substack{=\left(  1+T\right)  ^{y}\text{ by
-the}\\\text{binomial formula}}}=\left(  1+T\right)  ^{x+y}=\sum_{k=0}%
-^{x+y}\dbinom{x+y}{k}T^{k}%
-\]
+the}\\\text{binomial formula}}}\\
+&  =\left(  1+T\right)  ^{x}\cdot\left(  1+T\right)  ^{y}=\left(  1+T\right)
+^{x+y}=\sum_{k=0}^{x+y}\dbinom{x+y}{k}T^{k}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the binomial formula}\right)
+\end{align*}
 in the polynomial ring $\mathbb{Z}\left[  T\right]  $, and thus
 (\ref{vandermonde}) follows by comparison of
 coefficients.\footnote{\textit{Remark.} It is tempting to apply this argument
@@ -1184,8 +1185,9 @@ equation (\ref{Pk1}) is satisfied in the polynomial ring $\mathbb{Z}\left[
 U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]  $.
 
 \textit{Proof.} Let $n^{\prime}\in\mathbb{N}$ be such that $n^{\prime}\geq n$
-and $n^{\prime}\geq k$. Let $m^{\prime}\in\mathbb{N}$ be such that $m^{\prime
-}\geq m$ and $m^{\prime}\geq k$. Then, the 1st Step (applied to $n^{\prime}$
+and $n^{\prime}\geq k$ (such an $n^{\prime}$ clearly exists). Let $m^{\prime
+}\in\mathbb{N}$ be such that $m^{\prime}\geq m$ and $m^{\prime}\geq k$ (such
+an $m^{\prime}$ clearly exists). Then, the 1st Step (applied to $n^{\prime}$
 and $m^{\prime}$ instead of $n$ and $m$) yields that $Q_{k,k,\left[
 n^{\prime},m^{\prime}\right]  }=P_{k}.$
 
@@ -1229,7 +1231,29 @@ the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m},V_{1}%
 ,V_{2},...,V_{n}\right]  .$ This completes the 2nd Step and proves Theorem 4.3
 \textbf{(a)}.
 
-\textbf{(b)} Immediately follows from part \textbf{(a)}.
+\textbf{(b)} We have%
+\begin{align*}
+\prod_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  }\left(  1+U_{i}V_{j}T\right)   &  =\sum_{k\in\mathbb{N}%
+}\underbrace{\sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}
+\times\left\{  1,2,...,n\right\}  ;\\\left\vert S\right\vert =k}%
+}\prod_{\left(  i,j\right)  \in S}U_{i}V_{j}}_{\substack{=P_{k}\left(
+X_{1},X_{2},...,X_{k},Y_{1},Y_{2},...,Y_{k}\right)  \\\text{(according to
+(\ref{Pk1}))}}}T^{k}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Exercise 4.2 \textbf{(d)}, applied to}\\
+Q=\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \text{,}\\
+A=\left(  \mathbb{Z}\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}%
+\right]  \right)  \left[  \left[  T\right]  \right]  \text{,}\\
+\text{ }t=T\text{ and }\alpha_{\left(  i,j\right)  }=U_{i}V_{j}%
+\end{array}
+\right) \\
+&  =\sum_{k\in\mathbb{N}}P_{k}\left(  X_{1},X_{2},...,X_{k},Y_{1}%
+,Y_{2},...,Y_{k}\right)  T^{k}.
+\end{align*}
+This proves Theorem 4.3 \textbf{(b)}.
 
 Just as our above definition of the polynomials $P_{k}$ and Theorem 4.3 based
 upon Theorem 4.2, we can make another definition basing upon Theorem 4.1:
@@ -1395,7 +1419,27 @@ This means that the equation (\ref{Pkj1}) is satisfied in the polynomial ring
 $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  .$ This completes the 2nd
 Step and proves Theorem 4.4 \textbf{(a)}.
 
-\textbf{(b)} Immediately follows from part \textbf{(a)}.
+\textbf{(b)} We have%
+\begin{align*}
+\prod_{I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)
+}\left(  1+\prod_{i\in I}U_{i}\cdot T\right)   &  =\sum_{k\in\mathbb{N}%
+}\underbrace{\sum_{\substack{S\subseteq\mathcal{P}_{j}\left(  \left\{
+1,2,...,m\right\}  \right)  ;\\\left\vert S\right\vert =k}}\prod_{I\in S}%
+\prod\limits_{i\in I}U_{i}}_{\substack{=P_{k,j}\left(  X_{1},X_{2}%
+,...,X_{kj}\right)  \\\text{(according to (\ref{Pkj1}))}}}T^{k}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Exercise 4.2 \textbf{(d)}, applied to}\\
+Q=\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)  \text{,
+}A=\left(  \mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[
+\left[  T\right]  \right]  \text{,}\\
+\text{ }t=T\text{ and }\alpha_{I}=\prod\limits_{i\in I}U_{i}%
+\end{array}
+\right) \\
+&  =\sum_{k\in\mathbb{N}}P_{k,j}\left(  X_{1},X_{2},...,X_{kj}\right)  T^{k}.
+\end{align*}
+This proves Theorem 4.4 \textbf{(b)}.
 
 \begin{quotation}
 \textit{Exercise 4.1. (Computing }$P_{k}$ \textit{and }$P_{k,j}$ \textit{as
@@ -1474,14 +1518,55 @@ forget to choose $n$ and $m$ such that $n\geq k$ and $m\geq k$.)
 
 \textbf{(c)} Let $m\in\mathbb{N}$ and $j\in\mathbb{N}$. In part \textbf{(a)},
 prove that the polynomial $\det\left(  \left(  -1\right)  ^{j}T\left(
-\wedge^{j}U\right)  +I_{m}\right)  \in\left(  \mathbb{Z}\left[  X_{1}%
-,X_{2},...,X_{m}\right]  \right)  \left[  T\right]  $ equals $\prod
-\limits_{I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)
+\wedge^{j}F_{U}\right)  +I_{m}\right)  \in\left(  \mathbb{Z}\left[
+X_{1},X_{2},...,X_{m}\right]  \right)  \left[  T\right]  $ equals
+$\prod\limits_{I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)
 }\left(  1+\prod\limits_{i\in I}U_{i}\cdot T\right)  $. Conclude that the
 coefficient of this polynomial before $T^{k}$ equals to $Q_{k,j,\left[
 m\right]  }\left(  X_{1},X_{2},...,X_{kj}\right)  $ defined in the definition
 of $P_{k,j}$. How to compute $P_{k,j}$ now? (Don't forget to choose $m$ such
-that $m\geq k$.)
+that $m\geq kj$.)
+
+\textit{Exercise 4.2.}
+
+\textbf{(a)} Let $\alpha_{1}$, $\alpha_{2}$, $...$, $\alpha_{m}$ be any
+elements of a commutative ring $A$. Prove that%
+\[
+\prod\limits_{i=1}^{m}\left(  1+\alpha_{i}\right)  =\sum\limits_{S\subseteq
+\left\{  1,2,...,m\right\}  }\prod\limits_{k\in S}\alpha_{k}.
+\]
+
+
+\textbf{(b)} Let $\alpha_{1}$, $\alpha_{2}$, $...$, $\alpha_{m}$ and $t$ be
+any elements of a commutative ring $A$. Then, prove that%
+\[
+\prod\limits_{i=1}^{m}\left(  1+\alpha_{i}t\right)  =\sum\limits_{i\in
+\mathbb{N}}\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
+;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}\alpha_{k}t^{i}%
+\]
+
+
+\textbf{(c)} Let $\alpha_{1}$, $\alpha_{2}$, $...$, $\alpha_{m}$ and $t$ be
+any elements of a commutative ring $A$ Then, prove that%
+\[
+\prod\limits_{i=1}^{m}\left(  1-\alpha_{i}t\right)  =\sum\limits_{i\in
+\mathbb{N}}\left(  -1\right)  ^{i}\sum\limits_{\substack{S\subseteq\left\{
+1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}%
+\alpha_{k}t^{i}.
+\]
+
+
+\textbf{(d)} Let $Q$ be a finite set, and let $A$ be a commutative ring. Let
+$\alpha_{q}$ be an element of $A$ for every $q\in Q$. Then, prove that%
+\[
+\prod\limits_{q\in Q}\left(  1+\alpha_{q}t\right)  =\sum\limits_{k\in
+\mathbb{N}}\sum\limits_{\substack{S\subseteq Q;\\\left\vert S\right\vert
+=k}}\prod\limits_{q\in S}\alpha_{q}t^{k}.
+\]
+
+
+(These are four variants of one and the same identity, which is very easy but
+basic and used in much of the theory of symmetric polynomials.)
 \end{quotation}
 
 \begin{center}
@@ -2367,10 +2452,10 @@ canonically considered an extension ring of $\Lambda\left(  K\right)  $.
 
 \begin{quotation}
 \textit{Exercise 5.1.} Let $K$ be a ring. For every monic polynomial $P\in
-K\left[  T\right]  $, there exists a finite-free extension ring $K_{p}$ of the
+K\left[  T\right]  $, there exists a finite-free extension ring $K_{P}$ of the
 ring $K$ and $n$ elements $p_{1},$ $p_{2},$ $...,$ $p_{n}$ of this extension
-ring $K_{p}$ such that $p=\prod\limits_{i=1}^{n}\left(  T-p_{i}\right)  $ in
-$K_{p}\left[  T\right]  $, where $n=\deg P$.
+ring $K_{P}$ such that $P=\prod\limits_{i=1}^{n}\left(  T-p_{i}\right)  $ in
+$K_{P}\left[  T\right]  $, where $n=\deg P$.
 
 \textit{Exercise 5.2.} Let $K$ be a ring, and $L$ an extension ring of $K$.
 For some $n\in\mathbb{N}$, an element $u$ of $L$ is said to be $n$%
@@ -2643,15 +2728,24 @@ $\mathbb{Z}$-module generators of $K$.
 ring $K\left[  T\right]  $ at the multiplicatively closed subset $1+K\left[
 T\right]  ^{+}$. \ \ \ \ \footnote{When $K$ is a field, this localization is
 simply the (local) ring of the (so-called) rational functions in one variable
-over $K$. ("Rational function" is an evil misnomer, in this case, but at least
-people know what it means.)} This localization $\left(  1+K\left[  T\right]
-^{+}\right)  ^{-1}K\left[  T\right]  $ can be considered a subring of
-$K\left[  \left[  T\right]  \right]  $ (since $K\left[  T\right]  \subseteq
-K\left[  \left[  T\right]  \right]  $, and every element of $1+K\left[
-T\right]  ^{+}$ is invertible in $K\left[  \left[  T\right]  \right]  $).
-Prove that the set $\left(  1+K\left[  T\right]  ^{+}\right)  ^{-1}K\left[
-T\right]  \cap\Lambda\left(  K\right)  $ is a special sub-$\lambda$-ring of
-$\Lambda\left(  K\right)  $.
+over $K$ which have no pole at $0$. (Note that the term "rational function" is
+being used here for an element of the quotient field $\operatorname*{Quot}%
+\left(  K\left[  T\right]  \right)  $. This is the standard meaning that the
+term "rational function" has in modern literature. This meaning is somewhat
+confusing: In fact, rational functions are not functions in the standard
+meaning of this word; they \textit{induce} functions (although no functions on
+$K$, but instead only functions on an open subset of $K$), but even these
+induced functions don't determine them uniquely, so the word "function" in
+"rational function" really doesn't make any sense. However, lacking a better
+word, everybody keeps calling the elements of $\operatorname*{Quot}\left(
+K\left[  T\right]  \right)  $ "rational functions", and so do I.)} This
+localization $\left(  1+K\left[  T\right]  ^{+}\right)  ^{-1}K\left[
+T\right]  $ can be considered a subring of $K\left[  \left[  T\right]
+\right]  $ (since $K\left[  T\right]  \subseteq K\left[  \left[  T\right]
+\right]  $, and every element of $1+K\left[  T\right]  ^{+}$ is invertible in
+$K\left[  \left[  T\right]  \right]  $). Prove that the set $\left(
+1+K\left[  T\right]  ^{+}\right)  ^{-1}K\left[  T\right]  \cap\Lambda\left(
+K\right)  $ is a special sub-$\lambda$-ring of $\Lambda\left(  K\right)  $.
 
 \textit{Exercise 6.2.} Let $\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring. Then, prove that:
@@ -3353,7 +3447,7 @@ $\Lambda\left(  K^{\prime}\right)  $ (because $K$ is a subring of $K^{\prime}%
 $), this yields (\ref{8.4.goal}). This proves Theorem 8.4.
 
 Roughly speaking, Theorem 8.4 says that whether some identity holds on every
-special $\lambda$-rings or not can be checked just by looking at the sums of
+special $\lambda$-ring or not can be checked just by looking at the sums of
 $1$-dimensional elements. This is why it is worthwhile to study such sums. Let
 us record a property of these:
 
@@ -3591,9 +3685,8 @@ Now, let us define Adams operations:
 
 \begin{quote}
 \textbf{Definition.} Let $\left(  K,\left(  \lambda^{i}\right)  _{i\in
-\mathbb{N}}\right)  $ be a special $\lambda$-ring. For every $j\in
-\mathbb{N}\setminus\left\{  0\right\}  $, we define a map $\psi^{j}%
-:K\rightarrow K$ by%
+\mathbb{N}}\right)  $ be a $\lambda$-ring. For every $j\in\mathbb{N}%
+\setminus\left\{  0\right\}  $, we define a map $\psi^{j}:K\rightarrow K$ by%
 \begin{equation}
 \psi^{j}\left(  x\right)  =N_{j}\left(  \lambda^{1}\left(  x\right)
 ,\lambda^{2}\left(  x\right)  ,...,\lambda^{j}\left(  x\right)  \right)
@@ -3639,6 +3732,21 @@ $\lambda_{-T}\left(  x\right)  $ denotes $\operatorname*{ev}_{-T}\left(
 \lambda_{T}\left(  x\right)  \right)  $.
 \end{quote}
 
+Before we start proving this, let me admit that Theorem 9.2 can be
+generalized: It still holds if $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ is an \textit{arbitrary} (not necessarily
+special!) $\lambda$-ring. However, the proof of Theorem 9.2 that we are going
+to give right now cannot be generalized to this situation; it requires the
+$\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
+}\right)  $ to be special. The generalized version of Theorem 9.2 will be
+proven later (see the proof of Theorem 9.5 below), yielding another proof of
+Theorem 9.2. The reader is still advised to read the following proof of
+Theorem 9.2, even if it is not directly generalizable. In fact, its first two
+steps will be used at later times (in particular, its 1st step will be used in
+the proof of the generalized version), whereas its 4th step gives a good
+example of how Theorem 8.4 can be applied to prove properties of special
+$\lambda$-rings.
+
 \textit{Proof of Theorem 9.2.} \textit{1st step:} For any fixed special
 $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
 }\right)  $ and any fixed $x\in K$, the assertions \textbf{(a)} and
@@ -3648,23 +3756,36 @@ $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
 \[
 \lambda_{-T}\left(  x\right)  =\sum_{i\in\mathbb{N}}\lambda^{i}\left(
 x\right)  \left(  -T\right)  ^{i}=\sum_{i\in\mathbb{N}}\left(  -1\right)
-^{i}\lambda^{i}\left(  x\right)  T^{i}.
+^{i}\lambda^{i}\left(  x\right)  T^{i},
 \]
-This yields%
+but also%
 \begin{align*}
 \left(  \lambda_{-T}\left(  x\right)  \right)  ^{-1}  &  =\lambda_{-T}\left(
 -x\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  \lambda_{T}\left(
 x\right)  \right)  ^{-1}=\lambda_{T}\left(  -x\right)  \text{ by Theorem 2.1
 \textbf{(b)}}\right) \\
 &  =\sum_{i\in\mathbb{N}}\left(  -1\right)  ^{i}\lambda^{i}\left(  -x\right)
-T^{i}%
+T^{i}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{due to }\lambda_{-T}\left(  x\right)  =\sum\limits_{i\in\mathbb{N}%
+}\left(  -1\right)  ^{i}\lambda^{i}\left(  x\right)  T^{i}\text{,}\\
+\text{applied to }-x\text{ instead of }x
+\end{array}
+\right)
 \end{align*}
 and%
-\[
-\dfrac{d}{dT}\lambda_{-T}\left(  x\right)  =\dfrac{d}{dT}\sum_{i\in\mathbb{N}%
-}\left(  -1\right)  ^{i}\lambda^{i}\left(  x\right)  T^{i}=\sum_{i\in
-\mathbb{N}}\left(  -1\right)  ^{i}\lambda^{i}\left(  x\right)  iT^{i-1}.
-\]
+\begin{align*}
+\dfrac{d}{dT}\lambda_{-T}\left(  x\right)   &  =\dfrac{d}{dT}\sum
+_{i\in\mathbb{N}}\left(  -1\right)  ^{i}\lambda^{i}\left(  x\right)
+T^{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\lambda_{-T}\left(  x\right)
+=\sum_{i\in\mathbb{N}}\left(  -1\right)  ^{i}\lambda^{i}\left(  x\right)
+T^{i}\right) \\
+&  =\sum_{i\in\mathbb{N}}\left(  -1\right)  ^{i}\lambda^{i}\left(  x\right)
+iT^{i-1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the derivative of a
+formal power series}\right)  .
+\end{align*}
 Thus,%
 \begin{align*}
 &  -T\cdot\dfrac{d}{dT}\log\lambda_{-T}\left(  x\right) \\
@@ -3884,18 +4005,23 @@ the $\psi^{i}$:
 
 \begin{quote}
 \textbf{Theorem 9.4.} Let $\left(  K,\left(  \lambda^{i}\right)
-_{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring. Let $u_{1},$ $u_{2},$
-$...,$ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}%
-\setminus\left\{  0\right\}  $. Then,%
+_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. Let $u_{1},$ $u_{2},$ $...,$
+$u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
+\left\{  0\right\}  $. Then,%
 \[
 \psi^{j}\left(  u_{1}+u_{2}+...+u_{m}\right)  =u_{1}^{j}+u_{2}^{j}%
 +...+u_{m}^{j}.
 \]
 
+
+
 \end{quote}
 
 \textit{Proof of Theorem 9.4.} Let $x=u_{1}+u_{2}+...+u_{m}$. Just as in the
-proof of Theorem 9.2 (in the 2nd step), we can show that%
+proof of Theorem 9.2 (in the 2nd step)\footnote{Here, we use the fact that the
+2nd step of the proof of Theorem 9.2 works for \textit{any} $\lambda$-ring
+$\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $, not only
+for special ones.}, we can show that%
 \[
 T\sum\limits_{i=1}^{m}\dfrac{u_{i}}{1-u_{i}T}=\sum\limits_{j\in\mathbb{N}%
 \setminus\left\{  0\right\}  }\psi^{j}\left(  x\right)  T^{j}.
@@ -3917,15 +4043,6 @@ x\right)  T^{j}  &  =T\sum\limits_{i=1}^{m}\dfrac{u_{i}}{1-u_{i}T}%
 Comparing coefficients yields $\psi^{j}\left(  x\right)  =\sum\limits_{i=1}%
 ^{m}u_{i}^{j}$ for every $j\in\mathbb{N}\setminus\left\{  0\right\}  ,$ and
 thus Theorem 9.4 is proven.
-
-\textit{Remark:} If we would remove the word "special" in the definition of
-$\psi^{j}$, then Theorem 9.4 would be true for all $\lambda$-rings $\left(
-K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ (not only for
-special $\lambda$-rings $\left(  K,\left(  \lambda^{i}\right)  _{i\in
-\mathbb{N}}\right)  $). In fact, the proof of Theorem 9.4 (and the 2nd step of
-the proof of Theorem 9.2) work for \textit{any} $\lambda$-ring $\left(
-K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $, not only for
-special ones.
 
 \textit{Proof of Theorem 9.3.} \textbf{(a)} is trivial (for instance, by
 Theorem 9.2 \textbf{(a)}).
@@ -4073,6 +4190,515 @@ finitely many $1$-dimensional elements of $K$ (by an application of Theorem
 x\right)  $ in this case by applying Theorems 9.4 and 8.3 \textbf{(b)}. Thus,
 Theorem 9.3 \textbf{(c)} is proven.
 
+Now, as promised, we are going to prove a generalization of Theorem 9.2 to
+arbitrary $\lambda$-rings:
+
+\begin{quote}
+\textbf{Theorem 9.5.} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring.
+
+Define a map $\widetilde{\psi}_{T}:K\rightarrow K\left[  \left[  T\right]
+\right]  $ by $\widetilde{\psi}_{T}\left(  x\right)  =\sum\limits_{j\in
+\mathbb{N}\setminus\left\{  0\right\}  }\psi^{j}\left(  x\right)  T^{j}$ for
+every $x\in K$.\ \ \ \ \footnote{Note that we call this map $\widetilde{\psi
+}_{T}$ to distinguish it from the map $\psi_{T}$ in [1] (which is more or less
+the same but differs slightly).}
+
+Let $x\in K$.
+
+\textbf{(a)} We have%
+\[
+\psi^{j}\left(  x\right)  =\left(  -1\right)  ^{j+1}\sum_{i=0}^{j}i\lambda
+^{i}\left(  x\right)  \lambda^{j-i}\left(  -x\right)
+\ \ \ \ \ \ \ \ \ \ \text{for every }j\in\mathbb{N}\setminus\left\{
+0\right\}  \text{.}%
+\]
+
+
+\textbf{(b)} We have $\widetilde{\psi}_{T}\left(  x\right)  =-T\cdot\dfrac
+{d}{dT}\log\lambda_{-T}\left(  x\right)  $. Here, for every power series
+$u\in1+K\left[  \left[  T\right]  \right]  ^{+}$, the \textit{logarithmic
+derivative} $\dfrac{d}{dT}\log u$ of $u$ is defined by $\dfrac{d}{dT}\log
+u=\dfrac{\dfrac{d}{dT}u}{u}$ (this definition works even in the cases where
+the logarithm doesn't exist, such as rings of positive characteristic), and
+$\lambda_{-T}\left(  x\right)  $ denotes $\operatorname*{ev}_{-T}\left(
+\lambda_{T}\left(  x\right)  \right)  $.
+\end{quote}
+
+Before we prove this, let us show a lemma about symmetric polynomials first -
+a kind of continuation of Theorem 9.1:
+
+\begin{quote}
+\textbf{Theorem 9.6.} Let $m\in\mathbb{N}$. Let us recall that, for every
+$j\in\mathbb{N}\diagdown\left\{  0\right\}  $, we denote by $N_{j}$ the $j$-th
+Hirzebruch-Newton polynomial (defined at the beginning of Section 9). Let us
+also recall that for every $i\in\mathbb{N}$, we denote by $X_{i}$ the $i$-th
+elementary symmetric polynomial in the polynomial ring $\mathbb{Z}\left[
+U_{1},U_{2},...,U_{m}\right]  $.
+
+Then, every $n\in\mathbb{N}$ satisfies%
+\[
+nX_{n}=\sum_{j=1}^{n}\left(  -1\right)  ^{j-1}X_{n-j}N_{j}\left(  X_{1}%
+,X_{2},...,X_{j}\right)
+\]
+in the ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $.
+\end{quote}
+
+\textit{Proof of Theorem 9.6.} In the power series ring $\left(
+\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[  \left[
+T\right]  \right]  $, we have%
+\begin{align}
+\prod\limits_{i=1}^{m}\left(  1-U_{i}T\right)   &  =\sum_{i\in\mathbb{N}%
+}\left(  -1\right)  ^{i}\underbrace{\sum_{\substack{S\subseteq\left\{
+1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{k}%
+}_{=X_{i}}T^{i}\nonumber\\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Exercise 4.2 \textbf{(c)}, applied to }A=\left(  \mathbb{Z}\left[
+U_{1},U_{2},...,U_{m}\right]  \right)  \left[  \left[  T\right]  \right]
+\text{,}\\
+\alpha_{i}=U_{i}\text{ and }t=T
+\end{array}
+\right) \nonumber\\
+&  =\sum_{i\in\mathbb{N}}\left(  -1\right)  ^{i}X_{i}T^{i}. \label{9.6.pf0}%
+\end{align}
+
+
+But the product rule for several factors says that whenever $\alpha_{1}$,
+$\alpha_{2}$, $...$, $\alpha_{m}$ are power series in $\mathbb{K}\left[
+\left[  T\right]  \right]  $ (where $\mathbb{K}$ is a commutative ring), we
+have%
+\[
+\dfrac{d}{dT}\prod\limits_{i=1}^{m}\alpha_{i}=\sum_{j=1}^{m}\left(  \dfrac
+{d}{dT}\alpha_{j}\right)  \prod_{\substack{i\in\left\{  1,2,...,m\right\}
+;\\i\neq j}}\alpha_{i}.
+\]
+Applying this to the power series $\alpha_{i}=1-U_{i}T$, we obtain%
+\begin{align*}
+\dfrac{d}{dT}\prod\limits_{i=1}^{m}\left(  1-U_{i}T\right)   &  =\sum
+_{j=1}^{m}\underbrace{\left(  \dfrac{d}{dT}\left(  1-U_{j}T\right)  \right)
+}_{=-U_{j}=-\dfrac{U_{j}}{1-U_{j}T}\left(  1-U_{j}T\right)  }\prod
+_{\substack{i\in\left\{  1,2,...,m\right\}  ;\\i\neq j}}\left(  1-U_{i}%
+T\right) \\
+&  =\sum_{j=1}^{m}\left(  -\dfrac{U_{j}}{1-U_{j}T}\left(  1-U_{j}T\right)
+\right)  \prod_{\substack{i\in\left\{  1,2,...,m\right\}  ;\\i\neq j}}\left(
+1-U_{i}T\right) \\
+&  =-\sum_{j=1}^{m}\underbrace{\dfrac{U_{j}}{1-U_{j}T}\prod_{\substack{i\in
+\left\{  1,2,...,m\right\}  ;\\i\neq j}}\left(  1-U_{i}T\right)  }%
+_{=\prod\limits_{i\in\left\{  1,2,...,m\right\}  }\left(  1-U_{i}T\right)  }\\
+&  =-\sum_{j=1}^{m}\dfrac{U_{j}}{1-U_{j}T}\prod\limits_{i\in\left\{
+1,2,...,m\right\}  }\left(  1-U_{i}T\right)  =-\sum\limits_{i=1}^{m}%
+\dfrac{U_{i}}{1-U_{i}T}\prod\limits_{i\in\left\{  1,2,...,m\right\}  }\left(
+1-U_{i}T\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed }j\text{ as }i\text{ in
+the first sum}\right)  .
+\end{align*}
+Since%
+\begin{align*}
+&  \dfrac{d}{dT}\prod\limits_{i=1}^{m}\left(  1-U_{i}T\right) \\
+&  =\dfrac{d}{dT}\sum_{i\in\mathbb{N}}\left(  -1\right)  ^{i}X_{i}%
+T^{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{9.6.pf0})}\right) \\
+&  =\sum_{i\in\mathbb{N}\diagdown\left\{  0\right\}  }\left(  -1\right)
+^{i}X_{i}iT^{i-1}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the
+derivative of a power series}\right)  ,
+\end{align*}
+this rewrites as%
+\begin{equation}
+\sum_{i\in\mathbb{N}\diagdown\left\{  0\right\}  }\left(  -1\right)  ^{i}%
+X_{i}iT^{i-1}=-\sum\limits_{i=1}^{m}\dfrac{U_{i}}{1-U_{i}T}\prod
+\limits_{i\in\left\{  1,2,...,m\right\}  }\left(  1-U_{i}T\right)  .
+\label{9.6.pf2}%
+\end{equation}
+Now,%
+\begin{align*}
+\sum_{n\in\mathbb{N}}\left(  -1\right)  ^{n}nX_{n}T^{n}  &  =\sum
+_{n\in\mathbb{N}}\left(  -1\right)  ^{n}X_{n}nT^{n}=\sum_{n\in\mathbb{N}%
+\diagdown\left\{  0\right\}  }\left(  -1\right)  ^{n}X_{n}nT^{n}%
++\underbrace{\left(  -1\right)  ^{0}X_{0}0T^{0}}_{=0}\\
+&  =\sum_{n\in\mathbb{N}\diagdown\left\{  0\right\}  }\left(  -1\right)
+^{n}X_{n}nT^{n}=\sum_{i\in\mathbb{N}\diagdown\left\{  0\right\}  }\left(
+-1\right)  ^{i}X_{i}i\underbrace{T^{i}}_{=TT^{i-1}}\ \ \ \ \ \ \ \ \ \ \left(
+\text{here, we renamed }n\text{ as }i\right) \\
+&  =T\underbrace{\sum_{i\in\mathbb{N}\diagdown\left\{  0\right\}  }\left(
+-1\right)  ^{i}X_{i}iT^{i-1}}_{\substack{=-\sum\limits_{i=1}^{m}\dfrac{U_{i}%
+}{1-U_{i}T}\prod\limits_{i\in\left\{  1,2,...,m\right\}  }\left(
+1-U_{i}T\right)  \\\text{(by (\ref{9.6.pf2}))}}}=-T\sum\limits_{i=1}^{m}%
+\dfrac{U_{i}}{1-U_{i}T}\prod\limits_{i\in\left\{  1,2,...,m\right\}  }\left(
+1-U_{i}T\right) \\
+&  =-\underbrace{\left(  T\sum\limits_{i=1}^{m}\dfrac{U_{i}}{1-U_{i}T}\right)
+}_{\substack{=\sum\limits_{j\in\mathbb{N}\setminus\left\{  0\right\}  }%
+N_{j}\left(  X_{1},X_{2},...,X_{j}\right)  T^{j}\\\text{(by (\ref{Nj2}))}%
+}}\underbrace{\left(  \prod\limits_{i\in\left\{  1,2,...,m\right\}  }\left(
+1-U_{i}T\right)  \right)  }_{\substack{=\sum\limits_{i\in\mathbb{N}}\left(
+-1\right)  ^{i}X_{i}T^{i}\\\text{(by (\ref{9.6.pf0}))}}}\\
+&  =-\sum\limits_{j\in\mathbb{N}\setminus\left\{  0\right\}  }N_{j}\left(
+X_{1},X_{2},...,X_{j}\right)  T^{j}\cdot\sum\limits_{i\in\mathbb{N}}\left(
+-1\right)  ^{i}X_{i}T^{i}\\
+&  =\sum\limits_{j\in\mathbb{N}\setminus\left\{  0\right\}  }N_{j}\left(
+X_{1},X_{2},...,X_{j}\right)  T^{j}\cdot\sum\limits_{i\in\mathbb{N}}\left(
+-\left(  -1\right)  ^{i}\right)  X_{i}T^{i}\\
+&  =\sum_{n\in\mathbb{N}}\left(  \sum_{j=1}^{n}N_{j}\left(  X_{1}%
+,X_{2},...,X_{j}\right)  \left(  -\left(  -1\right)  ^{n-j}\right)
+X_{n-j}\right)  T^{n}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the product of two
+formal power series}\right)  .
+\end{align*}
+Comparing the coefficients before $T^{n}$ on the two sides of this equation,
+we obtain%
+\[
+\left(  -1\right)  ^{n}nX_{n}=\sum_{j=1}^{n}N_{j}\left(  X_{1},X_{2}%
+,...,X_{j}\right)  \left(  -\left(  -1\right)  ^{n-j}\right)  X_{n-j}%
+\]
+for every $n\in\mathbb{N}$. Dividing this equation by $\left(  -1\right)
+^{n}$, we arrive at%
+\begin{align*}
+nX_{n}  &  =\sum_{j=1}^{n}N_{j}\left(  X_{1},X_{2},...,X_{j}\right)
+\underbrace{\dfrac{-\left(  -1\right)  ^{n-j}}{\left(  -1\right)  ^{n}}%
+}_{\substack{=-\left(  -1\right)  ^{\left(  n-j\right)  -n}=-\left(
+-1\right)  ^{-j}\\=-\left(  \dfrac{1}{-1}\right)  ^{j}=-\left(  -1\right)
+^{j}=\left(  -1\right)  ^{j-1}}}X_{n-j}\\
+&  =\sum_{j=1}^{n}N_{j}\left(  X_{1},X_{2},...,X_{j}\right)  \left(
+-1\right)  ^{j-1}X_{n-j}=\sum_{j=1}^{n}\left(  -1\right)  ^{j-1}X_{n-j}%
+N_{j}\left(  X_{1},X_{2},...,X_{j}\right)  .
+\end{align*}
+This proves Theorem 9.6.
+
+As a consequence of Theorem 9.6, we get the following fact (which can be used
+as a recurrence equation to easily compute the Hirzebruch-Newton polynomials
+$N_{j}$):
+
+\begin{quote}
+\textbf{Corollary 9.7.} Let us recall that, for every $j\in\mathbb{N}%
+\diagdown\left\{  0\right\}  $, we denote by $N_{j}$ the $j$-th
+Hirzebruch-Newton polynomial (defined at the beginning of Section 9). Then,
+every $n\in\mathbb{N}$ satisfies%
+\[
+n\alpha_{n}=\sum\limits_{j=1}^{n}\left(  -1\right)  ^{j-1}\alpha_{n-j}%
+N_{j}\left(  \alpha_{1},\alpha_{2},...,\alpha_{j}\right)
+\]
+in the polynomial ring $\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
+_{n}\right]  $.
+\end{quote}
+
+\textit{Proof of Corollary 9.7.} Let $Q_{1}\in\mathbb{Z}\left[  \alpha
+_{1},\alpha_{2},...,\alpha_{n}\right]  $ be the polynomial defined by
+$Q_{1}=n\alpha_{n}$. Let $Q_{2}\in\mathbb{Z}\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{n}\right]  $ be the polynomial defined by $Q_{2}%
+=\sum\limits_{j=1}^{n}\left(  -1\right)  ^{j-1}\alpha_{n-j}N_{j}\left(
+\alpha_{1},\alpha_{2},...,\alpha_{j}\right)  $. We are going to prove that
+$Q_{1}=Q_{2}$.
+
+Consider the ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{n}\right]  $ (the
+polynomial ring in $n$ indeterminates $U_{1},$ $U_{2},$ $...,$ $U_{n}$ over
+the ring $\mathbb{Z}$). For every $i\in\mathbb{N}$, let $X_{i}=\sum
+\limits_{\substack{S\subseteq\left\{  1,2,...,n\right\}  ;\\\left\vert
+S\right\vert =i}}\prod\limits_{k\in S}U_{k}$ be the so-called $i$\textit{-th
+elementary symmetric polynomial} in the variables $U_{1},$ $U_{2},$ $...,$
+$U_{n}$. (In particular, $X_{0}=1$ and $X_{i}=0$ for every $i>n$.) Applying
+Theorem 4.1 \textbf{(b)} to $m=n$ and $P=nX_{n}$, we conclude that there
+exists one and only one polynomial $Q\in K\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{n}\right]  $ such that $nX_{n}=Q\left(  X_{1},X_{2}%
+,...,X_{n}\right)  $. In particular, there exists \textit{at most one} such
+polynomial $Q\in K\left[  \alpha_{1},\alpha_{2},...,\alpha_{n}\right]  $.
+Hence,
+\begin{equation}
+\left(
+\begin{array}
+[c]{c}%
+\text{if }Q_{1}\in K\left[  \alpha_{1},\alpha_{2},...,\alpha_{n}\right]
+\text{ and }Q_{2}\in K\left[  \alpha_{1},\alpha_{2},...,\alpha_{n}\right]
+\text{ are two polynomials}\\
+\text{such that }nX_{n}=Q_{1}\left(  X_{1},X_{2},...,X_{n}\right)  \text{ and
+}nX_{n}=Q_{2}\left(  X_{1},X_{2},...,X_{n}\right)  \text{,}\\
+\text{then }Q_{1}=Q_{2}%
+\end{array}
+\right)  . \label{9.7.pf1}%
+\end{equation}
+
+
+Clearly, $Q_{1}\left(  X_{1},X_{2},...,X_{n}\right)  =nX_{n}$ (since
+$Q_{1}=n\alpha_{n}$). On the other hand, $Q_{2}=\sum\limits_{j=1}^{n}\left(
+-1\right)  ^{j-1}\alpha_{n-j}N_{j}\left(  \alpha_{1},\alpha_{2},...,\alpha
+_{j}\right)  $, so that%
+\begin{align*}
+Q_{2}\left(  X_{1},X_{2},...,X_{n}\right)   &  =\sum\limits_{j=1}^{n}\left(
+-1\right)  ^{j-1}X_{n-j}N_{j}\left(  X_{1},X_{2},...,X_{j}\right) \\
+&  =nX_{n}\ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 9.6, applied to
+}m=n\right)  .
+\end{align*}
+Hence, $Q_{1}=Q_{2}$ (due to (\ref{9.7.pf1})). Since $Q_{1}=n\alpha_{n}$ and
+$Q_{2}=\sum\limits_{j=1}^{n}\left(  -1\right)  ^{j-1}\alpha_{n-j}N_{j}\left(
+\alpha_{1},\alpha_{2},...,\alpha_{j}\right)  $, this rewrites as $n\alpha
+_{n}=\sum\limits_{j=1}^{n}\left(  -1\right)  ^{j-1}\alpha_{n-j}N_{j}\left(
+\alpha_{1},\alpha_{2},...,\alpha_{j}\right)  $. This proves Corollary 9.7.
+
+\textit{Proof of Theorem 9.5.} \textit{1st step:} For any fixed $\lambda$-ring
+$\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ and any
+fixed $x\in K$, the assertions \textbf{(a)} and \textbf{(b)} are equivalent.
+
+\textit{Proof.} This proof is exactly the same as the proof of the 1st step of
+the proof of Theorem 9.2. (In fact, during the 1st step of the proof of
+Theorem 9.2, we have never used the assumption that the $\lambda$-ring
+$\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is special.)
+
+\textit{2nd step:} For any $\lambda$-ring $\left(  K,\left(  \lambda
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ and any $x\in K$, we have%
+\[
+n\lambda^{n}\left(  x\right)  =\sum_{j=1}^{n}\left(  -1\right)  ^{j-1}%
+\lambda^{n-j}\left(  x\right)  \psi^{j}\left(  x\right)
+\]
+for every $n\in\mathbb{N}$.
+
+\textit{Proof.} Let $n\in\mathbb{N}$. Corollary 9.7 yields%
+\[
+n\alpha_{n}=\sum\limits_{j=1}^{n}\left(  -1\right)  ^{j-1}\alpha_{n-j}%
+N_{j}\left(  \alpha_{1},\alpha_{2},...,\alpha_{j}\right)  .
+\]
+This is a polynomial identity in $\mathbb{Z}\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{n}\right]  $. Hence, we can apply this identity to
+$\alpha_{1}=\lambda^{1}\left(  x\right)  $, $\alpha_{2}=\lambda^{2}\left(
+x\right)  $, $...$, $\alpha_{n}=\lambda^{n}\left(  x\right)  $, and obtain%
+\[
+n\lambda^{n}\left(  x\right)  =\sum_{j=1}^{n}\left(  -1\right)  ^{j-1}%
+\lambda^{n-j}\left(  x\right)  \underbrace{N_{j}\left(  \lambda^{1}\left(
+x\right)  ,\lambda^{2}\left(  x\right)  ,...,\lambda^{j}\left(  x\right)
+\right)  }_{=\psi^{j}\left(  x\right)  }=\sum_{j=1}^{n}\left(  -1\right)
+^{j-1}\lambda^{n-j}\left(  x\right)  \psi^{j}\left(  x\right)  .
+\]
+This proves the 2nd step.
+
+\textit{3rd step:} For any $\lambda$-ring $\left(  K,\left(  \lambda
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ and any $x\in K$, we have%
+\[
+-T\cdot\dfrac{d}{dT}\lambda_{T}\left(  x\right)  =\lambda_{T}\left(  x\right)
+\cdot\widetilde{\psi}_{-T}\left(  x\right)  ,
+\]
+where we denote the power series $\operatorname*{ev}\nolimits_{-T}\left(
+\widetilde{\psi}_{T}\left(  x\right)  \right)  $ by $\widetilde{\psi}%
+_{-T}\left(  x\right)  $.
+
+\textit{Proof.} We have
+\begin{align*}
+\widetilde{\psi}_{-T}\left(  x\right)   &  =\operatorname*{ev}\nolimits_{-T}%
+\left(  \widetilde{\psi}_{T}\left(  x\right)  \right)  =\operatorname*{ev}%
+\nolimits_{-T}\left(  \sum\limits_{j\in\mathbb{N}\setminus\left\{  0\right\}
+}\psi^{j}\left(  x\right)  T^{j}\right)  \ \ \ \ \ \ \ \ \ \ \left(
+\text{since }\widetilde{\psi}_{T}\left(  x\right)  =\sum\limits_{j\in
+\mathbb{N}\setminus\left\{  0\right\}  }\psi^{j}\left(  x\right)  T^{j}\right)
+\\
+&  =\sum\limits_{j\in\mathbb{N}\setminus\left\{  0\right\}  }\psi^{j}\left(
+x\right)  \underbrace{\left(  -T\right)  ^{j}}_{=\left(  -1\right)  ^{j}T^{j}%
+}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{ev}%
+\nolimits_{-T}\right) \\
+&  =\sum\limits_{j\in\mathbb{N}\setminus\left\{  0\right\}  }\psi^{j}\left(
+x\right)  \underbrace{\left(  -1\right)  ^{j}}_{=-\left(  -1\right)  ^{j-1}%
+}T^{j}=-\sum\limits_{j\in\mathbb{N}\setminus\left\{  0\right\}  }\psi
+^{j}\left(  x\right)  \left(  -1\right)  ^{j-1}T^{j},
+\end{align*}
+so that%
+\[
+-\widetilde{\psi}_{-T}\left(  x\right)  =\sum\limits_{j\in\mathbb{N}%
+\setminus\left\{  0\right\}  }\psi^{j}\left(  x\right)  \left(  -1\right)
+^{j-1}T^{j}.
+\]
+Multiplying this formula with the equality $\lambda_{T}\left(  x\right)
+=\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  x\right)  T^{i}$, we obtain%
+\begin{align*}
+\left(  -\widetilde{\psi}_{-T}\left(  x\right)  \right)  \cdot\lambda
+_{T}\left(  x\right)   &  =\left(  \sum\limits_{j\in\mathbb{N}\setminus
+\left\{  0\right\}  }\psi^{j}\left(  x\right)  \left(  -1\right)  ^{j-1}%
+T^{j}\right)  \cdot\left(  \sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
+x\right)  T^{i}\right) \\
+&  =\sum_{n\in\mathbb{N}}\left(  \sum_{j=1}^{n}\psi^{j}\left(  x\right)
+\left(  -1\right)  ^{j-1}\lambda^{i}\left(  x\right)  \right)  T^{n}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the product of two
+power series}\right) \\
+&  =\sum_{n\in\mathbb{N}}\underbrace{\left(  \sum_{j=1}^{n}\left(  -1\right)
+^{j-1}\lambda^{n-j}\left(  x\right)  \psi^{j}\left(  x\right)  \right)
+}_{\substack{=n\lambda^{n}\left(  x\right)  \\\text{(by the 2nd step)}}%
+}T^{n}=\sum_{n\in\mathbb{N}}n\lambda^{n}\left(  x\right)  T^{n}\\
+&  =\sum_{n\in\mathbb{N}\diagdown\left\{  0\right\}  }n\lambda^{n}\left(
+x\right)  T^{n}+\underbrace{0\lambda^{0}\left(  x\right)  T^{0}}_{=0}%
+=\sum_{n\in\mathbb{N}\diagdown\left\{  0\right\}  }n\lambda^{n}\left(
+x\right)  \underbrace{T^{n}}_{=TT^{n-1}}\\
+&  =T\cdot\sum_{n\in\mathbb{N}\diagdown\left\{  0\right\}  }n\lambda
+^{n}\left(  x\right)  T^{n-1}.
+\end{align*}
+Now, $\lambda_{T}\left(  x\right)  =\sum\limits_{i\in\mathbb{N}}\lambda
+^{i}\left(  x\right)  T^{i}=\sum\limits_{n\in\mathbb{N}}\lambda^{n}\left(
+x\right)  T^{n}$, so that%
+\begin{align*}
+\dfrac{d}{dT}\lambda_{T}\left(  x\right)   &  =\dfrac{d}{dT}\sum
+\limits_{n\in\mathbb{N}}\lambda^{n}\left(  x\right)  T^{n}=\sum_{n\in
+\mathbb{N}\diagdown\left\{  0\right\}  }n\lambda^{n}\left(  x\right)
+T^{n-1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the derivative of a
+formal power series}\right)  ,
+\end{align*}
+and thus%
+\begin{align*}
+-T\cdot\dfrac{d}{dT}\lambda_{T}\left(  x\right)   &  =-\underbrace{T\cdot
+\sum_{n\in\mathbb{N}\diagdown\left\{  0\right\}  }n\lambda^{n}\left(
+x\right)  T^{n-1}}_{=\left(  -\widetilde{\psi}_{-T}\left(  x\right)  \right)
+\cdot\lambda_{T}\left(  x\right)  }=-\left(  -\widetilde{\psi}_{-T}\left(
+x\right)  \right)  \cdot\lambda_{T}\left(  x\right) \\
+&  =\lambda_{T}\left(  x\right)  \cdot\widetilde{\psi}_{-T}\left(  x\right)  .
+\end{align*}
+This proves the 3rd step.
+
+\textit{4th step:} For any fixed $\lambda$-ring $\left(  K,\left(  \lambda
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ and any fixed $x\in K$, the assertion
+\textbf{(b)} holds.
+
+\textit{Proof.} By the 3rd step, we have
+\[
+-T\cdot\dfrac{d}{dT}\lambda_{T}\left(  x\right)  =\lambda_{T}\left(  x\right)
+\cdot\widetilde{\psi}_{-T}\left(  x\right)  .
+\]
+
+
+Now, every formal power series $\alpha\in K\left[  \left[  T\right]  \right]
+$ satisfies $\operatorname*{ev}\nolimits_{-T}\left(  \dfrac{d}{dT}%
+\alpha\right)  =-\dfrac{d}{dT}\left(  \operatorname*{ev}\nolimits_{-T}%
+\alpha\right)  $.\ \ \ \ \footnote{\textit{Proof.} Let $\alpha\in K\left[
+\left[  T\right]  \right]  $ be a formal power series. Write $\alpha$ in the
+form $\sum\limits_{i\in\mathbb{N}}\alpha_{i}T^{i}$ with $\alpha_{i}\in K$ for
+every $i\in\mathbb{N}$. Then, $\operatorname*{ev}\nolimits_{-T}\alpha
+=\operatorname*{ev}\nolimits_{-T}\left(  \sum\limits_{i\in\mathbb{N}}%
+\alpha_{i}T^{i}\right)  =\sum\limits_{i\in\mathbb{N}}\alpha_{i}\left(
+-1\right)  ^{i}T^{i}$ (by the definition of $\operatorname*{ev}\nolimits_{-T}%
+$), so that%
+\begin{align*}
+\dfrac{d}{dT}\left(  \operatorname*{ev}\nolimits_{-T}\alpha\right)   &
+=\dfrac{d}{dT}\sum\limits_{i\in\mathbb{N}}\alpha_{i}\left(  -1\right)
+^{i}T^{i}=\sum\limits_{i\in\mathbb{N}\diagdown\left\{  0\right\}  }\alpha
+_{i}\left(  -1\right)  ^{i}iT^{i-1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the derivative of a
+formal power series}\right)  .
+\end{align*}
+\par
+On the other hand, $\alpha=\sum\limits_{i\in\mathbb{N}}\alpha_{i}T^{i}$, so
+that%
+\begin{align*}
+\dfrac{d}{dT}\alpha &  =\dfrac{d}{dT}\sum\limits_{i\in\mathbb{N}}\alpha
+_{i}T^{i}=\sum\limits_{i\in\mathbb{N}\diagdown\left\{  0\right\}  }\alpha
+_{i}iT^{i-1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the derivative of a
+formal power series}\right) \\
+&  =\sum\limits_{i\in\mathbb{N}}\alpha_{i+1}\left(  i+1\right)  T^{i}%
+\end{align*}
+(here we substituted $i$ for $i-1$). Thus,%
+\begin{align*}
+\operatorname*{ev}\nolimits_{-T}\left(  \dfrac{d}{dT}\alpha\right)   &
+=\operatorname*{ev}\nolimits_{-T}\left(  \sum\limits_{i\in\mathbb{N}}%
+\alpha_{i+1}\left(  i+1\right)  T^{i}\right)  =\sum\limits_{i\in\mathbb{N}%
+}\alpha_{i+1}\left(  i+1\right)  \left(  -1\right)  ^{i}T^{i}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{ev}%
+\nolimits_{-T}\right) \\
+&  =\sum\limits_{i\in\mathbb{N}}\alpha_{i+1}\left(  i+1\right)  \left(
+-1\right)  ^{i}T^{i}=\sum\limits_{i\in\mathbb{N}\diagdown\left\{  0\right\}
+}\alpha_{i}i\underbrace{\left(  -1\right)  ^{i-1}}_{=-\left(  -1\right)  ^{i}%
+}T^{i-1}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }i\text{ for
+}i+1\right) \\
+&  =-\sum\limits_{i\in\mathbb{N}\diagdown\left\{  0\right\}  }\alpha
+_{i}\underbrace{i\left(  -1\right)  ^{i}}_{=\left(  -1\right)  ^{i}i}%
+T^{i-1}=-\underbrace{\sum\limits_{i\in\mathbb{N}\diagdown\left\{  0\right\}
+}\alpha_{i}\left(  -1\right)  ^{i}iT^{i-1}}_{=\dfrac{d}{dT}\left(
+\operatorname*{ev}\nolimits_{-T}\alpha\right)  }=-\dfrac{d}{dT}\left(
+\operatorname*{ev}\nolimits_{-T}\alpha\right)  ,
+\end{align*}
+qed.} Applied to $\alpha=\lambda_{T}\left(  x\right)  $, this yields
+$\operatorname*{ev}\nolimits_{-T}\left(  \dfrac{d}{dT}\lambda_{T}\left(
+x\right)  \right)  =-\dfrac{d}{dT}\left(  \operatorname*{ev}\nolimits_{-T}%
+\left(  \lambda_{T}\left(  x\right)  \right)  \right)  $. Since
+$\operatorname*{ev}\nolimits_{-T}\left(  \lambda_{T}\left(  x\right)  \right)
+=\lambda_{-T}\left(  x\right)  $, this rewrites as $\operatorname*{ev}%
+\nolimits_{-T}\left(  \dfrac{d}{dT}\lambda_{T}\left(  x\right)  \right)
+=-\dfrac{d}{dT}\lambda_{-T}\left(  x\right)  $. On the other hand, every
+formal power series $\alpha\in K\left[  \left[  T\right]  \right]  $ satisfies
+$\operatorname*{ev}\nolimits_{-T}\left(  \operatorname*{ev}\nolimits_{-T}%
+\alpha\right)  =\alpha$.\ \ \ \ \footnote{\textit{Proof.} Let $\alpha\in
+K\left[  \left[  T\right]  \right]  $ be a formal power series. Write $\alpha$
+in the form $\sum\limits_{i\in\mathbb{N}}\alpha_{i}T^{i}$ with $\alpha_{i}\in
+K$ for every $i\in\mathbb{N}$. Then, $\operatorname*{ev}\nolimits_{-T}%
+\alpha=\operatorname*{ev}\nolimits_{-T}\left(  \sum\limits_{i\in\mathbb{N}%
+}\alpha_{i}T^{i}\right)  =\sum\limits_{i\in\mathbb{N}}\alpha_{i}\left(
+-1\right)  ^{i}T^{i}$ (by the definition of $\operatorname*{ev}\nolimits_{-T}%
+$), so that%
+\begin{align*}
+\operatorname*{ev}\nolimits_{-T}\left(  \operatorname*{ev}\nolimits_{-T}%
+\alpha\right)   &  =\operatorname*{ev}\nolimits_{-T}\left(  \sum
+\limits_{i\in\mathbb{N}}\alpha_{i}\left(  -1\right)  ^{i}T^{i}\right)
+=\sum\limits_{i\in\mathbb{N}}\alpha_{i}\underbrace{\left(  -1\right)
+^{i}\left(  -1\right)  ^{i}}_{=1}T^{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the
+definition of }\operatorname*{ev}\nolimits_{-T}\right) \\
+&  =\sum\limits_{i\in\mathbb{N}}\alpha_{i}T^{i}=\alpha,
+\end{align*}
+qed.} Applied to $\alpha=\widetilde{\psi}_{T}\left(  x\right)  $, this yields
+$\operatorname*{ev}\nolimits_{-T}\left(  \operatorname*{ev}\nolimits_{-T}%
+\left(  \widetilde{\psi}_{T}\left(  x\right)  \right)  \right)
+=\widetilde{\psi}_{T}\left(  x\right)  $. Since $\operatorname*{ev}%
+\nolimits_{-T}\left(  \widetilde{\psi}_{T}\left(  x\right)  \right)
+=\widetilde{\psi}_{-T}\left(  x\right)  $, this becomes $\operatorname*{ev}%
+\nolimits_{-T}\left(  \widetilde{\psi}_{-T}\left(  x\right)  \right)
+=\widetilde{\psi}_{T}\left(  x\right)  $.
+
+Now,%
+\begin{align*}
+\operatorname*{ev}\nolimits_{-T}\left(  -T\cdot\dfrac{d}{dT}\lambda_{T}\left(
+x\right)  \right)   &  =-\underbrace{\operatorname*{ev}\nolimits_{-T}\left(
+T\right)  }_{=-T}\cdot\underbrace{\operatorname*{ev}\nolimits_{-T}\left(
+\dfrac{d}{dT}\lambda_{T}\left(  x\right)  \right)  }_{=-\dfrac{d}{dT}%
+\lambda_{-T}\left(  x\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\operatorname*{ev}\nolimits_{-T}%
+\text{ is a }K\text{-algebra homomorphism}\right) \\
+&  =-T\cdot\dfrac{d}{dT}\lambda_{-T}\left(  x\right)
+\end{align*}
+and%
+\begin{align*}
+\operatorname*{ev}\nolimits_{-T}\left(  \lambda_{T}\left(  x\right)
+\cdot\widetilde{\psi}_{-T}\left(  x\right)  \right)   &
+=\underbrace{\operatorname*{ev}\nolimits_{-T}\left(  \lambda_{T}\left(
+x\right)  \right)  }_{=\lambda_{-T}\left(  x\right)  }\cdot
+\underbrace{\operatorname*{ev}\nolimits_{-T}\left(  \widetilde{\psi}%
+_{-T}\left(  x\right)  \right)  }_{=\widetilde{\psi}_{T}\left(  x\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\operatorname*{ev}\nolimits_{-T}%
+\text{ is a }K\text{-algebra homomorphism}\right) \\
+&  =\lambda_{-T}\left(  x\right)  \cdot\widetilde{\psi}_{T}\left(  x\right)  .
+\end{align*}
+Hence,%
+\[
+-T\cdot\dfrac{d}{dT}\lambda_{-T}\left(  x\right)  =\operatorname*{ev}%
+\nolimits_{-T}\left(  \underbrace{-T\cdot\dfrac{d}{dT}\lambda_{T}\left(
+x\right)  }_{=\lambda_{T}\left(  x\right)  \cdot\widetilde{\psi}_{-T}\left(
+x\right)  }\right)  =\operatorname*{ev}\nolimits_{-T}\left(  \lambda
+_{T}\left(  x\right)  \cdot\widetilde{\psi}_{-T}\left(  x\right)  \right)
+=\lambda_{-T}\left(  x\right)  \cdot\widetilde{\psi}_{T}\left(  x\right)  ,
+\]
+so that%
+\[
+\widetilde{\psi}_{T}\left(  x\right)  =\dfrac{-T\cdot\dfrac{d}{dT}\lambda
+_{-T}\left(  x\right)  }{\lambda_{-T}\left(  x\right)  }=-T\cdot
+\underbrace{\dfrac{\dfrac{d}{dT}\lambda_{-T}\left(  x\right)  }{\lambda
+_{-T}\left(  x\right)  }}_{=\dfrac{d}{dT}\log\lambda_{-T}\left(  x\right)
+}=-T\cdot\dfrac{d}{dT}\log\lambda_{-T}\left(  x\right)  .
+\]
+Hence, assertion \textbf{(b)} holds. This completes the proof of the 4th step.
+
+\textit{5th step:} For any fixed $\lambda$-ring $\left(  K,\left(  \lambda
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ and any fixed $x\in K$, the assertion
+\textbf{(a)} holds.
+
+\textit{Proof.} This follows from the 4th step, since \textbf{(a)} and
+\textbf{(b)} are equivalent (by the 1st step).
+
+Thus, the proof of Theorem 9.5 is complete.
+
+Theorem 9.5 is clearly a generalization of Theorem 9.2, and thus our above
+proof of Theorem 9.5 is, at the same time, a new proof of Theorem 9.2.
+
 \begin{quotation}
 \textit{Exercise 9.1.} Let $K$ be a ring. Let $u\in1+K\left[  T\right]  ^{+}$.
 For every $j\in\mathbb{N}$, let us denote by $\widehat{\psi}^{j}$ the $j$-th
@@ -4109,7 +4735,7 @@ is a ring homomorphism.
 give a new proof of a part of Theorem 9.3 \textbf{(b)}. Which part, and how?
 
 \textit{Exercise 9.3.} Let $\left(  K,\left(  \lambda^{i}\right)
-_{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring.
+_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring.
 
 \textbf{(a)} Prove that%
 \[
@@ -4190,6 +4816,15 @@ n\lambda^{n}\left(  x\right)  & \lambda^{n-1}\left(  x\right)  & \lambda
 \right)  .
 \]
 ]
+
+\textit{Exercise 9.4.} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a binomial $\lambda$-ring. Prove that $\psi
+^{n}=\operatorname*{id}$ for every $n\in\mathbb{N}\diagdown\left\{  0\right\}
+$.
+
+[Note that, if we recall the definition of a binomial $\lambda$-ring and
+Exercise 9.3 \textbf{(c)}, then we could reformulate this result without
+reference to $\lambda$-rings.]
 
 \bigskip
 \end{quotation}
@@ -4517,13 +5152,16 @@ We are going to prove this by induction, so we assume that $\lambda^{j}\left(
 \ell^{\prime}\right)  }_{\substack{\in L\text{, since}\\\ell^{\prime}\in
 L}}+\lambda^{i}\left(  \ell-\ell^{\prime}\right)  \underbrace{\lambda
 ^{0}\left(  \ell^{\prime}\right)  }_{=1}\\
-&  \in\underbrace{\left(  L-L\right)  L}_{\subseteq L-L}+\lambda^{i}\left(
-\ell-\ell^{\prime}\right)  \subseteq\left(  L-L\right)  +\lambda^{i}\left(
+&  \in\underbrace{\left(  L-L\right)  L}_{\substack{\subseteq LL-LL\subseteq
+L-L\\\text{(since }LL\subseteq L\text{)}}}+\lambda^{i}\left(  \ell
+-\ell^{\prime}\right)  \subseteq\left(  L-L\right)  +\lambda^{i}\left(
 \ell-\ell^{\prime}\right)  .
 \end{align*}
-But $\lambda^{i}\left(  \ell\right)  $ itself lies in $L-L$ (since it lies in
-$L$, because $\ell\in L$), so this yields $\lambda^{i}\left(  \ell
--\ell^{\prime}\right)  \in L-L,$ and this completes our induction.
+But $\lambda^{i}\left(  \ell\right)  $ itself lies in $L-L$ (since $\ell\in
+L$, so that $\lambda^{i}\left(  \ell\right)  \in L$ and thus $\lambda
+^{i}\left(  \ell\right)  =\underbrace{\lambda^{i}\left(  \ell\right)  }_{\in
+L}-\underbrace{0}_{\in L}\in L-L$), so this yields $\lambda^{i}\left(
+\ell-\ell^{\prime}\right)  \in L-L,$ and this completes our induction.
 
 \textit{Exercise 3.1: Solution:}
 
@@ -4558,16 +5196,14 @@ theorem), where $\varphi$ is Euler's totient function.
 
 Notice that $r=\dfrac{n!}{p^{v}}$ yields $n!=p^{v}r$, so that $n!\equiv
 0\operatorname{mod}r$. On the other hand,%
-\begin{align*}
-p^{\left(  \varphi\left(  r\right)  -1\right)  in}\cdot u\left(
-u-p^{i}\right)  ...\left(  u-\left(  n-1\right)  p^{i}\right)   &  =p^{\left(
-\varphi\left(  r\right)  -1\right)  in}\cdot\prod\limits_{k=0}^{n-1}\left(
-u-kp^{i}\right)  =\prod\limits_{k=0}^{n-1}\left(  p^{\left(  \varphi\left(
-r\right)  -1\right)  i}\left(  u-kp^{i}\right)  \right) \\
-&  =\prod\limits_{k=0}^{n-1}\left(  p^{\left(  \varphi\left(  r\right)
+\[
+p^{\left(  \varphi\left(  r\right)  -1\right)  in}\cdot\prod\limits_{k=0}%
+^{n-1}\left(  u-kp^{i}\right)  =\prod\limits_{k=0}^{n-1}\left(  p^{\left(
+\varphi\left(  r\right)  -1\right)  i}\left(  u-kp^{i}\right)  \right)
+=\prod\limits_{k=0}^{n-1}\left(  p^{\left(  \varphi\left(  r\right)
 -1\right)  i}u-p^{\left(  \varphi\left(  r\right)  -1\right)  i}kp^{i}\right)
 .
-\end{align*}
+\]
 Since $p^{\left(  \varphi\left(  r\right)  -1\right)  i}kp^{i}=p^{\left(
 \varphi\left(  r\right)  -1\right)  i+i}k=p^{\varphi\left(  r\right)
 i}k=\left(  \underbrace{p^{\varphi\left(  r\right)  }}_{\equiv
@@ -4576,9 +5212,9 @@ becomes%
 \begin{align*}
 p^{\left(  \varphi\left(  r\right)  -1\right)  in}\cdot\prod\limits_{k=0}%
 ^{n-1}\left(  u-kp^{i}\right)   &  \equiv\prod\limits_{k=0}^{n-1}\left(
-p^{\left(  \varphi\left(  r\right)  -1\right)  i}u-k\right) \\
-&  =\underbrace{n!}_{\equiv0\operatorname{mod}r}\dbinom{p^{\left(
-\varphi\left(  r\right)  -1\right)  i}u}{n}\\
+p^{\left(  \varphi\left(  r\right)  -1\right)  i}u-k\right)  =\underbrace{n!}%
+_{\equiv0\operatorname{mod}r}\dbinom{p^{\left(  \varphi\left(  r\right)
+-1\right)  i}u}{n}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\dfrac{\prod\limits_{k=0}%
 ^{n-1}\left(  p^{\left(  \varphi\left(  r\right)  -1\right)  i}u-k\right)
 }{n!}=\dbinom{p^{\left(  \varphi\left(  r\right)  -1\right)  i}u}{n}\right) \\
@@ -4589,9 +5225,9 @@ Thus, $\dfrac{p^{\left(  \varphi\left(  r\right)  -1\right)  in}\cdot
 \begin{align*}
 \dbinom{x}{n}  &  =\dfrac{\prod\limits_{k=0}^{n-1}\left(  u-kp^{i}\right)
 }{n!\cdot\left(  p^{i}\right)  ^{n}}=\dfrac{r}{p^{\left(  \varphi\left(
-r\right)  -1\right)  in}\cdot n!}\cdot\dfrac{p^{\left(  \varphi\left(
-r\right)  -1\right)  in}\cdot\prod\limits_{k=0}^{n-1}\left(  u-kp^{i}\right)
-}{r}\\
+r\right)  -1\right)  in}\cdot\left(  p^{i}\right)  ^{n}n!}\cdot\dfrac
+{p^{\left(  \varphi\left(  r\right)  -1\right)  in}\cdot\prod\limits_{k=0}%
+^{n-1}\left(  u-kp^{i}\right)  }{r}\\
 &  =\underbrace{\dfrac{r}{p^{\left(  \varphi\left(  r\right)  -1\right)
 in}\cdot\left(  p^{i}\right)  ^{n}p^{v}r}}_{=p^{-v-in-\left(  \varphi\left(
 r\right)  -1\right)  in}}\cdot\underbrace{\dfrac{p^{\left(  \varphi\left(
@@ -4618,15 +5254,11 @@ appears in that of $n!\cdot\left(  p^{i}\right)  ^{n}$. As a consequence, the
 ratio $\dfrac{\prod\limits_{k=0}^{n-1}\left(  u-kp^{i}\right)  }%
 {n!\cdot\left(  p^{i}\right)  ^{n}}$, once brought to simplest form, can have
 no primes distinct from $p$ in its denominator. Thus, this ratio (which, as we
-know, as $\dbinom{x}{n}$) lies in $\left\{  1,p,p^{2},...\right\}
+know, is $\dbinom{x}{n}$) lies in $\left\{  1,p,p^{2},...\right\}
 ^{-1}\mathbb{Z}$. So we have shown that $\dbinom{x}{n}\in\left\{
 1,p,p^{2},...\right\}  ^{-1}\mathbb{Z}$ for every $x\in\left\{  1,p,p^{2}%
 ,...\right\}  ^{-1}\mathbb{Z}$. This proves that $\left\{  1,p,p^{2}%
 ,...\right\}  ^{-1}\mathbb{Z}$ is a binomial ring, qed.
-
-For every prime $q$, prove that $q$ appears in $x\cdot\left(  x-1\right)
-\cdot...\cdot\left(  x-n+1\right)  $ at least as often as it appears in $n!$.
-I would prefer a better proof, but I know of none.
 
 \textit{Exercise 3.2:} \textit{Hints to solution:} Let $\mathbb{N}_{K}^{+}$ be
 the subset $\left\{  1,2,3,...\right\}  $ of $K$. Obviously, this subset is
@@ -4691,20 +5323,261 @@ of $\lambda^{i}$ that Theorem 2.1 \textbf{(a)} is to be applied here.
 
 \textit{Exercise 3.5: Hints to solution:} Same idea as for Exercise 3.4.
 
-\textit{Exercise 5.1: Hints to solution:} This can be proven by induction: The
-ring $K\left[  T\right]  \diagup\left(  p\right)  $ is a finite-free extension
-of $K$ containing a root of the polynomial $P$ (namely, the equivalence class
-$\overline{T}$ of $T\in K\left[  T\right]  $ modulo $\left(  p\right)  $).
-Now, the polynomial $\dfrac{p\left(  S\right)  }{S-\overline{T}}\in\left(
-K\left[  T\right]  \diagup\left(  p\right)  \right)  \left[  S\right]  $ is
-monic and has degree $n-1$, so by induction there exists a finite-free
-extension ring $K_{p}$ of the ring $K\left[  T\right]  \diagup\left(
-p\right)  $ and $n-1$ elements $p_{2},$ $...,$ $p_{n}$ of this extension ring
-$K_{p}$ such that $\dfrac{p\left(  S\right)  }{S-\overline{T}}=\prod
-\limits_{i=2}^{n}\left(  T-p_{i}\right)  $ in $K_{p}\left[  S\right]  $. Thus,
-$p\left(  S\right)  =\left(  S-\overline{T}\right)  \prod\limits_{i=2}%
-^{n}\left(  T-p_{i}\right)  $ in $K_{p}\left[  S\right]  $. If we denote
-$\overline{T}$ by $p_{1},$ this takes the form $p\left(  S\right)
+\textit{Exercise 4.2: Detailed solution:} There are several ways to solve
+Exercise 4.2 (many people would call it trivial). Here is not the simplest
+one, but the easiest-to-formalize one:
+
+\textbf{(a)} Let us prove that every $n\in\left\{  0,1,...,m\right\}  $
+satisfies%
+\begin{equation}
+\prod\limits_{i=1}^{n}\left(  1+\alpha_{i}\right)  =\sum\limits_{S\subseteq
+\left\{  1,2,...,n\right\}  }\prod\limits_{k\in S}\alpha_{k}. \label{4.2.pf.1}%
+\end{equation}
+
+
+\textit{Proof of (\ref{4.2.pf.1}).} We will prove (\ref{4.2.pf.1}) by
+induction over $n$:
+
+\textit{Induction base:} If $n=0$, then $\prod\limits_{i=1}^{n}\left(
+1+\alpha_{i}\right)  =\left(  \text{empty product}\right)  =1$ and
+\begin{align*}
+\sum\limits_{S\subseteq\left\{  1,2,...,n\right\}  }\prod\limits_{k\in
+S}\alpha_{k}  &  =\sum\limits_{S\subseteq\left\{  1,2,...,0\right\}  }%
+\prod\limits_{k\in S}\alpha_{k}=\prod\limits_{k\in\varnothing}\alpha_{k}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since the only subset }S\ \text{of
+}\left\{  1,2,...,0\right\}  \text{ is }\varnothing\right) \\
+&  =\left(  \text{empty product}\right)  =1.
+\end{align*}
+Thus, $\prod\limits_{i=1}^{n}\left(  1+\alpha_{i}\right)  =\sum
+\limits_{S\subseteq\left\{  1,2,...,n\right\}  }\prod\limits_{k\in S}%
+\alpha_{k}$ holds for $n=0$. In other words, we have proven (\ref{4.2.pf.1})
+for $n=0$. This completes the induction base.
+
+\textit{Induction step:} Let $N\in\left\{  0,1,...,m-1\right\}  $. Assume that
+(\ref{4.2.pf.1}) holds for $n=N$. Now let us prove (\ref{4.2.pf.1}) for
+$n=N+1$.
+
+Since (\ref{4.2.pf.1}) holds for $n=N$, we have%
+\[
+\prod\limits_{i=1}^{N}\left(  1+\alpha_{i}\right)  =\sum\limits_{S\subseteq
+\left\{  1,2,...,N\right\}  }\prod\limits_{k\in S}\alpha_{k}.
+\]
+
+
+Now, let $P$ be the set of all subsets of $\left\{  1,2,...,N\right\}  $.
+Then, $P$ is the set of all subsets $S$ of $\left\{  1,2,...,N+1\right\}  $
+satisfying $N+1\notin S$ (because subsets $S$ of $\left\{
+1,2,...,N+1\right\}  $ satisfying $N+1\notin S$ are the same thing as subsets
+of $\left\{  1,2,...,N\right\}  $). Therefore, summing over all $S\in P$ is
+the same as summing over all subsets $S$ of $\left\{  1,2,...,N+1\right\}  $
+satisfying $N+1\notin S$. Hence, $\sum\limits_{S\in P}\prod\limits_{k\in
+S}\alpha_{k}=\sum\limits_{\substack{S\subseteq\left\{  1,2,...,N+1\right\}
+;\\N+1\notin S}}\prod\limits_{k\in S}\alpha_{k}$.
+
+On the other hand, summing over all $S\in P$ is the same as summing over all
+subsets $S$ of $\left\{  1,2,...,N\right\}  $ (since $P$ is the set of all
+subsets of $\left\{  1,2,...,N\right\}  $). Thus, $\sum\limits_{S\in P}%
+\prod\limits_{k\in S}\alpha_{k}=\sum\limits_{S\subseteq\left\{
+1,2,...,N\right\}  }\prod\limits_{k\in S}\alpha_{k}$.
+
+Notice that every $S\in P$ is a subset of $\left\{  1,2,...,N\right\}  $
+(since $P$ is the set of all subsets of $\left\{  1,2,...,N\right\}  $) and
+thus satisfies $N+1\notin S$.
+
+Now, let $Q$ be the set of all subsets $T$ of $\left\{  1,2,...,N+1\right\}  $
+satisfying $N+1\in T$. Then, summing over all $T\in Q$ is the same as summing
+over all subsets $T$ of $\left\{  1,2,...,N+1\right\}  $ satisfying $N+1\in
+T$. Thus, $\sum\limits_{T\in Q}\prod\limits_{k\in T}\alpha_{k}=\sum
+\limits_{\substack{T\subseteq\left\{  1,2,...,N+1\right\}  ;\\N+1\in T}%
+}\prod\limits_{k\in T}\alpha_{k}$. Renaming the index $T$ as $S$ in both sides
+of this equation, we obtain $\sum\limits_{S\in Q}\prod\limits_{k\in S}%
+\alpha_{k}=\sum\limits_{\substack{S\subseteq\left\{  1,2,...,N+1\right\}
+;\\N+1\in S}}\prod\limits_{k\in S}\alpha_{k}$.
+
+From the definitions of $P$ and $Q$, it easily follows that every $S\in P$
+satisfies $S\cup\left\{  N+1\right\}  \in Q$\ \ \ \ \footnote{\textit{Proof.}
+Let $S\in P$. Then, $S$ is a subset of $\left\{  1,2,...,N\right\}  $ (since
+$P$ is the set of all subsets of $\left\{  1,2,...,N\right\}  $). Thus,
+$S\cup\left\{  N+1\right\}  $ is a subset of $\left\{  1,2,...,N+1\right\}  $.
+Clearly, $N+1\in S\cup\left\{  N+1\right\}  $. Thus, $S\cup\left\{
+N+1\right\}  $ is a subset of $\left\{  1,2,...,N+1\right\}  $ satisfying
+$N+1\in S\cup\left\{  N+1\right\}  $. In other words, $S\cup\left\{
+N+1\right\}  \in Q$ (since $Q$ is the set of all subsets $T$ of $\left\{
+1,2,...,N+1\right\}  $ satisfying $N+1\in T$), qed.}. Hence, we can define a
+map $\iota:P\rightarrow Q$ by%
+\[
+\left(  \iota\left(  S\right)  =S\cup\left\{  N+1\right\}
+\ \ \ \ \ \ \ \ \ \ \text{for any }S\in P\right)  .
+\]
+This map $\iota$ is injective (because if two sets $S\in P$ and $S^{\prime}\in
+P$ satisfy $\iota\left(  S\right)  =\iota\left(  S^{\prime}\right)  $, then
+$S=S^{\prime}$\ \ \ \ \footnote{\textit{Proof.} Let $S\in P$ and $S^{\prime
+}\in P$ be two sets satisfying $\iota\left(  S\right)  =\iota\left(
+S^{\prime}\right)  $.
+\par
+The set $S$ is a subset of $\left\{  1,2,...,N\right\}  $ (since $S\in P$ and
+since $P$ is the set of all subsets of $\left\{  1,2,...,N\right\}  $). Hence,
+$N+1\notin S$. But $\iota\left(  S\right)  =S\cup\left\{  N+1\right\}  $, so
+that%
+\[
+\iota\left(  S\right)  \diagdown\left\{  N+1\right\}  =\left(  S\cup\left\{
+N+1\right\}  \right)  \diagdown\left\{  N+1\right\}  =\underbrace{\left(
+S\diagdown\left\{  N+1\right\}  \right)  }_{=S\text{ (since }N+1\notin
+S\text{)}}\cup\underbrace{\left(  \left\{  N+1\right\}  \diagdown\left\{
+N+1\right\}  \right)  }_{=\varnothing}=S\cup\varnothing=S.
+\]
+Similarly, $\iota\left(  S^{\prime}\right)  \diagdown\left\{  N+1\right\}
+=S^{\prime}$. Hence, $S=\underbrace{\iota\left(  S\right)  }_{=\iota\left(
+S^{\prime}\right)  }\diagdown\left\{  N+1\right\}  =\iota\left(  S^{\prime
+}\right)  \diagdown\left\{  N+1\right\}  =S^{\prime}$, qed.}) and surjective
+(because every $T\in Q$ satisfies $T=\iota\left(  S\right)  $ for some $S\in
+P$\ \ \ \ \footnote{\textit{Proof.} Let $S=T\diagdown\left\{  N+1\right\}  $.
+Now, $T$ is a subset of $\left\{  1,2,...,N+1\right\}  $ satisfying $N+1\in T$
+(since $T\in Q$, and since $Q$ is the set of all subsets $T$ of $\left\{
+1,2,...,N+1\right\}  $ satisfying $N+1\in T$).
+\par
+Since $T$ is a subset of $\left\{  1,2,...,N+1\right\}  $, it is clear that
+$T\diagdown\left\{  N+1\right\}  $ is a subset of $\left\{
+1,2,...,N+1\right\}  \diagdown\left\{  N+1\right\}  =\left\{
+1,2,...,N\right\}  $, so that $T\diagdown\left\{  N+1\right\}  \in P$ (since
+$P$ is the set of all subsets of $\left\{  1,2,...,N\right\}  $). Hence,
+$S=T\diagdown\left\{  N+1\right\}  \in P$.
+\par
+Since $N+1\in T$, we have $\left\{  N+1\right\}  \subseteq T$ and thus
+$\left(  T\diagdown\left\{  N+1\right\}  \right)  \cup\left\{  N+1\right\}
+=T$. Now, $\iota\left(  S\right)  =S\cup\left\{  N+1\right\}  =\left(
+T\diagdown\left\{  N+1\right\}  \right)  \cup\left\{  N+1\right\}  =T$,
+qed.}). Thus, $\iota$ is a bijective map. Hence, we can substitute $S$ for
+$\iota\left(  S\right)  $ in the sum $\sum\limits_{S\in P}\prod\limits_{k\in
+\iota\left(  S\right)  }\alpha_{k}$, so that $\sum\limits_{S\in P}%
+\prod\limits_{k\in\iota\left(  S\right)  }\alpha_{k}=\sum\limits_{S\in Q}%
+\prod\limits_{k\in S}\alpha_{k}$. Since every $S\in P$ satisfies
+\begin{align*}
+\prod\limits_{k\in\iota\left(  S\right)  }\alpha_{k}  &  =\prod\limits_{k\in
+S\cup\left\{  N+1\right\}  }\alpha_{k}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}\iota\left(  S\right)  =S\cup\left\{  N+1\right\}  \right) \\
+&  =\alpha_{N+1}\prod\limits_{k\in S}\alpha_{k}\ \ \ \ \ \ \ \ \ \ \left(
+\text{since }S\in P\text{, so that }N+1\notin S\right)  ,
+\end{align*}
+this rewrites as $\sum\limits_{S\in P}\left(  \alpha_{N+1}\prod\limits_{k\in
+S}\alpha_{k}\right)  =\sum\limits_{S\in Q}\prod\limits_{k\in S}\alpha_{k}$.
+
+Now,%
+\begin{align*}
+\sum\limits_{S\subseteq\left\{  1,2,...,N+1\right\}  }\prod\limits_{k\in
+S}\alpha_{k}  &  =\underbrace{\sum\limits_{\substack{S\subseteq\left\{
+1,2,...,N+1\right\}  ;\\N+1\notin S}}\prod\limits_{k\in S}\alpha_{k}}%
+_{=\sum\limits_{S\in P}\prod\limits_{k\in S}\alpha_{k}}+\underbrace{\sum
+\limits_{\substack{S\subseteq\left\{  1,2,...,N+1\right\}  ;\\N+1\in S}%
+}\prod\limits_{k\in S}\alpha_{k}}_{=\sum\limits_{S\in Q}\prod\limits_{k\in
+S}\alpha_{k}=\sum\limits_{S\in P}\left(  \alpha_{N+1}\prod\limits_{k\in
+S}\alpha_{k}\right)  }\\
+&  =\sum\limits_{S\in P}\prod\limits_{k\in S}\alpha_{k}+\sum\limits_{S\in
+P}\left(  \alpha_{N+1}\prod\limits_{k\in S}\alpha_{k}\right)  =\sum
+\limits_{S\in P}\underbrace{\left(  \prod\limits_{k\in S}\alpha_{k}%
++\alpha_{N+1}\prod\limits_{k\in S}\alpha_{k}\right)  }_{=\left(
+1+\alpha_{N+1}\right)  \prod\limits_{k\in S}\alpha_{k}}\\
+&  =\sum\limits_{S\in P}\left(  1+\alpha_{N+1}\right)  \prod\limits_{k\in
+S}\alpha_{k}=\left(  1+\alpha_{N+1}\right)  \underbrace{\sum\limits_{S\in
+P}\prod\limits_{k\in S}\alpha_{k}}_{=\sum\limits_{S\subseteq\left\{
+1,2,...,N\right\}  }\prod\limits_{k\in S}\alpha_{k}=\prod\limits_{i=1}%
+^{N}\left(  1+\alpha_{i}\right)  }\\
+&  =\left(  1+\alpha_{N+1}\right)  \prod\limits_{i=1}^{N}\left(  1+\alpha
+_{i}\right)  =\prod\limits_{i=1}^{N+1}\left(  1+\alpha_{i}\right)  .
+\end{align*}
+We have thus shown that $\prod\limits_{i=1}^{N+1}\left(  1+\alpha_{i}\right)
+=\sum\limits_{S\subseteq\left\{  1,2,...,N+1\right\}  }\prod\limits_{k\in
+S}\alpha_{k}$. In other words, (\ref{4.2.pf.1}) holds for $n=N+1$. This
+completes the induction step.
+
+We have thus shown that (\ref{4.2.pf.1}) holds for every $n\in\left\{
+0,1,...,m\right\}  $. Thus, we can now apply (\ref{4.2.pf.1}) to $n=m$, and
+obtain $\prod\limits_{i=1}^{m}\left(  1+\alpha_{i}\right)  =\sum
+\limits_{S\subseteq\left\{  1,2,...,m\right\}  }\prod\limits_{k\in S}%
+\alpha_{k}$. This solves Exercise 4.2 \textbf{(a)}.
+
+\textbf{(b)} Applying Exercise 4.2 \textbf{(a)} to $\alpha_{k}t$ instead of
+$\alpha_{k}$, we obtain%
+\begin{align*}
+\prod\limits_{i=1}^{m}\left(  1+\alpha_{i}t\right)   &  =\underbrace{\sum
+\limits_{S\subseteq\left\{  1,2,...,m\right\}  }}_{=\sum\limits_{i\in
+\mathbb{N}}\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
+;\\\left\vert S\right\vert =i}}}\underbrace{\prod\limits_{k\in S}\left(
+\alpha_{k}t\right)  }_{=\left(  \prod\limits_{k\in S}\alpha_{k}\right)
+t^{\left\vert S\right\vert }}\\
+&  =\sum\limits_{i\in\mathbb{N}}\sum\limits_{\substack{S\subseteq\left\{
+1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}\left(  \prod\limits_{k\in
+S}\alpha_{k}\right)  \underbrace{t^{\left\vert S\right\vert }}%
+_{\substack{=t^{i}\\\text{(since }\left\vert S\right\vert =i\text{)}}%
+}=\sum\limits_{i\in\mathbb{N}}\sum\limits_{\substack{S\subseteq\left\{
+1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}%
+\alpha_{k}t^{i}.
+\end{align*}
+This solves Exercise 4.2 \textbf{(b)}.
+
+\textbf{(c)} Applying Exercise 4.2 \textbf{(b)} to $-\alpha_{k}$ instead of
+$\alpha_{k}$, we obtain%
+\begin{align*}
+\prod\limits_{i=1}^{m}\left(  1+\left(  -\alpha_{i}\right)  t\right)   &
+=\sum\limits_{i\in\mathbb{N}}\sum\limits_{\substack{S\subseteq\left\{
+1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}%
+\alpha_{k}\underbrace{\left(  -t\right)  ^{i}}_{=\left(  -1\right)  ^{i}t^{i}%
+}=\sum\limits_{i\in\mathbb{N}}\sum\limits_{\substack{S\subseteq\left\{
+1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}%
+\alpha_{k}\left(  -1\right)  ^{i}t^{i}\\
+&  =\sum\limits_{i\in\mathbb{N}}\left(  -1\right)  ^{i}\sum
+\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}  ;\\\left\vert
+S\right\vert =i}}\prod\limits_{k\in S}\alpha_{k}t^{i}.
+\end{align*}
+This simplifies to%
+\[
+\prod\limits_{i=1}^{m}\left(  1-\alpha_{i}t\right)  =\sum\limits_{i\in
+\mathbb{N}}\left(  -1\right)  ^{i}\sum\limits_{\substack{S\subseteq\left\{
+1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}%
+\alpha_{k}t^{i}.
+\]
+This proves Exercise 4.2 \textbf{(c)}.
+
+\textbf{(d)} Since $Q$ is a finite set, and we only use the elements of $Q$ as
+labels, we can WLOG assume that $Q=\left\{  1,2,...,m\right\}  $ for some
+$m\in\mathbb{N}$ (because otherwise, we can just relabel the elements of $Q$
+as $1$, $2$, $...$, $m$ for some $m\in\mathbb{N}$). Then,
+\begin{align*}
+\prod\limits_{q\in Q}\left(  1+\alpha_{q}t\right)   &  =\prod\limits_{i\in
+Q}\left(  1+\alpha_{i}t\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{here we
+substituted }i\text{ for }q\right) \\
+&  =\prod\limits_{i=1}^{m}\left(  1+\alpha_{i}t\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }Q=\left\{  1,2,...,m\right\}  \right)
+\\
+&  =\sum\limits_{i\in\mathbb{N}}\sum\limits_{\substack{S\subseteq\left\{
+1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}%
+\alpha_{k}t^{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{by Exercise 4.2 \textbf{(b)}%
+}\right) \\
+&  =\sum\limits_{i\in\mathbb{N}}\sum\limits_{\substack{S\subseteq
+Q;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}\alpha_{k}t^{i}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left\{  1,2,...,m\right\}  =Q\right)
+\\
+&  =\sum\limits_{k\in\mathbb{N}}\sum\limits_{\substack{S\subseteq
+Q;\\\left\vert S\right\vert =k}}\prod\limits_{q\in S}\alpha_{q}t^{k}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{here we renamed }i\text{ and }k\text{ as
+}k\text{ and }q\right)  .
+\end{align*}
+This solves Exercise 4.2 \textbf{(d)}.
+
+\textit{Exercise 5.1: Hints to solution:} This can be proven by induction over
+$n$: The ring $K\left[  T\right]  \diagup\left(  P\right)  $ is a finite-free
+extension of $K$ containing a root of the polynomial $P$ (namely, the
+equivalence class $\overline{T}$ of $T\in K\left[  T\right]  $ modulo $\left(
+P\right)  $). Now, the polynomial $\dfrac{P\left(  S\right)  }{S-\overline{T}%
+}\in\left(  K\left[  T\right]  \diagup\left(  P\right)  \right)  \left[
+S\right]  $ is monic and has degree $n-1$, so by induction there exists a
+finite-free extension ring $K_{P}$ of the ring $K\left[  T\right]
+\diagup\left(  P\right)  $ and $n-1$ elements $p_{2},$ $...,$ $p_{n}$ of this
+extension ring $K_{P}$ such that $\dfrac{P\left(  S\right)  }{S-\overline{T}%
+}=\prod\limits_{i=2}^{n}\left(  T-p_{i}\right)  $ in $K_{P}\left[  S\right]
+$. Thus, $P\left(  S\right)  =\left(  S-\overline{T}\right)  \prod
+\limits_{i=2}^{n}\left(  T-p_{i}\right)  $ in $K_{p}\left[  S\right]  $. If we
+denote $\overline{T}$ by $p_{1},$ this takes the form $P\left(  S\right)
 =\prod\limits_{i=1}^{n}\left(  T-p_{i}\right)  ,$ which shows that we have
 just completed the induction step.
 
@@ -5348,18 +6221,29 @@ $\psi^{i}\left(  x\right)  =\left(  -1\right)  ^{i}\operatorname*{coeff}%
 $). Thus, $\psi^{i}$ is a ring homomorphism (since the composition of two ring
 homomorphisms is a ring homomorphism). This proves Assertion $\mathcal{F}$.
 
-\textit{Exercise 9.3: Hints to solution:} \textbf{(a)} According to Theorem
-9.2 \textbf{(b)}, we have $\widetilde{\psi}_{T}\left(  x\right)
-=-T\cdot\dfrac{d}{dT}\log\lambda_{-T}\left(  x\right)  =-T\cdot\dfrac
-{\dfrac{d}{dT}\lambda_{-T}\left(  x\right)  }{\lambda_{-T}\left(  x\right)  }$
-for every $x\in K$, where the map $\widetilde{\psi}_{T}:K\rightarrow K\left[
-\left[  T\right]  \right]  $ is defined by $\widetilde{\psi}_{T}\left(
-x\right)  =\sum\limits_{j\in\mathbb{N}\setminus\left\{  0\right\}  }\psi
-^{j}\left(  x\right)  T^{j}$ for every $x\in K$. Here, $\lambda_{-T}\left(
-x\right)  $ denotes $\operatorname*{ev}_{-T}\left(  \lambda_{T}\left(
-x\right)  \right)  $. Therefore, if we denote $\operatorname*{ev}_{-T}\left(
-\widetilde{\psi}_{T}\left(  x\right)  \right)  $ by $\widetilde{\psi}%
-_{-T}\left(  x\right)  ,$ then we have%
+\textit{Exercise 9.3: Hints to solution:} \textbf{(a)} We have solved Exercise
+9.3 \textbf{(a)} in the 2nd step of the proof of Theorem 9.5 (with the only
+difference that the index of summation that was called $i$ in Exercise 9.3
+\textbf{(a)} was denoted by $j$ in the 2nd step of the proof of Theorem 9.5).
+
+\begin{comment}
+Here is an alternative solution of Exercise 9.3 \textbf{(a)} that makes of use
+Theorem 9.5 \textbf{(b)}. Of course, this solution is pretty much useless as
+long as our proof of Theorem 9.5 \textbf{(b)} includes a solution of Exercise
+9.3 \textbf{(a)}, but if I should ever write up a different proof of Theorem
+9.5 \textbf{(b)}, this solution might become useful once again.
+But here is an alternative proof of Exercise 9.3 \textbf{(a)} using Theorem 9.5:
+According to Theorem 9.5 \textbf{(b)}, we have $\widetilde{\psi}_{T}\left(
+x\right)  =-T\cdot\dfrac{d}{dT}\log\lambda_{-T}\left(  x\right)
+=-T\cdot\dfrac{\dfrac{d}{dT}\lambda_{-T}\left(  x\right)  }{\lambda
+_{-T}\left(  x\right)  }$ for every $x\in K$, where the map $\widetilde{\psi
+}_{T}:K\rightarrow K\left[  \left[  T\right]  \right]  $ is defined by
+$\widetilde{\psi}_{T}\left(  x\right)  =\sum\limits_{j\in\mathbb{N}%
+\setminus\left\{  0\right\}  }\psi^{j}\left(  x\right)  T^{j}$ for every $x\in
+K$. Here, $\lambda_{-T}\left(  x\right)  $ denotes $\operatorname*{ev}%
+_{-T}\left(  \lambda_{T}\left(  x\right)  \right)  $. Therefore, if we denote
+$\operatorname*{ev}_{-T}\left(  \widetilde{\psi}_{T}\left(  x\right)  \right)
+$ by $\widetilde{\psi}_{-T}\left(  x\right)  ,$ then we have%
 \begin{align*}
 \widetilde{\psi}_{-T}\left(  x\right)   &  =\operatorname*{ev}\nolimits_{-T}%
 \left(  \widetilde{\psi}_{T}\left(  x\right)  \right)  =\operatorname*{ev}%
@@ -5375,8 +6259,6 @@ Thus,%
 \lambda_{T}\left(  x\right)  \cdot\widetilde{\psi}_{-T}\left(  x\right)
 =-T\cdot\dfrac{d}{dT}\lambda_{T}\left(  x\right)  . \label{9.ex3.s1}%
 \end{equation}
-
-
 Now, $\widetilde{\psi}_{T}\left(  x\right)  =\sum\limits_{j\in\mathbb{N}%
 \setminus\left\{  0\right\}  }\psi^{j}\left(  x\right)  T^{j}$ yields
 $\widetilde{\psi}_{-T}\left(  x\right)  =\sum\limits_{j\in\mathbb{N}%
@@ -5419,6 +6301,8 @@ n\lambda^{n}\left(  x\right)  =\sum_{j=1}^{n}\left(  -1\right)  ^{j-1}\psi
 -1\right)  ^{i-1}\psi^{i}\left(  x\right)  \lambda^{n-i}\left(  x\right)  ,
 \]
 which is exactly what Exercise 9.3 \textbf{(a)} claimed.
+\end{comment}
+
 
 \textbf{(b)} We will prove the equation $n!\lambda^{n}\left(  x\right)  =\det
 A_{n}$ by induction over $n$.
@@ -5514,6 +6398,115 @@ _{i=1}^{n-1}\left(  -1\right)  ^{i-1}\lambda^{n-i}\left(  x\right)  \psi
 =1}\psi^{n}\left(  x\right)  =\psi^{n}\left(  x\right)  ,
 \end{align*}
 what completes the proof.
+
+\textit{Exercise 9.4: Hints to solution:} There are several ways to prove
+this. Here is one:
+
+We are going to prove that $\psi^{n}=\operatorname*{id}$ for all
+$n\in\mathbb{N}\diagdown\left\{  0\right\}  $. We will do this by strong
+induction over $n$. Since a strong induction does not need an induction base,
+let us start with the induction step:
+
+Let $n\in\mathbb{N}\diagdown\left\{  0\right\}  $. Assume (as the induction
+hypothesis) that we have already proven $\psi^{i}=\operatorname*{id}$ for all
+$i\in\mathbb{N}\diagdown\left\{  0\right\}  $ satisfying $i<n$. We now must
+prove that $\psi^{n}=\operatorname*{id}$.
+
+Let $x\in K$. Exercise 9.3 \textbf{(a)} yields%
+\[
+n\lambda^{n}\left(  x\right)  =\sum_{i=1}^{n}\left(  -1\right)  ^{i-1}%
+\lambda^{n-i}\left(  x\right)  \psi^{i}\left(  x\right)  .
+\]
+Since $\lambda^{n}\left(  x\right)  =\dbinom{x}{n}$ (since $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a binomial $\lambda$-ring)
+and $\lambda^{n-i}\left(  x\right)  =\dbinom{x}{n-i}$ for every $i\in\left\{
+1,2,...,n\right\}  $ (for the very same reason), this rewrites as%
+\begin{align*}
+n\dbinom{x}{n}  &  =\sum_{i=1}^{n}\left(  -1\right)  ^{i-1}\dbinom{x}{n-i}%
+\psi^{i}\left(  x\right) \\
+&  =\sum_{i=1}^{n-1}\left(  -1\right)  ^{i-1}\dbinom{x}{n-i}\underbrace{\psi
+^{i}}_{\substack{=\operatorname*{id}\\\text{(since }i<n\text{)}}}\left(
+x\right)  +\left(  -1\right)  ^{n-1}\underbrace{\dbinom{n}{n-n}}_{=\dbinom
+{n}{0}=1}\psi^{n}\left(  x\right) \\
+&  =\sum_{i=1}^{n-1}\left(  -1\right)  ^{i-1}\dbinom{x}{n-i}%
+\underbrace{\operatorname*{id}\left(  x\right)  }_{=x}+\left(  -1\right)
+^{n-1}\psi^{n}\left(  x\right) \\
+&  =\sum_{i=1}^{n-1}\left(  -1\right)  ^{i-1}\dbinom{x}{n-i}x+\left(
+-1\right)  ^{n-1}\psi^{n}\left(  x\right)  .
+\end{align*}
+Since%
+\begin{align*}
+&  \sum_{i=1}^{n-1}\left(  -1\right)  ^{i-1}\dbinom{x}{n-i}\\
+&  =\sum_{i=1}^{n-1}\left(  -1\right)  ^{i-1}\left(  \dbinom{x-1}{n-i}%
++\dbinom{x-1}{n-i-1}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{because }\dbinom{x}{n-i}=\dbinom{x-1}{n-i}+\dbinom{x-1}{n-i-1}\\
+\text{by the recurrence equation of the binomial coefficients}%
+\end{array}
+\right) \\
+&  =\sum_{i=1}^{n-1}\left(  -1\right)  ^{i-1}\dbinom{x-1}{n-i}+\sum
+_{i=1}^{n-1}\left(  -1\right)  ^{i-1}\dbinom{x-1}{n-i-1}\\
+&  =\sum_{i=1}^{n-1}\left(  -1\right)  ^{i-1}\dbinom{x-1}{n-i}+\sum_{i=2}%
+^{n}\underbrace{\left(  -1\right)  ^{\left(  i-1\right)  -1}}_{=-\left(
+-1\right)  ^{i-1}}\underbrace{\dbinom{x-1}{n-\left(  i-1\right)  -1}%
+}_{=\dbinom{x-1}{n-i}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }i-1\text{ for
+}i\text{ in the second sum}\right) \\
+&  =\underbrace{\sum_{i=1}^{n-1}\left(  -1\right)  ^{i-1}\dbinom{x-1}{n-i}%
+}_{=\left(  -1\right)  ^{1-1}\dbinom{x-1}{n-1}+\sum\limits_{i=2}^{n-1}\left(
+-1\right)  ^{i-1}\dbinom{x-1}{n-i}}+\underbrace{\sum_{i=2}^{n}\left(  -\left(
+-1\right)  ^{i-1}\right)  \dbinom{x-1}{n-i}}_{=\sum\limits_{i=2}^{n-1}\left(
+-\left(  -1\right)  ^{i-1}\right)  \dbinom{x-1}{n-i}+\left(  -\left(
+-1\right)  ^{n-1}\right)  \dbinom{x-1}{n-n}}\\
+&  =\underbrace{\left(  -1\right)  ^{1-1}}_{=1}\dbinom{x-1}{n-1}%
++\underbrace{\sum\limits_{i=2}^{n-1}\left(  -1\right)  ^{i-1}\dbinom{x-1}%
+{n-i}+\sum\limits_{i=2}^{n-1}\left(  -\left(  -1\right)  ^{i-1}\right)
+\dbinom{x-1}{n-i}}_{=\sum\limits_{i=2}^{n-1}\left(  -1\right)  ^{i-1}%
+\dbinom{x-1}{n-i}-\sum\limits_{i=2}^{n-1}\left(  -1\right)  ^{i-1}\dbinom
+{x-1}{n-i}=0}+\left(  -\left(  -1\right)  ^{n-1}\right)  \underbrace{\dbinom
+{x-1}{n-n}}_{=\dbinom{x-1}{0}=1}\\
+&  =1\dbinom{x-1}{n-1}+0+\left(  -\left(  -1\right)  ^{n-1}\right)
+1=\dbinom{x-1}{n-1}-\left(  -1\right)  ^{n-1},
+\end{align*}
+this becomes%
+\begin{align*}
+n\dbinom{x}{n}  &  =\left(  \dbinom{x-1}{n-1}-\left(  -1\right)
+^{n-1}\right)  x+\left(  -1\right)  ^{n-1}\psi^{n}\left(  x\right) \\
+&  =\dbinom{x-1}{n-1}x-\left(  -1\right)  ^{n-1}x+\left(  -1\right)
+^{n-1}\psi^{n}\left(  x\right)  .
+\end{align*}
+Since%
+\begin{align*}
+\dbinom{x-1}{n-1}x  &  =\dfrac{\left(  x-1\right)  \cdot\left(  x-2\right)
+\cdot...\cdot\left(  \left(  x-1\right)  -\left(  n-1\right)  +1\right)
+}{\left(  n-1\right)  !}x\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{because }\dbinom{x-1}{n-1}=\dfrac{\left(
+x-1\right)  \cdot\left(  x-2\right)  \cdot...\cdot\left(  \left(  x-1\right)
+-\left(  n-1\right)  +1\right)  }{\left(  n-1\right)  !}\right) \\
+&  =\dfrac{\left(  x-1\right)  \cdot\left(  x-2\right)  \cdot...\cdot\left(
+x-n+1\right)  }{\left(  n-1\right)  !}x=\dfrac{x\cdot\left(  \left(
+x-1\right)  \cdot\left(  x-2\right)  \cdot...\cdot\left(  x-n+1\right)
+\right)  }{\left(  n-1\right)  !}\\
+&  =\dfrac{x\cdot\left(  x-1\right)  \cdot...\cdot\left(  x-n+1\right)
+}{\left(  n-1\right)  !}=\dfrac{x\cdot\left(  x-1\right)  \cdot...\cdot\left(
+x-n+1\right)  }{n!\diagup n}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(
+n-1\right)  !=n!\diagup n\right) \\
+&  =n\underbrace{\dfrac{x\cdot\left(  x-1\right)  \cdot...\cdot\left(
+x-n+1\right)  }{n!}}_{=\dbinom{x}{n}}=n\dbinom{x}{n}%
+\end{align*}
+this transforms into%
+\[
+n\dbinom{x}{n}=n\dbinom{x}{n}-\left(  -1\right)  ^{n-1}x+\left(  -1\right)
+^{n-1}\psi^{n}\left(  x\right)  .
+\]
+This simplifies to $\left(  -1\right)  ^{n-1}x=\left(  -1\right)  ^{n-1}%
+\psi^{n}\left(  x\right)  $. In other words, $\psi^{n}\left(  x\right)  =x$.
+Since this holds for every $x\in K$, this shows that $\psi^{n}%
+=\operatorname*{id}$. This completes the induction step. Thus, $\psi
+^{n}=\operatorname*{id}$ for every $n\in\mathbb{N}\diagdown\left\{  0\right\}
+$, and Exercise 9.4 is solved.
 
 \begin{center}
 \fbox{\textbf{References}}
