@@ -9,7 +9,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, October 12, 2011 20:22:31}
+%TCIDATA{LastRevised=Wednesday, October 19, 2011 21:03:17}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
@@ -42,7 +42,7 @@
 
 Darij Grinberg
 
-\textit{Version 0.0.11, last revised 12 Oct 2011}
+\textit{Version 0.0.12, last revised 18 Oct 2011}
 \end{center}
 
 This is a \textbf{BETA VERSION} and has never been proofread. \textbf{Please
@@ -417,13 +417,10 @@ satisfy%
 =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  x\right)  T^{i}\text{ and
 }\lambda_{T}\left(  y\right)  =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
 y\right)  T^{i}\right) \\
-&  =\sum_{k\in\mathbb{N}}\sum_{i=0}^{k}\underbrace{\lambda^{i}\left(
-x\right)  T^{i}\cdot\lambda^{k-i}\left(  x\right)  T^{k-i}}_{=\lambda
-^{i}\left(  x\right)  \lambda^{k-i}\left(  y\right)  \cdot T^{k}}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the product of two
-formal power series}\right) \\
 &  =\sum_{k\in\mathbb{N}}\sum_{i=0}^{k}\lambda^{i}\left(  x\right)
-\lambda^{k-i}\left(  y\right)  \cdot T^{k}%
+\lambda^{k-i}\left(  y\right)  \cdot T^{k}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the product of two
+formal power series}\right)
 \end{align*}
 and%
 \[
@@ -3485,16 +3482,70 @@ assumption to the special $\lambda$-ring $\left(  \Lambda\left(  K^{\prime
 }\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $
 instead of $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $,
 we see that%
+\begin{equation}
+m_{\left(  \Lambda\left(  K^{\prime}\right)  ,\left(  \widehat{\lambda}%
+^{i}\right)  _{i\in\mathbb{N}}\right)  }\left(  u_{1},u_{2},...,u_{n}\right)
+=m_{\left(  \Lambda\left(  K^{\prime}\right)  ,\left(  \widehat{\lambda}%
+^{i}\right)  _{i\in\mathbb{N}}\right)  }^{\prime}\left(  u_{1},u_{2}%
+,...,u_{n}\right)  . \label{8.4.fast}%
+\end{equation}
+This is an equality in the ring $\Lambda\left(  K^{\prime}\right)  $, but
+since $\Lambda\left(  K\right)  $ can be canonically seen as a subring of
+$\Lambda\left(  K^{\prime}\right)  $ (because $K$ is a subring of $K^{\prime}%
+$), it easily yields the equality%
 \[
 m_{\left(  \Lambda\left(  K\right)  ,\left(  \widehat{\lambda}^{i}\right)
 _{i\in\mathbb{N}}\right)  }\left(  u_{1},u_{2},...,u_{n}\right)  =m_{\left(
 \Lambda\left(  K\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in
-\mathbb{N}}\right)  }^{\prime}\left(  u_{1},u_{2},...,u_{n}\right)  .
+\mathbb{N}}\right)  }^{\prime}\left(  u_{1},u_{2},...,u_{n}\right)
 \]
-This is an equality in the ring $\Lambda\left(  K^{\prime}\right)  $, but
-since $\Lambda\left(  K\right)  $ can be canonically seen as a subring of
-$\Lambda\left(  K^{\prime}\right)  $ (because $K$ is a subring of $K^{\prime}%
-$), this yields (\ref{8.4.goal}). This proves Theorem 8.4.
+in the ring $\Lambda\left(  K\right)  $.\ \ \ \ \footnote{\textit{Proof.} Let
+$\iota$ denote the canonical inclusion $\Lambda\left(  K\right)
+\rightarrow\Lambda\left(  K^{\prime}\right)  $. Since $m$ was defined as a
+natural transformation, and since the inclusion $\iota:\Lambda\left(
+K\right)  \rightarrow\Lambda\left(  K^{\prime}\right)  $ is a $\lambda$-ring
+homomorphism, we then have $\iota\circ m_{\left(  \Lambda\left(  K^{\prime
+}\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)
+}=m_{\left(  \Lambda\left(  K^{\prime}\right)  ,\left(  \widehat{\lambda}%
+^{i}\right)  _{i\in\mathbb{N}}\right)  }\circ\iota^{\times n}$. Now,%
+\begin{align*}
+&  m_{\left(  \Lambda\left(  K^{\prime}\right)  ,\left(  \widehat{\lambda}%
+^{i}\right)  _{i\in\mathbb{N}}\right)  }\left(  u_{1},u_{2},...,u_{n}\right)
+\\
+&  =\iota\left(  m_{\left(  \Lambda\left(  K^{\prime}\right)  ,\left(
+\widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  }\left(  u_{1}%
+,u_{2},...,u_{n}\right)  \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}\iota\text{ is just the inclusion map }\Lambda\left(  K\right)
+\rightarrow\Lambda\left(  K^{\prime}\right)  \right) \\
+&  =\underbrace{\left(  \iota\circ m_{\left(  \Lambda\left(  K^{\prime
+}\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)
+}\right)  }_{=m_{\left(  \Lambda\left(  K^{\prime}\right)  ,\left(
+\widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  }\circ\iota^{\times
+n}}\left(  u_{1},u_{2},...,u_{n}\right)  =\left(  m_{\left(  \Lambda\left(
+K^{\prime}\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}%
+}\right)  }\circ\iota^{\times n}\right)  \left(  u_{1},u_{2},...,u_{n}\right)
+\\
+&  =m_{\left(  \Lambda\left(  K^{\prime}\right)  ,\left(  \widehat{\lambda
+}^{i}\right)  _{i\in\mathbb{N}}\right)  }\underbrace{\left(  \iota^{\times
+n}\left(  u_{1},u_{2},...,u_{n}\right)  \right)  }_{\substack{=\left(
+\iota\left(  u_{1}\right)  ,\iota\left(  u_{2}\right)  ,...,\iota\left(
+u_{n}\right)  \right)  \\=\left(  u_{1},u_{2},...,u_{n}\right)  \\\text{(since
+}\iota\text{ is just an inclusion map)}}}=m_{\left(  \Lambda\left(  K^{\prime
+}\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)
+}\left(  u_{1},u_{2},...,u_{n}\right)
+\end{align*}
+and similarly $m_{\left(  \Lambda\left(  K^{\prime}\right)  ,\left(
+\widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  }^{\prime}\left(
+u_{1},u_{2},...,u_{n}\right)  =m_{\left(  \Lambda\left(  K\right)  ,\left(
+\widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  }^{\prime}\left(
+u_{1},u_{2},...,u_{n}\right)  $. Thus, (\ref{8.4.fast}) rewrites as
+\[
+m_{\left(  \Lambda\left(  K\right)  ,\left(  \widehat{\lambda}^{i}\right)
+_{i\in\mathbb{N}}\right)  }\left(  u_{1},u_{2},...,u_{n}\right)  =m_{\left(
+\Lambda\left(  K\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in
+\mathbb{N}}\right)  }^{\prime}\left(  u_{1},u_{2},...,u_{n}\right)  ,
+\]
+qed.} Thus we have proven (\ref{8.4.goal}). This proves Theorem 8.4.
 
 Roughly speaking, Theorem 8.4 says that whether some identity holds on every
 special $\lambda$-ring or not can be checked just by looking at the sums of
@@ -3535,12 +3586,12 @@ and }t=T\right)
 Comparing coefficients yields the assertion of Theorem 8.5.
 
 \begin{quotation}
-\textit{Exercise 8.1.} Let $\left(  K,\left(  \lambda^{i}\right)
-_{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring. Define the mapping
+\textit{Exercise 8.1.} Let $K$ be a ring. Define the mapping
 $\operatorname*{coeff}\nolimits_{1}:\Lambda\left(  K\right)  \rightarrow K$ as
 in Theorem 8.2. Then, show that $\operatorname*{coeff}\nolimits_{1}%
 :\Lambda\left(  K\right)  \rightarrow K$ is a ring homomorphism\footnote{but,
-generally, not a $\lambda$-ring homomorphism!}.
+generally, not a $\lambda$-ring homomorphism, even when $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a special $\lambda$-ring!}.
 
 \textit{Exercise 8.2.} Let $\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring. If $x\in K$ is an
@@ -4571,7 +4622,7 @@ _{T}\left(  x\right)   &  =\left(  \sum\limits_{j\in\mathbb{N}\setminus
 T^{j}\right)  \cdot\left(  \sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
 x\right)  T^{i}\right) \\
 &  =\sum_{n\in\mathbb{N}}\left(  \sum_{j=1}^{n}\psi^{j}\left(  x\right)
-\left(  -1\right)  ^{j-1}\lambda^{i}\left(  x\right)  \right)  T^{n}\\
+\left(  -1\right)  ^{j-1}\lambda^{n-j}\left(  x\right)  \right)  T^{n}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the product of two
 power series}\right) \\
 &  =\sum_{n\in\mathbb{N}}\underbrace{\left(  \sum_{j=1}^{n}\left(  -1\right)
@@ -4964,6 +5015,8 @@ In other words, we define a map $\operatorname*{Coeff}\nolimits_{i}:R\left[
 \limits_{j\in\mathbb{N}}a_{j}T^{j}\in R\left[  \left[  T\right]  \right]
 \text{ (with }a_{j}\in R\text{ for every }j\in\mathbb{N}\text{)}\right)  .
 \]
+
+
 
 \end{quote}
 
@@ -6149,7 +6202,7 @@ x\right)  ,\lambda^{2}\left(  x\right)  ,...,\lambda^{i}\left(  x\right)
 x\right)  ,\lambda^{2}\left(  x\right)  ,...,\lambda^{j-i}\left(  x\right)
 \right)  \right)  }_{\substack{=\operatorname*{Td}\nolimits_{\varphi\psi
 ,j}\left(  \lambda^{1}\left(  x\right)  ,\lambda^{2}\left(  x\right)
-,...,\lambda^{j}\left(  x\right)  \right)  \\\text{(by the 1st Step)}}}T^{i}\\
+,...,\lambda^{j}\left(  x\right)  \right)  \\\text{(by the 1st Step)}}}T^{j}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the product of two
 formal power series}\right) \\
 &  =\sum_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi\psi,j}\left(
@@ -6518,7 +6571,7 @@ p_{1},p_{2},...,p_{j}\right)  T^{j}\right) \\
 \right)  \cdot\operatorname*{Td}\nolimits_{\psi,j-i}\left(  p_{1}%
 ,p_{2},...,p_{j-i}\right)  \right)  }_{\substack{=\operatorname*{Td}%
 \nolimits_{\varphi\psi,j}\left(  p_{1},p_{2},...,p_{j}\right)  \\\text{(by the
-1st Step)}}}T^{i}\\
+1st Step)}}}T^{j}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the product of two
 formal power series}\right) \\
 &  =\sum_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi\psi,j}\left(
@@ -9228,10 +9281,10 @@ $...$, $p_{m}$ lie in $T$)), this yields that $\left(  \iota\left(  P\right)
 But in the polynomial ring $K\left[  \beta_{1},\beta_{2},...,\beta_{n}\right]
 $, we have%
 \begin{align*}
-0 &  =\left(  \iota\left(  P\right)  \right)  \left(  p_{1},p_{2}%
+0  &  =\left(  \iota\left(  P\right)  \right)  \left(  p_{1},p_{2}%
 ,...,p_{m}\right)  =\left(  \left(  \iota\left(  P\right)  \right)  \left(
 p_{1},p_{2},...,p_{m}\right)  \right)  \left(  \beta_{1},\beta_{2}%
-,...,\beta_{n}\right)  \\
+,...,\beta_{n}\right) \\
 &  =P\left(  p_{1},p_{2},...,p_{m},\beta_{1},\beta_{2},...,\beta_{n}\right)
 \end{align*}
 (since $\iota$ is the canonical $K$-algebra isomorphism
@@ -9962,8 +10015,8 @@ _{i=1}^{m}u_{i}+\sum_{j=1}^{n}v_{j}=\operatorname*{coeff}\nolimits_{1}%
 u+\operatorname*{coeff}\nolimits_{1}v,
 \]
 and (\ref{8.2.2}) is proven. Thus, $\operatorname*{coeff}\nolimits_{1}%
-:\Lambda\left(  K\right)  \rightarrow K$ is a ring homomorphism, and Theorem
-8.2 \textbf{(a)} is proven.
+:\Lambda\left(  K\right)  \rightarrow K$ is a ring homomorphism, and Exercise
+8.1 is solved.
 
 \textit{Second solution (sketched):} In fact, (\ref{8.2.2}) is trivial using
 $u\widehat{+}v=uv$, and (\ref{8.2.4}) follows from the definition of
