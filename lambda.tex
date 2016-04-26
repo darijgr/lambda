@@ -9,7 +9,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, September 26, 2011 00:39:25}
+%TCIDATA{LastRevised=Thursday, September 29, 2011 18:43:06}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
@@ -42,7 +42,7 @@
 
 Darij Grinberg
 
-\textit{Version 0.0.9, last revised 25 Sep 2011}
+\textit{Version 0.0.10, last revised 29 Sep 2011}
 \end{center}
 
 This is a \textbf{BETA VERSION} and has never been proofread. \textbf{Please
@@ -2073,8 +2073,11 @@ continuous (by Theorem 5.5 \textbf{(d)}), and $1+K\left[  T\right]  ^{+}$ is a
 dense subset of $1+K\left[  \left[  T\right]  \right]  ^{+}$ (by Theorem 5.5
 \textbf{(a)}), this needs only to be shown for all $u,v,w\in1+K\left[
 T\right]  ^{+}$.\ \ \ \ \footnote{At this point, we are actually also using
-Theorem 5.5 \textbf{(e)}.} So let us assume that $u,v,w\in1+K\left[  T\right]
-^{+}$. Then, there exist
+Theorem 5.5 \textbf{(e)}. In fact, what we are using is the fact that if two
+continuous maps from a topological space $\mathfrak{P}$ to a Hausdorff
+topological space $\mathfrak{Q}$ are equal to each other on a dense subset of
+$\mathfrak{P}$, then they are equal to each other on the whole $\mathfrak{P}%
+$.} So let us assume that $u,v,w\in1+K\left[  T\right]  ^{+}$. Then, there exist
 
 \begin{itemize}
 \item some $\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]
@@ -3028,7 +3031,8 @@ $\widehat{\lambda}^{i}:\Lambda\left(  K\right)  \rightarrow\Lambda\left(
 K\right)  $ was defined in Section 5 (but with $K$ replaced by $K\left[
 S\right]  $). Then, the diagram%
 \begin{equation}
-\xymatrixcolsep{4pc}\xymatrix{ \Lambda\left(K\right) \ar@{^{(}->}[d] \ar[r]^{\widehat{\lambda}^i} & \Lambda\left(K\right) \ar@{^{(}->}[d] \\ \Lambda\left(K\left[S\right]\right) \ar[r]_{\widehat{\overline{\lambda}}^i} & \Lambda\left(K\left[S\right]\right) }\label{7.3.commdiag}%
+\xymatrixcolsep{4pc}\xymatrix{ \Lambda\left(K\right) \ar@{^{(}->}[d] \ar[r]^{\widehat{\lambda}^i} & \Lambda\left(K\right) \ar@{^{(}->}[d] \\ \Lambda\left(K\left[S\right]\right) \ar[r]_{\widehat{\overline{\lambda}}^i} & \Lambda\left(K\left[S\right]\right) }
+\label{7.3.commdiag}%
 \end{equation}
 (where the vertical arrows are induced by the canonical inclusion
 $K\rightarrow K\left[  S\right]  $) is commutative (since the maps
@@ -3221,8 +3225,8 @@ _{K}$.
 \operatorname*{coeff}\nolimits_{1}\circ\lambda_{T}\right)  \left(  x\right)
 =\operatorname*{coeff}\nolimits_{1}\left(  \lambda_{T}\left(  x\right)
 \right)  =\operatorname*{coeff}\nolimits_{1}\left(  \sum\limits_{i\in
-\mathbb{N}}\lambda^{i}\left(  x\right)  \right)  =\lambda^{1}\left(  x\right)
-=x$ for every $x\in K$. Theorem 8.2 is now proven.
+\mathbb{N}}\lambda^{i}\left(  x\right)  T^{i}\right)  =\lambda^{1}\left(
+x\right)  =x$ for every $x\in K$. Theorem 8.2 is now proven.
 
 \textit{Proof of Theorem 8.1.} Since $\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ is a special $\lambda$-ring, the map $\lambda
@@ -4831,6 +4835,15 @@ $.
 Exercise 9.3 \textbf{(c)}, then we could reformulate this result without
 reference to $\lambda$-rings.]
 
+\textit{Exercise 9.5.} Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a (not necessarily special) $\lambda$-ring.
+Prove that $\psi^{j}:K\rightarrow K$ is a homomorphism of additive groups for
+every $j\in\mathbb{N}\diagdown\left\{  0\right\}  $.
+
+[This shows that at least part of Theorem 9.3 \textbf{(b)} does not require
+the $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
+}\right)  $ to be special.]
+
 \bigskip
 \end{quotation}
 
@@ -4886,11 +4899,11 @@ x\right)  ,\lambda^{2}\left(  x\right)  ,...,\lambda^{j}\left(  x\right)
 [What [1] considers is the so-called \textit{Todd homomorphism}
 $\operatorname*{td}_{\varphi}:=\operatorname*{td}\nolimits_{\varphi,1}$ (where
 $\operatorname*{td}\nolimits_{\varphi,1}$ means "take the formal power series
-$\operatorname*{td}\nolimits_{\varphi,T}$ and replace every $T$ by $1$), which
-is only defined on $x$ if $x$ is finite-dimensional, i. e. $\lambda^{i}\left(
-x\right)  =0$ for all sufficiently large $i.$ But I prefer the power series
-$\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  $ since it is
-defined on \textit{every }$x.$]
+$\operatorname*{td}\nolimits_{\varphi,T}$ and replace every $T$ by $1$"),
+which is only defined on $x$ if $x$ is finite-dimensional, i. e. $\lambda
+^{i}\left(  x\right)  =0$ for all sufficiently large $i.$ But I prefer the
+power series $\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  $ since
+it is defined on \textit{every }$x.$]
 
 \begin{quote}
 \textbf{Theorem 10.2.} Let $\left(  K,\left(  \lambda^{i}\right)
@@ -5795,12 +5808,16 @@ $\operatorname*{coeff}\nolimits_{i}\left(  u\right)  =\operatorname*{coeff}%
 every $u\in\Lambda\left(  K\right)  ,$ it is enough to verify that
 $\operatorname*{coeff}\nolimits_{i}\left(  u\right)  =\operatorname*{coeff}%
 \nolimits_{1}\left(  \widehat{\lambda}^{i}\left(  u\right)  \right)  $ for
-every $u\in1+K\left[  T\right]  ^{+}.$ So let us assume that $u\in1+K\left[
-T\right]  ^{+}$. Then, there exist some $\left(  \widetilde{K}_{u},\left[
-u_{1},u_{2},...,u_{m}\right]  \right)  \in K^{\operatorname*{int}}$ such that
-$u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
-.$ Consider this $\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}%
-\right]  \right)  $. Then,
+every $u\in1+K\left[  T\right]  ^{+}$.\ \ \ \ \footnote{At this point, we are
+slightly cheating: This argument works only if the topological space $K$ is
+Hausdorff. Thus we are not completely free in choosing the topology on $K$.
+However, there are still enough Hausdorff topologies on $K$ (for example, the
+discrete topology) to choose from - the argument works if we take any of
+them.} So let us assume that $u\in1+K\left[  T\right]  ^{+}$. Then, there
+exist some $\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]
+\right)  \in K^{\operatorname*{int}}$ such that $u=\Pi\left(  \widetilde{K}%
+_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)  .$ Consider this $\left(
+\widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)  $. Then,
 \begin{align*}
 u  &  =\Pi\left(  \widetilde{K},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
 =\prod_{i=1}^{m}\left(  1+u_{i}T\right)  =\sum_{i\in\mathbb{N}}\left(
@@ -5950,8 +5967,12 @@ Theorem 5.5 \textbf{(d)}), and the subset $1+K\left[  T\right]  ^{+}$ of
 $1+K\left[  \left[  T\right]  \right]  ^{+}=\Lambda\left(  K\right)  $ is
 dense (by Theorem 5.5 \textbf{(a)}), so it suffices to verify the equations
 (\ref{8.2.2}) and (\ref{8.2.4}) for $u\in1+K\left[  T\right]  ^{+}$ and
-$v\in1+K\left[  T\right]  ^{+}$ only. So let $u\in1+K\left[  T\right]  ^{+}$
-and $v\in1+K\left[  T\right]  ^{+}$.
+$v\in1+K\left[  T\right]  ^{+}$ only.\footnote{At this point, we are slightly
+cheating: This argument works only if the topological space $K$ is Hausdorff.
+Thus we are not completely free in choosing the topology on $K$. However,
+there are still enough Hausdorff topologies on $K$ (for example, the discrete
+topology) to choose from - the argument works if we take any of them.} So let
+$u\in1+K\left[  T\right]  ^{+}$ and $v\in1+K\left[  T\right]  ^{+}$.
 
 Then, there exist some $\left(  \widetilde{K}_{u},\left[  u_{1},u_{2}%
 ,...,u_{m}\right]  \right)  \in K^{\operatorname*{int}}$ such that
@@ -6198,15 +6219,19 @@ u  &  \mapsto\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
 \end{align*}
 are continuous (where the topology on $K$ can be chosen arbitrarily), and
 $1+K\left[  T\right]  ^{+}$ is a dense subset of $1+K\left[  \left[  T\right]
-\right]  ^{+}=\Lambda\left(  K\right)  $). So let us assume that
-$u\in1+K\left[  T\right]  ^{+}$ and $v\in1+K\left[  T\right]  ^{+}$. Then,
-there exists some $\left(  \widetilde{K}_{u},\left[  u_{1},u_{2}%
-,...,u_{m}\right]  \right)  \in K^{\operatorname*{int}}$ such that
-$u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)
-$ and some $\left(  \widetilde{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]
-\right)  \in K^{\operatorname*{int}}$ such that $v=\Pi\left(  \widetilde{K}%
-_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  $. Then, Theorem 5.3
-\textbf{(c)} says that%
+\right]  ^{+}=\Lambda\left(  K\right)  $)\ \ \ \ \footnote{At this point, we
+are slightly cheating: This argument works only if the topological space $K$
+is Hausdorff. Thus we are not completely free in choosing the topology on $K$.
+However, there are still enough Hausdorff topologies on $K$ (for example, the
+discrete topology) to choose from - the argument works if we take any of
+them.}. So let us assume that $u\in1+K\left[  T\right]  ^{+}$ and
+$v\in1+K\left[  T\right]  ^{+}$. Then, there exists some $\left(
+\widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)  \in
+K^{\operatorname*{int}}$ such that $u=\Pi\left(  \widetilde{K}_{u},\left[
+u_{1},u_{2},...,u_{m}\right]  \right)  $ and some $\left(  \widetilde{K}%
+_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  \in K^{\operatorname*{int}%
+}$ such that $v=\Pi\left(  \widetilde{K}_{v},\left[  v_{1},v_{2}%
+,...,v_{n}\right]  \right)  $. Then, Theorem 5.3 \textbf{(c)} says that%
 \[
 u\widehat{\cdot}v=\Pi\left(  \widetilde{K}_{u,v},\left[  u_{i}v_{j}\mid\left(
 i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}
@@ -6225,7 +6250,7 @@ entails%
 &  =\sum_{\tau=1}^{m}\underbrace{\prod_{k\in\left\{  1,2,...,m\right\}
 \setminus\left\{  \tau\right\}  }\left(  1+u_{k}T\right)  }_{=\dfrac
 {\prod\limits_{k=1}^{m}\left(  1+u_{k}T\right)  }{1+u_{\tau}T}}\cdot
-\underbrace{\dfrac{d}{d\tau}\left(  1+u_{\tau}T\right)  }_{=u_{\tau}%
+\underbrace{\dfrac{d}{dT}\left(  1+u_{\tau}T\right)  }_{=u_{\tau}%
 }\ \ \ \ \ \ \ \ \ \ \left(  \text{by the Leibniz rule}\right) \\
 &  =\sum_{\tau=1}^{m}\left(  \underbrace{\prod\limits_{k=1}^{m}\left(
 1+u_{k}T\right)  }_{=u}\right)  \cdot\dfrac{u_{\tau}}{1+u_{\tau}T}=u\sum
@@ -6252,23 +6277,28 @@ u_{\tau}T\right)  ^{i}\\
 so that $\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log
 u\right)  =\left(  -1\right)  ^{i}\sum\limits_{\tau=1}^{m}u_{\tau}^{i}$. In
 other words, $\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
--T\dfrac{d}{dT}\log u\right)  =u_{\tau}^{i}$. Similarly, $v=\Pi\left(
-\widetilde{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  $ yields
-$\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
-{d}{dT}\log v\right)  =\sum\limits_{\sigma=1}^{n}v_{\sigma}^{i}$, and
-$u\widehat{\cdot}v=\Pi\left(  \widetilde{K}_{u,v},\left[  u_{i}v_{j}%
-\mid\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
-1,2,...,n\right\}  \right]  \right)  $ yields $\left(  -1\right)
-^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log\left(
-u\widehat{\cdot}v\right)  \right)  =\sum\limits_{\tau=1}^{m}\sum
-\limits_{\sigma=1}^{n}\left(  u_{\tau}v_{\sigma}\right)  ^{i}$. Thus,%
+-T\dfrac{d}{dT}\log u\right)  =\sum\limits_{\tau=1}^{m}u_{\tau}^{i}$.
+Similarly, $v=\Pi\left(  \widetilde{K}_{v},\left[  v_{1},v_{2},...,v_{n}%
+\right]  \right)  $ yields $\left(  -1\right)  ^{i}\operatorname*{coeff}%
+\nolimits_{i}\left(  -T\dfrac{d}{dT}\log v\right)  =\sum\limits_{\sigma=1}%
+^{n}v_{\sigma}^{i}$, and $u\widehat{\cdot}v=\Pi\left(  \widetilde{K}%
+_{u,v},\left[  u_{i}v_{j}\mid\left(  i,j\right)  \in\left\{
+1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right]  \right)  $
+yields $\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
+-T\dfrac{d}{dT}\log\left(  u\widehat{\cdot}v\right)  \right)  =\sum
+\limits_{\tau=1}^{m}\sum\limits_{\sigma=1}^{n}\left(  u_{\tau}v_{\sigma
+}\right)  ^{i}$. Thus,%
 \begin{align*}
 \left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
 {d}{dT}\log\left(  u\widehat{\cdot}v\right)  \right)   &  =\sum\limits_{\tau
 =1}^{m}\sum\limits_{\sigma=1}^{n}\left(  u_{\tau}v_{\sigma}\right)  ^{i}%
 =\sum\limits_{\tau=1}^{m}\sum\limits_{\sigma=1}^{n}u_{\tau}^{i}v_{\sigma}%
-^{i}=\sum\limits_{\tau=1}^{m}u_{\tau}^{i}\cdot\sum\limits_{\sigma=1}%
-^{n}v_{\sigma}^{i}\\
+^{i}\\
+&  =\underbrace{\sum\limits_{\tau=1}^{m}u_{\tau}^{i}}_{=\left(  -1\right)
+^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log u\right)
+}\cdot\underbrace{\sum\limits_{\sigma=1}^{n}v_{\sigma}^{i}}_{=\left(
+-1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log
+v\right)  }\\
 &  =\left(  -1\right)  ^{i}\operatorname*{coeff}\nolimits_{i}\left(
 -T\dfrac{d}{dT}\log u\right)  \cdot\left(  -1\right)  ^{i}%
 \operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log v\right)  ,
@@ -6411,8 +6441,12 @@ The base case, $n=0$, is trivial (for $0!=1,$ $\lambda^{0}\left(  x\right)
 =1$, and the determinant of a $0\times0$ matrix is $1$ by definition). If you
 do not believe in $0\times0$ matrices, the $n=1$ case is trivial as well
 (since $\lambda^{1}\left(  x\right)  =x$ and $\psi^{1}\left(  x\right)  =x$ by
-Theorem 9.3 \textbf{(a)}) and can equally serve as a base case. The
-interesting part is the induction step.
+Theorem 9.3 \textbf{(a)}\footnote{Here we are using the fact that Theorem 9.3
+\textbf{(a)} holds for every $\lambda$-ring $\left(  K,\left(  \lambda
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ (not only for special ones). This is
+very easy to see (but not really necessary because, as I said, we can just as
+well take $n=0$ for the base case).}) and can equally serve as a base case.
+The interesting part is the induction step.
 
 For this step, we develop the determinant of the matrix $A_{n}$ along the
 $n$-th row. We obtain%
@@ -6608,6 +6642,161 @@ Since this holds for every $x\in K$, this shows that $\psi^{n}%
 ^{n}=\operatorname*{id}$ for every $n\in\mathbb{N}\diagdown\left\{  0\right\}
 $, and Exercise 9.4 is solved.
 
+\textit{Exercise 9.5: Solution:} \textit{1st step:} Any two power series
+$u\in1+K\left[  \left[  T\right]  \right]  ^{+}$ and $v\in1+K\left[  \left[
+T\right]  \right]  ^{+}$ satisfy%
+\begin{equation}
+-T\dfrac{d}{dT}\log\left(  uv\right)  =\left(  -T\dfrac{d}{dT}\log u\right)
++\left(  -T\dfrac{d}{dT}\log v\right)  . \label{9.ex5.s1}%
+\end{equation}
+
+
+\textit{First proof of (\ref{9.ex5.s1}).} Let $u\in1+K\left[  \left[
+T\right]  \right]  ^{+}$ and $v\in1+K\left[  \left[  T\right]  \right]  ^{+}$.
+Let us work with the notations of Exercise 9.2. For every $i\in\mathbb{N}%
+\diagdown\left\{  0\right\}  $, we have
+\begin{align*}
+\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log\left(
+uv\right)  \right)   &  =\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac
+{d}{dT}\log\left(  u\widehat{+}v\right)  \right)  \ \ \ \ \ \ \ \ \ \ \left(
+\text{since }uv=u\widehat{+}v\right) \\
+&  =\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log u\right)
++\operatorname*{coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log v\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{9.2.plus}), divided by }\left(
+-1\right)  ^{i}\right) \\
+&  =\operatorname*{coeff}\nolimits_{i}\left(  \left(  -T\dfrac{d}{dT}\log
+u\right)  +\left(  -T\dfrac{d}{dT}\log v\right)  \right)  .
+\end{align*}
+In other words, the coefficients of the power series $-T\dfrac{d}{dT}%
+\log\left(  uv\right)  $ before $T^{1}$, $T^{2}$, $T^{3}$, $...$ are equal to
+the respective coefficients of the power series $\left(  -T\dfrac{d}{dT}\log
+u\right)  +\left(  -T\dfrac{d}{dT}\log v\right)  $. Since the same holds for
+the coefficients before $T^{0}$ (in fact, both power series $-T\dfrac{d}%
+{dT}\log\left(  uv\right)  $ and $\left(  -T\dfrac{d}{dT}\log u\right)
++\left(  -T\dfrac{d}{dT}\log v\right)  $ are divisible by $T$ and thus have
+the coefficient $0$ before $T^{0}$), this yields that the power series
+$-T\dfrac{d}{dT}\log\left(  uv\right)  $ and $\left(  -T\dfrac{d}{dT}\log
+u\right)  +\left(  -T\dfrac{d}{dT}\log v\right)  $ are identic. Thus,
+(\ref{9.ex5.s1}) is proven.
+
+\textit{Second proof of (\ref{9.ex5.s1}).} Let $u\in1+K\left[  \left[
+T\right]  \right]  ^{+}$ and $v\in1+K\left[  \left[  T\right]  \right]  ^{+}$.
+We have%
+\begin{align*}
+-T\underbrace{\dfrac{d}{dT}\log\left(  uv\right)  }_{=\dfrac{\dfrac{d}%
+{dT}\left(  uv\right)  }{uv}}  &  =-T\dfrac{\dfrac{d}{dT}\left(  uv\right)
+}{uv}=-T\underbrace{\dfrac{\left(  \dfrac{d}{dT}u\right)  v+u\left(  \dfrac
+{d}{dT}v\right)  }{uv}}_{=\dfrac{\dfrac{d}{dT}u}{u}+\dfrac{\dfrac{d}{dT}v}{v}%
+}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\dfrac{d}{dT}\left(  uv\right)
+=\left(  \dfrac{d}{dT}u\right)  v+u\left(  \dfrac{d}{dT}v\right)  \text{ by
+the Leibniz identity}\right) \\
+&  =-T\left(  \underbrace{\dfrac{\dfrac{d}{dT}u}{u}}_{=\dfrac{d}{dT}\log
+u}+\underbrace{\dfrac{\dfrac{d}{dT}v}{v}}_{=\dfrac{d}{dT}\log v}\right)
+=-T\left(  \dfrac{d}{dT}\log u+\dfrac{d}{dT}\log v\right) \\
+&  =\left(  -T\dfrac{d}{dT}\log u\right)  +\left(  -T\dfrac{d}{dT}\log
+v\right)  .
+\end{align*}
+This proves (\ref{9.ex5.s1}).
+
+\textit{2nd step:} For every $x\in K$ and $y\in K$, we have $\widetilde{\psi
+}_{T}\left(  x+y\right)  =\widetilde{\psi}_{T}\left(  x\right)
++\widetilde{\psi}_{T}\left(  y\right)  $, where the map $\widetilde{\psi}_{T}$
+is defined as in Theorem 9.5.
+
+\textit{Proof.} Let $x\in K$ and $y\in K$. By Theorem 9.5 \textbf{(b)}, we
+have $\widetilde{\psi}_{T}\left(  x\right)  =-T\cdot\dfrac{d}{dT}\log
+\lambda_{-T}\left(  x\right)  $. By Theorem 9.5 \textbf{(b)} (applied to $y$
+instead of $x$), we have $\widetilde{\psi}_{T}\left(  y\right)  =-T\cdot
+\dfrac{d}{dT}\log\lambda_{-T}\left(  y\right)  $. By Theorem 9.5 \textbf{(b)}
+(applied to $x+y$ instead of $x$), we have $\widetilde{\psi}_{T}\left(
+x+y\right)  =-T\cdot\dfrac{d}{dT}\log\lambda_{-T}\left(  x+y\right)  $.
+
+By Theorem 2.1 \textbf{(b)}, we have $\lambda_{T}\left(  x\right)
+\cdot\lambda_{T}\left(  y\right)  =\lambda_{T}\left(  x+y\right)  $. Now,%
+\begin{align*}
+&  \underbrace{\lambda_{-T}\left(  x\right)  }_{=\operatorname*{ev}%
+\nolimits_{-T}\left(  \lambda_{T}\left(  x\right)  \right)  }\cdot
+\underbrace{\lambda_{-T}\left(  y\right)  }_{=\operatorname*{ev}%
+\nolimits_{-T}\left(  \lambda_{T}\left(  y\right)  \right)  }\\
+&  =\operatorname*{ev}\nolimits_{-T}\left(  \lambda_{T}\left(  x\right)
+\right)  \cdot\operatorname*{ev}\nolimits_{-T}\left(  \lambda_{T}\left(
+y\right)  \right)  =\operatorname*{ev}\nolimits_{-T}\left(
+\underbrace{\lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)
+}_{=\lambda_{T}\left(  x+y\right)  }\right)  \ \ \ \ \ \ \ \ \ \ \left(
+\text{since }\operatorname*{ev}\nolimits_{-T}\text{ is a ring homomorphism}%
+\right) \\
+&  =\operatorname*{ev}\nolimits_{-T}\left(  \lambda_{T}\left(  x+y\right)
+\right)  =\lambda_{-T}\left(  x+y\right)  \ \ \ \ \ \ \ \ \ \ \left(
+\text{since }\lambda_{-T}\left(  x+y\right)  \text{ is defined as
+}\operatorname*{ev}\nolimits_{-T}\left(  \lambda_{T}\left(  x+y\right)
+\right)  \right)  .
+\end{align*}
+Now,%
+\begin{align*}
+\widetilde{\psi}_{T}\left(  x+y\right)   &  =-T\cdot\dfrac{d}{dT}%
+\log\underbrace{\lambda_{-T}\left(  x+y\right)  }_{=\lambda_{-T}\left(
+x\right)  \cdot\lambda_{-T}\left(  y\right)  }=-T\dfrac{d}{dT}\log\left(
+\lambda_{-T}\left(  x\right)  \cdot\lambda_{-T}\left(  y\right)  \right) \\
+&  =\underbrace{\left(  -T\dfrac{d}{dT}\log\lambda_{-T}\left(  x\right)
+\right)  }_{=\widetilde{\psi}_{T}\left(  x\right)  }+\underbrace{\left(
+-T\dfrac{d}{dT}\log\lambda_{-T}\left(  y\right)  \right)  }_{=\widetilde{\psi
+}_{T}\left(  y\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{9.ex5.s1}), applied to
+}u=\lambda_{-T}\left(  x\right)  \text{ and }v=\lambda_{-T}\left(  y\right)
+\right) \\
+&  =\widetilde{\psi}_{T}\left(  x\right)  +\widetilde{\psi}_{T}\left(
+y\right)  .
+\end{align*}
+This proves the 2nd step.
+
+\textit{3rd step:} For every $x\in K$ and $y\in K$, we have $\psi^{j}\left(
+x+y\right)  =\psi^{j}\left(  x\right)  +\psi^{j}\left(  y\right)  $ for every
+$j\in\mathbb{N}\diagdown\left\{  0\right\}  $.
+
+\textit{Proof.} Let $x\in K$ and $y\in K$. By the definition of
+$\widetilde{\psi}_{T}$, we have $\widetilde{\psi}_{T}\left(  x\right)
+=\sum\limits_{j\in\mathbb{N}\setminus\left\{  0\right\}  }\psi^{j}\left(
+x\right)  T^{j}$, $\widetilde{\psi}_{T}\left(  y\right)  =\sum\limits_{j\in
+\mathbb{N}\setminus\left\{  0\right\}  }\psi^{j}\left(  y\right)  T^{j}$ and
+$\widetilde{\psi}_{T}\left(  x+y\right)  =\sum\limits_{j\in\mathbb{N}%
+\setminus\left\{  0\right\}  }\psi^{j}\left(  x+y\right)  T^{j}$. Now,%
+\begin{align*}
+\sum\limits_{j\in\mathbb{N}\setminus\left\{  0\right\}  }\psi^{j}\left(
+x+y\right)  T^{j}  &  =\widetilde{\psi}_{T}\left(  x+y\right)
+=\underbrace{\widetilde{\psi}_{T}\left(  x\right)  }_{=\sum\limits_{j\in
+\mathbb{N}\setminus\left\{  0\right\}  }\psi^{j}\left(  x\right)  T^{j}%
+}+\underbrace{\widetilde{\psi}_{T}\left(  y\right)  }_{=\sum\limits_{j\in
+\mathbb{N}\setminus\left\{  0\right\}  }\psi^{j}\left(  y\right)  T^{j}%
+}\ \ \ \ \ \ \ \ \ \ \left(  \text{by the 2nd step}\right) \\
+&  =\sum\limits_{j\in\mathbb{N}\setminus\left\{  0\right\}  }\psi^{j}\left(
+x\right)  T^{j}+\sum\limits_{j\in\mathbb{N}\setminus\left\{  0\right\}  }%
+\psi^{j}\left(  y\right)  T^{j}=\sum\limits_{j\in\mathbb{N}\setminus\left\{
+0\right\}  }\left(  \psi^{j}\left(  x\right)  +\psi^{j}\left(  y\right)
+\right)  T^{j}.
+\end{align*}
+Comparing coefficients before $T^{j}$ in this identity of power series, we
+conclude that $\psi^{j}\left(  x+y\right)  =\psi^{j}\left(  x\right)
++\psi^{j}\left(  y\right)  $ for every $j\in\mathbb{N}\diagdown\left\{
+0\right\}  $. This proves the 3rd step.
+
+\textit{4th step:} For every $j\in\mathbb{N}\diagdown\left\{  0\right\}  $, we
+have $\psi^{j}\left(  0\right)  =0$.
+
+\textit{Proof.} Let $j\in\mathbb{N}\diagdown\left\{  0\right\}  $. The 3rd
+step yields that $\psi^{j}\left(  x+y\right)  =\psi^{j}\left(  x\right)
++\psi^{j}\left(  y\right)  $ for every $x\in K$ and $y\in K$. Applying this to
+$x=0$ and $y=0$, we obtain $\psi^{j}\left(  0+0\right)  =\psi^{j}\left(
+0\right)  +\psi^{j}\left(  0\right)  $. In other words, $\psi^{j}\left(
+0\right)  =\psi^{j}\left(  0\right)  +\psi^{j}\left(  0\right)  $. This
+simplifies to $\psi^{j}\left(  0\right)  =0$. Thus, the 4th step is proven.
+
+\textit{5th step:} The map $\psi^{j}:K\rightarrow K$ is a homomorphism of
+additive groups for every $j\in\mathbb{N}\diagdown\left\{  0\right\}  $.
+
+\textit{Proof.} This follows from the 3rd and 4th steps. This completes the
+5th step and thus solves the problem.
+
 \begin{center}
 \fbox{\textbf{References}}
 \end{center}
@@ -6627,6 +6816,11 @@ Algebra}, Addison-Wesley 1969.
 
 [6] Michiel Hazewinkel, \textit{Witt vectors. Part 1}, arXiv:0804.3888v1
 [math.RA], 2008.\newline\texttt{http://arxiv.org/abs/0804.3888}
+
+[7] Wolfang K. Seiler, $\lambda$\textit{-rings and Adams operations in
+algebraic K-Theory}, in: M. Rapoport, N. Schappacher, P. Schneider (eds.),
+\textit{Beilinson's Conjectures on Special Values of }$L$\textit{-functions},
+Academic Press 1988, pp. 93-102.
 
 
 \end{document}
