@@ -8,7 +8,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.00.0.2570}
-%TCIDATA{LastRevised=Saturday, September 26, 2009 00:49:35}
+%TCIDATA{LastRevised=Saturday, October 03, 2009 17:16:10}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 \voffset=-2.5cm
@@ -22,7 +22,7 @@
 
 Darij Grinberg
 
-\textit{Version 0.0.3, last revised 25 Sep 2009}
+\textit{Version 0.0.4, last revised 3 Oct 2009}
 \end{center}
 
 This is a \textbf{BETA VERSION} and has never been proofread. \textbf{Please
@@ -1506,12 +1506,12 @@ inherited from $K\left[  \left[  T\right]  \right]  $. We will later continue
 in this spirit (for instance, we will denote a finite sum with respect to the
 addition $\widehat{+}$ by the sign $\widehat{\sum}$, while a finite sum with
 respect to the addition $+$ will be written using the normal $\sum$
-sign).\footnote{In [2], Knutson writes $"+"$, $"-"$ and $"\cdot"$ instead of
-$\widehat{+},$ $\widehat{-}$ and $\widehat{\cdot}$ for the newly-defined
-operations. In [1], Fulton and Lang simply write $+,$ $-$ and $\cdot$ for
-$\widehat{+},$ $\widehat{-}$ and $\widehat{\cdot}$, approving the danger of
-confusion with the "old" operations $+,$ $-$ and $\cdot$ inherited from
-$K\left[  \left[  T\right]  \right]  $.}
+sign).\footnote{In [2], Knutson writes $"+"$, $"-"$ and $"\cdot"$ (with
+quotation marks) instead of $\widehat{+},$ $\widehat{-}$ and $\widehat{\cdot}$
+for the newly-defined operations. In [1], Fulton and Lang simply write $+,$
+$-$ and $\cdot$ for $\widehat{+},$ $\widehat{-}$ and $\widehat{\cdot}$,
+approving the danger of confusion with the "old" operations $+,$ $-$ and
+$\cdot$ inherited from $K\left[  \left[  T\right]  \right]  $.}
 
 \begin{quote}
 \textbf{Theorem 5.1.} \textbf{(a)} The multiplication $\widehat{\cdot}$ just
@@ -4027,6 +4027,44 @@ x\right)  & \cdots & \psi^{2}\left(  x\right)  & \psi^{1}\left(  x\right)
 \]
 ]
 
+\textbf{(c)} Let $x\in K$ and $n\in\mathbb{N}$. Let $B_{n}=\left(
+b_{i,j}\right)  _{1\leq i\leq n,\ 1\leq j\leq n}\in K^{n\times n}$ be the
+matrix defined by%
+\[
+b_{i,j}=\left\{
+\begin{array}
+[c]{c}%
+i\lambda^{i}\left(  x\right)  ,\text{ if }j=1;\\
+\lambda^{i-j+1}\left(  x\right)  ,\text{ if }i\geq j>1;\\
+1,\text{ if }i=j-1;\\
+0,\text{ if }i<j-1
+\end{array}
+\right.  .
+\]
+Prove that $\psi^{n}\left(  x\right)  =\det B_{n}$.
+
+[The matrix $B_{n}$ has the following form:%
+\[
+B_{n}=\left(
+\begin{array}
+[c]{cccccc}%
+\lambda^{1}\left(  x\right)  & 1 & 0 & \cdots & 0 & 0\\
+2\lambda^{2}\left(  x\right)  & \lambda^{1}\left(  x\right)  & 1 & \cdots &
+0 & 0\\
+3\lambda^{3}\left(  x\right)  & \lambda^{2}\left(  x\right)  & \lambda
+^{1}\left(  x\right)  & \cdots & 0 & 0\\
+\vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
+\left(  n-1\right)  \lambda^{n-1}\left(  x\right)  & \lambda^{n-2}\left(
+x\right)  & \lambda^{n-3}\left(  x\right)  & \cdots & \lambda^{1}\left(
+x\right)  & 1\\
+n\lambda^{n}\left(  x\right)  & \lambda^{n-1}\left(  x\right)  & \lambda
+^{n-2}\left(  x\right)  & \cdots & \lambda^{2}\left(  x\right)  & \lambda
+^{1}\left(  x\right)
+\end{array}
+\right)  .
+\]
+]
+
 \bigskip
 \end{quotation}
 
@@ -5159,6 +5197,42 @@ _{=n\lambda^{n}\left(  x\right)  \text{ by \textbf{(a)}}}%
 x\right)  =n!\lambda^{n}\left(  x\right)  ,
 \end{align*}
 completing the induction step, qed.
+
+\textbf{(c)} The proof (by induction over $n$) is similar to that of part
+\textbf{(b)}, but this time the induction step leads us through%
+\begin{align*}
+\det B_{n}  &  =\sum_{k=1}^{n}\left(  -1\right)  ^{n-k}\left\{
+\begin{array}
+[c]{c}%
+\lambda^{n-k+1}\left(  x\right)  ,\text{ if }k>1;\\
+n\lambda^{n}\left(  x\right)  ,\text{ if }k=1
+\end{array}
+\right.  \cdot\psi^{k-1}\left(  x\right) \\
+&  =\sum_{i=0}^{n-1}\left(  -1\right)  ^{n-i-1}\left\{
+\begin{array}
+[c]{c}%
+\lambda^{n-i}\left(  x\right)  ,\text{ if }i>0;\\
+n\lambda^{n}\left(  x\right)  ,\text{ if }i=0
+\end{array}
+\right.  \cdot\psi^{i}\left(  x\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{here
+we substituted }i\text{ for }k-1\text{ in the sum}\right) \\
+&  =\left(  -1\right)  ^{n-1}n\lambda^{n}\left(  x\right)  +\sum_{i=1}%
+^{n-1}\left(  -1\right)  ^{n-i-1}\lambda^{n-i}\left(  x\right)  \psi
+^{i}\left(  x\right) \\
+&  =\left(  -1\right)  ^{n}\left(  -n\lambda^{n}\left(  x\right)  +\sum
+_{i=1}^{n-1}\left(  -1\right)  ^{i-1}\lambda^{n-i}\left(  x\right)  \psi
+^{i}\left(  x\right)  \right) \\
+&  =\left(  -1\right)  ^{n}\left(  -\sum_{i=1}^{n}\left(  -1\right)
+^{i-1}\lambda^{n-i}\left(  x\right)  \psi^{i}\left(  x\right)  +\sum
+_{i=1}^{n-1}\left(  -1\right)  ^{i-1}\lambda^{n-i}\left(  x\right)  \psi
+^{i}\left(  x\right)  \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by part
+\textbf{(a)}}\right) \\
+&  =\left(  -1\right)  ^{n}\left(  -\left(  -1\right)  ^{n-1}\lambda
+^{n-n}\left(  x\right)  \psi^{n}\left(  x\right)  \right)  =\underbrace
+{\lambda^{n-n}\left(  x\right)  }_{=\lambda^{0}\left(  x\right)  =1}\psi
+^{n}\left(  x\right)  =\psi^{n}\left(  x\right)  ,
+\end{align*}
+what completes the proof.
 
 \begin{center}
 \fbox{\textbf{References}}
