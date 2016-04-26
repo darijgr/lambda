@@ -10,7 +10,7 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, October 29, 2011 22:10:04}
+%TCIDATA{LastRevised=Saturday, February 18, 2012 15:28:42}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
@@ -907,7 +907,7 @@ polynomial. Then, there exists one and only one polynomial $Q\in
 \underbrace{K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]
 }_{\text{polynomial ring}}$ such that $P\left(  U_{1},U_{2},...,U_{m}\right)
 =Q\left(  X_{1},X_{2},...,X_{m}\right)  $.\ \ \ \ \footnote{In other words,
-the subring%
+the $K$-subalgebra%
 \[
 \left\{  P\in K\left[  U_{1},U_{2},...,U_{m}\right]  \ \mid\ P\text{ is
 symmetric}\right\}
@@ -921,7 +921,7 @@ map%
 }_{\text{polynomial ring}}\rightarrow\left\{  P\in K\left[  U_{1}%
 ,U_{2},...,U_{m}\right]  \ \mid\ P\text{ is symmetric}\right\}
 \]
-which maps every $\alpha_{i}$ to $U_{i}$ is a bijection.}
+which maps every $\alpha_{i}$ to $X_{i}$ is a bijection.}
 
 \textbf{(b)} Let $\ell\in\mathbb{N}$. Assume, moreover, that $P\in K\left[
 U_{1},U_{2},...,U_{m}\right]  $ is a symmetric polynomial of total degree
@@ -985,7 +985,7 @@ only one polynomial $Q\in K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}%
 ,\beta_{1},\beta_{2},...,\beta_{n}\right]  $ such that $P\left(  U_{1}%
 ,U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right)  =Q\left(  X_{1},X_{2}%
 ,...,X_{m},Y_{1},Y_{2},...,Y_{n}\right)  $.\ \ \ \ \footnote{In other words,
-the subring%
+the $K$-subalgebra%
 \[
 \left\{  P\in K\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]
 \ \mid\ P\text{ is UV-symmetric}\right\}
@@ -11201,10 +11201,10 @@ $u=\widetilde{Q}$, $v=\widetilde{P}$, $\widetilde{K}_{u}=N$, $\widetilde{K}%
 _{v}=N$, $\widetilde{K}_{u,v}=N$, $u_{i}=-q_{i}$ and $v_{j}=-p_{j}$. As a
 result we obtain%
 \begin{align*}
-\widetilde{Q}\widehat{\cdot}\widetilde{P} &  =\Pi\left(  N,\left[
+\widetilde{Q}\widehat{\cdot}\widetilde{P}  &  =\Pi\left(  N,\left[
 \underbrace{\left(  -q_{i}\right)  \left(  -p_{j}\right)  }_{=p_{j}q_{i}%
 }\ \mid\ \left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
-1,2,...,n\right\}  \right]  \right)  \\
+1,2,...,n\right\}  \right]  \right) \\
 &  =\Pi\left(  N,\left[  p_{j}q_{i}\ \mid\ \left(  i,j\right)  \in\left\{
 1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right]  \right)
 =\prod\limits_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}
@@ -11214,11 +11214,11 @@ Thus, $\widetilde{Q}\widehat{\cdot}\widetilde{P}$ is a polynomial of degree%
 \begin{align*}
 \deg\left(  \widetilde{Q}\widehat{\cdot}\widetilde{P}\right)   &  =\deg\left(
 \prod\limits_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}
-\times\left\{  1,2,...,n\right\}  }\left(  1+p_{j}q_{i}T\right)  \right)  \\
+\times\left\{  1,2,...,n\right\}  }\left(  1+p_{j}q_{i}T\right)  \right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\widetilde{Q}\widehat{\cdot
 }\widetilde{P}=\prod\limits_{\left(  i,j\right)  \in\left\{
 1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  }\left(  1+p_{j}%
-q_{i}T\right)  \right)  \\
+q_{i}T\right)  \right) \\
 &  \leq\sum\limits_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}
 \times\left\{  1,2,...,n\right\}  }\underbrace{\left(  1+p_{j}q_{i}T\right)
 }_{\leq1}\\
@@ -11228,7 +11228,7 @@ q_{i}T\right)  \right)  \\
 \text{since the degree of a product of some polynomials}\\
 \text{is }\leq\text{ to the sum of the degrees of these polynomials}%
 \end{array}
-\right)  \\
+\right) \\
 &  \leq\sum\limits_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}
 \times\left\{  1,2,...,n\right\}  }1=\left\vert \left\{  1,2,...,m\right\}
 \times\left\{  1,2,...,n\right\}  \right\vert =mn.
@@ -11292,7 +11292,7 @@ Hence, for every $k\in\mathbb{N}$, we have%
 But since $\widetilde{Q}\widehat{\cdot}\widetilde{P}$ is a polynomial of
 degree $\leq mn$, we have%
 \begin{align*}
-\widetilde{Q}\widehat{\cdot}\widetilde{P} &  =\sum_{k=0}^{mn}%
+\widetilde{Q}\widehat{\cdot}\widetilde{P}  &  =\sum_{k=0}^{mn}%
 \underbrace{\left(  \text{the coefficient of the polynomial }\widetilde{Q}%
 \widehat{\cdot}\widetilde{P}\text{ before }T^{k}\right)  }_{=P_{k}\left(
 a_{1},a_{2},...,a_{k},b_{1},b_{2},...,b_{k}\right)  }T^{k}\\
@@ -11319,7 +11319,7 @@ $. Then,%
 \times\left\{  1,2,...,n\right\}  }\left(  1+\underbrace{p_{j}q_{i}%
 }_{=r_{\left(  i,j\right)  }}T\right)  =\prod\limits_{\left(  i,j\right)
 \in\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  }\left(
-1+r_{\left(  i,j\right)  }T\right)  \\
+1+r_{\left(  i,j\right)  }T\right) \\
 &  =\prod\limits_{s\in\left\{  1,2,...,m\right\}  \times\left\{
 1,2,...,n\right\}  }\left(  1+r_{s}T\right)
 \end{align*}
@@ -11337,12 +11337,12 @@ $p_{s}$) yields that%
 Since $\sum\limits_{i=0}^{mn}P_{mn-i}\left(  a_{1},a_{2},...,a_{mn-i}%
 ,b_{1},b_{2},...,b_{mn-i}\right)  T^{i}=R$, this rewrites as%
 \begin{align*}
-R &  =\prod\limits_{s\in\left\{  1,2,...,m\right\}  \times\left\{
+R  &  =\prod\limits_{s\in\left\{  1,2,...,m\right\}  \times\left\{
 1,2,...,n\right\}  }\left(  r_{s}+T\right)  =\prod\limits_{\left(  i,j\right)
 \in\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  }\left(
-\underbrace{r_{\left(  i,j\right)  }}_{=p_{j}q_{i}}+T\right)  \\
+\underbrace{r_{\left(  i,j\right)  }}_{=p_{j}q_{i}}+T\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the index }s\text{ as
-}\left(  i,j\right)  \right)  \\
+}\left(  i,j\right)  \right) \\
 &  =\prod\limits_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}
 \times\left\{  1,2,...,n\right\}  }\left(  p_{j}q_{i}+T\right)  .
 \end{align*}
@@ -11350,7 +11350,7 @@ Therefore,%
 \begin{equation}
 R\left(  -\alpha\beta\right)  =\prod\limits_{\left(  i,j\right)  \in\left\{
 1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  }\left(  p_{j}%
-q_{i}+\left(  -\alpha\beta\right)  \right)  .\label{5.4.sol.1}%
+q_{i}+\left(  -\alpha\beta\right)  \right)  . \label{5.4.sol.1}%
 \end{equation}
 One of the factors of the product on the right hand side of (\ref{5.4.sol.1})
 (namely, the one for $\left(  i,j\right)  =\left(  m,n\right)  $) is%
