@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, April 26, 2016 23:39:07}
+%TCIDATA{LastRevised=Wednesday, April 27, 2016 11:40:43}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -1921,12 +1921,12 @@ Step and proves Theorem 4.4 \textbf{(a)}.
 
 \textbf{(b)} We have%
 \begin{align*}
-\prod_{I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)
-}\left(  1+\prod_{i\in I}U_{i}\cdot T\right)   &  =\sum_{k\in\mathbb{N}%
-}\underbrace{\sum_{\substack{S\subseteq\mathcal{P}_{j}\left(  \left\{
-1,2,...,m\right\}  \right)  ;\\\left\vert S\right\vert =k}}\prod_{I\in S}%
-\prod\limits_{i\in I}U_{i}}_{\substack{=P_{k,j}\left(  X_{1},X_{2}%
-,...,X_{kj}\right)  \\\text{(according to (\ref{Pkj1}))}}}T^{k}\\
+&  \prod_{I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)
+}\left(  1+\prod_{i\in I}U_{i}\cdot T\right) \\
+&  =\sum_{k\in\mathbb{N}}\underbrace{\sum_{\substack{S\subseteq\mathcal{P}%
+_{j}\left(  \left\{  1,2,...,m\right\}  \right)  ;\\\left\vert S\right\vert
+=k}}\prod_{I\in S}\prod\limits_{i\in I}U_{i}}_{\substack{=P_{k,j}\left(
+X_{1},X_{2},...,X_{kj}\right)  \\\text{(according to (\ref{Pkj1}))}}}T^{k}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -1990,8 +1990,9 @@ $U_{1},$ $U_{2},$ $...,$ $U_{m}$ for every $i\in\mathbb{N}$.
 
 Define a matrix $F_{U}\in\left(  \mathbb{Z}\left[  X_{1},X_{2},...,X_{m}%
 \right]  \right)  ^{m\times m}$ by%
-\[
-F_{U}=\left(
+\begin{align*}
+&  F_{U}\\
+&  =\left(
 \begin{array}
 [c]{cccccc}%
 0 & 1 & 0 & 0 & \cdots & 0\\
@@ -2004,9 +2005,12 @@ F_{U}=\left(
 -1\right)  ^{0}X_{1}%
 \end{array}
 \right)  .
+\end{align*}
+Prove that the polynomial
+\[
+\det\left(  TF_{U}+I_{m}\right)  \in\left(  \mathbb{Z}\left[  X_{1}%
+,X_{2},...,X_{m}\right]  \right)  \left[  T\right]
 \]
-Prove that the polynomial $\det\left(  TF_{U}+I_{m}\right)  \in\left(
-\mathbb{Z}\left[  X_{1},X_{2},...,X_{m}\right]  \right)  \left[  T\right]  $
 equals $\prod\limits_{i=1}^{m}\left(  1+U_{i}T\right)  $.
 
 \textbf{(b)} Let $m\in\mathbb{N}$ and $n\in\mathbb{N}$. In the polynomial ring
@@ -2023,8 +2027,9 @@ every $j\in\mathbb{N}$.
 Similarly to the matrix $F_{U}$ defined in part \textbf{(a)}, we can define a
 matrix $F_{V}\in\left(  \mathbb{Z}\left[  Y_{1},Y_{2},...,Y_{n}\right]
 \right)  ^{n\times n}$ by%
-\[
-F_{V}=\left(
+\begin{align*}
+&  F_{V}\\
+&  =\left(
 \begin{array}
 [c]{cccccc}%
 0 & 1 & 0 & 0 & \cdots & 0\\
@@ -2037,16 +2042,20 @@ F_{V}=\left(
 -1\right)  ^{0}Y_{1}%
 \end{array}
 \right)  .
+\end{align*}
+Prove that the polynomial
+\[
+\det\left(  -T\left(  F_{U}\otimes F_{V}\right)  +I_{mn}\right)  \in\left(
+\mathbb{Z}\left[  X_{1},X_{2},...,X_{m},Y_{1},Y_{2},...,Y_{n}\right]  \right)
+\left[  T\right]
 \]
-Prove that the polynomial $\det\left(  -T\left(  F_{U}\otimes F_{V}\right)
-+I_{mn}\right)  \in\left(  \mathbb{Z}\left[  X_{1},X_{2},...,X_{m},Y_{1}%
-,Y_{2},...,Y_{n}\right]  \right)  \left[  T\right]  $ equals $\prod
-\limits_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
-1,2,...,n\right\}  }\left(  1+U_{i}V_{j}T\right)  .$ Conclude that the
-coefficient of this polynomial before $T^{k}$ equals to $Q_{k,k,\left[
-n,m\right]  }\left(  X_{1},X_{2},...,X_{k},Y_{1},Y_{2},...,Y_{k}\right)  $
-defined in the definition of $P_{k}$. How to compute $P_{k}$ now? (Don't
-forget to choose $n$ and $m$ such that $n\geq k$ and $m\geq k$.)
+equals $\prod\limits_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}
+\times\left\{  1,2,...,n\right\}  }\left(  1+U_{i}V_{j}T\right)  .$ Conclude
+that the coefficient of this polynomial before $T^{k}$ equals to
+$Q_{k,k,\left[  n,m\right]  }\left(  X_{1},X_{2},...,X_{k},Y_{1}%
+,Y_{2},...,Y_{k}\right)  $ defined in the definition of $P_{k}$. How to
+compute $P_{k}$ now? (Don't forget to choose $n$ and $m$ such that $n\geq k$
+and $m\geq k$.)
 
 \textbf{(c)} Let $m\in\mathbb{N}$ and $j\in\mathbb{N}$. In part \textbf{(a)},
 prove that the polynomial $\det\left(  \left(  -1\right)  ^{j}T\left(
@@ -2523,12 +2532,14 @@ so this becomes%
 1,2,...,n\right\}  }\left(  1+u_{i}v_{j}T\right)  =u\widehat{\cdot}v,
 \]
 and thus%
-\[
-u\widehat{\cdot}v=\prod_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}
-\times\left\{  1,2,...,n\right\}  }\left(  1+u_{i}v_{j}T\right)  =\Pi\left(
-\widetilde{K}_{u,v},\left[  u_{i}v_{j}\mid\left(  i,j\right)  \in\left\{
-1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right]  \right)  ,
-\]
+\begin{align*}
+u\widehat{\cdot}v  &  =\prod_{\left(  i,j\right)  \in\left\{
+1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  }\left(  1+u_{i}%
+v_{j}T\right) \\
+&  =\Pi\left(  \widetilde{K}_{u,v},\left[  u_{i}v_{j}\mid\left(  i,j\right)
+\in\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right]
+\right)  ,
+\end{align*}
 proving Theorem 5.3 \textbf{(c)}.
 
 \textbf{(d)} Consider the polynomial ring $\mathbb{Z}\left[  U_{1}%
@@ -4196,11 +4207,14 @@ _{K}$.
 \end{quote}
 
 \begin{proof}
-[Proof of Theorem 8.2.]This is clear, since $\left(  \operatorname*{coeff}%
-\nolimits_{1}\circ\lambda_{T}\right)  \left(  x\right)  =\operatorname*{coeff}%
-\nolimits_{1}\left(  \lambda_{T}\left(  x\right)  \right)
-=\operatorname*{coeff}\nolimits_{1}\left(  \sum\limits_{i\in\mathbb{N}}%
-\lambda^{i}\left(  x\right)  T^{i}\right)  =\lambda^{1}\left(  x\right)  =x$
+[Proof of Theorem 8.2.]This is clear, since
+\[
+\left(  \operatorname*{coeff}\nolimits_{1}\circ\lambda_{T}\right)  \left(
+x\right)  =\operatorname*{coeff}\nolimits_{1}\left(  \lambda_{T}\left(
+x\right)  \right)  =\operatorname*{coeff}\nolimits_{1}\left(  \sum
+\limits_{i\in\mathbb{N}}\lambda^{i}\left(  x\right)  T^{i}\right)
+=\lambda^{1}\left(  x\right)  =x
+\]
 for every $x\in K$. Theorem 8.2 is now proven.
 \end{proof}
 
@@ -4526,9 +4540,9 @@ times}\right) \\
 =1+u_{j}T\right) \\
 &  =\sum_{i\in\mathbb{N}}\sum\limits_{\substack{S\subseteq\left\{
 1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}%
-u_{k}\cdot T^{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{by Exercise 4.2
-\textbf{(b)}, applied to }A=K\left[  T\right]  \text{, }\alpha_{j}=u_{j}\text{
-and }t=T\right)
+u_{k}\cdot T^{i}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Exercise 4.2 \textbf{(b)}, applied to
+}A=K\left[  T\right]  \text{, }\alpha_{j}=u_{j}\text{ and }t=T\right)
 \end{align*}
 Comparing coefficients yields the assertion of Theorem 8.5.
 \end{proof}
@@ -5117,12 +5131,13 @@ Thus,%
 \sum\limits_{j\in\mathbb{N}\setminus\left\{  0\right\}  }\psi^{j}\left(
 x\right)  T^{j}  &  =T\sum\limits_{i=1}^{m}\dfrac{u_{i}}{1-u_{i}T}%
 =\sum\limits_{i=1}^{m}u_{i}T\left(  1-u_{i}T\right)  ^{-1}=\sum\limits_{i=1}%
-^{m}u_{i}T\sum_{k\in\mathbb{N}}\left(  u_{i}T\right)  ^{k}=\sum\limits_{i=1}%
-^{m}\sum_{k\in\mathbb{N}}\left(  u_{i}T\right)  ^{k+1}\\
-&  =\sum\limits_{i=1}^{m}\sum_{j\in\mathbb{N}\setminus\left\{  0\right\}
+^{m}u_{i}T\sum_{k\in\mathbb{N}}\left(  u_{i}T\right)  ^{k}\\
+&  =\sum\limits_{i=1}^{m}\sum_{k\in\mathbb{N}}\left(  u_{i}T\right)
+^{k+1}=\sum\limits_{i=1}^{m}\sum_{j\in\mathbb{N}\setminus\left\{  0\right\}
 }\left(  u_{i}T\right)  ^{j}=\sum\limits_{i=1}^{m}\sum_{j\in\mathbb{N}%
-\setminus\left\{  0\right\}  }u_{i}^{j}T^{j}=\sum_{j\in\mathbb{N}%
-\setminus\left\{  0\right\}  }\sum\limits_{i=1}^{m}u_{i}^{j}T^{j}.
+\setminus\left\{  0\right\}  }u_{i}^{j}T^{j}\\
+&  =\sum_{j\in\mathbb{N}\setminus\left\{  0\right\}  }\sum\limits_{i=1}%
+^{m}u_{i}^{j}T^{j}.
 \end{align*}
 Comparing coefficients yields $\psi^{j}\left(  x\right)  =\sum\limits_{i=1}%
 ^{m}u_{i}^{j}$ for every $j\in\mathbb{N}\setminus\left\{  0\right\}  ,$ and
@@ -5416,8 +5431,9 @@ _{n\in\mathbb{N}}\left(  -1\right)  ^{n}X_{n}nT^{n}=\sum_{n\in\mathbb{N}%
 \setminus\left\{  0\right\}  }\left(  -1\right)  ^{n}X_{n}nT^{n}%
 +\underbrace{\left(  -1\right)  ^{0}X_{0}0T^{0}}_{=0}\\
 &  =\sum_{n\in\mathbb{N}\setminus\left\{  0\right\}  }\left(  -1\right)
-^{n}X_{n}nT^{n}=\sum_{i\in\mathbb{N}\setminus\left\{  0\right\}  }\left(
--1\right)  ^{i}X_{i}i\underbrace{T^{i}}_{=TT^{i-1}}\ \ \ \ \ \ \ \ \ \ \left(
+^{n}X_{n}nT^{n}\\
+&  =\sum_{i\in\mathbb{N}\setminus\left\{  0\right\}  }\left(  -1\right)
+^{i}X_{i}i\underbrace{T^{i}}_{=TT^{i-1}}\ \ \ \ \ \ \ \ \ \ \left(
 \text{here, we renamed }n\text{ as }i\right) \\
 &  =T\underbrace{\sum_{i\in\mathbb{N}\setminus\left\{  0\right\}  }\left(
 -1\right)  ^{i}X_{i}iT^{i-1}}_{\substack{=-\sum\limits_{i=1}^{m}\dfrac{U_{i}%
@@ -5537,10 +5553,10 @@ Clearly, $\mathfrak{Q}_{1}\left(  X_{1},X_{2},...,X_{n}\right)  =nX_{n}$
 \end{align*}
 so that%
 \begin{align*}
-\mathfrak{Q}_{2}\left(  X_{1},X_{2},...,X_{n}\right)   &  =\sum\limits_{j=1}%
-^{n-1}\left(  -1\right)  ^{j-1}X_{n-j}N_{j}\left(  X_{1},X_{2},...,X_{j}%
-\right)  +\left(  -1\right)  ^{n-1}\underbrace{1}_{=X_{0}=X_{n-n}}N_{n}\left(
-X_{1},X_{2},...,X_{n}\right) \\
+&  \mathfrak{Q}_{2}\left(  X_{1},X_{2},...,X_{n}\right) \\
+&  =\sum\limits_{j=1}^{n-1}\left(  -1\right)  ^{j-1}X_{n-j}N_{j}\left(
+X_{1},X_{2},...,X_{j}\right)  +\left(  -1\right)  ^{n-1}\underbrace{1}%
+_{=X_{0}=X_{n-n}}N_{n}\left(  X_{1},X_{2},...,X_{n}\right) \\
 &  =\sum\limits_{j=1}^{n-1}\left(  -1\right)  ^{j-1}X_{n-j}N_{j}\left(
 X_{1},X_{2},...,X_{j}\right)  +\left(  -1\right)  ^{n-1}X_{n-n}N_{n}\left(
 X_{1},X_{2},...,X_{n}\right) \\
@@ -5627,12 +5643,12 @@ _{-T}\left(  x\right)  $.
 \textit{Proof.} We have
 \begin{align*}
 \widetilde{\psi}_{-T}\left(  x\right)   &  =\operatorname*{ev}\nolimits_{-T}%
-\left(  \widetilde{\psi}_{T}\left(  x\right)  \right)  =\operatorname*{ev}%
-\nolimits_{-T}\left(  \sum\limits_{j\in\mathbb{N}\setminus\left\{  0\right\}
-}\psi^{j}\left(  x\right)  T^{j}\right)  \ \ \ \ \ \ \ \ \ \ \left(
-\text{since }\widetilde{\psi}_{T}\left(  x\right)  =\sum\limits_{j\in
-\mathbb{N}\setminus\left\{  0\right\}  }\psi^{j}\left(  x\right)  T^{j}\right)
-\\
+\left(  \widetilde{\psi}_{T}\left(  x\right)  \right) \\
+&  =\operatorname*{ev}\nolimits_{-T}\left(  \sum\limits_{j\in\mathbb{N}%
+\setminus\left\{  0\right\}  }\psi^{j}\left(  x\right)  T^{j}\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\widetilde{\psi}_{T}\left(  x\right)
+=\sum\limits_{j\in\mathbb{N}\setminus\left\{  0\right\}  }\psi^{j}\left(
+x\right)  T^{j}\right) \\
 &  =\sum\limits_{j\in\mathbb{N}\setminus\left\{  0\right\}  }\psi^{j}\left(
 x\right)  \underbrace{\left(  -T\right)  ^{j}}_{=\left(  -1\right)  ^{j}T^{j}%
 }\ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{ev}%
@@ -6135,19 +6151,31 @@ define a map $\operatorname*{Coeff}\nolimits_{i}:R\left[  \left[  T\right]
 always, the $R$-algebra of all formal power series in the variable $T$ over
 the ring $R$) by%
 \[
-\left(  \operatorname*{Coeff}\nolimits_{i}\left(  P\right)  =\left(  \text{the
-coefficient of }P\text{ before }T^{i}\right)  \ \ \ \ \ \ \ \ \ \ \text{for
-every power series }P\in R\left[  \left[  T\right]  \right]  \right)  .
+\left(
+\begin{array}
+[c]{l}%
+\operatorname*{Coeff}\nolimits_{i}\left(  P\right)  =\left(  \text{the
+coefficient of }P\text{ before }T^{i}\right) \\
+\ \ \ \ \ \ \ \ \ \ \text{for every power series }P\in R\left[  \left[
+T\right]  \right]
+\end{array}
+\right)  .
 \]
 
 
 In other words, we define a map $\operatorname*{Coeff}\nolimits_{i}:R\left[
 \left[  T\right]  \right]  \rightarrow R$ by%
 \[
-\left(  \operatorname*{Coeff}\nolimits_{i}\left(  \sum\limits_{j\in\mathbb{N}%
-}a_{j}T^{j}\right)  =a_{i}\ \ \ \ \ \ \ \ \ \ \text{for every }\sum
-\limits_{j\in\mathbb{N}}a_{j}T^{j}\in R\left[  \left[  T\right]  \right]
-\text{ (with }a_{j}\in R\text{ for every }j\in\mathbb{N}\text{)}\right)  .
+\left(
+\begin{array}
+[c]{l}%
+\operatorname*{Coeff}\nolimits_{i}\left(  \sum\limits_{j\in\mathbb{N}}%
+a_{j}T^{j}\right)  =a_{i}\\
+\ \ \ \ \ \ \ \ \ \ \text{for every }\sum\limits_{j\in\mathbb{N}}a_{j}T^{j}\in
+R\left[  \left[  T\right]  \right]  \text{ (with }a_{j}\in R\text{ for every
+}j\in\mathbb{N}\text{)}%
+\end{array}
+\right)  .
 \]
 
 
@@ -6521,8 +6549,8 @@ U_{i}T\right)  \right) \\
 &  =\operatorname*{Coeff}\nolimits_{j}\left(  \underbrace{\left(
 \operatorname*{proj}\nolimits_{m,n}\left[  \left[  T\right]  \right]  \right)
 \left(  \prod\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)  \right)  }%
-_{=\prod\limits_{i=1}^{n}\varphi\left(  U_{i}T\right)  }\right)
-=\operatorname*{Coeff}\nolimits_{j}\left(  \prod\limits_{i=1}^{n}%
+_{=\prod\limits_{i=1}^{n}\varphi\left(  U_{i}T\right)  }\right) \\
+&  =\operatorname*{Coeff}\nolimits_{j}\left(  \prod\limits_{i=1}^{n}%
 \varphi\left(  U_{i}T\right)  \right) \\
 &  =\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)  ,j,\left[
 n\right]  }\left(  X_{1},X_{2},...,X_{j}\right) \\
@@ -6550,11 +6578,11 @@ m\right]  }\left(  \operatorname*{proj}\nolimits_{m,n}X_{1}%
 \begin{array}
 [c]{c}%
 \text{since }\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)
-,j,\left[  m\right]  }\text{ is a polynomial over }\mathbf{Z}\text{ and
-}\operatorname*{proj}\nolimits_{m,n}\text{ is a }\mathbf{Z}\text{-algebra
-homomorphism,}\\
-\text{and since polynomials over }\mathbf{Z}\text{ commute with }%
-\mathbf{Z}\text{-algebra homomorphisms}%
+,j,\left[  m\right]  }\text{ is a polynomial over }\mathbf{Z}\\
+\text{and }\operatorname*{proj}\nolimits_{m,n}\text{ is a }\mathbf{Z}%
+\text{-algebra homomorphism,}\\
+\text{and since polynomials over }\mathbf{Z}\text{ commute}\\
+\text{with }\mathbf{Z}\text{-algebra homomorphisms}%
 \end{array}
 \right) \\
 &  =\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)  ,j,\left[
@@ -6563,18 +6591,20 @@ m\right]  }\left(  X_{1},X_{2},...,X_{j}\right) \\
 \begin{array}
 [c]{c}%
 \text{since }\operatorname*{proj}\nolimits_{m,n}\text{ is the }\mathbf{Z}%
-\text{-algebra homomorphism which maps every }U_{i}\text{ to }\left\{
+\text{-algebra homomorphism which maps}\\
+\text{every }U_{i}\text{ to }\left\{
 \begin{array}
 [c]{c}%
 U_{i},\text{ if }i\leq n;\\
 0,\text{ if }i>n
 \end{array}
 \right.  \text{,}\\
-\text{and thus we know that it maps every }X_{i}\text{ with }i\geq1\text{ to
-the corresponding }X_{i}\text{ of the}\\
-\text{image ring, so that }\operatorname*{proj}\nolimits_{m,n}X_{1}%
-=X_{1}\text{, }\operatorname*{proj}\nolimits_{m,n}X_{2}=X_{2}\text{,
-}...\text{, }\operatorname*{proj}\nolimits_{m,n}X_{j}=X_{j}%
+\text{and thus we know that it maps every }X_{i}\text{ with }i\geq1\text{
+to}\\
+\text{the corresponding }X_{i}\text{ of the image ring, so}\\
+\text{that }\operatorname*{proj}\nolimits_{m,n}X_{1}=X_{1}\text{,
+}\operatorname*{proj}\nolimits_{m,n}X_{2}=X_{2}\text{, }...\text{,
+}\operatorname*{proj}\nolimits_{m,n}X_{j}=X_{j}%
 \end{array}
 \right)  ,
 \end{align*}
@@ -6612,10 +6642,12 @@ $\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)  ,j,\left[  m\right]
 j\right]  }=\operatorname*{Td}\nolimits_{\varphi,j}$, and the 1st Step is proven.
 
 \textit{2nd Step:} For every $m\in\mathbb{N}$ and $j\in\mathbb{N}$, we have
-$\operatorname*{Td}\nolimits_{\varphi,j}\left(  X_{1},X_{2},...,X_{j}\right)
+\[
+\operatorname*{Td}\nolimits_{\varphi,j}\left(  X_{1},X_{2},...,X_{j}\right)
 =\operatorname*{Todd}\nolimits_{\left(  \varphi,j\right)  ,j,\left[  m\right]
-}\left(  X_{1},X_{2},...,X_{j}\right)  $ in the ring $\mathbf{Z}\left[
-U_{1},U_{2},...,U_{m}\right]  $.
+}\left(  X_{1},X_{2},...,X_{j}\right)
+\]
+in the ring $\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $.
 
 \textit{Proof.} Let $m^{\prime}\in\mathbb{N}$ be such that $m^{\prime}\geq m$
 and $m^{\prime}\geq j$. Then, the 1st Step (applied to $m^{\prime}$ instead of
@@ -6749,9 +6781,9 @@ this to $\varphi=1+ut$, we obtain%
 _{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{1+ut,j}\left(  X_{1}%
 ,X_{2},...,X_{j}\right)  T^{j},
 \]
-where $\left(  1+ut\right)  \left(  U_{i}T\right)  $ means ``the power series
-$1+ut$, applied to $U_{i}T$'' (and not a product of $1+ut$ and $U_{i}T$,
-whatever such a product could mean). Since%
+where $\left(  1+ut\right)  \left(  U_{i}T\right)  $ means \textquotedblleft
+the power series $1+ut$, applied to $U_{i}T$\textquotedblright\ (and not a
+product of $1+ut$ and $U_{i}T$, whatever such a product could mean). Since%
 \begin{align*}
 &  \prod\limits_{i=1}^{m}\underbrace{\left(  1+ut\right)  \left(
 U_{i}T\right)  }_{=1+uU_{i}T=1+U_{i}\cdot uT}\\
@@ -6759,10 +6791,15 @@ U_{i}T\right)  }_{=1+uU_{i}T=1+U_{i}\cdot uT}\\
 \mathbb{N}}\underbrace{\sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}
 ;\\\left\vert S\right\vert =i}}\prod_{k\in S}U_{k}}_{=X_{i}}%
 \underbrace{\left(  uT\right)  ^{i}}_{=u^{i}T^{i}}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Exercise 4.2 \textbf{(b)}, applied to
-}U_{i}\text{, }\left(  \mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]
-\right)  \left[  \left[  T\right]  \right]  \text{, and }uT\text{ instead of
-}\alpha_{i}\text{, }A\text{, and }t\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by Exercise 4.2 \textbf{(b)}, applied to }U_{i}\text{, }\left(
+\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[  \left[
+T\right]  \right]  \text{, and }uT\\
+\text{instead of }\alpha_{i}\text{, }A\text{, and }t
+\end{array}
+\right) \\
 &  =\sum_{i\in\mathbb{N}}X_{i}u^{i}T^{i}=\sum_{j\in\mathbb{N}}X_{j}u^{j}%
 T^{j}\ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the index }i\text{ as
 }j\right)  ,
@@ -6957,7 +6994,8 @@ this ring, we have%
 \operatorname*{Td}\nolimits_{\varphi,1}\left(  U_{1}\right)   &
 =\operatorname*{Td}\nolimits_{\varphi,1}\left(  X_{1}\right)
 =\operatorname*{Td}\nolimits_{\varphi,1}\left(  X_{1},X_{2},...,X_{1}\right)
-=\operatorname*{Coeff}\nolimits_{1}\left(  \underbrace{\prod\limits_{i=1}%
+\\
+&  =\operatorname*{Coeff}\nolimits_{1}\left(  \underbrace{\prod\limits_{i=1}%
 ^{m}\varphi\left(  U_{i}T\right)  }_{=\varphi\left(  U_{1}T\right)  \text{
 (since }m=1\text{)}}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
 (\ref{10.6.pf.2})}\right) \\
@@ -7172,12 +7210,12 @@ On the other hand, applying it to $\varphi\psi$ instead of $\varphi$, we get%
 \]
 Hence,%
 \begin{align*}
-\sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi\psi,j}\left(
-X_{1},X_{2},...,X_{j}\right)  T^{j}  &  =\prod\limits_{i=1}^{m}%
-\underbrace{\left(  \varphi\psi\right)  \left(  U_{i}T\right)  }%
-_{=\varphi\left(  U_{i}T\right)  \psi\left(  U_{i}T\right)  }=\prod
-\limits_{i=1}^{m}\left(  \varphi\left(  U_{i}T\right)  \psi\left(
-U_{i}T\right)  \right) \\
+&  \sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi\psi
+,j}\left(  X_{1},X_{2},...,X_{j}\right)  T^{j}\\
+&  =\prod\limits_{i=1}^{m}\underbrace{\left(  \varphi\psi\right)  \left(
+U_{i}T\right)  }_{=\varphi\left(  U_{i}T\right)  \psi\left(  U_{i}T\right)
+}=\prod\limits_{i=1}^{m}\left(  \varphi\left(  U_{i}T\right)  \psi\left(
+U_{i}T\right)  \right)  \\
 &  =\underbrace{\prod\limits_{i=1}^{m}\varphi\left(  U_{i}T\right)  }%
 _{=\sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
 X_{1},X_{2},...,X_{j}\right)  T^{j}}\cdot\underbrace{\prod\limits_{i=1}%
@@ -7187,7 +7225,7 @@ T^{j}}\\
 &  =\left(  \sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi
 ,j}\left(  X_{1},X_{2},...,X_{j}\right)  T^{j}\right)  \cdot\left(
 \sum\limits_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\psi,j}\left(
-X_{1},X_{2},...,X_{j}\right)  T^{j}\right) \\
+X_{1},X_{2},...,X_{j}\right)  T^{j}\right)  \\
 &  =\sum\limits_{j\in\mathbb{N}}\left(  \sum_{i=0}^{j}\operatorname*{Td}%
 \nolimits_{\varphi,i}\left(  X_{1},X_{2},...,X_{i}\right)  \cdot
 \operatorname*{Td}\nolimits_{\psi,j-i}\left(  X_{1},X_{2},...,X_{j-i}\right)
