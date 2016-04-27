@@ -1,4 +1,5 @@
-\documentclass[12pt,final,notitlepage,onecolumn,german]{article}%
+\documentclass
+[numbers=enddot,12pt,final,onecolumn,german,notitlepage]{scrartcl}%
 \usepackage[all,cmtip]{xy}
 \usepackage{lscape}
 \usepackage{amsfonts}
@@ -9,18 +10,24 @@
 \setcounter{MaxMatrixCols}{30}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, October 28, 2011 00:25:27}
+%TCIDATA{LastRevised=Friday, October 28, 2011 02:17:39}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
 %BeginMSIPreambleData
 \providecommand{\U}[1]{\protect\rule{.1in}{.1in}}
 %EndMSIPreambleData
-\voffset=-2.5cm
-\hoffset=-2cm
+\voffset=-0.5cm
+\hoffset=-1.0cm
 \setlength\textheight{24cm}
 \setlength\textwidth{15.5cm}
 \begin{document}
+
+\title{\fbox{$\lambda$\textbf{-rings: Definitions and basic properties}}}
+\author{Darij Grinberg}
+\date{Version 0.0.15, last revised 24 Oct 2011}
+\maketitle
+\tableofcontents
 
 %\begin{titlepage}
 %$\ $\\[20mm]
@@ -37,13 +44,7 @@
 %\newpage
 
 
-\begin{center}
-\fbox{$\lambda$\textbf{-rings: Definitions and basic properties}}
-
-Darij Grinberg
-
-\textit{Version 0.0.15, last revised 24 Oct 2011}
-\end{center}
+\bigskip
 
 This is a \textbf{BETA VERSION} and has never been systematically proofread.
 \textbf{Please notify me of any mistakes, typos and hard-to-understand
@@ -61,9 +62,7 @@ however, some do not.
 
 \bigskip
 
-\subsection{What is this?}
-
-\fbox{\textbf{What is this?}}
+\subsection*{What is this?}
 
 These notes were written for a seminar talk. They try to cover some of the
 most important properties of $\lambda$-rings with proofs. At the moment, most
@@ -71,11 +70,7 @@ of what is written here is also in Knutson's book [2], albeit sometimes with a
 different proof. In future I plan to add some results from Fulton/Lang [1]
 with better proofs.
 
-\section{0. Notation}
-
-\begin{center}
-\fbox{\textbf{0. Notation}}
-\end{center}
+\section*{0. Notation and conventions}
 
 Some notations that we will use later on:
 
@@ -140,15 +135,15 @@ k\cdot\left(  \cos k\right)  ^{2}\cdot\left(  n+1\right)  k\right)  \right)
 n$.\newline Similar rules apply to the parsing of a sum expression.
 \end{itemize}
 
-\begin{center}
-\fbox{\textbf{1. Motivation}}
-\end{center}
+\section{Motivations}
 
 What is the point of $\lambda$-rings?
 
 Fulton/Lang [1] motivate $\lambda$-rings through vector bundles. Here we are
 going for a more elementary motivation, namely through representation rings in
 group representation theory:
+
+\subsection{Representation rings of groups}
 
 Consider a finite group $G$ and a field $k$ of characteristic $0$. In
 representation theory, one define the so-called \textit{representation ring}
@@ -315,6 +310,8 @@ $\operatorname*{FRep}_{k}G\diagup I$ is a special $\lambda$-ring. At the
 moment, this is not proven in this text, although it is rather easy to show
 using character theory.)
 
+\subsection{Grothendieck rings of groups}
+
 The situation gets more complicated when the field over which we are working
 is not of characteristic $0$. In this case, it turns out that
 $\operatorname*{FRep}_{k}G\diagup I$ is not necessarily a special $\lambda
@@ -338,6 +335,8 @@ $U\cong V$ as representations of $G$ when $\operatorname*{char}k\neq0$. So the
 Grothendieck ring is, in some sense, a pale shadow of the representation
 theory of $G$.
 
+\subsection{Vector bundles}
+
 Vector bundles over a given compact Hausdorff space are similar to
 representations of a given group in several ways: They are somehow "enriched"
 vector space structures (a vector bundle is, roughly speaking, a family of
@@ -359,6 +358,8 @@ fundamental object of study in K-theory. We will not delve into K-theory here;
 we will only provide some of its backbone, namely the abstract algebraic
 theory of $\lambda$-rings (which appear not only in K-theory, but also in
 representation theory and elsewhere).
+
+\subsection{Exercises}
 
 \begin{quotation}
 \textit{Exercise 1.1.} Let $G$ be a group, and let $V$ and $W$ be two
@@ -395,9 +396,14 @@ composed of the homomorphisms $\Phi_{i}$ for all $i\in\left\{
 0,1,...,k\right\}  $ is a canonical isomorphism of representations.
 \end{quotation}
 
-\begin{center}
-\fbox{\textbf{2. }$\lambda$\textbf{-rings}}
-\end{center}
+\section{$\lambda$-rings}
+
+\subsection{The definition}
+
+The following definition introduces our most important notions: that of a
+$\lambda$-ring, that of a $\lambda$-ring homomorphism, and that of a
+sub-$\lambda$-ring. While these notions are rather elementary (and much easier
+to define than the ones in Sections 5 and later), they are the basis of our theory.
 
 \begin{quote}
 \textbf{Definition.} \textbf{1)} Let $K$ be a ring. Let $\lambda
@@ -433,6 +439,8 @@ _{i\in\mathbb{N}}\right)  ,$ then $\left(  L,\left(  \lambda^{i}\mid
 _{L}\right)  _{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring, and the
 canonical inclusion $L\rightarrow K$ is a $\lambda$-ring homomorphism.
 \end{quote}
+
+\subsection{An alternative characterization}
 
 First, we give an alternative characterization of $\lambda$-rings:
 
@@ -553,6 +561,8 @@ $i\in\mathbb{N}$, which in turn means that $\mu^{i}\circ f=f\circ\lambda^{i}$
 for every $i\in\mathbb{N}$, which in turn means that $f$ is a $\lambda$-ring
 homomorphism. This proves Theorem 2.1 \textbf{(c)}.
 
+\subsection{Exercises}
+
 \begin{quotation}
 \textit{Exercise 2.1.} Let $\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ and $\left(  L,\left(  \mu^{i}\right)
@@ -578,9 +588,9 @@ $L-L$ is defined by $L-L=\left\{  \ell-\ell^{\prime}\mid\ell\in L,\ \ell
 ^{\prime}\in L\right\}  $) is a sub-$\lambda$-ring of $K$.
 \end{quotation}
 
-\begin{center}
-\fbox{\textbf{3. Examples of }$\lambda$\textbf{-rings}}
-\end{center}
+\section{Examples of $\lambda$-rings}
+
+\subsection{Binomial $\lambda$-rings}
 
 Before we go deeper into the theory, it is time for some examples.
 
@@ -667,6 +677,8 @@ Obviously, the $\lambda$-ring $\left(  \mathbb{Z},\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ defined in Theorem 3.1 is a binomial $\lambda
 $-ring. For other examples of binomial $\lambda$-rings, see Exercise 3.1. Of
 course, every $\mathbb{Q}$-algebra is a binomial ring as well.
+
+\subsection{Adjoining a polynomial variable to a $\lambda$-ring}
 
 Binomial $\lambda$-rings are not the main examples of $\lambda$-rings. We will
 see an important example of $\lambda$-rings in Theorem 5.1 and Exercise 6.1.
@@ -765,6 +777,8 @@ comparing coefficients in $\overline{\lambda}_{T}\left(  aS^{\alpha}\right)
 
 The exercises below give some more examples.
 
+\subsection{Exercises}
+
 \begin{quotation}
 \textit{Exercise 3.1.} Let $p\in\mathbb{N}$ be a prime. Prove that the
 localization $\left\{  1,p,p^{2},...\right\}  ^{-1}\mathbb{Z}$ of the ring
@@ -858,9 +872,7 @@ $M\cong\mathbb{N}$ (where $\mathbb{N}$ denotes the \textit{additive} monoid
 $\mathbb{N}$).
 \end{quotation}
 
-\begin{center}
-\fbox{\textbf{4. Intermezzo: Symmetric polynomials}}
-\end{center}
+\section{Intermezzo: Symmetric polynomials}
 
 Our next plan is to introduce a rather general example of $\lambda$-rings that
 we will use as a prototype to the notion of \textit{special }$\lambda
@@ -869,6 +881,9 @@ symmetric polynomials. In case you can take the proofs for granted, you don't
 need to read much of this paragraph - you only need to know Theorems 4.3 and
 4.4 and the preceding definitions (only the goals of the definitions; not the
 actual constructions of the polynomials $P_{k}$ and $P_{k,j}$).
+
+\subsection{Symmetric polynomials are generated by the elementary symmetric
+ones}
 
 \begin{quote}
 \textbf{Theorem 4.1 (characterization of symmetric polynomials).} Let $K$ be a
@@ -928,6 +943,9 @@ homomorphism, then, $P\left(  U_{1},U_{2},...,U_{m}\right)  =Q\left(
 X_{1},X_{2},...,X_{m}\right)  =Q_{\ell}\left(  X_{1},X_{2},...,X_{\ell
 }\right)  $.
 \end{quote}
+
+\subsection{UV-symmetric polynomials are generated by the elementary symmetric
+ones}
 
 We are not going to prove Theorem 4.1 here, since pretty much every good
 algebra book does it.\footnote{Only one remark about Theorem 4.1 \textbf{(b)}:
@@ -1121,6 +1139,8 @@ Theorem 4.1 \textbf{(b)} along with Theorem 4.1 \textbf{(a)}.
 Note that in the following, we are going to use Theorems 4.1 and 4.2 for
 $K=\mathbb{Z}$ only, until Section 10 where we actually get to use them for
 general $K$.
+
+\subsection{Grothendieck's polynomials $P_{k}$}
 
 Theorem 4.2 allows us to make the following definition:
 
@@ -1501,6 +1521,8 @@ P_{3}  &  =\alpha_{1}^{3}\beta_{3}+\alpha_{3}\beta_{1}^{3}+\alpha_{1}%
 \end{align*}
 Now back to the general case.
 
+\subsection{Grothendieck's polynomials $P_{k,j}$}
+
 Just as our above definition of the polynomials $P_{k}$ and Theorem 4.3 based
 upon Theorem 4.2, we can make another definition basing upon Theorem 4.1:
 
@@ -1709,6 +1731,8 @@ P_{3,2}  &  =\alpha_{6}+\alpha_{1}^{2}\alpha_{4}-2\alpha_{2}\alpha_{4}%
 \end{align*}
 Do you see the pattern in the $P_{2,j}$? See Exercise 4.4 for the answer.
 
+\subsection{Exercises}
+
 \begin{quotation}
 \textit{Exercise 4.1. (Computing }$P_{k}$ \textit{and }$P_{k,j}$ \textit{as
 coefficients of determinants.)} The definitions of the polynomials $P_{k}$ and
@@ -1852,12 +1876,17 @@ independent over $K$.
 \textit{Exercise 4.4.} Prove that $P_{2,j}=\sum\limits_{i=0}^{j-1}\left(
 -1\right)  ^{i+j-1}\alpha_{i}\alpha_{2j-i}$ for every $j\in\mathbb{N}$, where
 $\alpha_{0}$ has to be interpreted as $1$.
+
+[The result of Exercise 4.4 is a result by John Hopkinson\ (Proposition 2.1 in
+[9]). His proof is different from the one I give in the solutions. He also
+gives a similar, even if more complicated formula for $P_{3,j}$: see
+Proposition 2.2 in [9].]
 \end{quotation}
 
-\begin{center}
-\fbox{\textbf{5. A }$\lambda$\textbf{-ring structure on }$\Lambda\left(
-K\right)  =1+K\left[  \left[  T\right]  \right]  ^{+}$}
-\end{center}
+\section{A $\lambda$-ring structure on $\Lambda\left(  K\right)  =1+K\left[
+\left[  T\right]  \right]  ^{+}$}
+
+\subsection{Definition of the $\lambda$-ring $\Lambda\left(  K\right)  $}
 
 Now we are going to introduce a $\lambda$-ring structure on a particular set
 defined for any given ring $K.$
@@ -1953,6 +1982,31 @@ We will call this ring $\Lambda\left(  K\right)  $.
 \mathbb{N}}\right)  $ a $\lambda$-ring.
 \end{quote}
 
+Before we prove this Theorem 5.1, we will have to do some preparatory work: We
+will introduce a subset $1+K\left[  T\right]  ^{+}$ of $1+K\left[  \left[
+T\right]  \right]  ^{+}$ which consists of polynomials with constant term $1$.
+We will show (Theorem 5.2) how we can factorize such polynomials into linear
+factors in an extension of our ring $K$ (similarly to Galois theory, but
+easier, because we don't have to worry about the extension not being a field).
+Then, we will see how the operations $\widehat{+}$, $\widehat{\cdot}$ and
+$\widehat{\lambda}^{j}$ act on factorized linear polynomials (Theorem 5.3).
+Then, with the help of some very basic point-set topology, we will see that
+the subset $1+K\left[  T\right]  ^{+}$ is dense in an appropriate topology on
+$1+K\left[  \left[  T\right]  \right]  ^{+}$ (Theorem 5.5 \textbf{(a)}), that
+this topology is Hausdorff (Theorem 5.5 \textbf{(d)}), and that the operations
+$\widehat{+}$, $\widehat{\cdot}$ and $\widehat{\lambda}^{j}$ are continuous
+with respect to it (Theorem 5.5 \textbf{(d)}), so that in order to prove the
+ring and $\lambda$-ring axioms for $\Lambda\left(  K\right)  $, we only need
+to prove them on elements of this dense subset $1+K\left[  T\right]  ^{+}$.
+This will then be done using Theorems 5.2 and 5.3.
+
+Even if you are willing to believe me that Theorem 5.1 holds, you are advised
+to read this proof, since the ideas and notions it uses will be reused several
+times (e. g., in Sections 9 and 10).
+
+\subsection{Preparing for the proof of Theorem 5.1: introducing $1+K\left[
+T\right]  ^{+}$}
+
 Before we prove this Theorem 5.1, we try to motivate the above definition of
 $\Lambda\left(  K\right)  $:
 
@@ -2021,7 +2075,20 @@ Therefore, Exercise 5.2 (applied to $L=K_{p}$) yields that $\sum
 Since $p=\sum\limits_{i=0}^{n}a_{i}T^{i}$, this rewrites as $p=\prod
 \limits_{i=1}^{n}\left(  1+p_{i}T\right)  $. Thus, Theorem 5.2 is proven.
 
-Let us introduce some notation again:
+\subsection{Preparing for the proof of Theorem 5.1: extending the ring to make
+polynomials split}
+
+Theorem 5.2 shows us that we can split every polynomial $p\in1+K\left[
+T\right]  ^{+}$ into linear factors in a suitably large (but finite-free)
+extension ring of $K$. This is a rather useful fact: Whenever we have to prove
+some facts about polynomials in $1+K\left[  T\right]  ^{+}$, it allows us to
+"adjoin roots of these polynomials" to $K$. In this sense it is a partial
+replacement of the fundamental theorem of algebra for arbitrary commutative
+rings. Of course, its use is limited by the fact that we don't know much about
+the extension ring of $K$ in which $p$ factors, but the fact that it is
+finite-free is enough for many things!
+
+To make systematic use of Theorem 5.2, let us introduce some notation again:
 
 \begin{quote}
 \textbf{Definition.} For every set $H$, let $\mathcal{P}_{\operatorname*{fin}%
@@ -2095,7 +2162,12 @@ extensions of that field (and the proof of Theorem 5.2 explains why), and it
 will help us to understand $\widehat{+},$ $\widehat{\cdot}$ and
 $\widehat{\lambda}^{j}$ better.
 
-In fact, we have the following fact:
+\subsection{Preparing for the proof of Theorem 5.1: the ring structure on
+$\Lambda\left(  K\right)  $ explained}
+
+In fact, the following fact explains the ring operations $\widehat{+}$ and
+$\widehat{\cdot}$ and the $\lambda$-operations $\widehat{\lambda}^{j}$ on
+$1+K\left[  T\right]  ^{+}$ in terms of this correspondence:
 
 \begin{quote}
 \textbf{Theorem 5.3.} Let $K$ be a ring.
@@ -2329,6 +2401,9 @@ S\in\mathcal{P}_{k}\left(  L\right)  \right]  \right)
 (here, we renamed $i$ and $I$ as $\ell$ and $S$). This proves Theorem 5.3'
 \textbf{(d)}.
 
+\subsection{Preparing for the proof of Theorem 5.1: the $\left(  T\right)
+$-topology}
+
 We are approaching the proof of Theorem 5.1. The idea of the proof is: We have
 to show some identities for elements of $1+K\left[  \left[  T\right]  \right]
 ^{+}$ (such as associativity of multiplication). Computing with elements of
@@ -2433,6 +2508,8 @@ commutative algebra book such as [3], Chapter 10.
 
 \textbf{(d)} follows from \textbf{(b)} and \textbf{(c)} together with the
 definitions of $\widehat{+},$ $\widehat{\cdot}$ and $\widehat{\lambda}^{j}$.
+
+\subsection{Proof of Theorem 5.1}
 
 Now it comes:
 
@@ -2667,6 +2744,12 @@ M}v_{\beta}\ \mid\ \text{ }M\in\mathcal{P}_{j-i}\left(  \left\{
 \end{align*}
 proving (\ref{SpezLemma1}). Theorem 5.1 \textbf{(b)} is proven.
 
+\subsection{$\lambda_{T}:K\rightarrow\Lambda\left(  K\right)  $ is an additive
+group homomorphism}
+
+The following trivial fact is a foreshadowing of the notion of "special
+$\lambda$-rings":
+
 \begin{quote}
 \textbf{Theorem 5.6.} Let $\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. Consider the map $\lambda
@@ -2684,6 +2767,13 @@ every $x\in K$ satisfies $\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
 x\right)  T^{i}\in\Lambda\left(  K\right)  $) because $\lambda^{0}\left(
 x\right)  =1$ for every $x\in K$. The assertion that $\lambda_{T}$ is an
 additive group homomorphism follows from Theorem 2.1. Theorem 5.6 is thus proven.
+
+While Theorem 5.6 says that $\lambda_{T}$ is an additive group homomorphism,
+it is not in general a ring homomorphism. But for many $\lambda$-rings $K$, it
+is one - and even a $\lambda$-ring homomorphism. These $\lambda$-rings will be
+studied in the next Section.
+
+\subsection{On the evaluation (substitution) map}
 
 The following properties of the map $\operatorname*{ev}$ defined in Section 3
 will turn out useful to us later:
@@ -2837,6 +2927,8 @@ T}\left(  u\right)  \right)  =\operatorname*{ev}_{\mu^{k}T}\left(
 \widehat{\lambda}^{k}\left(  u\right)  \right)  $, and Theorem 5.7
 \textbf{(e)} is proven.
 
+\subsection{The functor $\Lambda$}
+
 Finally, a small definition that turns $\Lambda$ into a functor:
 
 \begin{quote}
@@ -2857,6 +2949,8 @@ surjective, then so is $\Lambda\left(  \varphi\right)  $. If $\varphi$ is
 injective, then $\Lambda\left(  \varphi\right)  $ is injective as well; thus,
 if $L$ is an extension ring of $K$, then $\Lambda\left(  L\right)  $ can be
 canonically considered an extension ring of $\Lambda\left(  K\right)  $.
+
+\subsection{Exercises}
 
 \begin{quotation}
 \textit{Exercise 5.1.} Let $K$ be a ring. For every monic polynomial $P\in
@@ -2893,9 +2987,9 @@ $m$-integral over $K$. Prove that $\alpha\beta$ is $nm$-integral over $K$.
 construction of the polynomials $P_{k}$ further above.]\ \ \ \ 
 \end{quotation}
 
-\begin{center}
-\fbox{\textbf{6. Special }$\lambda$\textbf{-rings}}
-\end{center}
+\section{Special $\lambda$-rings}
+
+\subsection{Definition}
 
 Now we will define a particular subclass of $\lambda$-rings that we will be
 interested in from now on:
@@ -2982,6 +3076,8 @@ But these two conditions are equivalent to (\ref{Lkxy}) and (\ref{LkLjx}),
 respectively (because of the definitions of $\widehat{\cdot}$ and
 $\widehat{\lambda}^{j}$ and because two formal power series are equal if and
 only if their respective coefficients are equal). This proves Theorem 6.1.
+
+\subsection{$\Lambda\left(  K\right)  $ is special}
 
 \begin{quote}
 \textbf{Theorem 6.2 (Grothendieck).} Let $K$ be a ring. Then, $\left(
@@ -3265,6 +3361,8 @@ is a $\lambda$-ring homomorphism, what seems to be harder, but turns out not
 that hard since Exercise 2.1 reduces this to checking some identity at
 $\mathbb{Z}$-module generators of $K$.
 
+\subsection{Exercises}
+
 \begin{quotation}
 \textit{Exercise 6.1.} Let $K$ be a ring. Consider the localization $\left(
 1+K\left[  T\right]  ^{+}\right)  ^{-1}K\left[  T\right]  $ of the polynomial
@@ -3383,9 +3481,9 @@ $\widetilde{\varphi}:K\rightarrow\Lambda\left(  A\right)  $ such that
 $\operatorname*{coeff}\nolimits_{1}^{A}\circ\widetilde{\varphi}=\varphi.$
 \end{quotation}
 
-\begin{center}
-\fbox{\textbf{7. Examples of special }$\lambda$\textbf{-rings}}
-\end{center}
+\section{Examples of special $\lambda$-rings}
+
+\subsection{Binomial $\lambda$-rings}
 
 We have learned a lot of examples for $\lambda$-rings, but which of them are
 special? Of course, the trivial ring $0$ with the trivial maps $\lambda
@@ -3477,6 +3575,8 @@ $k\in\mathbb{N}$, $j\in\mathbb{N}$ and $x\in K$. In the proof of Theorem 7.1,
 we have proven these identities for $x\in\mathbb{Z}$ and $y\in\mathbb{Z}$; but
 being polynomial identities (for fixed $k$), they become identities for $x\in
 K$ and $y\in K$, and Theorem 7.2 is proven.
+
+\subsection{Adjoining a polynomial variable to a $\lambda$-ring}
 
 Theorem 3.3 has a special version as well:
 
@@ -3640,6 +3740,8 @@ e\right)  =\left(  \overline{\lambda}_{T}\circ\overline{\lambda}^{i}\right)
 \left(  e\right)  $. Thus, by Exercise 2.1 \textbf{(b)}, it follows that
 $\overline{\lambda}_{T}$ is a $\lambda$-ring homomorphism. This proves Theorem 7.3.
 
+\subsection{Exercises}
+
 \begin{quotation}
 \textit{Exercise 7.1.} Let $M$ be a commutative monoid with neutral element.
 Prove that the $\lambda$-ring $\left(  \mathbb{Z}\left[  M\right]  ,\left(
@@ -3652,9 +3754,9 @@ M\right]  ,\left(  \overline{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $
 defined in Exercise 3.5 \textbf{(a)} is special.
 \end{quotation}
 
-\begin{center}
-\fbox{\textbf{8. The }$\lambda$\textbf{-verification principle}}
-\end{center}
+\section{The $\lambda$-verification principle}
+
+\subsection{$n$-operations of special $\lambda$-rings}
 
 In Section 5, we have constructed a family of $\lambda$-rings $\Lambda\left(
 K\right)  $ which are (comparatively) easy to work with due to the following
@@ -3732,6 +3834,8 @@ a_{1},a_{2},a_{3}\right)  =\lambda^{5}\left(  \lambda^{2}\left(  a_{1}\right)
 \]
 is a $3$-operation of special $\lambda$-rings.
 
+\subsection{A useful triviality}
+
 Now, here is the theorem we came for:
 
 \begin{quote}
@@ -3806,6 +3910,8 @@ Hence, $m_{\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)
 ^{\prime}$ because $\lambda_{T}$ is injective (due to Theorem 8.2). Theorem
 8.1 is thus proven!
 
+\subsection{$1$-dimensional elements}
+
 Before we move on to concrete properties of special $\lambda$-rings, let us
 merge Theorems 8.1 and 5.5 into one simple principle for proving facts about
 $\lambda$-rings -- our Theorem 8.4 below. Before we formulate it, let us
@@ -3878,6 +3984,8 @@ K,\underbrace{\left[  \prod_{i\in I}e\mid I\in\mathcal{P}_{i}\left(  \left\{
 \end{align*}
 is the zero of $\Lambda\left(  K\right)  $. Thus, $1+eT$ is $1$-dimensional.
 Theorem 8.3 \textbf{(c)} is proven.
+
+\subsection{The continuous splitting $\lambda$-verification principle}
 
 Now, we can formulate the desired result:
 
@@ -4056,6 +4164,8 @@ special $\lambda$-ring or not can be checked just by looking at the sums of
 $1$-dimensional elements. This is why it is worthwhile to study such sums. Let
 us record a property of these:
 
+\subsection{$\lambda^{i}$ of a sum of $1$-dimensional elements}
+
 \begin{quote}
 \textbf{Theorem 8.5.} Let $\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. Let $u_{1},$ $u_{2},$ $...,$
@@ -4089,6 +4199,8 @@ and }t=T\right)
 \end{align*}
 Comparing coefficients yields the assertion of Theorem 8.5.
 
+\subsection{Exercises}
+
 \begin{quotation}
 \textit{Exercise 8.1.} Let $K$ be a ring. Define the mapping
 $\operatorname*{coeff}\nolimits_{1}:\Lambda\left(  K\right)  \rightarrow K$ as
@@ -4110,16 +4222,16 @@ Prove that the $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ is special.
 \end{quotation}
 
-\begin{center}
-\fbox{\textbf{9. Adams operations}}
-\end{center}
+\section{Adams operations}
+
+\subsection{The Hirzebruch-Newton polynomials}
 
 We are now ready to define Adams operations of special $\lambda$-rings. There
 are two different ways to do this; we will take one of these as the definition
 and the other one as a theorem.
 
-Remember how we defined the "universal" symmetric polynomials $P_{k}$ and
-$P_{k,j}$ in Section 4? Prepare for some more:
+Remember how we defined the "universal" polynomials $P_{k}$ and $P_{k,j}$ in
+Section 4? Prepare for some more:
 
 \begin{quote}
 \textbf{Definition.} Let $j\in\mathbb{N}\setminus\left\{  0\right\}  $. Our
@@ -4289,6 +4401,23 @@ canonical ring epimorphism $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]
 $N_{j}$ is well-defined only for $j\in\mathbb{N}\setminus\left\{  0\right\}  $
 and not for all $j\in\mathbb{N}$.
 
+\textbf{Example.} We can compute the polynomials $N_{j}$ in the same way as we
+have computed the polynomials $P_{k,j}$ in Section 4 - by unraveling the
+definition. Here are the first few $N_{j}$:%
+\begin{align*}
+N_{1}  & =\alpha_{1};\\
+N_{2}  & =\alpha_{1}^{2}-2\alpha_{2};\\
+N_{3}  & =\alpha_{1}^{3}-3\alpha_{1}\alpha_{2}+3\alpha_{3};\\
+N_{4}  & =\alpha_{1}^{4}-4\alpha_{1}^{2}\alpha_{2}+4\alpha_{1}\alpha
+_{3}+2\alpha_{2}^{2}-4\alpha_{4}.
+\end{align*}
+
+
+There are easier ways to compute the $N_{j}$, however. For example, Corollary
+9.7 gives a recurrent formula.
+
+\subsection{Definition of Adams operations}
+
 Now, let us define Adams operations:
 
 \begin{quote}
@@ -4304,6 +4433,9 @@ We call $\psi^{j}$ the $j$\textit{-th Adams operation} (or the $j$\textit{-th
 Adams character}) of the $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $.
 \end{quote}
+
+\subsection{$\protect\widetilde{\psi}_{T}\left(  x\right)  =-T\cdot\dfrac
+{d}{dT}\log\lambda_{-T}\left(  x\right)  $ for special $\lambda$-rings}
 
 Before we prove a batch of properties of these Adams characters, let us show
 another approach to these Adams characters:
@@ -4590,7 +4722,11 @@ _{i\in\mathbb{N}}\right)  $ and every $x\in K$.
 
 Thus, the proof of Theorem 9.2 is completed.
 
-The Adams operations $\psi^{j}$ have a lot of interesting properties:
+\subsection{Adams operations are ring homomorphisms when the $\lambda$-ring is
+special}
+
+The Adams operations $\psi^{j}$ have a lot of interesting properties (that
+make them easier to deal with than $\lambda$-operations!):
 
 \begin{quote}
 \textbf{Theorem 9.3.} Let $\left(  K,\left(  \lambda^{i}\right)
@@ -4797,6 +4933,9 @@ finitely many $1$-dimensional elements of $K$ (by an application of Theorem
 =\left(  \psi^{m}\circ\psi^{n}\right)  \left(  x\right)  =\psi^{nm}\left(
 x\right)  $ in this case by applying Theorems 9.4 and 8.3 \textbf{(b)}. Thus,
 Theorem 9.3 \textbf{(c)} is proven.
+
+\subsection{$\protect\widetilde{\psi}_{T}\left(  x\right)  =-T\cdot\dfrac
+{d}{dT}\log\lambda_{-T}\left(  x\right)  $ for arbitrary $\lambda$-rings}
 
 Now, as promised, we are going to prove a generalization of Theorem 9.2 to
 arbitrary $\lambda$-rings:
@@ -5312,6 +5451,8 @@ Thus, the proof of Theorem 9.5 is complete.
 Theorem 9.5 is clearly a generalization of Theorem 9.2, and thus our above
 proof of Theorem 9.5 is, at the same time, a new proof of Theorem 9.2.
 
+\subsection{Exercises}
+
 \begin{quotation}
 \textit{Exercise 9.1.} Let $K$ be a ring. Let $u\in1+K\left[  T\right]  ^{+}$.
 For every $j\in\mathbb{N}\diagdown\left\{  0\right\}  $, let us denote by
@@ -5454,9 +5595,7 @@ the $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
 \bigskip
 \end{quotation}
 
-\begin{center}
-\fbox{\textbf{10. Todd homomorphisms of polynomials}}
-\end{center}
+\section{Todd homomorphisms of power series}
 
 We now devote a section to the notion of Todd homomorphisms. First, two warnings:
 
@@ -5480,6 +5619,9 @@ is that in most applications the ring $\mathbf{Z}$ will indeed be the ring
 $\mathbb{Z}$ of integers.
 \end{itemize}
 
+\subsection{The universal polynomials $\operatorname*{Td}\nolimits_{\varphi
+,j}$}
+
 We begin this section with a construction similar to the construction of the
 Adams operations in Section 9. The goal of this construction is to find, for
 every power series $\varphi\in1+\mathbf{Z}\left[  \left[  t\right]  \right]
@@ -5496,8 +5638,7 @@ in the ring $\left(  \mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)
 \left[  \left[  T\right]  \right]  $ for every $m\in\mathbb{N}$, where
 $X_{i}=\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
 ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{k}$ as usual. To
-achieve this goal, we must construct another sequence of universal symmetric
-polynomials. First a definition:
+achieve this goal, we must again work with symmetric polynomials. First a definition:
 
 \begin{quote}
 \textbf{Definition.} Let $R$ be any ring. Let $i\in\mathbb{N}$. Then, we
@@ -6025,6 +6166,8 @@ in the ring $\left(  \mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)
 \left[  \left[  T\right]  \right]  $. This proves the 3rd Step, and thus
 Theorem 10.1 is proven.
 
+\subsection{Defining the Todd homomorphism}
+
 Now, let us define the Todd homomorphism:
 
 \begin{quote}
@@ -6059,6 +6202,8 @@ it is defined on \textit{every }$x$.
 \par
 I am not even sure whether there exists standard terminology for Todd
 homomorphisms - there does not seem to be much literature about them.}
+
+\subsection{The case when the power series is $1+ut$}
 
 As complicated as this definition was, we might wonder whether there is a more
 explicit approach to $\varphi$-Todd homomorphisms. It turns out that there is,
@@ -6194,6 +6339,9 @@ and%
 we can conclude from (\ref{10.4.pf.1}) that $\mathfrak{Q}_{1}=\mathfrak{Q}%
 _{2}$. Hence, $u^{j}\alpha_{j}=\mathfrak{Q}_{1}=\mathfrak{Q}_{2}%
 =\operatorname*{Td}\nolimits_{1+ut,j}$. This proves Proposition 10.4.
+
+\subsection{The $0$-th and $1$-st coefficients of $\operatorname*{td}%
+\nolimits_{\varphi,T}\left(  x\right)  $}
 
 We keep back the proof of Proposition 10.3 for a moment - instead, we first
 show a proposition which gives the first two coefficients of the power series
@@ -6388,6 +6536,8 @@ yields }\operatorname*{Td}\nolimits_{\varphi,1}=\varphi_{1}\alpha_{1}\right)
 
 Proposition 10.5 is now proven.
 
+\subsection{Proof of Proposition 10.3}
+
 \textit{Proof of Proposition 10.3.} Let $x\in K$. Applying (\ref{ToddDef}) to
 $\varphi=1+ut$, we obtain%
 \begin{align*}
@@ -6427,6 +6577,8 @@ x\right)  u^{j}T^{j},
 \end{align*}
 this yields that $\operatorname*{td}\nolimits_{1+ut,T}\left(  x\right)
 =\lambda_{uT}\left(  x\right)  $. This proves Proposition 10.3.
+
+\subsection{The Todd homomorphism is multiplicative in $\varphi$}
 
 Our next proposition is another step to making the $\varphi$-Todd homomorphism manageable:
 
@@ -6750,6 +6902,9 @@ x\right)  =\operatorname*{ev}\nolimits_{0T}\left(  \lambda_{T}\left(
 x\right)  \right)  =1$.}. The induction step is a straightforward application
 of Proposition 10.7. Thus Proposition 10.9 is proven.
 
+\subsection{$\operatorname*{td}\nolimits_{\varphi,T}$ takes sums into
+products}
+
 Our next goal is to show the following general property of $\operatorname*{td}%
 \nolimits_{\varphi,T}$:
 
@@ -6783,6 +6938,8 @@ these tricks do not yet give us a proof of Theorem 10.10 unless we change our
 viewpoint to a more general one: Rather than working in a $\lambda$-ring
 $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $, we work
 with power series over an arbitrary ring. Here is what we do, precisely:
+
+\subsection{The $\mathfrak{Todd}_{\varphi}$ map}
 
 \begin{quote}
 \textbf{Definition.} Let $\mathbf{Z}$ be a ring. Let $K$ be a $\mathbf{Z}%
@@ -7154,6 +7311,8 @@ _{\varphi}\left(  pq\right)  $.
 We will now prepare to the proof of this lemma. First, let us introduce the
 version of continuity that we need.
 
+\subsection{Preparing for the proof of Lemma 10.17}
+
 The following two definitions are copies of two definitions which we made in
 Section 5, with the only difference that the variable that used to be $T$ in
 Section 5 is called $t$ here.
@@ -7500,6 +7659,8 @@ $K_{\varphi}$ such that $\varphi=\prod\limits_{i=1}^{n}\left(  1+p_{i}%
 t\right)  $ in $K_{\varphi}\left[  t\right]  $.
 \end{quote}
 
+\subsection{Proof of Lemma 10.17}
+
 Now, finally, to the proof of Lemma 10.17:
 
 \textit{Proof of Lemma 10.17.} Fix $p\in1+K\left[  \left[  T\right]  \right]
@@ -7659,6 +7820,9 @@ follows: Every $\varphi\in1+K\left[  \left[  t\right]  \right]  ^{+}$
 satisfies $\mathfrak{Todd}_{\varphi}\left(  p\right)  \cdot\mathfrak{Todd}%
 _{\varphi}\left(  q\right)  =\mathfrak{Todd}_{\varphi}\left(  pq\right)  $.
 This proves Lemma 10.17.
+
+\subsection{Preparing for the proof of Theorem 10.16: some trivial
+functoriality facts}
 
 We next have to will derive Theorem 10.16 from Lemma 10.17. This requires a
 very easy proposition and its corollary:
@@ -8068,6 +8232,8 @@ Thus,%
 \end{align*}
 This proves Corollary 10.22.
 
+\subsection{Proof of Theorems 10.16 and 10.10}
+
 \textit{Proof of Theorem 10.16.} Since $K$ is a $\mathbf{Z}$-algebra, there is
 a canonical ring homomorphism $\rho:\mathbf{Z}\rightarrow K$. This
 homomorphism induces a canonical ring homomorphism $\rho\left[  \left[
@@ -8148,6 +8314,9 @@ y\right)  \right)  =\operatorname*{td}\nolimits_{\varphi,T}\left(  x+y\right)
 \]
 Theorem 10.10 is thus proven.
 
+\subsection{ $\operatorname*{td}_{\varphi,T}$ is a homomorphism of additive
+groups}
+
 A slightly improved restatement of Theorem 10.10:
 
 \begin{quote}
@@ -8214,6 +8383,8 @@ respects the neutral elements of the additive groups $K$ and $\Lambda\left(
 K\right)  $, this yields: The map $\operatorname*{td}_{\varphi,T}%
 :K\rightarrow\Lambda\left(  K\right)  $ is a homomorphism of additive groups.
 Corollary 10.23 is proven.
+
+\subsection{ $\operatorname*{td}_{\varphi,T}$ of a $1$-dimensional element}
 
 Next on our plan is to compute $\operatorname*{td}\nolimits_{\varphi,T}\left(
 x\right)  $ for $x$ any $1$-dimensional element of $K$. We recall that we
@@ -8463,6 +8634,8 @@ u_{i}T\right) \\
 Since $\sum\limits_{i=1}^{m}u_{i}=u_{1}+u_{2}+...+u_{m}$, this rewrites as
 $\operatorname*{td}\nolimits_{\varphi,T}\left(  u_{1}+u_{2}+...+u_{m}\right)
 =\prod\limits_{i=1}^{m}\varphi\left(  u_{i}T\right)  $. Theorem 10.27 is thus proven.
+
+\subsection{ $\operatorname*{td}_{\varphi,T}$ for special $\lambda$-rings}
 
 Theorem 10.27 gives us a shortcut to working with $\operatorname*{td}%
 \nolimits_{\varphi,T}$ in the case when $\left(  K,\left(  \lambda^{i}\right)
@@ -8769,6 +8942,8 @@ proves the 4th Step.
 \textit{5th Step:} Theorem 10.28 now follows by combining the 1st Step and the
 4th Step.
 
+\subsection{A somewhat more general context for Todd homomorphisms}
+
 Having proven Theorem 10.28, we are done proving all important properties of
 the $\varphi$-Todd homomorphisms. One thing that I still want to do is to give
 a (not particularly unexpected, and apparently not particularly useful)
@@ -8987,8 +9162,10 @@ u_{i}\otimes1\right)  T\right)  .
 \]
 
 
-
+\bigskip
 \end{quote}
+
+\subsection{Exercises}
 
 \begin{quotation}
 \textit{Exercise 10.1.} Let $K$ be a ring. Let $m\in\mathbb{N}$. For every
@@ -9029,9 +9206,7 @@ projective modules) are special $\lambda$-rings.
 
 [...]
 
-\begin{center}
-\fbox{\textbf{X. Positive structure on }$\lambda$\textbf{-rings}}
-\end{center}
+\section*{X. Positive structure on $\lambda$-rings}
 
 Almost all $\lambda$-rings in Fulton/Lang [1] and many $\lambda$-rings in
 nature carry an additional structure called a \textit{positive structure}:
@@ -9258,9 +9433,11 @@ positive elements, while Theorem 8.4 yields it for arbitrary elements.
 [add noncont. splitting principle generalizing 8.4][...]
 \end{quote}
 
-\begin{center}
-\fbox{\textbf{Hints and solutions to exercises}}
-\end{center}
+\section{Hints and solutions to exercises}
+
+\subsection{To Section 1}
+
+\subsection{To Section 2}
 
 \textit{Exercise 2.1: Solution:} \textbf{(a)} Theorem 2.1 \textbf{(c)} says
 that $f$ is a homomorphism of $\lambda$-rings if and only if $\mu_{T}\circ
@@ -9352,6 +9529,8 @@ L$, so that $\lambda^{i}\left(  \ell\right)  \in L$ and thus $\lambda
 ^{i}\left(  \ell\right)  =\underbrace{\lambda^{i}\left(  \ell\right)  }_{\in
 L}-\underbrace{0}_{\in L}\in L-L$), so this yields $\lambda^{i}\left(
 \ell-\ell^{\prime}\right)  \in L-L,$ and this completes our induction.
+
+\subsection{To Section 3}
 
 \textit{Exercise 3.1: Solution:}
 
@@ -9512,6 +9691,8 @@ $i\in\mathbb{N}$ and $j\in\mathbb{N}$. Of course, the polynomial $\dbinom
 of $\lambda^{i}$ that Theorem 2.1 \textbf{(a)} is to be applied here.
 
 \textit{Exercise 3.5: Hints to solution:} Same idea as for Exercise 3.4.
+
+\subsection{To Section 4}
 
 \textit{Exercise 4.2: Detailed solution:} There are several ways to solve
 Exercise 4.2 (many people would call it trivial). Here is not the simplest
@@ -9888,6 +10069,351 @@ $P\left(  p_{1},p_{2},...,p_{m},q_{1},q_{2},...,q_{n}\right)  =0$ must satisfy
 $P=0$. In other words, the $m+n$ elements $p_{1}$, $p_{2}$, $...$, $p_{m}$,
 $q_{1}$, $q_{2}$, $...$, $q_{n}$ are algebraically independent over $K$.
 Exercise 4.3 is solved.
+
+\textit{Exercise 4.4:} \textit{Detailed solution:} Fix some $j\in\mathbb{N}$.
+
+\textit{1st Step:} Let $m\in\mathbb{N}$. We are going to prove that%
+\[
+P_{2,j}\left(  X_{1},X_{2},...,X_{2j}\right)  =\sum\limits_{i=0}^{j-1}\left(
+-1\right)  ^{i+j-1}X_{i}X_{2j-i}%
+\]
+in the ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $.
+
+\textit{Proof.} It is a known (and very easy) fact that whenever $A$ is a
+ring, $F$ is a finite set and $a_{I}$ is an element of $A$ for every $I\in F$,
+then%
+\begin{equation}
+\left(  \sum\limits_{I\in F}a_{I}\right)  ^{2}=\sum\limits_{I\in F}a_{I}%
+^{2}+2\sum\limits_{S\in\mathcal{P}_{2}\left(  F\right)  }\prod\limits_{I\in
+S}a_{I}. \label{4.4.sol.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{4.4.sol.1}).} Let $A$ be a ring, $F$ be a
+finite set and $a_{I}$ be an element of $A$. We must prove (\ref{4.4.sol.1}).
+\par
+Clearly, the set $F$ is used only for indexing in (\ref{4.4.sol.1}). Hence, we
+can WLOG assume that $F=\left\{  1,2,...,n\right\}  $ for some $n\in
+\mathbb{N}$. Assume this, and consider this $n$.
+\par
+Since $F=\left\{  1,2,...,n\right\}  $, we have $\sum\limits_{I\in F}%
+a_{I}=\sum\limits_{I\in\left\{  1,2,...,n\right\}  }a_{I}=a_{1}+a_{2}%
++...+a_{n}$ and $\sum\limits_{I\in F}a_{I}^{2}=\sum\limits_{I\in\left\{
+1,2,...,n\right\}  }a_{I}^{2}=a_{1}^{2}+a_{2}^{2}+...+a_{n}^{2}$.
+\par
+On the other hand, let $L$ be the set of all pairs $\left(  i,j\right)  \in
+F\times F$ satisfying $i<j$. Then, $\sum\limits_{\left(  i,j\right)  \in
+L}a_{i}a_{j}=\sum\limits_{\substack{\left(  i,j\right)  \in I\times
+I;\\i<j}}a_{i}a_{j}$. From the definition of $L$, it is clear that every
+$\left(  i,j\right)  \in L$ satisfies $i<j$.
+\par
+Let $\mathfrak{S}$ denote the map%
+\[
+L\rightarrow\mathcal{P}_{2}\left(  F\right)  ,\ \ \ \ \ \ \ \ \ \ \left(
+i,j\right)  \mapsto\left\{  i,j\right\}  .
+\]
+This map is a bijection. (In fact, the elements of $L$ are pairs $\left(
+i,j\right)  \in F\times F$ satisfying $i<j$; such pairs are clearly in
+bijection with the $2$-element subsets of $F$, and this bijection is given by
+the map $\mathfrak{S}$.)
+\par
+For every $\left(  i,j\right)  \in L$, we have%
+\begin{align*}
+\prod_{I\in\mathfrak{S}\left(  i,j\right)  }a_{I}  &  =\prod_{I\in\left\{
+i,j\right\}  }a_{I}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\mathfrak{S}%
+\left(  i,j\right)  =\left\{  i,j\right\}  \text{ by the definition of
+}\mathfrak{S}\right) \\
+&  =a_{i}a_{j}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  i,j\right)  \in
+L\text{, so that }i<j\right)  .
+\end{align*}
+\par
+Now,%
+\[
+\sum\limits_{\substack{\left(  i,j\right)  \in I\times I;\\i<j}}a_{i}%
+a_{j}=\sum\limits_{\left(  i,j\right)  \in L}\underbrace{a_{i}a_{j}}%
+_{=\prod\limits_{I\in\mathfrak{S}\left(  i,j\right)  }a_{I}}=\sum
+\limits_{\left(  i,j\right)  \in L}\prod_{I\in\mathfrak{S}\left(  i,j\right)
+}a_{I}=\sum\limits_{S\in\mathcal{P}_{2}\left(  F\right)  }\prod\limits_{I\in
+S}a_{I}%
+\]
+(here we substituted $S$ for $\mathfrak{S}\left(  i,j\right)  $ in the sum,
+since $\mathfrak{S}$ is a bijection). But $\sum\limits_{I\in F}a_{I}%
+=a_{1}+a_{2}+...+a_{n}$, so that%
+\[
+\left(  \sum\limits_{I\in F}a_{I}\right)  ^{2}=\left(  a_{1}+a_{2}%
++...+a_{n}\right)  ^{2}=\underbrace{\left(  a_{1}^{2}+a_{2}^{2}+...+a_{n}%
+^{2}\right)  }_{=\sum\limits_{I\in F}a_{I}^{2}}+2\underbrace{\sum
+\limits_{\substack{\left(  i,j\right)  \in I\times I;\\i<j}}a_{i}a_{j}}%
+_{=\sum\limits_{S\in\mathcal{P}_{2}\left(  F\right)  }\prod\limits_{I\in
+S}a_{I}}=\sum\limits_{I\in F}a_{I}^{2}+2\sum\limits_{S\in\mathcal{P}%
+_{2}\left(  F\right)  }\prod\limits_{I\in S}a_{I}.
+\]
+This proves (\ref{4.4.sol.1}).} Applied to $A=\mathbb{Z}\left[  U_{1}%
+,U_{2},...,U_{m}\right]  $, $F=\mathcal{P}_{j}\left(  \left\{
+1,2,...,m\right\}  \right)  $ and $a_{I}=\prod\limits_{i\in I}U_{i}$, this
+yields%
+\[
+\left(  \sum\limits_{I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}
+\right)  }\prod\limits_{i\in I}U_{i}\right)  ^{2}=\sum\limits_{I\in
+\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)  }\left(
+\prod\limits_{i\in I}U_{i}\right)  ^{2}+2\sum\limits_{S\in\mathcal{P}%
+_{2}\left(  \mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)
+\right)  }\prod\limits_{I\in S}\prod\limits_{i\in I}U_{i}.
+\]
+Since
+\begin{align*}
+\sum\limits_{S\in\mathcal{P}_{2}\left(  \mathcal{P}_{j}\left(  \left\{
+1,2,...,m\right\}  \right)  \right)  }\prod\limits_{I\in S}\prod\limits_{i\in
+I}U_{i}  &  =\sum\limits_{\substack{S\in\mathcal{P}_{j}\left(  \left\{
+1,2,...,m\right\}  \right)  ;\\\left\vert S\right\vert =2}}\prod\limits_{I\in
+S}\prod\limits_{i\in I}U_{i}=P_{2,j}\left(  X_{1},X_{2},...,X_{2j}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{Pkj1}), applied to }k=2\right)
+,
+\end{align*}
+this becomes%
+\begin{align*}
+\left(  \sum\limits_{I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}
+\right)  }\prod\limits_{i\in I}U_{i}\right)  ^{2}  &  =\sum\limits_{I\in
+\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)  }%
+\underbrace{\left(  \prod\limits_{i\in I}U_{i}\right)  ^{2}}_{=\prod
+\limits_{i\in I}U_{i}^{2}}+2\underbrace{\sum\limits_{S\in\mathcal{P}%
+_{2}\left(  \mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)
+\right)  }\prod\limits_{I\in S}\prod\limits_{i\in I}U_{i}}_{=P_{2,j}\left(
+X_{1},X_{2},...,X_{2j}\right)  }\\
+&  =\sum\limits_{I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}
+\right)  }\prod\limits_{i\in I}U_{i}^{2}+2P_{2,j}\left(  X_{1},X_{2}%
+,...,X_{2j}\right)  .
+\end{align*}
+Since%
+\begin{align*}
+\sum\limits_{I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)
+}\prod\limits_{i\in I}U_{i}  &  =\sum\limits_{\substack{I\subseteq\left\{
+1,2,...,m\right\}  ;\\\left\vert I\right\vert =j}}\prod\limits_{i\in I}%
+U_{i}=\sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}  ;\\\left\vert
+S\right\vert =j}}\prod_{k\in S}U_{k}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the indices }I\text{ and
+}i\text{ as }S\text{ and }k\right) \\
+&  =X_{j}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }X_{j}\text{ was defined as
+}\sum_{\substack{S\subseteq\left\{  1,2,...,m\right\}  ;\\\left\vert
+S\right\vert =j}}\prod_{k\in S}U_{k}\right)  ,
+\end{align*}
+this rewrites as%
+\begin{equation}
+X_{j}^{2}=\sum\limits_{I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}
+\right)  }\prod\limits_{i\in I}U_{i}^{2}+2P_{2,j}\left(  X_{1},X_{2}%
+,...,X_{2j}\right)  . \label{4.4.sol.2}%
+\end{equation}
+
+
+We will now show that%
+\begin{equation}
+\sum\limits_{I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)
+}\prod\limits_{i\in I}U_{i}^{2}=\sum\limits_{i=0}^{2j}\left(  -1\right)
+^{i+j}X_{i}X_{2j-i} \label{4.4.sol.3}%
+\end{equation}
+(an identity interesting for its own).
+
+In fact, consider the polynomial $\prod\limits_{i=1}^{m}\left(  1-U_{i}%
+^{2}T^{2}\right)  \in\left(  \mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]
+\right)  \left[  T\right]  $. Exercise 4.2 \textbf{(c)} (applied to $A=\left(
+\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[  T\right]  $,
+$t=T^{2}$ and $\alpha_{i}=U_{i}^{2}$) yields%
+\[
+\prod\limits_{i=1}^{m}\left(  1-U_{i}^{2}T^{2}\right)  =\sum_{i\in\mathbb{N}%
+}\left(  -1\right)  ^{i}\sum\limits_{\substack{S\subseteq\left\{
+1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}%
+U_{k}^{2}\underbrace{\left(  T^{2}\right)  ^{i}}_{=T^{2i}}=\sum_{i\in
+\mathbb{N}}\left(  \left(  -1\right)  ^{i}\sum\limits_{\substack{S\subseteq
+\left\{  1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in
+S}U_{k}^{2}\right)  T^{2i}.
+\]
+Thus,%
+\begin{align}
+&  \left(  \text{the coefficient of the polynomial }\prod\limits_{i=1}%
+^{m}\left(  1-U_{i}^{2}T^{2}\right)  \text{ before }T^{2j}\right) \nonumber\\
+&  =\left(  \text{the coefficient of the polynomial }\sum_{i\in\mathbb{N}%
+}\left(  \left(  -1\right)  ^{i}\sum\limits_{\substack{S\subseteq\left\{
+1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}%
+U_{k}^{2}\right)  T^{2i}\text{ before }T^{2j}\right) \nonumber\\
+&  =\left(  -1\right)  ^{j}\underbrace{\sum\limits_{\substack{S\subseteq
+\left\{  1,2,...,m\right\}  ;\\\left\vert S\right\vert =j}}}_{=\sum
+\limits_{S\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)  }%
+}\prod\limits_{k\in S}U_{k}^{2}=\left(  -1\right)  ^{j}\sum\limits_{S\in
+\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)  }\prod
+\limits_{k\in S}U_{k}^{2}=\left(  -1\right)  ^{j}\sum\limits_{I\in
+\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)  }\prod
+\limits_{i\in I}U_{i}^{2}\label{4.4.sol.4}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we renamed the indices }S\text{ and
+}k\text{ as }I\text{ and }i\right)  .\nonumber
+\end{align}
+
+
+But Exercise 4.2 \textbf{(c)} (applied to $A=\left(  \mathbb{Z}\left[
+U_{1},U_{2},...,U_{m}\right]  \right)  \left[  T\right]  $, $t=T$ and
+$\alpha_{i}=U_{i}$) yields%
+\[
+\prod\limits_{i=1}^{m}\left(  1-U_{i}T\right)  =\sum_{i\in\mathbb{N}}\left(
+-1\right)  ^{i}\underbrace{\sum\limits_{\substack{S\subseteq\left\{
+1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{k}%
+}_{=X_{i}}T^{i}=\sum_{i\in\mathbb{N}}\left(  -1\right)  ^{i}X_{i}T^{i}.
+\]
+Also, Exercise 4.2 \textbf{(b)} (applied to $A=\left(  \mathbb{Z}\left[
+U_{1},U_{2},...,U_{m}\right]  \right)  \left[  T\right]  $, $t=T$ and
+$\alpha_{i}=U_{i}$) yields%
+\[
+\prod\limits_{i=1}^{m}\left(  1+U_{i}T\right)  =\sum_{i\in\mathbb{N}%
+}\underbrace{\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
+;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{k}}_{=X_{i}}T^{i}%
+=\sum_{i\in\mathbb{N}}X_{i}T^{i}.
+\]
+Now,%
+\begin{align*}
+\prod\limits_{i=1}^{m}\underbrace{\left(  1-U_{i}^{2}T^{2}\right)  }_{=\left(
+1-U_{i}T\right)  \left(  1+U_{i}T\right)  }  &  =\prod\limits_{i=1}^{m}\left(
+\left(  1-U_{i}T\right)  \left(  1+U_{i}T\right)  \right)
+=\underbrace{\left(  \prod\limits_{i=1}^{m}\left(  1-U_{i}T\right)  \right)
+}_{=\sum\limits_{i\in\mathbb{N}}\left(  -1\right)  ^{i}X_{i}T^{i}%
+}\underbrace{\left(  \prod\limits_{i=1}^{m}\left(  1+U_{i}T\right)  \right)
+}_{=\sum\limits_{i\in\mathbb{N}}X_{i}T^{i}}\\
+&  =\left(  \sum\limits_{i\in\mathbb{N}}\left(  -1\right)  ^{i}X_{i}%
+T^{i}\right)  \cdot\left(  \sum\limits_{i\in\mathbb{N}}X_{i}T^{i}\right)
+=\sum\limits_{i\in\mathbb{N}}\left(  \sum_{k=0}^{i}\left(  -1\right)
+^{k}X_{k}X_{i-k}\right)  T^{i}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the product of two
+polynomials}\right)  .
+\end{align*}
+Hence,
+\begin{align*}
+&  \left(  \text{the coefficient of the polynomial }\prod\limits_{i=1}%
+^{m}\left(  1-U_{i}^{2}T^{2}\right)  \text{ before }T^{2j}\right) \\
+&  =\left(  \text{the coefficient of the polynomial }\sum\limits_{i\in
+\mathbb{N}}\left(  \sum_{k=0}^{i}\left(  -1\right)  ^{k}X_{k}X_{i-k}\right)
+T^{i}\text{ before }T^{2j}\right) \\
+&  =\sum\limits_{k=0}^{2j}\left(  -1\right)  ^{k}X_{k}X_{2j-k}=\sum
+\limits_{i=0}^{2j}\left(  -1\right)  ^{i}X_{i}X_{2j-i}%
+\end{align*}
+(here we renamed the index $k$ as $i$). Compared to (\ref{4.4.sol.4}), this
+yields%
+\[
+\left(  -1\right)  ^{j}\sum\limits_{I\in\mathcal{P}_{j}\left(  \left\{
+1,2,...,m\right\}  \right)  }\prod\limits_{i\in I}U_{i}^{2}=\sum
+\limits_{i=0}^{2j}\left(  -1\right)  ^{i}X_{i}X_{2j-i}.
+\]
+Divided by $\left(  -1\right)  ^{j}$, this yields%
+\[
+\sum\limits_{I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)
+}\prod\limits_{i\in I}U_{i}^{2}=\sum\limits_{i=0}^{2j}\underbrace{\dfrac
+{\left(  -1\right)  ^{i}}{\left(  -1\right)  ^{j}}}_{=\left(  -1\right)
+^{i+j}}X_{i}X_{2j-i}=\sum\limits_{i=0}^{2j}\left(  -1\right)  ^{i+j}%
+X_{i}X_{2j-i}.
+\]
+Thus we have proven (\ref{4.4.sol.3}).
+
+Substituting (\ref{4.4.sol.3}) into (\ref{4.4.sol.2}), we obtain%
+\[
+X_{j}^{2}=\sum\limits_{i=0}^{2j}\left(  -1\right)  ^{i+j}X_{i}X_{2j-i}%
++2P_{2,j}\left(  X_{1},X_{2},...,X_{2j}\right)  .
+\]
+Since%
+\begin{align*}
+\sum\limits_{i=0}^{2j}\left(  -1\right)  ^{i+j}X_{i}X_{2j-i}  &
+=\sum\limits_{i=0}^{j}\left(  -1\right)  ^{i+j}X_{i}X_{2j-i}+\sum
+\limits_{i=j+1}^{2j}\left(  -1\right)  ^{i+j}X_{i}X_{2j-i}\\
+&  =\underbrace{\sum\limits_{i=0}^{j}\left(  -1\right)  ^{i+j}X_{i}X_{2j-i}%
+}_{=\left(  -1\right)  ^{j+j}X_{j}X_{2j-j}+\sum\limits_{i=0}^{j-1}\left(
+-1\right)  ^{i+j}X_{i}X_{2j-i}}+\sum\limits_{i=0}^{j-1}\underbrace{\left(
+-1\right)  ^{\left(  2j-i\right)  +j}}_{=\left(  -1\right)  ^{2\left(
+j-i\right)  +i+j}=\left(  -1\right)  ^{i+j}}X_{2j-i}\underbrace{X_{2j-\left(
+2j-i\right)  }}_{=X_{i}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }2j-i\text{ for
+}i\text{ in the second sum}\right) \\
+&  =\underbrace{\left(  -1\right)  ^{j+j}}_{=\left(  -1\right)  ^{2j}%
+=1}\underbrace{X_{j}X_{2j-j}}_{=X_{j}X_{j}=X_{j}^{2}}+\sum\limits_{i=0}%
+^{j-1}\left(  -1\right)  ^{i+j}X_{i}X_{2j-i}+\sum\limits_{i=0}^{j-1}\left(
+-1\right)  ^{i+j}\underbrace{X_{2j-i}X_{i}}_{=X_{i}X_{2j-i}}\\
+&  =X_{j}^{2}+\underbrace{\sum\limits_{i=0}^{j-1}\left(  -1\right)
+^{i+j}X_{i}X_{2j-i}+\sum\limits_{i=0}^{j-1}\left(  -1\right)  ^{i+j}%
+X_{i}X_{2j-i}}_{=2\sum\limits_{i=0}^{j-1}\left(  -1\right)  ^{i+j}%
+X_{i}X_{2j-i}}=X_{j}^{2}+2\sum\limits_{i=0}^{j-1}\left(  -1\right)
+^{i+j}X_{i}X_{2j-i},
+\end{align*}
+this becomes%
+\[
+X_{j}^{2}=X_{j}^{2}+2\sum\limits_{i=0}^{j-1}\left(  -1\right)  ^{i+j}%
+X_{i}X_{2j-i}+2P_{2,j}\left(  X_{1},X_{2},...,X_{2j}\right)  .
+\]
+Subtracting $X_{j}^{2}$ from this and dividing by $2$ (we are allowed to
+divide by $2$ since $2$ is not a zero-divisor in $\mathbb{Z}\left[
+U_{1},U_{2},...,U_{m}\right]  $), we obtain%
+\[
+0=\sum\limits_{i=0}^{j-1}\left(  -1\right)  ^{i+j}X_{i}X_{2j-i}+P_{2,j}\left(
+X_{1},X_{2},...,X_{2j}\right)  ,
+\]
+so that%
+\[
+P_{2,j}\left(  X_{1},X_{2},...,X_{2j}\right)  =-\sum\limits_{i=0}^{j-1}\left(
+-1\right)  ^{i+j}X_{i}X_{2j-i}=\sum\limits_{i=0}^{j-1}\underbrace{\left(
+-\left(  -1\right)  ^{i+j}\right)  }_{=\left(  -1\right)  ^{i+j-1}}%
+X_{i}X_{2j-i}=\sum\limits_{i=0}^{j-1}\left(  -1\right)  ^{i+j-1}X_{i}%
+X_{2j-i}.
+\]
+This proves the 1st Step.
+
+\textit{2nd Step:} Let us now prove $P_{2,j}=\sum\limits_{i=0}^{j-1}\left(
+-1\right)  ^{i+j-1}\alpha_{i}\alpha_{2j-i}$ now.
+
+\textit{Proof.} Let $m=2j$. Define a polynomial $\mathfrak{Q}_{1}\in
+\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $ by
+$\mathfrak{Q}_{1}=P_{2,j}$, and define a polynomial $\mathfrak{Q}_{2}%
+\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $ by
+$\mathfrak{Q}_{2}=\sum\limits_{i=0}^{j-1}\left(  -1\right)  ^{i+j-1}\alpha
+_{i}\alpha_{2j-i}$. We are going to prove that $\mathfrak{Q}_{1}%
+=\mathfrak{Q}_{2}$.
+
+Applying Theorem 4.1 \textbf{(a)} to $K=\mathbb{Z}$ and $P=P_{2,j}\left(
+X_{1},X_{2},...,X_{2j}\right)  $, we conclude that there exists one and only
+one polynomial $Q\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
+_{m}\right]  $ such that $P_{2,j}\left(  X_{1},X_{2},...,X_{2j}\right)
+=Q\left(  X_{1},X_{2},...,X_{m}\right)  $. In particular, there exists
+\textit{at most one} such polynomial $Q\in\mathbb{Z}\left[  \alpha_{1}%
+,\alpha_{2},...,\alpha_{m}\right]  $. Hence,
+\begin{equation}
+\left(
+\begin{array}
+[c]{c}%
+\text{if }\mathfrak{Q}_{1}\in\mathbb{Z}\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{m}\right]  \text{ and }\mathfrak{Q}_{2}\in\mathbb{Z}\left[
+\alpha_{1},\alpha_{2},...,\alpha_{m}\right]  \text{ are two polynomials}\\
+\text{such that }P_{2,j}\left(  X_{1},X_{2},...,X_{2j}\right)  =\mathfrak{Q}%
+_{1}\left(  X_{1},X_{2},...,X_{m}\right)  \text{ and}\\
+P_{2,j}\left(  X_{1},X_{2},...,X_{2j}\right)  =\mathfrak{Q}_{2}\left(
+X_{1},X_{2},...,X_{m}\right)  \text{, then }\mathfrak{Q}_{1}=\mathfrak{Q}_{2}%
+\end{array}
+\right)  . \label{4.4.sol.15}%
+\end{equation}
+
+
+Since our two polynomials $\mathfrak{Q}_{1}$ and $\mathfrak{Q}_{2}$ satisfy%
+\[
+\mathfrak{Q}_{1}\left(  X_{1},X_{2},...,X_{m}\right)  =P_{2,j}\left(
+X_{1},X_{2},...,X_{2j}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}\mathfrak{Q}_{1}=P_{2,j}\text{ and }m=2j\right)
+\]
+and%
+\begin{align*}
+\mathfrak{Q}_{2}\left(  X_{1},X_{2},...,X_{m}\right)   &  =\left(
+\sum\limits_{i=0}^{j-1}\left(  -1\right)  ^{i+j-1}\alpha_{i}\alpha
+_{2j-i}\right)  \left(  X_{1},X_{2},...,X_{j}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\mathfrak{Q}_{2}=\sum
+\limits_{i=0}^{j-1}\left(  -1\right)  ^{i+j-1}\alpha_{i}\alpha_{2j-i}\right)
+\\
+&  =P_{2,j}\left(  X_{1},X_{2},...,X_{2j}\right)  \ \ \ \ \ \ \ \ \ \ \left(
+\text{by the 1st Step}\right)  ,
+\end{align*}
+we can conclude from (\ref{4.4.sol.15}) that $\mathfrak{Q}_{1}=\mathfrak{Q}%
+_{2}$. Hence, $P_{2,j}=\mathfrak{Q}_{1}=\mathfrak{Q}_{2}=\sum\limits_{i=0}%
+^{j-1}\left(  -1\right)  ^{i+j-1}\alpha_{i}\alpha_{2j-i}$. This solves
+Exercise 4.4.
+
+\subsection{To Section 5}
 
 \textit{Exercise 5.1: Hints to solution:} This can be proven by induction over
 $n$: The ring $K\left[  T\right]  \diagup\left(  P\right)  $ is a finite-free
@@ -10337,6 +10863,8 @@ satisfy $P=\prod\limits_{i=1}^{n}\left(  T-p_{i}\right)  $ in $K_{P}^{\prime
 
 \textit{Exercise 5.4: Hints to solution:} [...]
 
+\subsection{To Section 6}
+
 \textit{Exercise 6.1: Hints to solution:} We have%
 \[
 \left(  1+K\left[  T\right]  ^{+}\right)  ^{-1}K\left[  T\right]  \cap
@@ -10581,10 +11109,14 @@ $\operatorname*{coeff}\nolimits_{1}^{A}\circ\widetilde{\varphi}=\varphi,$
 namely the homomorphism $\Lambda\left(  \varphi\right)  \circ\lambda_{T},$ and
 the 2nd Step proves that this is the only such homomorphism).
 
+\subsection{To Section 7}
+
 \textit{Exercise 7.1: Hints to solution:} See the more general Exercise 7.2.
 
 \textit{Exercise 7.2: Hints to solution:} Repeat the argument used in the
 proof of Theorem 7.3.
+
+\subsection{To Section 8}
 
 \textit{Exercise 8.1: Solution:}
 
@@ -10786,6 +11318,8 @@ element of }\Lambda\left(  K\right)  \text{ by Theorem 8.3,}\\
 \right)
 \end{align*}
 for every $j\in\mathbb{N}$ and $x\in E.$
+
+\subsection{To Section 9}
 
 \textit{Exercise 9.1: Hints to solution:} As before, we use the $\widehat{\sum
 }$ sign for summation inside the ring $\Lambda\left(  K\right)  $. We remember
@@ -11452,6 +11986,8 @@ additive groups for every $j\in\mathbb{N}\diagdown\left\{  0\right\}  $.
 \textit{Proof.} This follows from the 3rd and 4th steps. This completes the
 5th step and thus solves the problem.
 
+\subsection{To Section 10}
+
 \textit{Exercise 10.1: Detailed solution:} \textbf{(a)} We know that
 $\operatorname*{Coeff}\nolimits_{0}$ is a $K$-linear map (for obvious
 reasons). Now let us show that $\operatorname*{Coeff}\nolimits_{0}$ is a
@@ -11939,9 +12475,7 @@ This proves Proposition 10.36.
 Proposition 10.36 in the same way as we proved Theorem 10.27 with the help of
 Proposition 10.24. We leave the details to the reader.
 
-\begin{center}
-\fbox{\textbf{References}}
-\end{center}
+\section*{References}
 
 [1] William Fulton, Serge Lang, \textit{Riemann-Roch algebra}, New York 1985.
 
@@ -11966,6 +12500,10 @@ Academic Press 1988, pp. 93-102.
 
 [8] Darij Grinberg, \textit{Witt\#4a: Equigraded power series}.\newline%
 \texttt{www.cip.ifi.lmu.de/\symbol{126}grinberg/algebra/witt4a.pdf}
+
+[9] John R. Hopkinson, \textit{Universal Polynomials in Lambda rings and the
+K-theory of the infinite loop space }$tmf$, PhD thesis at MIT, June
+2006.\newline\texttt{http://dspace.mit.edu/handle/1721.1/34544}
 
 
 \end{document}
