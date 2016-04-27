@@ -4,6 +4,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{hyperref}
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
@@ -523,7 +524,7 @@ f=f\left[  \left[  T\right]  \right]  \circ\lambda_{T}$.
 every positive integer $i$.
 \end{quote}
 
-\textit{Proof of Theorem 2.1.} \textbf{(a)} Every $x\in K$ and every $y\in K$
+\begin{proof}[Proof of Theorem 2.1.] \textbf{(a)} Every $x\in K$ and every $y\in K$
 satisfy%
 \begin{align*}
 \lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)   &  =\left(
@@ -614,6 +615,7 @@ right hand side of this equality is $\lambda^{i}\left(  0\right)  $. Since the
 coefficients of $T^{i}$ on the two sides of an equality must be equal, this
 yields $0=\lambda^{i}\left(  0\right)  $ for every positive integer $i$. This
 proves Theorem 2.1 \textbf{(d)}.
+\end{proof}
 
 The map $\lambda_{T}$ defined in Theorem 2.1 will follow us through the whole
 theory of $\lambda$-rings. It is often easier to deal with than the maps
@@ -737,7 +739,7 @@ $i\in\mathbb{N}$.} Then, $\left(  \mathbb{Z},\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring.
 \end{quote}
 
-\textit{Proof of Theorem 3.1.} Trivially, $\lambda^{0}\left(  x\right)  =1$
+\begin{proof}[Proof of Theorem 3.1.] Trivially, $\lambda^{0}\left(  x\right)  =1$
 and $\lambda^{1}\left(  x\right)  =x$ for every $x\in\mathbb{Z}$. The only
 challenge, if there is a challenge in this proof, is to verify the identity
 (\ref{lambda1}) for $K=\mathbb{Z}$. In other words, we have to prove that%
@@ -771,7 +773,8 @@ T\right]  $), but I am not sure whether this argument is free of circular
 reasoning because it is not at all obvious that $\left(  1+T\right)
 ^{x}\left(  1+T\right)  ^{y}=\left(  1+T\right)  ^{x+y}$ in $\mathbb{Z}\left[
 \left[  T\right]  \right]  $ for negative $x$ and $y$, and I even fear that
-this is usually proven using (\ref{vandermonde}).} This proves Theorem 3.1.
+this is usually proven using (\ref{vandermonde}).} This proves Theorem 3.1
+\end{proof}
 
 Our next example is a generalization of Theorem 3.1:
 
@@ -791,7 +794,7 @@ to be $\dfrac{x\cdot\left(  x-1\right)  \cdot...\cdot\left(  x-i+1\right)
 
 Such $\lambda$-rings $K$ are called \textit{binomial }$\lambda$\textit{-rings}.
 
-\textit{Proof of Theorem 3.2.} Obviously, $\lambda^{0}\left(  x\right)  =1$
+\begin{proof}[Proof of Theorem 3.2.] Obviously, $\lambda^{0}\left(  x\right)  =1$
 and $\lambda^{1}\left(  x\right)  =x$ for every $x\in K$, so it only remains
 to show that (\ref{lambda1}) is satisfied. This means proving
 (\ref{vandermonde}) for every $k\in\mathbb{N},$ $x\in K$ and $y\in K$. But
@@ -801,6 +804,7 @@ every $x\in\mathbb{Z}$ and every $y\in\mathbb{Z}$ (as we have seen in the
 proof of Theorem 3.1), it follows that it holds for every $x\in K$ and every
 $y\in K$ (since a polynomial identity holding for all integer variables must
 hold everywhere). This completes the proof of Theorem 3.2.
+\end{proof}
 
 Obviously, the $\lambda$-ring $\left(  \mathbb{Z},\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ defined in Theorem 3.1 is a binomial $\lambda
@@ -852,7 +856,7 @@ $\overline{\lambda}^{i}\left(  aS^{\alpha}\right)  =\lambda^{i}\left(
 a\right)  S^{\alpha i}$ for every $i\in\mathbb{N}$.
 \end{quote}
 
-\textit{Proof of Theorem 3.3.} \textbf{(a)} Define a map $\overline{\lambda
+\begin{proof}[Proof of Theorem 3.3.] \textbf{(a)} Define a map $\overline{\lambda
 }_{T}:K\left[  S\right]  \rightarrow\left(  K\left[  S\right]  \right)
 \left[  \left[  T\right]  \right]  $ by $\overline{\lambda}_{T}\left(
 u\right)  =\sum\limits_{i\in\mathbb{N}}\overline{\lambda}^{i}\left(  u\right)
@@ -903,6 +907,7 @@ equation $\overline{\lambda}^{i}\left(  aS^{\alpha}\right)  =\lambda
 ^{i}\left(  a\right)  S^{\alpha i}$ for every $i\in\mathbb{N}$ follows by
 comparing coefficients in $\overline{\lambda}_{T}\left(  aS^{\alpha}\right)
 =\lambda_{S^{\alpha}T}\left(  a\right)  $. Thus, Theorem 3.3 \textbf{(b)} is proven.
+\end{proof}
 
 The exercises below give some more examples.
 
@@ -1170,7 +1175,7 @@ P\left(  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right)  =Q_{\ell
 
 \end{quote}
 
-\textit{Proof of Theorem 4.2 (\textbf{very} roughly sketched).} \textbf{(a)}
+\begin{proof}[Proof of Theorem 4.2 (\textbf{very} roughly sketched).] \textbf{(a)}
 Consider $P$ as a polynomial in the indeterminates $V_{1},$ $V_{2},$ $...,$
 $V_{n}$ over the ring $K\left[  U_{1},U_{2},...,U_{m}\right]  $. Then, $P$ is
 a symmetric polynomial in these indeterminates $V_{1},$ $V_{2},$ $...,$
@@ -1264,6 +1269,7 @@ $V_{1},$ $V_{2},$ $...,$ $V_{n}$ instead of $U_{1},$ $U_{2},$ $...,$ $U_{m}$).
 
 For part \textbf{(b)}, we argue the same way as in \textbf{(a)}, but applying
 Theorem 4.1 \textbf{(b)} along with Theorem 4.1 \textbf{(a)}.
+\end{proof}
 
 Note that in the following, we are going to use Theorems 4.1 and 4.2 for
 $K=\mathbb{Z}$ only, until Section 10 where we actually get to use them for
@@ -1364,7 +1370,7 @@ that the right hand side of this equation is a power series with coefficient
 $1$ before $T^{0}$, since $P_{0}=1$.)
 \end{quote}
 
-\textit{Proof of Theorem 4.3.} \textbf{(a)} \textit{1st Step:} Fix
+\begin{proof}[Proof of Theorem 4.3.] \textbf{(a)} \textit{1st Step:} Fix
 $n\in\mathbb{N}$ and $m\in\mathbb{N}$ such that $n\geq k$ and $m\geq k$. Then,
 we claim that $Q_{k,k,\left[  n,m\right]  }=P_{k}$.
 
@@ -1496,6 +1502,7 @@ A=\left(  \mathbb{Z}\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}%
 ,Y_{2},...,Y_{k}\right)  T^{k}.
 \end{align*}
 This proves Theorem 4.3 \textbf{(b)}.
+\end{proof}
 
 \textbf{Example.} The above definition of the polynomials $P_{k}$ was rather
 abstract. Let us sketch an example of how these polynomials are computed -
@@ -1759,7 +1766,7 @@ equation is a power series with coefficient $1$ before $T^{0}$, since
 $P_{0,j}=1$.)
 \end{quote}
 
-\textit{Proof of Theorem 4.4.} \textbf{(a)} \textit{1st Step:} Fix
+\begin{proof}[Proof of Theorem 4.4.] \textbf{(a)} \textit{1st Step:} Fix
 $m\in\mathbb{N}$ such that $m\geq kj$. Then, we claim that $Q_{k,j,\left[
 m\right]  }=P_{k,j}$.
 
@@ -1863,6 +1870,7 @@ Q=\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)  \text{,
 &  =\sum_{k\in\mathbb{N}}P_{k,j}\left(  X_{1},X_{2},...,X_{kj}\right)  T^{k}.
 \end{align*}
 This proves Theorem 4.4 \textbf{(b)}.
+\end{proof}
 
 \textbf{Example.} Computing the polynomials $P_{k,j}$ can be done by
 retracking their definition, just as in the case of $P_{k}$. It is even easier
@@ -2211,7 +2219,7 @@ $p=\prod\limits_{i=1}^{n}\left(  1+p_{i}T\right)  $ in $K_{p}\left[  T\right]
 $.
 \end{quote}
 
-\textit{Proof of Theorem 5.2.} Write the polynomial $p$ in the form
+\begin{proof}[Proof of Theorem 5.2.] Write the polynomial $p$ in the form
 $p=\sum\limits_{i=0}^{n}a_{i}T^{i}$, where $n=\deg p$. Then, $a_{0}=1$ (since
 $p\in1+K\left[  T\right]  ^{+}$).
 
@@ -2240,6 +2248,7 @@ Therefore, Exercise 5.2 \textbf{(a)} (applied to $L=K_{p}$) yields that
 $\sum\limits_{i=0}^{n}a_{i}T^{i}=\prod\limits_{i=1}^{n}\left(  1+p_{i}%
 T\right)  $. Since $p=\sum\limits_{i=0}^{n}a_{i}T^{i}$, this rewrites as
 $p=\prod\limits_{i=1}^{n}\left(  1+p_{i}T\right)  $. Thus, Theorem 5.2 is proven.
+\end{proof}
 
 \subsection{Preparing for the proof of Theorem 5.1: extending the ring to make
 polynomials split}
@@ -2372,7 +2381,7 @@ u_{i}\ \mid\ I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)
 \right]  \right)  $.
 \end{quote}
 
-\textit{Proof of Theorem 5.3.} The assumption that $u=\Pi\left(
+\begin{proof}[Proof of Theorem 5.3.] The assumption that $u=\Pi\left(
 \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)  $ is just a
 different way to say that $u=\prod\limits_{i=1}^{m}\left(  1+u_{i}T\right)  $.
 Similarly, $v=\prod\limits_{j=1}^{n}\left(  1+v_{j}T\right)  $. Let
@@ -2489,6 +2498,7 @@ u_{i}\ \mid\ I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)
 \right]  \right)  ,
 \]
 proving Theorem 5.3 \textbf{(d)}.
+\end{proof}
 
 \begin{quote}
 \textbf{Corollary 5.4.} Let $K$ be a ring. Let $\widetilde{K}$ be a
@@ -2524,9 +2534,10 @@ means $a_{1}\widehat{\cdot}a_{2}\widehat{\cdot}a_{3}$ and not $a_{1}\cdot
 a_{2}\cdot a_{3}$).
 \end{quote}
 
-\textit{Proof of Corollary 5.4.} Part \textbf{(a)} follows by induction from
+\begin{proof}[Proof of Corollary 5.4.] Part \textbf{(a)} follows by induction from
 Theorem 5.3 \textbf{(b)}, and part \textbf{(b)} follows by induction from
 Theorem 5.3 \textbf{(c)}.
+\end{proof}
 
 For later use, we restate part \textbf{(d)} of Theorem 5.3 in somewhat more
 flexible notations:
@@ -2547,7 +2558,7 @@ Then,%
 
 \end{quote}
 
-\textit{Proof of Theorem 5.3' \textbf{(d)}.} Since $L$ is a finite set used
+\begin{proof}[Proof of Theorem 5.3' \textbf{(d)}.] Since $L$ is a finite set used
 only for labelling, we can WLOG assume that $L=\left\{  1,2,...,m\right\}  $
 for some $m\in\mathbb{N}$. Thus, $w=\Pi\left(  \widetilde{K},\left[  w_{\ell
 }\mid\ell\in L\right]  \right)  $ rewrites as $w=\Pi\left(  \widetilde{K}%
@@ -2566,6 +2577,7 @@ S\in\mathcal{P}_{k}\left(  L\right)  \right]  \right)
 \end{align*}
 (here, we renamed $i$ and $I$ as $\ell$ and $S$). This proves Theorem 5.3'
 \textbf{(d)}.
+\end{proof}
 
 \subsection{Preparing for the proof of Theorem 5.1: the $\left(  T\right)
 $-topology}
@@ -2673,19 +2685,20 @@ maps $\widehat{+},$ $\widehat{-},$ $\widehat{\cdot}$ and $\widehat{\lambda
 continuous). In particular, any polynomial with integral coefficients acts on
 $1+K\left[  \left[  T\right]  \right]  ^{+}$ as a continuous map.
 
-\textit{Proof of Theorem 5.5.} \textbf{(a)} and \textbf{(e)} are done in any
+\begin{proof}[Proof of Theorem 5.5.] \textbf{(a)} and \textbf{(e)} are done in any
 commutative algebra book such as \cite[Chapter 10]{AtiMac69}.
 
 \textbf{(b)} and \textbf{(c)} are basic exercises in topology.
 
 \textbf{(d)} follows from \textbf{(b)} and \textbf{(c)} together with the
 definitions of $\widehat{+},$ $\widehat{\cdot}$ and $\widehat{\lambda}^{j}$.
+\end{proof}
 
 \subsection{Proof of Theorem 5.1}
 
 Now it comes:
 
-\textit{Proof of Theorem 5.1.} \textbf{(a)} We have to prove the ring axioms
+\begin{proof}[Proof of Theorem 5.1.] \textbf{(a)} We have to prove the ring axioms
 for $\left(  1+K\left[  \left[  T\right]  \right]  ^{+},\widehat{+}%
 ,\widehat{\cdot}\right)  $ (including the unity axiom for $1+T$). There are
 several axioms to be checked, but the idea is always the same, so we will only
@@ -2785,10 +2798,17 @@ This proves the associativity of the operation $\widehat{\cdot}$. As I said
 above, the other ring axioms can be proven similarly, so we can consider
 Theorem 5.1 \textbf{(a)} as proven.
 
-\textbf{(b)} It is easy to see that $\widehat{\lambda}^{0}\left(  x\right)
+\textbf{(b)} It is easy to see that
+\[
+\widehat{\lambda}^{0}\left(  x\right)
 =1+T=\left(  \text{the multiplicative unity of the ring }\left(  1+K\left[
-\left[  T\right]  \right]  ^{+},\widehat{+},\widehat{\cdot}\right)  \right)  $
-and $\widehat{\lambda}^{1}\left(  x\right)  =x$ for every $x\in\Lambda\left(
+\left[  T\right]  \right]  ^{+},\widehat{+},\widehat{\cdot}\right)  \right)
+\]
+and
+\[
+\widehat{\lambda}^{1}\left(  x\right)  =x
+\]
+for every $x\in\Lambda\left(
 K\right)  $. It now remains to prove that%
 \begin{equation}
 \widehat{\lambda}^{j}\left(  u+v\right)  =\widehat{\sum_{i=0}^{j}%
@@ -2915,6 +2935,7 @@ M}v_{\beta}\ \mid\ \text{ }M\in\mathcal{P}_{j-i}\left(  \left\{
 \widehat{\cdot}\widehat{\lambda}^{j-i}\left(  v\right)  ,
 \end{align*}
 proving (\ref{SpezLemma1}). Theorem 5.1 \textbf{(b)} is proven.
+\end{proof}
 
 \subsection{$\lambda_{T}:K\rightarrow\Lambda\left(  K\right)  $ is an additive
 group homomorphism}
@@ -2934,7 +2955,7 @@ Then, $\lambda_{T}$ is an additive group homomorphism (where the additive
 group structure on $\Lambda\left(  K\right)  $ is given by $\widehat{+}$).
 \end{quote}
 
-\textit{Proof of Theorem 5.6.} The map $\lambda_{T}$ is well-defined (i. e.
+\begin{proof}[Proof of Theorem 5.6.] The map $\lambda_{T}$ is well-defined (i. e.
 every $x\in K$ satisfies $\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
 x\right)  T^{i}\in\Lambda\left(  K\right)  $) because $\lambda^{0}\left(
 x\right)  =1$ for every $x\in K$. The assertion that $\lambda_{T}$ is an
@@ -2942,6 +2963,7 @@ additive group homomorphism follows from Theorem 2.1 \textbf{(b)} (because as
 an additive group, $\Lambda\left(  K\right)  =\left(  \Lambda\left(  K\right)
 ,\widehat{+}\right)  =\left(  \Lambda\left(  K\right)  ,\cdot\right)  $).
 Theorem 5.6 is thus proven.
+\end{proof}
 
 While Theorem 5.6 says that $\lambda_{T}$ is an additive group homomorphism,
 it is not in general a ring homomorphism. But for many $\lambda$-rings $K$, it
@@ -2984,7 +3006,7 @@ T}\left(  u\right)  \right)  =\operatorname*{ev}_{\mu^{k}T}\left(
 \widehat{\lambda}^{k}\left(  u\right)  \right)  $.
 \end{quote}
 
-\textit{Proof of Theorem 5.7.} \textbf{(a)} Obvious from Theorem 5.5
+\begin{proof}[Proof of Theorem 5.7.] \textbf{(a)} Obvious from Theorem 5.5
 \textbf{(b)} (or, more precisely, from the assertion you get if you replace
 $1+K\left[  \left[  T\right]  \right]  ^{+}$ by $K\left[  \left[  T\right]
 \right]  $ in Theorem 5.5 \textbf{(b)}; but this assertion is proven in the
@@ -3101,6 +3123,7 @@ so that we conclude $\widehat{\lambda}^{k}\left(  \operatorname*{ev}_{\mu
 T}\left(  u\right)  \right)  =\operatorname*{ev}_{\mu^{k}T}\left(
 \widehat{\lambda}^{k}\left(  u\right)  \right)  $, and Theorem 5.7
 \textbf{(e)} is proven.
+\end{proof}
 
 \subsection{The functor $\Lambda$}
 
@@ -3252,7 +3275,7 @@ and%
 
 \end{quote}
 
-\textit{Proof of Theorem 6.1.} According to the preceding definition, $\left(
+\begin{proof}[Proof of Theorem 6.1.] According to the preceding definition, $\left(
 K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a special
 $\lambda$-ring if and only if the map $\lambda_{T}$ is a $\lambda$-ring
 homomorphism. This map is always an additive group homomorphism (by Theorem
@@ -3288,6 +3311,7 @@ But these two conditions are equivalent to (\ref{Lkxy}) and (\ref{LkLjx}),
 respectively (because of the definitions of $\widehat{\cdot}$ and
 $\widehat{\lambda}^{j}$ and because two formal power series are equal if and
 only if their respective coefficients are equal). This proves Theorem 6.1.
+\end{proof}
 
 \subsection{$\Lambda\left(  K\right)  $ is special}
 
@@ -3297,7 +3321,7 @@ only if their respective coefficients are equal). This proves Theorem 6.1.
 \mathbb{N}}\right)  $ is a special $\lambda$-ring.
 \end{quote}
 
-\textit{Proof of Theorem 6.2.} According to Theorem 6.1, we only have to prove
+\begin{proof}[Proof of Theorem 6.2.] According to Theorem 6.1, we only have to prove
 that%
 \begin{align}
 &  \widehat{\lambda}^{k}\left(  u\widehat{\cdot}v\right)  =\widehat{P_{k}%
@@ -3554,6 +3578,7 @@ this becomes%
 u\right)  \right)  .
 \]
 Thus, we have verified (\ref{6.2.P.LkLjx}). Theorem 6.2 is thus proven.
+\end{proof}
 
 Theorem 6.1 gives us an alternative definition of special $\lambda$-rings via
 the polynomials $P_{k}$ and $P_{k,j}$. Why, then, did we define the notion of
@@ -3717,7 +3742,7 @@ other examples from Section 3?
 \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ defined in Theorem 3.1 is special.
 \end{quote}
 
-\textit{Proof of Theorem 7.1.} According to Theorem 6.1, we just have to
+\begin{proof}[Proof of Theorem 7.1.] According to Theorem 6.1, we just have to
 verify the identities (\ref{Lkxy}) and (\ref{LkLjx}) for $K=\mathbb{Z}$. In
 other words, we have to prove that%
 \begin{equation}
@@ -3774,8 +3799,9 @@ proven (since, as we said, once (\ref{7.1.Lkxy}) is proven for natural $x$ and
 $y$, it follows that (\ref{7.1.Lkxy}) holds for all integers $x$ and $y$).
 Just as we have derived (\ref{7.1.Lkxy}) from (\ref{Pk1}), we can derive
 (\ref{7.1.LkLjx}) from (\ref{Pkj1}), and Theorem 7.1 is proven.
+\end{proof}
 
-This generalizes:
+Theorem 7.1 generalizes to the following fact:
 
 \begin{quote}
 \textbf{Theorem 7.2.} Let $K$ be a binomial ring. The $\lambda$-ring $\left(
@@ -3783,7 +3809,7 @@ K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ defined in Theorem
 3.2 is special.
 \end{quote}
 
-\textit{Proof of Theorem 7.2.} This follows from our proof of Theorem 7.1 in
+\begin{proof}[Proof of Theorem 7.2.] This follows from our proof of Theorem 7.1 in
 the same way as Theorem 3.2 followed from our proof of Theorem 3.1. To be more
 precise: According to Theorem 6.1, the $\lambda$-ring $\left(  K,\left(
 \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is special if it satisfies the
@@ -3793,6 +3819,7 @@ $k\in\mathbb{N}$, $j\in\mathbb{N}$ and $x\in K$. In the proof of Theorem 7.1,
 we have proven these identities for all $x\in\mathbb{Z}$ and $y\in\mathbb{Z}$;
 but being polynomial identities (for fixed $k$ and $j$), these identities
 therefore also hold for every $x\in K$ and $y\in K$, and Theorem 7.2 is proven.
+\end{proof}
 
 \subsection{Adjoining a polynomial variable to a $\lambda$-ring}
 
@@ -3805,7 +3832,7 @@ $-ring $\left(  K\left[  S\right]  ,\left(  \overline{\lambda}^{i}\right)
 _{i\in\mathbb{N}}\right)  $ defined in Theorem 3.3 is special.
 \end{quote}
 
-\textit{Proof of Theorem 7.3.} As in the proof of Theorem 3.3, we can define a
+\begin{proof}[Proof of Theorem 7.3.] As in the proof of Theorem 3.3, we can define a
 map $\overline{\lambda}_{T}:K\left[  S\right]  \rightarrow\left(  K\left[
 S\right]  \right)  \left[  \left[  T\right]  \right]  $ by
 \[
@@ -3957,6 +3984,7 @@ $K\left[  S\right]  $, and that every $e\in E$ satisfies $\left(
 e\right)  =\left(  \overline{\lambda}_{T}\circ\overline{\lambda}^{i}\right)
 \left(  e\right)  $. Thus, by Exercise 2.1 \textbf{(b)}, it follows that
 $\overline{\lambda}_{T}$ is a $\lambda$-ring homomorphism. This proves Theorem 7.3.
+\end{proof}
 
 \subsection{Exercises}
 
@@ -4086,14 +4114,15 @@ Then, $\operatorname*{coeff}\nolimits_{1}\circ\lambda_{T}=\operatorname*{id}%
 _{K}$.
 \end{quote}
 
-\textit{Proof of Theorem 8.2.} This is clear, since $\left(
+\begin{proof}[Proof of Theorem 8.2.] This is clear, since $\left(
 \operatorname*{coeff}\nolimits_{1}\circ\lambda_{T}\right)  \left(  x\right)
 =\operatorname*{coeff}\nolimits_{1}\left(  \lambda_{T}\left(  x\right)
 \right)  =\operatorname*{coeff}\nolimits_{1}\left(  \sum\limits_{i\in
 \mathbb{N}}\lambda^{i}\left(  x\right)  T^{i}\right)  =\lambda^{1}\left(
 x\right)  =x$ for every $x\in K$. Theorem 8.2 is now proven.
+\end{proof}
 
-\textit{Proof of Theorem 8.1.} Since $\left(  K,\left(  \lambda^{i}\right)
+\begin{proof}[Proof of Theorem 8.1.] Since $\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ is a special $\lambda$-ring, the map $\lambda
 _{T}:K\rightarrow\Lambda\left(  K\right)  $ is a $\lambda$-ring homomorphism.
 According to (\ref{I-oper}), we thus have the two commutative diagrams%
@@ -4127,6 +4156,7 @@ Hence, $m_{\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)
 }=m_{\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  }%
 ^{\prime}$ because $\lambda_{T}$ is injective (due to Theorem 8.2). Theorem
 8.1 is thus proven!
+\end{proof}
 
 \subsection{$1$-dimensional elements}
 
@@ -4157,7 +4187,7 @@ is the map defined in Theorem 2.1).
 $\lambda$-ring $\Lambda\left(  K\right)  $ is $1$-dimensional.
 \end{quote}
 
-\textit{Proof of Theorem 8.3.} \textbf{(a)} In fact,%
+\begin{proof}[Proof of Theorem 8.3.] \textbf{(a)} In fact,%
 \[
 \lambda_{T}\left(  x\right)  =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
 x\right)  T^{i}=\underbrace{\lambda^{0}\left(  x\right)  }_{=1}%
@@ -4202,6 +4232,7 @@ K,\underbrace{\left[  \prod_{i\in I}e\mid I\in\mathcal{P}_{i}\left(  \left\{
 \end{align*}
 is the zero of $\Lambda\left(  K\right)  $. Thus, $1+eT$ is $1$-dimensional.
 Theorem 8.3 \textbf{(c)} is proven.
+\end{proof}
 
 \subsection{The continuous splitting $\lambda$-verification principle}
 
@@ -4235,7 +4266,7 @@ u_{1},u_{2},...,u_{n}\right)  $.
 Then, $m=m^{\prime}$.
 \end{quote}
 
-\textit{Proof of Theorem 8.4.} We have to prove that $m=m^{\prime}$. In other
+\begin{proof}[Proof of Theorem 8.4.] We have to prove that $m=m^{\prime}$. In other
 words, we must show that $m_{\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  }=m_{\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  }^{\prime}$ for every special $\lambda$-ring
@@ -4373,6 +4404,7 @@ _{i\in\mathbb{N}}\right)  }\left(  u_{1},u_{2},...,u_{n}\right)  =m_{\left(
 \mathbb{N}}\right)  }^{\prime}\left(  u_{1},u_{2},...,u_{n}\right)  ,
 \]
 qed.} Thus we have proven (\ref{8.4.goal}). This proves Theorem 8.4.
+\end{proof}
 
 Roughly speaking, Theorem 8.4 says that whether some identity holds on every
 special $\lambda$-ring or not can be checked just by looking at the sums of
@@ -4395,7 +4427,7 @@ u_{k}.
 
 \end{quote}
 
-\textit{Proof of Theorem 8.5.} We have%
+\begin{proof}[Proof of Theorem 8.5.] We have%
 \begin{align*}
 &  \sum_{i\in\mathbb{N}}\lambda^{i}\left(  u_{1}+u_{2}+...+u_{m}\right)
 T^{i}=\lambda_{T}\left(  u_{1}+u_{2}+...+u_{m}\right) \\
@@ -4413,6 +4445,7 @@ u_{k}\cdot T^{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{by Exercise 4.2
 and }t=T\right)
 \end{align*}
 Comparing coefficients yields the assertion of Theorem 8.5.
+\end{proof}
 
 \subsection{Exercises}
 
@@ -4510,7 +4543,7 @@ in the ring $\left(  \mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)
 \left[  \left[  T\right]  \right]  $.
 \end{quote}
 
-\textit{Proof of Theorem 9.1.} \textbf{(a)} This proof is going to be very
+\begin{proof}[Proof of Theorem 9.1.] \textbf{(a)} This proof is going to be very
 similar to that of Theorem 4.4 \textbf{(a)}.
 
 \textit{1st Step:} Fix $m\in\mathbb{N}$ such that $m\geq j$. Then, we claim
@@ -4601,6 +4634,7 @@ U_{i}T\right)  ^{j}=\sum_{j\in\mathbb{N}\setminus\left\{  0\right\}
 ,...,X_{j}\right)  T^{j},
 \end{align*}
 and Theorem 9.1 \textbf{(b)} is proven.
+\end{proof}
 
 \textit{Remark:} There is a subtle point here: We have defined, for every
 $j\in\mathbb{N}\setminus\left\{  0\right\}  ,$ a polynomial $N_{j}%
@@ -4704,7 +4738,7 @@ the proof of the generalized version), whereas its 4th step gives a good
 example of how Theorem 8.4 can be applied to prove properties of special
 $\lambda$-rings.
 
-\textit{Proof of Theorem 9.2.} \textit{1st step:} For any fixed special
+\begin{proof}[Proof of Theorem 9.2.] \textit{1st step:} For any fixed special
 $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
 }\right)  $ and any fixed $x\in K$, the assertions \textbf{(a)} and
 \textbf{(b)} are equivalent.
@@ -4938,6 +4972,7 @@ _{i\in\mathbb{N}}\right)  $ and every $x\in K$.
 \textbf{(b)} are equivalent (by the 1st step).
 
 Thus, the proof of Theorem 9.2 is completed.
+\end{proof}
 
 \subsection{Adams operations are ring homomorphisms when the $\lambda$-ring is
 special}
@@ -4978,7 +5013,7 @@ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
 
 \end{quote}
 
-\textit{Proof of Theorem 9.4.} Let $x=u_{1}+u_{2}+...+u_{m}$. Just as in the
+\begin{proof}[Proof of Theorem 9.4.] Let $x=u_{1}+u_{2}+...+u_{m}$. Just as in the
 proof of Theorem 9.2 (in the 2nd step)\footnote{Here, we use the fact that the
 2nd step of the proof of Theorem 9.2 works for \textit{any} $\lambda$-ring
 $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $, not only
@@ -5004,8 +5039,9 @@ x\right)  T^{j}  &  =T\sum\limits_{i=1}^{m}\dfrac{u_{i}}{1-u_{i}T}%
 Comparing coefficients yields $\psi^{j}\left(  x\right)  =\sum\limits_{i=1}%
 ^{m}u_{i}^{j}$ for every $j\in\mathbb{N}\setminus\left\{  0\right\}  ,$ and
 thus Theorem 9.4 is proven.
+\end{proof}
 
-\textit{Proof of Theorem 9.3.} \textbf{(a)} is trivial (for instance, by
+\begin{proof}[Proof of Theorem 9.3.] \textbf{(a)} is trivial (for instance, by
 Theorem 9.2 \textbf{(a)}).
 
 \textbf{(b)} Fix some $j\in\mathbb{N}\setminus\left\{  0\right\}  $. First,
@@ -5153,6 +5189,7 @@ finitely many $1$-dimensional elements of $K$ (by an application of Theorem
 =\left(  \psi^{j}\circ\psi^{i}\right)  \left(  x\right)  =\psi^{ij}\left(
 x\right)  $ in this case by applying Theorems 9.4 and 8.3 \textbf{(b)}. Thus,
 Theorem 9.3 \textbf{(c)} is proven.
+\end{proof}
 
 \subsection{The equality $\protect\widetilde{\psi}_{T}\left(  x\right)
 =-T\cdot\frac{d}{dT}\log\lambda_{-T}\left(  x\right)  $ for arbitrary
@@ -5215,7 +5252,7 @@ in the ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $.
 This theorem is more or less a rewriting of the famous \textit{Newton
 identities}.
 
-\textit{Proof of Theorem 9.6.} In the power series ring $\left(
+\begin{proof}[Proof of Theorem 9.6.] In the power series ring $\left(
 \mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[  \left[
 T\right]  \right]  $, we have%
 \begin{align}
@@ -5335,6 +5372,7 @@ nX_{n}  &  =\sum_{j=1}^{n}N_{j}\left(  X_{1},X_{2},...,X_{j}\right)
 N_{j}\left(  X_{1},X_{2},...,X_{j}\right)  .
 \end{align*}
 This proves Theorem 9.6.
+\end{proof}
 
 As a consequence of Theorem 9.6, we get the following fact (which can be used
 as a recurrence equation to easily compute the Hirzebruch-Newton polynomials
@@ -5353,7 +5391,7 @@ in the polynomial ring $\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
 _{n}\right]  $. Here, $\alpha_{0}$ is to be understood as $1$.
 \end{quote}
 
-\textit{Proof of Corollary 9.7.} We WLOG assume that $n>0$ (since for $n=0$,
+\begin{proof}[Proof of Corollary 9.7.] We WLOG assume that $n>0$ (since for $n=0$,
 Corollary 9.7 is trivial).
 
 Let $\mathfrak{Q}_{1}\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
@@ -5426,8 +5464,9 @@ $\mathfrak{Q}_{1}=n\alpha_{n}$ and $\mathfrak{Q}_{2}=\sum\limits_{j=1}%
 _{2},...,\alpha_{j}\right)  $, this rewrites as $n\alpha_{n}=\sum
 \limits_{j=1}^{n}\left(  -1\right)  ^{j-1}\alpha_{n-j}N_{j}\left(  \alpha
 _{1},\alpha_{2},...,\alpha_{j}\right)  $. This proves Corollary 9.7.
+\end{proof}
 
-\textit{Proof of Theorem 9.5.} \textit{1st step:} For any fixed $\lambda$-ring
+\begin{proof}[Proof of Theorem 9.5.] \textit{1st step:} For any fixed $\lambda$-ring
 $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ and any
 fixed $x\in K$, the assertions \textbf{(a)} and \textbf{(b)} are equivalent.
 
@@ -5708,6 +5747,7 @@ Hence, assertion \textbf{(b)} holds. This completes the proof of the 4th step.
 \textbf{(b)} are equivalent (by the 1st step).
 
 Thus, the proof of Theorem 9.5 is complete.
+\end{proof}
 
 Theorem 9.5 is clearly a generalization of Theorem 9.2, and thus our above
 proof of Theorem 9.5 is, at the same time, a new proof of Theorem 9.2.
@@ -6219,7 +6259,7 @@ that $m\geq n$. Then, in the polynomial ring $\mathbf{Z}\left[  U_{1}%
 }\left(  X_{1},X_{2},...,X_{j}\right)  $.
 \end{quote}
 
-\textit{Proof of Lemma 10.2.} By the definition of $\operatorname*{Todd}%
+\begin{proof}[Proof of Lemma 10.2.] By the definition of $\operatorname*{Todd}%
 \nolimits_{\left(  \varphi,j\right)  ,j,\left[  m\right]  }$, we have%
 \begin{equation}
 \operatorname*{Coeff}\nolimits_{j}\left(  \prod\limits_{i=1}^{m}\varphi\left(
@@ -6453,8 +6493,9 @@ we obtain%
 \]
 in the polynomial ring $\mathbf{Z}\left[  U_{1},U_{2},...,U_{n}\right]  $.
 This proves Lemma 10.2.
+\end{proof}
 
-\textit{Proof of Theorem 10.1.} This proof is going to be very similar to the
+\begin{proof}[Proof of Theorem 10.1.] This proof is going to be very similar to the
 proofs of Theorem 4.4 \textbf{(a)} and Theorem 9.1 \textbf{(a)} - except that
 this time, we already have done most of our work when proving Lemma 10.2.
 
@@ -6525,6 +6566,7 @@ X_{1},X_{2},...,X_{j}\right)  T^{j}%
 in the ring $\left(  \mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)
 \left[  \left[  T\right]  \right]  $. This proves the 3rd Step, and thus
 Theorem 10.1 is proven.
+\end{proof}
 
 \subsection{Defining the Todd homomorphism}
 
@@ -6594,7 +6636,7 @@ _{j}\right]  $) for every positive $j\in\mathbb{N}$.
 Note that Proposition 10.4 makes no sense for $j=0$; this will cause us some
 minor trouble in the proof of Proposition 10.3.
 
-\textit{Proof of Proposition 10.4.} Let $m\in\mathbb{N}$. Consider the ring
+\begin{proof}[Proof of Proposition 10.4.] Let $m\in\mathbb{N}$. Consider the ring
 $\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ (the polynomial ring in $m$
 indeterminates $U_{1},$ $U_{2},$ $...,$ $U_{m}$ over the ring $\mathbf{Z}$).
 For every $i\in\mathbb{N}$, let $X_{i}=\sum\limits_{\substack{S\subseteq
@@ -6699,6 +6741,7 @@ and%
 we can conclude from (\ref{10.4.pf.1}) that $\mathfrak{Q}_{1}=\mathfrak{Q}%
 _{2}$. Hence, $u^{j}\alpha_{j}=\mathfrak{Q}_{1}=\mathfrak{Q}_{2}%
 =\operatorname*{Td}\nolimits_{1+ut,j}$. This proves Proposition 10.4.
+\end{proof}
 
 \subsection{The $0$-th and $1$-st coefficients of $\operatorname*{td}%
 \nolimits_{\varphi,T}\left(  x\right)  $}
@@ -6740,7 +6783,7 @@ $\varphi\in\mathbf{Z}\left[  \left[  t\right]  \right]  $ before $t^{1}$.
 Then, $\operatorname*{Td}\nolimits_{\varphi,1}=\varphi_{1}\alpha_{1}$.
 \end{quote}
 
-\textit{Proof of Proposition 10.6.} Let $m\in\mathbb{N}$. Consider the ring
+\begin{proof}[Proof of Proposition 10.6.] Let $m\in\mathbb{N}$. Consider the ring
 $\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ and its elements
 $X_{i}=\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
 ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{k}$ as in the
@@ -6853,8 +6896,9 @@ $\mathbf{Z}$-algebra homomorphism and $\operatorname*{Td}\nolimits_{\varphi
 (since $\kappa$ is a $\mathbf{Z}$-algebra homomorphism). Thus,
 $\operatorname*{Td}\nolimits_{\varphi,1}=\varphi_{1}\alpha_{1}$ (since
 $\kappa$ is an isomorphism). This proves Proposition 10.6 \textbf{(b)}.
+\end{proof}
 
-\textit{Proof of Proposition 10.5.} Let $x\in K$.
+\begin{proof}[Proof of Proposition 10.5.] Let $x\in K$.
 
 \textbf{(a)} We have%
 \begin{align*}
@@ -6895,10 +6939,11 @@ yields }\operatorname*{Td}\nolimits_{\varphi,1}=\varphi_{1}\alpha_{1}\right)
 
 
 Proposition 10.5 is now proven.
+\end{proof}
 
 \subsection{Proof of Proposition 10.3}
 
-\textit{Proof of Proposition 10.3.} Let $x\in K$. Applying (\ref{ToddDef}) to
+\begin{proof}[Proof of Proposition 10.3.] Let $x\in K$. Applying (\ref{ToddDef}) to
 $\varphi=1+ut$, we obtain%
 \begin{align*}
 &  \operatorname*{td}\nolimits_{1+ut,T}\left(  x\right) \\
@@ -6937,6 +6982,7 @@ x\right)  u^{j}T^{j},
 \end{align*}
 this yields that $\operatorname*{td}\nolimits_{1+ut,T}\left(  x\right)
 =\lambda_{uT}\left(  x\right)  $. This proves Proposition 10.3.
+\end{proof}
 
 \subsection{The Todd homomorphism is multiplicative in $\varphi$}
 
@@ -6971,7 +7017,7 @@ _{2},...,\alpha_{j-i}\right)
 ,...,\alpha_{j}\right]  $) for every $j\in\mathbb{N}$.
 \end{quote}
 
-\textit{Proof of Proposition 10.8.} \textit{1st Step:} We have $\varphi\psi
+\begin{proof}[Proof of Proposition 10.8.] \textit{1st Step:} We have $\varphi\psi
 \in1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$.
 
 \textit{Proof.} The constant term of the product of two power series always
@@ -7134,8 +7180,9 @@ _{1},\alpha_{2},...,\alpha_{i}\right)  \cdot\operatorname*{Td}\nolimits_{\psi
 ,j-i}\left(  \alpha_{1},\alpha_{2},...,\alpha_{j-i}\right)  .
 \]
 This proves Proposition 10.8.
+\end{proof}
 
-\textit{Proof of Proposition 10.7.} \textit{1st Step:} For every
+\begin{proof}[Proof of Proposition 10.7.] \textit{1st Step:} For every
 $j\in\mathbb{N}$, we have%
 \begin{align*}
 &  \operatorname*{Td}\nolimits_{\varphi\psi,j}\left(  \lambda^{1}\left(
@@ -7224,6 +7271,7 @@ formal power series}\right) \\
 \psi,T}\left(  x\right)  .
 \end{align*}
 This proves Proposition 10.7.
+\end{proof}
 
 An easy consequence of Proposition 10.7:
 
@@ -7244,7 +7292,7 @@ x\right)  =\prod\limits_{i=1}^{m}\operatorname*{td}\nolimits_{\varphi_{i}%
 
 \end{quote}
 
-\textit{Proof of Proposition 10.9.} This can be proven by induction over $m$.
+\begin{proof}[Proof of Proposition 10.9.] This can be proven by induction over $m$.
 The induction base (the case $m=0$) requires showing that $\operatorname*{td}%
 \nolimits_{1,T}\left(  x\right)  =1$, but this follows from Proposition
 10.3\footnote{In fact, Proposition 10.3 (applied to $u=0$) yields
@@ -7261,6 +7309,7 @@ $\operatorname*{ev}\nolimits_{0T}\left(  \lambda_{T}\left(  x\right)  \right)
 x\right)  =\operatorname*{ev}\nolimits_{0T}\left(  \lambda_{T}\left(
 x\right)  \right)  =1$.}. The induction step is a straightforward application
 of Proposition 10.7. Thus Proposition 10.9 is proven.
+\end{proof}
 
 \subsection{$\operatorname*{td}\nolimits_{\varphi,T}$ takes sums into
 products}
@@ -7332,7 +7381,7 @@ x\right)  =\mathfrak{Todd}_{\varphi}\left(  \lambda_{T}\left(  x\right)
 \right)  $.
 \end{quote}
 
-\textit{Proof of Proposition 10.11.} Let $x\in K$. Then, $\lambda_{T}\left(
+\begin{proof}[Proof of Proposition 10.11.] Let $x\in K$. Then, $\lambda_{T}\left(
 x\right)  =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  x\right)  T^{i}$, so
 that every $k\in\mathbb{N}$ satisfies $\operatorname*{Coeff}\nolimits_{k}%
 \left(  \lambda_{T}\left(  x\right)  \right)  =\operatorname*{Coeff}%
@@ -7365,6 +7414,7 @@ x\right)  \right)  \right)  =\left(  \lambda^{1}\left(  x\right)  ,\lambda
 &  =\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  .
 \end{align*}
 This proves Proposition 10.11.
+\end{proof}
 
 Now let us generalize our above results about $\operatorname*{td}%
 \nolimits_{\varphi,T}$ to results about $\mathfrak{Todd}_{\varphi}$. This will
@@ -7390,7 +7440,7 @@ K\text{ for every }i\text{).}%
 }
 \end{quote}
 
-\textit{Proof of Proposition 10.12.} The coefficient of the power series $p$
+\begin{proof}[Proof of Proposition 10.12.] The coefficient of the power series $p$
 before $T^{0}$ is $1$ (since $p\in1+K\left[  \left[  T\right]  \right]  ^{+}%
 $). In other words, $\operatorname*{Coeff}\nolimits_{0}p=1$ (since
 $\operatorname*{Coeff}\nolimits_{0}p$ is defined as the coefficient of the
@@ -7439,6 +7489,7 @@ T^{j}=1T^{0}+\sum_{\substack{j\in\mathbb{N};\\j>0}}u^{j}\left(
 \end{align*}
 this yields that $\operatorname*{ev}\nolimits_{uT}p=\mathfrak{Todd}%
 _{1+ut}\left(  p\right)  $. This proves Proposition 10.12.
+\end{proof}
 
 Next, the generalization of Proposition 10.5:
 
@@ -7457,7 +7508,7 @@ Then, $\operatorname*{Coeff}\nolimits_{1}\left(  \mathfrak{Todd}_{\varphi
 }\left(  p\right)  \right)  =\varphi_{1}\operatorname*{Coeff}\nolimits_{1}p$.
 \end{quote}
 
-\textit{Proof of Proposition 10.13.} \textbf{(a)} We have%
+\begin{proof}[Proof of Proposition 10.13.] \textbf{(a)} We have%
 \begin{align*}
 &  \operatorname*{Coeff}\nolimits_{0}\left(  \mathfrak{Todd}_{\varphi}\left(
 p\right)  \right) \\
@@ -7497,6 +7548,7 @@ yields }\operatorname*{Td}\nolimits_{\varphi,1}=\varphi_{1}\alpha_{1}\right)
 
 
 Proposition 10.13 is now proven.
+\end{proof}
 
 Our next generalization is that of Proposition 10.7:
 
@@ -7510,7 +7562,7 @@ p\right)  =\mathfrak{Todd}_{\varphi}\left(  p\right)  \cdot\mathfrak{Todd}%
 _{\psi}\left(  p\right)  $.
 \end{quote}
 
-\textit{Proof of Proposition 10.14.} For every $j\in\mathbb{N}$, we will
+\begin{proof}[Proof of Proposition 10.14.] For every $j\in\mathbb{N}$, we will
 abbreviate $\operatorname*{Coeff}\nolimits_{j}p$ by $p_{j}$. Then, $\left(
 \operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
 p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  =\left(  p_{1}%
@@ -7597,6 +7649,7 @@ p_{1},p_{2},...,p_{j}\right)  T^{j}=\mathfrak{Todd}_{\varphi\psi}\left(
 p\right)  .
 \end{align*}
 This proves Proposition 10.14.
+\end{proof}
 
 Next, Proposition 10.9 generalizes to the following result:
 
@@ -7615,7 +7668,7 @@ K\left[  \left[  T\right]  \right]  $. Then,%
 
 \end{quote}
 
-\textit{Proof of Proposition 10.15.} This can be proven by induction over $m$.
+\begin{proof}[Proof of Proposition 10.15.] This can be proven by induction over $m$.
 The induction base (the case $m=0$) requires showing that $\mathfrak{Todd}%
 _{1}\left(  p\right)  =1$, but this is easy\footnote{\textit{Proof.} Applying
 (\ref{ToddFrak}) to $\varphi=1$, we obtain%
@@ -7644,6 +7697,7 @@ p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  T^{j}}_{=0}=1.
 \end{align*}
 }. The induction step is a straightforward application of Proposition 10.14.
 Thus Proposition 10.15 is proven.
+\end{proof}
 
 We now formulate our generalization of Theorem 10.10 - it is through this
 generalization that we are going to prove Theorem 10.10:
@@ -7733,12 +7787,13 @@ defined in Section 5.)
 $1+K\left[  \left[  t\right]  \right]  ^{+}$ are Hausdorff spaces.
 \end{quote}
 
-\textit{Proof of Theorem 10.18.} The parts \textbf{(a)} and \textbf{(c)} of
+\begin{proof}[Proof of Theorem 10.18.] The parts \textbf{(a)} and \textbf{(c)} of
 Theorem 10.18 are obviously obtained from the parts \textbf{(a)} and
 \textbf{(e)} of Theorem 5.5 by renaming the variable $T$ as $t$. Hence, they
 follow from Theorem 5.5. Part \textbf{(b)} of Theorem 10.18 is also true (it
 is an exercise in topology, proven in the same way as Theorem 5.5
 \textbf{(b)}). This proves Theorem 10.18.
+\end{proof}
 
 The good thing about the topology on $1+K\left[  \left[  t\right]  \right]
 ^{+}$ just defined is that it makes the map $1+K\left[  \left[  t\right]
@@ -7760,7 +7815,7 @@ $K\left[  \left[  T\right]  \right]  $ is supposed to be the $\left(
 T\right)  $-topology defined in Section 5.
 \end{quote}
 
-\textit{Proof of Proposition 10.19.} Let $f$ denote the map
+\begin{proof}[Proof of Proposition 10.19.] Let $f$ denote the map
 \[
 1+K\left[  \left[  t\right]  \right]  ^{+}\rightarrow K\left[  \left[
 T\right]  \right]  ,\ \ \ \ \ \ \ \ \ \ \varphi\mapsto\mathfrak{Todd}%
@@ -8003,6 +8058,7 @@ T\right]  \right]  ,\ \ \ \ \ \ \ \ \ \ \varphi\mapsto\mathfrak{Todd}%
 _{\varphi}\left(  p\right)
 \]
 is continuous. Proposition 10.19 is thus proven.
+\end{proof}
 
 So much for the topology on $1+K\left[  \left[  t\right]  \right]  ^{+}$. We
 now discuss extensions of $K$ that make polynomials factor.
@@ -8023,7 +8079,7 @@ t\right)  $ in $K_{\varphi}\left[  t\right]  $.
 
 Now, finally, to the proof of Lemma 10.17:
 
-\textit{Proof of Lemma 10.17.} Fix $p\in1+K\left[  \left[  T\right]  \right]
+\begin{proof}[Proof of Lemma 10.17.] Fix $p\in1+K\left[  \left[  T\right]  \right]
 ^{+}$ and $q\in1+K\left[  \left[  T\right]  \right]  ^{+}$, but let
 $\varphi\in1+K\left[  \left[  t\right]  \right]  ^{+}$ vary.
 
@@ -8180,6 +8236,7 @@ follows: Every $\varphi\in1+K\left[  \left[  t\right]  \right]  ^{+}$
 satisfies $\mathfrak{Todd}_{\varphi}\left(  p\right)  \cdot\mathfrak{Todd}%
 _{\varphi}\left(  q\right)  =\mathfrak{Todd}_{\varphi}\left(  pq\right)  $.
 This proves Lemma 10.17.
+\end{proof}
 
 \subsection{Preparing for the proof of Theorem 10.16: some trivial
 functoriality facts}
@@ -8217,7 +8274,7 @@ fixed $P$, is canonical with respect to the ring $K$); if you do so, then you
 can immediately continue to Corollary 10.22. Here is, however, an alternative
 proof of Proposition 10.21 which does not resort to this kind of handwaving:
 
-\textit{Proof of Proposition 10.21.} Let $\varphi\in1+\mathbf{Z}\left[
+\begin{proof}[Proof of Proposition 10.21.] Let $\varphi\in1+\mathbf{Z}\left[
 \left[  t\right]  \right]  ^{+}$.
 
 Let $m=j$. We are going to work in the ring $\mathbf{Z}^{\prime}\left[
@@ -8494,6 +8551,7 @@ _{2}$. Hence,%
 \operatorname*{Td}\nolimits_{\varphi,j}\right)  .
 \]
 This proves Proposition 10.21.
+\end{proof}
 
 \begin{quote}
 \textbf{Corollary 10.22.} Let $\mathbf{Z}$ and $\mathbf{Z}^{\prime}$ be two
@@ -8516,7 +8574,7 @@ _{\varphi}\left(  p\right)  =\mathfrak{Todd}_{\left(  \rho\left[  \left[
 t\right]  \right]  \right)  \left(  \varphi\right)  }\left(  p\right)  $.
 \end{quote}
 
-\textit{Proof of Corollary 10.22.} Clearly, the ring homomorphism
+\begin{proof}[Proof of Corollary 10.22.] Clearly, the ring homomorphism
 $\rho:\mathbf{Z}\rightarrow\mathbf{Z}^{\prime}$ canonically induces a ring
 homomorphism $\rho\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]
 :\mathbf{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  \rightarrow
@@ -8591,10 +8649,11 @@ Thus,%
 \left(  \varphi\right)  }\left(  p\right)  .
 \end{align*}
 This proves Corollary 10.22.
+\end{proof}
 
 \subsection{Proof of Theorems 10.16 and 10.10}
 
-\textit{Proof of Theorem 10.16.} Since $K$ is a $\mathbf{Z}$-algebra, there is
+\begin{proof}[Proof of Theorem 10.16.] Since $K$ is a $\mathbf{Z}$-algebra, there is
 a canonical ring homomorphism $\rho:\mathbf{Z}\rightarrow K$. This
 homomorphism induces a canonical ring homomorphism $\rho\left[  \left[
 t\right]  \right]  :\mathbf{Z}\left[  \left[  t\right]  \right]  \rightarrow
@@ -8634,8 +8693,9 @@ _{\left(  \rho\left[  \left[  t\right]  \right]  \right)  \left(
 pq\right)  .
 \]
 Theorem 10.16 is thus proven.
+\end{proof}
 
-\textit{Proof of Theorem 10.10.} Theorem 2.1 \textbf{(a)} yields $\lambda
+\begin{proof}[Proof of Theorem 10.10.] Theorem 2.1 \textbf{(a)} yields $\lambda
 _{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)  =\lambda_{T}\left(
 x+y\right)  $ (since $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
 }\right)  $ is a $\lambda$-ring). Proposition 10.11 yields $\operatorname*{td}%
@@ -8673,6 +8733,7 @@ y\right)  \right)  =\operatorname*{td}\nolimits_{\varphi,T}\left(  x+y\right)
 .
 \]
 Theorem 10.10 is thus proven.
+\end{proof}
 
 \subsection{ $\operatorname*{td}_{\varphi,T}$ is a homomorphism of additive
 groups}
@@ -8689,7 +8750,7 @@ K\right)  $, and $\operatorname*{td}_{\varphi,T}:K\rightarrow\Lambda\left(
 K\right)  $ is a homomorphism of additive groups.
 \end{quote}
 
-\textit{Proof of Corollary 10.23.} Every $x\in K$ satisfies
+\begin{proof}[Proof of Corollary 10.23.] Every $x\in K$ satisfies
 $\operatorname*{td}_{\varphi,T}\left(  x\right)  \in\Lambda\left(  K\right)  $
 (since Proposition 10.5 \textbf{(a)} says that $\operatorname*{Coeff}%
 \nolimits_{0}\left(  \operatorname*{td}_{\varphi,T}\left(  x\right)  \right)
@@ -8743,6 +8804,7 @@ respects the neutral elements of the additive groups $K$ and $\Lambda\left(
 K\right)  $, this yields: The map $\operatorname*{td}_{\varphi,T}%
 :K\rightarrow\Lambda\left(  K\right)  $ is a homomorphism of additive groups.
 Corollary 10.23 is proven.
+\end{proof}
 
 \subsection{ $\operatorname*{td}_{\varphi,T}$ of a $1$-dimensional element}
 
@@ -8787,7 +8849,7 @@ Then, $\mathfrak{Todd}_{\varphi}\left(  1+uT\right)  =\varphi\left(
 uT\right)  $.
 \end{quote}
 
-\textit{Proof of Proposition 10.25.} Let $m=1$. Consider the ring
+\begin{proof}[Proof of Proposition 10.25.] Let $m=1$. Consider the ring
 $\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ and its elements
 $X_{i}=\sum\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}
 ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}U_{k}$ as in the
@@ -8884,8 +8946,9 @@ U_{1},0,0,...,0\right)  =\varphi_{j}U_{1}^{j}\\
 \end{align*}
 Thus, $\operatorname*{Td}\nolimits_{\varphi,j}\left(  S,0,0,...,0\right)
 =\varphi_{j}S^{j}$ (since $\kappa$ is an isomorphism). This proves Proposition 10.25.
+\end{proof}
 
-\textit{Proof of Proposition 10.26.} For every $j\in\mathbb{N}$, let
+\begin{proof}[Proof of Proposition 10.26.] For every $j\in\mathbb{N}$, let
 $\varphi_{j}$ denote the coefficient of the power series $\varphi
 \in1+\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}$ before $t^{j}$. Let
 $p=1+uT$. Then, $\operatorname*{Coeff}\nolimits_{1}p=u$ (by the definition of
@@ -8934,8 +8997,9 @@ $\varphi_{j}$ for every $j\in\mathbb{N}$) and thus $\varphi\left(  uT\right)
 Altogether, $\mathfrak{Todd}_{\varphi}\left(  1+uT\right)  =\sum
 \limits_{j\in\mathbb{N}}\varphi_{j}\left(  uT\right)  ^{j}=\varphi\left(
 uT\right)  $. This proves Proposition 10.26.
+\end{proof}
 
-\textit{Proof of Proposition 10.24.} Proposition 10.11 (applied to $x=u$)
+\begin{proof}[Proof of Proposition 10.24.] Proposition 10.11 (applied to $x=u$)
 yields $\operatorname*{td}\nolimits_{\varphi,T}\left(  u\right)
 =\mathfrak{Todd}_{\varphi}\left(  \lambda_{T}\left(  u\right)  \right)  $. But
 Theorem 8.3 \textbf{(a)} (applied to $x=u$) yields that $\lambda_{T}\left(
@@ -8944,6 +9008,7 @@ $\operatorname*{td}\nolimits_{\varphi,T}\left(  u\right)  =\mathfrak{Todd}%
 _{\varphi}\left(  \underbrace{\lambda_{T}\left(  u\right)  }_{=1+uT}\right)
 =\mathfrak{Todd}_{\varphi}\left(  1+uT\right)  =\varphi\left(  uT\right)  $
 (by Proposition 10.26). This proves Proposition 10.24.
+\end{proof}
 
 As a consequence of Proposition 10.24, we can obtain the following formula for
 $\operatorname*{td}\nolimits_{\varphi,T}$ on sums of $1$-dimensional elements:
@@ -8964,7 +9029,7 @@ elements of $K$. Then,%
 
 \end{quote}
 
-\textit{Proof of Theorem 10.27.} By Corollary 10.23, we know that
+\begin{proof}[Proof of Theorem 10.27.] By Corollary 10.23, we know that
 $\operatorname*{td}_{\varphi,T}:K\rightarrow\Lambda\left(  K\right)  $ is a
 homomorphism of additive groups. Hence,%
 \begin{align*}
@@ -8994,6 +9059,7 @@ u_{i}T\right) \\
 Since $\sum\limits_{i=1}^{m}u_{i}=u_{1}+u_{2}+...+u_{m}$, this rewrites as
 $\operatorname*{td}\nolimits_{\varphi,T}\left(  u_{1}+u_{2}+...+u_{m}\right)
 =\prod\limits_{i=1}^{m}\varphi\left(  u_{i}T\right)  $. Theorem 10.27 is thus proven.
+\end{proof}
 
 \subsection{ $\operatorname*{td}_{\varphi,T}$ for special $\lambda$-rings}
 
@@ -9042,7 +9108,7 @@ $\sum\limits_{i\in\mathbb{N}}a_{i}T^{i}\in K\left[  \left[  T\right]  \right]
 $).
 \end{quote}
 
-\textit{Proof of Theorem 10.28.} \textit{1st Step:} The equality
+\begin{proof}[Proof of Theorem 10.28.] \textit{1st Step:} The equality
 $\operatorname*{td}\nolimits_{1-t^{j},T}\left(  x\right)  =\lambda_{-T}\left(
 x\right)  \theta_{T}^{j}\left(  x\right)  $ holds for every $x\in K$ (no
 matter whether the $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)
@@ -9306,6 +9372,7 @@ proves the 4th Step.
 
 \textit{5th Step:} Theorem 10.28 now follows by combining the 1st Step and the
 4th Step.
+\end{proof}
 
 \subsection{A somewhat more general context for Todd homomorphisms}
 
@@ -9676,7 +9743,7 @@ _{T}\left(  u\right)  =1+uT\right\}  =\left\{  u\in\mathbf{E}\ \mid\ u\text{
 is }1\text{-dimensional}\right\}  $.
 \end{quote}
 
-\textit{Proof of Theorem X.1.} \textbf{(b)} \textit{1st Step:} We have
+\begin{proof}[Proof of Theorem X.1.] \textbf{(b)} \textit{1st Step:} We have
 $\mathbf{L}\subseteq\left\{  u\in\mathbf{E}\ \mid\ u\text{ is }%
 1\text{-dimensional}\right\}  $.
 
@@ -9764,6 +9831,7 @@ contains the multiplicative unity of $K$.
 
 \textit{3rd Step:} Theorem X.1 \textbf{(a)} trivially follows from the 1st
 Step and the 2nd Step.
+\end{proof}
 
 \begin{quote}
 \textbf{Theorem X.2.} Let $\left(  K,\left(  \lambda^{i}\right)
@@ -9897,7 +9965,9 @@ L$, so that $\lambda^{i}\left(  \ell\right)  \in L$ and thus $\lambda
 L}-\underbrace{0}_{\in L}\in L-L$), so this yields $\lambda^{i}\left(
 \ell-\ell^{\prime}\right)  \in L-L,$ and this completes our induction.
 
-\textit{Exercise 2.3:} \textit{Solution:} \textit{Proof of Theorem 2.2.}
+\textit{Exercise 2.3:} \textit{Solution:}
+
+\begin{proof}[Proof of Theorem 2.2.]
 \textbf{(a)} Let $x\in K\diagup I$. Let $y\in K$ and $z\in K$ be two elements
 of $K$ satisfying $\overline{y}=x$ and $\overline{z}=x$. Then, $\overline
 {y}=x=\overline{z}$, so that $y\equiv z\operatorname{mod}I$. In other words,
@@ -10085,8 +10155,11 @@ yields that $\pi$ is a $\lambda$-ring homomorphism. Since $\pi$ is the
 canonical projection $K\rightarrow K\diagup I$, we thus have proven that the
 canonical projection $K\rightarrow K\diagup I$ is a $\lambda$-ring
 homomorphism. Theorem 2.2 \textbf{(c)} is proven.
+\end{proof}
 
-\textit{Exercise 2.4:} \textit{Solution:} \textit{Proof of Theorem 2.3.} Let
+\textit{Exercise 2.4:} \textit{Solution:}
+
+\begin{proof}[Proof of Theorem 2.3.] Let
 $t\in\operatorname*{Ker}f$, and let $i$ be a positive integer. Since
 $t\in\operatorname*{Ker}f$, we have $f\left(  t\right)  =0$, thus $\mu
 ^{i}\left(  f\left(  t\right)  \right)  =\mu^{i}\left(  0\right)  =0$ (by
@@ -10111,6 +10184,7 @@ positive integer $i$ satisfy $\lambda^{i}\left(  t\right)  \in
 every positive integer $i$ satisfy $\lambda^{i}\left(  t\right)
 \in\operatorname*{Ker}f$, we thus conclude that $\operatorname*{Ker}f$ is a
 $\lambda$-ideal. Theorem 2.3 is proven.
+\end{proof}
 
 \subsection{To Section 3}
 
@@ -11031,7 +11105,7 @@ of the ring $K$ and an element $p\in K^{\prime}$ such that $P\left(  p\right)
 =0$ in $K^{\prime}$.
 \end{quote}
 
-\textit{Proof of Lemma 5.1.S.1.} Let $n=\deg P$. Let $K^{\prime}$ be the
+\begin{proof}[Proof of Lemma 5.1.S.1.] Let $n=\deg P$. Let $K^{\prime}$ be the
 quotient ring $K\left[  T\right]  \diagup\left(  P\right)  $. For every $Q\in
 K\left[  T\right]  $, let us denote by $\overline{Q}$ the projection of $Q$
 onto $K\left[  T\right]  \diagup\left(  P\right)  $ (that is, the residue
@@ -11149,6 +11223,7 @@ Hence, we can view $K^{\prime}$ as an extension ring of $K$.
 Let $p=\overline{T}$. Then, $P\left(  p\right)  =P\left(  \overline{T}\right)
 =\overline{P\left(  T\right)  }=\overline{P}=0$ (since $P\equiv
 0\operatorname{mod}\left(  P\right)  $). This proves Lemma 5.1.S.1.
+\end{proof}
 
 Another lemma:
 
@@ -11164,7 +11239,7 @@ $ of degree $\leq\deg P-1$ such that $P=Q\cdot\left(  T-p\right)  $.
 monic polynomial of degree $N-1$, where $N=\deg P$.
 \end{quote}
 
-\textit{Proof of Lemma 5.1.S.2.} \textbf{(a)} Lemma 5.1.S.2 \textbf{(a)} is a
+\begin{proof}[Proof of Lemma 5.1.S.2.] \textbf{(a)} Lemma 5.1.S.2 \textbf{(a)} is a
 known fact from basic algebra. We are not going to prove it.
 
 \textbf{(b)} Assume that the polynomial $P$ is monic. Consider the polynomial
@@ -11206,6 +11281,7 @@ Since $\left(  \text{the coefficient of the polynomial }P\text{ before }%
 T^{N}\right)  =1$ (because $P$ is a monic polynomial with $\deg P=N$), this
 rewrites as $1=q_{N-1}$. Since $\deg q\leq N-1$, this yields that $q$ is a
 monic polynomial of degree $N-1$. This proves Lemma 5.1.S.2.
+\end{proof}
 
 Now, let us solve Exercise 5.1:
 
@@ -11329,7 +11405,7 @@ L\left[  T,S\right]  \diagup\left(  TS-1\right)  $. But let us give a slightly
 different proof of this lemma, in the hope that a clever reader will find a
 better use for the trick it involves:
 
-\textit{Proof of Lemma 5.2.S.1.} Since $TS-1\mid P$ in $L\left[  T,S\right]
+\begin{proof}[Proof of Lemma 5.2.S.1.] Since $TS-1\mid P$ in $L\left[  T,S\right]
 $, there exists a polynomial $Q\in L\left[  T,S\right]  $ such that $P=\left(
 TS-1\right)  \cdot Q$. Consider this $Q$.
 
@@ -11377,6 +11453,7 @@ monic polynomial of degree $m+1$ yields that $P$ has either degree $\geq m+1$
 or is the zero polynomial. Since we know that $P$ does not have degree $\geq
 m+1$ (because $\deg P=m<m+1$), this tells us that $P$ is the zero polynomial.
 In other words, $P=0$. Lemma 5.2.S.1 is proven.
+\end{proof}
 
 Now let us solve Exercise 5.2. Consider the polynomial ring $L\left[
 T\right]  $ as a subring of the polynomial ring $L\left[  T,S\right]  $.
@@ -11498,7 +11575,7 @@ then $\sum\limits_{i=0}^{\ell}a_{\ell-i}T^{i}=\prod\limits_{s\in S}\left(
 p_{s}+T\right)  $.
 \end{quote}
 
-\textit{Proof of Lemma 5.4.S.1.} Assume that $\sum\limits_{i=0}^{\ell}%
+\begin{proof}[Proof of Lemma 5.4.S.1.] Assume that $\sum\limits_{i=0}^{\ell}%
 a_{i}T^{i}=\prod\limits_{s\in S}\left(  1+p_{s}T\right)  $.
 
 Since the finite set $S$ is used only for labelling the elements $p_{s}$, we
@@ -11522,6 +11599,7 @@ Now, $\sum\limits_{i=0}^{\ell}a_{i}T^{i}=\prod\limits_{s\in S}\left(
 Exercise 5.2 \textbf{(b)} (applied to $n=\ell$) yields $\sum\limits_{i=0}%
 ^{\ell}a_{\ell-i}T^{i}=\prod\limits_{i=1}^{\ell}\left(  p_{i}+T\right)
 =\prod\limits_{s\in S}\left(  p_{s}+T\right)  $. This proves Lemma 5.4.S.1.
+\end{proof}
 
 The next lemma is more or less the statement of our exercise (except for that
 it has $-\alpha\beta$ instead of $\alpha\beta$, but this doesn't make that
@@ -11534,7 +11612,7 @@ elements of $L$ such that $\alpha$ is $n$-integral over $K$ and $\beta$ is
 $m$-integral over $K$. Then, $-\alpha\beta$ is $nm$-integral over $K$.
 \end{quote}
 
-\textit{Proof of Lemma 5.4.S.2.} Since $\alpha$ is $n$-integral over $K$,
+\begin{proof}[Proof of Lemma 5.4.S.2.] Since $\alpha$ is $n$-integral over $K$,
 there exists a monic polynomial $P\in K\left[  T\right]  $ such that $\deg
 P=n$ and $P\left(  \alpha\right)  =0$ (by the definition of ``$n$-integral'').
 
@@ -11834,6 +11912,7 @@ So we have found a monic polynomial $R\in K\left[  T\right]  $ such that $\deg
 R=nm$ and $R\left(  -\alpha\beta\right)  =0$. By the definition of
 ``$nm$-integral'', this yields that $-\alpha\beta$ is $nm$-integral over $K$.
 This proves Lemma 5.4.S.2.
+\end{proof}
 
 Now let us finally solve the problem. Let $\alpha$ and $\beta$ be two elements
 of $L$ such that $\alpha$ is $n$-integral over $K$ and $\beta$ is $m$-integral
@@ -13634,7 +13713,9 @@ We have thus proven (\ref{10.1.sol.1}) by induction. Applying
 ^{m}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{i}\right)  $. This
 concludes the solution of Exercise 10.1 \textbf{(b)}.
 
-\textit{Exercise 10.2: Solution:} \textit{Proof of Proposition 10.29.} Let
+\textit{Exercise 10.2: Solution:}
+
+\begin{proof}[Proof of Proposition 10.29.] Let
 $x\in K$. Then, $\lambda_{T}\left(  x\right)  =\sum\limits_{i\in\mathbb{N}%
 }\lambda^{i}\left(  x\right)  T^{i}$, so that%
 \[
@@ -13685,8 +13766,9 @@ T^{j}\\
 x\right)  .
 \end{align*}
 This proves Proposition 10.29.
+\end{proof}
 
-\textit{Proof of Proposition 10.30.} Let $\iota:K\rightarrow K\otimes
+\begin{proof}[Proof of Proposition 10.30.] Let $\iota:K\rightarrow K\otimes
 _{\mathbf{Z}}\mathbf{Z}^{\prime}$ be the canonical map (mapping every $\xi\in
 K$ to $\xi\otimes1\in K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$). Proposition
 10.29 (applied to $\varphi=1+ut$) yields%
@@ -13736,6 +13818,7 @@ T}\circ\iota\left[  \left[  T\right]  \right]  \right)  }_{=\operatorname*{ev}%
 \lambda_{T}\left(  x\right)  \right)  .
 \]
 This proves Proposition 10.30.
+\end{proof}
 
 Alternatively, we could have proven Proposition 10.30 by repeating the proof
 of Proposition 10.3 with some minor changes.
@@ -13744,7 +13827,7 @@ We could derive Proposition 10.31 from Proposition 10.13 (just as we derived
 Proposition 10.30 from Proposition 10.12) using Proposition 10.29, but let us
 instead prove it directly:
 
-\textit{Proof of Proposition 10.31.} Let $x\in K$.
+\begin{proof}[Proof of Proposition 10.31.] Let $x\in K$.
 
 \textbf{(a)} We have%
 \begin{align*}
@@ -13789,8 +13872,9 @@ x\otimes1\right) \\
 
 
 Proposition 10.31 is now proven.
+\end{proof}
 
-\textit{Proof of Proposition 10.32.} To obtain a proof of Proposition 10.32,
+\begin{proof}[Proof of Proposition 10.32.] To obtain a proof of Proposition 10.32,
 read the proof of Proposition 10.7, doing the following replacements:
 
 \begin{itemize}
@@ -13814,8 +13898,9 @@ $\operatorname*{td}\nolimits_{\varphi\psi,T,\mathbf{Z}^{\prime}}$.
 \item Replace all references to (\ref{ToddDef}) by references to
 (\ref{ToddDefZ'}).
 \end{itemize}
+\end{proof}
 
-\textit{Proof of Proposition 10.33.} This can be proven by induction over $m$.
+\begin{proof}[Proof of Proposition 10.33.] This can be proven by induction over $m$.
 The induction base (the case $m=0$) requires showing that $\operatorname*{td}%
 \nolimits_{1,T,\mathbf{Z}^{\prime}}\left(  x\right)  =1$, but this follows
 from Proposition 10.14\footnote{In fact, Proposition 10.30 (applied to $u=0$)
@@ -13838,8 +13923,9 @@ $\operatorname*{td}\nolimits_{1,T,\mathbf{Z}^{\prime}}\left(  x\right)
 \nolimits_{\left(  1\otimes0\right)  T}\left(  \lambda_{T}\left(  x\right)
 \right)  =1$.}. The induction step is a straightforward application of
 Proposition 10.32. Thus Proposition 10.33 is proven.
+\end{proof}
 
-\textit{Proof of Theorem 10.34.} Theorem 2.1 \textbf{(a)} yields $\lambda
+\begin{proof}[Proof of Theorem 10.34.] Theorem 2.1 \textbf{(a)} yields $\lambda
 _{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)  =\lambda_{T}\left(
 x+y\right)  $ (since $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
 }\right)  $ is a $\lambda$-ring).
@@ -13899,8 +13985,9 @@ y\right)  \right)  \right)  =\operatorname*{td}\nolimits_{\varphi
 ,T,\mathbf{Z}^{\prime}}\left(  x+y\right)  .
 \]
 Theorem 10.34 is thus proven.
+\end{proof}
 
-\textit{Proof of Corollary 10.35.} Every $x\in K$ satisfies
+\begin{proof}[Proof of Corollary 10.35.] Every $x\in K$ satisfies
 $\operatorname*{td}_{\varphi,T,\mathbf{Z}^{\prime}}\left(  x\right)
 \in\Lambda\left(  K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $ (since
 Proposition 10.31 \textbf{(a)} says that $\operatorname*{Coeff}\nolimits_{0}%
@@ -13966,8 +14053,9 @@ the additive groups $K$ and $\Lambda\left(  K\otimes_{\mathbf{Z}}%
 _{\varphi,T,\mathbf{Z}^{\prime}}:K\rightarrow\Lambda\left(  K\otimes
 _{\mathbf{Z}}\mathbf{Z}^{\prime}\right)  $ is a homomorphism of additive
 groups. Corollary 10.35 is proven.
+\end{proof}
 
-\textit{Proof of Proposition 10.36.} Let $\iota:K\rightarrow K\otimes
+\begin{proof}[Proof of Proposition 10.36.] Let $\iota:K\rightarrow K\otimes
 _{\mathbf{Z}}\mathbf{Z}^{\prime}$ be the canonical map (mapping every $\xi\in
 K$ to $\xi\otimes1\in K\otimes_{\mathbf{Z}}\mathbf{Z}^{\prime}$). Then,
 $\iota\left[  \left[  T\right]  \right]  \left(  1+uT\right)  =1+\left(
@@ -13997,10 +14085,12 @@ $1$-dimensional). Thus,%
 \right)  .
 \end{align*}
 This proves Proposition 10.36.
+\end{proof}
 
-\textit{Proof of Theorem 10.37.} Theorem 10.37 can be proven with the help of
+\begin{proof}[Proof of Theorem 10.37.] Theorem 10.37 can be proven with the help of
 Proposition 10.36 in the same way as we proved Theorem 10.27 with the help of
 Proposition 10.24. We leave the details to the reader.
+\end{proof}
 
 \begin{thebibliography}{999999999}                                                                                        %
 
