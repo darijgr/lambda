@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, April 26, 2016 23:19:21}
+%TCIDATA{LastRevised=Tuesday, April 26, 2016 23:25:05}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -992,16 +992,14 @@ localization $\left\{  1,p,p^{2},...\right\}  ^{-1}\mathbb{Z}$ of the ring
 $\mathbb{Z}$ at the multiplicative subset $\left\{  1,p,p^{2},...\right\}  $
 is a binomial ring.
 
-{\small [One of the reasons I include this exercise here that I am looking for
-a nice solution.]}
-
 \textit{Exercise 3.2.} Let $K$ be a ring where none of the elements $1,$ $2,$
 $3,$ $...$ is a zero-divisor. Let $E$ be a subset of $K$ that generates $K$ as
 a ring. Assume that $n!\mid x\cdot\left(  x-1\right)  \cdot...\cdot\left(
 x-n+1\right)  $ for every $x\in E$ and every $n\in\mathbb{N}$. Prove that $K$
 is a binomial ring.
 
-{\small [Again, I don't really like the solution that I have.]}
+{\small [One of the reasons I include this exercise here that I am looking for
+a nice solution.]}
 
 \textit{Exercise 3.3.} \textbf{(a)} Let $K$ be a binomial ring. Let $p\in
 K\left[  \left[  T\right]  \right]  $ be a formal power series with
@@ -10390,8 +10388,8 @@ $\left\{  1,p,p^{2},...\right\}  ^{-1}\mathbb{Z}$.
 
 So we have shown that $\dbinom{x}{n}\in\left\{  1,p,p^{2},...\right\}
 ^{-1}\mathbb{Z}$ for every $x\in\left\{  1,p,p^{2},...\right\}  ^{-1}%
-\mathbb{Z}$. This proves that $\left\{  1,p,p^{2},...\right\}  ^{-1}%
-\mathbb{Z}$ is a binomial ring, qed.
+\mathbb{Z}$ and every $n\in\mathbb{N}$. This proves that $\left\{
+1,p,p^{2},...\right\}  ^{-1}\mathbb{Z}$ is a binomial ring, qed.
 
 \textit{Second solution (sketched):} Let $x\in\left\{  1,p,p^{2},...\right\}
 ^{-1}\mathbb{Z}$. Just as in the First solution, we can write $x$ in the form
@@ -10407,8 +10405,41 @@ no primes distinct from $p$ in its denominator. Thus, this ratio (which, as we
 know, is $\dbinom{x}{n}$) lies in $\left\{  1,p,p^{2},...\right\}
 ^{-1}\mathbb{Z}$. So we have shown that $\dbinom{x}{n}\in\left\{
 1,p,p^{2},...\right\}  ^{-1}\mathbb{Z}$ for every $x\in\left\{  1,p,p^{2}%
-,...\right\}  ^{-1}\mathbb{Z}$. This proves that $\left\{  1,p,p^{2}%
-,...\right\}  ^{-1}\mathbb{Z}$ is a binomial ring, qed.
+,...\right\}  ^{-1}\mathbb{Z}$ and every $n\in\mathbb{N}$. This proves that
+$\left\{  1,p,p^{2},...\right\}  ^{-1}\mathbb{Z}$ is a binomial ring, qed.
+
+\textit{Third solution:} \cite[Additional exercise 7]{Grin-detn} shows that if
+$a$ and $b$ are two integers such that $b\neq0$, and if $n\in\mathbb{N}$,
+then
+\begin{equation}
+\text{there exists some }N\in\mathbb{N}\text{ such that }b^{N}\dbinom{a/b}%
+{n}\in\mathbb{Z}.\label{sol.3.1.sol3.1}%
+\end{equation}
+
+
+Let $x\in\left\{  1,p,p^{2},...\right\}  ^{-1}\mathbb{Z}$. We then must show
+that $\dbinom{x}{n}\in\left\{  1,p,p^{2},...\right\}  ^{-1}\mathbb{Z}$ for
+every $n\in\mathbb{N}$.
+
+Fix $n\in\mathbb{N}$. We have $x\in\left\{  1,p,p^{2},...\right\}
+^{-1}\mathbb{Z}=\left\{  \dfrac{u}{p^{i}}\ \mid\ u\in\mathbb{Z},\ i\in
+\mathbb{N}\right\}  $. Thus, $x=\dfrac{u}{p^{i}}$ for some $u\in\mathbb{Z}$
+and $i\in\mathbb{N}$. But (\ref{sol.3.1.sol3.1}) (applied to $a=u$ and
+$b=p^{i}$) shows that there exists some $N\in\mathbb{N}$ such that $\left(
+p^{i}\right)  ^{N}\dbinom{u/p^{i}}{n}\in\mathbb{Z}$. Consider this $N$. We
+have $x=\dfrac{u}{p^{i}}=u/p^{i}$, so that
+\begin{align*}
+\dbinom{x}{n}  & =\dbinom{u/p^{i}}{n}\in\dfrac{1}{\left(  p^{i}\right)  ^{N}%
+}\mathbb{Z}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  p^{i}\right)
+^{N}\dbinom{u/p^{i}}{n}\in\mathbb{Z}\right)  \\
+& \subseteq\left\{  1,p,p^{2},...\right\}  ^{-1}\mathbb{Z}.
+\end{align*}
+
+
+So we have shown that $\dbinom{x}{n}\in\left\{  1,p,p^{2},...\right\}
+^{-1}\mathbb{Z}$ for every $x\in\left\{  1,p,p^{2},...\right\}  ^{-1}%
+\mathbb{Z}$ and every $n\in\mathbb{N}$. This proves that $\left\{
+1,p,p^{2},...\right\}  ^{-1}\mathbb{Z}$ is a binomial ring, qed.
 
 \textit{Exercise 3.2:} \textit{Hints to solution:} Let $\mathbb{N}_{K}^{+}$ be
 the subset $\left\{  1,2,3,...\right\}  $ of $K$. Obviously, this subset is
@@ -14242,6 +14273,13 @@ York 1985.
 
 \bibitem[Grin-w4a]{Grin-w4a}Darij Grinberg, \textit{Witt\#4a: Equigraded power
 series}.\newline\url{http://www.cip.ifi.lmu.de/~grinberg/algebra/witt4a.pdf}
+
+\bibitem[Grin-detn]{Grin-detn}Darij Grinberg, \textit{Notes on the
+combinatorial fundamentals of algebra}, version of 26 April 2016.\newline%
+\url{https://github.com/darijgr/detnotes/releases/tag/2016-04-26}\newline(This
+is the URL of the frozen version of 26 April 2016, guaranteed to have its
+numbering match the references above. For a version which is getting updated,
+see \url{http://web.mit.edu/~darij/www/primes2015/sols.pdf} .)
 
 \bibitem[Harts77]{Harts77}Robin Hartshorne, \textit{Algebraic Geometry},
 Graduate Texts in Mathematics \#52, Springer 1977.
