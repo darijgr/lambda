@@ -8,7 +8,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, April 26, 2016 20:21:19}
+%TCIDATA{LastRevised=Tuesday, April 26, 2016 20:30:10}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -75,12 +75,21 @@ They were originally meant to accompany a talk at an undergraduate seminar,
 but quickly grew out of proportion to what could fit into a talk. Still they
 lack in anything really deep. At the moment, most of what is written here,
 except for the Todd homomorphism section, is also in Knutson's book
-\cite{Knut73}, albeit sometimes with a different proof. Part of the plan was
-to add some results from the Fulton/Lang book \cite{FulLan85} with better
-proofs, but this is not currently my short-term objective, given that I don't
-understand much of \cite{FulLan85} to begin with. Most of the notes was
+\cite{Knut73}, albeit sometimes with different proofs. Part of the plan was to
+add some results from the Fulton/Lang book \cite{FulLan85} with better proofs,
+but this is not currently my short-term objective, given that I don't
+understand much of \cite{FulLan85} to begin with. Most of the notes were
 written independently of Yau's 2010 text \cite{Yau10}, but inevitably
-intersects with it.
+intersect with it.
+
+I do not introduce, nor use, the $\lambda$-ring of symmetric functions (see
+\cite{Knut73} and \cite[\S 9, \S 16]{Hazewi08b} for it). My avoidance of
+symmetric functions has no good reason\footnote{Actually, the reason is that I
+have started writing these notes before I understood symmetric functions
+well.}; unfortunately, it makes part of the notes (particularly, everything
+related to the $\lambda$-verification principle) unnecessarily unwieldy. This
+is one of the things I would have done differently if I were to rewrite these
+notes from scratch.
 
 \section*{0. Notation and conventions}
 
@@ -5201,7 +5210,8 @@ nX_{n}=\sum_{j=1}^{n}\left(  -1\right)  ^{j-1}X_{n-j}N_{j}\left(  X_{1}%
 in the ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $.
 \end{quote}
 
-This theorem is more or less a rewriting of the famous \textit{Newton identities}.
+This theorem is more or less a rewriting of the famous \textit{Newton
+identities}.
 
 \textit{Proof of Theorem 9.6.} In the power series ring $\left(
 \mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[  \left[
@@ -9451,8 +9461,6 @@ we have%
 ^{\prime}}\left(  x\right)  =\prod\limits_{i=1}^{m}\operatorname*{td}%
 \nolimits_{\varphi_{i},T,\mathbf{Z}^{\prime}}\left(  x\right)  .
 \]
-
-
 
 \end{quote}
 
