@@ -1,16 +1,15 @@
-\documentclass
-[numbers=enddot,12pt,final,onecolumn,notitlepage]{scrartcl}%
+\documentclass[numbers=enddot,12pt,final,onecolumn,notitlepage]{scrartcl}%
 \usepackage[all,cmtip]{xy}
 \usepackage{lscape}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{hyperref}
-\usepackage{comment}%
-\setcounter{MaxMatrixCols}{30}
+\usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, April 26, 2016 18:49:09}
+%TCIDATA{LastRevised=Tuesday, April 26, 2016 20:04:16}
+%TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
 %TCIDATA{BibliographyScheme=Manual}
@@ -25,7 +24,12 @@
 
 \title{\fbox{$\lambda$\textbf{-rings: Definitions and basic properties}}}
 \author{Darij Grinberg}
-\date{Version 0.0.17, last revised 9 Apr 2013}
+\date{Version 0.0.17, last revised
+%TCIMACRO{\TeXButton{today}{\today}}%
+%BeginExpansion
+\today
+%EndExpansion
+}
 \maketitle
 \tableofcontents
 
@@ -4634,7 +4638,9 @@ Adams character}) of the $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $.
 \end{quote}
 
-\subsection{The equality $\widetilde{\psi}_{T}\left(  x\right) = -T\cdot\frac{d}{dT}\log\lambda_{-T}\left(  x\right)  $ for special $\lambda$-rings}
+\subsection{The equality $\protect\widetilde{\psi}_{T}\left(  x\right)  =
+-T\cdot\frac{d}{dT}\log\lambda_{-T}\left(  x\right)  $ for special $\lambda
+$-rings}
 
 Before we prove a batch of properties of these Adams characters, let us show
 another approach to these Adams characters:
@@ -5136,8 +5142,9 @@ finitely many $1$-dimensional elements of $K$ (by an application of Theorem
 x\right)  $ in this case by applying Theorems 9.4 and 8.3 \textbf{(b)}. Thus,
 Theorem 9.3 \textbf{(c)} is proven.
 
-\subsection{The equality $\widetilde{\psi}_{T}\left(  x\right)  =-T\cdot\frac
-{d}{dT}\log\lambda_{-T}\left(  x\right)  $ for arbitrary $\lambda$-rings}
+\subsection{The equality $\protect\widetilde{\psi}_{T}\left(  x\right)
+=-T\cdot\frac{d}{dT}\log\lambda_{-T}\left(  x\right)  $ for arbitrary
+$\lambda$-rings}
 
 Now, as promised, we are going to prove a generalization of Theorem 9.2 to
 arbitrary $\lambda$-rings:
