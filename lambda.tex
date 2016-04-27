@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, April 26, 2016 21:20:49}
+%TCIDATA{LastRevised=Tuesday, April 26, 2016 21:41:08}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -24,6 +24,12 @@
 \hoffset=-1.0cm
 \setlength\textheight{24cm}
 \setlength\textwidth{15.5cm}
+\newenvironment{verlong}{}{}
+\newenvironment{vershort}{}{}
+\newenvironment{noncompile}{}{}
+\excludecomment{verlong}
+\includecomment{vershort}
+\excludecomment{noncompile}
 \begin{document}
 
 \title{\fbox{$\lambda$\textbf{-rings: Definitions and basic properties}}}
@@ -62,8 +68,7 @@ arguments you find!\footnote{my email address is \texttt{A@B.com}, where
 Thanks to Martin Brandenburg for pointing out several flaws.
 
 At the moment, section 1 is missing a proof (namely, that the representation
-ring is a \textit{special} $\lambda$-ring; I actually don't know this proof)
-and sections 11-... are more or less missing.
+ring is a \textit{special} $\lambda$-ring; I actually don't know this proof).
 
 Most exercises have solutions or at least hints given at the end of this text;
 however, some do not.
@@ -5096,6 +5101,8 @@ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
 +...+u_{m}^{j}.
 \]
 
+
+
 \end{quote}
 
 \begin{proof}
@@ -9741,20 +9748,21 @@ Corollary 10.35, Proposition 10.36 and Theorem 10.37.
 
 \bigskip
 
-\fbox{\textbf{WARNING:} The following is incomplete and no proofs have been
-added yet.}
+\begin{noncompile}
+\fbox{\textbf{WARNING:} The following is incomplete.}
 
-\begin{center}
 \fbox{\textbf{11. Representation and Grothendieck rings}}
-\end{center}
 
 This Section, once it is written, will contain Seiler's proof that
 representation rings (Grothendieck rings of categories of representations on
 projective modules) are special $\lambda$-rings.
+\end{noncompile}
 
 [...]
 
-\section*{X. Positive structure on $\lambda$-rings}
+\section*{Appendix X. Positive structure on $\lambda$-rings}
+
+\fbox{\textbf{WARNING:} The following appendix is incomplete.}
 
 Almost all $\lambda$-rings in Fulton/Lang \cite{FulLan85} and many $\lambda
 $-rings in nature carry an additional structure called a \textit{positive
@@ -9981,9 +9989,9 @@ instead of Theorem 8.4 above when they want to prove an identity just by
 verifying it for sums of $1$-dimensional elements. However, this way they can
 only show it for positive elements, while Theorem 8.4 yields it for arbitrary elements.
 
-\begin{quote}
+\begin{noncompile}
 [add noncont. splitting principle generalizing 8.4][...]
-\end{quote}
+\end{noncompile}
 
 \section{Hints and solutions to exercises}
 
