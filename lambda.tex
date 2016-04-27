@@ -8,7 +8,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, April 26, 2016 20:04:16}
+%TCIDATA{LastRevised=Tuesday, April 26, 2016 20:15:15}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -74,11 +74,11 @@ $-rings with proofs.
 They were originally meant to accompany a talk at an undergraduate seminar,
 but quickly grew out of proportion to what could fit into a talk. Still they
 lack in anything really deep. At the moment, most of what is written here,
-except for the Todd homomorphism section, is also in Knutson's book [2],
+except for the Todd homomorphism section, is also in Knutson's book \cite{Knut73},
 albeit sometimes with a different proof. Part of the plan was to add some
-results from Fulton/Lang [1] with better proofs, but this is not currently my
-short-term objective, given that I don't understand much of [1] to begin with.
-Most of the notes was written independently of Yau's 2010 text [10], but
+results from the Fulton/Lang book \cite{FulLan85} with better proofs, but this is not currently my
+short-term objective, given that I don't understand much of \cite{FulLan85} to begin with.
+Most of the notes was written independently of Yau's 2010 text \cite{Yau10}, but
 inevitably intersects with it.
 
 \section*{0. Notation and conventions}
@@ -89,10 +89,10 @@ Some notations that we will use later on:
 \item In the following, $\mathbb{N}$ will denote the set $\left\{
 0,1,2,...\right\}  $.
 
-\item When we say ``ring'', we will always mean ``commutative ring with unity''. A
-``ring homomorphism'' is always supposed to send $1$ to $1$. When we say
-``$R$-algebra'' (with $R$ a ring), we will always mean ``commutative $R$-algebra
-with unity''.
+\item When we say ``ring'', we will always mean ``commutative ring with
+unity''. A ``ring homomorphism'' is always supposed to send $1$ to $1$. When
+we say ``$R$-algebra'' (with $R$ a ring), we will always mean ``commutative
+$R$-algebra with unity''.
 
 \item Let $R$ be a ring. An \textit{extension ring} of $R$ will mean a ring
 $S$ along with a ring monomorphism $R\rightarrow S$. (We will often sloppily
@@ -112,12 +112,13 @@ I\right]  $ by $\left[  u_{1},u_{2},...,u_{n}\right]  $.
 
 \item We have not defined $\lambda$-rings yet, but it is important to mention
 some discrepancy in notation between different sources. Namely, some of the
-literature (including [2], [5] and [6]) denotes as \textit{pre-}$\lambda
+literature (including \cite{Knut73}, \cite{Hazewi08a} and \cite{Hazewi08b}) denotes as \textit{pre-}$\lambda
 $\textit{-rings} what we call $\lambda$-rings and denotes as $\lambda
 $\textit{-rings} what we call special $\lambda$-rings. Even worse, the
-notations in [1] are totally inconsistent\footnote{Often, ``$\lambda$-ring'' in
-[1] means ``$\lambda$-ring with a positive structure'' (such $\lambda$-rings are
-automatically special), but sometimes it simply means ``$\lambda$-ring''.}.
+notations in \cite{FulLan85} are totally inconsistent\footnote{Often, ``$\lambda$-ring''
+in \cite{FulLan85} means ``$\lambda$-ring with a positive structure'' (such $\lambda
+$-rings are automatically special), but sometimes it simply means ``$\lambda
+$-ring''.}.
 
 \item Most times you read an expression with a $\sum$ or a $\prod$ sign in
 mathematical literature, you know clearly what it means (e. g., the expression
@@ -150,7 +151,7 @@ n$.\newline Similar rules apply to the parsing of a sum expression.
 
 What is the point of $\lambda$-rings?
 
-Fulton/Lang [1] motivate $\lambda$-rings through vector bundles. Here we are
+Fulton/Lang \cite{FulLan85} motivate $\lambda$-rings through vector bundles. Here we are
 going for a more elementary motivation, namely through representation rings in
 group representation theory:
 
@@ -338,7 +339,7 @@ W\rightarrow0\right\rangle .
 \end{align*}
 The resulting ring $\operatorname*{FRep}_{k}G\diagup I$ is called the
 \textit{Grothendieck ring} of representations of $G$ over our field. A proof
-that it is a special $\lambda$-ring is sketched in [7] (Example on page 95),
+that it is a special $\lambda$-ring is sketched in \cite[Example on page 95]{Seiler88},
 but I do not understand it. Anyway this result is not as strong as in
 characteristic $0$ anymore, because the equality $\overline{U}=\overline{V}$
 in the Grothendieck ring $\operatorname*{FRep}_{k}G\diagup I$ does not imply
@@ -349,26 +350,26 @@ theory of $G$.
 \subsection{Vector bundles}
 
 Vector bundles over a given compact Hausdorff space are similar to
-representations of a given group in several ways: They are somehow ``enriched''
-vector space structures (a vector bundle is, roughly speaking, a family of
-vector spaces with additional topological structure; a representation of a
-group is a vector space with a group action on it), so one can form direct
-sums, tensor products and exterior powers of both of these. Hence, it is not
-surprising that we can define a $\lambda$-ring structure on a kind of ``ring of
-vector bundles over a space'' similarly to the $\lambda$-ring structure on the
-representation ring of a group. However, just as in the case of
-representations of a group over nonzero characteristic, we must be careful
-with vector bundles, because this ``ring of vector bundles over a space''
-actually does not consist of vector bundles, but of equivalence classes, and
-sometimes, different vector bundles can lie in one and the same equivalence
-class (just as representations of groups are no longer uniquely determined by
-their equivalence class in the representation ring when the characteristic of
-the ground field is not $0$). This ``ring of vector bundles'' is denoted by
-$K\left(  X\right)  $, where $X$ is the base space, and is the first
-fundamental object of study in K-theory. We will not delve into K-theory here;
-we will only provide some of its backbone, namely the abstract algebraic
-theory of $\lambda$-rings (which appear not only in K-theory, but also in
-representation theory and elsewhere).
+representations of a given group in several ways: They are somehow
+``enriched'' vector space structures (a vector bundle is, roughly speaking, a
+family of vector spaces with additional topological structure; a
+representation of a group is a vector space with a group action on it), so one
+can form direct sums, tensor products and exterior powers of both of these.
+Hence, it is not surprising that we can define a $\lambda$-ring structure on a
+kind of ``ring of vector bundles over a space'' similarly to the $\lambda
+$-ring structure on the representation ring of a group. However, just as in
+the case of representations of a group over nonzero characteristic, we must be
+careful with vector bundles, because this ``ring of vector bundles over a
+space'' actually does not consist of vector bundles, but of equivalence
+classes, and sometimes, different vector bundles can lie in one and the same
+equivalence class (just as representations of groups are no longer uniquely
+determined by their equivalence class in the representation ring when the
+characteristic of the ground field is not $0$). This ``ring of vector
+bundles'' is denoted by $K\left(  X\right)  $, where $X$ is the base space,
+and is the first fundamental object of study in K-theory. We will not delve
+into K-theory here; we will only provide some of its backbone, namely the
+abstract algebraic theory of $\lambda$-rings (which appear not only in
+K-theory, but also in representation theory and elsewhere).
 
 \subsection{Exercises}
 
@@ -419,9 +420,9 @@ to define than the ones in Sections 5 and later), they are the basis of our theo
 \begin{quote}
 \textbf{Definition.} \textbf{1)} Let $K$ be a ring. Let $\lambda
 ^{i}:K\rightarrow K$ be a mapping\footnote{Here, ``mapping'' actually means
-``mapping'' and not ``group homomorphism'' or ``ring homomorphism''.} for every
-$i\in\mathbb{N}$ such that $\lambda^{0}\left(  x\right)  =1$ and $\lambda
-^{1}\left(  x\right)  =x$ for every $x\in K$. Assume that%
+``mapping'' and not ``group homomorphism'' or ``ring homomorphism''.} for
+every $i\in\mathbb{N}$ such that $\lambda^{0}\left(  x\right)  =1$ and
+$\lambda^{1}\left(  x\right)  =x$ for every $x\in K$. Assume that%
 \begin{equation}
 \lambda^{k}\left(  x+y\right)  =\sum_{i=0}^{k}\lambda^{i}\left(  x\right)
 \lambda^{k-i}\left(  y\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }%
@@ -2029,10 +2030,11 @@ independent over $K$.
 -1\right)  ^{i+j-1}\alpha_{i}\alpha_{2j-i}$ for every $j\in\mathbb{N}$, where
 $\alpha_{0}$ has to be interpreted as $1$.
 
-[The result of Exercise 4.4 is a result by John Hopkinson\ (Proposition 2.1 in
-[9]). His proof is different from the one I give in the solutions. He also
+[The result of Exercise 4.4 is a result by John Hopkinson
+(\cite[Proposition 2.1]{Hopkin06}).
+His proof is different from the one I give in the solutions. He also
 gives a similar, even if more complicated formula for $P_{3,j}$: see
-Proposition 2.2 in [9].]
+\cite[Proposition 2.2]{Hopkin06}.]
 \end{quotation}
 
 \section{A $\lambda$-ring structure on $\Lambda\left(  K\right)  =1+K\left[
@@ -2116,9 +2118,9 @@ inherited from $K\left[  \left[  T\right]  \right]  $. We will later continue
 in this spirit (for instance, we will denote a finite sum with respect to the
 addition $\widehat{+}$ by the sign $\widehat{\sum}$, while a finite sum with
 respect to the addition $+$ will be written using the normal $\sum$
-sign).\footnote{In [2], Knutson writes $"+"$, $"-"$ and $"\cdot"$ (with
+sign).\footnote{In \cite{Knut73}, Knutson writes $"+"$, $"-"$ and $"\cdot"$ (with
 quotation marks) instead of $\widehat{+},$ $\widehat{-}$ and $\widehat{\cdot}$
-for the newly-defined operations. In [1], Fulton and Lang simply write $+,$
+for the newly-defined operations. In \cite{FulLan85}, Fulton and Lang simply write $+,$
 $-$ and $\cdot$ for $\widehat{+},$ $\widehat{-}$ and $\widehat{\cdot}$,
 approving the danger of confusion with the ``old'' operations $+,$ $-$ and
 $\cdot$ inherited from $K\left[  \left[  T\right]  \right]  $.}
@@ -2662,7 +2664,7 @@ continuous). In particular, any polynomial with integral coefficients acts on
 $1+K\left[  \left[  T\right]  \right]  ^{+}$ as a continuous map.
 
 \textit{Proof of Theorem 5.5.} \textbf{(a)} and \textbf{(e)} are done in any
-commutative algebra book such as [3], Chapter 10.
+commutative algebra book such as \cite[Chapter 10]{AtiMac69}.
 
 \textbf{(b)} and \textbf{(c)} are basic exercises in topology.
 
@@ -3569,8 +3571,8 @@ $\mathbb{Z}$-module generators of $K$.
 ring $K\left[  T\right]  $ at the multiplicatively closed subset $1+K\left[
 T\right]  ^{+}$. \ \ \ \ \footnote{When $K$ is a field, this localization is
 simply the (local) ring of the (so-called) rational functions in one variable
-over $K$ which have no pole at $0$. (Note that the term ``rational function'' is
-being used here for an element of the quotient field $\operatorname*{Quot}%
+over $K$ which have no pole at $0$. (Note that the term ``rational function''
+is being used here for an element of the quotient field $\operatorname*{Quot}%
 \left(  K\left[  T\right]  \right)  $. This is the standard meaning that the
 term ``rational function'' has in modern literature. This meaning is somewhat
 confusing: In fact, rational functions are not functions in the standard
@@ -3981,8 +3983,8 @@ easily proven in $\Lambda\left(  K\right)  $ than in arbitrary $\lambda
 $-rings. However, it turns out that if an identity can be proven in
 $\Lambda\left(  K\right)  $, then it automatically holds for arbitrary special
 $\lambda$-rings! This is one of the so-called $\lambda$\textit{-verification
-principles}\footnote{We are following [2], pp. 25-27 here, though our Theorem
-8.1 is not exactly what [2] calls ``verification principle''.}. Before we
+principles}\footnote{We are following \cite[pp. 25--27]{Knut73} here, though our Theorem
+8.1 is not exactly what \cite{Knut73} calls ``verification principle''.}. Before we
 formulate this principle, let us first formally define what kind of identities
 it will hold for:
 
@@ -4653,7 +4655,7 @@ Define a map $\widetilde{\psi}_{T}:K\rightarrow K\left[  \left[  T\right]
 \right]  $ by $\widetilde{\psi}_{T}\left(  x\right)  =\sum\limits_{j\in
 \mathbb{N}\setminus\left\{  0\right\}  }\psi^{j}\left(  x\right)  T^{j}$ for
 every $x\in K$.\ \ \ \ \footnote{Note that we call this map $\widetilde{\psi
-}_{T}$ to distinguish it from the map $\psi_{T}$ in [1] (which is more or less
+}_{T}$ to distinguish it from the map $\psi_{T}$ in \cite{FulLan85} (which is more or less
 the same but differs slightly).}
 
 Let $x\in K$.
@@ -5157,7 +5159,7 @@ Define a map $\widetilde{\psi}_{T}:K\rightarrow K\left[  \left[  T\right]
 \right]  $ by $\widetilde{\psi}_{T}\left(  x\right)  =\sum\limits_{j\in
 \mathbb{N}\setminus\left\{  0\right\}  }\psi^{j}\left(  x\right)  T^{j}$ for
 every $x\in K$.\ \ \ \ \footnote{Note that we call this map $\widetilde{\psi
-}_{T}$ to distinguish it from the map $\psi_{T}$ in [1] (which is more or less
+}_{T}$ to distinguish it from the map $\psi_{T}$ in \cite{FulLan85} (which is more or less
 the same but differs slightly).}
 
 Let $x\in K$.
@@ -5945,8 +5947,8 @@ We now devote a section to the notion of Todd homomorphisms. First, two warnings
 
 \begin{itemize}
 \item \textbf{Warning:} The following may be wrong or differ from the standard
-notations. I am trying to generalize [1], I \S 6 (mostly because it is
-slightly flawed\footnote{[1], I \S 6, p. 24 states that $\operatorname*{td}%
+notations. I am trying to generalize \cite[I \S 6]{FulLan85} (mostly because it is
+slightly flawed\footnote{\cite[I \S 6, p. 24]{FulLan85} states that $\operatorname*{td}%
 _{\varphi}\left(  e\right)  $ is a universal polynomial in $\lambda^{1}\left(
 e\right)  ,$ $...,$ $\lambda^{r}\left(  e\right)  $, determined by $\varphi$
 alone. I think it isn't; instead, it is just a power series. On the other
@@ -6005,8 +6007,6 @@ In other words, we define a map $\operatorname*{Coeff}\nolimits_{i}:R\left[
 \limits_{j\in\mathbb{N}}a_{j}T^{j}\in R\left[  \left[  T\right]  \right]
 \text{ (with }a_{j}\in R\text{ for every }j\in\mathbb{N}\text{)}\right)  .
 \]
-
-
 
 \end{quote}
 
@@ -6120,11 +6120,11 @@ $\operatorname*{Coeff}\nolimits_{j}\left(  \prod\limits_{i=1}^{m}%
 \varphi\left(  U_{i}T\right)  \right)  $ is a polynomial of total degree $\leq
 j$ in the variables $U_{1},$ $U_{2},$ $...,$ $U_{m}\ \ \ \ $%
 \footnote{\textit{Proof.} There are several ways to prove this; here is the
-simplest one: We use the notion of an ``equigraded'' power series over a graded
-ring; this notion was defined in [8]. Now let $A$ be the graded ring
+simplest one: We use the notion of an ``equigraded'' power series over a
+graded ring; this notion was defined in \cite{Grin-w4a}. Now let $A$ be the graded ring
 $\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $, where the grading is given
 by the total degree (thus $U_{1}$, $U_{2}$, $...$, $U_{m}$ all lie in the
-$1$-st graded component $A_{1}$). According to Theorem 1 \textbf{(a)} of [8],
+$1$-st graded component $A_{1}$). According to \cite[Theorem 1 \textbf{(a)}]{Grin-w4a},
 the set%
 \[
 \left\{  \alpha\in A\left[  \left[  T\right]  \right]  \ \mid\ \text{the power
@@ -6538,15 +6538,15 @@ _{i\in\mathbb{N}}\right)  $.
 
 As already mentioned above, this notation $\operatorname*{td}%
 \nolimits_{\varphi,T}$ and the name ``$\varphi$-Todd homomorphism'' by which I
-denote it might not be standard terminology.\footnote{For instance, what [1]
+denote it might not be standard terminology.\footnote{For instance, what \cite{FulLan85}
 calls ``\textit{Todd homomorphism}'' is the map $\operatorname*{td}_{\varphi
 }:=\operatorname*{td}\nolimits_{\varphi,1}$ (where $\operatorname*{td}%
-\nolimits_{\varphi,1}$ means ``take the formal power series $\operatorname*{td}%
-\nolimits_{\varphi,T}$ and replace every $T$ by $1$''), which is only defined
-on $x$ if $x$ is finite-dimensional, i. e. if $x$ satisfies $\lambda
-^{i}\left(  x\right)  =0$ for all sufficiently large $i.$ But I prefer the
-power series $\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  $ since
-it is defined on \textit{every }$x$.
+\nolimits_{\varphi,1}$ means ``take the formal power series
+$\operatorname*{td}\nolimits_{\varphi,T}$ and replace every $T$ by $1$''),
+which is only defined on $x$ if $x$ is finite-dimensional, i. e. if $x$
+satisfies $\lambda^{i}\left(  x\right)  =0$ for all sufficiently large $i.$
+But I prefer the power series $\operatorname*{td}\nolimits_{\varphi,T}\left(
+x\right)  $ since it is defined on \textit{every }$x$.
 \par
 I am not even sure whether there exists standard terminology for Todd
 homomorphisms - there does not seem to be much literature about them.}
@@ -7759,9 +7759,9 @@ Then, in order to verify Proposition 10.19, we must prove that this map $f$ is c
 \textit{1st Step:} Let $n\in\mathbb{N}$. Let $\varphi\in1+K\left[  \left[
 t\right]  \right]  ^{+}$ and $\psi\in1+K\left[  \left[  t\right]  \right]
 ^{+}$ be two power series such that the first $n$ coefficients\footnote{Note
-that when we say ``the first $n$ coefficients'' (of some power series), we mean
-the coefficients before $t^{0}$, $t^{1}$, $...$, $t^{n-1}$.} of $\varphi$ are
-equal to the respective coefficients of $\psi$. Then, the first $n$
+that when we say ``the first $n$ coefficients'' (of some power series), we
+mean the coefficients before $t^{0}$, $t^{1}$, $...$, $t^{n-1}$.} of $\varphi$
+are equal to the respective coefficients of $\psi$. Then, the first $n$
 coefficients of the power series $\mathfrak{Todd}_{\varphi}\left(  p\right)  $
 are equal to the respective coefficients of the power series $\mathfrak{Todd}%
 _{\psi}\left(  p\right)  $.
@@ -7950,9 +7950,9 @@ This proves the 1st Step.
 \textit{2nd Step:} Let $n\in\mathbb{N}$. Let $\varphi\in1+K\left[  \left[
 t\right]  \right]  ^{+}$ and $\psi\in1+K\left[  \left[  t\right]  \right]
 ^{+}$ be two power series such that the first $n$ coefficients\footnote{Note
-that when we say ``the first $n$ coefficients'' (of some power series), we mean
-the coefficients before $t^{0}$, $t^{1}$, $...$, $t^{n-1}$.} of $\varphi$ are
-equal to the respective coefficients of $\psi$. Then, the first $n$
+that when we say ``the first $n$ coefficients'' (of some power series), we
+mean the coefficients before $t^{0}$, $t^{1}$, $...$, $t^{n-1}$.} of $\varphi$
+are equal to the respective coefficients of $\psi$. Then, the first $n$
 coefficients of the power series $f\left(  \varphi\right)  $ are equal to the
 respective coefficients of the power series $f\left(  \psi\right)  $.
 
@@ -9004,7 +9004,7 @@ $\lambda$-ring. Define a homomorphism $\theta_{T}^{j}:K\rightarrow
 t\right]  $ is the polynomial $1+t+t^{2}+...+t^{j-1}=\dfrac{1-t^{j}}{1-t}$.
 \end{quote}
 
-[Again, [1] considers only $\theta^{j}:=\theta_{1}^{j},$ which again is
+[Again, \cite{FulLan85} considers only $\theta^{j}:=\theta_{1}^{j},$ which again is
 defined on $x$ only if $x$ is finite-dimensional. These $\theta^{j}$ (or
 $\theta^{j}\left(  x\right)  $ ?) are called \textit{Bott's cannibalistic
 classes}, for whatever reason.]
@@ -9561,13 +9561,13 @@ projective modules) are special $\lambda$-rings.
 
 \section*{X. Positive structure on $\lambda$-rings}
 
-Almost all $\lambda$-rings in Fulton/Lang [1] and many $\lambda$-rings in
+Almost all $\lambda$-rings in Fulton/Lang \cite{FulLan85} and many $\lambda$-rings in
 nature carry an additional structure called a \textit{positive structure}:
 
 \begin{quote}
 \textbf{Definition.} \textbf{1)} Let $\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring. Let $\varepsilon
-:K\rightarrow\mathbb{Z}$ be a surjective\footnote{I am quoting this from [1].
+:K\rightarrow\mathbb{Z}$ be a surjective\footnote{I am quoting this from \cite{FulLan85}.
 Personally, I have never have met a non-surjective ring homomorphism to
 $\mathbb{Z}$ in my life.} ring homomorphism. Let $\mathbf{E}$ be a subset of
 $K$ such that $\mathbf{E}$ is closed under addition and multiplication and
@@ -9596,7 +9596,7 @@ positive structure $\left(  \varepsilon,\mathbf{E}\right)  $%
 .\ \ \ \ \footnote{One remark about the assumption that for every invertible
 element $u\in\mathbf{E}$, the inverse of $u$ must lie in $\mathbf{E}$ as well:
 \par
-Fulton and Lang do not make this assumption in [1], but this is a mistake on
+Fulton and Lang do not make this assumption in \cite{FulLan85}, but this is a mistake on
 their side. In fact, they claim that the set of all $u\in\mathbf{E}$ such that
 $\varepsilon\left(  u\right)  =1$ is a subgroup of $K^{\times}$. But to make
 this claim, they need the above-mentioned assumption (or another similar one).
@@ -9625,7 +9625,7 @@ be the additive and multiplicative closure of the subset%
 of $\mathbb{Z}\left[  Z\right]  $. It is easy to see that all of our
 conditions are satisfied, except for the assumption that for every invertible
 element $u\in\mathbf{E}$, the inverse of $u$ must lie in $\mathbf{E}$ as well.
-Hence, if we would omit this assumption (as Fulton and Lang do in [1]), the
+Hence, if we would omit this assumption (as Fulton and Lang do in \cite{FulLan85}), the
 pair $\left(  \varepsilon,\mathbf{E}\right)  $ would be a positive structure
 on our $\lambda$-ring $\left(  \mathbb{Z}\left[  Z\right]  ,\left(
 \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $. However, the set of all
@@ -9777,7 +9777,7 @@ _{e},\mathbf{E}_{e}\right)  $ on $K_{e}$ defined by $\varepsilon_{e}\left(
 By iterating the construction in Theorem X.2, we can find, for any
 $e\in\mathbf{E}$, an extension ring of $K$ with a $\lambda$-ring structure in
 which $e$ is the sum of $r$ $1$-dimensional elements. This is called the
-\textit{splitting principle}, and is what Fulton/Lang [1] use instead of
+\textit{splitting principle}, and is what Fulton/Lang \cite{FulLan85} use instead of
 Theorem 8.4 above when they want to prove an identity just by verifying it for
 sums of $1$-dimensional elements. However, this way they can only show it for
 positive elements, while Theorem 8.4 yields it for arbitrary elements.
@@ -10231,7 +10231,7 @@ the first one and the identity $\dbinom{-x}{i}=\left(  -1\right)  ^{i}%
 the so-called \textit{upper negation identity}). The third one, alas, doesn't
 seem to be that easy. One way to prove it is to use the proof of Theorem 7.1
 below. Another, more elementary way (leading to a different polynomial!!) is
-by recalling the fact ([4], Proposition I.7.3) that the subset%
+by recalling the fact (\cite[Proposition I.7.3]{Harts77}) that the subset%
 \[
 \left\{  p\in\mathbb{Q}\left[  X\right]  \text{ }\mid\ p\left(  n\right)
 \in\mathbb{Z}\text{ for every }n\in\mathbb{Z}\right\}
@@ -12065,9 +12065,10 @@ definition of special $\lambda$-rings together with Exercise 2.1. Do not
 forget to check that the map $\lambda_{T}$ is well-defined.
 
 \textit{Exercise 6.4: Hints to solution:} Repeat the proof of Theorem 6.1,
-replacing every appearance of ``$x\in K$'' by ``$x\in E$'' and every appearance of
-``$y\in K$'' by ``$y\in E$''. You need the fact that $\lambda_{T}$ is a $\lambda
-$-ring homomorphism if and only if it satisfies the three conditions%
+replacing every appearance of ``$x\in K$'' by ``$x\in E$'' and every
+appearance of ``$y\in K$'' by ``$y\in E$''. You need the fact that
+$\lambda_{T}$ is a $\lambda$-ring homomorphism if and only if it satisfies the
+three conditions%
 \begin{align*}
 \lambda_{T}\left(  xy\right)   &  =\lambda_{T}\left(  x\right)  \widehat{\cdot
 }\lambda_{T}\left(  y\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }x\in
@@ -12855,9 +12856,9 @@ where $A_{n}\left[  \dfrac{\sim k}{\sim n}\right]  $ is the matrix obtained
 from $A_{n}$ by removing the $n$-th row and the $k$-th column.
 
 Now, the matrix $A_{n}\left[  \dfrac{\sim k}{\sim n}\right]  $ turns out to be
-a block-triangular matrix\footnote{Here, when I say ``block-triangular matrix'',
-I always mean a block-triangular matrix whose diagonal blocks are square
-matrices.}, with the left upper block (of size $\left(  k-1\right)
+a block-triangular matrix\footnote{Here, when I say ``block-triangular
+matrix'', I always mean a block-triangular matrix whose diagonal blocks are
+square matrices.}, with the left upper block (of size $\left(  k-1\right)
 \times\left(  k-1\right)  $) being equal to $A_{k-1}$ and the right lower
 block (of size $\left(  n-k\right)  \times\left(  n-k\right)  $) being a lower
 triangular matrix with the numbers $k,$ $k+1,$ $...,$ $n-1$ on its diagonal.
@@ -13987,39 +13988,46 @@ This proves Proposition 10.36.
 Proposition 10.36 in the same way as we proved Theorem 10.27 with the help of
 Proposition 10.24. We leave the details to the reader.
 
-\section*{References}
+\begin{thebibliography}{999999999}                                                                                        %
 
-[1] William Fulton, Serge Lang, \textit{Riemann-Roch algebra}, New York 1985.
 
-[2] Donald Knutson, $\lambda$\textit{-Rings and the Representation Theory of
-the Symmetric Group}, New York 1973.
+\bibitem[FulLan85]{FulLan85}William Fulton, Serge Lang, \textit{Riemann-Roch
+algebra}, Grundlehren der mathematischen Wissenschaften \#277, Springer, New
+York 1985.
 
-[3] M. F. Atiyah, I. G. Macdonald, \textit{Introduction to Commutative
-Algebra}, Addison-Wesley 1969.
+\bibitem[Knut73]{Knut73}Donald Knutson, $\lambda$\textit{-Rings and the
+Representation Theory of the Symmetric Group}, Lecture Notes in Mathematics
+\#308, Springer, New York 1973.
 
-[4] Robin Hartshorne, \textit{Algebraic Geometry}, Springer 1977.
+\bibitem[AtiMac69]{AtiMac69}M. F. Atiyah, I. G. Macdonald,
+\textit{Introduction to Commutative Algebra}, Addison-Wesley 1969.
 
-[5] Michiel Hazewinkel, \textit{Niceness theorems}, arXiv:0810.5691v1
-[math.HO], 2008.\newline\texttt{http://arxiv.org/abs/0810.5691}
+\bibitem[Harts77]{Harts77}Robin Hartshorne, \textit{Algebraic Geometry},
+Graduate Texts in Mathematics \#52, Springer 1977.
 
-[6] Michiel Hazewinkel, \textit{Witt vectors. Part 1}, arXiv:0804.3888v1
-[math.RA], 2008.\newline\texttt{http://arxiv.org/abs/0804.3888}
+\bibitem[Hazewi08a]{Hazewi08a}Michiel Hazewinkel, \textit{Niceness theorems},
+arXiv:0810.5691v1 [math.HO], 2008.\newline\url{http://arxiv.org/abs/0810.5691v1}
 
-[7] Wolfang K. Seiler, $\lambda$\textit{-rings and Adams operations in
-algebraic K-Theory}, in: M. Rapoport, N. Schappacher, P. Schneider (eds.),
-\textit{Beilinson's Conjectures on Special Values of }$L$\textit{-functions},
-Academic Press 1988, pp. 93-102.
+\bibitem[Hazewi08b]{Hazewi08b}Michiel Hazewinkel, \textit{Witt vectors. Part
+1}, arXiv:0804.3888v1 [math.RA], 2008.\newline\url{http://arxiv.org/abs/0804.3888v1}
 
-[8] Darij Grinberg, \textit{Witt\#4a: Equigraded power series}.\newline%
-\texttt{www.cip.ifi.lmu.de/\symbol{126}grinberg/algebra/witt4a.pdf}
+\bibitem[Seiler88]{Seiler88}Wolfang K. Seiler, $\lambda$\textit{-rings and
+Adams operations in algebraic K-Theory}, in: M. Rapoport, N. Schappacher, P.
+Schneider (eds.), \textit{Beilinson's Conjectures on Special Values of }%
+$L$\textit{-functions}, Academic Press 1988, pp. 93--102.
 
-[9] John R. Hopkinson, \textit{Universal Polynomials in Lambda rings and the
-K-theory of the infinite loop space }$tmf$, PhD thesis at MIT, June
-2006.\newline\texttt{http://dspace.mit.edu/handle/1721.1/34544}
+\bibitem[Grin-w4a]{Grin-w4a}Darij Grinberg, \textit{Witt\#4a: Equigraded power
+series}.\newline\url{http://www.cip.ifi.lmu.de/~grinberg/algebra/witt4a.pdf}
 
-[10] Donald Yau, \textit{Lambda-rings}, World Scientific 2010.\newline%
-\texttt{http://www.worldscientific.com/worldscibooks/10.1142/7664}%
-\newline(includes downloadable Chapter 1).
+\bibitem[Hopkin06]{Hopkin06}John R. Hopkinson, \textit{Universal Polynomials
+in Lambda rings and the K-theory of the infinite loop space }$tmf$, PhD thesis
+at MIT, June 2006.\newline\url{http://dspace.mit.edu/handle/1721.1/34544}
+
+\bibitem[Yau10]{Yau10}Donald Yau, \textit{Lambda-rings}, World Scientific
+2010.\newline%
+\url{http://www.worldscientific.com/worldscibooks/10.1142/7664}\newline%
+(includes downloadable Chapter 1).
+\end{thebibliography}
 
 
 \end{document}
