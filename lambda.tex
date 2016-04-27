@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, April 26, 2016 21:10:01}
+%TCIDATA{LastRevised=Tuesday, April 26, 2016 21:20:19}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -433,14 +433,20 @@ to define than the ones in Sections 5 and later), they are the basis of our theo
 
 \begin{quote}
 \textbf{Definition.} \textbf{1)} Let $K$ be a ring. Let $\lambda
-^{i}:K\rightarrow K$ be a mapping\footnote{Here, ``mapping'' actually means
-``mapping'' and not ``group homomorphism'' or ``ring homomorphism''.} for
-every $i\in\mathbb{N}$ such that $\lambda^{0}\left(  x\right)  =1$ and
-$\lambda^{1}\left(  x\right)  =x$ for every $x\in K$. Assume that%
+^{i}:K\rightarrow K$ be a mapping\footnote{Here, \textquotedblleft
+mapping\textquotedblright\ actually means \textquotedblleft
+mapping\textquotedblright\ and not \textquotedblleft group
+homomorphism\textquotedblright\ or \textquotedblleft ring
+homomorphism\textquotedblright.} for every $i\in\mathbb{N}$ such that%
+\begin{equation}
+\lambda^{0}\left(  x\right)  =1\text{ and }\lambda^{1}\left(  x\right)
+=x\ \ \ \ \ \ \ \ \ \ \text{for every }x\in K.\label{lambda0}%
+\end{equation}
+Assume that%
 \begin{equation}
 \lambda^{k}\left(  x+y\right)  =\sum_{i=0}^{k}\lambda^{i}\left(  x\right)
 \lambda^{k-i}\left(  y\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }%
-k\in\mathbb{N},\text{ }x\in K\text{ and }y\in K. \label{lambda1}%
+k\in\mathbb{N},\text{ }x\in K\text{ and }y\in K.\label{lambda1}%
 \end{equation}
 Then, we call $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)
 $ a $\lambda$\textit{-ring}. We will also call $K$ itself a $\lambda$-ring if
@@ -862,21 +868,75 @@ a\right)  S^{\alpha i}$ for every $i\in\mathbb{N}$.
 \end{quote}
 
 \begin{proof}
-[Proof of Theorem 3.3.]\textbf{(a)} Define a map $\overline{\lambda}%
-_{T}:K\left[  S\right]  \rightarrow\left(  K\left[  S\right]  \right)  \left[
-\left[  T\right]  \right]  $ by $\overline{\lambda}_{T}\left(  u\right)
-=\sum\limits_{i\in\mathbb{N}}\overline{\lambda}^{i}\left(  u\right)  T^{i}$
-for every $u\in K\left[  S\right]  $. Then, according to the definition of the
-maps $\overline{\lambda}^{i}$, we have $\overline{\lambda}_{T}\left(
-\sum\limits_{j\in\mathbb{N}}a_{j}S^{j}\right)  =\prod\limits_{j\in\mathbb{N}%
-}\lambda_{S^{j}T}\left(  a_{j}\right)  \in\left(  K\left[  S\right]  \right)
-\left[  \left[  T\right]  \right]  $ for every $\sum\limits_{j\in\mathbb{N}%
-}a_{j}S^{j}\in K\left[  S\right]  $ (with $a_{j}\in K$ for every
-$j\in\mathbb{N}$).
+[Proof of Theorem 3.3.]For every $x\in K$, we have
+\begin{align}
+\lambda_{S^{j}T}\left(  x\right)    & =\sum\limits_{i\in\mathbb{N}}\lambda
+^{i}\left(  x\right)  \left(  S^{j}T\right)  ^{i}\ \ \ \ \ \ \ \ \ \ \left(
+\text{since }\lambda_{T}\left(  x\right)  =\sum\limits_{i\in\mathbb{N}}%
+\lambda^{i}\left(  x\right)  T^{i}\right)  \nonumber\\
+& =\underbrace{\lambda^{0}\left(  x\right)  }_{\substack{=1\\\text{(by
+(\ref{lambda0}))}}}\underbrace{\left(  S^{j}T\right)  ^{0}}_{=1}%
++\underbrace{\lambda^{1}\left(  x\right)  }_{\substack{=x\\\text{(by
+(\ref{lambda0}))}}}\underbrace{\left(  S^{j}T\right)  ^{1}}_{=S^{j}T}%
++\sum\limits_{i\geq2}\lambda^{i}\left(  x\right)  \underbrace{\left(
+S^{j}T\right)  ^{i}}_{=S^{ji}T^{i}}\nonumber\\
+& =1+xS^{j}T+\underbrace{\sum\limits_{i\geq2}\lambda^{i}\left(  x\right)
+S^{ji}T^{i}}_{\substack{=\left(  \text{sum of terms divisible by }%
+T^{2}\right)  \\\text{(since }T^{2}\mid T^{i}\text{ for every }i\geq2\text{)}%
+}}\nonumber\\
+& =1+xS^{j}T+\left(  \text{sum of terms divisible by }T^{2}\right)
+.\label{thm.3.3.pf.1}%
+\end{align}
 
-But by Theorem 2.1 \textbf{(a)}, proving that $\left(  K\left[  S\right]
-,\left(  \overline{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a
-$\lambda$-ring boils down to verifying that%
+
+\textbf{(a)} Define a map $\overline{\lambda}_{T}:K\left[  S\right]
+\rightarrow\left(  K\left[  S\right]  \right)  \left[  \left[  T\right]
+\right]  $ by%
+\begin{equation}
+\overline{\lambda}_{T}\left(  u\right)  =\sum\limits_{i\in\mathbb{N}}%
+\overline{\lambda}^{i}\left(  u\right)  T^{i}\ \ \ \ \ \ \ \ \ \ \text{for
+every }u\in K\left[  S\right]  .\label{thm.3.3.pf.a.1}%
+\end{equation}
+Then, according to the definition of the maps $\overline{\lambda}^{i}$, we
+have $\overline{\lambda}_{T}\left(  \sum\limits_{j\in\mathbb{N}}a_{j}%
+S^{j}\right)  =\prod\limits_{j\in\mathbb{N}}\lambda_{S^{j}T}\left(
+a_{j}\right)  \in\left(  K\left[  S\right]  \right)  \left[  \left[  T\right]
+\right]  $ for every $\sum\limits_{j\in\mathbb{N}}a_{j}S^{j}\in K\left[
+S\right]  $ (with $a_{j}\in K$ for every $j\in\mathbb{N}$). Hence, for every
+$u\in K\left[  S\right]  $, we have%
+\begin{equation}
+\sum\limits_{i\in\mathbb{N}}\overline{\lambda}^{i}\left(  u\right)
+T^{i}=1+uT+\left(  \text{sum of terms divisible by }T^{2}\right)
+\label{thm.3.3.pf.a.2}%
+\end{equation}
+in $\left(  K\left[  S\right]  \right)  \left[  \left[  T\right]  \right]
+$\ \ \ \ \footnote{\textit{Proof of (\ref{thm.3.3.pf.a.2}):} Let $u\in
+K\left[  S\right]  $. Write $u$ in the form $u=\sum\limits_{j\in\mathbb{N}%
+}a_{j}S^{j}$, where $a_{j}\in K$ for every $j\in\mathbb{N}$. Then,
+(\ref{thm.3.3.pf.a.1}) yields%
+\begin{align*}
+\sum\limits_{i\in\mathbb{N}}\overline{\lambda}^{i}\left(  u\right)  T^{i}  &
+=\overline{\lambda}_{T}\left(  \underbrace{u}_{=\sum\limits_{j\in\mathbb{N}%
+}a_{j}S^{j}}\right)  =\overline{\lambda}_{T}\left(  \sum\limits_{j\in
+\mathbb{N}}a_{j}S^{j}\right)  =\prod\limits_{j\in\mathbb{N}}%
+\underbrace{\lambda_{S^{j}T}\left(  a_{j}\right)  }_{\substack{=1+a_{j}%
+S^{j}T+\left(  \text{sum of terms divisible by }T^{2}\right)  \\\text{(by
+(\ref{thm.3.3.pf.1}), applied to }x=a_{j}\text{)}}}\\
+& =\prod\limits_{j\in\mathbb{N}}\left(  1+a_{j}S^{j}T+\left(  \text{sum of
+terms divisible by }T^{2}\right)  \right)  \\
+& =1+\underbrace{\left(  \sum\limits_{j\in\mathbb{N}}a_{j}S^{j}\right)  }%
+_{=u}T+\left(  \text{sum of terms divisible by }T^{2}\right)  \\
+& =1+uT+\left(  \text{sum of terms divisible by }T^{2}\right)  .
+\end{align*}
+This proves (\ref{thm.3.3.pf.a.2}).}. Hence, every $u\in K\left[  S\right]  $,
+we have $\overline{\lambda}^{0}\left(  u\right)  =1$ (this is obtained by
+comparing coefficients before $T^{0}$ in the equality (\ref{thm.3.3.pf.a.2}))
+and $\overline{\lambda}^{1}\left(  u\right)  =u$ (this is obtained by
+comparing coefficients before $T^{1}$ in the equality (\ref{thm.3.3.pf.a.2})).
+
+Therefore, by Theorem 2.1 \textbf{(a)}, proving that $\left(  K\left[
+S\right]  ,\left(  \overline{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $
+is a $\lambda$-ring boils down to verifying that%
 \[
 \overline{\lambda}_{T}\left(  \sum\limits_{j\in\mathbb{N}}a_{j}S^{j}%
 +\sum\limits_{j\in\mathbb{N}}b_{j}S^{j}\right)  =\overline{\lambda}_{T}\left(
@@ -892,9 +952,10 @@ clear, because%
 _{T}\left(  \sum\limits_{j\in\mathbb{N}}\left(  a_{j}+b_{j}\right)
 S^{j}\right)  =\prod\limits_{j\in\mathbb{N}}\underbrace{\lambda_{S^{j}%
 T}\left(  a_{j}+b_{j}\right)  }_{\substack{=\lambda_{S^{j}T}\left(
-a_{j}\right)  \cdot\lambda_{S^{j}T}\left(  b_{j}\right)  ,\\\text{since
+a_{j}\right)  \cdot\lambda_{S^{j}T}\left(  b_{j}\right)  \\\text{(since
 }\lambda_{T}\left(  a_{j}+b_{j}\right)  =\lambda_{T}\left(  a_{j}\right)
-\cdot\lambda_{T}\left(  b_{j}\right)  \\\text{by Theorem 2.1 \textbf{(a)}}}}\\
+\cdot\lambda_{T}\left(  b_{j}\right)  \\\text{by Theorem 2.1 \textbf{(a)})}%
+}}\\
 &  =\prod\limits_{j\in\mathbb{N}}\lambda_{S^{j}T}\left(  a_{j}\right)
 \cdot\prod\limits_{j\in\mathbb{N}}\lambda_{S^{j}T}\left(  b_{j}\right)
 =\overline{\lambda}_{T}\left(  \sum\limits_{j\in\mathbb{N}}a_{j}S^{j}\right)
