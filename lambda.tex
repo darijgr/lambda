@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, April 26, 2016 23:25:05}
+%TCIDATA{LastRevised=Tuesday, April 26, 2016 23:39:07}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -997,9 +997,6 @@ $3,$ $...$ is a zero-divisor. Let $E$ be a subset of $K$ that generates $K$ as
 a ring. Assume that $n!\mid x\cdot\left(  x-1\right)  \cdot...\cdot\left(
 x-n+1\right)  $ for every $x\in E$ and every $n\in\mathbb{N}$. Prove that $K$
 is a binomial ring.
-
-{\small [One of the reasons I include this exercise here that I am looking for
-a nice solution.]}
 
 \textit{Exercise 3.3.} \textbf{(a)} Let $K$ be a binomial ring. Let $p\in
 K\left[  \left[  T\right]  \right]  $ be a formal power series with
@@ -10413,7 +10410,7 @@ $a$ and $b$ are two integers such that $b\neq0$, and if $n\in\mathbb{N}$,
 then
 \begin{equation}
 \text{there exists some }N\in\mathbb{N}\text{ such that }b^{N}\dbinom{a/b}%
-{n}\in\mathbb{Z}.\label{sol.3.1.sol3.1}%
+{n}\in\mathbb{Z}. \label{sol.3.1.sol3.1}%
 \end{equation}
 
 
@@ -10429,10 +10426,10 @@ $b=p^{i}$) shows that there exists some $N\in\mathbb{N}$ such that $\left(
 p^{i}\right)  ^{N}\dbinom{u/p^{i}}{n}\in\mathbb{Z}$. Consider this $N$. We
 have $x=\dfrac{u}{p^{i}}=u/p^{i}$, so that
 \begin{align*}
-\dbinom{x}{n}  & =\dbinom{u/p^{i}}{n}\in\dfrac{1}{\left(  p^{i}\right)  ^{N}%
+\dbinom{x}{n}  &  =\dbinom{u/p^{i}}{n}\in\dfrac{1}{\left(  p^{i}\right)  ^{N}%
 }\mathbb{Z}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  p^{i}\right)
-^{N}\dbinom{u/p^{i}}{n}\in\mathbb{Z}\right)  \\
-& \subseteq\left\{  1,p,p^{2},...\right\}  ^{-1}\mathbb{Z}.
+^{N}\dbinom{u/p^{i}}{n}\in\mathbb{Z}\right) \\
+&  \subseteq\left\{  1,p,p^{2},...\right\}  ^{-1}\mathbb{Z}.
 \end{align*}
 
 
@@ -10451,31 +10448,69 @@ and $i\in\mathbb{N}$. It remains to show that $\dbinom{x}{i}\in K$ for every
 $x\in K$ and $i\in\mathbb{N}$, given that $\dbinom{x}{i}\in K$ for every $x\in
 E$ and $i\in\mathbb{N}$.
 
-This will follow once we have seen that for $i\in\mathbb{N}$ fixed,
+This will follow once we show the following three claims:
 
-\begin{itemize}
-\item the polynomial $\dbinom{X+Y}{i}\in\mathbb{Q}\left[  X,Y\right]  $ is a
-polynomial in $\dbinom{X}{0},$ $\dbinom{X}{1},$ $...,$ $\dbinom{X}{i},$
-$\dbinom{Y}{0},$ $\dbinom{Y}{1},$ $...,$ $\dbinom{Y}{i}$ with integer coefficients;
+\textit{Claim 1:} Let $i\in\mathbb{N}$. Then, the polynomial $\dbinom{X+Y}%
+{i}\in\mathbb{Q}\left[  X,Y\right]  $ is a polynomial in $\dbinom{X}{0},$
+$\dbinom{X}{1},$ $...,$ $\dbinom{X}{i},$ $\dbinom{Y}{0},$ $\dbinom{Y}{1},$
+$...,$ $\dbinom{Y}{i}$ with integer coefficients.
 
-\item the polynomial $\dbinom{-X}{i}\in\mathbb{Q}\left[  X\right]  $ is a
-polynomial in $\dbinom{X}{0},$ $\dbinom{X}{1},$ $...,$ $\dbinom{X}{i}$ with
-integer coefficients;
+\textit{Claim 2:} Let $i\in\mathbb{N}$. Then, the polynomial $\dbinom{-X}%
+{i}\in\mathbb{Q}\left[  X\right]  $ is a polynomial in $\dbinom{X}{0},$
+$\dbinom{X}{1},$ $...,$ $\dbinom{X}{i}$ with integer coefficients.
 
-\item the polynomial $\dbinom{XY}{i}\in\mathbb{Q}\left[  X,Y\right]  $ is a
-polynomial in $\dbinom{X}{0},$ $\dbinom{X}{1},$ $...,$ $\dbinom{X}{i},$
-$\dbinom{Y}{0},$ $\dbinom{Y}{1},$ $...,$ $\dbinom{Y}{i}$ with integer coefficients.
-\end{itemize}
+\textit{Claim 3:} Let $i\in\mathbb{N}$. Then, the polynomial $\dbinom{XY}%
+{i}\in\mathbb{Q}\left[  X,Y\right]  $ is a polynomial in $\dbinom{X}{0},$
+$\dbinom{X}{1},$ $...,$ $\dbinom{X}{i},$ $\dbinom{Y}{0},$ $\dbinom{Y}{1},$
+$...,$ $\dbinom{Y}{i}$ with integer coefficients.
 
-The first of these three properties follows from (\ref{vandermonde}) (applied
-to $x=X$ and $y=Y$, which is not tragic since it holds in every binomial ring,
-in particular $\mathbb{Q}\left[  X,Y\right]  $). The second one follows from
-the first one and the identity $\dbinom{-x}{i}=\left(  -1\right)  ^{i}%
-\dbinom{x+i-1}{i}$ for every $x\in\mathbb{Z}$ and $i\in\mathbb{N}$ (this is
-the so-called \textit{upper negation identity}). The third one, alas, doesn't
-seem to be that easy. One way to prove it is to use the proof of Theorem 7.1
-below. Another, more elementary way (leading to a different polynomial!!) is
-by recalling the fact (\cite[Proposition I.7.3]{Harts77}) that the subset%
+\textit{Proof of Claim 1:} In our proof of Theorem 3.1, we have proven the
+identity (\ref{vandermonde}) for every $k\in\mathbb{N}$, $x\in\mathbb{Z}$ and
+$y\in\mathbb{Z}$. Renaming $i$ as $j$ in this identity, we can rewrite it as%
+\[
+\dbinom{x+y}{k}=\sum_{j=0}^{k}\dbinom{x}{j}\dbinom{y}{k-j}.
+\]
+Applying this to $k=i$, we obtain%
+\begin{equation}
+\dbinom{x+y}{i}=\sum_{j=0}^{i}\dbinom{x}{j}\dbinom{y}{i-j}.
+\label{sol.3.2.cl1.pf.0}%
+\end{equation}
+
+
+Now, in the polynomial ring $\mathbb{Q}\left[  X,Y\right]  $, we have the
+following equality:%
+\begin{equation}
+\dbinom{X+Y}{i}=\sum_{j=0}^{i}\dbinom{X}{j}\dbinom{Y}{i-j}.
+\label{sol.3.2.cl1.pf.1}%
+\end{equation}
+(\textit{Proof of (\ref{sol.3.2.cl1.pf.1}):} Both sides of the equality
+(\ref{sol.3.2.cl1.pf.1}) are polynomials in $X$ and $Y$ with rational
+coefficients. Hence, in order to prove this equality, we only need to check
+that it holds whenever it is evaluated at $X=x$ and $Y=y$ for two nonnegative
+integers $x$ and $y$. But the latter follows from (\ref{sol.3.2.cl1.pf.0}).
+Thus, (\ref{sol.3.2.cl1.pf.1}) is proven.)
+
+The equality (\ref{sol.3.2.cl1.pf.1}) immediately proves Claim 2.
+
+\textit{Proof of Claim 2:} We have the identity $\dbinom{-X}{i}=\left(
+-1\right)  ^{i}\dbinom{X+i-1}{i}$ (this is the so-called \textit{upper
+negation identity}). Thus,%
+\[
+\dbinom{-X}{i}=\left(  -1\right)  ^{i}\underbrace{\dbinom{X+i-1}{i}%
+}_{\substack{=\sum_{j=0}^{i}\dbinom{X}{j}\dbinom{i-1}{i-j}\\\text{(by
+(\ref{sol.3.2.cl1.pf.1}), with }i-1\text{ substituted for }Y\text{)}}}=\left(
+-1\right)  ^{i}\sum_{j=0}^{i}\dbinom{X}{j}\dbinom{i-1}{i-j}.
+\]
+This proves Claim 2.
+
+Claim 3 is noticeably harder than each of Claims 1 and Claim 2. One way to
+prove Claim 3 is to use the proof of Theorem 7.1 below. For a completely
+elementary (combinatorial) proof of Claim 3 (leading to a different
+polynomial!!), see \cite[Exercise 2]{Grin-detn}. Let me finally sketch a third
+proof of Claim 3:
+
+\textit{Proof of Claim 3:} Recalling the fact (\cite[Proposition
+I.7.3]{Harts77}) that the subset%
 \[
 \left\{  p\in\mathbb{Q}\left[  X\right]  \text{ }\mid\ p\left(  n\right)
 \in\mathbb{Z}\text{ for every }n\in\mathbb{Z}\right\}
@@ -10491,7 +10526,20 @@ $-linear span of the polynomials $\dbinom{X}{0},$ $\dbinom{X}{1},$ $\dbinom
 of the polynomial ring $\mathbb{Q}\left[  X,Y\right]  $ is the $\mathbb{Z}%
 $-linear span of the polynomials $\dbinom{X}{i}\dbinom{Y}{j}$ for
 $i\in\mathbb{N}$ and $j\in\mathbb{N}$. Of course, the polynomial $\dbinom
-{XY}{i}$ belongs to this subset, so all we need is proven.
+{XY}{i}$ belongs to this subset, so we conclude that it belongs to this
+$\mathbb{Z}$-linear span. This proves Claim 3 again.
+
+Now, all three Claims 1, 2 and 3 are proven. Using these claims, we can see
+(by induction) that the values%
+\[
+\dbinom{x}{i}\ \ \ \ \ \ \ \ \ \ \text{for }x\in K\text{ and }i\in\mathbb{N}%
+\]
+can be written as polynomials (with integer coefficients) in the values%
+\[
+\dbinom{x}{i}\ \ \ \ \ \ \ \ \ \ \text{for }x\in E\text{ and }i\in\mathbb{N}.
+\]
+Since we have assumed that the latter values belong to $K$, we can therefore
+conclude that the former values also belong to $K$. This solves the exercise.
 
 \textit{Exercise 3.3: Hints to solution:} \textbf{(a)} Use Theorem 2.1
 \textbf{(a)} and $\left(  1+pT\right)  ^{x}\left(  1+pT\right)  ^{y}=\left(
