@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, April 28, 2016 00:27:45}
+%TCIDATA{LastRevised=Thursday, April 28, 2016 00:31:55}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -136,9 +136,17 @@ literature (including \cite{Knut73}, \cite{Hazewi08a}, \cite{Hazewi08b} and
 \cite{Yau10}) denotes as \textit{pre-}$\lambda$\textit{-rings} what we call
 $\lambda$-rings and denotes as $\lambda$\textit{-rings} what we call special
 $\lambda$-rings. Even worse, the notations in \cite{FulLan85} are totally
-inconsistent\footnote{Often, ``$\lambda$-ring'' in \cite{FulLan85} means
-``$\lambda$-ring with a positive structure'' (such $\lambda$-rings are
-automatically special), but sometimes it simply means ``$\lambda$-ring''.}.
+inconsistent\footnote{Often, \textquotedblleft$\lambda$-ring\textquotedblright%
+\ in \cite{FulLan85} means \textquotedblleft$\lambda$-ring with a positive
+structure\textquotedblright\ (such $\lambda$-rings are automatically special),
+but sometimes it simply means \textquotedblleft$\lambda$%
+-ring\textquotedblright.}.
+
+\item When we say \textquotedblleft monoid\textquotedblright, we always mean a
+monoid with a neutral element. (The analogous notion without a neutral element
+is called \textquotedblleft semigroup\textquotedblright.) \textquotedblleft
+Monoid homomorphisms\textquotedblright\ have to send the neutral element of
+the domain to the neutral element of the target.
 
 \item Most times you read an expression with a $\sum$ or a $\prod$ sign in
 mathematical literature, you know clearly what it means (e. g., the expression
@@ -151,20 +159,21 @@ $\prod\limits_{k=1}^{n}\left(  \left(  \sin k\right)  \cdot n\right)  $ ? The
 answer depends on the author of the text.\newline In \textit{this} text, the
 following convention should be resorted to when parsing an expression with
 $\sum$ or $\prod$ signs:\newline The argument of a $\prod$ sign ends as early
-as reasonably possible. Here, ``reasonably possible'' means that it cannot end
-before the last time the index of the product appears (e. g., the argument of
-$\prod\limits_{k=1}^{n}\sin k\cdot n$ cannot end before the last appearance of
-$k$), that it cannot end inside a bracket (e. g., the argument of
-$\prod\limits_{k=1}^{n}\left(  \left(  \sin k\right)  \cdot n\right)  $ cannot
-end before the end of the $n$), that it cannot end between a symbol and its
-exponent or index or between a function symbol or its arguments, and that the
-usual rules of precedence have to apply. For example, the expression
-$\prod\limits_{k=1}^{n}\sin k\cdot n$ has to be read as $\left(
-\prod\limits_{k=1}^{n}\sin k\right)  \cdot n$, and the expression
-$\prod\limits_{k=1}^{n}\sin k\cdot\left(  \cos k\right)  ^{2}k\cdot\left(
-n+1\right)  kn$ has to be read as $\left(  \prod\limits_{k=1}^{n}\left(  \sin
-k\cdot\left(  \cos k\right)  ^{2}\cdot\left(  n+1\right)  k\right)  \right)
-n$.\newline Similar rules apply to the parsing of a sum expression.
+as reasonably possible. Here, \textquotedblleft reasonably
+possible\textquotedblright\ means that it cannot end before the last time the
+index of the product appears (e. g., the argument of $\prod\limits_{k=1}%
+^{n}\sin k\cdot n$ cannot end before the last appearance of $k$), that it
+cannot end inside a bracket (e. g., the argument of $\prod\limits_{k=1}%
+^{n}\left(  \left(  \sin k\right)  \cdot n\right)  $ cannot end before the end
+of the $n$), that it cannot end between a symbol and its exponent or index or
+between a function symbol or its arguments, and that the usual rules of
+precedence have to apply. For example, the expression $\prod\limits_{k=1}%
+^{n}\sin k\cdot n$ has to be read as $\left(  \prod\limits_{k=1}^{n}\sin
+k\right)  \cdot n$, and the expression $\prod\limits_{k=1}^{n}\sin
+k\cdot\left(  \cos k\right)  ^{2}k\cdot\left(  n+1\right)  kn$ has to be read
+as $\left(  \prod\limits_{k=1}^{n}\left(  \sin k\cdot\left(  \cos k\right)
+^{2}\cdot\left(  n+1\right)  k\right)  \right)  n$.\newline Similar rules
+apply to the parsing of a sum expression.
 \end{itemize}
 
 \section{Motivations}
@@ -905,7 +914,7 @@ T^{2}\right)  \\\text{(since }T^{2}\mid T^{i}\text{ for every }i\geq2\text{)}%
 \begin{equation}
 \overline{\lambda}_{T}\left(  u\right)  =\sum\limits_{i\in\mathbb{N}}%
 \overline{\lambda}^{i}\left(  u\right)  T^{i}\ \ \ \ \ \ \ \ \ \ \text{for
-every }u\in K\left[  S\right]  .\label{thm.3.3.pf.a.1}%
+every }u\in K\left[  S\right]  . \label{thm.3.3.pf.a.1}%
 \end{equation}
 Then, according to the definition of the maps $\overline{\lambda}^{i}$, we
 have
@@ -929,7 +938,7 @@ K\left[  S\right]  $. Write $u$ in the form $u=\sum\limits_{j\in\mathbb{N}%
 }a_{j}S^{j}$, where $a_{j}\in K$ for every $j\in\mathbb{N}$. Then,
 (\ref{thm.3.3.pf.a.1}) yields%
 \begin{align*}
-\sum\limits_{i\in\mathbb{N}}\overline{\lambda}^{i}\left(  u\right)  T^{i} &
+\sum\limits_{i\in\mathbb{N}}\overline{\lambda}^{i}\left(  u\right)  T^{i}  &
 =\overline{\lambda}_{T}\left(  \underbrace{u}_{=\sum\limits_{j\in\mathbb{N}%
 }a_{j}S^{j}}\right)  =\overline{\lambda}_{T}\left(  \sum\limits_{j\in
 \mathbb{N}}a_{j}S^{j}\right)  =\prod\limits_{j\in\mathbb{N}}%
@@ -937,9 +946,9 @@ K\left[  S\right]  $. Write $u$ in the form $u=\sum\limits_{j\in\mathbb{N}%
 S^{j}T+\left(  \text{sum of terms divisible by }T^{2}\right)  \\\text{(by
 (\ref{thm.3.3.pf.1}), applied to }x=a_{j}\text{)}}}\\
 &  =\prod\limits_{j\in\mathbb{N}}\left(  1+a_{j}S^{j}T+\left(  \text{sum of
-terms divisible by }T^{2}\right)  \right)  \\
+terms divisible by }T^{2}\right)  \right) \\
 &  =1+\underbrace{\left(  \sum\limits_{j\in\mathbb{N}}a_{j}S^{j}\right)
-}_{=u}T+\left(  \text{sum of terms divisible by }T^{2}\right)  \\
+}_{=u}T+\left(  \text{sum of terms divisible by }T^{2}\right) \\
 &  =1+uT+\left(  \text{sum of terms divisible by }T^{2}\right)  .
 \end{align*}
 This proves (\ref{thm.3.3.pf.a.2}).}. Hence, for every $u\in K\left[
@@ -987,7 +996,7 @@ equality, we find%
 a_{j}+b_{j}\right)  =\lambda_{T}\left(  a_{j}\right)  \cdot\lambda_{T}\left(
 b_{j}\right)  \\\text{by Theorem 2.1 \textbf{(a)})}}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{thm.3.3.pf.a.lambdaol}), applied
-to }a_{j}+b_{j}\text{ instead of }a_{j}\right)  \\
+to }a_{j}+b_{j}\text{ instead of }a_{j}\right) \\
 &  =\underbrace{\prod\limits_{j\in\mathbb{N}}\lambda_{S^{j}T}\left(
 a_{j}\right)  }_{\substack{=\overline{\lambda}_{T}\left(  \sum\limits_{j\in
 \mathbb{N}}a_{j}S^{j}\right)  \\\text{(by (\ref{thm.3.3.pf.a.lambdaol}))}%
@@ -1049,10 +1058,10 @@ $\log\left(  1+T\right)  $ is the power series $\log\left(  1+T\right)
 \textbf{(b)} If $p=1$, prove that this $\lambda$-ring is the one defined in
 Theorem 3.2.
 
-\textit{Exercise 3.4.} Let $M$ be a commutative monoid with neutral element,
-written multiplicatively (this means, in particular, that we denote the
-neutral element of $M$ as $1$). Define a $\mathbb{Z}$-algebra $\mathbb{Z}%
-\left[  M\right]  $ as follows:
+\textit{Exercise 3.4.} Let $M$ be a commutative monoid, written
+multiplicatively (this means, in particular, that we denote the neutral
+element of $M$ as $1$). Define a $\mathbb{Z}$-algebra $\mathbb{Z}\left[
+M\right]  $ as follows:
 
 As a $\mathbb{Z}$-module, let $\mathbb{Z}\left[  M\right]  $ be the free
 $\mathbb{Z}$-module with the basis $M$. Let the multiplication on
@@ -1071,10 +1080,10 @@ before $T^{i}$.
 Prove that $\left(  \mathbb{Z}\left[  M\right]  ,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring.
 
-\textit{Exercise 3.5.} \textbf{(a)} Let $M$ be a commutative monoid with
-neutral element, written multiplicatively (this means, in particular, that we
-denote the neutral element of $M$ as $1$). Let $\left(  K,\left(  \lambda
-^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring.
+\textit{Exercise 3.5.} \textbf{(a)} Let $M$ be a commutative monoid, written
+multiplicatively (this means, in particular, that we denote the neutral
+element of $M$ as $1$). Let $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be a $\lambda$-ring.
 
 Define a $K$-algebra $K\left[  M\right]  $ as follows:
 
@@ -4131,15 +4140,15 @@ $\overline{\lambda}_{T}$ is a $\lambda$-ring homomorphism. This proves Theorem 7
 \subsection{Exercises}
 
 \begin{quotation}
-\textit{Exercise 7.1.} Let $M$ be a commutative monoid with neutral element.
-Prove that the $\lambda$-ring $\left(  \mathbb{Z}\left[  M\right]  ,\left(
-\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ defined in Exercise 3.4 is special.
+\textit{Exercise 7.1.} Let $M$ be a commutative monoid. Prove that the
+$\lambda$-ring $\left(  \mathbb{Z}\left[  M\right]  ,\left(  \lambda
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ defined in Exercise 3.4 is special.
 
-\textit{Exercise 7.2.} Let $M$ be a commutative monoid with neutral element.
-Let $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a
-special $\lambda$-ring. Prove that the $\lambda$-ring $\left(  K\left[
-M\right]  ,\left(  \overline{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $
-defined in Exercise 3.5 \textbf{(a)} is special.
+\textit{Exercise 7.2.} Let $M$ be a commutative monoid. Let $\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring.
+Prove that the $\lambda$-ring $\left(  K\left[  M\right]  ,\left(
+\overline{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $ defined in Exercise
+3.5 \textbf{(a)} is special.
 \end{quotation}
 
 \section{The $\lambda$-verification principle}
@@ -5159,6 +5168,8 @@ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
 \psi^{j}\left(  u_{1}+u_{2}+...+u_{m}\right)  =u_{1}^{j}+u_{2}^{j}%
 +...+u_{m}^{j}.
 \]
+
+
 
 \end{quote}
 
