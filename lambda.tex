@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, April 28, 2016 11:37:54}
+%TCIDATA{LastRevised=Thursday, April 28, 2016 19:48:14}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -13287,23 +13287,27 @@ where $A_{n}\left[  \dfrac{\sim k}{\sim n}\right]  $ is the matrix obtained
 from $A_{n}$ by removing the $n$-th row and the $k$-th column.
 
 Now, the matrix $A_{n}\left[  \dfrac{\sim k}{\sim n}\right]  $ turns out to be
-a block-triangular matrix\footnote{Here, when I say ``block-triangular
-matrix'', I always mean a block-triangular matrix whose diagonal blocks are
-square matrices.}, with the left upper block (of size $\left(  k-1\right)
-\times\left(  k-1\right)  $) being equal to $A_{k-1}$ and the right lower
-block (of size $\left(  n-k\right)  \times\left(  n-k\right)  $) being a lower
-triangular matrix with the numbers $k,$ $k+1,$ $...,$ $n-1$ on its diagonal.
-Hence, $\det\left(  A_{n}\left[  \dfrac{\sim k}{\sim n}\right]  \right)  =\det
+a block-triangular matrix\footnote{Here, when I say \textquotedblleft
+block-triangular matrix\textquotedblright, I always mean a block-triangular
+matrix whose diagonal blocks are square matrices.} (composed of four blocks),
+with the left upper block (of size $\left(  k-1\right)  \times\left(
+k-1\right)  $) being equal to $A_{k-1}$ and the right lower block (of size
+$\left(  n-k\right)  \times\left(  n-k\right)  $) being a lower triangular
+matrix with the numbers $k,$ $k+1,$ $...,$ $n-1$ on its diagonal. Hence,
+$\det\left(  A_{n}\left[  \dfrac{\sim k}{\sim n}\right]  \right)  =\det
 A_{k-1}\cdot\left(  k\left(  k+1\right)  ...\left(  n-1\right)  \right)  $
 (since the determinant of any block-triangular matrix is known to equal the
-product of the determinant of its diagonal blocks). Since we are proceeding by
-induction over $n$, we can take $\det A_{k-1}=\left(  k-1\right)
-!\lambda^{k-1}\left(  x\right)  $ for granted (since $k-1<n$), and thus obtain%
+product of the determinant of its diagonal blocks\footnote{See \cite[Exercise
+43]{Grin-detn} for a proof of this statement (at least in the case of a
+block-triangular matrix with four blocks; but this is precisely the case which
+we are using).}). Since we are proceeding by induction over $n$, we can take
+$\det A_{k-1}=\left(  k-1\right)  !\lambda^{k-1}\left(  x\right)  $ for
+granted (since $k-1<n$), and thus obtain%
 \begin{align*}
 \det\left(  A_{n}\left[  \dfrac{\sim k}{\sim n}\right]  \right)   &  =\det
 A_{k-1}\cdot\left(  k\left(  k+1\right)  ...\left(  n-1\right)  \right)
 =\left(  k-1\right)  !\lambda^{k-1}\left(  x\right)  \cdot\left(  k\left(
-k+1\right)  ...\left(  n-1\right)  \right) \\
+k+1\right)  ...\left(  n-1\right)  \right)  \\
 &  =\underbrace{\left(  k-1\right)  !\cdot\left(  k\left(  k+1\right)
 ...\left(  n-1\right)  \right)  }_{=\left(  n-1\right)  !}\cdot\lambda
 ^{k-1}\left(  x\right)  =\left(  n-1\right)  !\cdot\lambda^{k-1}\left(
