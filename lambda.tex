@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, April 28, 2016 19:48:14}
+%TCIDATA{LastRevised=Friday, April 29, 2016 01:36:29}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -503,11 +503,13 @@ We will now give an alternative characterization of $\lambda$-rings:
 
 \begin{quote}
 \textbf{Theorem 2.1.} Let $K$ be a ring. Let $\lambda^{i}:K\rightarrow K$ be a
-mapping\footnote{Here, ``mapping'' actually means ``mapping'' and not ``group
-homomorphism'' or ``ring homomorphism''.} for every $i\in\mathbb{N}$ such that
+mapping\footnote{Here, \textquotedblleft mapping\textquotedblright\ actually
+means \textquotedblleft mapping\textquotedblright\ and not \textquotedblleft
+group homomorphism\textquotedblright\ or \textquotedblleft ring
+homomorphism\textquotedblright.} for every $i\in\mathbb{N}$ such that
 $\lambda^{0}\left(  x\right)  =1$ and $\lambda^{1}\left(  x\right)  =x$ for
 every $x\in K$. Consider the ring $K\left[  \left[  T\right]  \right]  $ of
-formal series in the indeterminate $T$ over the ring $K.$ Define a map
+formal power series in the indeterminate $T$ over the ring $K$. Define a map
 $\lambda_{T}:K\rightarrow K\left[  \left[  T\right]  \right]  $ by
 \[
 \lambda_{T}\left(  x\right)  =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
@@ -515,7 +517,7 @@ x\right)  T^{i}\ \ \ \ \ \ \ \ \ \ \text{for every }x\in K.
 \]
 Note that the power series $\lambda_{T}\left(  x\right)  =\sum\limits_{i\in
 \mathbb{N}}\lambda^{i}\left(  x\right)  T^{i}$ has the coefficient
-$\lambda^{0}\left(  x\right)  =1$ before $T^{0};$ thus, it is invertible in
+$\lambda^{0}\left(  x\right)  =1$ before $T^{0}$; thus, it is invertible in
 $K\left[  \left[  T\right]  \right]  $.
 
 \textbf{(a)} Then,
@@ -548,11 +550,15 @@ $-ring $L$. Let $f:K\rightarrow L$ be a ring homomorphism. Consider the rings
 $K\left[  \left[  T\right]  \right]  $ and $L\left[  \left[  T\right]
 \right]  $. Obviously, the homomorphism $f$ induces a homomorphism $f\left[
 \left[  T\right]  \right]  :K\left[  \left[  T\right]  \right]  \rightarrow
-L\left[  \left[  T\right]  \right]  $ (defined by $\left(  f\left[  \left[
-T\right]  \right]  \right)  \left(  \sum\limits_{i\in\mathbb{N}}a_{i}%
-T^{i}\right)  =\sum\limits_{i\in\mathbb{N}}f\left(  a_{i}\right)  T^{i}$ for
-every $\sum\limits_{i\in\mathbb{N}}a_{i}T^{i}\in K\left[  \left[  T\right]
-\right]  $ with $a_{i}\in K$).
+L\left[  \left[  T\right]  \right]  $ (defined by
+\begin{align*}
+\left(  f\left[  \left[  T\right]  \right]  \right)  \left(  \sum
+\limits_{i\in\mathbb{N}}a_{i}T^{i}\right)    & =\sum\limits_{i\in\mathbb{N}%
+}f\left(  a_{i}\right)  T^{i}\\
+& \ \ \ \ \ \ \ \ \ \ \text{for every }\sum\limits_{i\in\mathbb{N}}a_{i}%
+T^{i}\in K\left[  \left[  T\right]  \right]  \text{ with }a_{i}\in K
+\end{align*}
+).
 
 Then, $f$ is a $\lambda$-ring homomorphism if and only if $\mu_{T}\circ
 f=f\left[  \left[  T\right]  \right]  \circ\lambda_{T}$.
@@ -783,7 +789,7 @@ $\lambda^{1}\left(  x\right)  =x$ for every $x\in\mathbb{Z}$. The only
 challenge, if there is a challenge in this proof, is to verify the identity
 (\ref{lambda1}) for $K=\mathbb{Z}$. In other words, we have to prove that%
 \begin{equation}
-\dbinom{x+y}{k}=\sum_{i=0}^{k}\dbinom{x}{i}\dbinom{y}{k-i} \label{vandermonde}%
+\dbinom{x+y}{k}=\sum_{i=0}^{k}\dbinom{x}{i}\dbinom{y}{k-i}\label{vandermonde}%
 \end{equation}
 for every $k\in\mathbb{N},$ $x\in\mathbb{Z}$ and $y\in\mathbb{Z}.$ This is the
 so-called \textit{Vandermonde convolution identity}, and probably its shortest
@@ -792,7 +798,7 @@ in both $x$ and $y$, so it is enough to prove it for all natural $x$ and $y$
 (because a polynomial identity holding for all natural variables must hold
 everywhere). But for $x$ and $y$ natural, we have%
 \begin{align*}
-\sum_{k=0}^{x+y}\sum_{i=0}^{k}\dbinom{x}{i}\dbinom{y}{k-i}T^{k}  &
+\sum_{k=0}^{x+y}\sum_{i=0}^{k}\dbinom{x}{i}\dbinom{y}{k-i}T^{k} &
 =\underbrace{\sum_{i=0}^{x}\dbinom{x}{i}T^{i}}_{\substack{=\left(  1+T\right)
 ^{x}\text{ by the}\\\text{binomial formula}}}\cdot\underbrace{\sum_{j=0}%
 ^{y}\dbinom{y}{j}T^{j}}_{\substack{=\left(  1+T\right)  ^{y}\text{ by
@@ -806,10 +812,10 @@ in the polynomial ring $\mathbb{Z}\left[  T\right]  $, and thus
 coefficients.\footnote{\textit{Remark.} It is tempting to apply this argument
 to the general case (where $x$ and $y$ are not required to be natural),
 because the binomial formula holds for negative exponents as well (of course,
-this requires working in the formal series ring $\mathbb{Z}\left[  \left[
-T\right]  \right]  $ rather than in the polynomial ring $\mathbb{Z}\left[
-T\right]  $), but I am not sure whether this argument is free of circular
-reasoning because it is not at all obvious that $\left(  1+T\right)
+this requires working in the formal power series ring $\mathbb{Z}\left[
+\left[  T\right]  \right]  $ rather than in the polynomial ring $\mathbb{Z}%
+\left[  T\right]  $), but I am not sure whether this argument is free of
+circular reasoning because it is not at all obvious that $\left(  1+T\right)
 ^{x}\left(  1+T\right)  ^{y}=\left(  1+T\right)  ^{x+y}$ in $\mathbb{Z}\left[
 \left[  T\right]  \right]  $ for negative $x$ and $y$, and I even fear that
 this is usually proven using (\ref{vandermonde}).} This proves Theorem 3.1
@@ -5193,8 +5199,6 @@ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
 +...+u_{m}^{j}.
 \]
 
-
-
 \end{quote}
 
 \begin{proof}
@@ -6325,6 +6329,8 @@ u\in\mathbf{Z}\left[  \left[  t\right]  \right]  ^{+}\right\} \\
 &  =\left\{  p\in\mathbf{Z}\left[  \left[  t\right]  \right]  \ \mid\ p\text{
 is a power series with constant term }1\right\}  .
 \end{align*}
+
+
 
 \end{quote}
 
@@ -13307,7 +13313,7 @@ granted (since $k-1<n$), and thus obtain%
 \det\left(  A_{n}\left[  \dfrac{\sim k}{\sim n}\right]  \right)   &  =\det
 A_{k-1}\cdot\left(  k\left(  k+1\right)  ...\left(  n-1\right)  \right)
 =\left(  k-1\right)  !\lambda^{k-1}\left(  x\right)  \cdot\left(  k\left(
-k+1\right)  ...\left(  n-1\right)  \right)  \\
+k+1\right)  ...\left(  n-1\right)  \right) \\
 &  =\underbrace{\left(  k-1\right)  !\cdot\left(  k\left(  k+1\right)
 ...\left(  n-1\right)  \right)  }_{=\left(  n-1\right)  !}\cdot\lambda
 ^{k-1}\left(  x\right)  =\left(  n-1\right)  !\cdot\lambda^{k-1}\left(
