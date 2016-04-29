@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, April 29, 2016 01:36:29}
+%TCIDATA{LastRevised=Friday, April 29, 2016 01:42:09}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -553,9 +553,9 @@ $K\left[  \left[  T\right]  \right]  $ and $L\left[  \left[  T\right]
 L\left[  \left[  T\right]  \right]  $ (defined by
 \begin{align*}
 \left(  f\left[  \left[  T\right]  \right]  \right)  \left(  \sum
-\limits_{i\in\mathbb{N}}a_{i}T^{i}\right)    & =\sum\limits_{i\in\mathbb{N}%
+\limits_{i\in\mathbb{N}}a_{i}T^{i}\right)   &  =\sum\limits_{i\in\mathbb{N}%
 }f\left(  a_{i}\right)  T^{i}\\
-& \ \ \ \ \ \ \ \ \ \ \text{for every }\sum\limits_{i\in\mathbb{N}}a_{i}%
+&  \ \ \ \ \ \ \ \ \ \ \text{for every }\sum\limits_{i\in\mathbb{N}}a_{i}%
 T^{i}\in K\left[  \left[  T\right]  \right]  \text{ with }a_{i}\in K
 \end{align*}
 ).
@@ -792,33 +792,38 @@ challenge, if there is a challenge in this proof, is to verify the identity
 \dbinom{x+y}{k}=\sum_{i=0}^{k}\dbinom{x}{i}\dbinom{y}{k-i}\label{vandermonde}%
 \end{equation}
 for every $k\in\mathbb{N},$ $x\in\mathbb{Z}$ and $y\in\mathbb{Z}.$ This is the
-so-called \textit{Vandermonde convolution identity}, and probably its shortest
-proof is to fix $k\in\mathbb{N}$, then notice that it is a polynomial identity
-in both $x$ and $y$, so it is enough to prove it for all natural $x$ and $y$
+so-called \textit{Vandermonde convolution identity}, and various proofs of it
+can easily be found in the literature\footnote{For example, it follows
+immediately from \cite[Theorem 3.3]{Grin-detn}.}. Probably the shortest proof
+of (\ref{vandermonde}) is the following: If we fix $k\in\mathbb{N}$, then
+(\ref{vandermonde}) is a polynomial identity in both $x$ and $y$ (indeed, both
+sides of (\ref{vandermonde}) are polynomials in $x$ and $y$ with rational
+coefficients), and thus it is enough to prove it for all natural $x$ and $y$
 (because a polynomial identity holding for all natural variables must hold
 everywhere). But for $x$ and $y$ natural, we have%
 \begin{align*}
 \sum_{k=0}^{x+y}\sum_{i=0}^{k}\dbinom{x}{i}\dbinom{y}{k-i}T^{k} &
 =\underbrace{\sum_{i=0}^{x}\dbinom{x}{i}T^{i}}_{\substack{=\left(  1+T\right)
-^{x}\text{ by the}\\\text{binomial formula}}}\cdot\underbrace{\sum_{j=0}%
-^{y}\dbinom{y}{j}T^{j}}_{\substack{=\left(  1+T\right)  ^{y}\text{ by
-the}\\\text{binomial formula}}}\\
+^{x}\\\text{(by the}\\\text{binomial formula)}}}\cdot\underbrace{\sum
+_{j=0}^{y}\dbinom{y}{j}T^{j}}_{\substack{=\left(  1+T\right)  ^{y}\\\text{(by
+the}\\\text{binomial formula)}}}\\
 &  =\left(  1+T\right)  ^{x}\cdot\left(  1+T\right)  ^{y}=\left(  1+T\right)
 ^{x+y}=\sum_{k=0}^{x+y}\dbinom{x+y}{k}T^{k}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the binomial formula}\right)
 \end{align*}
-in the polynomial ring $\mathbb{Z}\left[  T\right]  $, and thus
-(\ref{vandermonde}) follows by comparison of
-coefficients.\footnote{\textit{Remark.} It is tempting to apply this argument
-to the general case (where $x$ and $y$ are not required to be natural),
-because the binomial formula holds for negative exponents as well (of course,
-this requires working in the formal power series ring $\mathbb{Z}\left[
-\left[  T\right]  \right]  $ rather than in the polynomial ring $\mathbb{Z}%
-\left[  T\right]  $), but I am not sure whether this argument is free of
-circular reasoning because it is not at all obvious that $\left(  1+T\right)
+in the polynomial ring $\mathbb{Z}\left[  T\right]  $. Comparing coefficients
+before $T^{k}$ in this equality, we quickly conclude that (\ref{vandermonde})
+holds for each $k\in\mathbb{N}$. Thus, (\ref{vandermonde}) is
+proven.\footnote{\textit{Remark.} It is tempting to apply this argument to the
+general case (where $x$ and $y$ are not required to be natural), because the
+binomial formula holds for negative exponents as well (of course, this
+requires working in the formal power series ring $\mathbb{Z}\left[  \left[
+T\right]  \right]  $ rather than in the polynomial ring $\mathbb{Z}\left[
+T\right]  $), but I am not sure whether this argument is free of circular
+reasoning because it is not at all obvious that $\left(  1+T\right)
 ^{x}\left(  1+T\right)  ^{y}=\left(  1+T\right)  ^{x+y}$ in $\mathbb{Z}\left[
 \left[  T\right]  \right]  $ for negative $x$ and $y$, and I even fear that
-this is usually proven using (\ref{vandermonde}).} This proves Theorem 3.1
+this is usually proven using (\ref{vandermonde}).} This proves Theorem 3.1.
 \end{proof}
 
 Our next example is a generalization of Theorem 3.1:
@@ -5198,6 +5203,8 @@ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
 \psi^{j}\left(  u_{1}+u_{2}+...+u_{m}\right)  =u_{1}^{j}+u_{2}^{j}%
 +...+u_{m}^{j}.
 \]
+
+
 
 \end{quote}
 
