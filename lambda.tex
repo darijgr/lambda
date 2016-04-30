@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, April 29, 2016 01:42:09}
+%TCIDATA{LastRevised=Friday, April 29, 2016 21:15:43}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -184,6 +184,16 @@ X_{m}^{a_{m}}Y_{1}^{b_{1}}Y_{2}^{b_{2}}\cdots Y_{n}^{b_{n}}$ with $a_{1}%
 +a_{2}+\cdots+a_{m}=d$ appears in $P$ with a nonzero coefficient. (This total
 degree is defined to be $-\infty$ if $P=0$.) Similarly, the total degree of
 $P$ with respect to the variables $Y_{1},Y_{2},\ldots,Y_{n}$ is defined.
+
+\item The similarly-looking symbols $\Lambda$ (a capital Lambda) and $\wedge$
+(a wedge symbol, commonly used for the logical operator \textquotedblleft
+and\textquotedblright) will have completely different meanings. The notation
+$\wedge^{i}V$ (where $R$ is a ring, $V$ is an $R$-module and $i$ is a
+nonnegative integer) will stand for the $i$-th exterior power of the
+$R$-module $V$. On the other hand, the notation $\Lambda\left(  K\right)  $
+(where $K$ is a ring) will stand for a certain ring defined in Chapter 4; this
+ring is \textbf{not} the exterior algebra of $K$ (despite some authors
+denoting the latter by $\Lambda\left(  K\right)  $).
 \end{itemize}
 
 \section{Motivations}
@@ -789,7 +799,7 @@ $\lambda^{1}\left(  x\right)  =x$ for every $x\in\mathbb{Z}$. The only
 challenge, if there is a challenge in this proof, is to verify the identity
 (\ref{lambda1}) for $K=\mathbb{Z}$. In other words, we have to prove that%
 \begin{equation}
-\dbinom{x+y}{k}=\sum_{i=0}^{k}\dbinom{x}{i}\dbinom{y}{k-i}\label{vandermonde}%
+\dbinom{x+y}{k}=\sum_{i=0}^{k}\dbinom{x}{i}\dbinom{y}{k-i} \label{vandermonde}%
 \end{equation}
 for every $k\in\mathbb{N},$ $x\in\mathbb{Z}$ and $y\in\mathbb{Z}.$ This is the
 so-called \textit{Vandermonde convolution identity}, and various proofs of it
@@ -802,7 +812,7 @@ coefficients), and thus it is enough to prove it for all natural $x$ and $y$
 (because a polynomial identity holding for all natural variables must hold
 everywhere). But for $x$ and $y$ natural, we have%
 \begin{align*}
-\sum_{k=0}^{x+y}\sum_{i=0}^{k}\dbinom{x}{i}\dbinom{y}{k-i}T^{k} &
+\sum_{k=0}^{x+y}\sum_{i=0}^{k}\dbinom{x}{i}\dbinom{y}{k-i}T^{k}  &
 =\underbrace{\sum_{i=0}^{x}\dbinom{x}{i}T^{i}}_{\substack{=\left(  1+T\right)
 ^{x}\\\text{(by the}\\\text{binomial formula)}}}\cdot\underbrace{\sum
 _{j=0}^{y}\dbinom{y}{j}T^{j}}_{\substack{=\left(  1+T\right)  ^{y}\\\text{(by
@@ -2309,6 +2319,9 @@ We will call this ring $\Lambda\left(  K\right)  $.
 \Lambda\left(  K\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in
 \mathbb{N}}\right)  $ a $\lambda$-ring.
 \end{quote}
+
+We repeat again that the notation $\Lambda\left(  K\right)  $ has nothing to
+do with exterior algebras, even though some authors use it for them.
 
 Before we prove this Theorem 5.1, we will have to do some preparatory work: We
 will introduce a subset $1+K\left[  T\right]  ^{+}$ of $1+K\left[  \left[
@@ -5203,8 +5216,6 @@ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
 \psi^{j}\left(  u_{1}+u_{2}+...+u_{m}\right)  =u_{1}^{j}+u_{2}^{j}%
 +...+u_{m}^{j}.
 \]
-
-
 
 \end{quote}
 
