@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, April 30, 2016 12:57:27}
+%TCIDATA{LastRevised=Monday, May 02, 2016 01:17:12}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -3387,7 +3387,7 @@ $m$-integral over $K$. Prove that $\alpha\beta$ is $nm$-integral over $K$.
 construction of the polynomials $P_{k}$ further above.]
 
 \textit{Exercise 5.5.} Let $K$ be a ring, and $I$ be an ideal of $K$. Let
-$I\left[  \left[  T\right]  \right]  $ denote the subring%
+$I\left[  \left[  T\right]  \right]  $ denote the $K$-submodule%
 \begin{align*}
 &  \left\{  \sum_{i\in\mathbb{N}}a_{i}T^{i}\in K\left[  \left[  T\right]
 \right]  \ \mid\ a_{i}\in I\text{ for all }i\right\} \\
@@ -5216,6 +5216,8 @@ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
 \psi^{j}\left(  u_{1}+u_{2}+...+u_{m}\right)  =u_{1}^{j}+u_{2}^{j}%
 +...+u_{m}^{j}.
 \]
+
+
 
 \end{quote}
 
@@ -12289,13 +12291,14 @@ over $K$. This solves Exercise 5.4.
 the canonical projection $K\rightarrow K\diagup I$. Then, $\pi$ is a ring
 homomorphism, and thus induces a canonical ring homomorphism $\pi\left[
 \left[  T\right]  \right]  :K\left[  \left[  T\right]  \right]  \rightarrow
-L\left[  \left[  T\right]  \right]  $ (which sends every $\sum\limits_{i\in
-\mathbb{N}}a_{i}T^{i}\in K\left[  \left[  T\right]  \right]  $ to
-$\sum\limits_{i\in\mathbb{N}}\pi\left(  a_{i}\right)  T^{i}\in L\left[
-\left[  T\right]  \right]  $). The morphism $\Lambda\left(  \pi\right)  $ is
-merely the restriction of this homomorphism $\pi\left[  \left[  T\right]
-\right]  $ to the subset $\Lambda\left(  K\right)  $ of $K\left[  \left[
-T\right]  \right]  $ (due to the definition of $\Lambda\left(  \pi\right)  $).
+\left(  K\diagup I\right)  \left[  \left[  T\right]  \right]  $ (which sends
+every $\sum\limits_{i\in\mathbb{N}}a_{i}T^{i}\in K\left[  \left[  T\right]
+\right]  $ to $\sum\limits_{i\in\mathbb{N}}\pi\left(  a_{i}\right)  T^{i}%
+\in\left(  K\diagup I\right)  \left[  \left[  T\right]  \right]  $). The
+morphism $\Lambda\left(  \pi\right)  $ is merely the restriction of this
+homomorphism $\pi\left[  \left[  T\right]  \right]  $ to the subset
+$\Lambda\left(  K\right)  $ of $K\left[  \left[  T\right]  \right]  $ (due to
+the definition of $\Lambda\left(  \pi\right)  $).
 
 Notice that $1+I\left[  \left[  T\right]  \right]  ^{+}\subseteq1+K\left[
 \left[  T\right]  \right]  ^{+}=\Lambda\left(  K\right)  $.
@@ -12402,9 +12405,10 @@ with constant term $0$, we thus have%
 \]
 Now,%
 \[
-q=\sum\limits_{i\geq0}q_{i}T^{i}=\underbrace{q_{0}}_{=1}\underbrace{T^{0}%
-}_{=1}+\underbrace{\sum\limits_{i>0}q_{i}T^{i}}_{\in I\left[  \left[
-T\right]  \right]  ^{+}}\in1+I\left[  \left[  T\right]  \right]  ^{+}.
+q=\sum\limits_{i\geq0}q_{i}T^{i}=\sum\limits_{j\geq0}q_{j}T^{j}%
+=\underbrace{q_{0}}_{=1}\underbrace{T^{0}}_{=1}+\underbrace{\sum
+\limits_{j>0}q_{j}T^{j}}_{\in I\left[  \left[  T\right]  \right]  ^{+}}%
+\in1+I\left[  \left[  T\right]  \right]  ^{+}.
 \]
 
 
@@ -12437,23 +12441,49 @@ $\Lambda\left(  K\right)  $. This solves Exercise 5.5 \textbf{(b)}.
 
 \subsection{To Section 6}
 
-\textit{Exercise 6.1: Hints to solution:} We have%
-\[
-\left(  1+K\left[  T\right]  ^{+}\right)  ^{-1}K\left[  T\right]  \cap
-\Lambda\left(  K\right)  =\left(  1+K\left[  T\right]  ^{+}\right)
-\widehat{-}\left(  1+K\left[  T\right]  ^{+}\right)  ,
-\]
-where $U\widehat{-}U$ denotes the set $\left\{  u\widehat{-}u^{\prime}\mid
-u\in U,\ u^{\prime}\in U\right\}  $ for every subset $U$ of $\Lambda\left(
-K\right)  $ (where $\widehat{-}$ means subtraction with respect to the
-addition $\widehat{+}$ in $\Lambda\left(  K\right)  $). The subset $1+K\left[
-T\right]  ^{+}$ of $\Lambda\left(  K\right)  $ is closed under the addition
-$\widehat{+}$, the multiplication $\widehat{\cdot}$ and the maps
-$\widehat{\lambda}^{i}$ (according to Theorem 5.3, since $1+K\left[  T\right]
-^{+}=\Pi\left(  K^{\operatorname*{int}}\right)  $) and contains the zero $1$
-and the unity $1+T$. Thus, by Exercise 2.2 (applied to $\Lambda\left(
-K\right)  $ and $1+K\left[  T\right]  ^{+}$ instead of $K$ and $L$), the
-conclusion follows.
+\textit{Exercise 6.1: Hints to solution:} Recall that $\widehat{-}$ denotes
+the subtraction of the ring $\Lambda\left(  K\right)  $ (that is, the binary
+operation on $\Lambda\left(  K\right)  $ that undoes the addition
+$\widehat{+}$). Then, $p\widehat{-}q=\dfrac{p}{q}$ for any $p\in\Lambda\left(
+K\right)  $ and $q\in\Lambda\left(  K\right)  $ (by the definition of the ring
+structure on $\Lambda\left(  K\right)  $).
+
+For every two subsets $U$ and $U^{\prime}$ of $\Lambda\left(  K\right)  $, let
+$U\widehat{-}U^{\prime}$ denote the subset $\left\{  u\widehat{-}u^{\prime
+}\mid u\in U,\ u^{\prime}\in U^{\prime}\right\}  $ of $\Lambda\left(
+K\right)  $. Now,%
+\begin{align*}
+&  \underbrace{\left(  1+K\left[  T\right]  ^{+}\right)  ^{-1}K\left[
+T\right]  }_{=\left\{  \dfrac{p}{q}\ \mid\ p\in K\left[  T\right]
+,\ q\in1+K\left[  T\right]  ^{+}\right\}  }\cap\underbrace{\Lambda\left(
+K\right)  }_{=1+K\left[  T\right]  ^{+}}\\
+&  =\left\{  \dfrac{p}{q}\ \mid\ p\in K\left[  T\right]  ,\ q\in1+K\left[
+T\right]  ^{+}\right\}  \cap\left(  1+K\left[  T\right]  ^{+}\right) \\
+&  =\left\{  \dfrac{p}{q}\ \mid\ p\in K\left[  T\right]  ,\ q\in1+K\left[
+T\right]  ^{+},\ \dfrac{p}{q}\in1+K\left[  T\right]  ^{+}\right\} \\
+&  =\left\{  \underbrace{\dfrac{p}{q}}_{=p\widehat{-}q}\ \mid\ p\in1+K\left[
+T\right]  ^{+},\ q\in1+K\left[  T\right]  ^{+}\right\} \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{because two polynomials }p\in K\left[  T\right]  \text{ and }%
+q\in1+K\left[  T\right]  ^{+}\\
+\text{satisfy }\dfrac{p}{q}\in1+K\left[  T\right]  ^{+}\text{ if and only if
+}p\in1+K\left[  T\right]  ^{+}%
+\end{array}
+\right) \\
+&  =\left\{  p\widehat{-}q\ \mid\ p\in1+K\left[  T\right]  ^{+},\ q\in
+1+K\left[  T\right]  ^{+}\right\} \\
+&  =\left(  1+K\left[  T\right]  ^{+}\right)  \widehat{-}\left(  1+K\left[
+T\right]  ^{+}\right)  .
+\end{align*}
+The subset $1+K\left[  T\right]  ^{+}$ of $\Lambda\left(  K\right)  $ is
+closed under the addition $\widehat{+}$, the multiplication $\widehat{\cdot}$
+and the maps $\widehat{\lambda}^{i}$ (according to Theorem 5.3, since
+$1+K\left[  T\right]  ^{+}=\Pi\left(  K^{\operatorname*{int}}\right)  $) and
+contains the zero $1$ and the unity $1+T$. Thus, by Exercise 2.2 (applied to
+$\Lambda\left(  K\right)  $ and $1+K\left[  T\right]  ^{+}$ instead of $K$ and
+$L$), the conclusion follows.
 
 \textit{Exercise 6.2: Solution:} \textbf{(a)} Consider the map $\lambda_{T}$
 defined in Theorem 2.1. Fix some $x\in K$. Define a map $\Upsilon
@@ -12494,11 +12524,15 @@ x\right)  \right)  ^{n}$. Applying this to $x=1_{K}$, we obtain%
 \right)  ^{n}=\left(  1+T\right)  ^{n}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\lambda_{T}\left(  1\right)
 =1+T\text{, because the }\lambda\text{-ring }K\text{ is special}\right) \\
-&  =\sum_{i=0}^{n}\dbinom{n}{i}T^{i}.
+&  =\sum_{i\in\mathbb{N}}\dbinom{n}{i}T^{i}\ \ \ \ \ \ \ \ \ \ \left(
+\text{by the binomial formula}\right)  .
 \end{align*}
-Comparing this with $\lambda_{T}\left(  n\cdot1\right)  =\sum\limits_{i=0}%
-^{n}\lambda^{i}\left(  n\cdot1\right)  T^{i}$, we conclude that $\lambda
-^{i}\left(  n\cdot1\right)  =\dbinom{n}{i}\cdot1$ for every $i\in\mathbb{N}$.
+Comparing this with $\lambda_{T}\left(  n\cdot1\right)  =\sum\limits_{i\in
+\mathbb{N}}\lambda^{i}\left(  n\cdot1\right)  T^{i}$, we conclude that
+$\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(  n\cdot1\right)  T^{i}%
+=\sum_{i\in\mathbb{N}}\dbinom{n}{i}T^{i}$. Comparing coefficients, we obtain
+$\lambda^{i}\left(  n\cdot1\right)  =\dbinom{n}{i}\cdot1$ for every
+$i\in\mathbb{N}$.
 
 \textbf{(b)} Assume, for the sake of contradiction, that $m=0$ in $K$ for some
 positive integer $m$. Then, Theorem 2.1 \textbf{(a)} yields%
@@ -12902,7 +12936,45 @@ K\right)  $ is invertible, because $x\in K$ is invertible and $\lambda
 _{T}:K\rightarrow\Lambda\left(  K\right)  $ is a ring homomorphism), and
 Theorem 8.3 \textbf{(a)} yields that $y$ is $1$-dimensional, qed.
 
-\textit{Exercise 8.3: Hints to solution:} According to Exercise 6.4, we only
+\textit{Exercise 8.3: Hints to solution:} We notice first that every $x\in E$
+is $1$-dimensional (by the assumption on $E$). Thus, for every $x\in E$, we
+have $\lambda_{T}\left(  x\right)  =1+xT$ (by Theorem 8.3 \textbf{(a)}). Thus,
+for every $x\in E$, the element $\lambda_{T}\left(  x\right)  $ of
+$\Lambda\left(  K\right)  $ is $1$-dimensional (since Theorem 8.3 \textbf{(c)}
+shows that the element $1+xT$ of $\Lambda\left(  K\right)  $ is $1$%
+-dimensional). In other words, for every $x\in E$, we have $\widehat{\lambda
+}^{j}\left(  \lambda_{T}\left(  x\right)  \right)  =1$ for every integer $j>1$
+(since $1$ is the zero of the ring $\Lambda\left(  K\right)  $). Hence, for
+every $x\in E$, we have%
+\begin{equation}
+\widehat{\lambda}^{j}\left(  \lambda_{T}\left(  x\right)  \right)  =\left\{
+\begin{array}
+[c]{c}%
+1+T,\text{ if }j=0;\\
+\lambda_{T}\left(  x\right)  ,\text{ if }j=1;\\
+1,\text{ if }j>1
+\end{array}
+\right.  \ \ \ \ \ \ \ \ \ \ \text{for every }j\in\mathbb{N}.\label{sol.8.3.1}%
+\end{equation}
+
+
+On the other hand, every $x\in E$ is $1$-dimensional. In other words, every
+$x\in E$ satisfies $\lambda^{j}\left(  x\right)  =0$ for every integer $j>1$.
+Hence, every $x\in E$ satisfies%
+\begin{equation}
+\lambda^{j}\left(  x\right)  =\left\{
+\begin{array}
+[c]{c}%
+1,\text{ if }j=0;\\
+x,\text{ if }j=1;\\
+0,\text{ if }j>1
+\end{array}
+\right.  \ \ \ \ \ \ \ \ \ \ \text{for every }j\in\mathbb{N}.\label{sol.8.3.2}%
+\end{equation}
+
+
+We want to show that the $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ is special. According to Exercise 6.4, we only
 have to prove that (\ref{LkxyE}) and (\ref{LkLjxE}) hold. This is equivalent
 to showing that%
 \begin{align*}
@@ -12918,19 +12990,19 @@ and since two formal power series are equal if and only if their respective
 coefficients are equal). But this is true, since%
 \begin{align*}
 \lambda_{T}\left(  xy\right)   &  =1+xyT\ \ \ \ \ \ \ \ \ \ \left(
-\text{since }xy\text{ is }1\text{-dimensional by Theorem 8.3 \textbf{(b)}%
-}\right) \\
+\text{since }xy\text{ is }1\text{-dimensional (by Theorem 8.3 \textbf{(b)}%
+)}\right)  \\
 &  =\Pi\left(  K,\left[  xy\right]  \right)  =\Pi\left(  K,\left[  x\right]
 \right)  \widehat{\cdot}\Pi\left(  K,\left[  y\right]  \right)
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 5.3 \textbf{(c)}}\right) \\
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 5.3 \textbf{(c)}}\right)  \\
 &  =\left(  1+xT\right)  \cdot\left(  1+yT\right)  =\lambda_{T}\left(
 x\right)  \widehat{\cdot}\lambda_{T}\left(  y\right)
 \ \ \ \ \ \ \ \ \ \ \left(  \text{since }x\text{ and }y\text{ are
 }1\text{-dimensional}\right)
 \end{align*}
-for every $x\in E$ and $y\in E,$ and%
+for every $x\in E$ and $y\in E$, and since%
 \begin{align*}
-&  \lambda_{T}\left(  \lambda^{j}\left(  x\right)  \right) \\
+&  \lambda_{T}\left(  \lambda^{j}\left(  x\right)  \right)  \\
 &  =\lambda_{T}\left(  \left\{
 \begin{array}
 [c]{c}%
@@ -12938,15 +13010,8 @@ for every $x\in E$ and $y\in E,$ and%
 x,\text{ if }j=1;\\
 0,\text{ if }j>1
 \end{array}
-\right.  \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }x\text{ is
-}1\text{-dimensional, so that }\lambda^{j}\left(  x\right)  =\left\{
-\begin{array}
-[c]{c}%
-1,\text{ if }j=0;\\
-x,\text{ if }j=1;\\
-0,\text{ if }j>1
-\end{array}
-\right.  \right) \\
+\right.  \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.8.3.2}%
+)}\right)  \\
 &  =\left\{
 \begin{array}
 [c]{c}%
@@ -12961,26 +13026,17 @@ x,\text{ if }j=1;\\
 \lambda_{T}\left(  x\right)  ,\text{ if }j=1;\\
 1,\text{ if }j>1
 \end{array}
-\right. \\
+\right.  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }\lambda_{T}\left(  1\right)  =1+T\\
+\text{and }\lambda_{T}\left(  0\right)  =1
+\end{array}
+\right)  \\
 &  =\widehat{\lambda}^{j}\left(  \lambda_{T}\left(  x\right)  \right)
-\ \ \ \ \ \ \ \ \ \ \left(
-\begin{array}
-[c]{c}%
-\text{since }\lambda_{T}\left(  x\right)  \text{ is a }1\text{-dimensional
-element of }\Lambda\left(  K\right)  \text{ by Theorem 8.3,}\\
-\text{so that }\widehat{\lambda}^{j}\left(  \lambda_{T}\left(  x\right)
-\right)  =\left\{
-\begin{array}
-[c]{c}%
-1+T,\text{ if }j=0;\\
-\lambda_{T}\left(  x\right)  ,\text{ if }j=1;\\
-1,\text{ if }j>1
-\end{array}
-\right.
-\end{array}
-\right)
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.8.3.1})}\right)
 \end{align*}
-for every $j\in\mathbb{N}$ and $x\in E.$
+for every $j\in\mathbb{N}$ and $x\in E$.
 
 \subsection{To Section 9}
 
