@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, May 02, 2016 01:17:12}
+%TCIDATA{LastRevised=Tuesday, May 03, 2016 12:08:12}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -9055,15 +9055,15 @@ Any $x\in K$ and $y\in K$ satisfy%
 \operatorname*{td}\nolimits_{\varphi,T}\left(  x+y\right)   &
 =\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  \cdot
 \operatorname*{td}\nolimits_{\varphi,T}\left(  y\right)
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 10.10}\right) \\
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 10.10}\right)  \\
 &  =\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  \widehat{+}%
 \operatorname*{td}\nolimits_{\varphi,T}\left(  y\right)
 \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
-\text{since multiplication of power series in }1+K\left[  \left[  T\right]
-\right]  ^{+}\\
-\text{is addition in the ring }\Lambda\left(  K\right)
+\text{since multiplication of power series}\\
+\text{in }1+K\left[  \left[  T\right]  \right]  ^{+}\text{ is addition in the
+ring }\Lambda\left(  K\right)
 \end{array}
 \right)  .
 \end{align*}
@@ -11790,15 +11790,15 @@ TT^{m}-1\right)  \cdot\varphi\left(  Q\right)  =\left(  T^{m+1}-1\right)
 
 
 On the other hand, $\varphi\left(  P\right)  =P$%
-\ \ \ \ \footnote{\textit{Proof.} Since $P\in L\left[  X\right]  $ and $\deg
-P=m$, we can write $P$ in the form $P=\sum\limits_{i=0}^{m}\beta_{i}X^{i}$ for
+\ \ \ \ \footnote{\textit{Proof.} Since $P\in L\left[  T\right]  $ and $\deg
+P=m$, we can write $P$ in the form $P=\sum\limits_{i=0}^{m}\beta_{i}T^{i}$ for
 some $\left(  \beta_{0},\beta_{1},...,\beta_{m}\right)  \in L^{m+1}$. Thus,%
 \begin{align*}
 \varphi\left(  P\right)   &  =\varphi\left(  \sum\limits_{i=0}^{m}\beta
-_{i}X^{i}\right)  =\sum\limits_{i=0}^{m}\beta_{i}\left(  \underbrace{\varphi
-\left(  X\right)  }_{=X}\right)  ^{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
-}\varphi\text{ is an }L\text{-algebra homomorphism}\right) \\
-&  =\sum\limits_{i=0}^{m}\beta_{i}X^{i}=P.
+_{i}T^{i}\right)  =\sum\limits_{i=0}^{m}\beta_{i}\left(  \underbrace{\varphi
+\left(  T\right)  }_{=T}\right)  ^{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}\varphi\text{ is an }L\text{-algebra homomorphism}\right)  \\
+&  =\sum\limits_{i=0}^{m}\beta_{i}T^{i}=P.
 \end{align*}
 }. Now,%
 \[
@@ -11825,7 +11825,7 @@ T\right]  $ as a subring of the polynomial ring $L\left[  T,S\right]  $.
 we can evaluate it at $T=S$ and obtain $\sum\limits_{i=0}^{n}a_{n-i}%
 S^{i}=\prod\limits_{i=1}^{n}\left(  p_{i}+S\right)  $. Thus,%
 \begin{align*}
-T^{n}\sum\limits_{i=0}^{n}a_{n-i}S^{i}  &  =\underbrace{T^{n}}_{=\prod
+T^{n}\sum\limits_{i=0}^{n}a_{n-i}S^{i} &  =\underbrace{T^{n}}_{=\prod
 \limits_{i=1}^{n}T}\prod\limits_{i=1}^{n}\left(  p_{i}+S\right)
 =\prod\limits_{i=1}^{n}T\prod\limits_{i=1}^{n}\left(  p_{i}+S\right)
 =\prod\limits_{i=1}^{n}\underbrace{\left(  T\left(  p_{i}+S\right)  \right)
@@ -11837,11 +11837,12 @@ T^{n}\sum\limits_{i=0}^{n}a_{n-i}S^{i}  &  =\underbrace{T^{n}}_{=\prod
 \end{align*}
 Combined with%
 \begin{align*}
-T^{n}\sum\limits_{i=0}^{n}a_{n-i}S^{i}  &  =\sum\limits_{i=0}^{n}%
+T^{n}\sum\limits_{i=0}^{n}a_{n-i}S^{i} &  =\sum\limits_{i=0}^{n}%
 a_{n-i}\underbrace{T^{n}}_{=T^{n-i}T^{i}}S^{i}=\sum\limits_{i=0}^{n}%
 a_{n-i}T^{n-i}\underbrace{T^{i}S^{i}}_{=\left(  TS\right)  ^{i}\equiv
-1^{i}\operatorname{mod}\left(  TS-1\right)  }\equiv\sum\limits_{i=0}%
-^{n}a_{n-i}T^{n-i}1^{i}=\sum\limits_{i=0}^{n}a_{n-i}T^{n-i}\\
+1^{i}\operatorname{mod}\left(  TS-1\right)  }\\
+&  \equiv\sum\limits_{i=0}^{n}a_{n-i}T^{n-i}1^{i}=\sum\limits_{i=0}^{n}%
+a_{n-i}T^{n-i}\\
 &  =\sum\limits_{i=0}^{n}a_{i}T^{i}\operatorname{mod}\left(  TS-1\right)
 \ \ \ \ \ \ \ \ \ \ \left(  \text{here we renamed }n-i\text{ as }i\right)  ,
 \end{align*}
@@ -12954,7 +12955,8 @@ every $x\in E$, we have%
 \lambda_{T}\left(  x\right)  ,\text{ if }j=1;\\
 1,\text{ if }j>1
 \end{array}
-\right.  \ \ \ \ \ \ \ \ \ \ \text{for every }j\in\mathbb{N}.\label{sol.8.3.1}%
+\right.  \ \ \ \ \ \ \ \ \ \ \text{for every }j\in\mathbb{N}.
+\label{sol.8.3.1}%
 \end{equation}
 
 
@@ -12969,7 +12971,8 @@ Hence, every $x\in E$ satisfies%
 x,\text{ if }j=1;\\
 0,\text{ if }j>1
 \end{array}
-\right.  \ \ \ \ \ \ \ \ \ \ \text{for every }j\in\mathbb{N}.\label{sol.8.3.2}%
+\right.  \ \ \ \ \ \ \ \ \ \ \text{for every }j\in\mathbb{N}.
+\label{sol.8.3.2}%
 \end{equation}
 
 
@@ -12991,10 +12994,10 @@ coefficients are equal). But this is true, since%
 \begin{align*}
 \lambda_{T}\left(  xy\right)   &  =1+xyT\ \ \ \ \ \ \ \ \ \ \left(
 \text{since }xy\text{ is }1\text{-dimensional (by Theorem 8.3 \textbf{(b)}%
-)}\right)  \\
+)}\right) \\
 &  =\Pi\left(  K,\left[  xy\right]  \right)  =\Pi\left(  K,\left[  x\right]
 \right)  \widehat{\cdot}\Pi\left(  K,\left[  y\right]  \right)
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 5.3 \textbf{(c)}}\right)  \\
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 5.3 \textbf{(c)}}\right) \\
 &  =\left(  1+xT\right)  \cdot\left(  1+yT\right)  =\lambda_{T}\left(
 x\right)  \widehat{\cdot}\lambda_{T}\left(  y\right)
 \ \ \ \ \ \ \ \ \ \ \left(  \text{since }x\text{ and }y\text{ are
@@ -13002,7 +13005,7 @@ x\right)  \widehat{\cdot}\lambda_{T}\left(  y\right)
 \end{align*}
 for every $x\in E$ and $y\in E$, and since%
 \begin{align*}
-&  \lambda_{T}\left(  \lambda^{j}\left(  x\right)  \right)  \\
+&  \lambda_{T}\left(  \lambda^{j}\left(  x\right)  \right) \\
 &  =\lambda_{T}\left(  \left\{
 \begin{array}
 [c]{c}%
@@ -13011,7 +13014,7 @@ x,\text{ if }j=1;\\
 0,\text{ if }j>1
 \end{array}
 \right.  \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.8.3.2}%
-)}\right)  \\
+)}\right) \\
 &  =\left\{
 \begin{array}
 [c]{c}%
@@ -13032,7 +13035,7 @@ x,\text{ if }j=1;\\
 \text{since }\lambda_{T}\left(  1\right)  =1+T\\
 \text{and }\lambda_{T}\left(  0\right)  =1
 \end{array}
-\right)  \\
+\right) \\
 &  =\widehat{\lambda}^{j}\left(  \lambda_{T}\left(  x\right)  \right)
 \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.8.3.1})}\right)
 \end{align*}
@@ -13244,12 +13247,16 @@ $\psi^{i}\left(  x\right)  =\left(  -1\right)  ^{i}\operatorname*{Coeff}%
 $.
 
 Now fix $i\in\mathbb{N}\setminus\left\{  0\right\}  $. We have shown that
-every $x\in K$ satisfies $\psi^{i}\left(  x\right)  =\left(  -1\right)
-^{i}\operatorname*{Coeff}\nolimits_{i}\left(  -T\dfrac{d}{dT}\log\lambda
-_{T}\left(  x\right)  \right)  $. In other words, the map $\psi^{i}$ is the
-composition of the map $\lambda_{T}:K\rightarrow\Lambda\left(  K\right)  $
-(which is a ring homomorphism, since the $\lambda$-ring $\left(  K,\left(
-\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is special) with the map%
+every $x\in K$ satisfies
+\[
+\psi^{i}\left(  x\right)  =\left(  -1\right)  ^{i}\operatorname*{Coeff}%
+\nolimits_{i}\left(  -T\dfrac{d}{dT}\log\lambda_{T}\left(  x\right)  \right)
+.
+\]
+In other words, the map $\psi^{i}$ is the composition of the map $\lambda
+_{T}:K\rightarrow\Lambda\left(  K\right)  $ (which is a ring homomorphism,
+since the $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)  _{i\in
+\mathbb{N}}\right)  $ is special) with the map%
 \begin{align*}
 \Lambda\left(  K\right)   &  \rightarrow K,\\
 u  &  \mapsto\left(  -1\right)  ^{i}\operatorname*{Coeff}\nolimits_{i}\left(
@@ -13521,8 +13528,9 @@ _{i=1}^{n-1}\left(  -1\right)  ^{i-1}\dbinom{x-1}{n-i-1}\\
 {n-i}+\sum\limits_{i=2}^{n-1}\left(  -\left(  -1\right)  ^{i-1}\right)
 \dbinom{x-1}{n-i}}_{=\sum\limits_{i=2}^{n-1}\left(  -1\right)  ^{i-1}%
 \dbinom{x-1}{n-i}-\sum\limits_{i=2}^{n-1}\left(  -1\right)  ^{i-1}\dbinom
-{x-1}{n-i}=0}+\left(  -\left(  -1\right)  ^{n-1}\right)  \underbrace{\dbinom
-{x-1}{n-n}}_{=\dbinom{x-1}{0}=1}\\
+{x-1}{n-i}=0}\\
+&  \ \ \ \ \ \ \ \ \ \ +\left(  -\left(  -1\right)  ^{n-1}\right)
+\underbrace{\dbinom{x-1}{n-n}}_{=\dbinom{x-1}{0}=1}\\
 &  =1\dbinom{x-1}{n-1}+0+\left(  -\left(  -1\right)  ^{n-1}\right)
 1=\dbinom{x-1}{n-1}-\left(  -1\right)  ^{n-1},
 \end{align*}
@@ -13547,8 +13555,9 @@ x-1\right)  \cdot\left(  x-2\right)  \cdot...\cdot\left(  x-n+1\right)
 \right)  }{\left(  n-1\right)  !}\\
 &  =\dfrac{x\cdot\left(  x-1\right)  \cdot...\cdot\left(  x-n+1\right)
 }{\left(  n-1\right)  !}=\dfrac{x\cdot\left(  x-1\right)  \cdot...\cdot\left(
-x-n+1\right)  }{n!\diagup n}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(
-n-1\right)  !=n!\diagup n\right) \\
+x-n+1\right)  }{n!\diagup n}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  n-1\right)  !=n!\diagup
+n\right) \\
 &  =n\underbrace{\dfrac{x\cdot\left(  x-1\right)  \cdot...\cdot\left(
 x-n+1\right)  }{n!}}_{=\dbinom{x}{n}}=n\dbinom{x}{n},
 \end{align*}
@@ -14019,7 +14028,7 @@ $\operatorname*{Coeff}\nolimits_{0}$ is a $K$-linear map (for obvious
 reasons). Now let us show that $\operatorname*{Coeff}\nolimits_{0}$ is a
 $K$-algebra homomorphism.
 
-The unity of the ring $K\left[  \left[  T\right]  \right]  $ is $1$, so that
+The unity of the ring $K\left[  \left[  T\right]  \right]  $ is $1$. Hence,
 $\operatorname*{Coeff}\nolimits_{0}$ sends the unity of the ring $K\left[
 \left[  T\right]  \right]  $ to $\operatorname*{Coeff}\nolimits_{0}\left(
 1\right)  =1$, which is the unity of $K$.
@@ -14089,10 +14098,10 @@ $\varphi\psi=\left(  \prod\limits_{i=1}^{M}\Phi_{i}\right)  \Phi_{M+1}%
 \Phi_{i}$, we have
 \begin{align*}
 \operatorname*{Coeff}\nolimits_{0}\varphi &  =\operatorname*{Coeff}%
-\nolimits_{0}\left(  \prod\limits_{i=1}^{M}\Phi_{i}\right)  =\prod
-\limits_{i=1}^{M}\underbrace{\operatorname*{Coeff}\nolimits_{0}\left(
-\Phi_{i}\right)  }_{=1}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }%
-\operatorname*{Coeff}\nolimits_{0}\text{ is a }K\text{-algebra homomorphism}%
+\nolimits_{0}\left(  \prod\limits_{i=1}^{M}\Phi_{i}\right) \\
+&  =\prod\limits_{i=1}^{M}\underbrace{\operatorname*{Coeff}\nolimits_{0}%
+\left(  \Phi_{i}\right)  }_{=1}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}\operatorname*{Coeff}\nolimits_{0}\text{ is a }K\text{-algebra homomorphism}%
 \right) \\
 &  =\prod\limits_{i=1}^{M}1=1
 \end{align*}
