@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Wednesday, May 04, 2016 03:41:23}
+%TCIDATA{LastRevised=Wednesday, May 04, 2016 12:37:10}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -4210,33 +4210,63 @@ _{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring), we see that we can actually
 consider $\overline{\lambda}_{T}$ as a map $K\left[  S\right]  \rightarrow
 \Lambda\left(  K\left[  S\right]  \right)  $.
 
-Theorem 5.6 yields that the map $\overline{\lambda}_{T}$ is an additive group
-homomorphism. In order to show that the $\lambda$-ring $\left(  K\left[
+Theorem 5.6 (applied to $\left(  K\left[  S\right]  ,\left(  \overline
+{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $ and $\overline{\lambda}_{T}$
+instead of $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $
+and $\lambda_{T}$) yields that the map $\overline{\lambda}_{T}$ is an additive
+group homomorphism. In order to show that the $\lambda$-ring $\left(  K\left[
 S\right]  ,\left(  \overline{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $
 is special, we must prove that this map $\overline{\lambda}_{T}$ is a
 $\lambda$-ring homomorphism.
 
+Observe that $\lambda_{T}$ is a $\lambda$-ring homomorphism (as $\left(
+K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a special
+$\lambda$-ring). In particular, $\lambda_{T}$ is a ring homomorphism. Thus,
+$\lambda_{T}$ maps the unity $1$ of the ring $K$ to the unity $1+T$ of the
+ring $\Lambda\left(  K\right)  $. In other words, $\lambda_{T}\left(
+1\right)  =1+T$.
+
 Let $E=\left\{  aS^{\alpha}\mid a\in K,\ \alpha\in\mathbb{N}\right\}  $.
 Obviously, $E$ is a generating set of the $\mathbb{Z}$-module $K\left[
-S\right]  $. Notice that $\overline{\lambda}_{T}\left(  aS^{\alpha}\right)
-=\lambda_{S^{\alpha}T}\left(  a\right)  $ for every $a\in K$ and $\alpha
-\in\mathbb{N}$ (as shown in the proof of Theorem 3.3 \textbf{(b)}).
+S\right]  $. Notice that%
+\begin{equation}
+\overline{\lambda}_{T}\left(  aS^{\alpha}\right)  =\lambda_{S^{\alpha}%
+T}\left(  a\right)  \label{pf.7.3.1}%
+\end{equation}
+for every $a\in K$ and $\alpha\in\mathbb{N}$ (as shown in the proof of Theorem
+3.3 \textbf{(b)}). Applying this to $a=1$ and $\alpha=0$, we obtain%
+\[
+\overline{\lambda}_{T}\left(  1S^{0}\right)  =\lambda_{S^{0}T}\left(
+1\right)  =\lambda_{T}\left(  1\right)  =1+T.
+\]
+In other words, $\overline{\lambda}_{T}\left(  1\right)  =1+T$ (since
+$1S^{0}=1$).
 
 For every $a\in K,$ $\alpha\in\mathbb{N}$, $b\in K$ and $\beta\in\mathbb{N}$,
 we have%
 \begin{align*}
-&  \overline{\lambda}_{T}\left(  aS^{\alpha}\right)  \widehat{\cdot}%
-\overline{\lambda}_{T}\left(  bS^{\beta}\right)  =\lambda_{S^{\alpha}T}\left(
-a\right)  \widehat{\cdot}\lambda_{S^{\beta}T}\left(  b\right) \\
+&  \underbrace{\overline{\lambda}_{T}\left(  aS^{\alpha}\right)
+}_{\substack{=\lambda_{S^{\alpha}T}\left(  a\right)  \\\text{(by
+(\ref{pf.7.3.1}))}}}\widehat{\cdot}\underbrace{\overline{\lambda}_{T}\left(
+bS^{\beta}\right)  }_{\substack{=\lambda_{S^{\beta}T}\left(  b\right)
+\\\text{(by (\ref{pf.7.3.1}), applied to}\\b\text{ and }\beta\text{ instead of
+}a\text{ and }\alpha\text{)}}}\\
+&  =\underbrace{\lambda_{S^{\alpha}T}\left(  a\right)  }_{=\operatorname*{ev}%
+\nolimits_{S^{\alpha}T}\left(  \lambda_{T}\left(  a\right)  \right)
+}\widehat{\cdot}\underbrace{\lambda_{S^{\beta}T}\left(  b\right)
+}_{=\operatorname*{ev}\nolimits_{S^{\beta}T}\left(  \lambda_{T}\left(
+b\right)  \right)  }\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\overline{\lambda}_{T}\left(
 aS^{\alpha}\right)  =\lambda_{S^{\alpha}T}\left(  a\right)  \text{ and
 similarly }\overline{\lambda}_{T}\left(  bS^{\beta}\right)  =\lambda
-_{S^{\beta}T}\left(  b\right)  \right) \\
+_{S^{\beta}T}\left(  b\right)  \right)  \\
 &  =\operatorname*{ev}\nolimits_{S^{\alpha}T}\left(  \lambda_{T}\left(
 a\right)  \right)  \widehat{\cdot}\operatorname*{ev}\nolimits_{S^{\beta}%
 T}\left(  \lambda_{T}\left(  b\right)  \right)  =\operatorname*{ev}%
-\nolimits_{S^{\alpha}S^{\beta}T}\left(  \lambda_{T}\left(  a\right)
-\widehat{\cdot}\lambda_{T}\left(  b\right)  \right) \\
+\nolimits_{S^{\alpha}S^{\beta}T}\left(  \underbrace{\lambda_{T}\left(
+a\right)  \widehat{\cdot}\lambda_{T}\left(  b\right)  }_{\substack{=\lambda
+_{T}\left(  ab\right)  \\\text{(since }\lambda_{T}\text{ is a ring}%
+\\\text{homomorphism)}}}\right)  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -4245,35 +4275,37 @@ T}\left(  \lambda_{T}\left(  b\right)  \right)  =\operatorname*{ev}%
 }S^{\alpha}\text{ and }S^{\beta}\\
 \text{instead of }K,\text{ }u,\text{ }v,\text{ }\mu\text{ and }\nu
 \end{array}
-\right) \\
+\right)  \\
 &  =\operatorname*{ev}\nolimits_{S^{\alpha}S^{\beta}T}\left(  \lambda
-_{T}\left(  ab\right)  \right) \\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\lambda_{T}\text{ is a ring
-homomorphism, as }\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
-}\right)  \text{ is a special }\lambda\text{-ring}\right) \\
-&  =\lambda_{S^{\alpha}S^{\beta}T}\left(  ab\right)  =\lambda_{S^{\alpha
-+\beta}T}\left(  ab\right)
+_{T}\left(  ab\right)  \right)  =\lambda_{S^{\alpha}S^{\beta}T}\left(
+ab\right)  =\lambda_{S^{\alpha+\beta}T}\left(  ab\right)  =\overline{\lambda
+}_{T}\left(  \underbrace{ab\cdot S^{\alpha+\beta}}_{=aS^{\alpha}\cdot
+bS^{\beta}}\right)  \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }\overline{\lambda}_{T}\left(  ab\cdot S^{\alpha+\beta}\right)
+=\lambda_{S^{\alpha+\beta}T}\left(  ab\right)  \text{ (by (\ref{pf.7.3.1}),
+applied to}\\
+ab\text{ and }\alpha+\beta\text{ instead of }a\text{ and }b\text{)}%
+\end{array}
+\right)  \\
+&  =\overline{\lambda}_{T}\left(  aS^{\alpha}\cdot bS^{\beta}\right)  .
 \end{align*}
-and $\overline{\lambda}_{T}\left(  aS^{\alpha}\cdot bS^{\beta}\right)
-=\overline{\lambda}_{T}\left(  ab\cdot S^{\alpha+\beta}\right)  =\lambda
-_{S^{\alpha+\beta}T}\left(  ab\right)  ,$ so that $\overline{\lambda}%
-_{T}\left(  aS^{\alpha}\right)  \widehat{\cdot}\overline{\lambda}_{T}\left(
-bS^{\beta}\right)  =\overline{\lambda}_{T}\left(  aS^{\alpha}\cdot bS^{\beta
-}\right)  $. In other words, $\overline{\lambda}_{T}\left(  e\right)
-\widehat{\cdot}\overline{\lambda}_{T}\left(  f\right)  =\overline{\lambda}%
-_{T}\left(  ef\right)  $ for any two elements $e$ and $f$ of $E$. Since $E$ is
-a generating set of the $\mathbb{Z}$-module $K\left[  S\right]  $, and since
+In other words, $\overline{\lambda}_{T}\left(  e\right)  \widehat{\cdot
+}\overline{\lambda}_{T}\left(  f\right)  =\overline{\lambda}_{T}\left(
+ef\right)  $ for any two elements $e$ and $f$ of $E$. Since $E$ is a
+generating set of the $\mathbb{Z}$-module $K\left[  S\right]  $, and since
 $\overline{\lambda}_{T}$ is already known to be an additive group
 homomorphism, it thus follows that $\overline{\lambda}_{T}\left(  x\right)
 \widehat{\cdot}\overline{\lambda}_{T}\left(  y\right)  =\overline{\lambda}%
 _{T}\left(  xy\right)  $ for any two elements $x$ and $y$ of $K\left[
 S\right]  $. Since $\overline{\lambda}_{T}$ also maps the multiplicative unity
 $1$ of $K\left[  S\right]  $ to the multiplicative unity $1+T$ of
-$\Lambda\left(  K\left[  S\right]  \right)  $ (this follows from
-$\overline{\lambda}_{T}\left(  aS^{\alpha}\right)  =\lambda_{S^{\alpha}%
-T}\left(  a\right)  $, applied to $a=1$ and $\alpha=0$), it thus follows that
-$\overline{\lambda}_{T}:K\left[  S\right]  \rightarrow\Lambda\left(  K\left[
-S\right]  \right)  $ is a ring homomorphism.
+$\Lambda\left(  K\left[  S\right]  \right)  $ (because $\overline{\lambda}%
+_{T}\left(  1\right)  =1+T$), it thus follows that $\overline{\lambda}%
+_{T}:K\left[  S\right]  \rightarrow\Lambda\left(  K\left[  S\right]  \right)
+$ is a ring homomorphism.
 
 Now, for every $i\in\mathbb{N}$, let us define a map $\widehat{\overline
 {\lambda}}^{i}:\Lambda\left(  K\left[  S\right]  \right)  \rightarrow
@@ -4296,48 +4328,66 @@ For every $a\in K$ and $\alpha\in\mathbb{N}$, we have%
 \begin{align*}
 &  \left(  \widehat{\overline{\lambda}}^{i}\circ\overline{\lambda}_{T}\right)
 \left(  aS^{\alpha}\right)  =\widehat{\overline{\lambda}}^{i}\left(
-\overline{\lambda}_{T}\left(  aS^{\alpha}\right)  \right) \\
+\overline{\lambda}_{T}\left(  aS^{\alpha}\right)  \right)  \\
 &  =\widehat{\overline{\lambda}}^{i}\left(  \operatorname*{ev}%
 \nolimits_{S^{\alpha}T}\left(  \lambda_{T}\left(  a\right)  \right)  \right)
 \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\overline{\lambda}_{T}\left(
 aS^{\alpha}\right)  =\lambda_{S^{\alpha}T}\left(  a\right)
 =\operatorname*{ev}\nolimits_{S^{\alpha}T}\left(  \lambda_{T}\left(  a\right)
-\right)  \right) \\
+\right)  \right)  \\
 &  =\operatorname*{ev}\nolimits_{\left(  S^{\alpha}\right)  ^{i}T}\left(
 \widehat{\overline{\lambda}}^{i}\left(  \lambda_{T}\left(  a\right)  \right)
-\right) \\
+\right)  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 5.7 \textbf{(e)}, applied to
 }K\left[  S\right]  ,\text{ }\lambda_{T}\left(  a\right)  ,\text{ }S^{\alpha
 }\text{ and }i\text{ instead of }K,\text{ }u,\text{ }\mu\text{ and }k\right)
 \\
 &  =\operatorname*{ev}\nolimits_{\left(  S^{\alpha}\right)  ^{i}T}\left(
 \widehat{\lambda}^{i}\left(  \lambda_{T}\left(  a\right)  \right)  \right)
-\ \ \ \ \ \ \ \ \ \ \left(  \text{due to the commutative diagram
-(\ref{7.3.commdiag})}\right) \\
+\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{because the commutative diagram (\ref{7.3.commdiag})}\\
+\text{shows that }\widehat{\overline{\lambda}}^{i}\left(  \lambda_{T}\left(
+a\right)  \right)  =\widehat{\lambda}^{i}\left(  \lambda_{T}\left(  a\right)
+\right)
+\end{array}
+\right)  \\
 &  =\operatorname*{ev}\nolimits_{\left(  S^{\alpha}\right)  ^{i}T}\left(
-\lambda_{T}\left(  \lambda^{i}\left(  a\right)  \right)  \right) \\
+\lambda_{T}\left(  \lambda^{i}\left(  a\right)  \right)  \right)  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
 \text{since }\widehat{\lambda}^{i}\circ\lambda_{T}=\lambda_{T}\circ\lambda
-^{i}\text{, because }\lambda_{T}\text{ is a }\lambda\text{-ring homomorphism,}%
+^{i}\text{ (because }\lambda_{T}\text{ is a }\lambda\text{-ring homomorphism)}%
 \\
-\text{since }\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)
-\text{ is a special }\lambda\text{-ring}%
+\text{and thus }\widehat{\lambda}^{i}\left(  \lambda_{T}\left(  a\right)
+\right)  =\lambda_{T}\left(  \lambda^{i}\left(  a\right)  \right)
 \end{array}
-\right) \\
+\right)  \\
 &  =\lambda_{\left(  S^{\alpha}\right)  ^{i}T}\left(  \lambda^{i}\left(
 a\right)  \right)  =\lambda_{S^{\alpha i}T}\left(  \lambda^{i}\left(
 a\right)  \right)  =\overline{\lambda}_{T}\left(  \underbrace{\lambda
 ^{i}\left(  a\right)  S^{\alpha i}}_{\substack{=\overline{\lambda}^{i}\left(
-aS^{\alpha}\right)  \text{ by}\\\text{Theorem 3.3 \textbf{(b)}}}}\right)
-=\overline{\lambda}_{T}\left(  \overline{\lambda}^{i}\left(  aS^{\alpha
+aS^{\alpha}\right)  \\\text{(by Theorem 3.3 \textbf{(b)})}}}\right)  \\
+&  \ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{since }\overline{\lambda}_{T}\left(  \lambda^{i}\left(  a\right)
+S^{\alpha i}\right)  =\lambda_{S^{\alpha i}T}\left(  \lambda^{i}\left(
+a\right)  \right)  \text{ (by (\ref{pf.7.3.1}), applied to}\\
+\lambda^{i}\left(  a\right)  \text{ and }\alpha i\text{ instead of }a\text{
+and }b\text{)}%
+\end{array}
+\right)  \\
+&  =\overline{\lambda}_{T}\left(  \overline{\lambda}^{i}\left(  aS^{\alpha
 }\right)  \right)  =\left(  \overline{\lambda}_{T}\circ\overline{\lambda}%
-^{i}\right)  \left(  aS^{\alpha}\right)  .
+^{i}\right)  \left(  aS^{\alpha}\right)
 \end{align*}
-In other words, every $e\in E$ satisfies $\left(  \widehat{\overline{\lambda}%
-}^{i}\circ\overline{\lambda}_{T}\right)  \left(  e\right)  =\left(
-\overline{\lambda}_{T}\circ\overline{\lambda}^{i}\right)  \left(  e\right)  $.
+for every $i\in\mathbb{N}$. In other words, every $e\in E$ satisfies $\left(
+\widehat{\overline{\lambda}}^{i}\circ\overline{\lambda}_{T}\right)  \left(
+e\right)  =\left(  \overline{\lambda}_{T}\circ\overline{\lambda}^{i}\right)
+\left(  e\right)  $ for every $i\in\mathbb{N}$.
 
 Altogether, we now know that $\overline{\lambda}_{T}:K\left[  S\right]
 \rightarrow\Lambda\left(  K\left[  S\right]  \right)  $ is a ring
@@ -4345,8 +4395,9 @@ homomorphism, that $E$ is a generating set of the $\mathbb{Z}$-module
 $K\left[  S\right]  $, and that every $e\in E$ satisfies $\left(
 \widehat{\overline{\lambda}}^{i}\circ\overline{\lambda}_{T}\right)  \left(
 e\right)  =\left(  \overline{\lambda}_{T}\circ\overline{\lambda}^{i}\right)
-\left(  e\right)  $. Thus, by Exercise 2.1 \textbf{(b)}, it follows that
-$\overline{\lambda}_{T}$ is a $\lambda$-ring homomorphism. This proves Theorem 7.3.
+\left(  e\right)  $ for every $i\in\mathbb{N}$. Thus, by Exercise 2.1
+\textbf{(b)}, it follows that $\overline{\lambda}_{T}$ is a $\lambda$-ring
+homomorphism. This proves Theorem 7.3.
 \end{proof}
 
 \subsection{Exercises}
