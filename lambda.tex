@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, May 03, 2016 23:14:15}
+%TCIDATA{LastRevised=Wednesday, May 04, 2016 03:39:14}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -3977,6 +3977,111 @@ the mapping $\operatorname*{coeff}\nolimits_{i}:\Lambda\left(  K\right)
 homomorphism\footnote{but, generally, not a $\lambda$-ring homomorphism, even
 when $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a
 special $\lambda$-ring!}.
+
+\textit{Exercise 6.10.} In this exercise, the $\otimes$ sign shall always mean
+$\otimes_{\mathbb{Z}}$. Let $A$, $B$ and $C$ be three rings. Let $\iota
+_{1}:A\rightarrow A\otimes B$ be the ring homomorphism sending each $a\in A$
+to $a\otimes1\in A\otimes B$. Let $\iota_{2}:B\rightarrow A\otimes B$ be the
+ring homomorphism sending each $b\in B$ to $1\otimes b\in A\otimes B$. Let
+$\alpha:A\rightarrow C$ and $\beta:B\rightarrow C$ be two $\mathbb{Z}$-module homomorphisms.
+
+\textbf{(a)} There exists a unique $\mathbb{Z}$-module homomorphism
+$\phi:A\otimes B\rightarrow C$ satisfying%
+\[
+\left(  \phi\left(  a\otimes b\right)  =\alpha\left(  a\right)  \beta\left(
+b\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }\left(  a,b\right)  \in A\times
+B\right)  .
+\]
+
+
+\textbf{(b)} Assume that $\alpha$ and $\beta$ are ring homomorphisms. Consider
+the unique $\mathbb{Z}$-module homomorphism $\phi:A\otimes B\rightarrow C$
+constructed in Exercise 6.10 \textbf{(a)}. Then, this $\phi$ is a ring
+homomorphism and satisfies $\phi\circ\iota_{1}=\alpha$ and $\phi\circ\iota
+_{2}=\beta$.
+
+[This exercise is not directly related to $\lambda$-rings; it is just a mostly
+trivial fact that will be cited in the next exercise.]
+
+\textit{Exercise 6.11.} In this exercise, the $\otimes$ sign shall always mean
+$\otimes_{\mathbb{Z}}$. Let $\left(  A,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ and $\left(  B,\left(  \mu^{i}\right)
+_{i\in\mathbb{N}}\right)  $ be two $\lambda$-rings. Define a map $\lambda
+_{T}:A\rightarrow\Lambda\left(  A\right)  $ by
+\[
+\lambda_{T}\left(  x\right)  =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
+x\right)  T^{i}\ \ \ \ \ \ \ \ \ \ \text{for every }x\in A.
+\]
+Define a map $\mu_{T}:B\rightarrow\Lambda\left(  B\right)  $ by%
+\[
+\mu_{T}\left(  x\right)  =\sum\limits_{i\in\mathbb{N}}\mu^{i}\left(  x\right)
+T^{i}\ \ \ \ \ \ \ \ \ \ \text{for every }x\in B.
+\]
+Notice that $\lambda_{T}$ is an additive group homomorphism from $A$ to
+$\Lambda\left(  A\right)  $ (by Theorem 5.6, applied to $A$ instead of $K$),
+and thus a $\mathbb{Z}$-module homomorphism. Similarly, $\mu_{T}$ is a
+$\mathbb{Z}$-module homomorphism.
+
+Let $\iota_{1}:A\rightarrow A\otimes B$ be the ring homomorphism sending each
+$a\in A$ to $a\otimes1\in A\otimes B$. Let $\iota_{2}:B\rightarrow A\otimes B$
+be the ring homomorphism sending each $b\in B$ to $1\otimes b\in A\otimes B$.
+The ring homomorphisms $\iota_{1}:A\rightarrow A\otimes B$ and $\iota
+_{2}:B\rightarrow A\otimes B$ canonically induce $\lambda$-ring homomorphisms
+$\Lambda\left(  \iota_{1}\right)  :\Lambda\left(  A\right)  \rightarrow
+\Lambda\left(  A\otimes B\right)  $ and $\Lambda\left(  \iota_{2}\right)
+:\Lambda\left(  B\right)  \rightarrow\Lambda\left(  A\otimes B\right)  $
+(since $\Lambda$ is a functor). Exercise 6.10 \textbf{(a)} (applied to
+$C=\Lambda\left(  A\otimes B\right)  $, $\alpha=\Lambda\left(  \iota
+_{1}\right)  \circ\lambda_{T}$ and $\beta=\Lambda\left(  \iota_{2}\right)
+\circ\mu_{T}$) thus yields that there exists a unique $\mathbb{Z}$-module
+homomorphism $\phi:A\otimes B\rightarrow\Lambda\left(  A\otimes B\right)  $
+satisfying%
+\[
+\left(
+\begin{array}
+[c]{l}%
+\phi\left(  a\otimes b\right)  =\left(  \Lambda\left(  \iota_{1}\right)
+\circ\lambda_{T}\right)  \left(  a\right)  \widehat{\cdot}\left(
+\Lambda\left(  \iota_{2}\right)  \circ\mu_{T}\right)  \left(  b\right) \\
+\ \ \ \ \ \ \ \ \ \ \text{for every }\left(  a,b\right)  \in A\times B
+\end{array}
+\right)  .
+\]
+Let us denote this $\phi$ by $\tau_{T}$. For every $i\in\mathbb{N}$, we define
+a map $\tau^{i}:A\otimes B\rightarrow A\otimes B$ as follows: For every $c\in
+A\otimes B$, let $\tau^{i}\left(  c\right)  $ be the coefficient of the power
+series $\tau_{T}\left(  c\right)  \in\Lambda\left(  A\otimes B\right)
+\subseteq\left(  A\otimes B\right)  \left[  \left[  T\right]  \right]  $
+before $T^{i}$. Prove the following facts:
+
+\textbf{(a)} The pair $\left(  A\otimes B,\left(  \tau^{i}\right)
+_{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring.
+
+\textbf{(b)} If $\left(  C,\left(  \nu^{i}\right)  _{i\in\mathbb{N}}\right)  $
+is a \textbf{special} $\lambda$-ring, and if $\alpha:\left(  A,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  \rightarrow\left(  C,\left(
+\nu^{i}\right)  _{i\in\mathbb{N}}\right)  $ and $\beta:\left(  B,\left(
+\mu^{i}\right)  _{i\in\mathbb{N}}\right)  \rightarrow\left(  C,\left(  \nu
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ are two $\lambda$-ring homomorphisms,
+then the unique $\mathbb{Z}$-module homomorphism $\phi:A\otimes B\rightarrow
+C$ constructed in Exercise 6.10 \textbf{(a)} is a $\lambda$-ring homomorphism
+$\left(  A\otimes B,\left(  \tau^{i}\right)  _{i\in\mathbb{N}}\right)
+\rightarrow\left(  C,\left(  \nu^{i}\right)  _{i\in\mathbb{N}}\right)  $.
+
+\textbf{(c)} Assume that the $\lambda$-rings $\left(  A,\left(  \lambda
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ and $\left(  B,\left(  \mu
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ are special. Then, the map $\iota
+_{1}$ is a $\lambda$-ring homomorphism from $\left(  A,\left(  \lambda
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ to $\left(  A\otimes B,\left(
+\tau^{i}\right)  _{i\in\mathbb{N}}\right)  $, and the map $\iota_{2}$ is a
+$\lambda$-ring homomorphism from $\left(  B,\left(  \mu^{i}\right)
+_{i\in\mathbb{N}}\right)  $ to $\left(  A\otimes B,\left(  \tau^{i}\right)
+_{i\in\mathbb{N}}\right)  $.
+
+\textbf{(d)} Assume that the $\lambda$-rings $\left(  A,\left(  \lambda
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ and $\left(  B,\left(  \mu
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ are special. Then, the $\lambda$-ring
+$\left(  A\otimes B,\left(  \tau^{i}\right)  _{i\in\mathbb{N}}\right)  $ is special.
 \end{quotation}
 
 \section{Examples of special $\lambda$-rings}
@@ -4374,7 +4479,7 @@ _{K}$.
 
 Note that the definition of $\operatorname*{coeff}\nolimits_{1}$ in Theorem
 8.2 is a particular case of the definition of $\operatorname*{coeff}%
-\nolimits_{i}$ in Exercise 6.9.
+\nolimits_{i}$ in Exercise 6.5.
 
 \begin{proof}
 [Proof of Theorem 8.2.]This is clear, since
@@ -5274,8 +5379,6 @@ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
 \psi^{j}\left(  u_{1}+u_{2}+...+u_{m}\right)  =u_{1}^{j}+u_{2}^{j}%
 +...+u_{m}^{j}.
 \]
-
-
 
 \end{quote}
 
@@ -13082,6 +13185,719 @@ This proves (\ref{sol.6.9.4}).
 Now, all of the equalities (\ref{sol.6.9.1}), (\ref{sol.6.9.2}),
 (\ref{sol.6.9.3}) and (\ref{sol.6.9.4}) are proven. This completes the
 solution of Exercise 6.9.
+
+\textit{Exercise 6.10: Solution:} \textbf{(a)} Define a map $\eta:A\times
+B\rightarrow C$ by%
+\[
+\left(  \eta\left(  a,b\right)  =\alpha\left(  a\right)  \beta\left(
+b\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }\left(  a,b\right)  \in A\times
+B\right)  .
+\]
+This map $\eta$ is $\mathbb{Z}$-bilinear (since the maps $\alpha$ and $\beta$
+are $\mathbb{Z}$-linear). Thus, the universal property of the tensor product
+$A\otimes B$ shows that there exists a unique $\mathbb{Z}$-module homomorphism
+$\phi:A\otimes B\rightarrow C$ satisfying%
+\[
+\left(  \phi\left(  a\otimes b\right)  =\eta\left(  a,b\right)
+\ \ \ \ \ \ \ \ \ \ \text{for every }\left(  a,b\right)  \in A\times B\right)
+.
+\]
+Since $\eta\left(  a,b\right)  =\alpha\left(  a\right)  \otimes\beta\left(
+b\right)  $ for every $\left(  a,b\right)  \in A\times B$, this statement
+rewrites as follows: There exists a unique $\mathbb{Z}$-module homomorphism
+$\phi:A\otimes B\rightarrow C$ satisfying%
+\[
+\left(  \phi\left(  a\otimes b\right)  =\alpha\left(  a\right)  \beta\left(
+b\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }\left(  a,b\right)  \in A\times
+B\right)  .
+\]
+This solves Exercise 6.10 \textbf{(a)}.
+
+\textbf{(b)} We have%
+\begin{equation}
+\phi\left(  a\otimes b\right)  =\alpha\left(  a\right)  \beta\left(  b\right)
+\ \ \ \ \ \ \ \ \ \ \text{for every }\left(  a,b\right)  \in A\times B
+\label{sol.6.10.b.1}%
+\end{equation}
+(according to the definition of $\phi$). Applying this to $\left(  a,b\right)
+=\left(  1,1\right)  $, we obtain
+\[
+\phi\left(  1\otimes1\right)  =\underbrace{\alpha\left(  1\right)
+}_{\substack{=1\\\text{(since }\alpha\text{ is a ring}\\\text{homomorphism)}%
+}}\underbrace{\beta\left(  1\right)  }_{\substack{=1\\\text{(since }%
+\beta\text{ is a ring}\\\text{homomorphism)}}}=1.
+\]
+In other words, the map $\phi$ sends the unity $1\otimes1$ of $A\otimes B$ to
+the unity $1$ of $C$.
+
+Next, we claim that
+\begin{equation}
+\phi\left(  x\right)  \phi\left(  y\right)  =\phi\left(  xy\right)
+\label{sol.6.10.b.2}%
+\end{equation}
+for every $x\in A\otimes B$ and $y\in A\otimes B$.
+
+\textit{Proof of (\ref{sol.6.10.b.2}):} Let $x\in A\otimes B$ and $y\in
+A\otimes B$. We need to prove the equality (\ref{sol.6.10.b.2}). Since this
+equality is $\mathbb{Z}$-linear in each of $x$ and $y$, we can WLOG assume
+that $x$ and $y$ are pure tensors (since the $\mathbb{Z}$-module $A\otimes B$
+is spanned by pure tensors). Assume this. Thus, $x=a\otimes b$ and
+$y=a^{\prime}\otimes b^{\prime}$ for some $\left(  a,b\right)  \in A\times B$
+and $\left(  a^{\prime},b^{\prime}\right)  \in A\times B$. Consider these
+$\left(  a,b\right)  $ and $\left(  a^{\prime},b^{\prime}\right)  $.
+
+Multiplying the equalities $x=a\otimes b$ and $y=a^{\prime}\otimes b^{\prime}%
+$, we obtain $xy=\left(  a\otimes b\right)  \left(  a^{\prime}\otimes
+b^{\prime}\right)  =aa^{\prime}\otimes bb^{\prime}$. Applying the map $\phi$
+to both sides of this equality, we find%
+\begin{align*}
+\phi\left(  xy\right)   &  =\phi\left(  aa^{\prime}\otimes bb^{\prime}\right)
+\\
+&  =\underbrace{\alpha\left(  aa^{\prime}\right)  }_{\substack{=\alpha\left(
+a\right)  \alpha\left(  a^{\prime}\right)  \\\text{(since }\alpha\text{ is a
+ring}\\\text{homomorphism)}}}\underbrace{\beta\left(  bb^{\prime}\right)
+}_{\substack{=\beta\left(  b\right)  \beta\left(  b^{\prime}\right)
+\\\text{(since }\beta\text{ is a ring}\\\text{homomorphism)}}%
+}\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by (\ref{sol.6.10.b.1}), applied to }\left(  aa^{\prime},bb^{\prime
+}\right) \\
+\text{instead of }\left(  a,b\right)
+\end{array}
+\right) \\
+&  =\alpha\left(  a\right)  \alpha\left(  a^{\prime}\right)  \beta\left(
+b\right)  \beta\left(  b^{\prime}\right)  =\alpha\left(  a\right)
+\beta\left(  b\right)  \alpha\left(  a^{\prime}\right)  \beta\left(
+b^{\prime}\right)  .
+\end{align*}
+Comparing this with%
+\[
+\phi\left(  \underbrace{x}_{=a\otimes b}\right)  \phi\left(  \underbrace{y}%
+_{=a^{\prime}\otimes b^{\prime}}\right)  =\underbrace{\phi\left(  a\otimes
+b\right)  }_{\substack{=\alpha\left(  a\right)  \beta\left(  b\right)
+\\\text{(by (\ref{sol.6.10.b.1}))}}}\underbrace{\phi\left(  a^{\prime}\otimes
+b^{\prime}\right)  }_{\substack{=\alpha\left(  a^{\prime}\right)  \beta\left(
+b^{\prime}\right)  \\\text{(by (\ref{sol.6.10.b.1}), applied to}\\\left(
+a^{\prime},b^{\prime}\right)  \text{ instead of }\left(  a,b\right)  \text{)}%
+}}=\alpha\left(  a\right)  \beta\left(  b\right)  \alpha\left(  a^{\prime
+}\right)  \beta\left(  b^{\prime}\right)  ,
+\]
+we obtain $\phi\left(  x\right)  \phi\left(  y\right)  =\phi\left(  xy\right)
+$. Thus, (\ref{sol.6.10.b.2}) is proven.
+
+Now, we know that the map $\phi$ is $\mathbb{Z}$-linear, sends the unity
+$1\otimes1$ of $A\otimes B$ to the unity $1$ of $C$, and satisfies
+(\ref{sol.6.10.b.2}) for every $x\in A\otimes B$ and $y\in A\otimes B$. In
+other words, $\phi$ is a $\mathbb{Z}$-algebra homomorphism. In other words,
+$\phi$ is a ring homomorphism.
+
+Every $a\in A$ satisfies%
+\begin{align*}
+\left(  \phi\circ\iota_{1}\right)  \left(  a\right)   &  =\phi\left(
+\underbrace{\iota_{1}\left(  a\right)  }_{\substack{=a\otimes1\\\text{(by the
+definition of }\iota_{1}\text{)}}}\right)  =\phi\left(  a\otimes1\right)
+=\alpha\left(  a\right)  \underbrace{\beta\left(  1\right)  }%
+_{\substack{=1\\\text{(since }\beta\text{ is a ring}\\\text{homomorphism)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.6.10.b.1}), applied to
+}\left(  a,1\right)  \text{ instead of }\left(  a,b\right)  \right) \\
+&  =\alpha\left(  a\right)  .
+\end{align*}
+In other words, $\phi\circ\iota_{1}=\alpha$. Similarly, $\phi\circ\iota
+_{2}=\beta$. This completes the solution of Exercise 6.10 \textbf{(b)}.
+
+\textit{Exercise 6.11: Solution:} The definition of $\tau_{T}$ shows that
+$\tau_{T}:A\otimes B\rightarrow\Lambda\left(  A\otimes B\right)  $ is a
+$\mathbb{Z}$-module homomorphism satisfying%
+\begin{equation}
+\left(
+\begin{array}
+[c]{l}%
+\tau_{T}\left(  a\otimes b\right)  =\left(  \Lambda\left(  \iota_{1}\right)
+\circ\lambda_{T}\right)  \left(  a\right)  \widehat{\cdot}\left(
+\Lambda\left(  \iota_{2}\right)  \circ\mu_{T}\right)  \left(  b\right) \\
+\ \ \ \ \ \ \ \ \ \ \text{for every }\left(  a,b\right)  \in A\times B
+\end{array}
+\right)  . \label{sol.6.11.tauT-def}%
+\end{equation}
+
+
+For every $i\in\mathbb{N}$ and every ring $K$, we define a mapping
+$\operatorname*{coeff}\nolimits_{i}:K\left[  \left[  T\right]  \right]
+\rightarrow K$ as in Exercise 6.5. For every two rings $K$ and $L$, every ring
+homomorphism $f:K\rightarrow L$ and every $i\in\mathbb{N}$, we have%
+\begin{equation}
+\operatorname*{coeff}\nolimits_{i}\circ\Lambda\left(  f\right)  =f\circ
+\operatorname*{coeff}\nolimits_{i} \label{sol.6.11.coeffLambda}%
+\end{equation}
+\footnote{In other words, the diagram%
+\[%
+%TCIMACRO{\TeXButton{functoriality of coeff}{\xymatrix{
+%\Lambda\left(K\right) \ar[r]^{\Lambda\left(f\right)} \ar[d]_{\operatorname
+%{coeff}_i} & \Lambda\left(L\right) \ar[d]^{\operatorname{coeff}_i} \\
+%K \ar[r]_{f} & L
+%}}}%
+%BeginExpansion
+\xymatrix{
+\Lambda\left(K\right) \ar[r]^{\Lambda\left(f\right)} \ar[d]_{\operatorname
+{coeff}_i} & \Lambda\left(L\right) \ar[d]^{\operatorname{coeff}_i} \\
+K \ar[r]_{f} & L
+}%
+%EndExpansion
+\]
+is commutative.}. (This follows from the definition of $\Lambda\left(
+f\right)  $.)
+
+For every ring two rings $K$ and $L$, every ring homomorphism $f:K\rightarrow
+L$ and every $P\in\Lambda\left(  K\right)  $, we have%
+\begin{equation}
+\left(  \Lambda\left(  f\right)  \right)  \left(  P\right)  =\left(  f\left[
+\left[  T\right]  \right]  \right)  \left(  P\right)  .
+\label{sol.6.11.Lambda-restricts}%
+\end{equation}
+(This follows from the fact that the definitions of the maps $\Lambda\left(
+f\right)  $ and $f\left[  \left[  T\right]  \right]  $ are identical, except
+for the different domains.)
+
+For every $c\in A\otimes B$ and $i\in\mathbb{N}$, we have defined $\tau
+^{i}\left(  c\right)  $ as the coefficient of the power series $\tau
+_{T}\left(  c\right)  \in\Lambda\left(  A\otimes B\right)  \subseteq\left(
+A\otimes B\right)  \left[  \left[  T\right]  \right]  $ before $T^{i}$. In
+other words, for every $c\in A\otimes B$ and $i\in\mathbb{N}$, we have
+\begin{equation}
+\tau^{i}\left(  c\right)  =\operatorname*{coeff}\nolimits_{i}\left(  \tau
+_{T}\left(  c\right)  \right)  . \label{sol.6.11.taui}%
+\end{equation}
+Thus,%
+\begin{equation}
+\tau^{i}=\operatorname*{coeff}\nolimits_{i}\circ\tau_{T}%
+\ \ \ \ \ \ \ \ \ \ \text{for each }i\in\mathbb{N}
+\label{sol.6.11.taui.compos}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.6.11.taui.compos}):} Let $i\in\mathbb{N}%
+$. Then, every $c\in A\otimes B$ satisfies%
+\begin{align*}
+\tau^{i}\left(  c\right)   &  =\operatorname*{coeff}\nolimits_{i}\left(
+\tau_{T}\left(  c\right)  \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by
+(\ref{sol.6.11.taui})}\right) \\
+&  =\left(  \operatorname*{coeff}\nolimits_{i}\circ\tau_{T}\right)  \left(
+c\right)  .
+\end{align*}
+In other words, $\tau^{i}=\operatorname*{coeff}\nolimits_{i}\circ\tau_{T}$.
+This proves (\ref{sol.6.11.taui.compos}).}.
+
+For every $x\in A\otimes B$, we have%
+\begin{equation}
+\tau_{T}\left(  x\right)  =\sum_{i\in\mathbb{N}}\tau^{i}\left(  x\right)
+T^{i} \label{sol.6.11.tauT}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.6.11.tauT}):} Let $x\in A\otimes B$.
+Recall that for every $c\in A\otimes B$ and $i\in\mathbb{N}$, the coefficient
+of the power series $\tau_{T}\left(  c\right)  \in\Lambda\left(  A\otimes
+B\right)  \subseteq\left(  A\otimes B\right)  \left[  \left[  T\right]
+\right]  $ before $T^{i}$ is $\tau^{i}\left(  c\right)  $. Applying this to
+$c=x$, we conclude that for every $i\in\mathbb{N}$, the coefficient of the
+power series $\tau_{T}\left(  x\right)  \in\Lambda\left(  A\otimes B\right)
+\subseteq\left(  A\otimes B\right)  \left[  \left[  T\right]  \right]  $
+before $T^{i}$ is $\tau^{i}\left(  x\right)  $. Hence, $\tau_{T}\left(
+x\right)  =\sum_{i\in\mathbb{N}}\tau^{i}\left(  x\right)  T^{i}$. This proves
+(\ref{sol.6.11.tauT}).}.
+
+\textbf{(a)} We have
+\begin{equation}
+\tau^{0}\left(  x\right)  =1\ \ \ \ \ \ \ \ \ \ \text{for every }x\in A\otimes
+B \label{sol.6.11.a.tau0}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.6.11.a.tau0}):} Let $x\in A\otimes B$.
+Then, $\tau_{T}\left(  x\right)  \in\Lambda\left(  A\otimes B\right)  $ (since
+$\tau_{T}$ is a map $A\otimes B\rightarrow\Lambda\left(  A\otimes B\right)
+$). Hence, $\tau_{T}\left(  x\right)  $ is a power series in $\left(  A\otimes
+B\right)  \left[  \left[  T\right]  \right]  $ with constant term $1$ (since
+$\Lambda\left(  A\otimes B\right)  $ is the set of all such power series).
+Hence, the constant term of $\tau_{T}\left(  x\right)  $ is $1$. In other
+words, $\operatorname*{coeff}\nolimits_{0}\left(  \tau_{T}\left(  x\right)
+\right)  =1$. But (\ref{sol.6.11.taui}) (applied to $c=x$ and $i=0$) yields
+$\tau^{0}\left(  x\right)  =\operatorname*{coeff}\nolimits_{0}\left(  \tau
+_{T}\left(  x\right)  \right)  =1$. This proves (\ref{sol.6.11.a.tau0}).}.
+Also,%
+\begin{equation}
+\tau^{1}\left(  x\right)  =x\ \ \ \ \ \ \ \ \ \ \text{for every }x\in A\otimes
+B \label{sol.6.11.a.tau1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.6.11.a.tau1}):} We have $\tau
+^{1}=\operatorname*{coeff}\nolimits_{1}\circ\tau_{T}$ (by
+(\ref{sol.6.11.taui.compos}), applied to $i=1$).
+\par
+Exercise 6.5 (applied to $K=A\otimes B$) shows that $\operatorname*{coeff}%
+\nolimits_{1}:\Lambda\left(  A\otimes B\right)  \rightarrow A\otimes B$ is a
+ring homomorphism. Hence, $\operatorname*{coeff}\nolimits_{1}:\Lambda\left(
+A\otimes B\right)  \rightarrow A\otimes B$ is a $\mathbb{Z}$-module
+homomorphism. Thus, $\operatorname*{coeff}\nolimits_{1}\circ\tau_{T}:A\otimes
+B\rightarrow A\otimes B$ is a $\mathbb{Z}$-module homomorphism (since both
+$\operatorname*{coeff}\nolimits_{1}$ and $\tau_{T}$ are $\mathbb{Z}$-module
+homomorphisms). In other words, $\tau^{1}:A\otimes B\rightarrow A\otimes B$ is
+a $\mathbb{Z}$-module homomorphism (since $\tau^{1}=\operatorname*{coeff}%
+\nolimits_{1}\circ\tau_{T}$).
+\par
+Every $\left(  a,b\right)  \in A\times B$ satisfies%
+\begin{align*}
+\tau^{1}\left(  a\otimes b\right)   &  =\operatorname*{coeff}\nolimits_{1}%
+\left(  \underbrace{\tau_{T}\left(  a\otimes b\right)  }_{\substack{=\left(
+\Lambda\left(  \iota_{1}\right)  \circ\lambda_{T}\right)  \left(  a\right)
+\widehat{\cdot}\left(  \Lambda\left(  \iota_{2}\right)  \circ\mu_{T}\right)
+\left(  b\right)  \\\text{(by (\ref{sol.6.11.tauT-def}))}}}\right)
+\ \ \ \ \ \ \ \ \ \ \left(
+\begin{array}
+[c]{c}%
+\text{by (\ref{sol.6.11.taui}), applied to }c=a\otimes b\\
+\text{and }i=1
+\end{array}
+\right) \\
+&  =\operatorname*{coeff}\nolimits_{1}\left(  \left(  \Lambda\left(  \iota
+_{1}\right)  \circ\lambda_{T}\right)  \left(  a\right)  \widehat{\cdot}\left(
+\Lambda\left(  \iota_{2}\right)  \circ\mu_{T}\right)  \left(  b\right)
+\right) \\
+&  =\underbrace{\operatorname*{coeff}\nolimits_{1}\left(  \left(
+\Lambda\left(  \iota_{1}\right)  \circ\lambda_{T}\right)  \left(  a\right)
+\right)  }_{=\left(  \operatorname*{coeff}\nolimits_{1}\circ\Lambda\left(
+\iota_{1}\right)  \right)  \left(  \lambda_{T}\left(  a\right)  \right)
+}\cdot\underbrace{\operatorname*{coeff}\nolimits_{1}\left(  \left(
+\Lambda\left(  \iota_{2}\right)  \circ\mu_{T}\right)  \left(  b\right)
+\right)  }_{=\left(  \operatorname*{coeff}\nolimits_{1}\circ\Lambda\left(
+\iota_{2}\right)  \right)  \left(  \mu_{T}\left(  b\right)  \right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\operatorname*{coeff}%
+\nolimits_{1}:\Lambda\left(  A\otimes B\right)  \rightarrow A\otimes B\text{
+is a ring homomorphism}\right) \\
+&  =\underbrace{\left(  \operatorname*{coeff}\nolimits_{1}\circ\Lambda\left(
+\iota_{1}\right)  \right)  }_{\substack{=\iota_{1}\circ\operatorname*{coeff}%
+\nolimits_{1}\\\text{(by (\ref{sol.6.11.coeffLambda}), applied to }K=A\text{,
+}L=A\otimes B\text{,}\\f=\iota_{1}\text{ and }i=1\text{)}}}\left(  \lambda
+_{T}\left(  a\right)  \right)  \cdot\underbrace{\left(  \operatorname*{coeff}%
+\nolimits_{1}\circ\Lambda\left(  \iota_{2}\right)  \right)  }%
+_{\substack{=\iota_{2}\circ\operatorname*{coeff}\nolimits_{1}\\\text{(by
+(\ref{sol.6.11.coeffLambda}), applied to }K=B\text{, }L=A\otimes
+B\text{,}\\f=\iota_{2}\text{ and }i=1\text{)}}}\left(  \mu_{T}\left(
+b\right)  \right) \\
+&  =\underbrace{\left(  \iota_{1}\circ\operatorname*{coeff}\nolimits_{1}%
+\right)  \left(  \lambda_{T}\left(  a\right)  \right)  }_{=\iota_{1}\left(
+\operatorname*{coeff}\nolimits_{1}\left(  \lambda_{T}\left(  a\right)
+\right)  \right)  }\cdot\underbrace{\left(  \iota_{2}\circ
+\operatorname*{coeff}\nolimits_{1}\right)  \left(  \mu_{T}\left(  b\right)
+\right)  }_{=\iota_{2}\left(  \operatorname*{coeff}\nolimits_{1}\left(
+\mu_{T}\left(  b\right)  \right)  \right)  }\\
+&  =\iota_{1}\left(  \underbrace{\operatorname*{coeff}\nolimits_{1}\left(
+\lambda_{T}\left(  a\right)  \right)  }_{\substack{=\lambda^{1}\left(
+a\right)  \\\text{(since }\lambda_{T}\left(  a\right)  =\sum\limits_{i\in
+\mathbb{N}}\lambda^{i}\left(  a\right)  T^{i}\\\text{(by the definition of
+}\lambda_{T}\text{))}}}\right)  \cdot\iota_{2}\left(
+\underbrace{\operatorname*{coeff}\nolimits_{1}\left(  \mu_{T}\left(  b\right)
+\right)  }_{\substack{=\mu^{1}\left(  b\right)  \\\text{(since }\mu_{T}\left(
+b\right)  =\sum\limits_{i\in\mathbb{N}}\mu^{i}\left(  b\right)  T^{i}%
+\\\text{(by the definition of }\mu_{T}\text{))}}}\right) \\
+&  =\iota_{1}\left(  \underbrace{\lambda^{1}\left(  a\right)  }%
+_{\substack{=a\\\text{(since }\left(  A,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  \\\text{is a }\lambda\text{-ring)}}}\right)
+\cdot\iota_{2}\left(  \underbrace{\mu^{1}\left(  b\right)  }%
+_{\substack{=b\\\text{(since }\left(  B,\left(  \mu^{i}\right)  _{i\in
+\mathbb{N}}\right)  \\\text{is a }\lambda\text{-ring)}}}\right)
+=\underbrace{\iota_{1}\left(  a\right)  }_{\substack{=a\otimes1\\\text{(by the
+definition}\\\text{of }\iota_{1}\text{)}}}\cdot\underbrace{\iota_{2}\left(
+b\right)  }_{\substack{=1\otimes b\\\text{(by the definition}\\\text{of }%
+\iota_{2}\text{)}}}\\
+&  =\left(  a\otimes1\right)  \cdot\left(  1\otimes b\right)  =a\otimes
+b=\operatorname*{id}\left(  a\otimes b\right)  .
+\end{align*}
+In other words, the two maps $\tau^{1}:A\otimes B\rightarrow A\otimes B$ and
+$\operatorname*{id}:A\otimes B\rightarrow A\otimes B$ are equal to each other
+on each pure tensor. Since these two maps are $\mathbb{Z}$-module
+homomorphisms, this entails that these two maps must be identical (because the
+pure tensors span the $\mathbb{Z}$-module $A\otimes B$). In other words,
+$\tau^{1}=\operatorname*{id}$. In other words, $\tau^{1}\left(  x\right)  =x$
+for every $x\in A\otimes B$. This proves (\ref{sol.6.11.a.tau1}).}. Thus,
+Theorem 2.1 \textbf{(a)} (applied to $A\otimes B$, $\left(  \tau^{i}\right)
+_{i\in\mathbb{N}}$ and $\tau_{T}$ instead of $K$, $\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}$ and $\lambda_{T}$) shows that we have%
+\begin{equation}
+\tau_{T}\left(  x\right)  \cdot\tau_{T}\left(  y\right)  =\tau_{T}\left(
+x+y\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }x\in A\otimes B\text{ and
+}y\in A\otimes B \label{sol.6.11.a.additive}%
+\end{equation}
+if and only if $\left(  A\otimes B,\left(  \tau^{i}\right)  _{i\in\mathbb{N}%
+}\right)  $ is a $\lambda$-ring. Thus, $\left(  A\otimes B,\left(  \tau
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring (because
+(\ref{sol.6.11.a.additive}) holds\footnote{\textit{Proof of
+(\ref{sol.6.11.a.additive}):} Let $x\in A\otimes B$ and $y\in A\otimes B$.
+Recall that the addition $\widehat{+}$ of the ring $\Lambda\left(  A\otimes
+B\right)  $ is defined by the rule that $u\widehat{+}v=uv$ for all
+$u\in\Lambda\left(  A\otimes B\right)  $ and $v\in\Lambda\left(  A\otimes
+B\right)  $. Applying this rule to $u=\tau_{T}\left(  x\right)  $ and
+$v=\tau_{T}\left(  y\right)  $, we obtain $\tau_{T}\left(  x\right)
+\widehat{+}\tau_{T}\left(  y\right)  =\tau_{T}\left(  x\right)  \cdot\tau
+_{T}\left(  y\right)  $. Thus,%
+\[
+\tau_{T}\left(  x\right)  \cdot\tau_{T}\left(  y\right)  =\tau_{T}\left(
+x\right)  \widehat{+}\tau_{T}\left(  y\right)  =\tau_{T}\left(  x+y\right)
+\]
+(since the map $\tau_{T}$ is a $\mathbb{Z}$-module homomorphism). This proves
+(\ref{sol.6.11.a.additive}).}). This solves Exercise 6.11 \textbf{(a)}.
+
+\textbf{(b)} Let $\left(  C,\left(  \nu^{i}\right)  _{i\in\mathbb{N}}\right)
+$ be a \textbf{special} $\lambda$-ring. Let $\alpha:\left(  A,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  \rightarrow\left(  C,\left(
+\nu^{i}\right)  _{i\in\mathbb{N}}\right)  $ and $\beta:\left(  B,\left(
+\mu^{i}\right)  _{i\in\mathbb{N}}\right)  \rightarrow\left(  C,\left(  \nu
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ be two $\lambda$-ring homomorphisms.
+Consider the unique $\mathbb{Z}$-module homomorphism $\phi:A\otimes
+B\rightarrow C$ constructed in Exercise 6.10 \textbf{(a)}. The definition of
+$\phi$ shows that%
+\begin{equation}
+\left(  \phi\left(  a\otimes b\right)  =\alpha\left(  a\right)  \beta\left(
+b\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }\left(  a,b\right)  \in A\times
+B\right)  . \label{sol.6.11.b.phi-def}%
+\end{equation}
+Moreover, Exercise 6.10 \textbf{(b)} shows that this $\phi$ is a ring
+homomorphism and satisfies $\phi\circ\iota_{1}=\alpha$ and $\phi\circ\iota
+_{2}=\beta$. Since $\phi:A\otimes B\rightarrow C$ is a ring homomorphism, we
+see that $\Lambda\left(  \phi\right)  :\Lambda\left(  A\otimes B\right)
+\rightarrow\Lambda\left(  C\right)  $ is a $\lambda$-ring homomorphism and
+therefore a ring homomorphism.
+
+Since $\Lambda$ is a functor, we have $\Lambda\left(  \phi\right)
+\circ\Lambda\left(  \iota_{1}\right)  =\Lambda\left(  \underbrace{\phi
+\circ\iota_{1}}_{=\alpha}\right)  =\Lambda\left(  \alpha\right)  $ and
+$\Lambda\left(  \phi\right)  \circ\Lambda\left(  \iota_{2}\right)
+=\Lambda\left(  \underbrace{\phi\circ\iota_{2}}_{=\beta}\right)
+=\Lambda\left(  \beta\right)  $.
+
+Define a map $\nu_{T}:C\rightarrow\Lambda\left(  C\right)  $ by%
+\[
+\nu_{T}\left(  x\right)  =\sum\limits_{i\in\mathbb{N}}\nu^{i}\left(  x\right)
+T^{i}\ \ \ \ \ \ \ \ \ \ \text{for every }x\in C.
+\]
+Notice that $\left(  C,\left(  \nu^{i}\right)  _{i\in\mathbb{N}}\right)  $ is
+a special $\lambda$-ring if and only if the map $\nu_{T}:\left(  C,\left(
+\nu^{i}\right)  _{i\in\mathbb{N}}\right)  \rightarrow\left(  \Lambda\left(
+C\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $
+is a $\lambda$-ring homomorphism (by the definition of a \textquotedblleft
+special $\lambda$-ring\textquotedblright). Thus, the map $\nu_{T}:\left(
+C,\left(  \nu^{i}\right)  _{i\in\mathbb{N}}\right)  \rightarrow\left(
+\Lambda\left(  C\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in
+\mathbb{N}}\right)  $ is a $\lambda$-ring homomorphism (since $\left(
+C,\left(  \nu^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a special $\lambda
+$-ring). In particular, $\nu_{T}$ is a ring homomorphism, and thus is a
+$\mathbb{Z}$-module homomorphism. Thus, all four maps $\tau_{T}$, $\phi$,
+$\nu_{T}$ and $\Lambda\left(  \phi\right)  $ are $\mathbb{Z}$-module
+homomorphisms. Hence, the compositions $\Lambda\left(  \phi\right)  \circ
+\tau_{T}$ and $\nu_{T}\circ\phi$ are $\mathbb{Z}$-module homomorphisms as well.
+
+Theorem 2.1 \textbf{(c)} (applied to $\left(  A,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $, $\lambda_{T}$, $\left(  C,\left(  \nu^{i}\right)
+_{i\in\mathbb{N}}\right)  $, $\nu_{T}$ and $\alpha$ instead of $\left(
+K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $, $\lambda_{T}$,
+$\left(  L,\left(  \mu^{i}\right)  _{i\in\mathbb{N}}\right)  $, $\mu_{T}$ and
+$f$) shows that $\alpha$ is a $\lambda$-ring homomorphism if and only if
+$\nu_{T}\circ\alpha=\alpha\left[  \left[  T\right]  \right]  \circ\lambda_{T}%
+$. Since $\alpha$ is a $\lambda$-ring homomorphism, we therefore conclude that%
+\begin{equation}
+\nu_{T}\circ\alpha=\alpha\left[  \left[  T\right]  \right]  \circ\lambda_{T}.
+\label{sol.6.11.b.alpha}%
+\end{equation}
+Similarly, using the fact that $\beta$ is a $\lambda$-ring homomorphism, we
+can prove that%
+\begin{equation}
+\nu_{T}\circ\beta=\beta\left[  \left[  T\right]  \right]  \circ\mu_{T}.
+\label{sol.6.11.b.beta}%
+\end{equation}
+
+
+Now, we shall prove that the diagram%
+\begin{equation}%
+%TCIMACRO{\TeXButton{main claim of (b)}{\xymatrix{
+%A \otimes B \ar[r]^{\varphi} \ar[d]_{\tau_T} & C \ar[d]^{\nu_T} \\
+%\Lambda\left(A \otimes B\right) \ar[r]_{\Lambda\left(\varphi\right)}
+%& \Lambda\left(C\right)
+%}} }%
+%BeginExpansion
+\xymatrix{
+A \otimes B \ar[r]^{\varphi} \ar[d]_{\tau_T} & C \ar[d]^{\nu_T} \\
+\Lambda\left(A \otimes B\right) \ar[r]_{\Lambda\left(\varphi\right)}
+& \Lambda\left(C\right)
+}
+%EndExpansion
+\label{sol.6.11.b.diagram}%
+\end{equation}
+is commutative.
+
+Indeed, every $\left(  a,b\right)  \in A\times B$ satisfies%
+\begin{align*}
+&  \left(  \Lambda\left(  \phi\right)  \circ\tau_{T}\right)  \left(  a\otimes
+b\right) \\
+&  =\left(  \Lambda\left(  \phi\right)  \right)  \left(  \underbrace{\tau
+_{T}\left(  a\otimes b\right)  }_{\substack{=\left(  \Lambda\left(  \iota
+_{1}\right)  \circ\lambda_{T}\right)  \left(  a\right)  \widehat{\cdot}\left(
+\Lambda\left(  \iota_{2}\right)  \circ\mu_{T}\right)  \left(  b\right)
+\\\text{(by (\ref{sol.6.11.tauT-def}))}}}\right) \\
+&  =\left(  \Lambda\left(  \phi\right)  \right)  \left(  \left(
+\Lambda\left(  \iota_{1}\right)  \circ\lambda_{T}\right)  \left(  a\right)
+\widehat{\cdot}\left(  \Lambda\left(  \iota_{2}\right)  \circ\mu_{T}\right)
+\left(  b\right)  \right) \\
+&  =\underbrace{\left(  \Lambda\left(  \phi\right)  \right)  \left(  \left(
+\Lambda\left(  \iota_{1}\right)  \circ\lambda_{T}\right)  \left(  a\right)
+\right)  }_{=\left(  \Lambda\left(  \phi\right)  \circ\Lambda\left(  \iota
+_{1}\right)  \circ\lambda_{T}\right)  \left(  a\right)  }\widehat{\cdot
+}\underbrace{\left(  \Lambda\left(  \phi\right)  \right)  \left(  \left(
+\Lambda\left(  \iota_{2}\right)  \circ\mu_{T}\right)  \left(  b\right)
+\right)  }_{=\left(  \Lambda\left(  \phi\right)  \circ\Lambda\left(  \iota
+_{2}\right)  \circ\mu_{T}\right)  \left(  b\right)  }\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\Lambda\left(  \phi\right)  \text{
+is a ring homomorphism}\right) \\
+&  =\left(  \underbrace{\Lambda\left(  \phi\right)  \circ\Lambda\left(
+\iota_{1}\right)  }_{=\Lambda\left(  \alpha\right)  }\circ\lambda_{T}\right)
+\left(  a\right)  \widehat{\cdot}\left(  \underbrace{\Lambda\left(
+\phi\right)  \circ\Lambda\left(  \iota_{2}\right)  }_{=\Lambda\left(
+\beta\right)  }\circ\mu_{T}\right)  \left(  b\right) \\
+&  =\underbrace{\left(  \Lambda\left(  \alpha\right)  \circ\lambda_{T}\right)
+\left(  a\right)  }_{\substack{=\left(  \Lambda\left(  \alpha\right)  \right)
+\left(  \lambda_{T}\left(  a\right)  \right)  \\=\left(  \alpha\left[  \left[
+T\right]  \right]  \right)  \left(  \lambda_{T}\left(  a\right)  \right)
+\\\text{(by (\ref{sol.6.11.Lambda-restricts}), applied to}\\K=A\text{,
+}L=C\text{, }f=\alpha\text{ and }P=\lambda_{T}\left(  a\right)  \text{)}%
+}}\widehat{\cdot}\underbrace{\left(  \Lambda\left(  \beta\right)  \circ\mu
+_{T}\right)  \left(  b\right)  }_{\substack{=\left(  \Lambda\left(
+\beta\right)  \right)  \left(  \mu_{T}\left(  b\right)  \right)  \\=\left(
+\beta\left[  \left[  T\right]  \right]  \right)  \left(  \mu_{T}\left(
+b\right)  \right)  \\\text{(by (\ref{sol.6.11.Lambda-restricts}), applied
+to}\\K=B\text{, }L=C\text{, }f=\beta\text{ and }P=\mu_{T}\left(  b\right)
+\text{)}}}\\
+&  =\underbrace{\left(  \alpha\left[  \left[  T\right]  \right]  \right)
+\left(  \lambda_{T}\left(  a\right)  \right)  }_{=\left(  \alpha\left[
+\left[  T\right]  \right]  \circ\lambda_{T}\right)  \left(  a\right)
+}\widehat{\cdot}\underbrace{\left(  \beta\left[  \left[  T\right]  \right]
+\right)  \left(  \mu_{T}\left(  b\right)  \right)  }_{=\left(  \beta\left[
+\left[  T\right]  \right]  \circ\mu_{T}\right)  \left(  b\right)
+}=\underbrace{\left(  \alpha\left[  \left[  T\right]  \right]  \circ
+\lambda_{T}\right)  }_{\substack{=\nu_{T}\circ\alpha\\\text{(by
+(\ref{sol.6.11.b.alpha}))}}}\left(  a\right)  \widehat{\cdot}%
+\underbrace{\left(  \beta\left[  \left[  T\right]  \right]  \circ\mu
+_{T}\right)  }_{\substack{=\nu_{T}\circ\beta\\\text{(by (\ref{sol.6.11.b.beta}%
+))}}}\left(  b\right) \\
+&  =\underbrace{\left(  \nu_{T}\circ\alpha\right)  \left(  a\right)  }%
+_{=\nu_{T}\left(  \alpha\left(  a\right)  \right)  }\widehat{\cdot
+}\underbrace{\left(  \nu_{T}\circ\beta\right)  \left(  b\right)  }_{=\nu
+_{T}\left(  \beta\left(  b\right)  \right)  }=\nu_{T}\left(  \alpha\left(
+a\right)  \right)  \widehat{\cdot}\nu_{T}\left(  \beta\left(  b\right)
+\right) \\
+&  =\nu_{T}\left(  \underbrace{\alpha\left(  a\right)  \beta\left(  b\right)
+}_{\substack{=\phi\left(  a\otimes b\right)  \\\text{(by
+(\ref{sol.6.11.b.phi-def}))}}}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}\nu_{T}:C\rightarrow\Lambda\left(  C\right)  \text{ is a ring homomorphism}%
+\right) \\
+&  =\nu_{T}\left(  \phi\left(  a\otimes b\right)  \right)  =\left(  \nu
+_{T}\circ\phi\right)  \left(  a\otimes b\right)  .
+\end{align*}
+In other words, the two maps $\Lambda\left(  \phi\right)  \circ\tau_{T}$ and
+$\nu_{T}\circ\phi$ are equal to each other on each pure tensor in $A\otimes
+B$. Since these two maps are $\mathbb{Z}$-module homomorphisms, this entails
+that these two maps must be identical (since the $\mathbb{Z}$-module $A\otimes
+B$ is spanned by the pure tensors). In other words, $\Lambda\left(
+\phi\right)  \circ\tau_{T}=\nu_{T}\circ\phi$. This proves that the diagram
+(\ref{sol.6.11.b.diagram}) is commutative.
+
+From this, it is easy to see that%
+\[
+\nu_{T}\circ\phi=\phi\left[  \left[  T\right]  \right]  \circ\tau_{T}%
+\]
+\footnote{\textit{Proof.} Every $x\in A\otimes B$ satisfies%
+\begin{align*}
+&  \underbrace{\left(  \nu_{T}\circ\phi\right)  }_{\substack{=\Lambda\left(
+\phi\right)  \circ\tau_{T}\\\text{(since the diagram}%
+\\\text{(\ref{sol.6.11.b.diagram}) is commutative)}}}\left(  x\right) \\
+&  =\left(  \Lambda\left(  \phi\right)  \circ\tau_{T}\right)  \left(
+x\right)  =\left(  \Lambda\left(  \phi\right)  \right)  \left(  \tau
+_{T}\left(  x\right)  \right)  =\left(  \phi\left[  \left[  T\right]  \right]
+\right)  \left(  \tau_{T}\left(  x\right)  \right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.6.11.Lambda-restricts}),
+applied to }K=A\otimes B\text{, }L=C\text{, }f=\phi\text{ and }P=\tau
+_{T}\left(  x\right)  \right) \\
+&  =\left(  \phi\left[  \left[  T\right]  \right]  \circ\tau_{T}\right)
+\left(  x\right)  .
+\end{align*}
+Hence, $\nu_{T}\circ\phi=\phi\left[  \left[  T\right]  \right]  \circ\tau_{T}%
+$, qed.}.
+
+Now, Theorem 2.1 \textbf{(c)} (applied to $\left(  A\otimes B,\left(  \tau
+^{i}\right)  _{i\in\mathbb{N}}\right)  $, $\tau_{T}$, $\left(  C,\left(
+\nu^{i}\right)  _{i\in\mathbb{N}}\right)  $, $\nu_{T}$ and $\phi$ instead of
+$\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $,
+$\lambda_{T}$, $\left(  L,\left(  \mu^{i}\right)  _{i\in\mathbb{N}}\right)  $,
+$\mu_{T}$ and $f$) shows that $\phi$ is a $\lambda$-ring homomorphism if and
+only if $\nu_{T}\circ\phi=\phi\left[  \left[  T\right]  \right]  \circ\tau
+_{T}$. Therefore, $\phi$ is a $\lambda$-ring homomorphism (since we have
+$\nu_{T}\circ\phi=\phi\left[  \left[  T\right]  \right]  \circ\tau_{T}$). This
+solves Exercise 6.11 \textbf{(b)}.
+
+\textbf{(c)} Assume that the $\lambda$-rings $\left(  A,\left(  \lambda
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ and $\left(  B,\left(  \mu
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ are special. Notice that $\left(
+A,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a special
+$\lambda$-ring if and only if the map $\lambda_{T}:\left(  A,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  \rightarrow\left(
+\Lambda\left(  A\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in
+\mathbb{N}}\right)  $ is a $\lambda$-ring homomorphism (by the definition of a
+\textquotedblleft special $\lambda$-ring\textquotedblright). Thus, the map
+$\lambda_{T}:\left(  A,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)
+\rightarrow\left(  \Lambda\left(  A\right)  ,\left(  \widehat{\lambda}%
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring homomorphism
+(since $\left(  A,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a
+special $\lambda$-ring). In particular, $\lambda_{T}$ is a ring homomorphism.
+Hence, $\lambda_{T}$ sends the unity $1$ of the ring $A$ to the unity $1+T$ of
+the ring $\Lambda\left(  A\right)  $. In other words, $\lambda_{T}\left(
+1\right)  =1+T$. Similarly, $\mu_{T}\left(  1\right)  =1+T$ (because the
+$\lambda$-ring $\left(  B,\left(  \mu^{i}\right)  _{i\in\mathbb{N}}\right)  $
+is special).
+
+But $\iota_{2}$ is a ring homomorphism, and thus $\Lambda\left(  \iota
+_{2}\right)  $ is a $\lambda$-ring homomorphism. Hence, $\Lambda\left(
+\iota_{2}\right)  $ is a ring homomorphism. Thus, $\Lambda\left(  \iota
+_{2}\right)  $ sends the unity $1+T$ of the ring $\Lambda\left(  B\right)  $
+to the unity $1+T$ of the ring $\Lambda\left(  A\otimes B\right)  $. In other
+words, $\left(  \Lambda\left(  \iota_{2}\right)  \right)  \left(  1+T\right)
+=1+T$. Now,%
+\begin{equation}
+\left(  \Lambda\left(  \iota_{2}\right)  \circ\mu_{T}\right)  \left(
+1\right)  =\left(  \Lambda\left(  \iota_{2}\right)  \right)  \left(
+\underbrace{\mu_{T}\left(  1\right)  }_{=1+T}\right)  =\left(  \Lambda\left(
+\iota_{2}\right)  \right)  \left(  1+T\right)  =1+T. \label{sol.6.11.c.1}%
+\end{equation}
+
+
+Now, we claim that%
+\begin{equation}
+\tau_{T}\circ\iota_{1}=\iota_{1}\left[  \left[  T\right]  \right]
+\circ\lambda_{T} \label{sol.6.11.c.cl1}%
+\end{equation}
+
+
+\textit{Proof of (\ref{sol.6.11.c.cl1}):} Let $a\in A$. Then, $\lambda
+_{T}\left(  a\right)  \in\Lambda\left(  A\right)  $. Hence,
+(\ref{sol.6.11.Lambda-restricts}) (applied to $K=A$, $L=A\otimes B$,
+$f=\iota_{1}$ and $P=\lambda_{T}\left(  a\right)  $) yields
+\[
+\left(  \Lambda\left(  \iota_{1}\right)  \right)  \left(  \lambda_{T}\left(
+a\right)  \right)  =\left(  \iota_{1}\left[  \left[  T\right]  \right]
+\right)  \left(  \lambda_{T}\left(  a\right)  \right)  =\left(  \iota
+_{1}\left[  \left[  T\right]  \right]  \circ\lambda_{T}\right)  \left(
+a\right)  .
+\]
+But the definition of $\iota_{1}$ yields $\iota_{1}\left(  a\right)
+=a\otimes1$. Now,
+\begin{align*}
+\left(  \tau_{T}\circ\iota_{1}\right)  \left(  a\right)   &  =\tau_{T}\left(
+\underbrace{\iota_{1}\left(  a\right)  }_{=a\otimes1}\right)  =\tau_{T}\left(
+a\otimes1\right)  =\underbrace{\left(  \Lambda\left(  \iota_{1}\right)
+\circ\lambda_{T}\right)  \left(  a\right)  }_{\substack{=\left(
+\Lambda\left(  \iota_{1}\right)  \right)  \left(  \lambda_{T}\left(  a\right)
+\right)  \\=\left(  \iota_{1}\left[  \left[  T\right]  \right]  \circ
+\lambda_{T}\right)  \left(  a\right)  }}\widehat{\cdot}\underbrace{\left(
+\Lambda\left(  \iota_{2}\right)  \circ\mu_{T}\right)  \left(  1\right)
+}_{\substack{=1+T\\\text{(by (\ref{sol.6.11.c.1}))}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.6.11.tauT-def}), applied to
+}\left(  a,1\right)  \text{ instead of }\left(  a,b\right)  \right) \\
+&  =\left(  \iota_{1}\left[  \left[  T\right]  \right]  \circ\lambda
+_{T}\right)  \left(  a\right)  \widehat{\cdot}\left(  1+T\right)  =\left(
+\iota_{1}\left[  \left[  T\right]  \right]  \circ\lambda_{T}\right)  \left(
+a\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }1+T\text{ is the unity of the ring
+}\Lambda\left(  A\otimes B\right)  \right)  .
+\end{align*}
+
+
+Now, forget that we fixed $a$. We thus have shown that $\left(  \tau_{T}%
+\circ\iota_{1}\right)  \left(  a\right)  =\left(  \iota_{1}\left[  \left[
+T\right]  \right]  \circ\lambda_{T}\right)  \left(  a\right)  $ for every
+$a\in A$. In other words, $\tau_{T}\circ\iota_{1}=\iota_{1}\left[  \left[
+T\right]  \right]  \circ\lambda_{T}$. This proves (\ref{sol.6.11.c.cl1}).
+
+Now, Theorem 2.1 \textbf{(c)} (applied to $\left(  A,\left(  \lambda
+^{i}\right)  _{i\in\mathbb{N}}\right)  $, $\lambda_{T}$, $\left(  A\otimes
+B,\left(  \tau^{i}\right)  _{i\in\mathbb{N}}\right)  $, $\tau_{T}$ and
+$\iota_{1}$ instead of $\left(  K,\left(  \lambda^{i}\right)  _{i\in
+\mathbb{N}}\right)  $, $\lambda_{T}$, $\left(  L,\left(  \mu^{i}\right)
+_{i\in\mathbb{N}}\right)  $, $\mu_{T}$ and $f$) shows that $\iota_{1}$ is a
+$\lambda$-ring homomorphism if and only if $\tau_{T}\circ\iota_{1}=\iota
+_{1}\left[  \left[  T\right]  \right]  \circ\lambda_{T}$. Therefore,
+$\iota_{1}$ is a $\lambda$-ring homomorphism (since we have $\tau_{T}%
+\circ\iota_{1}=\iota_{1}\left[  \left[  T\right]  \right]  \circ\lambda_{T}$).
+Similarly, $\iota_{2}$ is a $\lambda$-ring homomorphism. This solves Exercise
+6.11 \textbf{(c)}.
+
+\textbf{(d)} Assume that the $\lambda$-rings $\left(  A,\left(  \lambda
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ and $\left(  B,\left(  \mu
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ are special. Notice that $\left(
+A,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a special
+$\lambda$-ring if and only if the map $\lambda_{T}:\left(  A,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  \rightarrow\left(
+\Lambda\left(  A\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in
+\mathbb{N}}\right)  $ is a $\lambda$-ring homomorphism (by the definition of a
+\textquotedblleft special $\lambda$-ring\textquotedblright). Thus, the map
+$\lambda_{T}:\left(  A,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)
+\rightarrow\left(  \Lambda\left(  A\right)  ,\left(  \widehat{\lambda}%
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring homomorphism
+(since $\left(  A,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a
+special $\lambda$-ring). Similarly, the map $\mu_{T}:\left(  B,\left(  \mu
+^{i}\right)  _{i\in\mathbb{N}}\right)  \rightarrow\left(  \Lambda\left(
+B\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $
+is a $\lambda$-ring homomorphism.
+
+The map $\iota_{1}:A\rightarrow A\otimes B$ is a ring homomorphism; thus, the
+map $\Lambda\left(  \iota_{1}\right)  :\left(  \Lambda\left(  A\right)
+,\left(  \widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)
+\rightarrow\left(  \Lambda\left(  A\otimes B\right)  ,\left(  \widehat{\lambda
+}^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring homomorphism.
+Hence, $\Lambda\left(  \iota_{1}\right)  \circ\lambda_{T}:\left(  A,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  \rightarrow\left(
+\Lambda\left(  A\otimes B\right)  ,\left(  \widehat{\lambda}^{i}\right)
+_{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring homomorphism (being the
+composition of the two $\lambda$-ring homomorphisms $\lambda_{T}$ and
+$\Lambda\left(  \iota_{1}\right)  $). Similarly, $\Lambda\left(  \iota
+_{2}\right)  \circ\mu_{T}:\left(  B,\left(  \mu^{i}\right)  _{i\in\mathbb{N}%
+}\right)  \rightarrow\left(  \Lambda\left(  A\otimes B\right)  ,\left(
+\widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring
+homomorphism. Also, $\left(  \Lambda\left(  A\otimes B\right)  ,\left(
+\widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a special
+$\lambda$-ring (by Theorem 6.2, applied to $K=A\otimes B$). Therefore,
+Exercise 6.11 \textbf{(b)} (applied to $\left(  \Lambda\left(  A\otimes
+B\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $,
+$\Lambda\left(  \iota_{1}\right)  \circ\lambda_{T}$, $\Lambda\left(  \iota
+_{2}\right)  \circ\mu_{T}$ and $\tau_{T}$ instead of $\left(  C,\left(
+\nu^{i}\right)  _{i\in\mathbb{N}}\right)  $, $\alpha$, $\beta$ and $\phi$)
+shows that the unique $\mathbb{Z}$-module homomorphism $\phi:A\otimes
+B\rightarrow\Lambda\left(  A\otimes B\right)  $ constructed in Exercise 6.10
+\textbf{(a)} (applied to $C=\Lambda\left(  A\otimes B\right)  $,
+$\alpha=\Lambda\left(  \iota_{1}\right)  \circ\lambda_{T}$ and $\beta
+=\Lambda\left(  \iota_{2}\right)  \circ\mu_{T}$) is a $\lambda$-ring
+homomorphism $\left(  A\otimes B,\left(  \tau^{i}\right)  _{i\in\mathbb{N}%
+}\right)  \rightarrow\left(  \Lambda\left(  A\otimes B\right)  ,\left(
+\widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $. Since this unique
+$\mathbb{Z}$-module homomorphism $\phi:A\otimes B\rightarrow\Lambda\left(
+A\otimes B\right)  $ is our map $\tau_{T}$ (because this is how we defined
+$\tau_{T}$), we can rewrite this as follows: The map $\tau_{T}$ is a $\lambda
+$-ring homomorphism $\left(  A\otimes B,\left(  \tau^{i}\right)
+_{i\in\mathbb{N}}\right)  \rightarrow\left(  \Lambda\left(  A\otimes B\right)
+,\left(  \widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $.
+
+But the $\lambda$-ring $\left(  A\otimes B,\left(  \tau^{i}\right)
+_{i\in\mathbb{N}}\right)  $ is special if and only if the map $\tau
+_{T}:\left(  A\otimes B,\left(  \tau^{i}\right)  _{i\in\mathbb{N}}\right)
+\rightarrow\left(  \Lambda\left(  A\otimes B\right)  ,\left(  \widehat{\lambda
+}^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring homomorphism (by
+the definition of a \textquotedblleft special $\lambda$-ring\textquotedblright%
+). Thus, the $\lambda$-ring $\left(  A\otimes B,\left(  \tau^{i}\right)
+_{i\in\mathbb{N}}\right)  $ is special (since the map $\tau_{T}:\left(
+A\otimes B,\left(  \tau^{i}\right)  _{i\in\mathbb{N}}\right)  \rightarrow
+\left(  \Lambda\left(  A\otimes B\right)  ,\left(  \widehat{\lambda}%
+^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a $\lambda$-ring homomorphism).
+This solves Exercise 6.11 \textbf{(d)}.
 
 \subsection{To Section 7}
 
