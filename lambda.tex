@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, May 03, 2016 12:08:12}
+%TCIDATA{LastRevised=Tuesday, May 03, 2016 23:14:15}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -3875,12 +3875,21 @@ and%
 
 \textit{Exercise 6.5.} Let $K$ be a ring. Let $i\in\mathbb{N}$. Define a
 mapping $\operatorname*{coeff}\nolimits_{i}:\Lambda\left(  K\right)
-\rightarrow K$ by $\operatorname*{coeff}\nolimits_{i}\left(  \sum
-\limits_{j\in\mathbb{N}}a_{j}T^{j}\right)  =a_{i}$ for every $\sum
-\limits_{j\in\mathbb{N}}a_{j}T^{j}\in\Lambda\left(  K\right)  $ (with
-$a_{j}\in K$ for every $j\in\mathbb{N}$). (In other words,
-$\operatorname*{coeff}\nolimits_{i}$ is the mapping that takes a power series
-and returns its coefficient before $T^{i}.$)
+\rightarrow K$ by setting
+\[
+\left(
+\begin{array}
+[c]{l}%
+\operatorname*{coeff}\nolimits_{i}\left(  \sum\limits_{j\in\mathbb{N}}%
+a_{j}T^{j}\right)  =a_{i}\\
+\ \ \ \ \ \ \ \ \ \ \text{for every }\sum\limits_{j\in\mathbb{N}}a_{j}T^{j}%
+\in\Lambda\left(  K\right)  \text{ (with }a_{j}\in K\text{ for every }%
+j\in\mathbb{N}\text{)}%
+\end{array}
+\right)  .
+\]
+(In other words, $\operatorname*{coeff}\nolimits_{i}$ is the mapping that
+takes a power series and returns its coefficient before $T^{i}$.)
 
 Prove that%
 \[
@@ -3918,6 +3927,56 @@ _{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring, and $I$ be an ideal
 of $K$. Let $S$ be a subset of $I$ which generates the ideal $I$. Assume that
 every $s\in S$ and every positive integer $i$ satisfy $\lambda^{i}\left(
 s\right)  \in I$. Then, prove that $I$ is a $\lambda$-ideal of $K$.
+
+\textit{Exercise 6.8.} Let $K$ be a ring. For every $i\in\mathbb{N}$, we
+define a mapping $\operatorname*{Coeff}\nolimits_{i}:K\left[  \left[
+T\right]  \right]  \rightarrow K$ by setting%
+\[
+\left(
+\begin{array}
+[c]{l}%
+\operatorname*{Coeff}\nolimits_{i}\left(  P\right)  =\left(  \text{the
+coefficient of }P\text{ before }T^{i}\right) \\
+\ \ \ \ \ \ \ \ \ \ \text{for every power series }P\in K\left[  \left[
+T\right]  \right]
+\end{array}
+\right)
+\]
+\footnote{Equivalently, $\operatorname*{Coeff}\nolimits_{i}\left(
+\sum\limits_{j\in\mathbb{N}}a_{j}T^{j}\right)  =a_{i}$ for every
+$\sum\limits_{j\in\mathbb{N}}a_{j}T^{j}\in K\left[  \left[  T\right]  \right]
+$ (with $a_{j}\in K$ for every $j\in\mathbb{N}$).}. (In other words,
+$\operatorname*{Coeff}\nolimits_{i}$ is the mapping that takes a power series
+and returns its coefficient before $T^{i}$.)\ \ \ \ \ \footnote{Note that we
+are denoting this mapping by $\operatorname*{Coeff}\nolimits_{i}$ with a
+capital \textquotedblleft C\textquotedblright\ to distinguish it from the
+mapping $\operatorname*{coeff}\nolimits_{i}$ defined in Exercise 6.5. This
+distinction is necessary because these two mappings have different domains
+(namely, the map $\operatorname*{Coeff}\nolimits_{i}$ is defined on all of
+$K\left[  \left[  T\right]  \right]  $, whereas the map $\operatorname*{coeff}%
+\nolimits_{i}$ is defined only on $\Lambda\left(  K\right)  $).}
+
+Let $m\in\mathbb{N}$. For every $i\in\left\{  1,2,...,m\right\}  $, let
+$\Phi_{i}\in K\left[  \left[  T\right]  \right]  $ be a power series.
+
+\textbf{(a)} We have $\operatorname*{Coeff}\nolimits_{0}\left(  \prod
+\limits_{i=1}^{m}\Phi_{i}\right)  =\prod\limits_{i=1}^{m}\operatorname*{Coeff}%
+\nolimits_{0}\left(  \Phi_{i}\right)  $.
+
+\textbf{(b)} Assume that $\operatorname*{Coeff}\nolimits_{0}\left(  \Phi
+_{i}\right)  =1$ for every $i\in\left\{  1,2,...,m\right\}  $. Then,
+$\operatorname*{Coeff}\nolimits_{0}\left(  \prod\limits_{i=1}^{m}\Phi
+_{i}\right)  =1$ and $\operatorname*{Coeff}\nolimits_{1}\left(  \prod
+\limits_{i=1}^{m}\Phi_{i}\right)  =\sum\limits_{i=1}^{m}\operatorname*{Coeff}%
+\nolimits_{1}\left(  \Phi_{i}\right)  $.
+
+\textit{Exercise 6.9.} Let $K$ be a ring. For each $i\in\mathbb{N}$, define
+the mapping $\operatorname*{coeff}\nolimits_{i}:\Lambda\left(  K\right)
+\rightarrow K$ as in Exercise 6.5. Then, show that $\operatorname*{coeff}%
+\nolimits_{1}:\Lambda\left(  K\right)  \rightarrow K$ is a ring
+homomorphism\footnote{but, generally, not a $\lambda$-ring homomorphism, even
+when $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a
+special $\lambda$-ring!}.
 \end{quotation}
 
 \section{Examples of special $\lambda$-rings}
@@ -4307,11 +4366,15 @@ $\operatorname*{coeff}\nolimits_{1}\left(  \sum\limits_{j\in\mathbb{N}}%
 a_{j}T^{j}\right)  =a_{1}$ for every $\sum\limits_{j\in\mathbb{N}}a_{j}%
 T^{j}\in\Lambda\left(  K\right)  $ (with $a_{j}\in K$ for every $j\in
 \mathbb{N}$). (In other words, $\operatorname*{coeff}\nolimits_{1}$ is the
-mapping that takes a power series and returns its coefficient before $T^{1}.$)
+mapping that takes a power series and returns its coefficient before $T^{1}$.)
 
 Then, $\operatorname*{coeff}\nolimits_{1}\circ\lambda_{T}=\operatorname*{id}%
 _{K}$.
 \end{quote}
+
+Note that the definition of $\operatorname*{coeff}\nolimits_{1}$ in Theorem
+8.2 is a particular case of the definition of $\operatorname*{coeff}%
+\nolimits_{i}$ in Exercise 6.9.
 
 \begin{proof}
 [Proof of Theorem 8.2.]This is clear, since
@@ -4657,12 +4720,7 @@ Comparing coefficients yields the assertion of Theorem 8.5.
 \subsection{Exercises}
 
 \begin{quotation}
-\textit{Exercise 8.1.} Let $K$ be a ring. Define the mapping
-$\operatorname*{coeff}\nolimits_{1}:\Lambda\left(  K\right)  \rightarrow K$ as
-in Theorem 8.2. Then, show that $\operatorname*{coeff}\nolimits_{1}%
-:\Lambda\left(  K\right)  \rightarrow K$ is a ring homomorphism\footnote{but,
-generally, not a $\lambda$-ring homomorphism, even when $\left(  K,\left(
-\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is a special $\lambda$-ring!}.
+\textit{Exercise 8.1.} Give a new solution to Exercise 6.9.
 
 \textit{Exercise 8.2.} Let $\left(  K,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ be a special $\lambda$-ring. If $x\in K$ is an
@@ -5986,21 +6044,11 @@ $j\in\mathbb{N}\setminus\left\{  0\right\}  $. Then, $\widehat{\psi}%
 [This gives a formula for $\widehat{\psi}^{j}$ similar to the formula for
 $\widehat{\lambda}^{j}$ given in Theorem 5.3 \textbf{(d)}.]
 
-\textit{Exercise 9.2.} Let $K$ be a ring. Let $i\in\mathbb{N}\setminus\left\{
-0\right\}  $. Define a mapping $\operatorname*{Coeff}\nolimits_{i}:K\left[
-\left[  T\right]  \right]  \rightarrow K$ by setting $\operatorname*{Coeff}%
-\nolimits_{i}\left(  \sum\limits_{j\in\mathbb{N}}a_{j}T^{j}\right)  =a_{i}$
-for every $\sum\limits_{j\in\mathbb{N}}a_{j}T^{j}\in K\left[  \left[
-T\right]  \right]  $ (with $a_{j}\in K$ for every $j\in\mathbb{N}$). (In other
-words, $\operatorname*{Coeff}\nolimits_{i}$ is the mapping that takes a power
-series and returns its coefficient before $T^{i}$.)\ \ \ \ \ \footnote{Note
-that we are denoting this mapping by $\operatorname*{Coeff}\nolimits_{i}$ with
-a capital ``C'' to distinguish it from the mapping $\operatorname*{coeff}%
-\nolimits_{i}$ defined in Exercise 6.5. This distinction is necessary because
-these two mappings have different domains (namely, the map
-$\operatorname*{Coeff}\nolimits_{i}$ is defined on all of $K\left[  \left[
-T\right]  \right]  $, whereas the map $\operatorname*{coeff}\nolimits_{i}$ is
-defined only on $\Lambda\left(  K\right)  $).}
+\textit{Exercise 9.2.} Let $K$ be a ring. For each $i\in\mathbb{N}$, define a
+mapping $\operatorname*{Coeff}\nolimits_{i}:K\left[  \left[  T\right]
+\right]  \rightarrow K$ as in Exercise 6.8.
+
+Let $i\in\mathbb{N}\setminus\left\{  0\right\}  $.
 
 \textbf{(a)} Prove that the map%
 \begin{align*}
@@ -6293,8 +6341,8 @@ Two remarks about this definition:
 
 \begin{itemize}
 \item The definition of $\operatorname*{Coeff}\nolimits_{i}$ that we just gave
-clearly extends the definition of $\operatorname*{Coeff}\nolimits_{i}$ given
-in Exercise 9.2.
+is clearly equivalent to the definition of $\operatorname*{Coeff}%
+\nolimits_{i}$ given in Exercise 9.2.
 
 \item The only difference between the map $\operatorname*{Coeff}\nolimits_{i}$
 just defined and the map $\operatorname*{coeff}\nolimits_{i}$ defined in
@@ -9055,7 +9103,7 @@ Any $x\in K$ and $y\in K$ satisfy%
 \operatorname*{td}\nolimits_{\varphi,T}\left(  x+y\right)   &
 =\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  \cdot
 \operatorname*{td}\nolimits_{\varphi,T}\left(  y\right)
-\ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 10.10}\right)  \\
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 10.10}\right) \\
 &  =\operatorname*{td}\nolimits_{\varphi,T}\left(  x\right)  \widehat{+}%
 \operatorname*{td}\nolimits_{\varphi,T}\left(  y\right)
 \ \ \ \ \ \ \ \ \ \ \left(
@@ -9873,24 +9921,6 @@ u_{i}\otimes1\right)  T\right)  .
 \subsection{Exercises}
 
 \begin{quotation}
-\textit{Exercise 10.1.} Let $K$ be a ring. Let $m\in\mathbb{N}$. For every
-$i\in\left\{  1,2,...,m\right\}  $, let $\Phi_{i}\in K\left[  \left[
-T\right]  \right]  $ be a power series.
-
-\textbf{(a)} We have $\operatorname*{Coeff}\nolimits_{0}\left(  \prod
-\limits_{i=1}^{m}\Phi_{i}\right)  =\prod\limits_{i=1}^{m}\operatorname*{Coeff}%
-\nolimits_{0}\left(  \Phi_{i}\right)  $.
-
-\textbf{(b)} Assume that $\operatorname*{Coeff}\nolimits_{0}\left(  \Phi
-_{i}\right)  =1$ for every $i\in\left\{  1,2,...,m\right\}  $. Then,
-$\operatorname*{Coeff}\nolimits_{0}\left(  \prod\limits_{i=1}^{m}\Phi
-_{i}\right)  =1$ and $\operatorname*{Coeff}\nolimits_{1}\left(  \prod
-\limits_{i=1}^{m}\Phi_{i}\right)  =\sum\limits_{i=1}^{m}\operatorname*{Coeff}%
-\nolimits_{1}\left(  \Phi_{i}\right)  $.
-
-[This is a very easy exercise. It stands here because I used it to prove
-Proposition 10.6 in an earlier version of this text.]
-
 \textit{Exercise 10.2.} Prove Proposition 10.29, Proposition 10.30,
 Proposition 10.31, Proposition 10.32, Proposition 10.33, Theorem 10.34,
 Corollary 10.35, Proposition 10.36 and Theorem 10.37.
@@ -11797,7 +11827,7 @@ some $\left(  \beta_{0},\beta_{1},...,\beta_{m}\right)  \in L^{m+1}$. Thus,%
 \varphi\left(  P\right)   &  =\varphi\left(  \sum\limits_{i=0}^{m}\beta
 _{i}T^{i}\right)  =\sum\limits_{i=0}^{m}\beta_{i}\left(  \underbrace{\varphi
 \left(  T\right)  }_{=T}\right)  ^{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
-}\varphi\text{ is an }L\text{-algebra homomorphism}\right)  \\
+}\varphi\text{ is an }L\text{-algebra homomorphism}\right) \\
 &  =\sum\limits_{i=0}^{m}\beta_{i}T^{i}=P.
 \end{align*}
 }. Now,%
@@ -11825,7 +11855,7 @@ T\right]  $ as a subring of the polynomial ring $L\left[  T,S\right]  $.
 we can evaluate it at $T=S$ and obtain $\sum\limits_{i=0}^{n}a_{n-i}%
 S^{i}=\prod\limits_{i=1}^{n}\left(  p_{i}+S\right)  $. Thus,%
 \begin{align*}
-T^{n}\sum\limits_{i=0}^{n}a_{n-i}S^{i} &  =\underbrace{T^{n}}_{=\prod
+T^{n}\sum\limits_{i=0}^{n}a_{n-i}S^{i}  &  =\underbrace{T^{n}}_{=\prod
 \limits_{i=1}^{n}T}\prod\limits_{i=1}^{n}\left(  p_{i}+S\right)
 =\prod\limits_{i=1}^{n}T\prod\limits_{i=1}^{n}\left(  p_{i}+S\right)
 =\prod\limits_{i=1}^{n}\underbrace{\left(  T\left(  p_{i}+S\right)  \right)
@@ -11837,7 +11867,7 @@ T^{n}\sum\limits_{i=0}^{n}a_{n-i}S^{i} &  =\underbrace{T^{n}}_{=\prod
 \end{align*}
 Combined with%
 \begin{align*}
-T^{n}\sum\limits_{i=0}^{n}a_{n-i}S^{i} &  =\sum\limits_{i=0}^{n}%
+T^{n}\sum\limits_{i=0}^{n}a_{n-i}S^{i}  &  =\sum\limits_{i=0}^{n}%
 a_{n-i}\underbrace{T^{n}}_{=T^{n-i}T^{i}}S^{i}=\sum\limits_{i=0}^{n}%
 a_{n-i}T^{n-i}\underbrace{T^{i}S^{i}}_{=\left(  TS\right)  ^{i}\equiv
 1^{i}\operatorname{mod}\left(  TS-1\right)  }\\
@@ -12807,6 +12837,252 @@ is a $\lambda$-ideal of $K$.
 
 Thus, we have proven that $I$ is a $\lambda$-ideal of $K$. Exercise 6.7 is solved.
 
+\textit{Exercise 6.8: Detailed solution:} \textbf{(a)} For every
+$i\in\mathbb{N}$, the map $\operatorname*{Coeff}\nolimits_{i}:K\left[  \left[
+T\right]  \right]  \rightarrow K$ is a $K$-linear map (for obvious reasons).
+In particular, $\operatorname*{Coeff}\nolimits_{0}$ is a $K$-linear map. Now
+let us show that $\operatorname*{Coeff}\nolimits_{0}$ is a $K$-algebra homomorphism.
+
+The unity of the ring $K\left[  \left[  T\right]  \right]  $ is $1$. Hence,
+$\operatorname*{Coeff}\nolimits_{0}$ sends the unity of the ring $K\left[
+\left[  T\right]  \right]  $ to $\operatorname*{Coeff}\nolimits_{0}\left(
+1\right)  =1$, which is the unity of $K$.
+
+Let $\varphi\in K\left[  \left[  T\right]  \right]  $ and $\psi\in K\left[
+\left[  T\right]  \right]  $ be two power series. Then, by the definition of
+the product of two power series, we have%
+\begin{equation}
+\operatorname*{Coeff}\nolimits_{n}\left(  \varphi\psi\right)  =\sum_{k=0}%
+^{n}\operatorname*{Coeff}\nolimits_{k}\varphi\cdot\operatorname*{Coeff}%
+\nolimits_{n-k}\psi\ \ \ \ \ \ \ \ \ \ \text{for every }n\in\mathbb{N}\text{.}
+\label{10.1.sol.0}%
+\end{equation}
+Applied to $n=0$, this yields%
+\[
+\operatorname*{Coeff}\nolimits_{0}\left(  \varphi\psi\right)  =\sum_{k=0}%
+^{0}\operatorname*{Coeff}\nolimits_{k}\varphi\cdot\operatorname*{Coeff}%
+\nolimits_{0-k}\psi=\operatorname*{Coeff}\nolimits_{0}\varphi\cdot
+\operatorname*{Coeff}\nolimits_{0}\psi.
+\]
+This yields that $\operatorname*{Coeff}\nolimits_{0}$ is a $K$-algebra
+homomorphism from $K\left[  \left[  T\right]  \right]  $ to $K$ (because we
+also know that $\operatorname*{Coeff}\nolimits_{0}$ is a $K$-linear map and
+sends the unity of the ring $K\left[  \left[  T\right]  \right]  $ to the
+unity of $K$). Hence, $\operatorname*{Coeff}\nolimits_{0}\left(
+\prod\limits_{i=1}^{m}\Phi_{i}\right)  =\prod\limits_{i=1}^{m}%
+\operatorname*{Coeff}\nolimits_{0}\left(  \Phi_{i}\right)  $. This solves
+Exercise 6.8 \textbf{(a)}.
+
+\textbf{(b)} Exercise 6.8 \textbf{(a)} yields $\operatorname*{Coeff}%
+\nolimits_{0}\left(  \prod\limits_{i=1}^{m}\Phi_{i}\right)  =\prod
+\limits_{i=1}^{m}\underbrace{\operatorname*{Coeff}\nolimits_{0}\left(
+\Phi_{i}\right)  }_{=1}=\prod\limits_{i=1}^{m}1=1$.
+
+Now let us prove that every $\mu\in\left\{  0,1,...,m\right\}  $ satisfies%
+\begin{equation}
+\operatorname*{Coeff}\nolimits_{1}\left(  \prod\limits_{i=1}^{\mu}\Phi
+_{i}\right)  =\sum\limits_{i=1}^{\mu}\operatorname*{Coeff}\nolimits_{1}\left(
+\Phi_{i}\right)  . \label{10.1.sol.1}%
+\end{equation}
+
+
+\textit{Proof of (\ref{10.1.sol.1}).} We will prove (\ref{10.1.sol.1}) by
+induction over $\mu$:
+
+\textit{Induction base:} If $\mu=0$, then $\prod\limits_{i=1}^{\mu}\Phi
+_{i}=\left(  \text{empty product}\right)  =1$ and thus $\operatorname*{Coeff}%
+\nolimits_{1}\left(  \prod\limits_{i=1}^{\mu}\Phi_{i}\right)
+=\operatorname*{Coeff}\nolimits_{1}1=0$, which rewrites as
+$\operatorname*{Coeff}\nolimits_{1}\left(  \prod\limits_{i=1}^{\mu}\Phi
+_{i}\right)  =\sum\limits_{i=1}^{\mu}\operatorname*{Coeff}\nolimits_{1}\left(
+\Phi_{i}\right)  $ (because for $\mu=0$ we also have $\sum\limits_{i=1}^{\mu
+}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{i}\right)  =\left(
+\text{empty sum}\right)  =0$). Thus, (\ref{10.1.sol.1}) holds for $\mu=0$. The
+induction base is thus complete.
+
+\textit{Induction step:} Let $M\in\left\{  0,1,...,m-1\right\}  $ be such that
+(\ref{10.1.sol.1}) holds for $\mu=M$. We must prove that (\ref{10.1.sol.1})
+holds for $\mu=M+1$ as well.
+
+Since (\ref{10.1.sol.1}) holds for $\mu=M$, we have $\operatorname*{Coeff}%
+\nolimits_{1}\left(  \prod\limits_{i=1}^{M}\Phi_{i}\right)  =\sum
+\limits_{i=1}^{M}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{i}\right)  $.
+Let $\varphi=\prod\limits_{i=1}^{M}\Phi_{i}$ and $\psi=\Phi_{M+1}$. Then,
+$\varphi\psi=\left(  \prod\limits_{i=1}^{M}\Phi_{i}\right)  \Phi_{M+1}%
+=\prod\limits_{i=1}^{M+1}\Phi_{i}$. Since $\varphi=\prod\limits_{i=1}^{M}%
+\Phi_{i}$, we have
+\begin{align*}
+\operatorname*{Coeff}\nolimits_{0}\varphi &  =\operatorname*{Coeff}%
+\nolimits_{0}\left(  \prod\limits_{i=1}^{M}\Phi_{i}\right) \\
+&  =\prod\limits_{i=1}^{M}\underbrace{\operatorname*{Coeff}\nolimits_{0}%
+\left(  \Phi_{i}\right)  }_{=1}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
+}\operatorname*{Coeff}\nolimits_{0}\text{ is a }K\text{-algebra homomorphism}%
+\right) \\
+&  =\prod\limits_{i=1}^{M}1=1
+\end{align*}
+and%
+\[
+\operatorname*{Coeff}\nolimits_{1}\varphi=\operatorname*{Coeff}\nolimits_{1}%
+\left(  \prod\limits_{i=1}^{M}\Phi_{i}\right)  =\sum\limits_{i=1}%
+^{M}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{i}\right)  .
+\]
+Since $\psi=\Phi_{M+1}$, we have $\operatorname*{Coeff}\nolimits_{0}%
+\psi=\operatorname*{Coeff}\nolimits_{0}\left(  \Phi_{M+1}\right)  =1$ (because
+$\operatorname*{Coeff}\nolimits_{0}\left(  \Phi_{i}\right)  =1$ for every
+$i\in\left\{  1,2,...,m\right\}  $). On the other hand, (\ref{10.1.sol.0})
+(applied to $n=1$) yields%
+\begin{align*}
+\operatorname*{Coeff}\nolimits_{1}\left(  \varphi\psi\right)   &  =\sum
+_{k=0}^{1}\operatorname*{Coeff}\nolimits_{k}\varphi\cdot\operatorname*{Coeff}%
+\nolimits_{1-k}\psi=\underbrace{\operatorname*{Coeff}\nolimits_{0}\varphi
+}_{=1}\cdot\operatorname*{Coeff}\nolimits_{1}\underbrace{\psi}_{=\Phi_{M+1}%
+}+\underbrace{\operatorname*{Coeff}\nolimits_{1}\varphi}_{=\sum\limits_{i=1}%
+^{M}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{i}\right)  }%
+\cdot\underbrace{\operatorname*{Coeff}\nolimits_{0}\psi}_{=1}\\
+&  =1\cdot\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{M+1}\right)
++\sum\limits_{i=1}^{M}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi
+_{i}\right)  \cdot1\\
+&  =\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{M+1}\right)
++\sum\limits_{i=1}^{M}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi
+_{i}\right)  =\sum\limits_{i=1}^{M+1}\operatorname*{Coeff}\nolimits_{1}\left(
+\Phi_{i}\right)  .
+\end{align*}
+Since $\varphi\psi=\prod\limits_{i=1}^{M+1}\Phi_{i}$, this rewrites as
+$\operatorname*{Coeff}\nolimits_{1}\left(  \prod\limits_{i=1}^{M+1}\Phi
+_{i}\right)  =\sum\limits_{i=1}^{M+1}\operatorname*{Coeff}\nolimits_{1}\left(
+\Phi_{i}\right)  $. In other words, (\ref{10.1.sol.1}) holds for $\mu=M+1$.
+This completes the induction step.
+
+We have thus proven (\ref{10.1.sol.1}) by induction. Applying
+(\ref{10.1.sol.1}) to $\mu=m$, we get $\operatorname*{Coeff}\nolimits_{1}%
+\left(  \prod\limits_{i=1}^{m}\Phi_{i}\right)  =\sum\limits_{i=1}%
+^{m}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{i}\right)  $. This
+concludes the solution of Exercise 6.8 \textbf{(b)}.
+
+\textit{Exercise 6.9: Hints to solution:} Use the fact that $u\widehat{+}%
+v=uv$, the definition of $\widehat{\cdot}$ and the fact that $P_{1}=\alpha
+_{1}\cdot\beta_{1}$.
+
+\textit{Detailed solution:} We need to prove that $\operatorname*{coeff}%
+\nolimits_{1}:\Lambda\left(  K\right)  \rightarrow K$ is a ring homomorphism.
+In order to prove this, we must verify that%
+\begin{align}
+\operatorname*{coeff}\nolimits_{1}\left(  1\right)   &  =0;\label{sol.6.9.1}\\
+\operatorname*{coeff}\nolimits_{1}\left(  u\widehat{+}v\right)   &
+=\operatorname*{coeff}\nolimits_{1}u+\operatorname*{coeff}\nolimits_{1}%
+v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
+}v\in\Lambda\left(  K\right)  ;\label{sol.6.9.2}\\
+\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;
+\label{sol.6.9.3}\\
+\operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)   &
+=\operatorname*{coeff}\nolimits_{1}u\cdot\operatorname*{coeff}\nolimits_{1}%
+v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
+}v\in\Lambda\left(  K\right)  . \label{sol.6.9.4}%
+\end{align}
+The equations (\ref{sol.6.9.1}) and (\ref{sol.6.9.3}) are immediately obvious.
+It thus remains to prove (\ref{sol.6.9.2}) and (\ref{sol.6.9.4}).
+
+\textit{Proof of (\ref{sol.6.9.2}):} For every $i\in\mathbb{N}$, we define a
+mapping $\operatorname*{Coeff}\nolimits_{i}:K\left[  \left[  T\right]
+\right]  \rightarrow K$ as in Exercise 6.8. Then, clearly,%
+\begin{equation}
+\operatorname*{coeff}\nolimits_{i}P=\operatorname*{Coeff}\nolimits_{i}%
+P\ \ \ \ \ \ \ \ \ \ \text{for every }P\in\Lambda\left(  K\right)  \text{ and
+}i\in\mathbb{N}. \label{sol.6.9.2.pf.1}%
+\end{equation}
+
+
+Let $u\in\Lambda\left(  K\right)  $ and $v\in\Lambda\left(  K\right)  $. The
+definition of the addition $\widehat{+}$ yields $u\widehat{+}v=uv$. Now,
+$u\in\Lambda\left(  K\right)  $, so that $u$ is a power series with constant
+term $1$. Hence, $\operatorname*{Coeff}\nolimits_{0}u=1$. Similarly,
+$\operatorname*{Coeff}\nolimits_{0}v=1$. But the definition of the product of
+two power series yields%
+\[
+\operatorname*{Coeff}\nolimits_{n}\left(  uv\right)  =\sum_{k=0}%
+^{n}\operatorname*{Coeff}\nolimits_{k}u\cdot\operatorname*{Coeff}%
+\nolimits_{n-k}v\ \ \ \ \ \ \ \ \ \ \text{for every }n\in\mathbb{N}\text{.}%
+\]
+Applying this to $n=1$, we obtain%
+\begin{align*}
+\operatorname*{Coeff}\nolimits_{1}\left(  uv\right)   &  =\sum_{k=0}%
+^{1}\operatorname*{Coeff}\nolimits_{k}u\cdot\operatorname*{Coeff}%
+\nolimits_{1-k}v\\
+&  =\underbrace{\operatorname*{Coeff}\nolimits_{0}u}_{=1}\cdot
+\operatorname*{Coeff}\nolimits_{1}v+\operatorname*{Coeff}\nolimits_{1}%
+u\cdot\underbrace{\operatorname*{Coeff}\nolimits_{0}v}_{=1}\\
+&  =\operatorname*{Coeff}\nolimits_{1}v+\operatorname*{Coeff}\nolimits_{1}%
+u=\underbrace{\operatorname*{Coeff}\nolimits_{1}u}%
+_{\substack{=\operatorname*{coeff}\nolimits_{1}u\\\text{(by
+(\ref{sol.6.9.2.pf.1}), applied}\\\text{to }P=u\text{ and }i=1\text{)}%
+}}+\underbrace{\operatorname*{Coeff}\nolimits_{1}v}%
+_{\substack{=\operatorname*{coeff}\nolimits_{1}v\\\text{(by
+(\ref{sol.6.9.2.pf.1}), applied}\\\text{to }P=v\text{ and }i=1\text{)}}}\\
+&  =\operatorname*{coeff}\nolimits_{1}u+\operatorname*{coeff}\nolimits_{1}v.
+\end{align*}
+Now, (\ref{sol.6.9.2.pf.1}) (applied to $P=uv$ and $i=1$) yields
+$\operatorname*{coeff}\nolimits_{1}\left(  uv\right)  =\operatorname*{Coeff}%
+\nolimits_{1}\left(  uv\right)  =\operatorname*{coeff}\nolimits_{1}%
+u+\operatorname*{coeff}\nolimits_{1}v$. Since $u\widehat{+}v=uv$, this
+rewrites as $\operatorname*{coeff}\nolimits_{1}\left(  u\widehat{+}v\right)
+=\operatorname*{coeff}\nolimits_{1}u+\operatorname*{coeff}\nolimits_{1}v$.
+This proves (\ref{sol.6.9.2}).
+
+\textit{Proof of (\ref{sol.6.9.4}):} Theorem 4.3 \textbf{(b)} (applied to
+$n=1$ and $m=1$) shows that%
+\[
+\prod_{\left(  i,j\right)  \in\left\{  1\right\}  \times\left\{  1\right\}
+}\left(  1+U_{i}V_{j}T\right)  =\sum_{k\in\mathbb{N}}P_{k}\left(  X_{1}%
+,X_{2},\ldots,X_{k},Y_{1},Y_{2},\ldots,Y_{k}\right)  T^{k}%
+\]
+in the polynomial ring $\left(  \mathbb{Z}\left[  U_{1},V_{1}\right]  \right)
+\left[  T\right]  $. Hence,%
+\[
+\sum_{k\in\mathbb{N}}P_{k}\left(  X_{1},X_{2},\ldots,X_{k},Y_{1},Y_{2}%
+,\ldots,Y_{k}\right)  T^{k}=\prod_{\left(  i,j\right)  \in\left\{  1\right\}
+\times\left\{  1\right\}  }\left(  1+U_{i}V_{j}T\right)  =1+U_{1}V_{1}T.
+\]
+Comparing coefficients before $T^{1}$ on both sides of this equality, we
+obtain $P_{1}\left(  X_{1},Y_{1}\right)  =U_{1}V_{1}$. But we are working in
+$\mathbb{Z}\left[  U_{1},V_{1}\right]  $; hence, $X_{1}=U_{1}$ and
+$Y_{1}=V_{1}$. Thus, $P_{1}\left(  \underbrace{X_{1}}_{=U_{1}}%
+,\underbrace{Y_{1}}_{=V_{1}}\right)  =P_{1}\left(  U_{1},V_{1}\right)  $, so
+that $P_{1}\left(  U_{1},V_{1}\right)  =P_{1}\left(  X_{1},Y_{1}\right)
+=U_{1}V_{1}$. Since $U_{1}$ and $V_{1}$ are algebraically independent, this
+yields $P_{1}=\alpha_{1}\beta_{1}$.
+
+Now, write the formal power series $u\in\Lambda\left(  K\right)  \subseteq
+K\left[  \left[  T\right]  \right]  $ in the form $u=\sum_{i\in\mathbb{N}%
+}a_{i}T^{i}$ (with $a_{i}\in K$). Hence, $\operatorname*{coeff}\nolimits_{1}%
+u=a_{1}$.
+
+Also, write the formal power series $v\in\Lambda\left(  K\right)  \subseteq
+K\left[  \left[  T\right]  \right]  $ in the form $v=\sum_{i\in\mathbb{N}%
+}b_{i}T^{i}$ (with $b_{i}\in K$). Thus, $\operatorname*{coeff}\nolimits_{1}%
+v=b_{1}$.
+
+From $u=\sum_{i\in\mathbb{N}}a_{i}T^{i}$ and $v=\sum_{i\in\mathbb{N}}%
+b_{i}T^{i}$, we obtain%
+\begin{align*}
+u\widehat{\cdot}v  &  =\left(  \sum_{i\in\mathbb{N}}a_{i}T^{i}\right)
+\widehat{\cdot}\left(  \sum_{i\in\mathbb{N}}b_{i}T^{i}\right)  =\sum
+_{k\in\mathbb{N}}P_{k}\left(  a_{1},a_{2},...,a_{k},b_{1},b_{2},...,b_{k}%
+\right)  T^{k}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the operation
+}\widehat{\cdot}\right)  .
+\end{align*}
+Hence, $\operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)
+=P_{1}\left(  a_{1},b_{1}\right)  =a_{1}b_{1}$ (since $P_{1}=\alpha_{1}%
+\beta_{1}$). In view of $\operatorname*{coeff}\nolimits_{1}u=a_{1}$ and
+$\operatorname*{coeff}\nolimits_{1}v=b_{1}$, this rewrites as
+$\operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)
+=\operatorname*{coeff}\nolimits_{1}u\cdot\operatorname*{coeff}\nolimits_{1}v$.
+This proves (\ref{sol.6.9.4}).
+
+Now, all of the equalities (\ref{sol.6.9.1}), (\ref{sol.6.9.2}),
+(\ref{sol.6.9.3}) and (\ref{sol.6.9.4}) are proven. This completes the
+solution of Exercise 6.9.
+
 \subsection{To Section 7}
 
 \textit{Exercise 7.1: Hints to solution:} See the more general Exercise 7.2.
@@ -12816,9 +13092,9 @@ proof of Theorem 7.3.
 
 \subsection{To Section 8}
 
-\textit{Exercise 8.1: Solution:}
-
-\textit{First solution:} In order to prove this, we must verify that%
+\textit{Exercise 8.1: Solution:} We need to prove that $\operatorname*{coeff}%
+\nolimits_{1}:\Lambda\left(  K\right)  \rightarrow K$ is a ring homomorphism.
+In order to prove this, we must verify that%
 \begin{align}
 \operatorname*{coeff}\nolimits_{1}\left(  1\right)   &  =0;\label{8.2.1}\\
 \operatorname*{coeff}\nolimits_{1}\left(  u\widehat{+}v\right)   &
@@ -12902,12 +13178,7 @@ u+\operatorname*{coeff}\nolimits_{1}v,
 \]
 and (\ref{8.2.2}) is proven. Thus, $\operatorname*{coeff}\nolimits_{1}%
 :\Lambda\left(  K\right)  \rightarrow K$ is a ring homomorphism, and Exercise
-8.1 is solved.
-
-\textit{Second solution (sketched):} In fact, (\ref{8.2.2}) is trivial using
-$u\widehat{+}v=uv$, and (\ref{8.2.4}) follows from the definition of
-$\widehat{\cdot}$ and the fact that $P_{1}\left(  a_{1},b_{1}\right)
-=a_{1}\cdot b_{1}$.
+6.9 is solved again. Thus, Exercise 8.1 is solved.
 
 \textit{Exercise 8.2: Hints to solution:} Let $y=x^{-1}$. We proceed as in the
 proof of Theorem 8.3 \textbf{(b)}, except that we don't know that $\lambda
@@ -14022,127 +14293,6 @@ this rewrites as $x^{p}-\psi^{p}\left(  x\right)  \in pK$. In other words,
 $\psi^{p}\left(  x\right)  \equiv x^{p}\operatorname{mod}pK$. Exercise 9.7 is solved.
 
 \subsection{To Section 10}
-
-\textit{Exercise 10.1: Detailed solution:} \textbf{(a)} We know that
-$\operatorname*{Coeff}\nolimits_{0}$ is a $K$-linear map (for obvious
-reasons). Now let us show that $\operatorname*{Coeff}\nolimits_{0}$ is a
-$K$-algebra homomorphism.
-
-The unity of the ring $K\left[  \left[  T\right]  \right]  $ is $1$. Hence,
-$\operatorname*{Coeff}\nolimits_{0}$ sends the unity of the ring $K\left[
-\left[  T\right]  \right]  $ to $\operatorname*{Coeff}\nolimits_{0}\left(
-1\right)  =1$, which is the unity of $K$.
-
-Let $\varphi\in K\left[  \left[  T\right]  \right]  $ and $\psi\in K\left[
-\left[  T\right]  \right]  $ be two power series. Then, by the definition of
-the product of two power series, we have%
-\begin{equation}
-\operatorname*{Coeff}\nolimits_{n}\left(  \varphi\psi\right)  =\sum_{k=0}%
-^{n}\operatorname*{Coeff}\nolimits_{k}\varphi\cdot\operatorname*{Coeff}%
-\nolimits_{n-k}\psi\ \ \ \ \ \ \ \ \ \ \text{for every }n\in\mathbb{N}\text{.}
-\label{10.1.sol.0}%
-\end{equation}
-Applied to $n=0$, this yields%
-\[
-\operatorname*{Coeff}\nolimits_{0}\left(  \varphi\psi\right)  =\sum_{k=0}%
-^{0}\operatorname*{Coeff}\nolimits_{k}\varphi\cdot\operatorname*{Coeff}%
-\nolimits_{0-k}\psi=\operatorname*{Coeff}\nolimits_{0}\varphi\cdot
-\operatorname*{Coeff}\nolimits_{0}\psi.
-\]
-This yields that $\operatorname*{Coeff}\nolimits_{0}$ is a $K$-algebra
-homomorphism from $K\left[  \left[  T\right]  \right]  $ to $K$ (because we
-also know that $\operatorname*{Coeff}\nolimits_{0}$ is a $K$-linear map and
-sends the unity of the ring $K\left[  \left[  T\right]  \right]  $ to the
-unity of $K$). Hence, $\operatorname*{Coeff}\nolimits_{0}\left(
-\prod\limits_{i=1}^{m}\Phi_{i}\right)  =\prod\limits_{i=1}^{m}%
-\operatorname*{Coeff}\nolimits_{0}\left(  \Phi_{i}\right)  $. This solves
-Exercise 10.1 \textbf{(a)}.
-
-\textbf{(b)} Exercise 10.1 \textbf{(a)} yields $\operatorname*{Coeff}%
-\nolimits_{0}\left(  \prod\limits_{i=1}^{m}\Phi_{i}\right)  =\prod
-\limits_{i=1}^{m}\underbrace{\operatorname*{Coeff}\nolimits_{0}\left(
-\Phi_{i}\right)  }_{=1}=\prod\limits_{i=1}^{m}1=1$.
-
-Now let us prove that every $\mu\in\left\{  0,1,...,m\right\}  $ satisfies%
-\begin{equation}
-\operatorname*{Coeff}\nolimits_{1}\left(  \prod\limits_{i=1}^{\mu}\Phi
-_{i}\right)  =\sum\limits_{i=1}^{\mu}\operatorname*{Coeff}\nolimits_{1}\left(
-\Phi_{i}\right)  . \label{10.1.sol.1}%
-\end{equation}
-
-
-\textit{Proof of (\ref{10.1.sol.1}).} We will prove (\ref{10.1.sol.1}) by
-induction over $\mu$:
-
-\textit{Induction base:} If $\mu=0$, then $\prod\limits_{i=1}^{\mu}\Phi
-_{i}=\left(  \text{empty product}\right)  =1$ and thus $\operatorname*{Coeff}%
-\nolimits_{1}\left(  \prod\limits_{i=1}^{\mu}\Phi_{i}\right)
-=\operatorname*{Coeff}\nolimits_{1}1=0$, which rewrites as
-$\operatorname*{Coeff}\nolimits_{1}\left(  \prod\limits_{i=1}^{\mu}\Phi
-_{i}\right)  =\sum\limits_{i=1}^{\mu}\operatorname*{Coeff}\nolimits_{1}\left(
-\Phi_{i}\right)  $ (because for $\mu=0$ we also have $\sum\limits_{i=1}^{\mu
-}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{i}\right)  =\left(
-\text{empty sum}\right)  =0$). Thus, (\ref{10.1.sol.1}) holds for $\mu=0$. The
-induction base is thus complete.
-
-\textit{Induction step:} Let $M\in\left\{  0,1,...,m-1\right\}  $ be such that
-(\ref{10.1.sol.1}) holds for $\mu=M$. We must prove that (\ref{10.1.sol.1})
-holds for $\mu=M+1$ as well.
-
-Since (\ref{10.1.sol.1}) holds for $\mu=M$, we have $\operatorname*{Coeff}%
-\nolimits_{1}\left(  \prod\limits_{i=1}^{M}\Phi_{i}\right)  =\sum
-\limits_{i=1}^{M}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{i}\right)  $.
-Let $\varphi=\prod\limits_{i=1}^{M}\Phi_{i}$ and $\psi=\Phi_{M+1}$. Then,
-$\varphi\psi=\left(  \prod\limits_{i=1}^{M}\Phi_{i}\right)  \Phi_{M+1}%
-=\prod\limits_{i=1}^{M+1}\Phi_{i}$. Since $\varphi=\prod\limits_{i=1}^{M}%
-\Phi_{i}$, we have
-\begin{align*}
-\operatorname*{Coeff}\nolimits_{0}\varphi &  =\operatorname*{Coeff}%
-\nolimits_{0}\left(  \prod\limits_{i=1}^{M}\Phi_{i}\right) \\
-&  =\prod\limits_{i=1}^{M}\underbrace{\operatorname*{Coeff}\nolimits_{0}%
-\left(  \Phi_{i}\right)  }_{=1}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
-}\operatorname*{Coeff}\nolimits_{0}\text{ is a }K\text{-algebra homomorphism}%
-\right) \\
-&  =\prod\limits_{i=1}^{M}1=1
-\end{align*}
-and%
-\[
-\operatorname*{Coeff}\nolimits_{1}\varphi=\operatorname*{Coeff}\nolimits_{1}%
-\left(  \prod\limits_{i=1}^{M}\Phi_{i}\right)  =\sum\limits_{i=1}%
-^{M}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{i}\right)  .
-\]
-Since $\psi=\Phi_{M+1}$, we have $\operatorname*{Coeff}\nolimits_{0}%
-\psi=\operatorname*{Coeff}\nolimits_{0}\left(  \Phi_{M+1}\right)  =1$ (because
-$\operatorname*{Coeff}\nolimits_{0}\left(  \Phi_{i}\right)  =1$ for every
-$i\in\left\{  1,2,...,m\right\}  $). On the other hand, (\ref{10.1.sol.0})
-(applied to $n=1$) yields%
-\begin{align*}
-\operatorname*{Coeff}\nolimits_{1}\left(  \varphi\psi\right)   &  =\sum
-_{k=0}^{1}\operatorname*{Coeff}\nolimits_{k}\varphi\cdot\operatorname*{Coeff}%
-\nolimits_{1-k}\psi=\underbrace{\operatorname*{Coeff}\nolimits_{0}\varphi
-}_{=1}\cdot\operatorname*{Coeff}\nolimits_{1}\underbrace{\psi}_{=\Phi_{M+1}%
-}+\underbrace{\operatorname*{Coeff}\nolimits_{1}\varphi}_{=\sum\limits_{i=1}%
-^{M}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{i}\right)  }%
-\cdot\underbrace{\operatorname*{Coeff}\nolimits_{0}\psi}_{=1}\\
-&  =1\cdot\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{M+1}\right)
-+\sum\limits_{i=1}^{M}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi
-_{i}\right)  \cdot1\\
-&  =\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{M+1}\right)
-+\sum\limits_{i=1}^{M}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi
-_{i}\right)  =\sum\limits_{i=1}^{M+1}\operatorname*{Coeff}\nolimits_{1}\left(
-\Phi_{i}\right)  .
-\end{align*}
-Since $\varphi\psi=\prod\limits_{i=1}^{M+1}\Phi_{i}$, this rewrites as
-$\operatorname*{Coeff}\nolimits_{1}\left(  \prod\limits_{i=1}^{M+1}\Phi
-_{i}\right)  =\sum\limits_{i=1}^{M+1}\operatorname*{Coeff}\nolimits_{1}\left(
-\Phi_{i}\right)  $. In other words, (\ref{10.1.sol.1}) holds for $\mu=M+1$.
-This completes the induction step.
-
-We have thus proven (\ref{10.1.sol.1}) by induction. Applying
-(\ref{10.1.sol.1}) to $\mu=m$, we get $\operatorname*{Coeff}\nolimits_{1}%
-\left(  \prod\limits_{i=1}^{m}\Phi_{i}\right)  =\sum\limits_{i=1}%
-^{m}\operatorname*{Coeff}\nolimits_{1}\left(  \Phi_{i}\right)  $. This
-concludes the solution of Exercise 10.1 \textbf{(b)}.
 
 \textit{Exercise 10.2: Solution:}
 
