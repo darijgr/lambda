@@ -1973,8 +1973,9 @@ satisfied in the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}%
 \right]  $.
 
 \textit{Proof.} Let $m^{\prime}\in\mathbb{N}$ be such that $m^{\prime}\geq m$
-and $m^{\prime}\geq kj$. Then, the 1st Step (applied to $m^{\prime}$ instead
-of $m$) yields that $Q_{k,j,\left[  m^{\prime}\right]  }=P_{k,j}.$
+and $m^{\prime}\geq kj$ (such an $m^{\prime}$ clearly exists). Then, the 1st
+Step (applied to $m^{\prime}$ instead of $m$) yields that $Q_{k,j,\left[
+m^{\prime}\right]  }=P_{k,j}.$
 
 The definition of $Q_{k,j,\left[  m^{\prime}\right]  }$ yields
 \[
@@ -1995,15 +1996,16 @@ U_{i},\text{ if }i\leq m;\\
 \right.  $) to this equation (and noticing that this epimorphism maps every
 $X_{i}$ with $i\geq1$ to the corresponding $X_{i}$ of the image ring!), we
 obtain%
-\[
+\begin{align*}
 \sum_{\substack{S\subseteq\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}
-\right)  ;\\\left\vert S\right\vert =k}}\prod_{I\in S}\prod_{i\in I}%
-U_{i}=\underbrace{Q_{k,j,\left[  m^{\prime}\right]  }}_{=P_{k,j}}\left(
-X_{1},X_{2},...,X_{kj}\right)
-\]
-in the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  .$
+\right)  ;\\\left\vert S\right\vert =k}}\prod_{I\in S}\prod_{i\in I}U_{i}  &
+=\underbrace{Q_{k,j,\left[  m^{\prime}\right]  }}_{=P_{k,j}}\left(
+X_{1},X_{2},...,X_{kj}\right)  \\
+& =P_{k,j}\left(  X_{1},X_{2},...,X_{kj}\right)
+\end{align*}
+in the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $.
 This means that the equation (\ref{Pkj1}) is satisfied in the polynomial ring
-$\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  .$ This completes the 2nd
+$\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $. This completes the 2nd
 Step and proves Theorem 4.4 \textbf{(a)}.
 
 \textbf{(b)} We have%
