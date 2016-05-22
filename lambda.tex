@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, May 08, 2016 00:00:48}
+%TCIDATA{LastRevised=Saturday, May 21, 2016 23:50:36}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -5434,6 +5434,8 @@ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
 +...+u_{m}^{j}.
 \]
 
+
+
 \end{quote}
 
 \begin{proof}
@@ -7902,41 +7904,44 @@ For every $j\in\mathbb{N}$, the coefficient of $p$ before $T^{j}$ is
 $\operatorname*{Coeff}\nolimits_{j}p$. Hence, $p=\sum\limits_{j\in\mathbb{N}%
 }\left(  \operatorname*{Coeff}\nolimits_{j}p\right)  \cdot T^{j}$. Thus,
 \begin{align*}
-\operatorname*{ev}\nolimits_{uT}p  &  =\operatorname*{ev}\nolimits_{uT}\left(
+\operatorname*{ev}\nolimits_{uT}p &  =\operatorname*{ev}\nolimits_{uT}\left(
 \sum\limits_{j\in\mathbb{N}}\left(  \operatorname*{Coeff}\nolimits_{j}%
 p\right)  \cdot T^{j}\right)  =\sum\limits_{j\in\mathbb{N}}\left(
 \operatorname*{Coeff}\nolimits_{j}p\right)  \cdot u^{j}T^{j}%
 \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\operatorname*{ev}%
-\nolimits_{uT}\right) \\
+\nolimits_{uT}\right)  \\
 &  =\sum_{j\in\mathbb{N}}u^{j}\left(  \operatorname*{Coeff}\nolimits_{j}%
 p\right)  T^{j}=\underbrace{u^{0}}_{=1}\underbrace{\left(
 \operatorname*{Coeff}\nolimits_{0}p\right)  }_{=1}T^{0}+\sum_{\substack{j\in
 \mathbb{N};\\j>0}}u^{j}\left(  \operatorname*{Coeff}\nolimits_{j}p\right)
-T^{j}=1T^{0}+\sum_{\substack{j\in\mathbb{N};\\j>0}}u^{j}\left(
+T^{j}\\
+&  =1T^{0}+\sum_{\substack{j\in\mathbb{N};\\j>0}}u^{j}\left(
 \operatorname*{Coeff}\nolimits_{j}p\right)  T^{j}.
 \end{align*}
 Compared with%
 \begin{align*}
-&  \mathfrak{Todd}_{1+ut}\left(  p\right) \\
+&  \mathfrak{Todd}_{1+ut}\left(  p\right)  \\
 &  =\sum_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{1+ut,j}\left(
 \operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
 p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  T^{j}%
 \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{ToddFrak}), applied to }%
-\varphi=1+ut\right) \\
+\varphi=1+ut\right)  \\
 &  =\underbrace{\operatorname*{Td}\nolimits_{1+ut,0}\left(
 \operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
 p,...,\operatorname*{Coeff}\nolimits_{0}p\right)  }%
 _{\substack{=\operatorname*{Td}\nolimits_{1+ut,0}=1\\\text{(by Proposition
-10.6 \textbf{(a)},}\\\text{applied to }\varphi=1+ut\text{)}}}T^{0}%
-+\sum_{\substack{j\in\mathbb{N};\\j>0}}\underbrace{\operatorname*{Td}%
-\nolimits_{1+ut,j}}_{\substack{=u^{j}\alpha_{j}\\\text{(by Proposition 10.4)}%
-}}\left(  \operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}%
-\nolimits_{2}p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  T^{j}\\
+10.6 \textbf{(a)},}\\\text{applied to }\varphi=1+ut\text{)}}}T^{0}\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{\substack{j\in\mathbb{N};\\j>0}%
+}\underbrace{\operatorname*{Td}\nolimits_{1+ut,j}}_{\substack{=u^{j}\alpha
+_{j}\\\text{(by Proposition 10.4)}}}\left(  \operatorname*{Coeff}%
+\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}%
+\nolimits_{j}p\right)  T^{j}\\
 &  =1T^{0}+\sum_{\substack{j\in\mathbb{N};\\j>0}}\underbrace{\left(
 u^{j}\alpha_{j}\right)  \left(  \operatorname*{Coeff}\nolimits_{1}%
 p,\operatorname*{Coeff}\nolimits_{2}p,...,\operatorname*{Coeff}\nolimits_{j}%
 p\right)  }_{=u^{j}\left(  \operatorname*{Coeff}\nolimits_{j}p\right)  }%
-T^{j}=1T^{0}+\sum_{\substack{j\in\mathbb{N};\\j>0}}u^{j}\left(
+T^{j}\\
+&  =1T^{0}+\sum_{\substack{j\in\mathbb{N};\\j>0}}u^{j}\left(
 \operatorname*{Coeff}\nolimits_{j}p\right)  T^{j},
 \end{align*}
 this yields that $\operatorname*{ev}\nolimits_{uT}p=\mathfrak{Todd}%
@@ -8360,7 +8365,7 @@ K\left[  U_{1},U_{2},...,U_{m}\right]  \right)  \left[  \left[  T\right]
 U_{i}T\right)  \right)   &  =\operatorname*{Coeff}\nolimits_{m}\left(
 \sum_{j\in\mathbb{N}}\operatorname*{Td}\nolimits_{\varphi,j}\left(
 X_{1},X_{2},...,X_{j}\right)  T^{j}\right)  \ \ \ \ \ \ \ \ \ \ \left(
-\text{by (\ref{Td1})}\right) \\
+\text{by (\ref{Td1})}\right)  \\
 &  =\operatorname*{Td}\nolimits_{\varphi,m}\left(  X_{1},X_{2},...,X_{m}%
 \right)  .
 \end{align*}
@@ -8371,13 +8376,14 @@ U_{i}T\right)  \right)  =\operatorname*{Td}\nolimits_{\psi,m}\left(
 X_{1},X_{2},...,X_{m}\right)  .
 \]
 Thus,%
-\[
+\begin{align*}
 \operatorname*{Td}\nolimits_{\varphi,m}\left(  X_{1},X_{2},...,X_{m}\right)
-=\operatorname*{Coeff}\nolimits_{m}\left(  \prod\limits_{i=1}^{m}%
-\varphi\left(  U_{i}T\right)  \right)  =\operatorname*{Coeff}\nolimits_{m}%
-\left(  \prod\limits_{i=1}^{m}\psi\left(  U_{i}T\right)  \right)
-=\operatorname*{Td}\nolimits_{\psi,m}\left(  X_{1},X_{2},...,X_{m}\right)  .
-\]
+& =\operatorname*{Coeff}\nolimits_{m}\left(  \prod\limits_{i=1}^{m}%
+\varphi\left(  U_{i}T\right)  \right)  \\
+& =\operatorname*{Coeff}\nolimits_{m}\left(  \prod\limits_{i=1}^{m}\psi\left(
+U_{i}T\right)  \right)  =\operatorname*{Td}\nolimits_{\psi,m}\left(
+X_{1},X_{2},...,X_{m}\right)  .
+\end{align*}
 
 
 We will now use this to prove $\operatorname*{Td}\nolimits_{\varphi
@@ -8500,11 +8506,11 @@ for some $n\in\mathbb{N}$, two power series $\varphi$ and $\psi$ in
 $1+K\left[  \left[  t\right]  \right]  ^{+}$ have the same first $n$
 coefficients (i. e., the first $n$ coefficients of $\varphi$ are equal to the
 respective coefficients of $\psi$), then the images $f\left(  \varphi\right)
-$ and $f\left(  \psi\right)  $ of these two power series under $\varphi$ also
-have the same first $n$ coefficients. In other words, for every $n\in
-\mathbb{N}$, the first $n$ coefficients of the image of a formal power series
-under $f$ depend only on the first $n$ coefficients of the series itself (and
-not on the remaining ones).
+$ and $f\left(  \psi\right)  $ of these two power series under $f$ also have
+the same first $n$ coefficients. In other words, for every $n\in\mathbb{N}$,
+the first $n$ coefficients of the image of a formal power series under $f$
+depend only on the first $n$ coefficients of the series itself (and not on the
+remaining ones).
 
 Hence, for every $n\in\mathbb{N}$, there exists some $N\in\mathbb{N}$ such
 that the first $n$ coefficients of the image of a formal power series under
@@ -13129,8 +13135,8 @@ In order to prove this, we must verify that%
 =\operatorname*{coeff}\nolimits_{1}u+\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
 }v\in\Lambda\left(  K\right)  ;\label{sol.6.9.2}\\
-\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;\label{sol.6.9.3}%
-\\
+\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;
+\label{sol.6.9.3}\\
 \operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)   &
 =\operatorname*{coeff}\nolimits_{1}u\cdot\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
