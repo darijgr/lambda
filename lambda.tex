@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, May 30, 2016 01:33:07}
+%TCIDATA{LastRevised=Monday, May 30, 2016 01:34:21}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -804,7 +804,7 @@ challenge, if there is a challenge in this proof, is to verify the identity
 for every $k\in\mathbb{N},$ $x\in\mathbb{Z}$ and $y\in\mathbb{Z}.$ This is the
 so-called \textit{Vandermonde convolution identity}, and various proofs of it
 can easily be found in the literature\footnote{For example, it follows
-immediately from \cite[Theorem 3.3]{Grin-detn}.}. Probably the shortest proof
+immediately from \cite[Theorem 2.24]{Grin-detn}.}. Probably the shortest proof
 of (\ref{vandermonde}) is the following: If we fix $k\in\mathbb{N}$, then
 (\ref{vandermonde}) is a polynomial identity in both $x$ and $y$ (indeed, both
 sides of (\ref{vandermonde}) are polynomials in $x$ and $y$ with rational
@@ -1995,14 +1995,14 @@ So we have found $P_{2}$. Similarly we can compute $P_{k}$ for all
 $k\in\mathbb{N}$, even though the computations get longer with increasing $k$
 very rapidly. Here are the values for small $k$:%
 \begin{align*}
-P_{0} &  =1;\\
-P_{1} &  =\alpha_{1}\beta_{1};\\
-P_{2} &  =\alpha_{1}^{2}\beta_{2}+\alpha_{2}\beta_{1}^{2}-2\alpha_{2}\beta
-_{2};\\
-P_{3} &  =\alpha_{1}^{3}\beta_{3}+\alpha_{3}\beta_{1}^{3}+\alpha_{1}\alpha
-_{2}\beta_{1}\beta_{2}-3\alpha_{1}\alpha_{2}\beta_{3}-3\alpha_{3}\beta
-_{1}\beta_{2}+3\alpha_{3}\beta_{3};\\
-P_{4} &  =\alpha_{4}\beta_{1}^{4}+\alpha_{1}\alpha_{3}\beta_{1}^{2}\beta
+P_{0}  &  =1;\\
+P_{1}  &  =\alpha_{1}\beta_{1};\\
+P_{2}  &  =\alpha_{1}^{2}\beta_{2}+\alpha_{2}\beta_{1}^{2}-2\alpha_{2}%
+\beta_{2};\\
+P_{3}  &  =\alpha_{1}^{3}\beta_{3}+\alpha_{3}\beta_{1}^{3}+\alpha_{1}%
+\alpha_{2}\beta_{1}\beta_{2}-3\alpha_{1}\alpha_{2}\beta_{3}-3\alpha_{3}%
+\beta_{1}\beta_{2}+3\alpha_{3}\beta_{3};\\
+P_{4}  &  =\alpha_{4}\beta_{1}^{4}+\alpha_{1}\alpha_{3}\beta_{1}^{2}\beta
 _{2}+\alpha_{1}^{2}\alpha_{2}\beta_{1}\beta_{3}+\alpha_{1}^{4}\beta
 _{4}-4\alpha_{4}\beta_{1}^{2}\beta_{2}+\alpha_{2}^{2}\beta_{2}^{2}-2\alpha
 _{1}\alpha_{3}\beta_{2}^{2}-2\alpha_{2}^{2}\beta_{1}\beta_{3}\\
@@ -2010,7 +2010,7 @@ _{1}\alpha_{3}\beta_{2}^{2}-2\alpha_{2}^{2}\beta_{1}\beta_{3}\\
 ^{2}\alpha_{2}\beta_{4}+2\alpha_{4}\beta_{2}^{2}+4\alpha_{4}\beta_{1}\beta
 _{3}+2\alpha_{2}^{2}\beta_{4}+4\alpha_{1}\alpha_{3}\beta_{4}-4\alpha_{4}%
 \beta_{4};\\
-P_{5} &  =\alpha_{5}\beta_{1}^{5}+\alpha_{1}\alpha_{4}\beta_{1}^{3}\beta
+P_{5}  &  =\alpha_{5}\beta_{1}^{5}+\alpha_{1}\alpha_{4}\beta_{1}^{3}\beta
 _{2}+\alpha_{1}^{2}\alpha_{3}\beta_{1}^{2}\beta_{3}+\alpha_{1}^{3}\alpha
 _{2}\beta_{1}\beta_{4}+\alpha_{1}^{5}\beta_{5}-5\alpha_{5}\beta_{1}^{3}%
 \beta_{2}+\alpha_{2}\alpha_{3}\beta_{1}\beta_{2}^{2}\\
@@ -11044,7 +11044,7 @@ This proves Claim 2.
 Claim 3 is noticeably harder than each of Claims 1 and Claim 2. One way to
 prove Claim 3 is to use the proof of Theorem 7.1 below. For a completely
 elementary (combinatorial) proof of Claim 3 (leading to a different
-polynomial!!), see \cite[Exercise 2]{Grin-detn}. Let me finally sketch a third
+polynomial!!), see \cite[Exercise 3]{Grin-detn}. Let me finally sketch a third
 proof of Claim 3:
 
 \textit{Proof of Claim 3:} Recalling the fact (\cite[Proposition
@@ -13325,8 +13325,8 @@ In order to prove this, we must verify that%
 =\operatorname*{coeff}\nolimits_{1}u+\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
 }v\in\Lambda\left(  K\right)  ;\label{sol.6.9.2}\\
-\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;\label{sol.6.9.3}%
-\\
+\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;
+\label{sol.6.9.3}\\
 \operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)   &
 =\operatorname*{coeff}\nolimits_{1}u\cdot\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
@@ -14722,7 +14722,7 @@ $\det\left(  A_{n}\left[  \dfrac{\sim k}{\sim n}\right]  \right)  =\det
 A_{k-1}\cdot\left(  k\left(  k+1\right)  ...\left(  n-1\right)  \right)  $
 (since the determinant of any block-triangular matrix is known to equal the
 product of the determinant of its diagonal blocks\footnote{See \cite[Exercise
-43]{Grin-detn} for a proof of this statement (at least in the case of a
+44]{Grin-detn} for a proof of this statement (at least in the case of a
 block-triangular matrix with four blocks; but this is precisely the case which
 we are using).}). Since we are proceeding by induction over $n$, we can take
 $\det A_{k-1}=\left(  k-1\right)  !\lambda^{k-1}\left(  x\right)  $ for
@@ -15770,9 +15770,9 @@ York 1985.
 series}.\newline\url{http://www.cip.ifi.lmu.de/~grinberg/algebra/witt4a.pdf}
 
 \bibitem[Grin-detn]{Grin-detn}Darij Grinberg, \textit{Notes on the
-combinatorial fundamentals of algebra}, version of 26 April 2016.\newline%
-\url{https://github.com/darijgr/detnotes/releases/tag/2016-04-26}\newline(This
-is the URL of the frozen version of 26 April 2016, guaranteed to have its
+combinatorial fundamentals of algebra}, version of 29 May 2016.\newline%
+\url{https://github.com/darijgr/detnotes/releases/tag/2016-05-29}\newline(This
+is the URL of the frozen version of 29 May 2016, guaranteed to have its
 numbering match the references above. For a version which is getting updated,
 see \url{http://web.mit.edu/~darij/www/primes2015/sols.pdf} .)
 
