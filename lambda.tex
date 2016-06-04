@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Monday, May 30, 2016 01:34:21}
+%TCIDATA{LastRevised=Saturday, June 04, 2016 19:39:30}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -1564,30 +1564,52 @@ independent over $K$ (by Corollary 4.1a), this entails that $R_{\left(
 \lambda_{1},\lambda_{2},...,\lambda_{n}\right)  }=0$. This proves
 (\ref{4.2.pf.b.2}).}.
 
-Now, recall how $Q$ has been defined in (\ref{4.2.pf.a.defQ}). Thus,%
+Consider the polynomial ring $K\left[  \alpha_{1},\alpha_{2},\alpha_{3}%
+,\ldots,\beta_{1},\beta_{2},\beta_{3},\ldots\right]  $ in the infinitely many
+variables $\alpha_{i}$ (for $i\in\left\{  1,2,3,\ldots\right\}  $) and
+$\beta_{j}$ (for $j\in\left\{  1,2,3,\ldots\right\}  $). For any
+$u\in\mathbb{N}$ and $v\in\mathbb{N}$, we shall consider the polynomial ring
+$K\left[  \alpha_{1},\alpha_{2},\ldots,\alpha_{u},\beta_{1},\beta_{2}%
+,\ldots,\beta_{v}\right]  $ as a subring of $K\left[  \alpha_{1},\alpha
+_{2},\alpha_{3},\ldots,\beta_{1},\beta_{2},\beta_{3},\ldots\right]  $ (by
+abuse of notation).
+
+Now, recall how $Q$ has been defined in (\ref{4.2.pf.a.defQ}).
+Thus,\footnote{In the following computation, we are WLOG assuming that $k\leq
+n$. Indeed, this assumption is legitimate, because in the case when $k>n$, the
+result of the computation (namely, the claim that $Q\in K\left[  \alpha
+_{1},\alpha_{2},...,\alpha_{m},\beta_{1},\beta_{2},...,\beta_{k}\right]  $) is
+obvious anyway.}%
 \begin{align*}
 Q  &  =\sum_{\left(  \lambda_{1},\lambda_{2},...,\lambda_{n}\right)
 \in\mathbb{N}^{n}}R_{\left(  \lambda_{1},\lambda_{2},...,\lambda_{n}\right)
 }\left(  \alpha_{1},\alpha_{2},...,\alpha_{m}\right)  \beta_{1}^{\lambda_{1}%
 }\beta_{2}^{\lambda_{2}}...\beta_{n}^{\lambda_{n}}\\
+&  =\sum_{\substack{\left(  \lambda_{1},\lambda_{2},...,\lambda_{n}\right)
+\in\mathbb{N}^{n};\\\lambda_{k+1}=\lambda_{k+2}=\cdots=\lambda_{n}%
+=0}}R_{\left(  \lambda_{1},\lambda_{2},...,\lambda_{n}\right)  }\left(
+\alpha_{1},\alpha_{2},...,\alpha_{m}\right)  \underbrace{\beta_{1}%
+^{\lambda_{1}}\beta_{2}^{\lambda_{2}}...\beta_{n}^{\lambda_{n}}}%
+_{\substack{=\beta_{1}^{\lambda_{1}}\beta_{2}^{\lambda_{2}}...\beta
+_{k}^{\lambda_{k}}\\\text{(since }\lambda_{k+1}=\lambda_{k+2}=\cdots
+=\lambda_{n}=0\text{)}}}\\
+&  \ \ \ \ \ \ \ \ \ \ +\sum_{\substack{\left(  \lambda_{1},\lambda
+_{2},...,\lambda_{n}\right)  \in\mathbb{N}^{n};\\\text{not }\lambda
+_{k+1}=\lambda_{k+2}=\cdots=\lambda_{n}=0}}\underbrace{R_{\left(  \lambda
+_{1},\lambda_{2},...,\lambda_{n}\right)  }\left(  \alpha_{1},\alpha
+_{2},...,\alpha_{m}\right)  }_{\substack{=0\\\text{(by (\ref{4.2.pf.b.2}))}%
+}}\beta_{1}^{\lambda_{1}}\beta_{2}^{\lambda_{2}}...\beta_{n}^{\lambda_{n}}\\
 &  =\underbrace{\sum_{\substack{\left(  \lambda_{1},\lambda_{2},...,\lambda
 _{n}\right)  \in\mathbb{N}^{n};\\\lambda_{k+1}=\lambda_{k+2}=\cdots
 =\lambda_{n}=0}}R_{\left(  \lambda_{1},\lambda_{2},...,\lambda_{n}\right)
 }\left(  \alpha_{1},\alpha_{2},...,\alpha_{m}\right)  \beta_{1}^{\lambda_{1}%
-}\beta_{2}^{\lambda_{2}}...\beta_{n}^{\lambda_{n}}}_{\in K\left[  \alpha
+}\beta_{2}^{\lambda_{2}}...\beta_{k}^{\lambda_{k}}}_{\in K\left[  \alpha
 _{1},\alpha_{2},...,\alpha_{m},\beta_{1},\beta_{2},...,\beta_{k}\right]  }\\
-&  \ \ \ \ \ \ \ \ \ \ +\sum_{\substack{\left(  \lambda_{1},\lambda
-_{2},...,\lambda_{n}\right)  \in\mathbb{N}^{n};\\\lambda_{k+1}=\lambda
-_{k+2}=\cdots=\lambda_{n}=0}}\underbrace{R_{\left(  \lambda_{1},\lambda
-_{2},...,\lambda_{n}\right)  }\left(  \alpha_{1},\alpha_{2},...,\alpha
-_{m}\right)  }_{\substack{=0\\\text{(by (\ref{4.2.pf.b.2}))}}}\beta
-_{1}^{\lambda_{1}}\beta_{2}^{\lambda_{2}}...\beta_{n}^{\lambda_{n}}\\
+&  \ \ \ \ \ \ \ \ \ \ +\underbrace{\sum_{\substack{\left(  \lambda
+_{1},\lambda_{2},...,\lambda_{n}\right)  \in\mathbb{N}^{n};\\\text{not
+}\lambda_{k+1}=\lambda_{k+2}=\cdots=\lambda_{n}=0}}0\beta_{1}^{\lambda_{1}%
+}\beta_{2}^{\lambda_{2}}...\beta_{n}^{\lambda_{n}}}_{=0}\\
 &  \in K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m},\beta_{1},\beta
-_{2},...,\beta_{k}\right]  +\underbrace{\sum_{\substack{\left(  \lambda
-_{1},\lambda_{2},...,\lambda_{n}\right)  \in\mathbb{N}^{n};\\\lambda
-_{k+1}=\lambda_{k+2}=\cdots=\lambda_{n}=0}}0\beta_{1}^{\lambda_{1}}\beta
-_{2}^{\lambda_{2}}...\beta_{n}^{\lambda_{n}}}_{=0}\\
-&  =K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m},\beta_{1},\beta
 _{2},...,\beta_{k}\right]  .
 \end{align*}
 Hence, the variables $\beta_{j}$ for $j>k$ do not appear in the polynomial
@@ -1595,14 +1617,11 @@ $Q$. A similar argument (but in which the roles of $m$, of $U_{i}$, of $X_{i}%
 $, of $\alpha_{i}$ and of $\ell$ are switched with the roles of $n$, of
 $V_{i}$, of $Y_{i}$, of $\beta_{i}$ and of $k$) shows that the variables
 $\alpha_{i}$ for $i>\ell$ do not appear in the polynomial $Q$. Thus, we know
-that the variables $\alpha_{i}$ for $i>\ell$ nor the variables $\beta_{j}$ for
-$j>k$ ever appear in the polynomial $Q$. Therefore, the variables which do
-appear in the polynomial $Q$ remain unchanged under the homomorphism which
-sends $Q$ to $Q_{\ell,k}$. Therefore, $Q_{\ell,k}=Q$ (where we regard
-$K\left[  \alpha_{1},\alpha_{2},...,\alpha_{\ell},\beta_{1},\beta
-_{2},...,\beta_{k}\right]  $ as a subring of $K\left[  \alpha_{1},\alpha
-_{2},...,\alpha_{m},\beta_{1},\beta_{2},...,\beta_{n}\right]  $ by abuse of
-notation). Therefore,%
+that neither the variables $\alpha_{i}$ for $i>\ell$ nor the variables
+$\beta_{j}$ for $j>k$ ever appear in the polynomial $Q$. Therefore, the
+variables which do appear in the polynomial $Q$ remain unchanged under the
+homomorphism which sends $Q$ to $Q_{\ell,k}$. Therefore, $Q_{\ell,k}=Q$.
+Therefore,%
 \[
 Q_{\ell,k}\left(  X_{1},X_{2},...,X_{\ell},Y_{1},Y_{2},...,Y_{k}\right)
 =Q\left(  X_{1},X_{2},...,X_{m},Y_{1},Y_{2},...,Y_{n}\right)  .
@@ -5623,8 +5642,6 @@ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
 \psi^{j}\left(  u_{1}+u_{2}+...+u_{m}\right)  =u_{1}^{j}+u_{2}^{j}%
 +...+u_{m}^{j}.
 \]
-
-
 
 \end{quote}
 
@@ -11047,8 +11064,8 @@ elementary (combinatorial) proof of Claim 3 (leading to a different
 polynomial!!), see \cite[Exercise 3]{Grin-detn}. Let me finally sketch a third
 proof of Claim 3:
 
-\textit{Proof of Claim 3:} Recalling the fact (\cite[Proposition
-I.7.3]{Harts77}) that the subset%
+\textit{Proof of Claim 3:} Recall the fact (\cite[Proposition I.7.3]{Harts77})
+that the subset%
 \[
 \left\{  p\in\mathbb{Q}\left[  X\right]  \text{ }\mid\ p\left(  n\right)
 \in\mathbb{Z}\text{ for every }n\in\mathbb{Z}\right\}
@@ -13325,8 +13342,8 @@ In order to prove this, we must verify that%
 =\operatorname*{coeff}\nolimits_{1}u+\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
 }v\in\Lambda\left(  K\right)  ;\label{sol.6.9.2}\\
-\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;
-\label{sol.6.9.3}\\
+\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;\label{sol.6.9.3}%
+\\
 \operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)   &
 =\operatorname*{coeff}\nolimits_{1}u\cdot\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
@@ -13863,16 +13880,16 @@ can prove that%
 Now, we shall prove that the diagram%
 \begin{equation}%
 %TCIMACRO{\TeXButton{main claim of (b)}{\xymatrix{
-%A \otimes B \ar[r]^{\varphi} \ar[d]_{\tau_T} & C \ar[d]^{\nu_T} \\
-%\Lambda\left(A \otimes B\right) \ar[r]_{\Lambda\left(\varphi\right)}
+%A \otimes B \ar[r]^-{\phi} \ar[d]_{\tau_T} & C \ar[d]^{\nu_T} \\
+%\Lambda\left(A \otimes B\right) \ar[r]_-{\Lambda\left(\phi\right)}
 %& \Lambda\left(C\right)
-%}} }%
+%}}}%
 %BeginExpansion
 \xymatrix{
-A \otimes B \ar[r]^{\varphi} \ar[d]_{\tau_T} & C \ar[d]^{\nu_T} \\
-\Lambda\left(A \otimes B\right) \ar[r]_{\Lambda\left(\varphi\right)}
+A \otimes B \ar[r]^-{\phi} \ar[d]_{\tau_T} & C \ar[d]^{\nu_T} \\
+\Lambda\left(A \otimes B\right) \ar[r]_-{\Lambda\left(\phi\right)}
 & \Lambda\left(C\right)
-}
+}%
 %EndExpansion
 \label{sol.6.11.b.diagram}%
 \end{equation}
