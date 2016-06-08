@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, June 07, 2016 21:15:13}
+%TCIDATA{LastRevised=Tuesday, June 07, 2016 21:20:11}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2666,11 +2666,11 @@ by the elements $u_{1},$ $u_{2},$ $...,$ $u_{n}$ (with multiplicity) by
 $\left[  u_{1},u_{2},...,u_{n}\right]  $.
 
 For our ring $K$, let $\operatorname*{Exten}K$ be the set of all finite-free
-extension rings of $K$. (Again, this is not a set. Again, we don't care.
-Basically it is enough to consider all finite-free extension rings of the form
-$K\left[  X_{1},X_{2},...,X_{n}\right]  \diagup I$ with $I$ being an ideal of
-$K\left[  X_{1},X_{2},...,X_{n}\right]  $, and \textit{these} extension rings
-do form a set.)
+extension rings of $K$. (Again, this is not a set, but a proper class. Again,
+we don't care. Basically it is enough to consider all finite-free extension
+rings of the form $K\left[  X_{1},X_{2},...,X_{n}\right]  \diagup I$ with $I$
+being an ideal of $K\left[  X_{1},X_{2},...,X_{n}\right]  $, and
+\textit{these} extension rings do form a set.)
 
 Let $K^{\operatorname*{int}}$ be the subset\footnote{Recall that
 $\bigcup\limits_{K^{\prime}\in\operatorname*{Exten}K}^{\cdot}\mathcal{P}%
@@ -2708,32 +2708,35 @@ T\right]  $ and therefore $\prod\limits_{i=1}^{n}\left(  1+u_{i}T\right)
 \in1+K\left[  T\right]  ^{+}$ (since the polynomial $\prod\limits_{i=1}%
 ^{n}\left(  1+u_{i}T\right)  $ clearly has constant term $1$).}
 
-We also define a map%
+Every polynomial $p\in1+K\left[  T\right]  ^{+}$ can be written as
+$p=\Pi\left(  \widetilde{K},\left[  u_{1},u_{2},...,u_{n}\right]  \right)  $
+for some $\left(  \widetilde{K},\left[  u_{1},u_{2},...,u_{n}\right]  \right)
+\in K^{\operatorname*{int}}$\ \ \ \ \footnote{\textit{Proof.} Let
+$p\in1+K\left[  T\right]  ^{+}$ be a polynomial. Then, Theorem 5.2 shows that
+there exists an integer $n$ (the degree of the polynomial $p$), a finite-free
+extension ring $K_{p}$ of the ring $K$ and $n$ elements $p_{1},$ $p_{2},$
+$...,$ $p_{n}$ of this extension ring $K_{p}$ such that $p=\prod
+\limits_{i=1}^{n}\left(  1+p_{i}T\right)  $ in $K_{p}\left[  T\right]  $.
+Consider these $n$ and $K_{p}$ and these $p_{1},$ $p_{2},$ $...,$ $p_{n}$.
+Then, $\left(  K_{p},\left[  p_{1},p_{2},\ldots,p_{n}\right]  \right)  \in
+K^{\operatorname*{int}}$ (since $\prod\limits_{i=1}^{n}\left(  1+p_{i}%
+T\right)  =p\in K\left[  T\right]  $). Moreover, the definition of $\Pi$
+yields%
 \[
-r:1+K\left[  T\right]  ^{+}\rightarrow K^{\operatorname*{int}}%
+\Pi\left(  K_{p},\left[  p_{1},p_{2},\ldots,p_{n}\right]  \right)
+=\prod\limits_{i=1}^{n}\left(  1+p_{i}T\right)  =p.
 \]
-(the $r$ stands for \textquotedblleft roots\textquotedblright\ here) through
-\[
-r\left(  p\right)  =\left(  K_{p},\left[  p_{1},p_{2},...,p_{n}\right]
-\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }p\in1+K\left[  T\right]  ^{+},
-\]
-where $n$, $K_{p}$ and $\left[  p_{1},p_{2},...,p_{n}\right]  $ are defined as
-in Theorem 5.2. (Notice that these $n$, $K_{p}$ and $\left[  p_{1}%
-,p_{2},...,p_{n}\right]  $ are not determined uniquely; we just make one
-choice for each $p$. In this form, this definition therefore uses the axiom of
-choice; however, in reality we will only apply the map $r$ to finitely many
-polynomials, and so the axiom is not needed.)
-
-Clearly, $\Pi\circ r=\operatorname*{id}$, so that every polynomial
-$p\in1+K\left[  T\right]  ^{+}$ can be written as $p=\Pi\left(  \widetilde{K}%
-,\left[  u_{1},u_{2},...,u_{n}\right]  \right)  $ for some $\left(
-\widetilde{K},\left[  u_{1},u_{2},...,u_{n}\right]  \right)  \in
-K^{\operatorname*{int}}$.
+Hence, $p$ can be written as $p=\Pi\left(  \widetilde{K},\left[  u_{1}%
+,u_{2},...,u_{n}\right]  \right)  $ for some $\left(  \widetilde{K},\left[
+u_{1},u_{2},...,u_{n}\right]  \right)  \in K^{\operatorname*{int}}$ (namely,
+for $\left(  \widetilde{K},\left[  u_{1},u_{2},...,u_{n}\right]  \right)
+=\left(  K_{p},\left[  p_{1},p_{2},\ldots,p_{n}\right]  \right)  $). Qed.}. In
+other words, the map $\Pi$ is surjective.
 \end{quote}
 
-This way, we have a correspondence between elements of $1+K\left[  T\right]
-^{+}$ and multisets of elements of an extension ring of $K$. This
-correspondence is neither injective nor surjective, but it reminds us of the
+Roughly speaking, the map $\Pi$ gives a surjection from the set (or, rather,
+class) of finite multisets of elements of a finite-free extension ring of $K$
+to the set $1+K\left[  T\right]  ^{+}$. This should reminds you of the
 correspondence between polynomials over a field and their roots over
 extensions of that field (and the proof of Theorem 5.2 explains why), and it
 will help us to understand $\widehat{+},$ $\widehat{\cdot}$ and
@@ -5662,8 +5665,6 @@ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
 \psi^{j}\left(  u_{1}+u_{2}+...+u_{m}\right)  =u_{1}^{j}+u_{2}^{j}%
 +...+u_{m}^{j}.
 \]
-
-
 
 \end{quote}
 
@@ -12882,12 +12883,12 @@ T\right]  }_{=\left\{  \dfrac{p}{q}\ \mid\ p\in K\left[  T\right]
 K\right)  }_{=1+K\left[  \left[  T\right]  \right]  ^{+}}\\
 &  =\left\{  \dfrac{p}{q}\ \mid\ p\in K\left[  T\right]  ,\ q\in1+K\left[
 T\right]  ^{+}\right\}  \cap\left(  1+K\left[  \left[  T\right]  \right]
-^{+}\right)  \\
+^{+}\right) \\
 &  =\left\{  \dfrac{p}{q}\ \mid\ p\in K\left[  T\right]  ,\ q\in1+K\left[
 T\right]  ^{+},\ \dfrac{p}{q}\in1+K\left[  \left[  T\right]  \right]
-^{+}\right\}  \\
+^{+}\right\} \\
 &  =\left\{  \underbrace{\dfrac{p}{q}}_{=p\widehat{-}q}\ \mid\ p\in1+K\left[
-T\right]  ^{+},\ q\in1+K\left[  T\right]  ^{+}\right\}  \\
+T\right]  ^{+},\ q\in1+K\left[  T\right]  ^{+}\right\} \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -12896,9 +12897,9 @@ q\in1+K\left[  T\right]  ^{+}\\
 \text{satisfy }\dfrac{p}{q}\in1+K\left[  \left[  T\right]  \right]  ^{+}\text{
 if and only if }p\in1+K\left[  T\right]  ^{+}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\left\{  p\widehat{-}q\ \mid\ p\in1+K\left[  T\right]  ^{+},\ q\in
-1+K\left[  T\right]  ^{+}\right\}  \\
+1+K\left[  T\right]  ^{+}\right\} \\
 &  =\left(  1+K\left[  T\right]  ^{+}\right)  \widehat{-}\left(  1+K\left[
 T\right]  ^{+}\right)  .
 \end{align*}
@@ -13374,8 +13375,8 @@ In order to prove this, we must verify that%
 =\operatorname*{coeff}\nolimits_{1}u+\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
 }v\in\Lambda\left(  K\right)  ;\label{sol.6.9.2}\\
-\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;
-\label{sol.6.9.3}\\
+\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;\label{sol.6.9.3}%
+\\
 \operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)   &
 =\operatorname*{coeff}\nolimits_{1}u\cdot\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
