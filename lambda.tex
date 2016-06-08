@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, June 04, 2016 19:39:30}
+%TCIDATA{LastRevised=Tuesday, June 07, 2016 21:15:13}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2488,7 +2488,9 @@ $K\left[  \left[  T\right]  \right]  $, not in $1+K\left[  \left[  T\right]
 for any two power series $\sum\limits_{i\in\mathbb{N}}a_{i}T^{i}\in1+K\left[
 \left[  T\right]  \right]  ^{+}$ and $\sum\limits_{i\in\mathbb{N}}b_{i}%
 T^{i}\in1+K\left[  \left[  T\right]  \right]  ^{+}$ (where $a_{i}$ and $b_{i}$
-lie in $K$ for every $i\in\mathbb{N}$).
+lie in $K$ for every $i\in\mathbb{N}$).\ \ \ \ \footnote{Of course, it is not
+obvious that this multiplication $\widehat{\cdot}$ is associative. See Theorem
+5.1 \textbf{(a)} for the proof of this.}
 
 The multiplicative unity of the ring $1+K\left[  \left[  T\right]  \right]
 ^{+}$ will be $1+T$.
@@ -2548,7 +2550,7 @@ the subset $1+K\left[  T\right]  ^{+}$ is dense in an appropriate topology on
 $1+K\left[  \left[  T\right]  \right]  ^{+}$ (Theorem 5.5 \textbf{(a)}), that
 this topology is Hausdorff (Theorem 5.5 \textbf{(e)}), and that the operations
 $\widehat{+}$, $\widehat{\cdot}$ and $\widehat{\lambda}^{j}$ are continuous
-with respect to it (Theorem 5.5 \textbf{(d)}), so that in order to prove the
+with respect to it (Theorem 5.5 \textbf{(d)}); hence, in order to prove the
 ring and $\lambda$-ring axioms for $\Lambda\left(  K\right)  $, we only need
 to prove them on elements of this dense subset $1+K\left[  T\right]  ^{+}$.
 This will then be done using Theorems 5.2 and 5.3.
@@ -2564,8 +2566,8 @@ Before we prove this Theorem 5.1, we try to motivate the above definition of
 $\Lambda\left(  K\right)  $:
 
 \begin{quote}
-\textbf{Definition.} Let $K\left[  T\right]  ^{+}$ be the subset of $K\left[
-T\right]  $ defined by%
+\textbf{Definition.} Let $K$ be a ring. Let $K\left[  T\right]  ^{+}$ be the
+subset of the polynomial ring $K\left[  T\right]  $ defined by%
 \begin{align*}
 K\left[  T\right]  ^{+}  &  =TK\left[  T\right]  =\left\{  \sum_{i\in
 \mathbb{N}}a_{i}T^{i}\in K\left[  T\right]  \ \mid\ a_{i}\in K\text{ for all
@@ -2579,17 +2581,19 @@ T\right]  \right]  ^{+}.$ The elements of $1+K\left[  T\right]  ^{+}$ are polyno
 
 So $1+K\left[  T\right]  ^{+}$ is the set of all polynomials $p\in K\left[
 T\right]  $ with constant term $1$. Loosely speaking, this means that the
-elements of $1+K\left[  T\right]  ^{+}$ are monic polynomials ``turned upside
-down'' (in the sense that if $\sum\limits_{i=0}^{n}a_{i}T^{i}$ is a polynomial
-in $1+K\left[  T\right]  ^{+}$ degree $n$ (with $a_{i}\in K$ for every $i$),
-then $\sum\limits_{i=0}^{n}a_{n-i}T^{i}$ is a monic polynomial of degree $n$,
-and conversely). This allows us to take some properties of monic polynomials
-and use them to derive similar properties for polynomials in $1+K\left[
-T\right]  ^{+}$. For example, we can take Exercise 5.1 (which says that
-whenever $P$ is a monic polynomial of degree $n$ over a ring $K$, we can find
-a finite-free extension ring of $K$ over which the polynomial $P$ factors into
-a product of monic linear polynomials), and ``turn it upside down'', obtaining
-the following fact about polynomials in $1+K\left[  T\right]  ^{+}$:
+elements of $1+K\left[  T\right]  ^{+}$ are monic polynomials
+\textquotedblleft turned upside down\textquotedblright\ (in the sense that if
+$\sum\limits_{i=0}^{n}a_{i}T^{i}$ is a polynomial in $1+K\left[  T\right]
+^{+}$ of degree $n$ (with $a_{i}\in K$ for every $i$), then $\sum
+\limits_{i=0}^{n}a_{n-i}T^{i}$ is a monic polynomial of degree $n$, and
+conversely). This allows us to take some properties of monic polynomials and
+use them to derive similar properties for polynomials in $1+K\left[  T\right]
+^{+}$. For example, we can take Exercise 5.1 (which says that whenever $P$ is
+a monic polynomial of degree $n$ over a ring $K$, we can find a finite-free
+extension ring of $K$ over which the polynomial $P$ factors into a product of
+monic linear polynomials), and \textquotedblleft turn it upside
+down\textquotedblright, obtaining the following fact about polynomials in
+$1+K\left[  T\right]  ^{+}$:
 
 \begin{quote}
 \textbf{Theorem 5.2.} Let $K$ be a ring. For every element $p\in1+K\left[
@@ -2648,6 +2652,13 @@ finite-free is enough for many things!
 To make systematic use of Theorem 5.2, let us introduce some notation again:
 
 \begin{quote}
+\textbf{Definition.} Let $S$ be a set. Let $J_{s}$ be a set for each $s\in S$.
+Then $\bigcup\limits_{s\in S}^{\cdot}J_{s}$ (the so-called \textit{disjoint
+union} of the sets $J_{s}$ over all $s\in S$) is defined to be the set of all
+pairs $\left(  s,j\right)  $ with $s\in S$ and $j\in J_{s}$. In other words,
+$\bigcup\limits_{s\in S}^{\cdot}J_{s}=\bigcup\limits_{s\in S}\left\{
+s\right\}  \times J_{s}$.
+
 \textbf{Definition.} For every set $H$, let $\mathcal{P}_{\operatorname*{fin}%
 }^{\ast}\left(  H\right)  $ denote the set of all finite multisets which
 consist of elements of $H$. Also, we recall that we denote the multiset formed
@@ -2661,25 +2672,25 @@ $K\left[  X_{1},X_{2},...,X_{n}\right]  \diagup I$ with $I$ being an ideal of
 $K\left[  X_{1},X_{2},...,X_{n}\right]  $, and \textit{these} extension rings
 do form a set.)
 
-Let $K^{\operatorname*{int}}$ be the subset%
+Let $K^{\operatorname*{int}}$ be the subset\footnote{Recall that
+$\bigcup\limits_{K^{\prime}\in\operatorname*{Exten}K}^{\cdot}\mathcal{P}%
+_{\operatorname*{fin}}^{\ast}\left(  K^{\prime}\right)  $ denotes the disjoint
+union of the sets $\mathcal{P}_{\operatorname*{fin}}^{\ast}\left(  K^{\prime
+}\right)  $ over all $K^{\prime}\in\operatorname*{Exten}K$; it is defined by
+$\bigcup\limits_{K^{\prime}\in\operatorname*{Exten}K}^{\cdot}\mathcal{P}%
+_{\operatorname*{fin}}^{\ast}\left(  K^{\prime}\right)  =\bigcup
+\limits_{K^{\prime}\in\operatorname*{Exten}K}\left\{  K^{\prime}\right\}
+\times\mathcal{P}_{\operatorname*{fin}}^{\ast}\left(  K^{\prime}\right)  $.}%
 \[
 \left\{  \left(  \widetilde{K},\left[  u_{1},u_{2},...,u_{n}\right]  \right)
-\in\bigcup\limits_{K^{\prime}\subseteq\operatorname*{Exten}K}^{\cdot
-}\mathcal{P}_{\operatorname*{fin}}^{\ast}\left(  K^{\prime}\right)
-\ \ \mid\ \ \prod\limits_{i=1}^{n}\left(  1+u_{i}T\right)  \in K\left[
-T\right]  \right\}
+\in\bigcup\limits_{K^{\prime}\in\operatorname*{Exten}K}^{\cdot}\mathcal{P}%
+_{\operatorname*{fin}}^{\ast}\left(  K^{\prime}\right)  \ \ \mid
+\ \ \prod\limits_{i=1}^{n}\left(  1+u_{i}T\right)  \in K\left[  T\right]
+\right\}
 \]
 of $\bigcup\limits_{K^{\prime}\subseteq\operatorname*{Exten}K}^{\cdot
-}\mathcal{P}_{\operatorname*{fin}}^{\ast}\left(  K^{\prime}\right)  $ (where
-$\bigcup\limits_{K^{\prime}\subseteq\operatorname*{Exten}K}^{\cdot}%
-\mathcal{P}_{\operatorname*{fin}}^{\ast}\left(  K^{\prime}\right)  $ denotes
-the disjoint union of the sets $\mathcal{P}_{\operatorname*{fin}}^{\ast
-}\left(  K^{\prime}\right)  $ over all $K^{\prime}\subseteq
-\operatorname*{Exten}K$, defined by $\bigcup\limits_{K^{\prime}\subseteq
-\operatorname*{Exten}K}^{\cdot}\mathcal{P}_{\operatorname*{fin}}^{\ast}\left(
-K^{\prime}\right)  =\bigcup\limits_{K^{\prime}\subseteq\operatorname*{Exten}%
-K}\left\{  K^{\prime}\right\}  \times\mathcal{P}_{\operatorname*{fin}}^{\ast
-}\left(  K^{\prime}\right)  $). We can then define a map%
+}\mathcal{P}_{\operatorname*{fin}}^{\ast}\left(  K^{\prime}\right)  $. We then
+define a map%
 \[
 \Pi:K^{\operatorname*{int}}\rightarrow1+K\left[  T\right]  ^{+}%
 \]
@@ -2690,19 +2701,28 @@ through%
 &  \ \ \ \ \ \ \ \ \ \ \text{for every }\left(  \widetilde{K},\left[
 u_{1},u_{2},...,u_{n}\right]  \right)  \in K^{\operatorname*{int}}.
 \end{align*}
-
+\footnote{This map is well-defined, because every $\left(  \widetilde{K}%
+,\left[  u_{1},u_{2},...,u_{n}\right]  \right)  \in K^{\operatorname*{int}}$
+satisfies $\prod\limits_{i=1}^{n}\left(  1+u_{i}T\right)  \in K\left[
+T\right]  $ and therefore $\prod\limits_{i=1}^{n}\left(  1+u_{i}T\right)
+\in1+K\left[  T\right]  ^{+}$ (since the polynomial $\prod\limits_{i=1}%
+^{n}\left(  1+u_{i}T\right)  $ clearly has constant term $1$).}
 
 We also define a map%
 \[
 r:1+K\left[  T\right]  ^{+}\rightarrow K^{\operatorname*{int}}%
 \]
-(the $r$ stands for ``roots'' here) through
+(the $r$ stands for \textquotedblleft roots\textquotedblright\ here) through
 \[
 r\left(  p\right)  =\left(  K_{p},\left[  p_{1},p_{2},...,p_{n}\right]
 \right)  \ \ \ \ \ \ \ \ \ \ \text{for every }p\in1+K\left[  T\right]  ^{+},
 \]
-where $K_{p}$ and $\left[  p_{1},p_{2},...,p_{n}\right]  $ are defined as in
-Theorem 5.2.
+where $n$, $K_{p}$ and $\left[  p_{1},p_{2},...,p_{n}\right]  $ are defined as
+in Theorem 5.2. (Notice that these $n$, $K_{p}$ and $\left[  p_{1}%
+,p_{2},...,p_{n}\right]  $ are not determined uniquely; we just make one
+choice for each $p$. In this form, this definition therefore uses the axiom of
+choice; however, in reality we will only apply the map $r$ to finitely many
+polynomials, and so the axiom is not needed.)
 
 Clearly, $\Pi\circ r=\operatorname*{id}$, so that every polynomial
 $p\in1+K\left[  T\right]  ^{+}$ can be written as $p=\Pi\left(  \widetilde{K}%
@@ -5642,6 +5662,8 @@ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
 \psi^{j}\left(  u_{1}+u_{2}+...+u_{m}\right)  =u_{1}^{j}+u_{2}^{j}%
 +...+u_{m}^{j}.
 \]
+
+
 
 \end{quote}
 
@@ -12857,24 +12879,26 @@ K\right)  $. Now,%
 &  \underbrace{\left(  1+K\left[  T\right]  ^{+}\right)  ^{-1}K\left[
 T\right]  }_{=\left\{  \dfrac{p}{q}\ \mid\ p\in K\left[  T\right]
 ,\ q\in1+K\left[  T\right]  ^{+}\right\}  }\cap\underbrace{\Lambda\left(
-K\right)  }_{=1+K\left[  T\right]  ^{+}}\\
+K\right)  }_{=1+K\left[  \left[  T\right]  \right]  ^{+}}\\
 &  =\left\{  \dfrac{p}{q}\ \mid\ p\in K\left[  T\right]  ,\ q\in1+K\left[
-T\right]  ^{+}\right\}  \cap\left(  1+K\left[  T\right]  ^{+}\right) \\
+T\right]  ^{+}\right\}  \cap\left(  1+K\left[  \left[  T\right]  \right]
+^{+}\right)  \\
 &  =\left\{  \dfrac{p}{q}\ \mid\ p\in K\left[  T\right]  ,\ q\in1+K\left[
-T\right]  ^{+},\ \dfrac{p}{q}\in1+K\left[  T\right]  ^{+}\right\} \\
+T\right]  ^{+},\ \dfrac{p}{q}\in1+K\left[  \left[  T\right]  \right]
+^{+}\right\}  \\
 &  =\left\{  \underbrace{\dfrac{p}{q}}_{=p\widehat{-}q}\ \mid\ p\in1+K\left[
-T\right]  ^{+},\ q\in1+K\left[  T\right]  ^{+}\right\} \\
+T\right]  ^{+},\ q\in1+K\left[  T\right]  ^{+}\right\}  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
 \text{because two polynomials }p\in K\left[  T\right]  \text{ and }%
 q\in1+K\left[  T\right]  ^{+}\\
-\text{satisfy }\dfrac{p}{q}\in1+K\left[  T\right]  ^{+}\text{ if and only if
-}p\in1+K\left[  T\right]  ^{+}%
+\text{satisfy }\dfrac{p}{q}\in1+K\left[  \left[  T\right]  \right]  ^{+}\text{
+if and only if }p\in1+K\left[  T\right]  ^{+}%
 \end{array}
-\right) \\
+\right)  \\
 &  =\left\{  p\widehat{-}q\ \mid\ p\in1+K\left[  T\right]  ^{+},\ q\in
-1+K\left[  T\right]  ^{+}\right\} \\
+1+K\left[  T\right]  ^{+}\right\}  \\
 &  =\left(  1+K\left[  T\right]  ^{+}\right)  \widehat{-}\left(  1+K\left[
 T\right]  ^{+}\right)  .
 \end{align*}
@@ -12884,7 +12908,15 @@ and the maps $\widehat{\lambda}^{i}$ (according to Theorem 5.3, since
 $1+K\left[  T\right]  ^{+}=\Pi\left(  K^{\operatorname*{int}}\right)  $) and
 contains the zero $1$ and the unity $1+T$. Thus, by Exercise 2.2 (applied to
 $\Lambda\left(  K\right)  $ and $1+K\left[  T\right]  ^{+}$ instead of $K$ and
-$L$), the conclusion follows.
+$L$), we see that $\left(  1+K\left[  T\right]  ^{+}\right)  \widehat{-}%
+\left(  1+K\left[  T\right]  ^{+}\right)  $ is a sub-$\lambda$-ring of
+$\Lambda\left(  K\right)  $. In other words, $\left(  1+K\left[  T\right]
+^{+}\right)  ^{-1}K\left[  T\right]  \cap\Lambda\left(  K\right)  $ is a
+sub-$\lambda$-ring of $\Lambda\left(  K\right)  $ (since $\left(  1+K\left[
+T\right]  ^{+}\right)  ^{-1}K\left[  T\right]  \cap\Lambda\left(  K\right)
+=\left(  1+K\left[  T\right]  ^{+}\right)  \widehat{-}\left(  1+K\left[
+T\right]  ^{+}\right)  $). This sub-$\lambda$-ring is clearly special (since
+$\Lambda\left(  K\right)  $ is special). This solves Exercise 6.1.
 
 \textit{Exercise 6.2: Solution:} \textbf{(a)} Consider the map $\lambda_{T}$
 defined in Theorem 2.1. Fix some $x\in K$. Define a map $\Upsilon
@@ -13120,7 +13152,7 @@ the 2nd Step proves that this is the only such homomorphism).
 \textit{Exercise 6.7:} \textit{Solution:} Let $t\in I$. Since $S$ generates
 the ideal $I$, there exists some $r\in\mathbb{N}$, some elements $s_{1}$,
 $s_{2}$, $...$, $s_{r}$ of $S$, and some elements $a_{1}$, $a_{2}$, $...$,
-$a_{r}$ of $A$ such that $t=\sum\limits_{j=1}^{r}a_{j}s_{j}$. Consider this
+$a_{r}$ of $K$ such that $t=\sum\limits_{j=1}^{r}a_{j}s_{j}$. Consider this
 $r$, these $s_{1}$, $s_{2}$, $...$, $s_{r}$ and these $a_{1}$, $a_{2}$, $...$,
 $a_{r}$.
 
@@ -13342,8 +13374,8 @@ In order to prove this, we must verify that%
 =\operatorname*{coeff}\nolimits_{1}u+\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
 }v\in\Lambda\left(  K\right)  ;\label{sol.6.9.2}\\
-\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;\label{sol.6.9.3}%
-\\
+\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;
+\label{sol.6.9.3}\\
 \operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)   &
 =\operatorname*{coeff}\nolimits_{1}u\cdot\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
@@ -13883,13 +13915,13 @@ Now, we shall prove that the diagram%
 %A \otimes B \ar[r]^-{\phi} \ar[d]_{\tau_T} & C \ar[d]^{\nu_T} \\
 %\Lambda\left(A \otimes B\right) \ar[r]_-{\Lambda\left(\phi\right)}
 %& \Lambda\left(C\right)
-%}}}%
+%}} }%
 %BeginExpansion
 \xymatrix{
 A \otimes B \ar[r]^-{\phi} \ar[d]_{\tau_T} & C \ar[d]^{\nu_T} \\
 \Lambda\left(A \otimes B\right) \ar[r]_-{\Lambda\left(\phi\right)}
 & \Lambda\left(C\right)
-}%
+}
 %EndExpansion
 \label{sol.6.11.b.diagram}%
 \end{equation}
