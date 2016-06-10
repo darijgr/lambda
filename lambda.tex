@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, June 10, 2016 18:13:46}
+%TCIDATA{LastRevised=Friday, June 10, 2016 18:23:30}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2752,7 +2752,7 @@ $1+K\left[  T\right]  ^{+}$ act on images under the map $\Pi$:
 Let $u\in1+K\left[  T\right]  ^{+}$ and $v\in1+K\left[  T\right]  ^{+}$.
 Assume that $u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}%
 \right]  \right)  $ for some $\left(  \widetilde{K}_{u},\left[  u_{1}%
-,u_{2},...,u_{m}\right]  \right)  \in K^{\operatorname*{int}}$ and that
+,u_{2},...,u_{m}\right]  \right)  \in K^{\operatorname*{int}}$, and that
 $v=\Pi\left(  \widetilde{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)
 $ for some $\left(  \widetilde{K}_{v},\left[  v_{1},v_{2},...,v_{n}\right]
 \right)  \in K^{\operatorname*{int}}$. This, in particular, implies that
@@ -2765,7 +2765,7 @@ instance,\footnote{In the following, the $\otimes$ sign always means
 $\otimes_{K}$ until stated otherwise.} $\widetilde{K}_{u}\otimes
 \widetilde{K}_{v}$ is a finite-free extension ring of $K$, and we can
 canonically identify $\widetilde{K}_{u}$ with the subring $\widetilde{K}%
-_{u}\otimes1$ of $\widetilde{K}_{u}\otimes\widetilde{K}_{v}$, and
+_{u}\otimes1$ of $\widetilde{K}_{u}\otimes\widetilde{K}_{v}$, and identify
 $\widetilde{K}_{v}$ with the subring $1\otimes\widetilde{K}_{v}$ of
 $\widetilde{K}_{u}\otimes\widetilde{K}_{v}$; hence, we can set $\widetilde{K}%
 _{u,v}=\widetilde{K}_{u}\otimes\widetilde{K}_{v}$.
@@ -2787,9 +2787,22 @@ u_{i}\ \mid\ I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)
 [Proof of Theorem 5.3.]The assumption that $u=\Pi\left(  \widetilde{K}%
 _{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)  $ is just a different way
 to say that $u=\prod\limits_{i=1}^{m}\left(  1+u_{i}T\right)  $. Similarly,
-$v=\prod\limits_{j=1}^{n}\left(  1+v_{j}T\right)  $. Let $u=\sum
-\limits_{i\in\mathbb{N}}a_{i}T^{i}$ and $v=\sum\limits_{i\in\mathbb{N}}%
-b_{i}T^{i}$.
+$v=\prod\limits_{j=1}^{n}\left(  1+v_{j}T\right)  $. Write the polynomials $u$
+and $v$ in the forms $u=\sum\limits_{i\in\mathbb{N}}a_{i}T^{i}$ (with
+$a_{i}\in K$) and $v=\sum\limits_{i\in\mathbb{N}}b_{i}T^{i}$ (with $b_{i}\in
+K$).
+
+Recall that $\sum\limits_{i\in\mathbb{N}}a_{i}T^{i}=u=\prod\limits_{i=1}%
+^{m}\left(  1+u_{i}T\right)  $. Hence, for every $i\in\mathbb{N}$, the element
+$a_{i}$ is the $i$-th elementary symmetric polynomial applied to $u_{1},$
+$u_{2},$ $...,$ $u_{m}$ (that is, we have $a_{i}=\sum
+\limits_{\substack{S\subseteq\left\{  1,2,...,m\right\}  ;\\\left\vert
+S\right\vert =i}}\prod\limits_{k\in S}u_{k}$).
+
+Similarly, for every $j\in\mathbb{N}$, the element $b_{j}$ is the $j$-th
+elementary symmetric polynomial applied to $v_{1},$ $v_{2},$ $...,$ $v_{n}$
+(that is, we have $b_{j}=\sum\limits_{\substack{S\subseteq\left\{
+1,2,...,n\right\}  ;\\\left\vert S\right\vert =j}}\prod\limits_{k\in S}v_{k}$).
 
 \textbf{(a)} The $K$-module $\widetilde{K}_{u}\otimes\widetilde{K}_{v}$ is
 finite-free (being the tensor product of two finite-free $K$-modules). The
@@ -2801,16 +2814,26 @@ functor). Thus, we can canonically identify $\widetilde{K}_{u}$ with the
 subring $\widetilde{K}_{u}\otimes K=\widetilde{K}_{u}\otimes1$ of
 $\widetilde{K}_{u}\otimes\widetilde{K}_{v}$. Similarly, we can canonically
 identify $\widetilde{K}_{v}$ with the subring $1\otimes\widetilde{K}_{v}$ of
-$\widetilde{K}_{u}\otimes\widetilde{K}_{v}$. As a consequence, $\widetilde{K}%
-_{u}\otimes\widetilde{K}_{v}$ is an extension ring of $K$. This proves Theorem
-5.3 \textbf{(a)}.
+$\widetilde{K}_{u}\otimes\widetilde{K}_{v}$. These two identifications are
+\textquotedblleft compatible at $K$\textquotedblright\ (that is, they lead to
+one and the same embedding of $K$ into $\widetilde{K}_{u}\otimes
+\widetilde{K}_{v}$). As a consequence, $\widetilde{K}_{u}\otimes
+\widetilde{K}_{v}$ is an extension ring of $K$. This proves Theorem 5.3
+\textbf{(a)}.
 
-\textbf{(b)} The equations $u=\prod\limits_{i=1}^{m}\left(  1+u_{i}T\right)  $
-and $v=\prod\limits_{j=1}^{n}\left(  1+v_{j}T\right)  $ yield $u\widehat{+}%
-v=uv=\prod\limits_{i=1}^{m}\left(  1+u_{i}T\right)  \prod\limits_{j=1}%
-^{n}\left(  1+v_{j}T\right)  $, what rewrites as $u\widehat{+}v=\Pi\left(
-\widetilde{K}_{u,v},\left[  u_{1},u_{2},...,u_{m},v_{1},v_{2},...,v_{n}%
-\right]  \right)  .$
+\textbf{(b)} We have
+\begin{align*}
+u\widehat{+}v  & =uv=\prod\limits_{i=1}^{m}\left(  1+u_{i}T\right)
+\prod\limits_{j=1}^{n}\left(  1+v_{j}T\right)  \\
+& \ \ \ \ \ \ \ \ \ \ \left(  \text{since }u=\prod\limits_{i=1}^{m}\left(
+1+u_{i}T\right)  \text{ and }v=\prod\limits_{j=1}^{n}\left(  1+v_{j}T\right)
+\right)  \\
+& =\Pi\left(  \widetilde{K}_{u,v},\left[  u_{1},u_{2},...,u_{m},v_{1}%
+,v_{2},...,v_{n}\right]  \right)
+\end{align*}
+(by the definition of $\Pi\left(  \widetilde{K}_{u,v},\left[  u_{1}%
+,u_{2},...,u_{m},v_{1},v_{2},...,v_{n}\right]  \right)  $). This proves
+Theorem 5.3 \textbf{(b)}.
 
 \textbf{(c)} Consider the ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}%
 ,V_{1},V_{2},...,V_{n}\right]  $ (the polynomial ring in $m+n$ indeterminates
@@ -2829,13 +2852,15 @@ There exists a ring homomorphism%
 \mathbb{Z}\left[  U_{1},U_{2},...,U_{m},V_{1},V_{2},...,V_{n}\right]
 \rightarrow\widetilde{K}_{u,v}%
 \]
-which maps $U_{i}$ to $u_{i}$ for every $i$ and $V_{j}$ to $v_{j}$ for every
-$j$. This homomorphism maps $X_{i}$ to $a_{i}$ for every $i\in\mathbb{N}$
-(because $a_{i}$ is the $i$-th elementary symmetric polynomial applied to
-$u_{1},$ $u_{2},$ $...,$ $u_{m}$, since $\sum\limits_{i\in\mathbb{N}}%
-a_{i}T^{i}=u=\prod\limits_{i=1}^{m}\left(  1+u_{i}T\right)  $) and $Y_{j}$ to
-$b_{j}$ for every $j\in\mathbb{N}$ (for a similar reason). Hence, applying
-this homomorphism to (\ref{Pk2}), we obtain%
+which maps $U_{i}$ to $u_{i}$ for every $i\in\left\{  1,2,\ldots,m\right\}  $
+and $V_{j}$ to $v_{j}$ for every $j\in\left\{  1,2,\ldots,n\right\}  $. This
+homomorphism maps $X_{i}$ to $a_{i}$ for every $i\in\mathbb{N}$ (because
+$a_{i}$ is the $i$-th elementary symmetric polynomial applied to $u_{1},$
+$u_{2},$ $...,$ $u_{m}$) and $Y_{j}$ to $b_{j}$ for every $j\in\mathbb{N}$
+(for a similar reason). Hence, applying this homomorphism (or, rather, the
+ring homomorphism $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m},V_{1}%
+,V_{2},...,V_{n}\right]  \left[  T\right]  \rightarrow\widetilde{K}%
+_{u,v}\left[  T\right]  $ that it induces) to (\ref{Pk2}), we obtain%
 \[
 \prod_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
 1,2,...,n\right\}  }\left(  1+u_{i}v_{j}T\right)  =\sum_{k\in\mathbb{N}}%
@@ -2855,14 +2880,16 @@ so this becomes%
 \]
 and thus%
 \begin{align*}
-u\widehat{\cdot}v  &  =\prod_{\left(  i,j\right)  \in\left\{
+u\widehat{\cdot}v &  =\prod_{\left(  i,j\right)  \in\left\{
 1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  }\left(  1+u_{i}%
-v_{j}T\right) \\
+v_{j}T\right)  \\
 &  =\Pi\left(  \widetilde{K}_{u,v},\left[  u_{i}v_{j}\mid\left(  i,j\right)
 \in\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right]
-\right)  ,
+\right)
 \end{align*}
-proving Theorem 5.3 \textbf{(c)}.
+(by the definition of $\Pi\left(  \widetilde{K}_{u,v},\left[  u_{i}v_{j}%
+\mid\left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
+1,2,...,n\right\}  \right]  \right)  $). This proves Theorem 5.3 \textbf{(c)}.
 
 \textbf{(d)} Consider the polynomial ring $\mathbb{Z}\left[  U_{1}%
 ,U_{2},...,U_{m}\right]  $. For every $i\in\mathbb{N}$, let $X_{i}%
@@ -2872,11 +2899,13 @@ symmetric polynomial in the variables $U_{1},$ $U_{2},$ $...,$ $U_{m}$.
 
 There exists a ring homomorphism $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}%
 \right]  \rightarrow\widetilde{K}_{u}$ which maps $U_{i}$ to $u_{i}$ for every
-$i$. This homomorphism maps $X_{i}$ to $a_{i}$ for every $i\in\mathbb{N}$
-(because $a_{i}$ is the $i$-th elementary symmetric polynomial applied to
-$u_{1},$ $u_{2},$ $...,$ $u_{m}$, since $\sum\limits_{i\in\mathbb{N}}%
-a_{i}T^{i}=u=\prod\limits_{i=1}^{m}\left(  1+u_{i}T\right)  $). Hence,
-applying this homomorphism to (\ref{Pkj2}), we obtain%
+$i\in\left\{  1,2,\ldots,m\right\}  $. This homomorphism maps $X_{i}$ to
+$a_{i}$ for every $i\in\mathbb{N}$ (because $a_{i}$ is the $i$-th elementary
+symmetric polynomial applied to $u_{1},$ $u_{2},$ $...,$ $u_{m}$). Hence,
+applying this homomorphism (or, rather, the ring homomorphism $\mathbb{Z}%
+\left[  U_{1},U_{2},...,U_{m}\right]  \left[  T\right]  \rightarrow
+\widetilde{K}_{u}\left[  T\right]  $ that it induces) to (\ref{Pkj2}), we
+obtain%
 \[
 \prod_{I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)
 }\left(  1+\prod_{i\in I}u_{i}\cdot T\right)  =\sum_{k\in\mathbb{N}}%
@@ -2900,9 +2929,11 @@ and thus%
 \left\{  1,2,...,m\right\}  \right)  }\left(  1+\prod_{i\in I}u_{i}\cdot
 T\right)  =\Pi\left(  \widetilde{K}_{u},\left[  \prod\limits_{i\in I}%
 u_{i}\ \mid\ I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)
-\right]  \right)  ,
+\right]  \right)
 \]
-proving Theorem 5.3 \textbf{(d)}.
+(by the definition of $\Pi\left(  \widetilde{K}_{u},\left[  \prod\limits_{i\in
+I}u_{i}\ \mid\ I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)
+\right]  \right)  $). This proves Theorem 5.3 \textbf{(d)}.
 \end{proof}
 
 \begin{quote}
