@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, June 10, 2016 18:23:30}
+%TCIDATA{LastRevised=Friday, June 10, 2016 18:41:24}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2823,12 +2823,12 @@ one and the same embedding of $K$ into $\widetilde{K}_{u}\otimes
 
 \textbf{(b)} We have
 \begin{align*}
-u\widehat{+}v  & =uv=\prod\limits_{i=1}^{m}\left(  1+u_{i}T\right)
-\prod\limits_{j=1}^{n}\left(  1+v_{j}T\right)  \\
-& \ \ \ \ \ \ \ \ \ \ \left(  \text{since }u=\prod\limits_{i=1}^{m}\left(
+u\widehat{+}v  &  =uv=\prod\limits_{i=1}^{m}\left(  1+u_{i}T\right)
+\prod\limits_{j=1}^{n}\left(  1+v_{j}T\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }u=\prod\limits_{i=1}^{m}\left(
 1+u_{i}T\right)  \text{ and }v=\prod\limits_{j=1}^{n}\left(  1+v_{j}T\right)
-\right)  \\
-& =\Pi\left(  \widetilde{K}_{u,v},\left[  u_{1},u_{2},...,u_{m},v_{1}%
+\right) \\
+&  =\Pi\left(  \widetilde{K}_{u,v},\left[  u_{1},u_{2},...,u_{m},v_{1}%
 ,v_{2},...,v_{n}\right]  \right)
 \end{align*}
 (by the definition of $\Pi\left(  \widetilde{K}_{u,v},\left[  u_{1}%
@@ -2880,9 +2880,9 @@ so this becomes%
 \]
 and thus%
 \begin{align*}
-u\widehat{\cdot}v &  =\prod_{\left(  i,j\right)  \in\left\{
+u\widehat{\cdot}v  &  =\prod_{\left(  i,j\right)  \in\left\{
 1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  }\left(  1+u_{i}%
-v_{j}T\right)  \\
+v_{j}T\right) \\
 &  =\Pi\left(  \widetilde{K}_{u,v},\left[  u_{i}v_{j}\mid\left(  i,j\right)
 \in\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right]
 \right)
@@ -3165,15 +3165,16 @@ In order to prove that the operation $\widehat{\cdot}$ is associative, we must
 show that $u\widehat{\cdot}\left(  v\widehat{\cdot}w\right)  =\left(
 u\widehat{\cdot}v\right)  \widehat{\cdot}w$ for all $u,v,w\in1+K\left[
 \left[  T\right]  \right]  ^{+}$. Since the operation $\widehat{\cdot}$ is
-continuous (by Theorem 5.5 \textbf{(d)}), and $1+K\left[  T\right]  ^{+}$ is a
-dense subset of $1+K\left[  \left[  T\right]  \right]  ^{+}$ (by Theorem 5.5
-\textbf{(a)}), this needs only to be shown for all $u,v,w\in1+K\left[
-T\right]  ^{+}$.\ \ \ \ \footnote{At this point, we are actually also using
-Theorem 5.5 \textbf{(e)}. In fact, what we are using is the fact that if two
-continuous maps from a topological space $\mathfrak{P}$ to a Hausdorff
-topological space $\mathfrak{Q}$ are equal to each other on a dense subset of
-$\mathfrak{P}$, then they are equal to each other on the whole $\mathfrak{P}%
-$.} So let us assume that $u,v,w\in1+K\left[  T\right]  ^{+}$. Then, there exist
+continuous (by Theorem 5.5 \textbf{(d)}), and since $1+K\left[  T\right]
+^{+}$ is a dense subset of $1+K\left[  \left[  T\right]  \right]  ^{+}$ (by
+Theorem 5.5 \textbf{(a)}), this needs only to be shown for all $u,v,w\in
+1+K\left[  T\right]  ^{+}$.\ \ \ \ \footnote{At this point, we are actually
+also using Theorem 5.5 \textbf{(e)}. In fact, what we are using is the fact
+that if two continuous maps from a topological space $\mathfrak{P}$ to a
+Hausdorff topological space $\mathfrak{Q}$ are equal to each other on a dense
+subset of $\mathfrak{P}$, then they are equal to each other on the whole
+$\mathfrak{P}$.} So let us assume that $u,v,w\in1+K\left[  T\right]  ^{+}$.
+Then, there exist
 
 \begin{itemize}
 \item some $\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]
@@ -3267,7 +3268,7 @@ and
 \]
 for every $x\in\Lambda\left(  K\right)  $. It now remains to prove that%
 \begin{equation}
-\widehat{\lambda}^{j}\left(  u+v\right)  =\widehat{\sum_{i=0}^{j}%
+\widehat{\lambda}^{j}\left(  u\widehat{+}v\right)  =\widehat{\sum_{i=0}^{j}%
 }\widehat{\lambda}^{i}\left(  u\right)  \widehat{\cdot}\widehat{\lambda}%
 ^{j-i}\left(  v\right)  \label{SpezLemma1}%
 \end{equation}
@@ -3278,14 +3279,14 @@ $\Lambda\left(  K\right)  $.
 
 Let us fix some $j\in\mathbb{N}$. Since the addition $\widehat{+},$ the
 multiplication $\widehat{\cdot}$ and the map $\widehat{\lambda}^{i}$ for every
-$i\in\mathbb{N}$ are continuous (by Theorem 5.5 \textbf{(d)}), and $1+K\left[
-T\right]  ^{+}$ is a dense subset of $1+K\left[  \left[  T\right]  \right]
-^{+}$ (by Theorem 5.5 \textbf{(a)}), we only need to check (\ref{SpezLemma1})
-for all $u,v\in1+K\left[  T\right]  ^{+}$. So let us assume that
-$u,v\in1+K\left[  T\right]  ^{+}$. Then, there exist some $\left(
+$i\in\mathbb{N}$ are continuous (by Theorem 5.5 \textbf{(d)}), and since
+$1+K\left[  T\right]  ^{+}$ is a dense subset of $1+K\left[  \left[  T\right]
+\right]  ^{+}$ (by Theorem 5.5 \textbf{(a)}), we only need to check
+(\ref{SpezLemma1}) for all $u,v\in1+K\left[  T\right]  ^{+}$. So let us assume
+that $u,v\in1+K\left[  T\right]  ^{+}$. Then, there exist some $\left(
 \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]  \right)  \in
 K^{\operatorname*{int}}$ such that $u=\Pi\left(  \widetilde{K}_{u},\left[
-u_{1},u_{2},...,u_{m}\right]  \right)  ,$ and some $\left(  \widetilde{K}%
+u_{1},u_{2},...,u_{m}\right]  \right)  $, and some $\left(  \widetilde{K}%
 _{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  \in K^{\operatorname*{int}%
 }$ such that $v=\Pi\left(  \widetilde{K}_{v},\left[  v_{1},v_{2}%
 ,...,v_{n}\right]  \right)  $. Let $\widetilde{K}_{u,v}$ be a finite-free
@@ -3297,13 +3298,18 @@ u\widehat{+}v=\Pi\left(  \widetilde{K}_{u,v},\left[  u_{1},u_{2}%
 ,...,u_{m},v_{1},v_{2},...,v_{n}\right]  \right)  .
 \]
 In other words, if we define $m+n$ elements $w_{1},$ $w_{2},$ $...,$ $w_{m+n}$
-by $w_{i}=\left\{
+by
+\[
+w_{i}=\left\{
 \begin{array}
 [c]{c}%
 u_{i},\text{ if }i\leq m;\\
 v_{i-m},\text{ if }i>m
 \end{array}
-\right.  $ for every $i\in\left\{  1,2,...,m+n\right\}  $, then%
+\right.  \ \ \ \ \ \ \ \ \ \ \text{for every }i\in\left\{
+1,2,...,m+n\right\}  ,
+\]
+then%
 \[
 u\widehat{+}v=\Pi\left(  \widetilde{K}_{u,v},\left[  w_{1},w_{2}%
 ,...,w_{m+n}\right]  \right)  .
@@ -3317,45 +3323,47 @@ _{u,v},\left[  \prod\limits_{i\in I}w_{i}\ \mid\ I\in\mathcal{P}_{j}\left(
 But since%
 \begin{align*}
 &  \left[  \prod\limits_{i\in I}w_{i}\ \mid\ I\in\mathcal{P}_{j}\left(
-\left\{  1,2,...,m+n\right\}  \right)  \right] \\
-&  =\left[  \prod\limits_{i\in J\cup K^{\prime}}w_{i}\ \mid\ i\in\left\{
-0,1,...,j\right\}  \text{, }J\in\mathcal{P}_{i}\left(  \left\{
+\left\{  1,2,...,m+n\right\}  \right)  \right]  \\
+&  =\left[  \prod\limits_{\gamma\in I}w_{\gamma}\ \mid\ I\in\mathcal{P}%
+_{j}\left(  \left\{  1,2,...,m+n\right\}  \right)  \right]  \\
+&  =\left[  \prod\limits_{\gamma\in J\cup K^{\prime}}w_{\gamma}\ \mid
+\ i\in\left\{  0,1,...,j\right\}  \text{, }J\in\mathcal{P}_{i}\left(  \left\{
 1,2,...,m\right\}  \right)  \text{, }K^{\prime}\in\mathcal{P}_{j-i}\left(
-\left\{  m+1,m+2,...,m+n\right\}  \right)  \right] \\
+\left\{  m+1,m+2,...,m+n\right\}  \right)  \right]  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
 \text{because every set }I\in\mathcal{P}_{j}\left(  \left\{
 1,2,...,m+n\right\}  \right)  \text{ can be uniquely}\\
-\text{written as a union of two sets }J\in\mathcal{P}_{i}\left(  \left\{
-1,2,...,m\right\}  \right)  \text{ and}\\
+\text{written as a union }J\cup K^{\prime}\text{ of two sets }J\in
+\mathcal{P}_{i}\left(  \left\{  1,2,...,m\right\}  \right)  \text{ and}\\
 K^{\prime}\in\mathcal{P}_{j-i}\left(  \left\{  m+1,m+2,...,m+n\right\}
-\right)  \text{ for some }i\in\left\{  0,1,...,j\right\} \\
+\right)  \text{ for some }i\in\left\{  0,1,...,j\right\}  \\
 \text{(namely, these two sets are }J=I\cap\left\{  1,2,...,m\right\}  \text{
 and}\\
 K^{\prime}=I\cap\left\{  m+1,m+2,...,m+n\right\}  \text{, and }i\text{ is the
 cardinality of }J\text{)}%
 \end{array}
-\right) \\
+\right)  \\
 &  =\left[  \prod\limits_{\alpha\in J}w_{\alpha}\prod\limits_{\beta\in
 K^{\prime}}w_{\beta}\ \mid\ i\in\left\{  0,1,...,j\right\}  \text{, }%
 J\in\mathcal{P}_{i}\left(  \left\{  1,2,...,m\right\}  \right)  \text{,
 }K^{\prime}\in\mathcal{P}_{j-i}\left(  \left\{  m+1,m+2,...,m+n\right\}
-\right)  \right] \\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\prod\limits_{i\in J\cup
-K^{\prime}}w_{i}=\prod\limits_{\alpha\in J}w_{\alpha}\prod\limits_{\beta\in
-K^{\prime}}w_{\beta}\text{ (because }J\cap K^{\prime}=\varnothing
-\text{)}\right) \\
+\right)  \right]  \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\prod\limits_{\gamma\in J\cup
+K^{\prime}}w_{\gamma}=\prod\limits_{\alpha\in J}w_{\alpha}\prod\limits_{\beta
+\in K^{\prime}}w_{\beta}\text{ (because }J\cap K^{\prime}=\varnothing
+\text{)}\right)  \\
 &  =\left[  \prod\limits_{\alpha\in J}w_{\alpha}\prod\limits_{\beta\in
 M}w_{m+\beta}\ \mid\ i\in\left\{  0,1,...,j\right\}  \text{, }J\in
 \mathcal{P}_{i}\left(  \left\{  1,2,...,m\right\}  \right)  \text{, }%
-M\in\mathcal{P}_{j-i}\left(  \left\{  1,2,...,n\right\}  \right)  \right] \\
+M\in\mathcal{P}_{j-i}\left(  \left\{  1,2,...,n\right\}  \right)  \right]  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }M=\left\{
-u-m\mid u\in K^{\prime}\right\}  \text{ for }K^{\prime}\right) \\
+u-m\mid u\in K^{\prime}\right\}  \text{ for }K^{\prime}\right)  \\
 &  =\left[  \prod\limits_{\alpha\in J}u_{\alpha}\prod\limits_{\beta\in
 M}v_{\beta}\ \mid\ i\in\left\{  0,1,...,j\right\}  \text{, }J\in
 \mathcal{P}_{i}\left(  \left\{  1,2,...,m\right\}  \right)  \text{, }%
-M\in\mathcal{P}_{j-i}\left(  \left\{  1,2,...,n\right\}  \right)  \right] \\
+M\in\mathcal{P}_{j-i}\left(  \left\{  1,2,...,n\right\}  \right)  \right]  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }w_{i}=\left\{
 \begin{array}
 [c]{c}%
@@ -3366,27 +3374,32 @@ v_{i-m},\text{ if }i>m
 \end{align*}
 this becomes%
 \begin{align*}
-&  \widehat{\lambda}^{j}\left(  u\widehat{+}v\right) \\
+&  \widehat{\lambda}^{j}\left(  u\widehat{+}v\right)  \\
 &  =\Pi\left(  \widetilde{K}_{u,v},\left[  \prod\limits_{\alpha\in J}%
 u_{\alpha}\prod\limits_{\beta\in M}v_{\beta}\ \mid\ i\in\left\{
 0,1,...,j\right\}  \text{, }J\in\mathcal{P}_{i}\left(  \left\{
 1,2,...,m\right\}  \right)  \text{, }M\in\mathcal{P}_{j-i}\left(  \left\{
-1,2,...,n\right\}  \right)  \right]  \right) \\
-&  =\widehat{\sum_{i=0}^{j}}\Pi\left(  \widetilde{K}_{u,v},\left[
+1,2,...,n\right\}  \right)  \right]  \right)  \\
+&  =\widehat{\sum_{i=0}^{j}}\underbrace{\Pi\left(  \widetilde{K}_{u,v},\left[
 \prod\limits_{\alpha\in J}u_{\alpha}\prod\limits_{\beta\in M}v_{\beta}%
 \ \mid\ J\in\mathcal{P}_{i}\left(  \left\{  1,2,...,m\right\}  \right)
 \text{, }M\in\mathcal{P}_{j-i}\left(  \left\{  1,2,...,n\right\}  \right)
-\right]  \right) \\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Corollary 5.4 \textbf{(a)}}\right) \\
+\right]  \right)  }_{\substack{=\Pi\left(  \widetilde{K}_{u},\left[
+\prod\limits_{\alpha\in J}u_{\alpha}\ \mid\ J\in\mathcal{P}_{i}\left(
+\left\{  1,2,...,m\right\}  \right)  \right]  \right)  \widehat{\cdot}%
+\Pi\left(  \widetilde{K}_{v},\left[  \prod\limits_{\beta\in M}v_{\beta}%
+\ \mid\ \text{ }M\in\mathcal{P}_{j-i}\left(  \left\{  1,2,...,n\right\}
+\right)  \right]  \right)  \\\text{(by Theorem 5.3 \textbf{(c)})}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Corollary 5.4 \textbf{(a)}}\right)  \\
 &  =\widehat{\sum_{i=0}^{j}}\underbrace{\Pi\left(  \widetilde{K}_{u},\left[
 \prod\limits_{\alpha\in J}u_{\alpha}\ \mid\ J\in\mathcal{P}_{i}\left(
-\left\{  1,2,...,m\right\}  \right)  \right]  \right)  }_{=\widehat{\lambda
-}^{i}\left(  u\right)  \text{ by Theorem 5.3 \textbf{(d)}}}\widehat{\cdot
-}\underbrace{\Pi\left(  \widetilde{K}_{v},\left[  \prod\limits_{\beta\in
-M}v_{\beta}\ \mid\ \text{ }M\in\mathcal{P}_{j-i}\left(  \left\{
-1,2,...,n\right\}  \right)  \right]  \right)  }_{=\widehat{\lambda}%
-^{j-i}\left(  v\right)  \text{ by Theorem 5.3 \textbf{(d)}}}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Theorem 5.3 \textbf{(c)}}\right) \\
+\left\{  1,2,...,m\right\}  \right)  \right]  \right)  }%
+_{\substack{=\widehat{\lambda}^{i}\left(  u\right)  \\\text{(by Theorem 5.3
+\textbf{(d)})}}}\widehat{\cdot}\underbrace{\Pi\left(  \widetilde{K}%
+_{v},\left[  \prod\limits_{\beta\in M}v_{\beta}\ \mid\ \text{ }M\in
+\mathcal{P}_{j-i}\left(  \left\{  1,2,...,n\right\}  \right)  \right]
+\right)  }_{\substack{=\widehat{\lambda}^{j-i}\left(  v\right)  \\\text{(by
+Theorem 5.3 \textbf{(d)})}}}\\
 &  =\widehat{\sum_{i=0}^{j}}\widehat{\lambda}^{i}\left(  u\right)
 \widehat{\cdot}\widehat{\lambda}^{j-i}\left(  v\right)  ,
 \end{align*}
