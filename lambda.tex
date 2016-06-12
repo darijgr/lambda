@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, June 10, 2016 19:12:59}
+%TCIDATA{LastRevised=Sunday, June 12, 2016 20:32:45}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2109,7 +2109,7 @@ Now we forget that we fixed $m\in\mathbb{N}$. We have learnt that%
 \[
 \sum_{\substack{S\subseteq\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}
 \right)  ;\\\left\vert S\right\vert =k}}\prod_{I\in S}\prod_{i\in I}%
-U_{i}=Q_{k,j,\left[  m\right]  }\left(  X_{1},X_{2},...,X_{kj}\right)  ,
+U_{i}=Q_{k,j,\left[  m\right]  }\left(  X_{1},X_{2},...,X_{kj}\right)
 \]
 in the polynomial ring $\mathbb{Z}\left[  U_{1},U_{2},...,U_{m}\right]  $ for
 every $m\in\mathbb{N}$. Now, define a polynomial $P_{k,j}\in\mathbb{Z}\left[
@@ -10291,6 +10291,8 @@ we have%
 \nolimits_{\varphi_{i},T,\mathbf{Z}^{\prime}}\left(  x\right)  .
 \]
 
+
+
 \end{quote}
 
 Next, the analogue of Theorem 10.10:
@@ -11284,27 +11286,30 @@ Similarly, $\iota\left(  S^{\prime}\right)  \setminus\left\{  N+1\right\}
 S^{\prime}\right)  }\setminus\left\{  N+1\right\}  =\iota\left(  S^{\prime
 }\right)  \setminus\left\{  N+1\right\}  =S^{\prime}$, qed.}) and surjective
 (because every $T\in Q$ satisfies $T=\iota\left(  S\right)  $ for some $S\in
-P$\ \ \ \ \footnote{\textit{Proof.} Let $S=T\setminus\left\{  N+1\right\}  $.
-Now, $T$ is a subset of $\left\{  1,2,...,N+1\right\}  $ satisfying $N+1\in T$
-(since $T\in Q$, and since $Q$ is the set of all subsets $T$ of $\left\{
-1,2,...,N+1\right\}  $ satisfying $N+1\in T$).
+P$\ \ \ \ \footnote{\textit{Proof.} Let $T\in Q$. We want to find an $S\in P$
+such that $T=\iota\left(  S\right)  $.
 \par
-Since $T$ is a subset of $\left\{  1,2,...,N+1\right\}  $, it is clear that
-$T\setminus\left\{  N+1\right\}  $ is a subset of $\left\{
-1,2,...,N+1\right\}  \setminus\left\{  N+1\right\}  =\left\{
-1,2,...,N\right\}  $, so that $T\setminus\left\{  N+1\right\}  \in P$ (since
-$P$ is the set of all subsets of $\left\{  1,2,...,N\right\}  $). Hence,
-$S=T\setminus\left\{  N+1\right\}  \in P$.
+We have $T\in Q$. In other words, $T$ is a subset of $\left\{
+1,2,...,N+1\right\}  $ satisfying $N+1\in T$ (since $Q$ is the set of all
+subsets $T$ of $\left\{  1,2,...,N+1\right\}  $ satisfying $N+1\in T$).
+\par
+Let $S=T\setminus\left\{  N+1\right\}  $. Since $T$ is a subset of $\left\{
+1,2,...,N+1\right\}  $, it is clear that $T\setminus\left\{  N+1\right\}  $ is
+a subset of $\left\{  1,2,...,N+1\right\}  \setminus\left\{  N+1\right\}
+=\left\{  1,2,...,N\right\}  $, so that $T\setminus\left\{  N+1\right\}  \in
+P$ (since $P$ is the set of all subsets of $\left\{  1,2,...,N\right\}  $).
+Hence, $S=T\setminus\left\{  N+1\right\}  \in P$.
 \par
 Since $N+1\in T$, we have $\left\{  N+1\right\}  \subseteq T$ and thus
 $\left(  T\setminus\left\{  N+1\right\}  \right)  \cup\left\{  N+1\right\}
 =T$. Now, $\iota\left(  S\right)  =S\cup\left\{  N+1\right\}  =\left(
-T\setminus\left\{  N+1\right\}  \right)  \cup\left\{  N+1\right\}  =T$,
-qed.}). Thus, $\iota$ is a bijective map. Hence, we can substitute $S$ for
-$\iota\left(  S\right)  $ in the sum $\sum\limits_{S\in P}\prod\limits_{k\in
-\iota\left(  S\right)  }\alpha_{k}$, so that $\sum\limits_{S\in P}%
-\prod\limits_{k\in\iota\left(  S\right)  }\alpha_{k}=\sum\limits_{S\in Q}%
-\prod\limits_{k\in S}\alpha_{k}$. Since every $S\in P$ satisfies
+T\setminus\left\{  N+1\right\}  \right)  \cup\left\{  N+1\right\}  =T$. Hence,
+we have found an $S\in P$ such that $T=\iota\left(  S\right)  $. Qed.}). Thus,
+$\iota$ is a bijective map. Hence, we can substitute $S$ for $\iota\left(
+S\right)  $ in the sum $\sum\limits_{S\in P}\prod\limits_{k\in\iota\left(
+S\right)  }\alpha_{k}$, so that $\sum\limits_{S\in P}\prod\limits_{k\in
+\iota\left(  S\right)  }\alpha_{k}=\sum\limits_{S\in Q}\prod\limits_{k\in
+S}\alpha_{k}$. Since every $S\in P$ satisfies
 \begin{align*}
 \prod\limits_{k\in\iota\left(  S\right)  }\alpha_{k}  &  =\prod\limits_{k\in
 S\cup\left\{  N+1\right\}  }\alpha_{k}\ \ \ \ \ \ \ \ \ \ \left(  \text{since
@@ -11426,43 +11431,6 @@ in the $m+n$ indeterminates $\alpha_{1}$, $\alpha_{2}$, $...$, $\alpha_{m}$,
 $\beta_{1}$, $\beta_{2}$, $...$, $\beta_{n}$ over $K$). We want to prove that
 $P=0$ (as a polynomial).
 
-Let $\iota$ be the canonical $K$-algebra isomorphism%
-\[
-K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m},\beta_{1},\beta_{2}%
-,...,\beta_{n}\right]  \rightarrow\left(  K\left[  \beta_{1},\beta
-_{2},...,\beta_{n}\right]  \right)  \left[  \alpha_{1},\alpha_{2}%
-,...,\alpha_{m}\right]  .
-\]
-Then,%
-\[
-\left(  \left(  \iota\left(  P\right)  \right)  \left(  p_{1},p_{2}%
-,...,p_{m}\right)  \right)  \left(  q_{1},q_{2},...,q_{n}\right)  =P\left(
-p_{1},p_{2},...,p_{m},q_{1},q_{2},...,q_{n}\right)  =0.
-\]
-Since $q_{1}$, $q_{2}$, $...$, $q_{n}$ are algebraically independent over $T$
-(and since $\left(  \iota\left(  P\right)  \right)  \left(  p_{1}%
-,p_{2},...,p_{m}\right)  $ is a polynomial over $T$ (because $p_{1}$, $p_{2}$,
-$...$, $p_{m}$ lie in $T$)), this yields that $\left(  \iota\left(  P\right)
-\right)  \left(  p_{1},p_{2},...,p_{m}\right)  =0$.
-
-But in the polynomial ring $K\left[  \beta_{1},\beta_{2},...,\beta_{n}\right]
-$, we have%
-\begin{align*}
-0  &  =\left(  \iota\left(  P\right)  \right)  \left(  p_{1},p_{2}%
-,...,p_{m}\right)  =\left(  \left(  \iota\left(  P\right)  \right)  \left(
-p_{1},p_{2},...,p_{m}\right)  \right)  \left(  \beta_{1},\beta_{2}%
-,...,\beta_{n}\right) \\
-&  =P\left(  p_{1},p_{2},...,p_{m},\beta_{1},\beta_{2},...,\beta_{n}\right)
-\end{align*}
-(since $\iota$ is the canonical $K$-algebra isomorphism
-\[
-K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m},\beta_{1},\beta_{2}%
-,...,\beta_{n}\right]  \rightarrow\left(  K\left[  \beta_{1},\beta
-_{2},...,\beta_{n}\right]  \right)  \left[  \alpha_{1},\alpha_{2}%
-,...,\alpha_{m}\right]
-\]
-).
-
 Since $P$ is a polynomial in $K\left[  \alpha_{1},\alpha_{2},...,\alpha
 _{m},\beta_{1},\beta_{2},...,\beta_{n}\right]  $, we can write it in the form%
 \begin{equation}
@@ -11470,8 +11438,8 @@ P=\sum\limits_{\left(  \left(  i_{1},i_{2},...,i_{m}\right)  ,\left(
 j_{1},j_{2},...,j_{n}\right)  \right)  \in\mathbb{N}^{m}\times\mathbb{N}^{n}%
 }\lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1},j_{2}%
 ,...,j_{n}\right)  }\cdot\alpha_{1}^{i_{1}}\alpha_{2}^{i_{2}}...\alpha
-_{m}^{i_{m}}\cdot\beta_{1}^{j_{1}}\beta_{2}^{j_{2}}...\beta_{n}^{j_{n}},
-\label{4.3.sol.1}%
+_{m}^{i_{m}}\cdot\beta_{1}^{j_{1}}\beta_{2}^{j_{2}}...\beta_{n}^{j_{n}%
+},\label{4.3.sol.1}%
 \end{equation}
 where $\lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1}%
 ,j_{2},...,j_{n}\right)  }$ is the coefficient of the polynomial $P$ before
@@ -11481,21 +11449,51 @@ $\left(  \left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1},j_{2}%
 ,...,j_{n}\right)  \right)  \in\mathbb{N}^{m}\times\mathbb{N}^{n}$. So let us
 write it in this way. Then,%
 \begin{align}
-0  &  =P\left(  p_{1},p_{2},...,p_{m},\beta_{1},\beta_{2},...,\beta_{n}\right)
+0  & =P\left(  p_{1},p_{2},...,p_{m},q_{1},q_{2},...,q_{n}\right)
 \nonumber\\
-&  =\sum\limits_{\left(  \left(  i_{1},i_{2},...,i_{m}\right)  ,\left(
+& =\sum\limits_{\left(  \left(  i_{1},i_{2},...,i_{m}\right)  ,\left(
 j_{1},j_{2},...,j_{n}\right)  \right)  \in\mathbb{N}^{m}\times\mathbb{N}^{n}%
 }\lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1},j_{2}%
 ,...,j_{n}\right)  }\cdot p_{1}^{i_{1}}p_{2}^{i_{2}}...p_{m}^{i_{m}}\cdot
-\beta_{1}^{j_{1}}\beta_{2}^{j_{2}}...\beta_{n}^{j_{n}}\nonumber\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{because of (\ref{4.3.sol.1})}\right)
+q_{1}^{j_{1}}q_{2}^{j_{2}}...q_{n}^{j_{n}}\nonumber\\
+& \ \ \ \ \ \ \ \ \ \ \left(  \text{because of (\ref{4.3.sol.1})}\right)
 \nonumber\\
-&  =\sum\limits_{\left(  j_{1},j_{2},...,j_{n}\right)  \in\mathbb{N}^{n}}%
+& =\sum\limits_{\left(  j_{1},j_{2},...,j_{n}\right)  \in\mathbb{N}^{n}}%
 \sum\limits_{\left(  i_{1},i_{2},...,i_{m}\right)  \in\mathbb{N}^{m}}%
 \lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1},j_{2}%
 ,...,j_{n}\right)  }\cdot p_{1}^{i_{1}}p_{2}^{i_{2}}...p_{m}^{i_{m}}\cdot
-\beta_{1}^{j_{1}}\beta_{2}^{j_{2}}...\beta_{n}^{j_{n}}. \label{4.3.sol.2}%
+q_{1}^{j_{1}}q_{2}^{j_{2}}...q_{n}^{j_{n}}.\label{4.3.sol.1a}%
 \end{align}
+Define a polynomial $\widetilde{P}\in T\left[  \beta_{1},\beta_{2}%
+,\ldots,\beta_{n}\right]  $ by%
+\begin{equation}
+\widetilde{P}=\sum\limits_{\left(  j_{1},j_{2},...,j_{n}\right)  \in
+\mathbb{N}^{n}}\sum\limits_{\left(  i_{1},i_{2},...,i_{m}\right)
+\in\mathbb{N}^{m}}\lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(
+j_{1},j_{2},...,j_{n}\right)  }\cdot p_{1}^{i_{1}}p_{2}^{i_{2}}...p_{m}%
+^{i_{m}}\cdot\beta_{1}^{j_{1}}\beta_{2}^{j_{2}}...\beta_{n}^{j_{n}%
+}.\label{4.3.sol.1b}%
+\end{equation}
+Then,%
+\begin{align*}
+& \widetilde{P}\left(  q_{1},q_{2},\ldots,q_{n}\right)  \\
+& =\sum\limits_{\left(  j_{1},j_{2},...,j_{n}\right)  \in\mathbb{N}^{n}}%
+\sum\limits_{\left(  i_{1},i_{2},...,i_{m}\right)  \in\mathbb{N}^{m}}%
+\lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1},j_{2}%
+,...,j_{n}\right)  }\cdot p_{1}^{i_{1}}p_{2}^{i_{2}}...p_{m}^{i_{m}}\cdot
+q_{1}^{j_{1}}q_{2}^{j_{2}}...q_{n}^{j_{n}}\\
+& =0\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{4.3.sol.1a})}\right)  .
+\end{align*}
+Hence, $\widetilde{P}=0$ as polynomials (since $q_{1}$, $q_{2}$, $...$,
+$q_{n}$ are algebraically independent over $T$). Comparing this with
+(\ref{4.3.sol.1b}), we obtain%
+\begin{equation}
+0=\sum\limits_{\left(  j_{1},j_{2},...,j_{n}\right)  \in\mathbb{N}^{n}}%
+\sum\limits_{\left(  i_{1},i_{2},...,i_{m}\right)  \in\mathbb{N}^{m}}%
+\lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1},j_{2}%
+,...,j_{n}\right)  }\cdot p_{1}^{i_{1}}p_{2}^{i_{2}}...p_{m}^{i_{m}}\cdot
+\beta_{1}^{j_{1}}\beta_{2}^{j_{2}}...\beta_{n}^{j_{n}}.\label{4.3.sol.2}%
+\end{equation}
 
 
 For every $\left(  j_{1},j_{2},...,j_{n}\right)  \in\mathbb{N}^{n}$, define a
@@ -11509,9 +11507,10 @@ j_{1},j_{2},...,j_{n}\right)  }\cdot\alpha_{1}^{i_{1}}\alpha_{2}^{i_{2}%
 P_{\left(  j_{1},j_{2},...,j_{n}\right)  }\left(  p_{1},p_{2},...,p_{m}%
 \right)  =\sum\limits_{\left(  i_{1},i_{2},...,i_{m}\right)  \in\mathbb{N}%
 ^{m}}\lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1}%
-,j_{2},...,j_{n}\right)  }\cdot p_{1}^{i_{1}}p_{2}^{i_{2}}...p_{m}^{i_{m}}
+,j_{2},...,j_{n}\right)  }\cdot p_{1}^{i_{1}}p_{2}^{i_{2}}...p_{m}^{i_{m}}%
 \]
-for every $\left(  j_{1},j_{2},...,j_{n}\right)  \in\mathbb{N}^{n}$. Thus,%
+for every $\left(  j_{1},j_{2},...,j_{n}\right)  \in\mathbb{N}^{n}$. Thus, in
+the ring $T\left[  \beta_{1},\beta_{2},\ldots,\beta_{n}\right]  $, we have%
 \begin{align*}
 &  \sum\limits_{\left(  j_{1},j_{2},...,j_{n}\right)  \in\mathbb{N}^{n}%
 }P_{\left(  j_{1},j_{2},...,j_{n}\right)  }\left(  p_{1},p_{2},...,p_{m}%
@@ -11524,16 +11523,16 @@ for every $\left(  j_{1},j_{2},...,j_{n}\right)  \in\mathbb{N}^{n}$. Thus,%
 \end{align*}
 (by (\ref{4.3.sol.2})). Since the elements $\beta_{1}^{j_{1}}\beta_{2}^{j_{2}%
 }...\beta_{n}^{j_{n}}$ (with $\left(  j_{1},j_{2},...,j_{n}\right)
-\in\mathbb{N}^{n}$) of the $K$-module $K\left[  \beta_{1},\beta_{2}%
-,...,\beta_{n}\right]  $ are linearly independent (because these elements are
-the monomials), this yields that $P_{\left(  j_{1},j_{2},...,j_{n}\right)
+\in\mathbb{N}^{n}$) of the $T$-module $T\left[  \beta_{1},\beta_{2}%
+,...,\beta_{n}\right]  $ are $T$-linearly independent (because these elements
+are the monomials), this yields that $P_{\left(  j_{1},j_{2},...,j_{n}\right)
 }\left(  p_{1},p_{2},...,p_{m}\right)  =0$ for every $\left(  j_{1}%
 ,j_{2},...,j_{n}\right)  \in\mathbb{N}^{n}$. Hence, $P_{\left(  j_{1}%
 ,j_{2},...,j_{n}\right)  }=0$ for every $\left(  j_{1},j_{2},...,j_{n}\right)
 \in\mathbb{N}^{n}$ (since $p_{1}$, $p_{2}$, $...$, $p_{m}$ are algebraically
 independent over $K$). Now,%
 \begin{align*}
-P  &  =\sum\limits_{\left(  \left(  i_{1},i_{2},...,i_{m}\right)  ,\left(
+P &  =\sum\limits_{\left(  \left(  i_{1},i_{2},...,i_{m}\right)  ,\left(
 j_{1},j_{2},...,j_{n}\right)  \right)  \in\mathbb{N}^{m}\times\mathbb{N}^{n}%
 }\lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1},j_{2}%
 ,...,j_{n}\right)  }\cdot\alpha_{1}^{i_{1}}\alpha_{2}^{i_{2}}...\alpha
@@ -12565,10 +12564,10 @@ $u=\widetilde{Q}$, $v=\widetilde{P}$, $\widetilde{K}_{u}=N$, $\widetilde{K}%
 _{v}=N$, $\widetilde{K}_{u,v}=N$, $u_{i}=-q_{i}$ and $v_{j}=-p_{j}$. As a
 result we obtain%
 \begin{align*}
-\widetilde{Q}\widehat{\cdot}\widetilde{P} &  =\Pi\left(  N,\left[
+\widetilde{Q}\widehat{\cdot}\widetilde{P}  &  =\Pi\left(  N,\left[
 \underbrace{\left(  -q_{i}\right)  \left(  -p_{j}\right)  }_{=p_{j}q_{i}%
 }\ \mid\ \left(  i,j\right)  \in\left\{  1,2,...,m\right\}  \times\left\{
-1,2,...,n\right\}  \right]  \right)  \\
+1,2,...,n\right\}  \right]  \right) \\
 &  =\Pi\left(  N,\left[  p_{j}q_{i}\ \mid\ \left(  i,j\right)  \in\left\{
 1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right]  \right)
 =\prod\limits_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}
@@ -12578,11 +12577,11 @@ Thus, $\widetilde{Q}\widehat{\cdot}\widetilde{P}$ is a polynomial of degree%
 \begin{align*}
 \deg\left(  \widetilde{Q}\widehat{\cdot}\widetilde{P}\right)   &  =\deg\left(
 \prod\limits_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}
-\times\left\{  1,2,...,n\right\}  }\left(  1+p_{j}q_{i}T\right)  \right)  \\
+\times\left\{  1,2,...,n\right\}  }\left(  1+p_{j}q_{i}T\right)  \right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\widetilde{Q}\widehat{\cdot
 }\widetilde{P}=\prod\limits_{\left(  i,j\right)  \in\left\{
 1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  }\left(  1+p_{j}%
-q_{i}T\right)  \right)  \\
+q_{i}T\right)  \right) \\
 &  \leq\sum\limits_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}
 \times\left\{  1,2,...,n\right\}  }\underbrace{\deg\left(  1+p_{j}%
 q_{i}T\right)  }_{\leq1}\\
@@ -12592,7 +12591,7 @@ q_{i}T\right)  }_{\leq1}\\
 \text{since the degree of a product of some polynomials}\\
 \text{is }\leq\text{ to the sum of the degrees of these polynomials}%
 \end{array}
-\right)  \\
+\right) \\
 &  \leq\sum\limits_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}
 \times\left\{  1,2,...,n\right\}  }1=\left\vert \left\{  1,2,...,m\right\}
 \times\left\{  1,2,...,n\right\}  \right\vert =mn.
@@ -13419,8 +13418,8 @@ In order to prove this, we must verify that%
 =\operatorname*{coeff}\nolimits_{1}u+\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
 }v\in\Lambda\left(  K\right)  ;\label{sol.6.9.2}\\
-\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;
-\label{sol.6.9.3}\\
+\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;\label{sol.6.9.3}%
+\\
 \operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)   &
 =\operatorname*{coeff}\nolimits_{1}u\cdot\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
