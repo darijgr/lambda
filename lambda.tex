@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, June 12, 2016 20:32:45}
+%TCIDATA{LastRevised=Saturday, June 18, 2016 13:21:44}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -4122,7 +4122,7 @@ $\lambda_{T}\left(  a+bx\right)  =\left(  1+T\right)  ^{a}\left(  1+xT\right)
 Define a map $\lambda^{i}:\mathbb{Z}\left[  x\right]  \rightarrow
 \mathbb{Z}\left[  x\right]  $ for every $i\in\mathbb{N}$ through the condition
 $\lambda_{T}\left(  x\right)  =\sum\limits_{i\in\mathbb{N}}\lambda^{i}\left(
-x\right)  T^{i}$ for every $x\in K$.
+x\right)  T^{i}$ for every $x\in\mathbb{Z}\left[  x\right]  $.
 
 Prove that $\left(  \mathbb{Z}\left[  x\right]  ,\left(  \lambda^{i}\right)
 _{i\in\mathbb{N}}\right)  $ is a special $\lambda$-ring. [This way, we see
@@ -5016,12 +5016,24 @@ _{1},\left(  u_{i}\right)  _{2},...,\left(  u_{i}\right)  _{n_{i}}\right]
 \right)  \in K^{\operatorname*{int}}$ such that $u_{i}=\Pi\left(
 \widetilde{K}_{u_{i}},\left[  \left(  u_{i}\right)  _{1},\left(  u_{i}\right)
 _{2},...,\left(  u_{i}\right)  _{n_{i}}\right]  \right)  $. According to
-Theorem 5.3 \textbf{(a)} (applied several times), there exists a finite-free
-extension ring $K^{\prime}$ of $K$ which contains the $\widetilde{K}_{u_{i}}$
-for all $i\in\left\{  1,2,...,n\right\}  $ as subrings. Hence, $u_{i}%
-=\Pi\left(  K^{\prime},\left[  \left(  u_{i}\right)  _{1},\left(
-u_{i}\right)  _{2},...,\left(  u_{i}\right)  _{n_{i}}\right]  \right)  $ for
-every $i\in\left\{  1,2,...,n\right\}  $.
+Theorem 5.3 \textbf{(a)} (applied several times)\footnote{More precisely, what
+we are using here is the following lemma:
+\par
+\textbf{Lemma.} Let $L_{1},L_{2},\ldots,L_{n}$ be finitely many finite-free
+extension rings of a ring $K$. Then, there exists a finite-free extension ring
+$K^{\prime}$ of $K$ which contains all of the $L_{1},L_{2},\ldots,L_{n}$ as
+subrings.
+\par
+\textit{Proof of the lemma.} By induction over $n$, it suffices to show that
+for any two finite-free extension rings $L$ and $L$ of $K$, there exists a
+finite-free extension ring $K^{\prime}$ of $K$ which contains both $L$ and
+$L^{\prime}$ as subrings. But this was essentially shown in our proof of
+Theorme 5.3 \textbf{(a)}.}, there exists a finite-free extension ring
+$K^{\prime}$ of $K$ which contains the $\widetilde{K}_{u_{i}}$ for all
+$i\in\left\{  1,2,...,n\right\}  $ as subrings. Hence, $u_{i}=\Pi\left(
+K^{\prime},\left[  \left(  u_{i}\right)  _{1},\left(  u_{i}\right)
+_{2},...,\left(  u_{i}\right)  _{n_{i}}\right]  \right)  $ for every
+$i\in\left\{  1,2,...,n\right\}  $.
 
 In the ring $\Lambda\left(  K^{\prime}\right)  $ (which is an extension ring
 of $\Lambda\left(  K\right)  $, since $K\subseteq K^{\prime}$ and since
@@ -5147,7 +5159,7 @@ times}\right) \\
 1,2,...,m\right\}  ;\\\left\vert S\right\vert =i}}\prod\limits_{k\in S}%
 u_{k}\cdot T^{i}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Exercise 4.2 \textbf{(b)}, applied to
-}A=K\left[  T\right]  \text{, }\alpha_{j}=u_{j}\text{ and }t=T\right)
+}A=K\left[  T\right]  \text{, }\alpha_{j}=u_{j}\text{ and }t=T\right)  .
 \end{align*}
 Comparing coefficients yields the assertion of Theorem 8.5.
 \end{proof}
@@ -5282,7 +5294,7 @@ X_{1},X_{2},...,X_{j}\right)  =Q_{j,\left[  j\right]  }\left(  X_{1}%
 ,X_{2},...,X_{j}\right)  $. Since the elements $X_{1},$ $X_{2},$ $...,$
 $X_{j}$ of $\mathbb{Z}\left[  U_{1},U_{2},...,U_{j}\right]  $ are
 algebraically independent (by Theorem 4.1 \textbf{(a)}), this yields
-$Q_{j,\left[  m\right]  }=Q_{j,\left[  j\right]  }.$ In other words,
+$Q_{j,\left[  m\right]  }=Q_{j,\left[  j\right]  }$. In other words,
 $Q_{j,\left[  m\right]  }=N_{j},$ and the 1st Step is proven.
 
 \textit{2nd Step:} For every $m\in\mathbb{N}$, the equation (\ref{Nj1}) is
@@ -5619,8 +5631,8 @@ Define a $1$-operation $m$ of special $\lambda$-rings by $m_{\left(  K,\left(
 \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  }=\psi^{j}$ for every special
 $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}%
 }\right)  $. (This is indeed a $1$-operation, since (\ref{PsiDef}) shows that
-$\psi^{j}$ is a polynomial in $\lambda^{1},$ $\lambda^{2},$ $...,$
-$\lambda^{j}$ with integer coefficients.)
+$\psi^{j}$ is a polynomial in $\lambda^{0},\ \lambda^{1},$ $\lambda^{2},$
+$...,$ $\lambda^{j}$ with integer coefficients.)
 
 Define a $1$-operation $m^{\prime}$ of special $\lambda$-rings by%
 \[
@@ -5631,7 +5643,10 @@ x\right)  \lambda^{j-i}\left(  -x\right)  \ \ \ \ \ \ \ \ \ \ \text{for every
 \]
 for every $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)  _{i\in
 \mathbb{N}}\right)  $. (This is, again, a $1$-operation, since it is a
-polynomial in $\lambda^{1},$ $\lambda^{2},$ $...,$ $\lambda^{j}$ with integer coefficients.)
+polynomial in $\lambda^{0}\left(  x\right)  ,$ $\lambda^{1}\left(  x\right)
+,$ $...,$ $\lambda^{j}\left(  x\right)  ,\ \lambda^{0}\left(  -x\right)
+,\ \lambda^{1}\left(  -x\right)  ,\ \ldots,\ \lambda^{j}\left(  -x\right)  $
+with integer coefficients.)
 
 These two $1$-operations $m$ and $m^{\prime}$ satisfy both conditions of
 Theorem 8.4: The continuity assumption holds (since the operations $m$ and
@@ -11438,8 +11453,8 @@ P=\sum\limits_{\left(  \left(  i_{1},i_{2},...,i_{m}\right)  ,\left(
 j_{1},j_{2},...,j_{n}\right)  \right)  \in\mathbb{N}^{m}\times\mathbb{N}^{n}%
 }\lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1},j_{2}%
 ,...,j_{n}\right)  }\cdot\alpha_{1}^{i_{1}}\alpha_{2}^{i_{2}}...\alpha
-_{m}^{i_{m}}\cdot\beta_{1}^{j_{1}}\beta_{2}^{j_{2}}...\beta_{n}^{j_{n}%
-},\label{4.3.sol.1}%
+_{m}^{i_{m}}\cdot\beta_{1}^{j_{1}}\beta_{2}^{j_{2}}...\beta_{n}^{j_{n}},
+\label{4.3.sol.1}%
 \end{equation}
 where $\lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1}%
 ,j_{2},...,j_{n}\right)  }$ is the coefficient of the polynomial $P$ before
@@ -11449,20 +11464,19 @@ $\left(  \left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1},j_{2}%
 ,...,j_{n}\right)  \right)  \in\mathbb{N}^{m}\times\mathbb{N}^{n}$. So let us
 write it in this way. Then,%
 \begin{align}
-0  & =P\left(  p_{1},p_{2},...,p_{m},q_{1},q_{2},...,q_{n}\right)
-\nonumber\\
-& =\sum\limits_{\left(  \left(  i_{1},i_{2},...,i_{m}\right)  ,\left(
+0  &  =P\left(  p_{1},p_{2},...,p_{m},q_{1},q_{2},...,q_{n}\right) \nonumber\\
+&  =\sum\limits_{\left(  \left(  i_{1},i_{2},...,i_{m}\right)  ,\left(
 j_{1},j_{2},...,j_{n}\right)  \right)  \in\mathbb{N}^{m}\times\mathbb{N}^{n}%
 }\lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1},j_{2}%
 ,...,j_{n}\right)  }\cdot p_{1}^{i_{1}}p_{2}^{i_{2}}...p_{m}^{i_{m}}\cdot
 q_{1}^{j_{1}}q_{2}^{j_{2}}...q_{n}^{j_{n}}\nonumber\\
-& \ \ \ \ \ \ \ \ \ \ \left(  \text{because of (\ref{4.3.sol.1})}\right)
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{because of (\ref{4.3.sol.1})}\right)
 \nonumber\\
-& =\sum\limits_{\left(  j_{1},j_{2},...,j_{n}\right)  \in\mathbb{N}^{n}}%
+&  =\sum\limits_{\left(  j_{1},j_{2},...,j_{n}\right)  \in\mathbb{N}^{n}}%
 \sum\limits_{\left(  i_{1},i_{2},...,i_{m}\right)  \in\mathbb{N}^{m}}%
 \lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1},j_{2}%
 ,...,j_{n}\right)  }\cdot p_{1}^{i_{1}}p_{2}^{i_{2}}...p_{m}^{i_{m}}\cdot
-q_{1}^{j_{1}}q_{2}^{j_{2}}...q_{n}^{j_{n}}.\label{4.3.sol.1a}%
+q_{1}^{j_{1}}q_{2}^{j_{2}}...q_{n}^{j_{n}}. \label{4.3.sol.1a}%
 \end{align}
 Define a polynomial $\widetilde{P}\in T\left[  \beta_{1},\beta_{2}%
 ,\ldots,\beta_{n}\right]  $ by%
@@ -11471,18 +11485,18 @@ Define a polynomial $\widetilde{P}\in T\left[  \beta_{1},\beta_{2}%
 \mathbb{N}^{n}}\sum\limits_{\left(  i_{1},i_{2},...,i_{m}\right)
 \in\mathbb{N}^{m}}\lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(
 j_{1},j_{2},...,j_{n}\right)  }\cdot p_{1}^{i_{1}}p_{2}^{i_{2}}...p_{m}%
-^{i_{m}}\cdot\beta_{1}^{j_{1}}\beta_{2}^{j_{2}}...\beta_{n}^{j_{n}%
-}.\label{4.3.sol.1b}%
+^{i_{m}}\cdot\beta_{1}^{j_{1}}\beta_{2}^{j_{2}}...\beta_{n}^{j_{n}}.
+\label{4.3.sol.1b}%
 \end{equation}
 Then,%
 \begin{align*}
-& \widetilde{P}\left(  q_{1},q_{2},\ldots,q_{n}\right)  \\
-& =\sum\limits_{\left(  j_{1},j_{2},...,j_{n}\right)  \in\mathbb{N}^{n}}%
+&  \widetilde{P}\left(  q_{1},q_{2},\ldots,q_{n}\right) \\
+&  =\sum\limits_{\left(  j_{1},j_{2},...,j_{n}\right)  \in\mathbb{N}^{n}}%
 \sum\limits_{\left(  i_{1},i_{2},...,i_{m}\right)  \in\mathbb{N}^{m}}%
 \lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1},j_{2}%
 ,...,j_{n}\right)  }\cdot p_{1}^{i_{1}}p_{2}^{i_{2}}...p_{m}^{i_{m}}\cdot
 q_{1}^{j_{1}}q_{2}^{j_{2}}...q_{n}^{j_{n}}\\
-& =0\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{4.3.sol.1a})}\right)  .
+&  =0\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{4.3.sol.1a})}\right)  .
 \end{align*}
 Hence, $\widetilde{P}=0$ as polynomials (since $q_{1}$, $q_{2}$, $...$,
 $q_{n}$ are algebraically independent over $T$). Comparing this with
@@ -11492,7 +11506,7 @@ $q_{n}$ are algebraically independent over $T$). Comparing this with
 \sum\limits_{\left(  i_{1},i_{2},...,i_{m}\right)  \in\mathbb{N}^{m}}%
 \lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1},j_{2}%
 ,...,j_{n}\right)  }\cdot p_{1}^{i_{1}}p_{2}^{i_{2}}...p_{m}^{i_{m}}\cdot
-\beta_{1}^{j_{1}}\beta_{2}^{j_{2}}...\beta_{n}^{j_{n}}.\label{4.3.sol.2}%
+\beta_{1}^{j_{1}}\beta_{2}^{j_{2}}...\beta_{n}^{j_{n}}. \label{4.3.sol.2}%
 \end{equation}
 
 
@@ -11532,7 +11546,7 @@ are the monomials), this yields that $P_{\left(  j_{1},j_{2},...,j_{n}\right)
 \in\mathbb{N}^{n}$ (since $p_{1}$, $p_{2}$, $...$, $p_{m}$ are algebraically
 independent over $K$). Now,%
 \begin{align*}
-P &  =\sum\limits_{\left(  \left(  i_{1},i_{2},...,i_{m}\right)  ,\left(
+P  &  =\sum\limits_{\left(  \left(  i_{1},i_{2},...,i_{m}\right)  ,\left(
 j_{1},j_{2},...,j_{n}\right)  \right)  \in\mathbb{N}^{m}\times\mathbb{N}^{n}%
 }\lambda_{\left(  i_{1},i_{2},...,i_{m}\right)  ,\left(  j_{1},j_{2}%
 ,...,j_{n}\right)  }\cdot\alpha_{1}^{i_{1}}\alpha_{2}^{i_{2}}...\alpha
