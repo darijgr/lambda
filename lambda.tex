@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, June 18, 2016 13:21:44}
+%TCIDATA{LastRevised=Saturday, June 18, 2016 13:24:30}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -4727,14 +4727,17 @@ and whose morphisms are $\lambda$-ring homomorphisms between its objects.
 
 Let $\operatorname*{USet}:\operatorname*{Rng}^{\operatorname*{S}\Lambda
 }\rightarrow\operatorname*{Set}$ be the functor which maps every special
-$\lambda$-ring to its underlying set. Let $n\in\mathbb{N}$. An $n$%
+$\lambda$-ring to its underlying set. Let $n\in\mathbb{N}$. Let
+$\operatorname*{USet}\nolimits^{\left(  n\right)  }:\operatorname*{Rng}%
+^{\operatorname*{S}\Lambda}\rightarrow\operatorname*{Set}$ be the functor
+which maps every special $\lambda$-ring $K$ to the set $K^{n}$ (the $n$-th
+power of $K$ with respect to the Cartesian product), and maps every
+homomorphism $f:K\rightarrow L$ of special $\lambda$-rings to the map
+$f^{\times n}:K^{n}\rightarrow L^{n}$. (Thus, $\operatorname*{USet}%
+\nolimits^{\left(  1\right)  }\cong\operatorname*{USet}$.) An $n$%
 -\textit{operation of special }$\lambda$\textit{-rings} will mean a natural
 transformation from the functor $\operatorname*{USet}^{n}$ to
-$\operatorname*{USet}$ (where the functor $\operatorname*{USet}^{n}$ is
-defined as the functor from $\operatorname*{Rng}^{\operatorname*{S}\Lambda}$
-to $\operatorname*{Set}^{n}$ which maps every special $\lambda$-ring $\left(
-K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ to the family
-$\left(  \underbrace{K,K,...,K}_{n\text{ times}}\right)  $ of sets).
+$\operatorname*{USet}$.
 
 In other words, an $n$-operation $m$ of special $\lambda$-rings is a family of
 mappings\footnote{Here, ``mapping'' actually means ``mapping'' and not ``group
@@ -13432,8 +13435,8 @@ In order to prove this, we must verify that%
 =\operatorname*{coeff}\nolimits_{1}u+\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
 }v\in\Lambda\left(  K\right)  ;\label{sol.6.9.2}\\
-\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;\label{sol.6.9.3}%
-\\
+\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;
+\label{sol.6.9.3}\\
 \operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)   &
 =\operatorname*{coeff}\nolimits_{1}u\cdot\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
