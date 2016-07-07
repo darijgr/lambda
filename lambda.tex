@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Thursday, July 07, 2016 19:29:57}
+%TCIDATA{LastRevised=Friday, July 08, 2016 00:53:14}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -5730,8 +5730,6 @@ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
 +...+u_{m}^{j}.
 \]
 
-
-
 \end{quote}
 
 \begin{proof}
@@ -11191,6 +11189,176 @@ conclude that the former values also belong to $K$. This solves the exercise.
 
 \textbf{(b)} Use the binomial formula.
 
+\textit{Detailed solution:} \textbf{(a)} Define a map $\lambda_{T}%
+:K\rightarrow K\left[  \left[  T\right]  \right]  $ by%
+\[
+\left(  \lambda_{T}\left(  x\right)  =\sum_{i\in\mathbb{N}}\lambda^{i}\left(
+x\right)  T^{i}\ \ \ \ \ \ \ \ \ \ \text{for every }x\in K\right)  .
+\]
+Then,
+\begin{equation}
+\lambda_{T}\left(  x\right)  =\left(  1+pT\right)  ^{x}%
+\ \ \ \ \ \ \ \ \ \ \text{for every }x\in K\label{sol.3.3.a.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.3.3.a.1}):} Fix $x\in K$. Then,
+$\lambda_{T}\left(  x\right)  =\sum_{i\in\mathbb{N}}\lambda^{i}\left(
+x\right)  T^{i}$. Hence, for every $i\in\mathbb{N}$, we have%
+\begin{align*}
+& \left(  \text{the coefficient of }T^{i}\text{ in the power series }%
+\lambda_{T}\left(  x\right)  \right)  \\
+& =\lambda^{i}\left(  x\right)  =\left(  \text{the coefficient of the power
+series }\left(  1+pT\right)  ^{x}\text{ before }T^{i}\right)  \\
+& \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\lambda^{i}\left(
+x\right)  \right)  \\
+& =\left(  \text{the coefficient of }T^{i}\text{ in the power series }\left(
+1+pT\right)  ^{x}\right)  .
+\end{align*}
+In other words, $\lambda_{T}\left(  x\right)  =\left(  1+pT\right)  ^{x}$.
+This proves (\ref{sol.3.3.a.1}).}. Thus, we can easily see that every $x\in K$
+satisfies $\lambda_{T}\left(  x\right)  \equiv1+xT\operatorname{mod}%
+T^{2}K\left[  \left[  T\right]  \right]  $\ \ \ \ \footnote{\textit{Proof.}
+Fix $x\in K$. Recall that the power series $p$ has coefficient $1$ before
+$T^{0}$. Thus, $p\equiv1\operatorname{mod}TK\left[  \left[  T\right]  \right]
+$, so that $p-1\in TK\left[  \left[  T\right]  \right]  $. Hence,
+$pT-T=T\underbrace{\left(  p-1\right)  }_{\in TK\left[  \left[  T\right]
+\right]  }\in TTK\left[  \left[  T\right]  \right]  =T^{2}K\left[  \left[
+T\right]  \right]  $. In other words, $pT\equiv T\operatorname{mod}%
+T^{2}K\left[  \left[  T\right]  \right]  $
+\par
+Now, (\ref{sol.3.3.a.1}) yields
+\begin{align*}
+\lambda_{T}\left(  x\right)    & =\left(  1+pT\right)  ^{x}=\sum
+_{k\in\mathbb{N}}\dbinom{x}{k}\left(  pT\right)  ^{k}\\
+& =\underbrace{\dbinom{x}{0}}_{=1}\underbrace{\left(  pT\right)  ^{0}}%
+_{=1}+\underbrace{\dbinom{x}{1}}_{=x}\underbrace{\left(  pT\right)  ^{1}%
+}_{=pT}+\sum_{\substack{k\in\mathbb{N};\\k\geq2}}\dbinom{x}{k}%
+\underbrace{\left(  pT\right)  ^{k}}_{\substack{=p^{k}T^{k}=p^{k}T^{k-2}%
+T^{2}\\\text{(since }k\geq2\text{)}}}\\
+& =1+x\underbrace{pT}_{\equiv T\operatorname{mod}T^{2}K\left[  \left[
+T\right]  \right]  }+\sum_{\substack{k\in\mathbb{N};\\k\geq2}}\dbinom{x}%
+{k}p^{k}T^{k-2}\underbrace{T^{2}}_{\equiv0\operatorname{mod}T^{2}K\left[
+\left[  T\right]  \right]  }\\
+& \equiv1+xT+\underbrace{\sum_{\substack{k\in\mathbb{N};\\k\geq2}}\dbinom
+{x}{k}p^{k}T^{k-2}0}_{=0}=1+xT\operatorname{mod}T^{2}K\left[  \left[
+T\right]  \right]  ,
+\end{align*}
+qed.}. Hence, we have $\lambda^{0}\left(  x\right)  =1$ and $\lambda
+^{1}\left(  x\right)  =x$ for every $x\in K$\ \ \ \ \footnote{\textit{Proof.}
+Let $x\in K$. Then, $\lambda_{T}\left(  x\right)  \equiv1+xT\operatorname{mod}%
+T^{2}K\left[  \left[  T\right]  \right]  $. In other words,
+\[
+\left(  \text{the coefficient of }T^{0}\text{ in the power series }\lambda
+_{T}\left(  x\right)  \right)  =1
+\]
+and%
+\[
+\left(  \text{the coefficient of }T^{1}\text{ in the power series }\lambda
+_{T}\left(  x\right)  \right)  =x.
+\]
+But from $\lambda_{T}\left(  x\right)  =\sum_{i\in\mathbb{N}}\lambda
+^{i}\left(  x\right)  T^{i}$, we obtain%
+\[
+\lambda^{0}\left(  x\right)  =\left(  \text{the coefficient of }T^{0}\text{ in
+the power series }\lambda_{T}\left(  x\right)  \right)  =1
+\]
+and%
+\[
+\lambda^{1}\left(  x\right)  =\left(  \text{the coefficient of }T^{1}\text{ in
+the power series }\lambda_{T}\left(  x\right)  \right)  =x.
+\]
+Qed.}.
+
+On the other hand, the equality (\ref{vandermonde}) holds for every
+$k\in\mathbb{N}$, $x\in K$ and $y\in K$\ \ \ \ \footnote{This was proven
+during our proof of Theorem 3.2.}. In other words, every $k\in\mathbb{N}$,
+$x\in K$ and $y\in K$ satisfy%
+\begin{equation}
+\dbinom{x+y}{k}=\sum_{i=0}^{k}\dbinom{x}{i}\dbinom{y}{k-i}%
+.\label{sol.3.3.a.vandermonde}%
+\end{equation}
+
+
+Now, every $x\in K$ and $y\in K$ satisfy%
+\begin{align*}
+& \underbrace{\left(  1+T\right)  ^{x}}_{\substack{=\sum_{k\in\mathbb{N}%
+}\dbinom{x}{k}T^{k}\\\text{(by the definition of }\left(  1+T\right)
+^{x}\text{)}}}\underbrace{\left(  1+T\right)  ^{y}}_{\substack{=\sum
+_{k\in\mathbb{N}}\dbinom{y}{k}T^{k}\\\text{(by the definition of }\left(
+1+T\right)  ^{y}\text{)}}}\\
+& =\left(  \sum_{k\in\mathbb{N}}\dbinom{x}{k}T^{k}\right)  \left(  \sum
+_{k\in\mathbb{N}}\dbinom{y}{k}T^{k}\right)  \\
+& =\sum_{k\in\mathbb{N}}\underbrace{\left(  \sum_{i=0}^{k}\dbinom{x}{i}%
+\dbinom{y}{k-i}\right)  }_{=\dbinom{x+y}{k}}T^{k}\\
+& \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the product of two
+power series}\right)  \\
+& =\sum_{k\in\mathbb{N}}\dbinom{x+y}{k}T^{k}=\left(  1+T\right)  ^{x+y}%
+\end{align*}
+(since $\left(  1+T\right)  ^{x+y}$ is defined as $\sum_{k\in\mathbb{N}%
+}\dbinom{x+y}{k}T^{k}$). We can substitute $pT$ for $T$ in this equality;
+thus, we obtain%
+\[
+\left(  1+pT\right)  ^{x}\left(  1+pT\right)  ^{y}=\left(  1+pT\right)  ^{x+y}%
+\]
+for every $x\in K$ and $y\in K$. Now, if $x$ and $y$ are elements of $K$, then%
+\[
+\underbrace{\lambda_{T}\left(  x\right)  }_{\substack{=\left(  1+pT\right)
+^{x}\\\text{(by (\ref{sol.3.3.a.1}))}}}\cdot\underbrace{\lambda_{T}\left(
+y\right)  }_{\substack{=\left(  1+pT\right)  ^{y}\\\text{(by
+(\ref{sol.3.3.a.1}), applied}\\\text{to }y\text{ instead of }x\text{)}%
+}}=\left(  1+pT\right)  ^{x}\left(  1+pT\right)  ^{y}=\left(  1+pT\right)
+^{x+y}.
+\]
+Comparing this with%
+\[
+\lambda_{T}\left(  x+y\right)  =\left(  1+pT\right)  ^{x+y}%
+\ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{sol.3.3.a.1}), applied to
+}x+y\text{ instead of }x\right)  ,
+\]
+we obtain
+\begin{equation}
+\lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)  =\lambda
+_{T}\left(  x+y\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }x\in K\text{ and
+}y\in K.\label{sol.3.3.a.almost}%
+\end{equation}
+But Theorem 2.1 \textbf{(a)} shows that (\ref{sol.3.3.a.almost}) holds if and
+only if $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is
+a $\lambda$-ring. Thus, $\left(  K,\left(  \lambda^{i}\right)  _{i\in
+\mathbb{N}}\right)  $ is a $\lambda$-ring (since (\ref{sol.3.3.a.almost})
+holds). This solves Exercise 3.3 \textbf{(a)}.
+
+\textbf{(b)} Assume that $p=1$. Define a map $\lambda_{T}:K\rightarrow
+K\left[  \left[  T\right]  \right]  $ as in our solution to Exercise 3.3
+\textbf{(a)}. Then,%
+\[
+\lambda_{T}\left(  x\right)  =\left(  1+pT\right)  ^{x}%
+\ \ \ \ \ \ \ \ \ \ \text{for every }x\in K.
+\]
+(This is the identity (\ref{sol.3.3.a.1}), and has already been proven above.)
+Now,%
+\begin{equation}
+\lambda^{i}\left(  x\right)  =\dbinom{x}{i}\ \ \ \ \ \ \ \ \ \ \text{for every
+}x\in K\text{ and }i\in\mathbb{N}\label{sol.3.3.b.1}%
+\end{equation}
+\footnote{\textit{Proof of (\ref{sol.3.3.b.1}):} Let $x\in K$. Comparing the
+identity $\lambda_{T}\left(  x\right)  =\sum_{i\in\mathbb{N}}\lambda
+^{i}\left(  x\right)  T^{i}$ with $\lambda_{T}\left(  x\right)  =\left(
+1+\underbrace{p}_{=1}T\right)  ^{x}=\left(  1+T\right)  ^{x}$, we obtain
+$\sum_{i\in\mathbb{N}}\lambda^{i}\left(  x\right)  T^{i}=\left(  1+pT\right)
+^{x}$. Hence, for every $i\in\mathbb{N}$, we have%
+\begin{align*}
+\lambda^{i}\left(  x\right)    & =\left(  \text{the coefficient of the power
+series }\left(  1+T\right)  ^{x}\text{ before }T^{i}\right)  \\
+& =\dbinom{x}{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  1+T\right)
+^{x}=\sum_{k\in\mathbb{N}}\dbinom{x}{k}T^{k}\right)  .
+\end{align*}
+This proves (\ref{sol.3.3.b.1}).}. Thus, the maps $\lambda^{i}$ defined in
+Exercise 3.3 \textbf{(a)} are identical with the maps $\lambda^{i}$ defined in
+Theorem 3.2. Hence, the $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)
+_{i\in\mathbb{N}}\right)  $ defined in Exercise 3.3 \textbf{(a)} is identical
+with the $\lambda$-ring $\left(  K,\left(  \lambda^{i}\right)  _{i\in
+\mathbb{N}}\right)  $ defined in Theorem 3.2. This solves Exercise 3.3
+\textbf{(b)}.
+
 \textit{Exercise 3.4: Hints to solution:} It is clear from the very definition
 of $\lambda^{i}$ that Theorem 2.1 \textbf{(a)} is to be applied here.
 
@@ -13437,8 +13605,8 @@ In order to prove this, we must verify that%
 =\operatorname*{coeff}\nolimits_{1}u+\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
 }v\in\Lambda\left(  K\right)  ;\label{sol.6.9.2}\\
-\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;
-\label{sol.6.9.3}\\
+\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;\label{sol.6.9.3}%
+\\
 \operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)   &
 =\operatorname*{coeff}\nolimits_{1}u\cdot\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
