@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, July 08, 2016 01:02:49}
+%TCIDATA{LastRevised=Friday, July 08, 2016 01:34:21}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2978,8 +2978,98 @@ a_{2}\cdot a_{3}$).
 \textbf{(c)}.
 \end{proof}
 
-For later use, we restate part \textbf{(d)} of Theorem 5.3 in somewhat more
-flexible notations:
+For later use, we restate parts \textbf{(b)}, \textbf{(c)} and \textbf{(d)} of
+Theorem 5.3 in somewhat more flexible notations (and in a slightly extended
+form). First, let us deal with Theorem 5.3 \textbf{(b)}:
+
+\begin{quote}
+\textbf{Theorem 5.3' (b).} Let $K$ be a ring. Let $u\in1+K\left[  T\right]
+^{+}$ and $v\in1+K\left[  T\right]  ^{+}$. Assume that $u=\Pi\left(
+\widetilde{K}_{u},\left[  u_{i}\mid i\in I\right]  \right)  $ for some
+$\left(  \widetilde{K}_{u},\left[  u_{i}\mid i\in I\right]  \right)  \in
+K^{\operatorname*{int}}$, and that $v=\Pi\left(  \widetilde{K}_{v},\left[
+v_{j}\mid j\in J\right]  \right)  $ for some $\left(  \widetilde{K}%
+_{v},\left[  v_{j}\mid j\in J\right]  \right)  \in K^{\operatorname*{int}}$.
+Let $\widetilde{K}$ be a ring such that $\widetilde{K}_{u}$ and $\widetilde{K}%
+_{v}$ are subrings of $\widetilde{K}$.
+
+We have $u\widehat{+}v=\Pi\left(  \widetilde{K},\left[  u_{i}\mid i\in
+I\right]  \cup\left[  v_{j}\mid j\in J\right]  \right)  $. Here, for any two
+multisets $X$ and $Y$, we let $X\cup Y$ denote the multiset such that every
+object $z$ satisfies%
+\begin{align*}
+&  \left(  \text{the multiplicity of }z\text{ in }X\cup Y\right) \\
+&  =\left(  \text{the multiplicity of }z\text{ in }X\right)  +\left(
+\text{the multiplicity of }z\text{ in }Y\right)  .
+\end{align*}
+
+
+
+\end{quote}
+
+\begin{proof}
+[Proof of Theorem 5.3' \textbf{(b)}.]The set $I$ is a finite set used merely
+for labelling. Hence, we can WLOG assume that $I=\left\{  1,2,\ldots
+,m\right\}  $ for some $m\in\mathbb{N}$. Assume this; thus, $\left[  u_{i}\mid
+i\in I\right]  =\left[  u_{1},u_{2},\ldots,u_{m}\right]  $. Hence,
+$u=\Pi\left(  \widetilde{K}_{u},\left[  u_{i}\mid i\in I\right]  \right)  $
+rewrites as \newline$u=\Pi\left(  \widetilde{K}_{u},\left[  u_{1},u_{2}%
+,\ldots,u_{m}\right]  \right)  $.
+
+The set $J$ is a finite set used merely for labelling. Hence, we can WLOG
+assume that $J=\left\{  1,2,\ldots,n\right\}  $ for some $n\in\mathbb{N}$.
+Assume this; thus, $\left[  v_{j}\mid j\in J\right]  =\left[  v_{1}%
+,v_{2},...,v_{n}\right]  $. Hence, $v=\Pi\left(  \widetilde{K}_{v},\left[
+v_{j}\mid j\in J\right]  \right)  $ rewrites as $v=\Pi\left(  \widetilde{K}%
+_{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  $.
+
+From $\left[  u_{i}\mid i\in I\right]  =\left[  u_{1},u_{2},\ldots
+,u_{m}\right]  $ and $\left[  v_{j}\mid j\in J\right]  =\left[  v_{1}%
+,v_{2},...,v_{n}\right]  $, we obtain%
+\begin{align}
+\left[  u_{i}\mid i\in I\right]  \cup\left[  v_{j}\mid j\in J\right]   &
+=\left[  u_{1},u_{2},\ldots,u_{m}\right]  \cup\left[  v_{1},v_{2}%
+,...,v_{n}\right] \nonumber\\
+&  =\left[  u_{1},u_{2},...,u_{m},v_{1},v_{2},...,v_{n}\right]  .
+\label{pf.thm.5.3'.b.1}%
+\end{align}
+But Theorem 5.3 \textbf{(b)} shows that $u\widehat{+}v=\Pi\left(
+\widetilde{K},\left[  u_{1},u_{2},...,u_{m},v_{1},v_{2},...,v_{n}\right]
+\right)  $\ \ \ \ \footnote{To be more precise, we are using a slightly more
+general version of Theorem 5.3 \textbf{(b)}, where the ring $\widetilde{K}%
+_{u,v}$ is replaced by the ring $\widetilde{K}$. (This is more general,
+because $\widetilde{K}$ is only required to be a ring which contains
+$\widetilde{K}_{u}$ and $\widetilde{K}_{v}$ as subrings, whereas the ring
+$\widetilde{K}_{u,v}$ of Theorem 5.3 \textbf{(b)} is a particular such ring.)
+But this more general version of Theorem 5.3 \textbf{(b)} is proven in exactly
+the same way as Theorem 5.3 \textbf{(b)}.}. In view of (\ref{pf.thm.5.3'.b.1}%
+), this rewrites as $u\widehat{+}v=\Pi\left(  \widetilde{K},\left[  u_{i}\mid
+i\in I\right]  \cup\left[  v_{j}\mid j\in J\right]  \right)  $. This proves
+Theorem 5.3' \textbf{(b)}.
+\end{proof}
+
+\begin{quote}
+\textbf{Theorem 5.3' (c).} Let $K$ be a ring. Let $u\in1+K\left[  T\right]
+^{+}$ and $v\in1+K\left[  T\right]  ^{+}$. Assume that $u=\Pi\left(
+\widetilde{K}_{u},\left[  u_{i}\mid i\in I\right]  \right)  $ for some
+$\left(  \widetilde{K}_{u},\left[  u_{i}\mid i\in I\right]  \right)  \in
+K^{\operatorname*{int}}$, and that $v=\Pi\left(  \widetilde{K}_{v},\left[
+v_{j}\mid j\in J\right]  \right)  $ for some $\left(  \widetilde{K}%
+_{v},\left[  v_{j}\mid j\in J\right]  \right)  \in K^{\operatorname*{int}}$.
+Let $\widetilde{K}$ be a ring such that $\widetilde{K}_{u}$ and $\widetilde{K}%
+_{v}$ are subrings of $\widetilde{K}$.
+
+We have $u\widehat{\cdot}v=\Pi\left(  \widetilde{K},\left[  u_{i}v_{j}%
+\mid\left(  i,j\right)  \in I\times J\right]  \right)  $
+\end{quote}
+
+\begin{proof}
+[Proof of Theorem 5.3' \textbf{(c)}.]We can derive Theorem 5.3' \textbf{(c)}
+from Theorem 5.3 \textbf{(c)} in the same way as Theorem 5.3' \textbf{(b)} was
+derived from Theorem 5.3 \textbf{(b)}.
+\end{proof}
+
+Finally, let us restate Theorem 5.3 \textbf{(d)}:
 
 \begin{quote}
 \textbf{Theorem 5.3' (d)}. Let $K$ be a ring. Let $w\in1+K\left[  T\right]
@@ -3005,7 +3095,7 @@ $m\in\mathbb{N}$. Thus, $w=\Pi\left(  \widetilde{K},\left[  w_{\ell}\mid
 w_{\ell}\mid\ell\in\left\{  1,2,...,m\right\}  \right]  \right)  =\Pi\left(
 \widetilde{K},\left[  w_{1},w_{2},...,w_{m}\right]  \right)  $. Hence, we can
 apply Theorem 5.3 \textbf{(d)} to $u=w$, $j=k$, $\widetilde{K}_{u}%
-=\widetilde{K}$, and $u_{\ell}=w_{\ell}$ and obtain%
+=\widetilde{K}$, and $u_{\ell}=w_{\ell}$, and obtain%
 \begin{align*}
 \widehat{\lambda}^{k}\left(  w\right)   &  =\Pi\left(  \widetilde{K},\left[
 \prod_{i\in I}w_{i}\mid I\in\mathcal{P}_{k}\left(  \underbrace{\left\{
@@ -3192,11 +3282,27 @@ _{v},\left[  v_{1},v_{2},...,v_{n}\right]  \right)  ,$
 _{w},\left[  w_{1},w_{2},...,w_{\ell}\right]  \right)  $.
 \end{itemize}
 
+Consider these elements of $K^{\operatorname*{int}}$. Notice that
+\[
+u=\Pi\left(  \widetilde{K}_{u},\underbrace{\left[  u_{1},u_{2},...,u_{m}%
+\right]  }_{=\left[  u_{i}\mid i\in\left\{  1,2,\ldots,m\right\}  \right]
+}\right)  =\Pi\left(  \widetilde{K}_{u},\left[  u_{i}\mid i\in\left\{
+1,2,\ldots,m\right\}  \right]  \right)
+\]
+and%
+\[
+w=\Pi\left(  \widetilde{K}_{w},\underbrace{\left[  w_{1},w_{2},...,w_{\ell
+}\right]  }_{=\left[  w_{k}\mid k\in\left\{  1,2,\ldots,\ell\right\}  \right]
+}\right)  =\Pi\left(  \widetilde{K}_{w},\left[  w_{k}\mid k\in\left\{
+1,2,\ldots,\ell\right\}  \right]  \right)  .
+\]
+
+
 Let $L=\widetilde{K}_{u}\otimes\widetilde{K}_{v}\otimes\widetilde{K}_{w}$. We
 identify the rings $\widetilde{K}_{u},$ $\widetilde{K}_{v},$ $\widetilde{K}%
 _{w}$ with the subrings $\widetilde{K}_{u}\otimes1\otimes1,$ $1\otimes
 \widetilde{K}_{v}\otimes1,$ $1\otimes1\otimes\widetilde{K}_{w}$ of the ring
-$L=\widetilde{K}_{u}\otimes\widetilde{K}_{v}\otimes\widetilde{K}_{w},$
+$L=\widetilde{K}_{u}\otimes\widetilde{K}_{v}\otimes\widetilde{K}_{w}$,
 respectively\footnote{This is legitimate, because the canonical ring
 homomorphisms $\widetilde{K}_{u}\otimes1\otimes1\rightarrow\widetilde{K}%
 _{u}\otimes\widetilde{K}_{v}\otimes\widetilde{K}_{w}$, $1\otimes
@@ -3208,26 +3314,52 @@ $\widetilde{K}_{v}$ and $\widetilde{K}_{w}$ are finite free, and therefore
 tensoring with each of these $K$-modules is an exact functor).}. This way, $L$
 becomes an extension ring of $K$ which contains all three rings $\widetilde{K}%
 _{u},$ $\widetilde{K}_{v},$ $\widetilde{K}_{w}$. Now, Theorem 5.3 \textbf{(c)}
-yields%
-\begin{align*}
-u\widehat{\cdot}v &  =\Pi\left(  L,\left[  u_{i}v_{j}\mid\left(  i,j\right)
+yields\footnote{To be fully precise, we are applying a variant of Theorem 5.3
+\textbf{(c)} here, in which $\widetilde{K}_{u,v}$ is replaced by $L$. But this
+variation is proven in the same way as Theorem 5.3 \textbf{(c)} (because both
+$L$ and $\widetilde{K}_{u,v}$ are rings containing $\widetilde{K}_{u}$ and
+$\widetilde{K}_{v}$ as subrings).}%
+\[
+u\widehat{\cdot}v=\Pi\left(  L,\left[  u_{i}v_{j}\mid\left(  i,j\right)
 \in\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right]
-\right)  ;\\
-\left(  u\widehat{\cdot}v\right)  \widehat{\cdot}w &  =\Pi\left(  L,\left[
+\right)  .
+\]
+Hence, Theorem 5.3' \textbf{(c)} (applied to $u\widehat{\cdot}v$, $w$, $L$,
+$\left[  u_{i}v_{j}\mid\left(  i,j\right)  \in\left\{  1,2,...,m\right\}
+\times\left\{  1,2,...,n\right\}  \right]  $, $\widetilde{K}_{w}$, $\left[
+w_{k}\mid k\in\left\{  1,2,\ldots,\ell\right\}  \right]  $ and $L$ instead of
+$u$, $v$, $\widetilde{K}_{u}$, $\left[  u_{i}\mid i\in I\right]  $,
+$\widetilde{K}_{v}$, $\left[  v_{j}\mid j\in J\right]  $ and $\widetilde{K}$)
+yields
+\[
+\left(  u\widehat{\cdot}v\right)  \widehat{\cdot}w=\Pi\left(  L,\left[
 \left(  u_{i}v_{j}\right)  w_{k}\mid\left(  \left(  i,j\right)  ,k\right)
 \in\left(  \left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}
-\right)  \times\left\{  1,2,...,\ell\right\}  \right]  \right)  ,
-\end{align*}
-as well as%
-\begin{align*}
-v\widehat{\cdot}w &  =\Pi\left(  L,\left[  v_{j}w_{k}\mid\left(  j,k\right)
+\right)  \times\left\{  1,2,...,\ell\right\}  \right]  \right)  .
+\]
+
+
+Also, Theorem 5.3 \textbf{(c)} yields\footnote{Again, we are really using a
+slight variation of Theorem 5.3 \textbf{(c)}.}%
+\[
+v\widehat{\cdot}w=\Pi\left(  L,\left[  v_{j}w_{k}\mid\left(  j,k\right)
 \in\left\{  1,2,...,n\right\}  \times\left\{  1,2,...,\ell\right\}  \right]
-\right)  ;\\
-u\widehat{\cdot}\left(  v\widehat{\cdot}w\right)   &  =\Pi\left(  L,\left[
+\right)  .
+\]
+Hence, Theorem 5.3' \textbf{(c)} (applied to $u$, $v\widehat{\cdot}w$,
+$\widetilde{K}_{u}$, $\left[  u_{i}\mid i\in I\right]  $, $L$, $\left[
+v_{j}w_{k}\mid\left(  j,k\right)  \in\left\{  1,2,...,n\right\}
+\times\left\{  1,2,...,\ell\right\}  \right]  $ and $L$ instead of $u$, $v$,
+$\widetilde{K}_{u}$, $\left[  u_{i}\mid i\in I\right]  $, $\widetilde{K}_{v}$,
+$\left[  v_{j}\mid j\in J\right]  $ and $\widetilde{K}$) yields%
+\[
+u\widehat{\cdot}\left(  v\widehat{\cdot}w\right)  =\Pi\left(  L,\left[
 u_{i}\left(  v_{j}w_{k}\right)  \mid\left(  i,\left(  j,k\right)  \right)
 \in\left\{  1,2,...,m\right\}  \times\left(  \left\{  1,2,...,n\right\}
 \times\left\{  1,2,...,\ell\right\}  \right)  \right]  \right)  .
-\end{align*}
+\]
+
+
 But there is a canonical isomorphism of sets%
 \[
 \left(  \left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right)
@@ -3241,11 +3373,11 @@ j,k\right)  \right)  $. Hence,%
 &  \Pi\left(  L,\left[  \left(  u_{i}v_{j}\right)  w_{k}\mid\left(  \left(
 i,j\right)  ,k\right)  \in\left(  \left\{  1,2,...,m\right\}  \times\left\{
 1,2,...,n\right\}  \right)  \times\left\{  1,2,...,\ell\right\}  \right]
-\right)  \\
+\right) \\
 &  =\Pi\left(  L,\left[  \underbrace{\left(  u_{i}v_{j}\right)  w_{k}}%
 _{=u_{i}\left(  v_{j}w_{k}\right)  }\mid\left(  i,\left(  j,k\right)  \right)
 \in\left\{  1,2,...,m\right\}  \times\left(  \left\{  1,2,...,n\right\}
-\times\left\{  1,2,...,\ell\right\}  \right)  \right]  \right)  \\
+\times\left\{  1,2,...,\ell\right\}  \right)  \right]  \right) \\
 &  =\Pi\left(  L,\left[  u_{i}\left(  v_{j}w_{k}\right)  \mid\left(  i,\left(
 j,k\right)  \right)  \in\left\{  1,2,...,m\right\}  \times\left(  \left\{
 1,2,...,n\right\}  \times\left\{  1,2,...,\ell\right\}  \right)  \right]
@@ -3253,14 +3385,14 @@ j,k\right)  \right)  \in\left\{  1,2,...,m\right\}  \times\left(  \left\{
 \end{align*}
 Thus,%
 \begin{align*}
-\left(  u\widehat{\cdot}v\right)  \widehat{\cdot}w &  =\Pi\left(  L,\left[
+\left(  u\widehat{\cdot}v\right)  \widehat{\cdot}w  &  =\Pi\left(  L,\left[
 \left(  u_{i}v_{j}\right)  w_{k}\mid\left(  \left(  i,j\right)  ,k\right)
 \in\left(  \left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}
-\right)  \times\left\{  1,2,...,\ell\right\}  \right]  \right)  \\
+\right)  \times\left\{  1,2,...,\ell\right\}  \right]  \right) \\
 &  =\Pi\left(  L,\left[  u_{i}\left(  v_{j}w_{k}\right)  \mid\left(  i,\left(
 j,k\right)  \right)  \in\left\{  1,2,...,m\right\}  \times\left(  \left\{
 1,2,...,n\right\}  \times\left\{  1,2,...,\ell\right\}  \right)  \right]
-\right)  \\
+\right) \\
 &  =u\widehat{\cdot}\left(  v\widehat{\cdot}w\right)  .
 \end{align*}
 This proves the associativity of the operation $\widehat{\cdot}$. As I said
@@ -3334,13 +3466,13 @@ _{u,v},\left[  \prod\limits_{i\in I}w_{i}\ \mid\ I\in\mathcal{P}_{j}\left(
 But since%
 \begin{align*}
 &  \left[  \prod\limits_{i\in I}w_{i}\ \mid\ I\in\mathcal{P}_{j}\left(
-\left\{  1,2,...,m+n\right\}  \right)  \right] \\
+\left\{  1,2,...,m+n\right\}  \right)  \right]  \\
 &  =\left[  \prod\limits_{\gamma\in I}w_{\gamma}\ \mid\ I\in\mathcal{P}%
-_{j}\left(  \left\{  1,2,...,m+n\right\}  \right)  \right] \\
+_{j}\left(  \left\{  1,2,...,m+n\right\}  \right)  \right]  \\
 &  =\left[  \prod\limits_{\gamma\in J\cup K^{\prime}}w_{\gamma}\ \mid
 \ i\in\left\{  0,1,...,j\right\}  \text{, }J\in\mathcal{P}_{i}\left(  \left\{
 1,2,...,m\right\}  \right)  \text{, }K^{\prime}\in\mathcal{P}_{j-i}\left(
-\left\{  m+1,m+2,...,m+n\right\}  \right)  \right] \\
+\left\{  m+1,m+2,...,m+n\right\}  \right)  \right]  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
@@ -3349,32 +3481,32 @@ _{j}\left(  \left\{  1,2,...,m+n\right\}  \right)  \right] \\
 \text{written as a union }J\cup K^{\prime}\text{ of two sets }J\in
 \mathcal{P}_{i}\left(  \left\{  1,2,...,m\right\}  \right)  \text{ and}\\
 K^{\prime}\in\mathcal{P}_{j-i}\left(  \left\{  m+1,m+2,...,m+n\right\}
-\right)  \text{ for some }i\in\left\{  0,1,...,j\right\} \\
+\right)  \text{ for some }i\in\left\{  0,1,...,j\right\}  \\
 \text{(namely, these two sets are }J=I\cap\left\{  1,2,...,m\right\}  \text{
 and}\\
 K^{\prime}=I\cap\left\{  m+1,m+2,...,m+n\right\}  \text{, and }i\text{ is the
 cardinality of }J\text{)}%
 \end{array}
-\right) \\
+\right)  \\
 &  =\left[  \prod\limits_{\alpha\in J}w_{\alpha}\prod\limits_{\beta\in
 K^{\prime}}w_{\beta}\ \mid\ i\in\left\{  0,1,...,j\right\}  \text{, }%
 J\in\mathcal{P}_{i}\left(  \left\{  1,2,...,m\right\}  \right)  \text{,
 }K^{\prime}\in\mathcal{P}_{j-i}\left(  \left\{  m+1,m+2,...,m+n\right\}
-\right)  \right] \\
+\right)  \right]  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\prod\limits_{\gamma\in J\cup
 K^{\prime}}w_{\gamma}=\prod\limits_{\alpha\in J}w_{\alpha}\prod\limits_{\beta
 \in K^{\prime}}w_{\beta}\text{ (because }J\cap K^{\prime}=\varnothing
-\text{)}\right) \\
+\text{)}\right)  \\
 &  =\left[  \prod\limits_{\alpha\in J}w_{\alpha}\prod\limits_{\beta\in
 M}w_{m+\beta}\ \mid\ i\in\left\{  0,1,...,j\right\}  \text{, }J\in
 \mathcal{P}_{i}\left(  \left\{  1,2,...,m\right\}  \right)  \text{, }%
-M\in\mathcal{P}_{j-i}\left(  \left\{  1,2,...,n\right\}  \right)  \right] \\
+M\in\mathcal{P}_{j-i}\left(  \left\{  1,2,...,n\right\}  \right)  \right]  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we have substituted }M=\left\{
-u-m\mid u\in K^{\prime}\right\}  \text{ for }K^{\prime}\right) \\
+u-m\mid u\in K^{\prime}\right\}  \text{ for }K^{\prime}\right)  \\
 &  =\left[  \prod\limits_{\alpha\in J}u_{\alpha}\prod\limits_{\beta\in
 M}v_{\beta}\ \mid\ i\in\left\{  0,1,...,j\right\}  \text{, }J\in
 \mathcal{P}_{i}\left(  \left\{  1,2,...,m\right\}  \right)  \text{, }%
-M\in\mathcal{P}_{j-i}\left(  \left\{  1,2,...,n\right\}  \right)  \right] \\
+M\in\mathcal{P}_{j-i}\left(  \left\{  1,2,...,n\right\}  \right)  \right]  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }w_{i}=\left\{
 \begin{array}
 [c]{c}%
@@ -3385,12 +3517,12 @@ v_{i-m},\text{ if }i>m
 \end{align*}
 this becomes%
 \begin{align*}
-&  \widehat{\lambda}^{j}\left(  u\widehat{+}v\right) \\
+&  \widehat{\lambda}^{j}\left(  u\widehat{+}v\right)  \\
 &  =\Pi\left(  \widetilde{K}_{u,v},\left[  \prod\limits_{\alpha\in J}%
 u_{\alpha}\prod\limits_{\beta\in M}v_{\beta}\ \mid\ i\in\left\{
 0,1,...,j\right\}  \text{, }J\in\mathcal{P}_{i}\left(  \left\{
 1,2,...,m\right\}  \right)  \text{, }M\in\mathcal{P}_{j-i}\left(  \left\{
-1,2,...,n\right\}  \right)  \right]  \right) \\
+1,2,...,n\right\}  \right)  \right]  \right)  \\
 &  =\widehat{\sum_{i=0}^{j}}\underbrace{\Pi\left(  \widetilde{K}_{u,v},\left[
 \prod\limits_{\alpha\in J}u_{\alpha}\prod\limits_{\beta\in M}v_{\beta}%
 \ \mid\ J\in\mathcal{P}_{i}\left(  \left\{  1,2,...,m\right\}  \right)
@@ -3400,8 +3532,8 @@ u_{\alpha}\prod\limits_{\beta\in M}v_{\beta}\ \mid\ i\in\left\{
 \left\{  1,2,...,m\right\}  \right)  \right]  \right)  \widehat{\cdot}%
 \Pi\left(  \widetilde{K}_{v},\left[  \prod\limits_{\beta\in M}v_{\beta}%
 \ \mid\ \text{ }M\in\mathcal{P}_{j-i}\left(  \left\{  1,2,...,n\right\}
-\right)  \right]  \right)  \\\text{(by Theorem 5.3 \textbf{(c)})}}}\\
-&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Corollary 5.4 \textbf{(a)}}\right) \\
+\right)  \right]  \right)  \\\text{(by Theorem 5.3' \textbf{(c)})}}}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by Corollary 5.4 \textbf{(a)}}\right)  \\
 &  =\widehat{\sum_{i=0}^{j}}\underbrace{\Pi\left(  \widetilde{K}_{u},\left[
 \prod\limits_{\alpha\in J}u_{\alpha}\ \mid\ J\in\mathcal{P}_{i}\left(
 \left\{  1,2,...,m\right\}  \right)  \right]  \right)  }%
@@ -5738,6 +5870,8 @@ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
 \psi^{j}\left(  u_{1}+u_{2}+...+u_{m}\right)  =u_{1}^{j}+u_{2}^{j}%
 +...+u_{m}^{j}.
 \]
+
+
 
 \end{quote}
 
@@ -13614,8 +13748,8 @@ In order to prove this, we must verify that%
 =\operatorname*{coeff}\nolimits_{1}u+\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
 }v\in\Lambda\left(  K\right)  ;\label{sol.6.9.2}\\
-\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;
-\label{sol.6.9.3}\\
+\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;\label{sol.6.9.3}%
+\\
 \operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)   &
 =\operatorname*{coeff}\nolimits_{1}u\cdot\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
