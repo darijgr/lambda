@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, July 08, 2016 00:53:14}
+%TCIDATA{LastRevised=Friday, July 08, 2016 01:02:49}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -3176,7 +3176,7 @@ that if two continuous maps from a topological space $\mathfrak{P}$ to a
 Hausdorff topological space $\mathfrak{Q}$ are equal to each other on a dense
 subset of $\mathfrak{P}$, then they are equal to each other on the whole
 $\mathfrak{P}$.} So let us assume that $u,v,w\in1+K\left[  T\right]  ^{+}$.
-Then, there exist
+Recall that the map $\Pi$ is surjective. Hence, there exist
 
 \begin{itemize}
 \item some $\left(  \widetilde{K}_{u},\left[  u_{1},u_{2},...,u_{m}\right]
@@ -3197,21 +3197,30 @@ identify the rings $\widetilde{K}_{u},$ $\widetilde{K}_{v},$ $\widetilde{K}%
 _{w}$ with the subrings $\widetilde{K}_{u}\otimes1\otimes1,$ $1\otimes
 \widetilde{K}_{v}\otimes1,$ $1\otimes1\otimes\widetilde{K}_{w}$ of the ring
 $L=\widetilde{K}_{u}\otimes\widetilde{K}_{v}\otimes\widetilde{K}_{w},$
-respectively. This way, $L$ becomes an extension ring of $K$ which contains
-all three rings $\widetilde{K}_{u},$ $\widetilde{K}_{v},$ $\widetilde{K}_{w}.$
-Now, Theorem 5.3 \textbf{(c)} yields%
+respectively\footnote{This is legitimate, because the canonical ring
+homomorphisms $\widetilde{K}_{u}\otimes1\otimes1\rightarrow\widetilde{K}%
+_{u}\otimes\widetilde{K}_{v}\otimes\widetilde{K}_{w}$, $1\otimes
+\widetilde{K}_{v}\otimes1\rightarrow\widetilde{K}_{u}\otimes\widetilde{K}%
+_{v}\otimes\widetilde{K}_{w}$ and $1\otimes1\otimes\widetilde{K}%
+_{w}\rightarrow\widetilde{K}_{u}\otimes\widetilde{K}_{v}\otimes\widetilde{K}%
+_{w}$ are injective (indeed, the $K$-modules $\widetilde{K}_{u}$,
+$\widetilde{K}_{v}$ and $\widetilde{K}_{w}$ are finite free, and therefore
+tensoring with each of these $K$-modules is an exact functor).}. This way, $L$
+becomes an extension ring of $K$ which contains all three rings $\widetilde{K}%
+_{u},$ $\widetilde{K}_{v},$ $\widetilde{K}_{w}$. Now, Theorem 5.3 \textbf{(c)}
+yields%
 \begin{align*}
-u\widehat{\cdot}v  &  =\Pi\left(  L,\left[  u_{i}v_{j}\mid\left(  i,j\right)
+u\widehat{\cdot}v &  =\Pi\left(  L,\left[  u_{i}v_{j}\mid\left(  i,j\right)
 \in\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right]
 \right)  ;\\
-\left(  u\widehat{\cdot}v\right)  \widehat{\cdot}w  &  =\Pi\left(  L,\left[
+\left(  u\widehat{\cdot}v\right)  \widehat{\cdot}w &  =\Pi\left(  L,\left[
 \left(  u_{i}v_{j}\right)  w_{k}\mid\left(  \left(  i,j\right)  ,k\right)
 \in\left(  \left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}
 \right)  \times\left\{  1,2,...,\ell\right\}  \right]  \right)  ,
 \end{align*}
 as well as%
 \begin{align*}
-v\widehat{\cdot}w  &  =\Pi\left(  L,\left[  v_{j}w_{k}\mid\left(  j,k\right)
+v\widehat{\cdot}w &  =\Pi\left(  L,\left[  v_{j}w_{k}\mid\left(  j,k\right)
 \in\left\{  1,2,...,n\right\}  \times\left\{  1,2,...,\ell\right\}  \right]
 \right)  ;\\
 u\widehat{\cdot}\left(  v\widehat{\cdot}w\right)   &  =\Pi\left(  L,\left[
@@ -3232,11 +3241,11 @@ j,k\right)  \right)  $. Hence,%
 &  \Pi\left(  L,\left[  \left(  u_{i}v_{j}\right)  w_{k}\mid\left(  \left(
 i,j\right)  ,k\right)  \in\left(  \left\{  1,2,...,m\right\}  \times\left\{
 1,2,...,n\right\}  \right)  \times\left\{  1,2,...,\ell\right\}  \right]
-\right) \\
+\right)  \\
 &  =\Pi\left(  L,\left[  \underbrace{\left(  u_{i}v_{j}\right)  w_{k}}%
 _{=u_{i}\left(  v_{j}w_{k}\right)  }\mid\left(  i,\left(  j,k\right)  \right)
 \in\left\{  1,2,...,m\right\}  \times\left(  \left\{  1,2,...,n\right\}
-\times\left\{  1,2,...,\ell\right\}  \right)  \right]  \right) \\
+\times\left\{  1,2,...,\ell\right\}  \right)  \right]  \right)  \\
 &  =\Pi\left(  L,\left[  u_{i}\left(  v_{j}w_{k}\right)  \mid\left(  i,\left(
 j,k\right)  \right)  \in\left\{  1,2,...,m\right\}  \times\left(  \left\{
 1,2,...,n\right\}  \times\left\{  1,2,...,\ell\right\}  \right)  \right]
@@ -3244,14 +3253,14 @@ j,k\right)  \right)  \in\left\{  1,2,...,m\right\}  \times\left(  \left\{
 \end{align*}
 Thus,%
 \begin{align*}
-\left(  u\widehat{\cdot}v\right)  \widehat{\cdot}w  &  =\Pi\left(  L,\left[
+\left(  u\widehat{\cdot}v\right)  \widehat{\cdot}w &  =\Pi\left(  L,\left[
 \left(  u_{i}v_{j}\right)  w_{k}\mid\left(  \left(  i,j\right)  ,k\right)
 \in\left(  \left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}
-\right)  \times\left\{  1,2,...,\ell\right\}  \right]  \right) \\
+\right)  \times\left\{  1,2,...,\ell\right\}  \right]  \right)  \\
 &  =\Pi\left(  L,\left[  u_{i}\left(  v_{j}w_{k}\right)  \mid\left(  i,\left(
 j,k\right)  \right)  \in\left\{  1,2,...,m\right\}  \times\left(  \left\{
 1,2,...,n\right\}  \times\left\{  1,2,...,\ell\right\}  \right)  \right]
-\right) \\
+\right)  \\
 &  =u\widehat{\cdot}\left(  v\widehat{\cdot}w\right)  .
 \end{align*}
 This proves the associativity of the operation $\widehat{\cdot}$. As I said
@@ -11198,19 +11207,19 @@ x\right)  T^{i}\ \ \ \ \ \ \ \ \ \ \text{for every }x\in K\right)  .
 Then,
 \begin{equation}
 \lambda_{T}\left(  x\right)  =\left(  1+pT\right)  ^{x}%
-\ \ \ \ \ \ \ \ \ \ \text{for every }x\in K\label{sol.3.3.a.1}%
+\ \ \ \ \ \ \ \ \ \ \text{for every }x\in K \label{sol.3.3.a.1}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.3.3.a.1}):} Fix $x\in K$. Then,
 $\lambda_{T}\left(  x\right)  =\sum_{i\in\mathbb{N}}\lambda^{i}\left(
 x\right)  T^{i}$. Hence, for every $i\in\mathbb{N}$, we have%
 \begin{align*}
-& \left(  \text{the coefficient of }T^{i}\text{ in the power series }%
-\lambda_{T}\left(  x\right)  \right)  \\
-& =\lambda^{i}\left(  x\right)  =\left(  \text{the coefficient of the power
-series }\left(  1+pT\right)  ^{x}\text{ before }T^{i}\right)  \\
-& \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\lambda^{i}\left(
-x\right)  \right)  \\
-& =\left(  \text{the coefficient of }T^{i}\text{ in the power series }\left(
+&  \left(  \text{the coefficient of }T^{i}\text{ in the power series }%
+\lambda_{T}\left(  x\right)  \right) \\
+&  =\lambda^{i}\left(  x\right)  =\left(  \text{the coefficient of the power
+series }\left(  1+pT\right)  ^{x}\text{ before }T^{i}\right) \\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\lambda^{i}\left(
+x\right)  \right) \\
+&  =\left(  \text{the coefficient of }T^{i}\text{ in the power series }\left(
 1+pT\right)  ^{x}\right)  .
 \end{align*}
 In other words, $\lambda_{T}\left(  x\right)  =\left(  1+pT\right)  ^{x}$.
@@ -11227,18 +11236,18 @@ T^{2}K\left[  \left[  T\right]  \right]  $
 \par
 Now, (\ref{sol.3.3.a.1}) yields
 \begin{align*}
-\lambda_{T}\left(  x\right)    & =\left(  1+pT\right)  ^{x}=\sum
+\lambda_{T}\left(  x\right)   &  =\left(  1+pT\right)  ^{x}=\sum
 _{k\in\mathbb{N}}\dbinom{x}{k}\left(  pT\right)  ^{k}\\
-& =\underbrace{\dbinom{x}{0}}_{=1}\underbrace{\left(  pT\right)  ^{0}}%
+&  =\underbrace{\dbinom{x}{0}}_{=1}\underbrace{\left(  pT\right)  ^{0}}%
 _{=1}+\underbrace{\dbinom{x}{1}}_{=x}\underbrace{\left(  pT\right)  ^{1}%
 }_{=pT}+\sum_{\substack{k\in\mathbb{N};\\k\geq2}}\dbinom{x}{k}%
 \underbrace{\left(  pT\right)  ^{k}}_{\substack{=p^{k}T^{k}=p^{k}T^{k-2}%
 T^{2}\\\text{(since }k\geq2\text{)}}}\\
-& =1+x\underbrace{pT}_{\equiv T\operatorname{mod}T^{2}K\left[  \left[
+&  =1+x\underbrace{pT}_{\equiv T\operatorname{mod}T^{2}K\left[  \left[
 T\right]  \right]  }+\sum_{\substack{k\in\mathbb{N};\\k\geq2}}\dbinom{x}%
 {k}p^{k}T^{k-2}\underbrace{T^{2}}_{\equiv0\operatorname{mod}T^{2}K\left[
 \left[  T\right]  \right]  }\\
-& \equiv1+xT+\underbrace{\sum_{\substack{k\in\mathbb{N};\\k\geq2}}\dbinom
+&  \equiv1+xT+\underbrace{\sum_{\substack{k\in\mathbb{N};\\k\geq2}}\dbinom
 {x}{k}p^{k}T^{k-2}0}_{=0}=1+xT\operatorname{mod}T^{2}K\left[  \left[
 T\right]  \right]  ,
 \end{align*}
@@ -11273,25 +11282,25 @@ $k\in\mathbb{N}$, $x\in K$ and $y\in K$\ \ \ \ \footnote{This was proven
 during our proof of Theorem 3.2.}. In other words, every $k\in\mathbb{N}$,
 $x\in K$ and $y\in K$ satisfy%
 \begin{equation}
-\dbinom{x+y}{k}=\sum_{i=0}^{k}\dbinom{x}{i}\dbinom{y}{k-i}%
-.\label{sol.3.3.a.vandermonde}%
+\dbinom{x+y}{k}=\sum_{i=0}^{k}\dbinom{x}{i}\dbinom{y}{k-i}.
+\label{sol.3.3.a.vandermonde}%
 \end{equation}
 
 
 Now, every $x\in K$ and $y\in K$ satisfy%
 \begin{align*}
-& \underbrace{\left(  1+T\right)  ^{x}}_{\substack{=\sum_{k\in\mathbb{N}%
+&  \underbrace{\left(  1+T\right)  ^{x}}_{\substack{=\sum_{k\in\mathbb{N}%
 }\dbinom{x}{k}T^{k}\\\text{(by the definition of }\left(  1+T\right)
 ^{x}\text{)}}}\underbrace{\left(  1+T\right)  ^{y}}_{\substack{=\sum
 _{k\in\mathbb{N}}\dbinom{y}{k}T^{k}\\\text{(by the definition of }\left(
 1+T\right)  ^{y}\text{)}}}\\
-& =\left(  \sum_{k\in\mathbb{N}}\dbinom{x}{k}T^{k}\right)  \left(  \sum
-_{k\in\mathbb{N}}\dbinom{y}{k}T^{k}\right)  \\
-& =\sum_{k\in\mathbb{N}}\underbrace{\left(  \sum_{i=0}^{k}\dbinom{x}{i}%
-\dbinom{y}{k-i}\right)  }_{=\dbinom{x+y}{k}}T^{k}\\
-& \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the product of two
-power series}\right)  \\
-& =\sum_{k\in\mathbb{N}}\dbinom{x+y}{k}T^{k}=\left(  1+T\right)  ^{x+y}%
+&  =\left(  \sum_{k\in\mathbb{N}}\dbinom{x}{k}T^{k}\right)  \left(  \sum
+_{k\in\mathbb{N}}\dbinom{y}{k}T^{k}\right) \\
+&  =\sum_{k\in\mathbb{N}}\underbrace{\left(  \sum_{i=0}^{k}\dbinom{x}%
+{i}\dbinom{y}{k-i}\right)  }_{=\dbinom{x+y}{k}}T^{k}\\
+&  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of the product of two
+power series}\right) \\
+&  =\sum_{k\in\mathbb{N}}\dbinom{x+y}{k}T^{k}=\left(  1+T\right)  ^{x+y}%
 \end{align*}
 (since $\left(  1+T\right)  ^{x+y}$ is defined as $\sum_{k\in\mathbb{N}%
 }\dbinom{x+y}{k}T^{k}$). We can substitute $pT$ for $T$ in this equality;
@@ -11318,7 +11327,7 @@ we obtain
 \begin{equation}
 \lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)  =\lambda
 _{T}\left(  x+y\right)  \ \ \ \ \ \ \ \ \ \ \text{for every }x\in K\text{ and
-}y\in K.\label{sol.3.3.a.almost}%
+}y\in K. \label{sol.3.3.a.almost}%
 \end{equation}
 But Theorem 2.1 \textbf{(a)} shows that (\ref{sol.3.3.a.almost}) holds if and
 only if $\left(  K,\left(  \lambda^{i}\right)  _{i\in\mathbb{N}}\right)  $ is
@@ -11337,7 +11346,7 @@ K\left[  \left[  T\right]  \right]  $ as in our solution to Exercise 3.3
 Now,%
 \begin{equation}
 \lambda^{i}\left(  x\right)  =\dbinom{x}{i}\ \ \ \ \ \ \ \ \ \ \text{for every
-}x\in K\text{ and }i\in\mathbb{N}\label{sol.3.3.b.1}%
+}x\in K\text{ and }i\in\mathbb{N} \label{sol.3.3.b.1}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.3.3.b.1}):} Let $x\in K$. Comparing the
 identity $\lambda_{T}\left(  x\right)  =\sum_{i\in\mathbb{N}}\lambda
@@ -11346,9 +11355,9 @@ identity $\lambda_{T}\left(  x\right)  =\sum_{i\in\mathbb{N}}\lambda
 $\sum_{i\in\mathbb{N}}\lambda^{i}\left(  x\right)  T^{i}=\left(  1+pT\right)
 ^{x}$. Hence, for every $i\in\mathbb{N}$, we have%
 \begin{align*}
-\lambda^{i}\left(  x\right)    & =\left(  \text{the coefficient of the power
-series }\left(  1+T\right)  ^{x}\text{ before }T^{i}\right)  \\
-& =\dbinom{x}{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  1+T\right)
+\lambda^{i}\left(  x\right)   &  =\left(  \text{the coefficient of the power
+series }\left(  1+T\right)  ^{x}\text{ before }T^{i}\right) \\
+&  =\dbinom{x}{i}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  1+T\right)
 ^{x}=\sum_{k\in\mathbb{N}}\dbinom{x}{k}T^{k}\right)  .
 \end{align*}
 This proves (\ref{sol.3.3.b.1}).}. Thus, the maps $\lambda^{i}$ defined in
@@ -13605,8 +13614,8 @@ In order to prove this, we must verify that%
 =\operatorname*{coeff}\nolimits_{1}u+\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
 }v\in\Lambda\left(  K\right)  ;\label{sol.6.9.2}\\
-\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;\label{sol.6.9.3}%
-\\
+\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;
+\label{sol.6.9.3}\\
 \operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)   &
 =\operatorname*{coeff}\nolimits_{1}u\cdot\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
