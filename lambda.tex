@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, July 08, 2016 22:46:47}
+%TCIDATA{LastRevised=Friday, July 08, 2016 22:55:13}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -2990,8 +2990,8 @@ $\left(  \widetilde{K}_{u},\left[  u_{i}\mid i\in I\right]  \right)  \in
 K^{\operatorname*{int}}$, and that $v=\Pi\left(  \widetilde{K}_{v},\left[
 v_{j}\mid j\in J\right]  \right)  $ for some $\left(  \widetilde{K}%
 _{v},\left[  v_{j}\mid j\in J\right]  \right)  \in K^{\operatorname*{int}}$.
-Let $\widetilde{K}$ be a ring such that $\widetilde{K}_{u}$ and $\widetilde{K}%
-_{v}$ are subrings of $\widetilde{K}$.
+Let $\widetilde{K}$ be a finite-free extension ring of $K$ such that
+$\widetilde{K}_{u}$ and $\widetilde{K}_{v}$ are subrings of $\widetilde{K}$.
 
 We have $u\widehat{+}v=\Pi\left(  \widetilde{K},\left[  u_{i}\mid i\in
 I\right]  \cup\left[  v_{j}\mid j\in J\right]  \right)  $. Here, for any two
@@ -3029,23 +3029,16 @@ From $\left[  u_{i}\mid i\in I\right]  =\left[  u_{1},u_{2},\ldots
 \begin{align}
 \left[  u_{i}\mid i\in I\right]  \cup\left[  v_{j}\mid j\in J\right]   &
 =\left[  u_{1},u_{2},\ldots,u_{m}\right]  \cup\left[  v_{1},v_{2}%
-,...,v_{n}\right] \nonumber\\
-&  =\left[  u_{1},u_{2},...,u_{m},v_{1},v_{2},...,v_{n}\right]  .
-\label{pf.thm.5.3'.b.1}%
+,...,v_{n}\right]  \nonumber\\
+&  =\left[  u_{1},u_{2},...,u_{m},v_{1},v_{2},...,v_{n}\right]
+.\label{pf.thm.5.3'.b.1}%
 \end{align}
 But Theorem 5.3 \textbf{(b)} shows that $u\widehat{+}v=\Pi\left(
 \widetilde{K},\left[  u_{1},u_{2},...,u_{m},v_{1},v_{2},...,v_{n}\right]
-\right)  $\ \ \ \ \footnote{To be more precise, we are using a slightly more
-general version of Theorem 5.3 \textbf{(b)}, where the ring $\widetilde{K}%
-_{u,v}$ is replaced by the ring $\widetilde{K}$. (This is more general,
-because $\widetilde{K}$ is only required to be a ring which contains
-$\widetilde{K}_{u}$ and $\widetilde{K}_{v}$ as subrings, whereas the ring
-$\widetilde{K}_{u,v}$ of Theorem 5.3 \textbf{(b)} is a particular such ring.)
-But this more general version of Theorem 5.3 \textbf{(b)} is proven in exactly
-the same way as Theorem 5.3 \textbf{(b)}.}. In view of (\ref{pf.thm.5.3'.b.1}%
-), this rewrites as $u\widehat{+}v=\Pi\left(  \widetilde{K},\left[  u_{i}\mid
-i\in I\right]  \cup\left[  v_{j}\mid j\in J\right]  \right)  $. This proves
-Theorem 5.3' \textbf{(b)}.
+\right)  $. In view of (\ref{pf.thm.5.3'.b.1}), this rewrites as
+$u\widehat{+}v=\Pi\left(  \widetilde{K},\left[  u_{i}\mid i\in I\right]
+\cup\left[  v_{j}\mid j\in J\right]  \right)  $. This proves Theorem 5.3'
+\textbf{(b)}.
 \end{proof}
 
 \begin{quote}
@@ -3056,8 +3049,8 @@ $\left(  \widetilde{K}_{u},\left[  u_{i}\mid i\in I\right]  \right)  \in
 K^{\operatorname*{int}}$, and that $v=\Pi\left(  \widetilde{K}_{v},\left[
 v_{j}\mid j\in J\right]  \right)  $ for some $\left(  \widetilde{K}%
 _{v},\left[  v_{j}\mid j\in J\right]  \right)  \in K^{\operatorname*{int}}$.
-Let $\widetilde{K}$ be a ring such that $\widetilde{K}_{u}$ and $\widetilde{K}%
-_{v}$ are subrings of $\widetilde{K}$.
+Let $\widetilde{K}$ be a finite-free extension ring of $K$ such that
+$\widetilde{K}_{u}$ and $\widetilde{K}_{v}$ are subrings of $\widetilde{K}$.
 
 We have $u\widehat{\cdot}v=\Pi\left(  \widetilde{K},\left[  u_{i}v_{j}%
 \mid\left(  i,j\right)  \in I\times J\right]  \right)  $
@@ -3095,13 +3088,19 @@ $m\in\mathbb{N}$. Thus, $w=\Pi\left(  \widetilde{K},\left[  w_{\ell}\mid
 w_{\ell}\mid\ell\in\left\{  1,2,...,m\right\}  \right]  \right)  =\Pi\left(
 \widetilde{K},\left[  w_{1},w_{2},...,w_{m}\right]  \right)  $. Hence, we can
 apply Theorem 5.3 \textbf{(d)} to $u=w$, $j=k$, $\widetilde{K}_{u}%
-=\widetilde{K}$, and $u_{\ell}=w_{\ell}$, and obtain%
+=\widetilde{K}$, and $u_{\ell}=w_{\ell}$\ \ \ \ \footnote{To be fully precise,
+we also need to specify $v$, $\left(  \widetilde{K}_{v},\left[  v_{1}%
+,v_{2},\ldots,v_{n}\right]  \right)  $ and $\widetilde{K}_{u,v}$ in order to
+apply Theorem 5.3 \textbf{(d)}. But $v$ and $\left(  \widetilde{K}_{v},\left[
+v_{1},v_{2},\ldots,v_{n}\right]  \right)  $ have not been used in the proof of
+Theorem 5.3 \textbf{(d)}, and $\widetilde{K}_{u,v}$ can just be taken to be
+$\widetilde{K}$.}, and obtain%
 \begin{align*}
 \widehat{\lambda}^{k}\left(  w\right)   &  =\Pi\left(  \widetilde{K},\left[
 \prod_{i\in I}w_{i}\mid I\in\mathcal{P}_{k}\left(  \underbrace{\left\{
 1,2,...,m\right\}  }_{=L}\right)  \right]  \right)  =\Pi\left(  \widetilde{K}%
 ,\left[  \prod_{i\in I}w_{i}\mid I\in\mathcal{P}_{k}\left(  L\right)  \right]
-\right) \\
+\right)  \\
 &  =\Pi\left(  \widetilde{K},\left[  \prod_{\ell\in S}w_{\ell}\mid
 S\in\mathcal{P}_{k}\left(  L\right)  \right]  \right)
 \end{align*}
@@ -3298,27 +3297,25 @@ w=\Pi\left(  \widetilde{K}_{w},\underbrace{\left[  w_{1},w_{2},...,w_{\ell
 \]
 
 
-Let $L=\widetilde{K}_{u}\otimes\widetilde{K}_{v}\otimes\widetilde{K}_{w}$. We
-identify the rings $\widetilde{K}_{u},$ $\widetilde{K}_{v},$ $\widetilde{K}%
-_{w}$ with the subrings $\widetilde{K}_{u}\otimes1\otimes1,$ $1\otimes
-\widetilde{K}_{v}\otimes1,$ $1\otimes1\otimes\widetilde{K}_{w}$ of the ring
-$L=\widetilde{K}_{u}\otimes\widetilde{K}_{v}\otimes\widetilde{K}_{w}$,
-respectively\footnote{This is legitimate, because the canonical ring
-homomorphisms $\widetilde{K}_{u}\otimes1\otimes1\rightarrow\widetilde{K}%
-_{u}\otimes\widetilde{K}_{v}\otimes\widetilde{K}_{w}$, $1\otimes
-\widetilde{K}_{v}\otimes1\rightarrow\widetilde{K}_{u}\otimes\widetilde{K}%
-_{v}\otimes\widetilde{K}_{w}$ and $1\otimes1\otimes\widetilde{K}%
-_{w}\rightarrow\widetilde{K}_{u}\otimes\widetilde{K}_{v}\otimes\widetilde{K}%
-_{w}$ are injective (indeed, the $K$-modules $\widetilde{K}_{u}$,
-$\widetilde{K}_{v}$ and $\widetilde{K}_{w}$ are finite free, and therefore
-tensoring with each of these $K$-modules is an exact functor).}. This way, $L$
-becomes an extension ring of $K$ which contains all three rings $\widetilde{K}%
-_{u},$ $\widetilde{K}_{v},$ $\widetilde{K}_{w}$. Now, Theorem 5.3 \textbf{(c)}
-yields\footnote{To be fully precise, we are applying a variant of Theorem 5.3
-\textbf{(c)} here, in which $\widetilde{K}_{u,v}$ is replaced by $L$. But this
-variation is proven in the same way as Theorem 5.3 \textbf{(c)} (because both
-$L$ and $\widetilde{K}_{u,v}$ are rings containing $\widetilde{K}_{u}$ and
-$\widetilde{K}_{v}$ as subrings).}%
+Let $L=\widetilde{K}_{u}\otimes\widetilde{K}_{v}\otimes\widetilde{K}_{w}$.
+Clearly, $L$ is a finite-free $K$-module (since it is the tensor product of
+the finite-free $K$-modules $\widetilde{K}_{u},$ $\widetilde{K}_{v},$
+$\widetilde{K}_{w}$). We identify the rings $\widetilde{K}_{u},$
+$\widetilde{K}_{v},$ $\widetilde{K}_{w}$ with the subrings $\widetilde{K}%
+_{u}\otimes1\otimes1,$ $1\otimes\widetilde{K}_{v}\otimes1,$ $1\otimes
+1\otimes\widetilde{K}_{w}$ of the ring $L=\widetilde{K}_{u}\otimes
+\widetilde{K}_{v}\otimes\widetilde{K}_{w}$, respectively\footnote{This is
+legitimate, because the canonical ring homomorphisms $\widetilde{K}_{u}%
+\otimes1\otimes1\rightarrow\widetilde{K}_{u}\otimes\widetilde{K}_{v}%
+\otimes\widetilde{K}_{w}$, $1\otimes\widetilde{K}_{v}\otimes1\rightarrow
+\widetilde{K}_{u}\otimes\widetilde{K}_{v}\otimes\widetilde{K}_{w}$ and
+$1\otimes1\otimes\widetilde{K}_{w}\rightarrow\widetilde{K}_{u}\otimes
+\widetilde{K}_{v}\otimes\widetilde{K}_{w}$ are injective (indeed, the
+$K$-modules $\widetilde{K}_{u}$, $\widetilde{K}_{v}$ and $\widetilde{K}_{w}$
+are finite free, and therefore tensoring with each of these $K$-modules is an
+exact functor).}. This way, $L$ becomes a finite-free extension ring of $K$
+which contains all three rings $\widetilde{K}_{u},$ $\widetilde{K}_{v},$
+$\widetilde{K}_{w}$ as subrings. Now, Theorem 5.3 \textbf{(c)} yields%
 \[
 u\widehat{\cdot}v=\Pi\left(  L,\left[  u_{i}v_{j}\mid\left(  i,j\right)
 \in\left\{  1,2,...,m\right\}  \times\left\{  1,2,...,n\right\}  \right]
@@ -3339,8 +3336,12 @@ yields
 \]
 
 
-Also, Theorem 5.3 \textbf{(c)} yields\footnote{Again, we are really using a
-slight variation of Theorem 5.3 \textbf{(c)}.}%
+Also, Theorem 5.3 \textbf{(c)} (applied to $v$, $w$, $\widetilde{K}_{v}$,
+$\left[  v_{1},v_{2},\ldots,v_{n}\right]  $, $\widetilde{K}_{w}$, $\left[
+w_{1},w_{2},\ldots,w_{\ell}\right]  $ and $L$ instead of $u$, $v$,
+$\widetilde{K}_{u}$, $\left[  u_{1},u_{2},\ldots,u_{m}\right]  $,
+$\widetilde{K}_{v}$, $\left[  v_{1},v_{2},\ldots,v_{n}\right]  $ and
+$\widetilde{K}_{u,v}$) yields%
 \[
 v\widehat{\cdot}w=\Pi\left(  L,\left[  v_{j}w_{k}\mid\left(  j,k\right)
 \in\left\{  1,2,...,n\right\}  \times\left\{  1,2,...,\ell\right\}  \right]
@@ -13748,8 +13749,8 @@ In order to prove this, we must verify that%
 =\operatorname*{coeff}\nolimits_{1}u+\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
 }v\in\Lambda\left(  K\right)  ;\label{sol.6.9.2}\\
-\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;\label{sol.6.9.3}%
-\\
+\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;
+\label{sol.6.9.3}\\
 \operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)   &
 =\operatorname*{coeff}\nolimits_{1}u\cdot\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
@@ -15417,11 +15418,11 @@ By Theorem 2.1 \textbf{(b)}, we have $\lambda_{T}\left(  x\right)
 \nolimits_{-T}\left(  \lambda_{T}\left(  y\right)  \right)  }\\
 &  =\operatorname*{ev}\nolimits_{-T}\left(  \lambda_{T}\left(  x\right)
 \right)  \cdot\operatorname*{ev}\nolimits_{-T}\left(  \lambda_{T}\left(
-y\right)  \right)  \\
+y\right)  \right) \\
 &  =\operatorname*{ev}\nolimits_{-T}\left(  \underbrace{\lambda_{T}\left(
 x\right)  \cdot\lambda_{T}\left(  y\right)  }_{=\lambda_{T}\left(  x+y\right)
 }\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\operatorname*{ev}%
-\nolimits_{-T}\text{ is a ring homomorphism}\right)  \\
+\nolimits_{-T}\text{ is a ring homomorphism}\right) \\
 &  =\operatorname*{ev}\nolimits_{-T}\left(  \lambda_{T}\left(  x+y\right)
 \right)  =\lambda_{-T}\left(  x+y\right)  \ \ \ \ \ \ \ \ \ \ \left(
 \text{since }\lambda_{-T}\left(  x+y\right)  \text{ is defined as
@@ -15433,14 +15434,14 @@ Now,%
 \widetilde{\psi}_{T}\left(  x+y\right)   &  =-T\cdot\dfrac{d}{dT}%
 \log\underbrace{\lambda_{-T}\left(  x+y\right)  }_{=\lambda_{-T}\left(
 x\right)  \cdot\lambda_{-T}\left(  y\right)  }=-T\dfrac{d}{dT}\log\left(
-\lambda_{-T}\left(  x\right)  \cdot\lambda_{-T}\left(  y\right)  \right)  \\
+\lambda_{-T}\left(  x\right)  \cdot\lambda_{-T}\left(  y\right)  \right) \\
 &  =\underbrace{\left(  -T\dfrac{d}{dT}\log\lambda_{-T}\left(  x\right)
 \right)  }_{=\widetilde{\psi}_{T}\left(  x\right)  }+\underbrace{\left(
 -T\dfrac{d}{dT}\log\lambda_{-T}\left(  y\right)  \right)  }_{=\widetilde{\psi
 }_{T}\left(  y\right)  }\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{9.ex5.s1}), applied to
 }u=\lambda_{-T}\left(  x\right)  \text{ and }v=\lambda_{-T}\left(  y\right)
-\right)  \\
+\right) \\
 &  =\widetilde{\psi}_{T}\left(  x\right)  +\widetilde{\psi}_{T}\left(
 y\right)  .
 \end{align*}
@@ -15597,7 +15598,7 @@ holds. Applying $\varrho$ to both sides of the equation, we get $\varrho
 \varrho\left(  n\alpha_{n}\right)   &  =n\underbrace{\varrho\left(  \alpha
 _{n}\right)  }_{\substack{=\lambda^{n}\left(  x\right)  \\\text{(by
 (\ref{9.6.sol.1}))}}}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\varrho\text{ is
-a }\mathbb{Z}\text{-algebra homomorphism}\right)  \\
+a }\mathbb{Z}\text{-algebra homomorphism}\right) \\
 &  =n\lambda^{n}\left(  x\right)
 \end{align*}
 and%
@@ -15609,7 +15610,7 @@ N_{i}\right)   &  =\sum\limits_{i=1}^{n}\left(  -1\right)  ^{i-1}%
 \left(  N_{i}\right)  }_{\substack{=\psi^{i}\left(  x\right)  \\\text{(by
 (\ref{9.6.sol.1}))}}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\varrho\text{ is a }%
-\mathbb{Z}\text{-algebra homomorphism}\right)  \\
+\mathbb{Z}\text{-algebra homomorphism}\right) \\
 &  =\sum\limits_{i=1}^{n}\left(  -1\right)  ^{i-1}\lambda^{n-i}\left(
 x\right)  \psi^{i}\left(  x\right)  ,
 \end{align*}
@@ -15719,7 +15720,7 @@ that%
 \begin{equation}
 \dfrac{1}{p}\left(  \left(  U_{1}+U_{2}+...+U_{m}\right)  ^{p}-\left(
 U_{1}^{p}+U_{2}^{p}+...+U_{m}^{p}\right)  \right)  =Q\left(  X_{1}%
-,X_{2},...,X_{m}\right)  .\label{9.7.sol.Q}%
+,X_{2},...,X_{m}\right)  . \label{9.7.sol.Q}%
 \end{equation}
 Consider this $Q$. Note that $Q\in\mathbb{Z}\left[  \alpha_{1},\alpha
 _{2},...,\alpha_{m}\right]  =\mathbb{Z}\left[  \alpha_{1},\alpha
@@ -15743,7 +15744,7 @@ $...$, $U_{m}$), so that $X_{1}^{p}=\left(  U_{1}+U_{2}+...+U_{m}\right)
 }-\underbrace{N_{p}\left(  X_{1},X_{2},...,X_{m}\right)  }_{=\sum
 \limits_{i=1}^{m}U_{i}^{p}=U_{1}^{p}+U_{2}^{p}+...+U_{m}^{p}}\\
 &  =\left(  U_{1}+U_{2}+...+U_{m}\right)  ^{p}-\left(  U_{1}^{p}+U_{2}%
-^{p}+...+U_{m}^{p}\right)  \\
+^{p}+...+U_{m}^{p}\right) \\
 &  =p\cdot\underbrace{\dfrac{1}{p}\left(  \left(  U_{1}+U_{2}+...+U_{m}%
 \right)  ^{p}-\left(  U_{1}^{p}+U_{2}^{p}+...+U_{m}^{p}\right)  \right)
 }_{\substack{=Q\left(  X_{1},X_{2},...,X_{m}\right)  \\\text{(by
