@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, July 08, 2016 22:27:09}
+%TCIDATA{LastRevised=Friday, July 08, 2016 22:43:56}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -13748,8 +13748,8 @@ In order to prove this, we must verify that%
 =\operatorname*{coeff}\nolimits_{1}u+\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
 }v\in\Lambda\left(  K\right)  ;\label{sol.6.9.2}\\
-\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;
-\label{sol.6.9.3}\\
+\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;\label{sol.6.9.3}%
+\\
 \operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)   &
 =\operatorname*{coeff}\nolimits_{1}u\cdot\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
@@ -15248,15 +15248,15 @@ Since $\lambda^{n}\left(  x\right)  =\dbinom{x}{n}$ (since $\left(  K,\left(
 and $\lambda^{n-i}\left(  x\right)  =\dbinom{x}{n-i}$ for every $i\in\left\{
 1,2,...,n\right\}  $ (for the very same reason), this rewrites as%
 \begin{align*}
-n\dbinom{x}{n} &  =\sum_{i=1}^{n}\left(  -1\right)  ^{i-1}\dbinom{x}{n-i}%
-\psi^{i}\left(  x\right)  \\
+n\dbinom{x}{n}  &  =\sum_{i=1}^{n}\left(  -1\right)  ^{i-1}\dbinom{x}{n-i}%
+\psi^{i}\left(  x\right) \\
 &  =\sum_{i=1}^{n-1}\left(  -1\right)  ^{i-1}\dbinom{x}{n-i}\underbrace{\psi
 ^{i}}_{\substack{=\operatorname*{id}\\\text{(since }i<n\text{)}}}\left(
 x\right)  +\left(  -1\right)  ^{n-1}\underbrace{\dbinom{n}{n-n}}_{=\dbinom
-{n}{0}=1}\psi^{n}\left(  x\right)  \\
+{n}{0}=1}\psi^{n}\left(  x\right) \\
 &  =\sum_{i=1}^{n-1}\left(  -1\right)  ^{i-1}\dbinom{x}{n-i}%
 \underbrace{\operatorname*{id}\left(  x\right)  }_{=x}+\left(  -1\right)
-^{n-1}\psi^{n}\left(  x\right)  \\
+^{n-1}\psi^{n}\left(  x\right) \\
 &  =\sum_{i=1}^{n-1}\left(  -1\right)  ^{i-1}\dbinom{x}{n-i}x+\left(
 -1\right)  ^{n-1}\psi^{n}\left(  x\right)  .
 \end{align*}
@@ -15266,14 +15266,14 @@ checked independently.}%
 \begin{align*}
 &  \sum_{i=1}^{n-1}\left(  -1\right)  ^{i-1}\dbinom{x}{n-i}\\
 &  =\sum_{i=1}^{n-1}\left(  -1\right)  ^{i-1}\left(  \dbinom{x-1}{n-i}%
-+\dbinom{x-1}{n-i-1}\right)  \\
++\dbinom{x-1}{n-i-1}\right) \\
 &  \ \ \ \ \ \ \ \ \ \ \left(
 \begin{array}
 [c]{c}%
 \text{because }\dbinom{x}{n-i}=\dbinom{x-1}{n-i}+\dbinom{x-1}{n-i-1}\\
 \text{by the recurrence equation of the binomial coefficients}%
 \end{array}
-\right)  \\
+\right) \\
 &  =\sum_{i=1}^{n-1}\left(  -1\right)  ^{i-1}\dbinom{x-1}{n-i}+\sum
 _{i=1}^{n-1}\left(  -1\right)  ^{i-1}\dbinom{x-1}{n-i-1}\\
 &  =\sum_{i=1}^{n-1}\left(  -1\right)  ^{i-1}\dbinom{x-1}{n-i}+\sum_{i=2}%
@@ -15281,7 +15281,7 @@ _{i=1}^{n-1}\left(  -1\right)  ^{i-1}\dbinom{x-1}{n-i-1}\\
 -1\right)  ^{i-1}}\underbrace{\dbinom{x-1}{n-\left(  i-1\right)  -1}%
 }_{=\dbinom{x-1}{n-i}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{here, we substituted }i-1\text{ for
-}i\text{ in the second sum}\right)  \\
+}i\text{ in the second sum}\right) \\
 &  =\underbrace{\sum_{i=1}^{n-1}\left(  -1\right)  ^{i-1}\dbinom{x-1}{n-i}%
 }_{=\left(  -1\right)  ^{1-1}\dbinom{x-1}{n-1}+\sum\limits_{i=2}^{n-1}\left(
 -1\right)  ^{i-1}\dbinom{x-1}{n-i}}+\underbrace{\sum_{i=2}^{n}\left(  -\left(
@@ -15301,19 +15301,19 @@ _{i=1}^{n-1}\left(  -1\right)  ^{i-1}\dbinom{x-1}{n-i-1}\\
 \end{align*}
 this becomes%
 \begin{align*}
-n\dbinom{x}{n} &  =\left(  \dbinom{x-1}{n-1}-\left(  -1\right)  ^{n-1}\right)
-x+\left(  -1\right)  ^{n-1}\psi^{n}\left(  x\right)  \\
+n\dbinom{x}{n}  &  =\left(  \dbinom{x-1}{n-1}-\left(  -1\right)
+^{n-1}\right)  x+\left(  -1\right)  ^{n-1}\psi^{n}\left(  x\right) \\
 &  =\dbinom{x-1}{n-1}x-\left(  -1\right)  ^{n-1}x+\left(  -1\right)
 ^{n-1}\psi^{n}\left(  x\right)  .
 \end{align*}
 Since%
 \begin{align*}
-\dbinom{x-1}{n-1}x &  =\dfrac{\left(  x-1\right)  \cdot\left(  x-2\right)
+\dbinom{x-1}{n-1}x  &  =\dfrac{\left(  x-1\right)  \cdot\left(  x-2\right)
 \cdot...\cdot\left(  \left(  x-1\right)  -\left(  n-1\right)  +1\right)
 }{\left(  n-1\right)  !}x\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{because }\dbinom{x-1}{n-1}=\dfrac{\left(
 x-1\right)  \cdot\left(  x-2\right)  \cdot...\cdot\left(  \left(  x-1\right)
--\left(  n-1\right)  +1\right)  }{\left(  n-1\right)  !}\right)  \\
+-\left(  n-1\right)  +1\right)  }{\left(  n-1\right)  !}\right) \\
 &  =\dfrac{\left(  x-1\right)  \cdot\left(  x-2\right)  \cdot...\cdot\left(
 x-n+1\right)  }{\left(  n-1\right)  !}x=\dfrac{x\cdot\left(  \left(
 x-1\right)  \cdot\left(  x-2\right)  \cdot...\cdot\left(  x-n+1\right)
@@ -15322,7 +15322,7 @@ x-1\right)  \cdot\left(  x-2\right)  \cdot...\cdot\left(  x-n+1\right)
 }{\left(  n-1\right)  !}=\dfrac{x\cdot\left(  x-1\right)  \cdot...\cdot\left(
 x-n+1\right)  }{n!\diagup n}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\left(  n-1\right)  !=n!\diagup
-n\right)  \\
+n\right) \\
 &  =n\underbrace{\dfrac{x\cdot\left(  x-1\right)  \cdot...\cdot\left(
 x-n+1\right)  }{n!}}_{=\dbinom{x}{n}}=n\dbinom{x}{n},
 \end{align*}
@@ -15417,11 +15417,11 @@ By Theorem 2.1 \textbf{(b)}, we have $\lambda_{T}\left(  x\right)
 \nolimits_{-T}\left(  \lambda_{T}\left(  y\right)  \right)  }\\
 &  =\operatorname*{ev}\nolimits_{-T}\left(  \lambda_{T}\left(  x\right)
 \right)  \cdot\operatorname*{ev}\nolimits_{-T}\left(  \lambda_{T}\left(
-y\right)  \right)  =\operatorname*{ev}\nolimits_{-T}\left(
-\underbrace{\lambda_{T}\left(  x\right)  \cdot\lambda_{T}\left(  y\right)
-}_{=\lambda_{T}\left(  x+y\right)  }\right)  \ \ \ \ \ \ \ \ \ \ \left(
-\text{since }\operatorname*{ev}\nolimits_{-T}\text{ is a ring homomorphism}%
-\right) \\
+y\right)  \right)  \\
+&  =\operatorname*{ev}\nolimits_{-T}\left(  \underbrace{\lambda_{T}\left(
+x\right)  \cdot\lambda_{T}\left(  y\right)  }_{=\lambda_{T}\left(  x+y\right)
+}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\operatorname*{ev}%
+\nolimits_{-T}\text{ is a ring homomorphism}\right)  \\
 &  =\operatorname*{ev}\nolimits_{-T}\left(  \lambda_{T}\left(  x+y\right)
 \right)  =\lambda_{-T}\left(  x+y\right)  \ \ \ \ \ \ \ \ \ \ \left(
 \text{since }\lambda_{-T}\left(  x+y\right)  \text{ is defined as
@@ -15433,14 +15433,14 @@ Now,%
 \widetilde{\psi}_{T}\left(  x+y\right)   &  =-T\cdot\dfrac{d}{dT}%
 \log\underbrace{\lambda_{-T}\left(  x+y\right)  }_{=\lambda_{-T}\left(
 x\right)  \cdot\lambda_{-T}\left(  y\right)  }=-T\dfrac{d}{dT}\log\left(
-\lambda_{-T}\left(  x\right)  \cdot\lambda_{-T}\left(  y\right)  \right) \\
+\lambda_{-T}\left(  x\right)  \cdot\lambda_{-T}\left(  y\right)  \right)  \\
 &  =\underbrace{\left(  -T\dfrac{d}{dT}\log\lambda_{-T}\left(  x\right)
 \right)  }_{=\widetilde{\psi}_{T}\left(  x\right)  }+\underbrace{\left(
 -T\dfrac{d}{dT}\log\lambda_{-T}\left(  y\right)  \right)  }_{=\widetilde{\psi
 }_{T}\left(  y\right)  }\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{9.ex5.s1}), applied to
 }u=\lambda_{-T}\left(  x\right)  \text{ and }v=\lambda_{-T}\left(  y\right)
-\right) \\
+\right)  \\
 &  =\widetilde{\psi}_{T}\left(  x\right)  +\widetilde{\psi}_{T}\left(
 y\right)  .
 \end{align*}
@@ -15595,20 +15595,21 @@ holds. Applying $\varrho$ to both sides of the equation, we get $\varrho
 -1\right)  ^{i-1}\alpha_{n-i}N_{i}\right)  $. Since%
 \begin{align*}
 \varrho\left(  n\alpha_{n}\right)   &  =n\underbrace{\varrho\left(  \alpha
-_{n}\right)  }_{=\lambda^{n}\left(  x\right)  \text{ (by (\ref{9.6.sol.1}))}%
-}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\varrho\text{ is a }\mathbb{Z}%
-\text{-algebra homomorphism}\right) \\
+_{n}\right)  }_{\substack{=\lambda^{n}\left(  x\right)  \\\text{(by
+(\ref{9.6.sol.1}))}}}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\varrho\text{ is
+a }\mathbb{Z}\text{-algebra homomorphism}\right)  \\
 &  =n\lambda^{n}\left(  x\right)
 \end{align*}
 and%
 \begin{align*}
 \varrho\left(  \sum\limits_{i=1}^{n}\left(  -1\right)  ^{i-1}\alpha_{n-i}%
 N_{i}\right)   &  =\sum\limits_{i=1}^{n}\left(  -1\right)  ^{i-1}%
-\underbrace{\varrho\left(  \alpha_{n-i}\right)  }_{=\lambda^{n-i}\left(
-x\right)  \text{ (by (\ref{9.6.sol.1}))}}\underbrace{\varrho\left(
-N_{i}\right)  }_{=\psi^{i}\left(  x\right)  \text{ (by (\ref{9.6.sol.1}))}}\\
+\underbrace{\varrho\left(  \alpha_{n-i}\right)  }_{\substack{=\lambda
+^{n-i}\left(  x\right)  \\\text{(by (\ref{9.6.sol.1}))}}}\underbrace{\varrho
+\left(  N_{i}\right)  }_{\substack{=\psi^{i}\left(  x\right)  \\\text{(by
+(\ref{9.6.sol.1}))}}}\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\varrho\text{ is a }%
-\mathbb{Z}\text{-algebra homomorphism}\right) \\
+\mathbb{Z}\text{-algebra homomorphism}\right)  \\
 &  =\sum\limits_{i=1}^{n}\left(  -1\right)  ^{i-1}\lambda^{n-i}\left(
 x\right)  \psi^{i}\left(  x\right)  ,
 \end{align*}
