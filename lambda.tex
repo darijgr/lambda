@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Saturday, July 16, 2016 13:45:20}
+%TCIDATA{LastRevised=Sunday, October 16, 2016 21:31:53}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -3103,8 +3103,6 @@ Then,%
 \right)  .
 \]
 
-
-
 \end{quote}
 
 \begin{proof}
@@ -5898,8 +5896,6 @@ $u_{m}$ be $1$-dimensional elements of $K$. Let $j\in\mathbb{N}\setminus
 \psi^{j}\left(  u_{1}+u_{2}+...+u_{m}\right)  =u_{1}^{j}+u_{2}^{j}%
 +...+u_{m}^{j}.
 \]
-
-
 
 \end{quote}
 
@@ -10980,8 +10976,8 @@ K\diagup I\text{ and }y\in K\diagup I\right)  \label{2.3.sol.3}%
 \footnote{\textit{Proof of (\ref{2.3.sol.3}):} Let $x\in K\diagup I$, $y\in
 K\diagup I$ and $k\in\mathbb{N}$.
 \par
-Let $u$ be an element of $K$ satisfying $\overline{u}=x$. (Such a $u$ clearly
-exists.) Let $v$ be an element of $K$ satisfying $\overline{v}=y$.
+Pick any $u\in K$ satisfying $\overline{u}=x$. (Such a $u$ clearly exists.)
+Pick any $v\in K$ satisfying $\overline{v}=y$. (Such a $v$ clearly exists.)
 \par
 Let $i\in\left\{  0,1,...,k\right\}  $.
 \par
@@ -10999,13 +10995,13 @@ $\widetilde{\lambda}^{k-i}\left(  y\right)  $ is defined as $\overline
 $\overline{w}=y$. Thus, $\widetilde{\lambda}^{k-i}\left(  y\right)
 =\overline{\lambda^{k-i}\left(  w\right)  }$ for every $w\in K$ satisfying
 $\overline{w}=y$. Applied to $w=v$, this yields $\widetilde{\lambda}%
-^{k-i}\left(  x\right)  =\overline{\lambda^{k-i}\left(  v\right)  }$ (since
+^{k-i}\left(  y\right)  =\overline{\lambda^{k-i}\left(  v\right)  }$ (since
 $\overline{v}=y$).
 \par
 Now forget that we fixed $i\in\left\{  0,1,...,k\right\}  $. We thus have
 shown that every $i\in\left\{  0,1,...,k\right\}  $ satisfies
 $\widetilde{\lambda}^{i}\left(  x\right)  =\overline{\lambda^{i}\left(
-u\right)  }$ and $\widetilde{\lambda}^{k-i}\left(  x\right)  =\overline
+u\right)  }$ and $\widetilde{\lambda}^{k-i}\left(  y\right)  =\overline
 {\lambda^{k-i}\left(  v\right)  }$. Thus,%
 \[
 \sum_{i=0}^{k}\underbrace{\widetilde{\lambda}^{i}\left(  x\right)
@@ -11019,9 +11015,9 @@ u\right)  }$ and $\widetilde{\lambda}^{k-i}\left(  x\right)  =\overline
 By the definition of $\widetilde{\lambda}^{k}$, the value $\widetilde{\lambda
 }^{k}\left(  x+y\right)  $ is defined as $\overline{\lambda^{k}\left(
 w\right)  }$, where $w$ is an element of $K$ satisfying $\overline{w}=x+y$.
-Thus, $\widetilde{\lambda}^{k}\left(  x\right)  =\overline{\lambda^{k}\left(
-w\right)  }$ for every $w\in K$ satisfying $\overline{w}=x+y$. Applied to
-$w=u+v$, this yields $\widetilde{\lambda}^{k}\left(  x+y\right)
+Thus, $\widetilde{\lambda}^{k}\left(  x+y\right)  =\overline{\lambda
+^{k}\left(  w\right)  }$ for every $w\in K$ satisfying $\overline{w}=x+y$.
+Applied to $w=u+v$, this yields $\widetilde{\lambda}^{k}\left(  x+y\right)
 =\overline{\lambda^{k}\left(  u+v\right)  }$ (since $\overline{u+v}%
 =\underbrace{\overline{u}}_{=x}+\underbrace{\overline{v}}_{=y}=x+y$). Thus,%
 \begin{align*}
@@ -11369,18 +11365,18 @@ x\right)  T^{i}\ \ \ \ \ \ \ \ \ \ \text{for every }x\in K\right)  .
 Then,
 \begin{equation}
 \lambda_{T}\left(  x\right)  =\left(  1+pT\right)  ^{x}%
-\ \ \ \ \ \ \ \ \ \ \text{for every }x\in K \label{sol.3.3.a.1}%
+\ \ \ \ \ \ \ \ \ \ \text{for every }x\in K\label{sol.3.3.a.1}%
 \end{equation}
 \footnote{\textit{Proof of (\ref{sol.3.3.a.1}):} Fix $x\in K$. Then,
 $\lambda_{T}\left(  x\right)  =\sum_{i\in\mathbb{N}}\lambda^{i}\left(
 x\right)  T^{i}$. Hence, for every $i\in\mathbb{N}$, we have%
 \begin{align*}
 &  \left(  \text{the coefficient of }T^{i}\text{ in the power series }%
-\lambda_{T}\left(  x\right)  \right) \\
+\lambda_{T}\left(  x\right)  \right)  \\
 &  =\lambda^{i}\left(  x\right)  =\left(  \text{the coefficient of the power
-series }\left(  1+pT\right)  ^{x}\text{ before }T^{i}\right) \\
+series }\left(  1+pT\right)  ^{x}\text{ before }T^{i}\right)  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{by the definition of }\lambda^{i}\left(
-x\right)  \right) \\
+x\right)  \right)  \\
 &  =\left(  \text{the coefficient of }T^{i}\text{ in the power series }\left(
 1+pT\right)  ^{x}\right)  .
 \end{align*}
@@ -11394,7 +11390,7 @@ $, so that $p-1\in TK\left[  \left[  T\right]  \right]  $. Hence,
 $pT-T=T\underbrace{\left(  p-1\right)  }_{\in TK\left[  \left[  T\right]
 \right]  }\in TTK\left[  \left[  T\right]  \right]  =T^{2}K\left[  \left[
 T\right]  \right]  $. In other words, $pT\equiv T\operatorname{mod}%
-T^{2}K\left[  \left[  T\right]  \right]  $
+T^{2}K\left[  \left[  T\right]  \right]  $.
 \par
 Now, (\ref{sol.3.3.a.1}) yields
 \begin{align*}
@@ -15176,7 +15172,7 @@ $\det\left(  A_{n}\left[  \dfrac{\sim k}{\sim n}\right]  \right)  =\det
 A_{k-1}\cdot\left(  k\left(  k+1\right)  ...\left(  n-1\right)  \right)  $
 (since the determinant of any block-triangular matrix is known to equal the
 product of the determinant of its diagonal blocks\footnote{See \cite[Exercise
-44]{Grin-detn} for a proof of this statement (at least in the case of a
+48]{Grin-detn} for a proof of this statement (at least in the case of a
 block-triangular matrix with four blocks; but this is precisely the case which
 we are using).}). Since we are proceeding by induction over $n$, we can take
 $\det A_{k-1}=\left(  k-1\right)  !\lambda^{k-1}\left(  x\right)  $ for
@@ -16230,9 +16226,9 @@ York 1985.
 series}.\newline\url{http://www.cip.ifi.lmu.de/~grinberg/algebra/witt4a.pdf}
 
 \bibitem[Grin-detn]{Grin-detn}Darij Grinberg, \textit{Notes on the
-combinatorial fundamentals of algebra}, version of 29 May 2016.\newline%
-\url{https://github.com/darijgr/detnotes/releases/tag/2016-05-29}\newline(This
-is the URL of the frozen version of 29 May 2016, guaranteed to have its
+combinatorial fundamentals of algebra}, version of 15 October 2016.\newline%
+\url{https://github.com/darijgr/detnotes/releases/tag/2016-10-15}\newline(This
+is the URL of the frozen version of 15 October 2016, guaranteed to have its
 numbering match the references above. For a version which is getting updated,
 see \url{http://web.mit.edu/~darij/www/primes2015/sols.pdf} .)
 
