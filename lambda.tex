@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Sunday, October 30, 2016 19:46:13}
+%TCIDATA{LastRevised=Wednesday, November 02, 2016 19:58:54}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -9180,8 +9180,8 @@ This proves Lemma 10.17.
 \subsection{Preparing for the proof of Theorem 10.16: some trivial
 functoriality facts}
 
-We next have to will derive Theorem 10.16 from Lemma 10.17. This requires a
-very easy proposition and its corollary:
+We will eventually derive Theorem 10.16 from Lemma 10.17. This requires a very
+easy proposition and its corollary:
 
 \begin{quote}
 \textbf{Proposition 10.21.} Let $\mathbf{Z}$ and $\mathbf{Z}^{\prime}$ be two
@@ -9847,11 +9847,11 @@ T^{i}\right)  =\operatorname*{Td}\nolimits_{\varphi,j}\underbrace{\left(
 X_{1},X_{2},...,X_{j}\right)  }_{=\left(  U_{1},0,0,...,0\right)  }\\
 &  =\operatorname*{Td}\nolimits_{\varphi,j}\left(  U_{1},0,0,...,0\right)  .
 \end{align*}
-Combined with%
+Compared with%
 \begin{align*}
 \operatorname*{Coeff}\nolimits_{j}\left(  \varphi\left(  U_{1}T\right)
 \right)   &  =\left(  \text{the coefficient of the power series }%
-\varphi\left(  U_{1}T\right)  \text{ before }T^{j}\right) \\
+\varphi\left(  U_{1}T\right)  \text{ before }T^{j}\right)  \\
 &  =U_{1}^{j}\underbrace{\left(  \text{the coefficient of the power series
 }\varphi\text{ before }t^{j}\right)  }_{=\varphi_{j}}=U_{1}^{j}\varphi
 _{j}=\varphi_{j}U_{1}^{j},
@@ -9911,10 +9911,13 @@ On the other hand, $\left(  \operatorname*{Coeff}\nolimits_{2}%
 p,\operatorname*{Coeff}\nolimits_{3}p,...,\operatorname*{Coeff}\nolimits_{j}%
 p\right)  =\left(  0,0,...,0\right)  $ (since $\operatorname*{Coeff}%
 \nolimits_{i}p=0$ for every integer $i>1$). Combining this with
-$\operatorname*{Coeff}\nolimits_{1}p=u$, we obtain $\left(
-\operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
-p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  =\left(  u,0,0,...,0\right)
-$. Thus,%
+$\operatorname*{Coeff}\nolimits_{1}p=u$, we obtain%
+\[
+\left(  \operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}%
+\nolimits_{2}p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  =\left(
+u,0,0,...,0\right)  .
+\]
+Thus,%
 \[
 \operatorname*{Td}\nolimits_{\varphi,j}\underbrace{\left(
 \operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
@@ -9924,10 +9927,9 @@ u,0,0,...,0\right)  =\varphi_{j}u^{j}.
 \]
 
 
-Now forget that we fixed $j\in\mathbb{N}$. By (\ref{ToddFrak}) (applied to
-$p=1+uT$), we have%
+Now forget that we fixed $j\in\mathbb{N}$. By (\ref{ToddFrak}), we have%
 \[
-\mathfrak{Todd}_{\varphi}\left(  1+uT\right)  =\sum\limits_{j\in\mathbb{N}%
+\mathfrak{Todd}_{\varphi}\left(  p\right)  =\sum\limits_{j\in\mathbb{N}%
 }\underbrace{\operatorname*{Td}\nolimits_{\varphi,j}\left(
 \operatorname*{Coeff}\nolimits_{1}p,\operatorname*{Coeff}\nolimits_{2}%
 p,...,\operatorname*{Coeff}\nolimits_{j}p\right)  }_{=\varphi_{j}u^{j}}%
@@ -9940,9 +9942,11 @@ On the other hand, $\varphi=\sum\limits_{j\in\mathbb{N}}\varphi_{j}t^{j}$
 $\varphi_{j}$ for every $j\in\mathbb{N}$) and thus $\varphi\left(  uT\right)
 =\sum\limits_{j\in\mathbb{N}}\varphi_{j}\left(  uT\right)  ^{j}$.
 
-Altogether, $\mathfrak{Todd}_{\varphi}\left(  1+uT\right)  =\sum
-\limits_{j\in\mathbb{N}}\varphi_{j}\left(  uT\right)  ^{j}=\varphi\left(
-uT\right)  $. This proves Proposition 10.26.
+Altogether, $\mathfrak{Todd}_{\varphi}\left(  p\right)  =\sum\limits_{j\in
+\mathbb{N}}\varphi_{j}\left(  uT\right)  ^{j}=\varphi\left(  uT\right)  $.
+Since $1+uT=p$, we have $\mathfrak{Todd}_{\varphi}\left(  1+uT\right)
+=\mathfrak{Todd}_{\varphi}\left(  p\right)  =\varphi\left(  uT\right)  $. This
+proves Proposition 10.26.
 \end{proof}
 
 \begin{proof}
@@ -13776,8 +13780,8 @@ In order to prove this, we must verify that%
 =\operatorname*{coeff}\nolimits_{1}u+\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
 }v\in\Lambda\left(  K\right)  ;\label{sol.6.9.2}\\
-\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;
-\label{sol.6.9.3}\\
+\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;\label{sol.6.9.3}%
+\\
 \operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)   &
 =\operatorname*{coeff}\nolimits_{1}u\cdot\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
