@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Friday, December 23, 2016 01:37:28}
+%TCIDATA{LastRevised=Wednesday, February 15, 2017 01:56:03}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -4237,11 +4237,11 @@ to work with. In order to check that some given ring is a special $\lambda
 $-ring using Theorem 6.1, we would have to prove the identities (\ref{Lkxy})
 and (\ref{LkLjx}), which is a difficult task since the polynomials $P_{k}$ and
 $P_{k,j}$ are very hard to compute explicitly. Using the definition that we
-gave, we would have to check that $\lambda_{T}:\left(  K,\left(  \lambda
-^{i}\right)  _{i\in\mathbb{N}}\right)  \rightarrow\left(  \Lambda\left(
-K\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  $
-is a $\lambda$-ring homomorphism, what seems to be harder, but turns out not
-that hard since Exercise 2.1 reduces this to checking some identity at
+gave, we would instead have to check that $\lambda_{T}:\left(  K,\left(
+\lambda^{i}\right)  _{i\in\mathbb{N}}\right)  \rightarrow\left(
+\Lambda\left(  K\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in
+\mathbb{N}}\right)  $ is a $\lambda$-ring homomorphism, and this is often
+easier since Exercise 2.1 reduces this to checking some identity at
 $\mathbb{Z}$-module generators of $K$.
 
 \subsection{Exercises}
@@ -7605,13 +7605,6 @@ X_{j}u^{j}=\operatorname*{Td}\nolimits_{1+ut,j}\left(  X_{1},X_{2}%
 \]
 
 
-Let $\mathfrak{Q}_{1}\in\mathbf{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
-_{j}\right]  $ be the polynomial defined by $\mathfrak{Q}_{1}=u^{j}\alpha_{j}%
-$. Let $\mathfrak{Q}_{2}\in\mathbf{Z}\left[  \alpha_{1},\alpha_{2}%
-,...,\alpha_{j}\right]  $ be the polynomial defined by $\mathfrak{Q}%
-_{2}=\operatorname*{Td}\nolimits_{1+ut,j}$. We are now going to prove that
-$\mathfrak{Q}_{1}=\mathfrak{Q}_{2}$.
-
 Applying Theorem 4.1 \textbf{(a)} to $K=\mathbf{Z}$, $m=j$ and $P=X_{j}u^{j}$,
 we conclude that there exists one and only one polynomial $Q\in\mathbf{Z}%
 \left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  $ such that $X_{j}%
@@ -7630,15 +7623,22 @@ _{2},...,\alpha_{j}\right]  \text{ and }\mathfrak{Q}_{2}\in\mathbf{Z}\left[
 ,...,X_{j}\right)  \text{,}\\
 \text{then }\mathfrak{Q}_{1}=\mathfrak{Q}_{2}%
 \end{array}
-\right)  . \label{10.4.pf.1}%
+\right)  .\label{10.4.pf.1}%
 \end{equation}
 
+
+Let $\mathfrak{Q}_{1}\in\mathbf{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
+_{j}\right]  $ be the polynomial defined by $\mathfrak{Q}_{1}=u^{j}\alpha_{j}%
+$. Let $\mathfrak{Q}_{2}\in\mathbf{Z}\left[  \alpha_{1},\alpha_{2}%
+,...,\alpha_{j}\right]  $ be the polynomial defined by $\mathfrak{Q}%
+_{2}=\operatorname*{Td}\nolimits_{1+ut,j}$. We are now going to prove that
+$\mathfrak{Q}_{1}=\mathfrak{Q}_{2}$.
 
 Since our two polynomials $\mathfrak{Q}_{1}$ and $\mathfrak{Q}_{2}$ satisfy%
 \begin{align*}
 \mathfrak{Q}_{1}\left(  X_{1},X_{2},...,X_{j}\right)   &  =u^{j}%
 X_{j}\ \ \ \ \ \ \ \ \ \ \left(  \text{since }\mathfrak{Q}_{1}=u^{j}\alpha
-_{j}\right) \\
+_{j}\right)  \\
 &  =X_{j}u^{j}%
 \end{align*}
 and%
@@ -7646,7 +7646,7 @@ and%
 \mathfrak{Q}_{2}\left(  X_{1},X_{2},...,X_{j}\right)   &  =\operatorname*{Td}%
 \nolimits_{1+ut,j}\left(  X_{1},X_{2},...,X_{j}\right)
 \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\mathfrak{Q}_{2}=\operatorname*{Td}%
-\nolimits_{1+ut,j}\right) \\
+\nolimits_{1+ut,j}\right)  \\
 &  =X_{j}u^{j},
 \end{align*}
 we can conclude from (\ref{10.4.pf.1}) that $\mathfrak{Q}_{1}=\mathfrak{Q}%
@@ -8027,17 +8027,6 @@ Fix some $j\in\mathbb{N}$. Let $m=j$. We are going to work in the ring
 $\mathbf{Z}\left[  U_{1},U_{2},...,U_{m}\right]  =\mathbf{Z}\left[
 U_{1},U_{2},...,U_{j}\right]  $.
 
-Let $\mathfrak{Q}_{1}\in\mathbf{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
-_{j}\right]  $ be the polynomial defined by $\mathfrak{Q}_{1}%
-=\operatorname*{Td}\nolimits_{\varphi\psi,j}\left(  \alpha_{1},\alpha
-_{2},...,\alpha_{j}\right)  $. Let $\mathfrak{Q}_{2}\in\mathbf{Z}\left[
-\alpha_{1},\alpha_{2},...,\alpha_{j}\right]  $ be the polynomial defined by
-$\mathfrak{Q}_{2}=\sum\limits_{i=0}^{j}\operatorname*{Td}\nolimits_{\varphi
-,i}\left(  \alpha_{1},\alpha_{2},...,\alpha_{i}\right)  \cdot
-\operatorname*{Td}\nolimits_{\psi,j-i}\left(  \alpha_{1},\alpha_{2}%
-,...,\alpha_{j-i}\right)  $. We are now going to prove that $\mathfrak{Q}%
-_{1}=\mathfrak{Q}_{2}$.
-
 Applying Theorem 4.1 \textbf{(a)} to $K=\mathbf{Z}$, $m=j$ and
 $P=\operatorname*{Td}\nolimits_{\varphi\psi,j}\left(  X_{1},X_{2}%
 ,...,X_{j}\right)  $, we conclude that there exists one and only one
@@ -8060,9 +8049,20 @@ X_{1},X_{2},...,X_{j}\right)  =\mathfrak{Q}_{1}\left(  X_{1},X_{2}%
 \right)  =\mathfrak{Q}_{2}\left(  X_{1},X_{2},...,X_{j}\right)  \text{, then
 }\mathfrak{Q}_{1}=\mathfrak{Q}_{2}%
 \end{array}
-\right)  . \label{10.8.pf.2}%
+\right)  .\label{10.8.pf.2}%
 \end{equation}
 
+
+Let $\mathfrak{Q}_{1}\in\mathbf{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
+_{j}\right]  $ be the polynomial defined by $\mathfrak{Q}_{1}%
+=\operatorname*{Td}\nolimits_{\varphi\psi,j}\left(  \alpha_{1},\alpha
+_{2},...,\alpha_{j}\right)  $. Let $\mathfrak{Q}_{2}\in\mathbf{Z}\left[
+\alpha_{1},\alpha_{2},...,\alpha_{j}\right]  $ be the polynomial defined by
+$\mathfrak{Q}_{2}=\sum\limits_{i=0}^{j}\operatorname*{Td}\nolimits_{\varphi
+,i}\left(  \alpha_{1},\alpha_{2},...,\alpha_{i}\right)  \cdot
+\operatorname*{Td}\nolimits_{\psi,j-i}\left(  \alpha_{1},\alpha_{2}%
+,...,\alpha_{j-i}\right)  $. We are now going to prove that $\mathfrak{Q}%
+_{1}=\mathfrak{Q}_{2}$.
 
 Since our two polynomials $\mathfrak{Q}_{1}$ and $\mathfrak{Q}_{2}$ satisfy%
 \[
@@ -8854,20 +8854,14 @@ Thus,%
 We will now use this to prove $\operatorname*{Td}\nolimits_{\varphi
 ,m}=\operatorname*{Td}\nolimits_{\psi,m}$.
 
-In fact, let $\mathfrak{Q}_{1}\in K\left[  \alpha_{1},\alpha_{2}%
-,...,\alpha_{m}\right]  $ be the polynomial defined by $\mathfrak{Q}%
-_{1}=\operatorname*{Td}\nolimits_{\varphi,m}$. Let $\mathfrak{Q}_{2}\in
-K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $ be the polynomial
-defined by $\mathfrak{Q}_{2}=\operatorname*{Td}\nolimits_{\psi,m}$. We are now
-going to prove that $\mathfrak{Q}_{1}=\mathfrak{Q}_{2}$.
-
-Applying Theorem 4.1 \textbf{(a)} to $\operatorname*{Td}\nolimits_{\varphi
-,m}\left(  X_{1},X_{2},...,X_{m}\right)  $ instead of $P$, we conclude that
-there exists one and only one polynomial $Q\in K\left[  \alpha_{1},\alpha
-_{2},...,\alpha_{m}\right]  $ such that $\operatorname*{Td}\nolimits_{\varphi
-,m}\left(  X_{1},X_{2},...,X_{m}\right)  =Q\left(  X_{1},X_{2},...,X_{m}%
-\right)  $. In particular, there exists \textit{at most one} such polynomial
-$Q\in K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $. Hence,
+In fact, applying Theorem 4.1 \textbf{(a)} to $\operatorname*{Td}%
+\nolimits_{\varphi,m}\left(  X_{1},X_{2},...,X_{m}\right)  $ instead of $P$,
+we conclude that there exists one and only one polynomial $Q\in K\left[
+\alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $ such that $\operatorname*{Td}%
+\nolimits_{\varphi,m}\left(  X_{1},X_{2},...,X_{m}\right)  =Q\left(
+X_{1},X_{2},...,X_{m}\right)  $. In particular, there exists \textit{at most
+one} such polynomial $Q\in K\left[  \alpha_{1},\alpha_{2},...,\alpha
+_{m}\right]  $. Hence,
 \begin{equation}
 \left(
 \begin{array}
@@ -8882,9 +8876,16 @@ _{2},...,\alpha_{m}\right]  \text{ are two polynomials}\\
 =\mathfrak{Q}_{2}\left(  X_{1},X_{2},...,X_{m}\right)  \text{, then
 }\mathfrak{Q}_{1}=\mathfrak{Q}_{2}%
 \end{array}
-\right)  . \label{10.11.pf.1}%
+\right)  .\label{10.11.pf.1}%
 \end{equation}
 
+
+Let $\mathfrak{Q}_{1}\in K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]
+$ be the polynomial defined by $\mathfrak{Q}_{1}=\operatorname*{Td}%
+\nolimits_{\varphi,m}$. Let $\mathfrak{Q}_{2}\in K\left[  \alpha_{1}%
+,\alpha_{2},...,\alpha_{m}\right]  $ be the polynomial defined by
+$\mathfrak{Q}_{2}=\operatorname*{Td}\nolimits_{\psi,m}$. We are now going to
+prove that $\mathfrak{Q}_{1}=\mathfrak{Q}_{2}$.
 
 Since our two polynomials $\mathfrak{Q}_{1}$ and $\mathfrak{Q}_{2}$ satisfy%
 \[
@@ -8898,7 +8899,7 @@ and%
 \mathfrak{Q}_{2}\left(  X_{1},X_{2},...,X_{m}\right)   &  =\operatorname*{Td}%
 \nolimits_{\psi,m}\left(  X_{1},X_{2},...,X_{m}\right)
 \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\mathfrak{Q}_{2}=\operatorname*{Td}%
-\nolimits_{\psi,m}\right) \\
+\nolimits_{\psi,m}\right)  \\
 &  =\operatorname*{Td}\nolimits_{\varphi,m}\left(  X_{1},X_{2},...,X_{m}%
 \right)  ,
 \end{align*}
@@ -9417,16 +9418,6 @@ this yields%
 \end{equation}
 
 
-Let $\mathfrak{Q}_{1}\in\mathbf{Z}^{\prime}\left[  \alpha_{1},\alpha
-_{2},...,\alpha_{j}\right]  $ be the polynomial defined by $\mathfrak{Q}%
-_{1}=\operatorname*{Td}\nolimits_{\left(  \rho\left[  \left[  t\right]
-\right]  \right)  \left(  \varphi\right)  ,j}$. Let $\mathfrak{Q}_{2}%
-\in\mathbf{Z}^{\prime}\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  $
-be the polynomial defined by $\mathfrak{Q}_{2}=\rho\left[  \alpha_{1}%
-,\alpha_{2},...,\alpha_{j}\right]  \left(  \operatorname*{Td}%
-\nolimits_{\varphi,j}\right)  $. We are now going to prove that $\mathfrak{Q}%
-_{1}=\mathfrak{Q}_{2}$.
-
 Applying Theorem 4.1 \textbf{(a)} to $K=\mathbf{Z}^{\prime}$, $m=j$ and
 $P=\operatorname*{Td}\nolimits_{\left(  \rho\left[  \left[  t\right]  \right]
 \right)  \left(  \varphi\right)  ,j}\left(  X_{1},X_{2},...,X_{j}\right)  $,
@@ -9454,9 +9445,19 @@ t\right]  \right]  \right)  \left(  \varphi\right)  ,j}\left(  X_{1}%
 =\mathfrak{Q}_{2}\left(  X_{1},X_{2},...,X_{j}\right)  \text{, then
 }\mathfrak{Q}_{1}=\mathfrak{Q}_{2}%
 \end{array}
-\right)  . \label{10.21.pf.1}%
+\right)  .\label{10.21.pf.1}%
 \end{equation}
 
+
+Let $\mathfrak{Q}_{1}\in\mathbf{Z}^{\prime}\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{j}\right]  $ be the polynomial defined by $\mathfrak{Q}%
+_{1}=\operatorname*{Td}\nolimits_{\left(  \rho\left[  \left[  t\right]
+\right]  \right)  \left(  \varphi\right)  ,j}$. Let $\mathfrak{Q}_{2}%
+\in\mathbf{Z}^{\prime}\left[  \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  $
+be the polynomial defined by $\mathfrak{Q}_{2}=\rho\left[  \alpha_{1}%
+,\alpha_{2},...,\alpha_{j}\right]  \left(  \operatorname*{Td}%
+\nolimits_{\varphi,j}\right)  $. We are now going to prove that $\mathfrak{Q}%
+_{1}=\mathfrak{Q}_{2}$.
 
 Since our two polynomials $\mathfrak{Q}_{1}$ and $\mathfrak{Q}_{2}$ satisfy%
 \[
@@ -9471,12 +9472,13 @@ and%
 \begin{align*}
 \mathfrak{Q}_{2}\left(  X_{1},X_{2},...,X_{j}\right)   &  =\left(  \rho\left[
 \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  \left(  \operatorname*{Td}%
-\nolimits_{\varphi,j}\right)  \right)  \left(  X_{1},X_{2},...,X_{j}\right) \\
+\nolimits_{\varphi,j}\right)  \right)  \left(  X_{1},X_{2},...,X_{j}\right)
+\\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\mathfrak{Q}_{2}=\rho\left[
 \alpha_{1},\alpha_{2},...,\alpha_{j}\right]  \left(  \operatorname*{Td}%
-\nolimits_{\varphi,j}\right)  \right) \\
+\nolimits_{\varphi,j}\right)  \right)  \\
 &  =\rho\left[  U_{1},U_{2},...,U_{m}\right]  \left(  \operatorname*{Td}%
-\nolimits_{\varphi,j}\left(  X_{1},X_{2},...,X_{j}\right)  \right) \\
+\nolimits_{\varphi,j}\left(  X_{1},X_{2},...,X_{j}\right)  \right)  \\
 &  =\operatorname*{Td}\nolimits_{\left(  \rho\left[  \left[  t\right]
 \right]  \right)  \left(  \varphi\right)  ,j}\left(  X_{1},X_{2}%
 ,...,X_{j}\right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{by (\ref{10.21.pf.5}%
@@ -11938,9 +11940,9 @@ S}a_{I}. \label{4.4.sol.1}%
 finite set, and let $a_{I}$ be an element of $A$ for every $I\in F$. We must
 prove (\ref{4.4.sol.1}).
 \par
-Clearly, the set $F$ is used only for indexing in (\ref{4.4.sol.1}). Hence, we
-can WLOG assume that $F=\left\{  1,2,...,n\right\}  $ for some $n\in
-\mathbb{N}$. Assume this, and consider this $n$.
+The set $F$ is used only for indexing in (\ref{4.4.sol.1}). Hence, we can WLOG
+assume that $F=\left\{  1,2,...,n\right\}  $ for some $n\in\mathbb{N}$. Assume
+this, and consider this $n$.
 \par
 Since $F=\left\{  1,2,...,n\right\}  $, we have $\sum\limits_{I\in F}%
 a_{I}=\sum\limits_{I\in\left\{  1,2,...,n\right\}  }a_{I}=a_{1}+a_{2}%
@@ -12208,21 +12210,13 @@ This proves the 1st Step.
 \textit{2nd Step:} Let us now prove $P_{2,j}=\sum\limits_{i=0}^{j-1}\left(
 -1\right)  ^{i+j-1}\alpha_{i}\alpha_{2j-i}$ now.
 
-\textit{Proof.} Let $m=2j$. Define a polynomial $\mathfrak{Q}_{1}\in
-\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $ by
-$\mathfrak{Q}_{1}=P_{2,j}$, and define a polynomial $\mathfrak{Q}_{2}%
-\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $ by
-$\mathfrak{Q}_{2}=\sum\limits_{i=0}^{j-1}\left(  -1\right)  ^{i+j-1}\alpha
-_{i}\alpha_{2j-i}$. We are going to prove that $\mathfrak{Q}_{1}%
-=\mathfrak{Q}_{2}$.
-
-Applying Theorem 4.1 \textbf{(a)} to $K=\mathbb{Z}$ and $P=P_{2,j}\left(
-X_{1},X_{2},...,X_{2j}\right)  $, we conclude that there exists one and only
-one polynomial $Q\in\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha
-_{m}\right]  $ such that $P_{2,j}\left(  X_{1},X_{2},...,X_{2j}\right)
-=Q\left(  X_{1},X_{2},...,X_{m}\right)  $. In particular, there exists
-\textit{at most one} such polynomial $Q\in\mathbb{Z}\left[  \alpha_{1}%
-,\alpha_{2},...,\alpha_{m}\right]  $. Hence,
+\textit{Proof.} Let $m=2j$. Applying Theorem 4.1 \textbf{(a)} to
+$K=\mathbb{Z}$ and $P=P_{2,j}\left(  X_{1},X_{2},...,X_{2j}\right)  $, we
+conclude that there exists one and only one polynomial $Q\in\mathbb{Z}\left[
+\alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $ such that $P_{2,j}\left(
+X_{1},X_{2},...,X_{2j}\right)  =Q\left(  X_{1},X_{2},...,X_{m}\right)  $. In
+particular, there exists \textit{at most one} such polynomial $Q\in
+\mathbb{Z}\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $. Hence,
 \begin{equation}
 \left(
 \begin{array}
@@ -12235,9 +12229,16 @@ _{1}\left(  X_{1},X_{2},...,X_{m}\right)  \text{ and}\\
 P_{2,j}\left(  X_{1},X_{2},...,X_{2j}\right)  =\mathfrak{Q}_{2}\left(
 X_{1},X_{2},...,X_{m}\right)  \text{, then }\mathfrak{Q}_{1}=\mathfrak{Q}_{2}%
 \end{array}
-\right)  . \label{4.4.sol.15}%
+\right)  .\label{4.4.sol.15}%
 \end{equation}
 
+
+Define a polynomial $\mathfrak{Q}_{1}\in\mathbb{Z}\left[  \alpha_{1}%
+,\alpha_{2},...,\alpha_{m}\right]  $ by $\mathfrak{Q}_{1}=P_{2,j}$, and define
+a polynomial $\mathfrak{Q}_{2}\in\mathbb{Z}\left[  \alpha_{1},\alpha
+_{2},...,\alpha_{m}\right]  $ by $\mathfrak{Q}_{2}=\sum\limits_{i=0}%
+^{j-1}\left(  -1\right)  ^{i+j-1}\alpha_{i}\alpha_{2j-i}$. We are going to
+prove that $\mathfrak{Q}_{1}=\mathfrak{Q}_{2}$.
 
 Since our two polynomials $\mathfrak{Q}_{1}$ and $\mathfrak{Q}_{2}$ satisfy%
 \[
@@ -12249,10 +12250,11 @@ and%
 \begin{align*}
 \mathfrak{Q}_{2}\left(  X_{1},X_{2},...,X_{m}\right)   &  =\left(
 \sum\limits_{i=0}^{j-1}\left(  -1\right)  ^{i+j-1}\alpha_{i}\alpha
-_{2j-i}\right)  \left(  X_{1},X_{2},...,X_{j}\right) \\
+_{2j-i}\right)  \left(  X_{1},X_{2},...,X_{2j}\right)  \\
 &  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\mathfrak{Q}_{2}=\sum
-\limits_{i=0}^{j-1}\left(  -1\right)  ^{i+j-1}\alpha_{i}\alpha_{2j-i}\right)
-\\
+\limits_{i=0}^{j-1}\left(  -1\right)  ^{i+j-1}\alpha_{i}\alpha_{2j-i}\text{
+and }m=2j\right)  \\
+&  =\sum\limits_{i=0}^{j-1}\left(  -1\right)  ^{i+j-1}X_{i}X_{2j-i}\\
 &  =P_{2,j}\left(  X_{1},X_{2},...,X_{2j}\right)  \ \ \ \ \ \ \ \ \ \ \left(
 \text{by the 1st Step}\right)  ,
 \end{align*}
@@ -13780,8 +13782,8 @@ In order to prove this, we must verify that%
 =\operatorname*{coeff}\nolimits_{1}u+\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
 }v\in\Lambda\left(  K\right)  ;\label{sol.6.9.2}\\
-\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;
-\label{sol.6.9.3}\\
+\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;\label{sol.6.9.3}%
+\\
 \operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)   &
 =\operatorname*{coeff}\nolimits_{1}u\cdot\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
