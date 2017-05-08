@@ -9,7 +9,7 @@
 \usepackage{comment}
 %TCIDATA{OutputFilter=latex2.dll}
 %TCIDATA{Version=5.50.0.2960}
-%TCIDATA{LastRevised=Tuesday, April 25, 2017 21:51:14}
+%TCIDATA{LastRevised=Monday, May 08, 2017 14:05:06}
 %TCIDATA{SuppressPackageManagement}
 %TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
 %TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
@@ -1248,6 +1248,78 @@ is an arbitrary commutative ring (although they, too, can be salvaged with a
 bit of work: it is not too hard to derive the general case from the case when
 $K$ is a field).
 \par
+Various sources prove a result that is easily seen to be equivalent to Theorem
+4.1 \textbf{(a)}. Namely, they prove the following result:
+\par
+\begin{quote}
+\textbf{Theorem 4.1'.} Let $K$, $m$, $\left(  U_{1},U_{2},\ldots,U_{m}\right)
+$ and $X_{i}$ be as in Theorem 4.1. Let $\mathcal{S}$ be the $K$-module
+consisting of all symmetric polynomials $P\in K\left[  U_{1},U_{2}%
+,...,U_{m}\right]  $. Then, the family $\left(  X_{1}^{i_{1}}X_{2}^{i_{2}%
+}\cdots X_{m}^{i_{m}}\right)  _{\left(  i_{1},i_{2},\ldots,i_{m}\right)
+\in\mathbb{N}^{m}}$ is a basis of the $K$-module $\mathcal{S}$.
+\end{quote}
+\par
+For example, Theorem 4.1' is \cite[(5.10) in Chapter SYM]{LLPT}.
+\par
+Let us briefly explain how Theorem 4.1 \textbf{(a)} follows from Theorem 4.1':
+\par
+\textit{[Proof of Theorem 4.1 \textbf{(a)} using Theorem 4.1':} A family
+$\left(  k_{g}\right)  _{g\in G}\in K^{G}$ of elements of $K$ (where $G$ is an
+arbitrary set) is said to be \textit{finitely supported} if all but finitely
+many $g\in G$ satisfy $k_{g}=0$.
+\par
+Notice that the finitely supported families $\left(  k_{\left(  i_{1}%
+,i_{2},\ldots,i_{m}\right)  }\right)  _{\left(  i_{1},i_{2},\ldots
+,i_{m}\right)  \in\mathbb{N}^{m}}\in K^{\mathbb{N}^{m}}$ of elements of $K$
+are in bijection with the polynomials in the polynomial ring $K\left[
+\alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $. Indeed, the bijection maps
+each finitely supported family $\left(  k_{\left(  i_{1},i_{2},\ldots
+,i_{m}\right)  }\right)  _{\left(  i_{1},i_{2},\ldots,i_{m}\right)
+\in\mathbb{N}^{m}}$ to the polynomial $\sum\limits_{\left(  i_{1},i_{2}%
+,\ldots,i_{m}\right)  \in\mathbb{N}^{m}}k_{\left(  i_{1},i_{2},\ldots
+,i_{m}\right)  }\alpha_{1}^{i_{1}}\alpha_{2}^{i_{2}}\cdots\alpha_{m}^{i_{m}}$.
+\par
+We know that $P$ is a symmetric polynomial in $K\left[  U_{1},U_{2}%
+,...,U_{m}\right]  $. In other words, $P\in\mathcal{S}$ (by the definition of
+$\mathcal{S}$).
+\par
+But Theorem 4.1' shows that the family $\left(  X_{1}^{i_{1}}X_{2}^{i_{2}%
+}\cdots X_{m}^{i_{m}}\right)  _{\left(  i_{1},i_{2},\ldots,i_{m}\right)
+\in\mathbb{N}^{m}}$ is a basis of the $K$-module $\mathcal{S}$. Hence, $P$ can
+be uniquely written as a $K$-linear combination of the elements of the family
+$\left(  X_{1}^{i_{1}}X_{2}^{i_{2}}\cdots X_{m}^{i_{m}}\right)  _{\left(
+i_{1},i_{2},\ldots,i_{m}\right)  \in\mathbb{N}^{m}}$ (since $P\in\mathcal{S}%
+$). In other words, there is a unique finitely supported family $\left(
+k_{\left(  i_{1},i_{2},\ldots,i_{m}\right)  }\right)  _{\left(  i_{1}%
+,i_{2},\ldots,i_{m}\right)  \in\mathbb{N}^{m}}\in K^{\mathbb{N}^{m}}$ of
+elements of $K$ satisfying $P=\sum\limits_{\left(  i_{1},i_{2},\ldots
+,i_{m}\right)  \in\mathbb{N}^{m}}k_{\left(  i_{1},i_{2},\ldots,i_{m}\right)
+}X_{1}^{i_{1}}X_{2}^{i_{2}}\cdots X_{m}^{i_{m}}$.
+\par
+In other words, there is a unique polynomial $\sum\limits_{\left(  i_{1}%
+,i_{2},\ldots,i_{m}\right)  \in\mathbb{N}^{m}}k_{\left(  i_{1},i_{2}%
+,\ldots,i_{m}\right)  }\alpha_{1}^{i_{1}}\alpha_{2}^{i_{2}}\cdots\alpha
+_{m}^{i_{m}}\in K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $
+satisfying $P=\sum\limits_{\left(  i_{1},i_{2},\ldots,i_{m}\right)
+\in\mathbb{N}^{m}}k_{\left(  i_{1},i_{2},\ldots,i_{m}\right)  }X_{1}^{i_{1}%
+}X_{2}^{i_{2}}\cdots X_{m}^{i_{m}}$ (because the finitely supported families
+$\left(  k_{\left(  i_{1},i_{2},\ldots,i_{m}\right)  }\right)  _{\left(
+i_{1},i_{2},\ldots,i_{m}\right)  \in\mathbb{N}^{m}}\in K^{\mathbb{N}^{m}}$ of
+elements of $K$ are in bijection with the polynomials in $K\left[  \alpha
+_{1},\alpha_{2},...,\alpha_{m}\right]  $).
+\par
+Renaming the polynomial $\sum\limits_{\left(  i_{1},i_{2},\ldots,i_{m}\right)
+\in\mathbb{N}^{m}}k_{\left(  i_{1},i_{2},\ldots,i_{m}\right)  }\alpha
+_{1}^{i_{1}}\alpha_{2}^{i_{2}}\cdots\alpha_{m}^{i_{m}}$ as $Q$ in this
+statement, we obtain the following: There is a unique polynomial $Q\in
+K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $ satisfying $P=Q\left(
+X_{1},X_{2},...,X_{m}\right)  $. In other words, there is a unique polynomial
+$Q\in K\left[  \alpha_{1},\alpha_{2},...,\alpha_{m}\right]  $ satisfying
+$P\left(  U_{1},U_{2},...,U_{m}\right)  =Q\left(  X_{1},X_{2},...,X_{m}%
+\right)  $ (since $P\left(  U_{1},U_{2},...,U_{m}\right)  =P$). This proves
+Theorem 4.1 \textbf{(a)}.]
+\par
 The first claim of Theorem 4.1 \textbf{(b)} (namely, that the variables
 $\alpha_{i}$ for $i>\ell$ do not appear in the polynomial $Q$) can easily be
 obtained from the proof of Theorem 4.1 \textbf{(a)}: In fact, each of the
@@ -2371,27 +2443,64 @@ matrix $F_{V}\in\left(  \mathbb{Z}\left[  Y_{1},Y_{2},...,Y_{n}\right]
 \end{array}
 \right)  .
 \end{align*}
-Prove that the polynomial
+
+
+Also, define a matrix $F_{U}\in\left(  \mathbb{Z}\left[  X_{1},X_{2}%
+,...,X_{m}\right]  \right)  ^{m\times m}$ as in part \textbf{(a)}. Let
+$\mathcal{R}$ be the ring $\mathbb{Z}\left[  X_{1},X_{2},\ldots,X_{m}%
+,Y_{1},Y_{2},\ldots,Y_{n}\right]  $. We can thus regard both $F_{U}$ and
+$F_{V}$ as matrices over the ring $\mathcal{R}$: namely, $F_{U}\in
+\mathcal{R}^{m\times m}$ and $F_{V}\in\mathcal{R}^{n\times n}$. Hence, the
+tensor product $F_{U}\otimes F_{V}$ of these two matrices is
+defined\footnote{It is defined as follows: The $m\times m$-matrix $F_{U}$
+induces an endomorphism of the free $\mathcal{R}$-module $\mathcal{R}^{m}$,
+whereas the $n\times n$-matrix $F_{V}$ induces an endomorphism of the free
+$\mathcal{R}$-module $\mathcal{R}^{n}$. The tensor product of these two
+endomorphisms is an endomorphism of the free $\mathcal{R}$-module
+$\mathcal{R}^{n}\otimes_{\mathcal{R}}\mathcal{R}^{m}$. This latter
+endomorphism can be represented by an $mn\times mn$-matrix once we have chosen
+a basis of the free $\mathcal{R}$-module $\mathcal{R}^{n}\otimes_{\mathcal{R}%
+}\mathcal{R}^{m}$. For the purposes of this exercise, it makes no matter which
+basis we choose, as long as we do choose a basis. Anyway, we have thus
+obtained an $mn\times mn$-matrix; this matrix is called $F_{U}\otimes F_{V}$%
+.}; it is an $mn\times mn$-matrix over $\mathcal{R}$. Prove that the
+polynomial
 \[
 \det\left(  -T\left(  F_{U}\otimes F_{V}\right)  +I_{mn}\right)  \in\left(
 \mathbb{Z}\left[  X_{1},X_{2},...,X_{m},Y_{1},Y_{2},...,Y_{n}\right]  \right)
 \left[  T\right]
 \]
 equals $\prod\limits_{\left(  i,j\right)  \in\left\{  1,2,...,m\right\}
-\times\left\{  1,2,...,n\right\}  }\left(  1+U_{i}V_{j}T\right)  .$ Conclude
-that the coefficient of this polynomial before $T^{k}$ equals to
+\times\left\{  1,2,...,n\right\}  }\left(  1+U_{i}V_{j}T\right)  $. Conclude
+that the coefficient of this polynomial before $T^{k}$ equals the
 $Q_{k,k,\left[  n,m\right]  }\left(  X_{1},X_{2},...,X_{k},Y_{1}%
 ,Y_{2},...,Y_{k}\right)  $ defined in the definition of $P_{k}$. How to
 compute $P_{k}$ now? (Don't forget to choose $n$ and $m$ such that $n\geq k$
 and $m\geq k$.)
 
-\textbf{(c)} Let $m\in\mathbb{N}$ and $j\in\mathbb{N}$. In part \textbf{(a)},
-prove that the polynomial $\det\left(  \left(  -1\right)  ^{j}T\left(
-\wedge^{j}F_{U}\right)  +I_{m}\right)  \in\left(  \mathbb{Z}\left[
-X_{1},X_{2},...,X_{m}\right]  \right)  \left[  T\right]  $ equals
-$\prod\limits_{I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}  \right)
-}\left(  1+\prod\limits_{i\in I}U_{i}\cdot T\right)  $. Conclude that the
-coefficient of this polynomial before $T^{k}$ equals to $Q_{k,j,\left[
+\textbf{(c)} Let $m\in\mathbb{N}$ and $j\in\mathbb{N}$. Define the polynomials
+$X_{i}$ and an $m\times m$-matrix $F_{U}$ as in part \textbf{(a)}. Then, an
+$\dbinom{m}{j}\times\dbinom{m}{j}$-matrix $\wedge^{j}F_{U}$ over the ring
+$\mathbb{Z}\left[  X_{1},X_{2},...,X_{m}\right]  $ is defined\footnote{It is
+defined as follows: Let $\mathcal{M}$ be the ring $\mathbb{Z}\left[
+X_{1},X_{2},...,X_{m}\right]  $. The $m\times m$-matrix $F_{U}$ induces an
+endomorphism of the free $\mathcal{R}$-module $\mathcal{R}^{m}$. The $j$-th
+exterior power of this endomorphism is an endomorphism of the free
+$\mathcal{R}$-module $\wedge^{j}\mathcal{R}^{m}$. This latter endomorphism can
+be represented by an $\dbinom{m}{j}\times\dbinom{m}{j}$-matrix once we have
+chosen a basis of the free $\mathcal{R}$-module $\wedge^{j}\mathcal{R}^{m}$.
+For the purposes of this exercise, it makes no matter which basis we choose,
+as long as we do choose a basis. Anyway, we have thus obtained an $\wedge
+^{j}\mathcal{R}^{m}$-matrix; this matrix is called $\wedge^{j}F_{U}$.}. Prove
+that the polynomial%
+\[
+\det\left(  \left(  -1\right)  ^{j}T\left(  \wedge^{j}F_{U}\right)
++I_{\dbinom{m}{j}}\right)  \in\left(  \mathbb{Z}\left[  X_{1},X_{2}%
+,...,X_{m}\right]  \right)  \left[  T\right]
+\]
+equals $\prod\limits_{I\in\mathcal{P}_{j}\left(  \left\{  1,2,...,m\right\}
+\right)  }\left(  1+\prod\limits_{i\in I}U_{i}\cdot T\right)  $. Conclude that
+the coefficient of this polynomial before $T^{k}$ equals the $Q_{k,j,\left[
 m\right]  }\left(  X_{1},X_{2},...,X_{kj}\right)  $ defined in the definition
 of $P_{k,j}$. How to compute $P_{k,j}$ now? (Don't forget to choose $m$ such
 that $m\geq kj$.)
@@ -5213,7 +5322,7 @@ We have $K\subseteq K^{\prime}$. Thus, $\Lambda\left(  K^{\prime}\right)  $ is
 an extension ring of $\Lambda\left(  K\right)  $ (since $\Lambda$ is a
 functor). In this extension ring $\Lambda\left(  K^{\prime}\right)  $, we have%
 \begin{align}
-u_{i} &  =\Pi\left(  K^{\prime},\left[  \left(  u_{i}\right)  _{1},\left(
+u_{i}  &  =\Pi\left(  K^{\prime},\left[  \left(  u_{i}\right)  _{1},\left(
 u_{i}\right)  _{2},...,\left(  u_{i}\right)  _{n_{i}}\right]  \right)
 =\prod_{j=1}^{n_{i}}\left(  1+\left(  u_{i}\right)  _{j}T\right)
 =\widehat{\sum_{j=1}^{n_{i}}}\left(  1+\left(  u_{i}\right)  _{j}T\right)
@@ -5237,7 +5346,7 @@ m_{\left(  \Lambda\left(  K^{\prime}\right)  ,\left(  \widehat{\lambda}%
 ^{i}\right)  _{i\in\mathbb{N}}\right)  }\left(  u_{1},u_{2},...,u_{n}\right)
 =m_{\left(  \Lambda\left(  K^{\prime}\right)  ,\left(  \widehat{\lambda}%
 ^{i}\right)  _{i\in\mathbb{N}}\right)  }^{\prime}\left(  u_{1},u_{2}%
-,...,u_{n}\right)  .\label{8.4.fast}%
+,...,u_{n}\right)  . \label{8.4.fast}%
 \end{equation}
 This is an equality in the ring $\Lambda\left(  K^{\prime}\right)  $, but
 since $\Lambda\left(  K\right)  $ can be canonically seen as a sub-$\lambda
@@ -5260,19 +5369,19 @@ homomorphism, we then have $\iota\circ m_{\left(  \Lambda\left(  K\right)
 _{i\in\mathbb{N}}\right)  }\circ\iota^{\times n}$. Now,%
 \begin{align*}
 &  m_{\left(  \Lambda\left(  K\right)  ,\left(  \widehat{\lambda}^{i}\right)
-_{i\in\mathbb{N}}\right)  }\left(  u_{1},u_{2},...,u_{n}\right)  \\
+_{i\in\mathbb{N}}\right)  }\left(  u_{1},u_{2},...,u_{n}\right) \\
 &  =\iota\left(  m_{\left(  \Lambda\left(  K\right)  ,\left(  \widehat{\lambda
 }^{i}\right)  _{i\in\mathbb{N}}\right)  }\left(  u_{1},u_{2},...,u_{n}\right)
 \right)  \ \ \ \ \ \ \ \ \ \ \left(  \text{since }\iota\text{ is just the
 inclusion map }\Lambda\left(  K\right)  \rightarrow\Lambda\left(  K^{\prime
-}\right)  \right)  \\
+}\right)  \right) \\
 &  =\underbrace{\left(  \iota\circ m_{\left(  \Lambda\left(  K\right)
 ,\left(  \widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)  }\right)
 }_{=m_{\left(  \Lambda\left(  K^{\prime}\right)  ,\left(  \widehat{\lambda
 }^{i}\right)  _{i\in\mathbb{N}}\right)  }\circ\iota^{\times n}}\left(
 u_{1},u_{2},...,u_{n}\right)  =\left(  m_{\left(  \Lambda\left(  K^{\prime
 }\right)  ,\left(  \widehat{\lambda}^{i}\right)  _{i\in\mathbb{N}}\right)
-}\circ\iota^{\times n}\right)  \left(  u_{1},u_{2},...,u_{n}\right)  \\
+}\circ\iota^{\times n}\right)  \left(  u_{1},u_{2},...,u_{n}\right) \\
 &  =m_{\left(  \Lambda\left(  K^{\prime}\right)  ,\left(  \widehat{\lambda
 }^{i}\right)  _{i\in\mathbb{N}}\right)  }\underbrace{\left(  \iota^{\times
 n}\left(  u_{1},u_{2},...,u_{n}\right)  \right)  }_{\substack{=\left(
@@ -13781,8 +13890,8 @@ In order to prove this, we must verify that%
 =\operatorname*{coeff}\nolimits_{1}u+\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
 }v\in\Lambda\left(  K\right)  ;\label{sol.6.9.2}\\
-\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;
-\label{sol.6.9.3}\\
+\operatorname*{coeff}\nolimits_{1}\left(  1+T\right)   &  =1;\label{sol.6.9.3}%
+\\
 \operatorname*{coeff}\nolimits_{1}\left(  u\widehat{\cdot}v\right)   &
 =\operatorname*{coeff}\nolimits_{1}u\cdot\operatorname*{coeff}\nolimits_{1}%
 v\ \ \ \ \ \ \ \ \ \ \text{for every }u\in\Lambda\left(  K\right)  \text{ and
@@ -16267,6 +16376,10 @@ Representation Theory of the Symmetric Group}, Lecture Notes in Mathematics
 
 \bibitem[Laksov09]{Laksov09}Dan Laksov, \textit{Splitting algebras,
 factorization algebras, and residues}, 28 January 2009.\newline\url{https://people.kth.se/~laksov/art/splittingmonthly.pdf}
+
+\bibitem[LLPT95]{LLPT}D. Laksov, A. Lascoux, P. Pragacz, and A. Thorup,
+\textit{The LLPT Notes}, edited by A. Thorup, 1995,\newline%
+\url{http://www.math.ku.dk/~thorup/notes/sympol.pdf} .
 
 \bibitem[MiRiRu88]{MiRiRu88}Ray Mines, Fred Richman, Wim Ruitenburg, \textit{A
 Course in Constructive Algebra}, Universitext, Springer 1988.
