@@ -7,7 +7,7 @@ better) in
 [Yau's *&lambda;-rings* book](http://www.worldscientific.com/worldscibooks/10.1142/7664)
 and in Hazewinkel's
 [*Witt vectors* notes](https://arxiv.org/abs/0804.3888).
-Nevertheless, the notes might be of some marginal use.
+Nevertheless, the notes might be of some use.
 
 ## PDF
 
@@ -17,7 +17,7 @@ http://www.cip.ifi.lmu.de/~grinberg/algebra/lambda.pdf
 ## Status
 
 Various parts of the notes (special &lambda;-rings, Adams
-operations etc.) are more or less completely.
+operations etc.) are more or less complete.
 Other subjects (such as symmetric functions and Witt
 vectors) have not been breached.
 I am not actively working on these notes any longer,
